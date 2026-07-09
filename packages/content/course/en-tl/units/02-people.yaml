@@ -1,0 +1,136 @@
+id: people
+title: People
+description: Pronouns and family.
+lessons:
+  - id: people-1
+    title: I, you, they
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ako, en: I }
+          - { tl: ikaw, en: you }
+          - { tl: siya, en: he/she }
+          - { tl: sila, en: they }
+      - type: choice
+        prompt: "'Siya' means..."
+        answer: He or she
+        distractors: [Only he, Only she, They]
+        audio: siya
+        hint: Tagalog pronouns don't mark gender.
+      - type: choice
+        prompt: "Which 'we' includes the person you're talking to?"
+        answer: tayo
+        distractors: [kami, sila, ikaw]
+        audio: tayo
+      - type: translate
+        prompt_tl: Kaibigan kita.
+        answer_en: You are my friend.
+        accept: ["You're my friend"]
+        extra_words: [she, they, name]
+        hint: '"kita" = I…you in one word.'
+      - type: listen
+        audio: sila
+        answer_tl: Sila
+        extra_words: [siya, kami]
+      - type: fill_blank
+        sentence: "___ si Maria."
+        translation: "She is Maria."
+        answer: Siya
+        options: [Siya, Sila, Ako]
+      - type: translate
+        prompt_en: We (including you) are friends.
+        answer_tl: Magkaibigan tayo.
+        extra_words: [kami, sila, ako]
+      - type: choice
+        prompt: "'Kami' means..."
+        answer: We (not including you)
+        distractors: [We (including you), They, You all]
+        audio: kami
+  - id: people-2
+    title: Family
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nanay, en: mom }
+          - { tl: tatay, en: dad }
+          - { tl: kapatid, en: sibling }
+          - { tl: anak, en: child }
+      - type: choice
+        prompt: "'Lola' means..."
+        answer: Grandmother
+        distractors: [Grandfather, Mother, Aunt]
+        audio: lola
+      - type: translate
+        prompt_tl: Siya ang nanay ko.
+        answer_en: She is my mom.
+        accept: ["She's my mom", "She is my mother"]
+        extra_words: [dad, friend, name]
+        audio: siya_ang_nanay_ko
+      - type: translate
+        prompt_en: He is my dad.
+        answer_tl: Siya ang tatay ko.
+        extra_words: [nanay, lola, si]
+      - type: listen
+        audio: kapatid
+        answer_tl: Kapatid
+        extra_words: [nanay, tatay]
+      - type: fill_blank
+        sentence: "Siya ang ___ ko."
+        translation: "She is my grandmother."
+        answer: lola
+        options: [lola, lolo, tatay]
+      - type: match
+        pairs:
+          - { tl: lola, en: grandmother }
+          - { tl: lolo, en: grandfather }
+          - { tl: pamilya, en: family }
+      - type: translate
+        prompt_tl: Malaki ang pamilya ko.
+        answer_en: My family is big.
+        accept: ["I have a big family"]
+        extra_words: [small, friend, mom]
+  - id: people-3
+    title: Man, woman, child
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lalaki, en: man }
+          - { tl: babae, en: woman }
+          - { tl: kaibigan, en: friend }
+      - type: choice
+        prompt: "'Babae' means..."
+        answer: Woman
+        distractors: [Man, Child, Friend]
+        audio: babae
+      - type: translate
+        prompt_tl: Kaibigan ko si Ben.
+        answer_en: Ben is my friend.
+        accept: ["My friend is Ben"]
+        extra_words: [mom, man, family]
+      - type: fill_blank
+        sentence: "Si Ana ay ___."
+        translation: "Ana is a woman."
+        answer: babae
+        options: [babae, lalaki, nanay]
+      - type: listen
+        audio: kaibigan
+        answer_tl: Kaibigan
+        extra_words: [babae, lalaki]
+      - type: translate
+        prompt_en: She is beautiful.
+        answer_tl: Maganda siya.
+        extra_words: [malaki, ako, babae]
+        audio: maganda_siya
+      - type: choice
+        prompt: "'Maganda' means..."
+        answer: Beautiful
+        distractors: [Big, Small, Fast]
+        audio: maganda
+      - type: translate
+        prompt_tl: Mabuti siyang kaibigan.
+        answer_en: She is a good friend.
+        accept: ["He is a good friend"]
+        extra_words: [beautiful, mom, they]

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.next/
+.turbo/
+.expo/
+*.tsbuildinfo
+.env
+.env.local
+coverage/
+# compiled content bundles are build artifacts
+packages/content/dist/

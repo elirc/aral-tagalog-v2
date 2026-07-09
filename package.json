@@ -1,0 +1,29 @@
+{
+  "name": "aral",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "dev": "turbo run dev --parallel",
+    "content:build": "pnpm --filter @aral/content build",
+    "db:migrate": "pnpm --filter @aral/db migrate",
+    "api:dev": "pnpm --filter @aral/api dev",
+    "web:dev": "pnpm --filter @aral/web dev",
+    "mobile:start": "pnpm --filter @aral/mobile start"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "~19.0.10"
+    }
+  }
+}

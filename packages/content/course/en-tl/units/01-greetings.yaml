@@ -1,0 +1,228 @@
+id: greetings
+title: Greetings
+description: Say hello, be polite, and introduce yourself.
+lessons:
+  - id: greetings-1
+    title: Hello!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "How do you say 'good morning'?"
+        answer: Magandang umaga
+        distractors: [Magandang gabi, Salamat, Paalam]
+        audio: magandang_umaga
+      - type: choice
+        prompt: "'Kumusta' means..."
+        answer: How are you / hello
+        distractors: [Goodbye, Thank you, Good night]
+        audio: kumusta
+      - type: match
+        pairs:
+          - { tl: kumusta, en: hello }
+          - { tl: salamat, en: thank you }
+          - { tl: paalam, en: goodbye }
+      - type: translate
+        prompt_tl: Magandang umaga!
+        answer_en: Good morning!
+        extra_words: [night, thanks, you]
+        audio: magandang_umaga
+      - type: translate
+        prompt_en: Thank you!
+        answer_tl: Salamat!
+        extra_words: [paalam, kumusta, umaga]
+        audio: salamat
+      - type: listen
+        audio: paalam
+        answer_tl: Paalam
+        extra_words: [salamat, kumusta]
+      - type: fill_blank
+        sentence: "Magandang ___!"
+        translation: "Good morning!"
+        answer: umaga
+        options: [umaga, gabi, salamat]
+        audio: magandang_umaga
+      - type: choice
+        prompt: "Someone leaves and says 'Paalam!' — what did they say?"
+        answer: Goodbye!
+        distractors: [Good morning!, Thank you!, How are you?]
+        audio: paalam
+  - id: greetings-2
+    title: Good evening
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Magandang gabi' means..."
+        answer: Good evening
+        distractors: [Good morning, Good afternoon, Goodbye]
+        audio: magandang_gabi
+      - type: match
+        pairs:
+          - { tl: umaga, en: morning }
+          - { tl: hapon, en: afternoon }
+          - { tl: gabi, en: evening }
+      - type: translate
+        prompt_en: Good evening!
+        answer_tl: Magandang gabi!
+        extra_words: [umaga, salamat, paalam]
+        audio: magandang_gabi
+      - type: translate
+        prompt_tl: Magandang hapon!
+        answer_en: Good afternoon!
+        extra_words: [morning, evening, hello]
+        audio: magandang_hapon
+      - type: listen
+        audio: magandang_gabi
+        answer_tl: Magandang gabi
+        extra_words: [umaga, hapon]
+      - type: fill_blank
+        sentence: "___ hapon!"
+        translation: "Good afternoon!"
+        answer: Magandang
+        options: [Magandang, Salamat, Paalam]
+        audio: magandang_hapon
+      - type: choice
+        prompt: "It's 8 PM. How do you greet someone?"
+        answer: Magandang gabi
+        distractors: [Magandang umaga, Magandang hapon, Paalam]
+        audio: magandang_gabi
+      - type: translate
+        prompt_en: Good morning!
+        answer_tl: Magandang umaga!
+        extra_words: [gabi, hapon, po]
+        audio: magandang_umaga
+  - id: greetings-3
+    title: Being polite
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Adding 'po' to a sentence makes it..."
+        answer: Polite / respectful
+        distractors: [Louder, A question, Past tense]
+        hint: Use "po" with elders and strangers.
+      - type: choice
+        prompt: "The polite way to say 'yes' is..."
+        answer: Opo
+        distractors: [Oo, Hindi, Salamat]
+        audio: opo
+      - type: match
+        pairs:
+          - { tl: oo, en: yes }
+          - { tl: hindi, en: "no" }
+          - { tl: salamat po, en: thank you (polite) }
+      - type: translate
+        prompt_en: Thank you (polite)!
+        answer_tl: Salamat po!
+        accept: ["Salamat po"]
+        extra_words: [oo, hindi, paalam]
+      - type: translate
+        prompt_tl: Walang anuman.
+        answer_en: You're welcome.
+        extra_words: [thank, goodbye, morning]
+        audio: walang_anuman
+      - type: listen
+        audio: oo
+        answer_tl: Oo
+        extra_words: [opo, hindi]
+      - type: fill_blank
+        sentence: "Salamat! — Walang ___."
+        translation: "Thank you! — You're welcome."
+        answer: anuman
+        options: [anuman, umaga, po]
+        audio: walang_anuman
+      - type: choice
+        prompt: "Your friend asks if you like coffee. You do. Say yes casually."
+        answer: Oo
+        distractors: [Opo, Hindi, Paalam]
+        audio: oo
+  - id: greetings-4
+    title: How are you?
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Kumusta ka?
+        answer_en: How are you?
+        extra_words: [good, morning, thanks]
+        audio: kumusta_ka
+      - type: choice
+        prompt: "Someone asks 'Kumusta ka?' — you're fine. Reply:"
+        answer: Mabuti ako
+        distractors: [Paalam, Salamat po, Magandang gabi]
+        audio: mabuti_ako
+      - type: translate
+        prompt_tl: Mabuti ako.
+        answer_en: I am fine.
+        accept: ["I'm fine", "I am good", "I'm good"]
+        extra_words: [you, thanks, morning]
+        audio: mabuti_ako
+      - type: match
+        pairs:
+          - { tl: mabuti, en: fine }
+          - { tl: ako, en: I }
+          - { tl: ikaw, en: you }
+      - type: listen
+        audio: kumusta_ka
+        answer_tl: Kumusta ka
+        accept: ["Kumusta ka?"]
+        extra_words: [mabuti, ako]
+      - type: fill_blank
+        sentence: "Kumusta ___?"
+        translation: "How are you?"
+        answer: ka
+        options: [ka, ako, po]
+        audio: kumusta_ka
+      - type: translate
+        prompt_en: How are you? (polite)
+        answer_tl: Kumusta po kayo?
+        extra_words: [ka, ako, mabuti]
+        hint: '"kayo" is the polite/plural you.'
+      - type: choice
+        prompt: "'Mabuti rin' means..."
+        answer: I'm fine too
+        distractors: [Good morning, See you, Not good]
+        hint: '"rin/din" means "also".'
+  - id: greetings-5
+    title: What's your name?
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Ako si Ana.
+        answer_en: I am Ana.
+        accept: ["I'm Ana"]
+        extra_words: [name, you, is]
+        audio: ako_si_ana
+      - type: choice
+        prompt: "'Ano ang pangalan mo?' means..."
+        answer: What is your name?
+        distractors: [How are you?, Where are you?, Who is she?]
+        audio: ano_ang_pangalan_mo
+      - type: match
+        pairs:
+          - { tl: pangalan, en: name }
+          - { tl: ako, en: I }
+          - { tl: siya, en: he/she }
+      - type: translate
+        prompt_en: I am Ben.
+        answer_tl: Ako si Ben.
+        extra_words: [siya, pangalan, ang]
+        hint: Use "si" before a person's name.
+      - type: listen
+        audio: ako_si_ana
+        answer_tl: Ako si Ana
+        extra_words: [siya, pangalan]
+      - type: fill_blank
+        sentence: "Ano ang ___ mo?"
+        translation: "What is your name?"
+        answer: pangalan
+        options: [pangalan, kumusta, umaga]
+        audio: ano_ang_pangalan_mo
+      - type: translate
+        prompt_tl: Siya si Maria.
+        answer_en: She is Maria.
+        accept: ["He is Maria"]
+        extra_words: [I, name, you]
+      - type: fill_blank
+        sentence: "Ako ___ Ana."
+        translation: "I am Ana."
+        answer: si
+        options: [si, ang, po]
+        hint: '"si" marks a person''s name.'

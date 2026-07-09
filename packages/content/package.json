@@ -1,0 +1,25 @@
+{
+  "name": "@aral/content",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./bundle": "./dist/course_en_tl.json"
+  },
+  "scripts": {
+    "build": "tsx src/compile.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aral/core": "workspace:*",
+    "yaml": "^2.5.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

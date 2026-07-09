@@ -1,0 +1,284 @@
+# Shared vocabulary (CNT-02). Exercises and practice mode reference these ids.
+- id: kumusta
+  lemma: kumusta
+  translation: how are you / hello
+  audio: kumusta
+- id: magandang_umaga
+  lemma: magandang umaga
+  translation: good morning
+  audio: magandang_umaga
+- id: magandang_hapon
+  lemma: magandang hapon
+  translation: good afternoon
+  audio: magandang_hapon
+- id: magandang_gabi
+  lemma: magandang gabi
+  translation: good evening
+  audio: magandang_gabi
+- id: salamat
+  lemma: salamat
+  translation: thank you
+  audio: salamat
+- id: walang_anuman
+  lemma: walang anuman
+  translation: you're welcome
+  audio: walang_anuman
+- id: paalam
+  lemma: paalam
+  translation: goodbye
+  audio: paalam
+- id: oo
+  lemma: oo
+  translation: yes
+  audio: oo
+- id: hindi
+  lemma: hindi
+  translation: no / not
+  audio: hindi
+- id: opo
+  lemma: opo
+  translation: yes (polite)
+  audio: opo
+  notes: '"po" makes speech polite; use with elders and strangers.'
+- id: mabuti
+  lemma: mabuti
+  translation: fine / good
+  audio: mabuti
+- id: ako
+  lemma: ako
+  translation: I / me
+  audio: ako
+- id: ikaw
+  lemma: ikaw
+  translation: you
+  audio: ikaw
+- id: siya
+  lemma: siya
+  translation: he / she
+  audio: siya
+  notes: Tagalog pronouns are gender-neutral — siya means both he and she.
+- id: kami
+  lemma: kami
+  translation: we (not including you)
+  audio: kami
+- id: tayo
+  lemma: tayo
+  translation: we (including you)
+  audio: tayo
+- id: sila
+  lemma: sila
+  translation: they
+  audio: sila
+- id: pangalan
+  lemma: pangalan
+  translation: name
+  audio: pangalan
+- id: nanay
+  lemma: nanay
+  translation: mom
+  audio: nanay
+- id: tatay
+  lemma: tatay
+  translation: dad
+  audio: tatay
+- id: kapatid
+  lemma: kapatid
+  translation: sibling
+  audio: kapatid
+- id: lola
+  lemma: lola
+  translation: grandmother
+  audio: lola
+- id: lolo
+  lemma: lolo
+  translation: grandfather
+  audio: lolo
+- id: anak
+  lemma: anak
+  translation: child (son/daughter)
+  audio: anak
+- id: pamilya
+  lemma: pamilya
+  translation: family
+  audio: pamilya
+- id: kaibigan
+  lemma: kaibigan
+  translation: friend
+  audio: kaibigan
+- id: lalaki
+  lemma: lalaki
+  translation: man / boy
+  audio: lalaki
+- id: babae
+  lemma: babae
+  translation: woman / girl
+  audio: babae
+- id: kanin
+  lemma: kanin
+  translation: rice (cooked)
+  audio: kanin
+- id: tubig
+  lemma: tubig
+  translation: water
+  audio: tubig
+- id: kape
+  lemma: kape
+  translation: coffee
+  audio: kape
+- id: gatas
+  lemma: gatas
+  translation: milk
+  audio: gatas
+- id: tinapay
+  lemma: tinapay
+  translation: bread
+  audio: tinapay
+- id: itlog
+  lemma: itlog
+  translation: egg
+  audio: itlog
+- id: isda
+  lemma: isda
+  translation: fish
+  audio: isda
+- id: manok
+  lemma: manok
+  translation: chicken
+  audio: manok
+- id: masarap
+  lemma: masarap
+  translation: delicious
+  audio: masarap
+- id: gusto
+  lemma: gusto
+  translation: to like / to want
+  audio: gusto
+- id: ayaw
+  lemma: ayaw
+  translation: to not like / to not want
+  audio: ayaw
+- id: kumain
+  lemma: kumain
+  translation: ate (to eat)
+  audio: kumain
+- id: uminom
+  lemma: uminom
+  translation: drank (to drink)
+  audio: uminom
+- id: isa
+  lemma: isa
+  translation: one
+  audio: isa
+- id: dalawa
+  lemma: dalawa
+  translation: two
+  audio: dalawa
+- id: tatlo
+  lemma: tatlo
+  translation: three
+  audio: tatlo
+- id: apat
+  lemma: apat
+  translation: four
+  audio: apat
+- id: lima
+  lemma: lima
+  translation: five
+  audio: lima
+- id: anim
+  lemma: anim
+  translation: six
+  audio: anim
+- id: pito
+  lemma: pito
+  translation: seven
+  audio: pito
+- id: walo
+  lemma: walo
+  translation: eight
+  audio: walo
+- id: siyam
+  lemma: siyam
+  translation: nine
+  audio: siyam
+- id: sampu
+  lemma: sampu
+  translation: ten
+  audio: sampu
+- id: umaga
+  lemma: umaga
+  translation: morning
+  audio: umaga
+- id: hapon
+  lemma: hapon
+  translation: afternoon
+  audio: hapon
+- id: gabi
+  lemma: gabi
+  translation: evening / night
+  audio: gabi
+- id: araw
+  lemma: araw
+  translation: day / sun
+  audio: araw
+- id: ngayon
+  lemma: ngayon
+  translation: now / today
+  audio: ngayon
+- id: bukas
+  lemma: bukas
+  translation: tomorrow
+  audio: bukas
+- id: kahapon
+  lemma: kahapon
+  translation: yesterday
+  audio: kahapon
+- id: araw_araw
+  lemma: araw-araw
+  translation: every day
+  audio: araw_araw
+  notes: Reduplication — repeating a word — often means "every" or "each".
+- id: bahay
+  lemma: bahay
+  translation: house
+  audio: bahay
+- id: paaralan
+  lemma: paaralan
+  translation: school
+  audio: paaralan
+- id: palengke
+  lemma: palengke
+  translation: market
+  audio: palengke
+- id: simbahan
+  lemma: simbahan
+  translation: church
+  audio: simbahan
+- id: ospital
+  lemma: ospital
+  translation: hospital
+  audio: ospital
+- id: nasaan
+  lemma: nasaan
+  translation: where (is)
+  audio: nasaan
+- id: pumunta
+  lemma: pumunta
+  translation: went (to go)
+  audio: pumunta
+- id: malaki
+  lemma: malaki
+  translation: big
+  audio: malaki
+- id: maliit
+  lemma: maliit
+  translation: small
+  audio: maliit
+- id: maganda
+  lemma: maganda
+  translation: beautiful
+  audio: maganda
+- id: mabilis
+  lemma: mabilis
+  translation: fast
+  audio: mabilis

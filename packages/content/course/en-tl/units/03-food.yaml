@@ -1,0 +1,137 @@
+id: food
+title: Food
+description: Order, eat, and say it's delicious.
+lessons:
+  - id: food-1
+    title: At the table
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanin, en: rice }
+          - { tl: tubig, en: water }
+          - { tl: tinapay, en: bread }
+          - { tl: itlog, en: egg }
+      - type: choice
+        prompt: "'Kape' means..."
+        answer: Coffee
+        distractors: [Milk, Water, Rice]
+        audio: kape
+      - type: listen
+        audio: tubig
+        answer_tl: Tubig
+        extra_words: [gatas, kape]
+      - type: fill_blank
+        sentence: "Masarap ang ___."
+        translation: "The bread is delicious."
+        answer: tinapay
+        options: [tinapay, tubig, gatas]
+        audio: masarap_ang_tinapay
+      - type: translate
+        prompt_tl: Masarap ang kanin.
+        answer_en: The rice is delicious.
+        extra_words: [bread, water, egg]
+      - type: match
+        pairs:
+          - { tl: gatas, en: milk }
+          - { tl: kape, en: coffee }
+          - { tl: masarap, en: delicious }
+      - type: choice
+        prompt: "You take a bite and love it. Say:"
+        answer: Masarap!
+        distractors: [Paalam!, Nasaan?, Hindi!]
+        audio: masarap
+      - type: translate
+        prompt_en: The coffee is delicious.
+        answer_tl: Masarap ang kape.
+        extra_words: [gatas, tubig, siya]
+  - id: food-2
+    title: I like / I don't like
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Gusto ko ng kape.
+        answer_en: I like coffee.
+        accept: ["I want coffee"]
+        extra_words: [milk, water, not]
+        audio: gusto_ko_ng_kape
+      - type: choice
+        prompt: "'Ayaw ko ng gatas' means..."
+        answer: I don't like milk
+        distractors: [I like milk, I drink milk, More milk please]
+        audio: ayaw_ko_ng_gatas
+      - type: fill_blank
+        sentence: "___ ko ng tubig."
+        translation: "I want water."
+        answer: Gusto
+        options: [Gusto, Ayaw, Masarap]
+      - type: translate
+        prompt_en: I don't like coffee.
+        answer_tl: Ayaw ko ng kape.
+        extra_words: [gusto, gatas, masarap]
+      - type: listen
+        audio: gusto_ko_ng_kape
+        answer_tl: Gusto ko ng kape
+        extra_words: [ayaw, tubig]
+      - type: match
+        pairs:
+          - { tl: gusto, en: like/want }
+          - { tl: ayaw, en: don't like }
+          - { tl: masarap, en: delicious }
+      - type: fill_blank
+        sentence: "Gusto ko ___ tinapay."
+        translation: "I like bread."
+        answer: ng
+        options: [ng, si, ang]
+        hint: '"ng" links the verb to its object.'
+      - type: translate
+        prompt_tl: Gusto ko ng isda at kanin.
+        answer_en: I like fish and rice.
+        extra_words: [bread, chicken, milk]
+        hint: '"at" = and'
+  - id: food-3
+    title: Eating and drinking
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumain' means..."
+        answer: Ate
+        distractors: [Drank, Slept, Went]
+        audio: kumain
+      - type: translate
+        prompt_tl: Kumain ako ng kanin.
+        answer_en: I ate rice.
+        extra_words: [drank, water, bread]
+        audio: kumain_ako_ng_kanin
+      - type: translate
+        prompt_tl: Uminom siya ng tubig.
+        answer_en: She drank water.
+        accept: ["He drank water"]
+        extra_words: [ate, coffee, milk]
+        audio: uminom_siya_ng_tubig
+      - type: fill_blank
+        sentence: "___ ako ng itlog."
+        translation: "I ate an egg."
+        answer: Kumain
+        options: [Kumain, Uminom, Gusto]
+      - type: listen
+        audio: kumain_ako_ng_kanin
+        answer_tl: Kumain ako ng kanin
+        extra_words: [uminom, tubig]
+      - type: translate
+        prompt_en: They ate chicken.
+        answer_tl: Kumain sila ng manok.
+        extra_words: [siya, isda, uminom]
+      - type: fill_blank
+        sentence: "Kumain siya ___ mabilis."
+        translation: "She ate quickly."
+        answer: nang
+        options: [nang, ng, na]
+        grading: { ng_nang: true }
+        hint: '"nang" (not "ng") links verbs to adverbs — but we''ll accept both.'
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: uminom, en: drank }
+          - { tl: manok, en: chicken }
+          - { tl: isda, en: fish }

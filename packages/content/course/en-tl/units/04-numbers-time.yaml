@@ -1,0 +1,135 @@
+id: numbers-time
+title: Numbers & Time
+description: Count to ten and talk about your day.
+lessons:
+  - id: numbers-1
+    title: One to five
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isa, en: one }
+          - { tl: dalawa, en: two }
+          - { tl: tatlo, en: three }
+          - { tl: apat, en: four }
+          - { tl: lima, en: five }
+      - type: choice
+        prompt: "'Tatlo' means..."
+        answer: Three
+        distractors: [Two, Four, Five]
+        audio: tatlo
+      - type: listen
+        audio: lima
+        answer_tl: Lima
+        extra_words: [apat, dalawa]
+      - type: fill_blank
+        sentence: "isa, dalawa, ___, apat"
+        translation: "one, two, three, four"
+        answer: tatlo
+        options: [tatlo, lima, isa]
+      - type: translate
+        prompt_tl: Dalawang itlog.
+        answer_en: Two eggs.
+        extra_words: [three, rice, water]
+        hint: Numbers take a "-ng" linker before nouns.
+      - type: choice
+        prompt: "How many is 'apat'?"
+        answer: "4"
+        distractors: ["2", "3", "5"]
+        audio: apat
+      - type: translate
+        prompt_en: One coffee, please.
+        answer_tl: Isang kape po.
+        accept: ["Isang kape, po"]
+        extra_words: [dalawa, tubig, salamat]
+      - type: listen
+        audio: dalawa
+        answer_tl: Dalawa
+        extra_words: [tatlo, walo]
+  - id: numbers-2
+    title: Six to ten
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: anim, en: six }
+          - { tl: pito, en: seven }
+          - { tl: walo, en: eight }
+          - { tl: siyam, en: nine }
+          - { tl: sampu, en: ten }
+      - type: choice
+        prompt: "'Walo' means..."
+        answer: Eight
+        distractors: [Six, Seven, Nine]
+        audio: walo
+      - type: listen
+        audio: sampu
+        answer_tl: Sampu
+        extra_words: [siyam, pito]
+      - type: fill_blank
+        sentence: "anim, pito, ___, siyam"
+        translation: "six, seven, eight, nine"
+        answer: walo
+        options: [walo, sampu, lima]
+      - type: choice
+        prompt: "How many is 'siyam'?"
+        answer: "9"
+        distractors: ["7", "8", "10"]
+        audio: siyam
+      - type: translate
+        prompt_tl: Sampung tao.
+        answer_en: Ten people.
+        extra_words: [nine, six, houses]
+      - type: fill_blank
+        sentence: "siyam, ___"
+        translation: "nine, ten"
+        answer: sampu
+        options: [sampu, walo, anim]
+      - type: listen
+        audio: pito
+        answer_tl: Pito
+        extra_words: [walo, apat]
+  - id: time-1
+    title: Today and tomorrow
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ngayon, en: today }
+          - { tl: bukas, en: tomorrow }
+          - { tl: kahapon, en: yesterday }
+      - type: choice
+        prompt: "'Bukas' means..."
+        answer: Tomorrow
+        distractors: [Yesterday, Today, Tonight]
+        audio: bukas
+      - type: translate
+        prompt_tl: Kumain ako kahapon.
+        answer_en: I ate yesterday.
+        extra_words: [tomorrow, today, drank]
+      - type: fill_blank
+        sentence: "Magandang araw ___!"
+        translation: "Have a good day today!"
+        answer: ngayon
+        options: [ngayon, kahapon, gabi]
+      - type: listen
+        audio: bukas
+        answer_tl: Bukas
+        extra_words: [ngayon, kahapon]
+      - type: translate
+        prompt_en: See you tomorrow!
+        answer_tl: Kita tayo bukas!
+        accept: ["Magkita tayo bukas"]
+        extra_words: [ngayon, paalam, kahapon]
+      - type: choice
+        prompt: "'Araw' can mean both..."
+        answer: Day and sun
+        distractors: [Day and night, Sun and moon, Morning and evening]
+        audio: araw
+      - type: translate
+        prompt_tl: Araw-araw umiinom ako ng kape.
+        answer_en: I drink coffee every day.
+        accept: ["Every day I drink coffee"]
+        extra_words: [ate, yesterday, water]
+        grading: { hyphens: true }
+        audio: araw_araw

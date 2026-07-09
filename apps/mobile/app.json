@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Aral",
+    "slug": "aral",
+    "version": "0.1.0",
+    "scheme": "aral",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.aral.mobile"
+    },
+    "android": {
+      "package": "app.aral.mobile"
+    },
+    "plugins": ["expo-router", "expo-sqlite"],
+    "extra": {
+      "apiUrl": "http://localhost:3001"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+id: around-town
+title: Around Town
+description: Places, going, and asking where.
+lessons:
+  - id: town-1
+    title: Places
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bahay, en: house }
+          - { tl: paaralan, en: school }
+          - { tl: palengke, en: market }
+          - { tl: simbahan, en: church }
+      - type: choice
+        prompt: "'Ospital' means..."
+        answer: Hospital
+        distractors: [Hotel, School, Office]
+        audio: ospital
+      - type: listen
+        audio: bahay
+        answer_tl: Bahay
+        extra_words: [palengke, paaralan]
+      - type: fill_blank
+        sentence: "Malaki ang ___ nila."
+        translation: "Their house is big."
+        answer: bahay
+        options: [bahay, simbahan, itlog]
+      - type: translate
+        prompt_tl: Maliit ang paaralan.
+        answer_en: The school is small.
+        extra_words: [big, market, house]
+      - type: match
+        pairs:
+          - { tl: malaki, en: big }
+          - { tl: maliit, en: small }
+          - { tl: maganda, en: beautiful }
+      - type: choice
+        prompt: "Where do you buy fish and vegetables?"
+        answer: Sa palengke
+        distractors: [Sa simbahan, Sa paaralan, Sa ospital]
+        audio: palengke
+        hint: '"sa" = at/to (a place)'
+      - type: translate
+        prompt_en: The church is beautiful.
+        answer_tl: Maganda ang simbahan.
+        extra_words: [malaki, bahay, siya]
+  - id: town-2
+    title: Where is...?
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Nasaan ang palengke?
+        answer_en: Where is the market?
+        extra_words: [school, house, who]
+        audio: nasaan_ang_palengke
+      - type: choice
+        prompt: "To ask where something is, start with..."
+        answer: Nasaan
+        distractors: [Kumusta, Salamat, Magandang]
+        audio: nasaan
+      - type: fill_blank
+        sentence: "___ ang ospital?"
+        translation: "Where is the hospital?"
+        answer: Nasaan
+        options: [Nasaan, Ano, Sino]
+      - type: translate
+        prompt_en: Where is the school?
+        answer_tl: Nasaan ang paaralan?
+        extra_words: [bahay, sa, ako]
+      - type: listen
+        audio: nasaan_ang_palengke
+        answer_tl: Nasaan ang palengke
+        accept: ["Nasaan ang palengke?"]
+        extra_words: [bahay, ospital]
+      - type: choice
+        prompt: "'Nasa bahay ako' means..."
+        answer: I am at home
+        distractors: [I am going home, Where is my house?, This is my house]
+        hint: '"nasa" = located at'
+      - type: fill_blank
+        sentence: "Nasa ___ si Nanay."
+        translation: "Mom is at the market."
+        answer: palengke
+        options: [palengke, kape, bukas]
+      - type: translate
+        prompt_tl: Nasa paaralan ang mga bata.
+        answer_en: The children are at school.
+        extra_words: [market, mom, house]
+        hint: '"mga" makes a noun plural.'
+  - id: town-3
+    title: Going places
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pumunta' means..."
+        answer: Went
+        distractors: [Ate, Slept, Bought]
+        audio: pumunta
+      - type: translate
+        prompt_tl: Pumunta ako sa palengke.
+        answer_en: I went to the market.
+        extra_words: [school, church, she]
+        audio: pumunta_ako_sa_palengke
+      - type: translate
+        prompt_en: She went to church.
+        answer_tl: Pumunta siya sa simbahan.
+        extra_words: [ako, palengke, bahay]
+      - type: fill_blank
+        sentence: "Pumunta kami ___ ospital."
+        translation: "We went to the hospital."
+        answer: sa
+        options: [sa, ng, si]
+      - type: listen
+        audio: pumunta_ako_sa_palengke
+        answer_tl: Pumunta ako sa palengke
+        extra_words: [simbahan, siya]
+      - type: translate
+        prompt_tl: Araw-araw pumupunta ako sa paaralan.
+        answer_en: I go to school every day.
+        accept: ["Every day I go to school"]
+        grading: { hyphens: true }
+        extra_words: [went, market, yesterday]
+      - type: fill_blank
+        sentence: "Pumunta siya sa bahay ___ mabilis."
+        translation: "She went home quickly."
+        answer: nang
+        options: [nang, ng, at]
+        grading: { ng_nang: true }
+      - type: match
+        pairs:
+          - { tl: pumunta, en: went }
+          - { tl: nasaan, en: where is }
+          - { tl: sa, en: to/at }
+          - { tl: mabilis, en: fast }
