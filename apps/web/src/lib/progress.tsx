@@ -52,6 +52,10 @@ interface ProgressContextValue {
   adoptAuth: (tokens: AuthTokens) => Promise<void>;
   logout: () => void;
   syncNow: () => Promise<void>;
+  /** unsynced events waiting in the outbox (0 when everything is saved) */
+  pendingCount: number;
+  /** refresh token was rejected: still "logged in" locally but nothing syncs */
+  needsRelogin: boolean;
 }
 
 const ProgressContext = createContext<ProgressContextValue | null>(null);
@@ -61,6 +65,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const [outbox, setOutbox] = useState<ProgressEvent[]>([]);
   const [baseline, setBaseline] = useState<UserProgress | null>(null);
   const [auth, setAuth] = useState<AuthTokens | null>(null);
+  const [needsRelogin, setNeedsRelogin] = useState(false);
   const [tick, setTick] = useState(0); // re-derive hearts as time passes
 
   useEffect(() => {
@@ -86,23 +91,40 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]) => {
-    try {
-      const { progress: serverProgress } = await api.sync(tokens.accessToken, events);
+    // the server caps batches at 500; leftovers flush on the next debounce
+    const batch = events.slice(0, 500);
+    const push = async (t: AuthTokens) => {
+      const { progress: serverProgress } = await api.sync(t.accessToken, batch);
       setBaseline(serverProgress);
       save(KEYS.baseline, serverProgress);
-      setOutbox([]);
-      save(KEYS.outbox, []);
+      // a 200 resolves every sent event (accepted or rejected) — remove only
+      // those ids, never events appended while this request was in flight
+      const sent = new Set(batch.map((e) => e.id));
+      setOutbox((prev) => {
+        const next = prev.filter((e) => !sent.has(e.id));
+        save(KEYS.outbox, next);
+        return next;
+      });
+    };
+    try {
+      await push(tokens);
+      setNeedsRelogin(false);
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
         // access token expired: rotate via refresh token, retry once
-        const fresh = await api.refresh(tokens.refreshToken);
+        let fresh: AuthTokens;
+        try {
+          fresh = await api.refresh(tokens.refreshToken);
+        } catch (refreshErr) {
+          // dead refresh token: the user looks logged in but nothing will
+          // ever sync — surface it instead of failing silently forever
+          if (refreshErr instanceof ApiError && refreshErr.status === 401) setNeedsRelogin(true);
+          throw refreshErr;
+        }
         setAuth(fresh);
         save(KEYS.auth, fresh);
-        const { progress: serverProgress } = await api.sync(fresh.accessToken, events);
-        setBaseline(serverProgress);
-        save(KEYS.baseline, serverProgress);
-        setOutbox([]);
-        save(KEYS.outbox, []);
+        await push(fresh);
+        setNeedsRelogin(false);
       } else {
         throw err; // offline or server down — outbox stays, retried next time
       }
@@ -117,6 +139,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const adoptAuth = useCallback(
     async (tokens: AuthTokens) => {
       setAuth(tokens);
+      setNeedsRelogin(false);
       save(KEYS.auth, tokens);
       // push guest progress made before signup, then adopt server truth
       await syncWith(tokens, outbox).catch(() => {});
@@ -125,6 +148,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   );
 
   const logout = useCallback(() => {
+    setNeedsRelogin(false);
     setAuth(null);
     setBaseline(null);
     setOutbox([]);
@@ -140,9 +164,35 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     return () => clearTimeout(t);
   }, [ready, auth, outbox, syncNow]);
 
+  // keep the server-side tz current: the server buckets streak/xpByDay days
+  // with users.tz, clients with the device zone — they must agree (GAM-02)
+  useEffect(() => {
+    if (!ready || !auth) return;
+    const tz = deviceTz();
+    if (auth.user.tz === tz) return;
+    api
+      .updateMe(auth.accessToken, { tz })
+      .then(({ user }) => {
+        const next = { ...auth, user };
+        setAuth(next);
+        save(KEYS.auth, next);
+      })
+      .catch(() => {}); // best-effort; retried after the next token refresh
+  }, [ready, auth]);
+
   const value = useMemo(
-    () => ({ ready, progress, user: auth?.user ?? null, addEvents, adoptAuth, logout, syncNow }),
-    [ready, progress, auth, addEvents, adoptAuth, logout, syncNow],
+    () => ({
+      ready,
+      progress,
+      user: auth?.user ?? null,
+      addEvents,
+      adoptAuth,
+      logout,
+      syncNow,
+      pendingCount: outbox.length,
+      needsRelogin,
+    }),
+    [ready, progress, auth, addEvents, adoptAuth, logout, syncNow, outbox.length, needsRelogin],
   );
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
@@ -155,7 +205,13 @@ export function useProgress(): ProgressContextValue {
 }
 
 export function newEventId(): string {
+  // crypto.randomUUID needs a secure context (plain-http LAN hosts lack it);
+  // the fallback must still be a well-formed v4 UUID — /sync rejects anything
+  // else, and one bad id would poison the outbox
   return typeof crypto !== "undefined" && crypto.randomUUID
     ? crypto.randomUUID()
-    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (ch) => {
+        const r = (Math.random() * 16) | 0;
+        return (ch === "x" ? r : (r & 0x3) | 0x8).toString(16);
+      });
 }

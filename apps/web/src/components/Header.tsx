@@ -1,30 +1,53 @@
 "use client";
 
 import Link from "next/link";
-import { displayStreak, localDayKey, MAX_HEARTS, regenerate } from "@aral/core";
+import { displayStreak, levelForXp, localDayKey, MAX_HEARTS, regenerate } from "@aral/core";
 import { deviceTz, useProgress } from "@/lib/progress";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
-  const { progress, user, logout, ready } = useProgress();
+  const { progress, user, logout, ready, pendingCount, needsRelogin } = useProgress();
   if (!ready) return <header className="header"><div className="header-inner"><span className="logo">Aral</span></div></header>;
 
   const now = Date.now();
   const hearts = regenerate(progress.hearts, now).hearts;
   const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
+  const level = levelForXp(progress.xpTotal);
 
   return (
     <header className="header">
       <div className="header-inner">
         <Link href="/" className="logo">Aral</Link>
+        <Link href="/words" className="nav-link" title="Phrasebook" aria-label="Phrasebook">
+          📖
+        </Link>
         <div className="stats">
-          <span title="day streak">🔥 {streak}</span>
-          <span title="total XP" style={{ color: "var(--warning)" }}>⚡ {progress.xpTotal}</span>
+          <Link href="/stats" className="level-chip" title="view your stats">Lv {level}</Link>
+          <Link href="/stats" className="stats-link" title="view your stats">
+            <span title="day streak">🔥 {streak}</span>
+            <span title="total XP" style={{ color: "var(--warning-text)" }}>⚡ {progress.xpTotal}</span>
+          </Link>
           <span className="hearts" title="hearts">
             ❤️ {hearts}/{MAX_HEARTS}
           </span>
         </div>
-        {user ? (
-          <button className="btn btn-ghost" onClick={logout}>Log out</button>
+        <ThemeToggle />
+        {user && needsRelogin ? (
+          <Link href="/login" className="btn btn-ghost" style={{ color: "var(--danger)" }}>
+            Session expired — log in
+          </Link>
+        ) : user ? (
+          <>
+            {pendingCount > 0 && (
+              <span
+                className="stat-sub"
+                title={`${pendingCount} change${pendingCount > 1 ? "s" : ""} waiting to sync`}
+              >
+                ⟳ {pendingCount}
+              </span>
+            )}
+            <button className="btn btn-ghost" onClick={logout}>Log out</button>
+          </>
         ) : (
           <Link href="/login" className="btn btn-ghost">Log in</Link>
         )}

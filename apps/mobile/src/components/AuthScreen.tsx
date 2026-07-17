@@ -1,6 +1,6 @@
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { KeyboardAvoidingView, Platform, Pressable, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { api } from "@/lib/api";
 import { deviceTz, useProgress } from "@/lib/progress";
@@ -39,7 +39,8 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
 
   return (
     <SafeAreaView style={styles.screen}>
-      <View style={[styles.card, { margin: spacing.md, gap: spacing.sm }]}>
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined}>
+        <View style={[styles.card, { margin: spacing.md, gap: spacing.sm }]}>
         <Text style={styles.subtitle}>{mode === "register" ? "Create your account" : "Welcome back"}</Text>
         {mode === "register" && (
           <Text style={styles.muted}>Your guest progress carries over automatically.</Text>
@@ -73,8 +74,9 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
               New here? <Link href="/register" style={{ color: colors.accent }}>Create an account</Link>
             </>
           )}
-        </Text>
-      </View>
+          </Text>
+        </View>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }

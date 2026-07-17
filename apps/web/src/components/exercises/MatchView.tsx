@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { gradePair, type MatchPairsExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 
@@ -31,20 +31,32 @@ export function MatchView({
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [matched, setMatched] = useState<Set<string>>(new Set());
   const [wrongFlash, setWrongFlash] = useState<string | null>(null);
+  const [announce, setAnnounce] = useState("");
   const mistakes = useRef(0);
+  const flashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(
+    () => () => {
+      if (flashTimer.current) clearTimeout(flashTimer.current);
+    },
+    [],
+  );
 
   const tryMatch = (right: string) => {
     if (!selectedLeft) return;
     if (gradePair(exercise, selectedLeft, right)) {
-      playAudio(selectedLeft.replace(/\s+/g, "_")); // vocab refs follow this convention when present
+      void playAudio(selectedLeft.replace(/\s+/g, "_")); // vocab refs follow this convention when present
       const next = new Set(matched).add(selectedLeft).add(`r:${right}`);
       setMatched(next);
       setSelectedLeft(null);
+      setAnnounce(`${selectedLeft} matched`);
       if (next.size === exercise.pairs.length * 2) onComplete(mistakes.current);
     } else {
       mistakes.current += 1;
       setWrongFlash(right);
-      setTimeout(() => setWrongFlash(null), 400);
+      setAnnounce("Not a match, try again");
+      if (flashTimer.current) clearTimeout(flashTimer.current);
+      flashTimer.current = setTimeout(() => setWrongFlash(null), 400);
       setSelectedLeft(null);
     }
   };
@@ -52,13 +64,19 @@ export function MatchView({
   return (
     <div>
       <p className="exercise-prompt">Match the pairs</p>
+      <p className="exercise-hint">Pick a Tagalog word on the left, then its match on the right.</p>
       {exercise.hint && <p className="exercise-hint">{exercise.hint}</p>}
+      <p className="sr-only" role="status" aria-live="polite">
+        {announce}
+      </p>
       <div className="pairs-grid">
         <div className="choice-list">
           {lefts.map((left) => (
             <button
               key={left}
               className={`pair-btn ${matched.has(left) ? "matched" : ""} ${selectedLeft === left ? "selected" : ""}`}
+              aria-pressed={selectedLeft === left}
+              disabled={matched.has(left)}
               onClick={() => setSelectedLeft(left === selectedLeft ? null : left)}
             >
               {left}
@@ -70,7 +88,7 @@ export function MatchView({
             <button
               key={right}
               className={`pair-btn ${matched.has(`r:${right}`) ? "matched" : ""} ${wrongFlash === right ? "wrong" : ""}`}
-              disabled={!selectedLeft}
+              disabled={!selectedLeft || matched.has(`r:${right}`)}
               onClick={() => tryMatch(right)}
             >
               {right}

@@ -60,11 +60,13 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]) => {
+    // the server caps batches at 500; leftovers flush on the next debounce
+    const batch = events.slice(0, 500);
     const push = async (t: AuthTokens) => {
-      const { progress: serverProgress } = await api.sync(t.accessToken, events);
+      const { progress: serverProgress } = await api.sync(t.accessToken, batch);
       kvSet("baseline", serverProgress);
       setBaseline(serverProgress);
-      outboxClear(events.map((e) => e.id));
+      outboxClear(batch.map((e) => e.id));
       setOutbox(outboxAll());
     };
     try {
@@ -115,6 +117,22 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     });
     return () => sub.remove();
   }, [syncNow]);
+
+  // keep the server-side tz current: the server buckets streak/xpByDay days
+  // with users.tz, clients with the device zone — they must agree (GAM-02)
+  useEffect(() => {
+    if (!auth) return;
+    const tz = deviceTz();
+    if (auth.user.tz === tz) return;
+    api
+      .updateMe(auth.accessToken, { tz })
+      .then(({ user }) => {
+        const next = { ...auth, user };
+        kvSet("auth", next);
+        setAuth(next);
+      })
+      .catch(() => {}); // best-effort; retried after the next token refresh
+  }, [auth]);
 
   const value = useMemo(
     () => ({

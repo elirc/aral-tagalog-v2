@@ -1,10 +1,10 @@
 import { Link, useRouter } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { displayStreak, localDayKey, MAX_HEARTS, regenerate } from "@aral/core";
+import { displayStreak, levelForXp, localDayKey, MAX_HEARTS, regenerate } from "@aral/core";
 import { getBundle } from "@/lib/content";
 import { deviceTz, useProgress } from "@/lib/progress";
-import { colors, spacing, styles } from "@/theme";
+import { colors, radii, spacing, styles } from "@/theme";
 
 export default function CourseMapScreen() {
   const router = useRouter();
@@ -14,6 +14,7 @@ export default function CourseMapScreen() {
   const now = Date.now();
   const hearts = regenerate(progress.hearts, now).hearts;
   const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
+  const level = levelForXp(progress.xpTotal);
 
   let nextFound = false;
 
@@ -32,12 +33,25 @@ export default function CourseMapScreen() {
         }}
       >
         <Text style={{ fontSize: 22, fontWeight: "800", color: colors.primary }}>Aral</Text>
+        <View
+          style={{
+            backgroundColor: colors.primaryFill,
+            borderRadius: radii.pill,
+            paddingHorizontal: 8,
+            paddingVertical: 2,
+          }}
+        >
+          <Text style={{ color: "#fff", fontWeight: "800", fontSize: 12 }}>Lv {level}</Text>
+        </View>
         <View style={{ flex: 1 }} />
         <Text style={{ fontWeight: "700" }}>🔥 {streak}</Text>
-        <Text style={{ fontWeight: "700", color: colors.warning }}>⚡ {progress.xpTotal}</Text>
+        <Text style={{ fontWeight: "700", color: colors.warningText }}>⚡ {progress.xpTotal}</Text>
         <Text style={{ fontWeight: "700", color: colors.heart }}>
           ❤️ {hearts}/{MAX_HEARTS}
         </Text>
+        <Pressable onPress={() => router.push("/stats")} accessibilityLabel="view stats">
+          <Text style={{ fontSize: 20 }}>📊</Text>
+        </Pressable>
       </View>
 
       <ScrollView contentContainerStyle={styles.container}>
@@ -57,6 +71,21 @@ export default function CourseMapScreen() {
               Unit {ui + 1}: {unit.title}
             </Text>
             {unit.description ? <Text style={[styles.muted, { marginBottom: spacing.sm }]}>{unit.description}</Text> : null}
+            {unit.tip ? (
+              <View
+                style={{
+                  flexDirection: "row",
+                  gap: spacing.sm,
+                  backgroundColor: colors.accentSoft,
+                  borderRadius: radii.md,
+                  padding: spacing.sm,
+                  marginBottom: spacing.sm,
+                }}
+              >
+                <Text>💡</Text>
+                <Text style={[styles.muted, { flex: 1, color: colors.text }]}>{unit.tip}</Text>
+              </View>
+            ) : null}
             {unit.lessons.map((lesson) => {
               const isDone = done.has(lesson.id);
               const isNext = !isDone && !nextFound;
@@ -81,7 +110,7 @@ export default function CourseMapScreen() {
                       borderRadius: 20,
                       alignItems: "center",
                       justifyContent: "center",
-                      backgroundColor: isDone ? colors.warning : isNext ? colors.primary : colors.border,
+                      backgroundColor: isDone ? colors.warning : isNext ? colors.primaryFill : colors.border,
                     }}
                   >
                     <Text style={{ color: "#fff", fontWeight: "800" }}>{isDone ? "★" : isNext ? "▶" : "🔒"}</Text>

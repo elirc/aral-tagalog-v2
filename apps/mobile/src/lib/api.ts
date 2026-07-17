@@ -46,10 +46,16 @@ export const api = {
   refresh: (refreshToken: string) =>
     request<AuthTokens>("/auth/refresh", { method: "POST", body: JSON.stringify({ refreshToken }) }),
   sync: (accessToken: string, events: ProgressEvent[]) =>
-    request<{ accepted: number; progress: UserProgress }>("/sync", {
+    request<{ accepted: number; rejected: string[]; progress: UserProgress }>("/sync", {
       method: "POST",
       headers: { Authorization: `Bearer ${accessToken}` },
       body: JSON.stringify({ events }),
+    }),
+  updateMe: (accessToken: string, patch: { tz?: string; displayName?: string | null }) =>
+    request<{ user: AuthUser }>("/me", {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${accessToken}` },
+      body: JSON.stringify(patch),
     }),
   manifest: () =>
     request<{ courseId: string; version: number; bundle: string; audio: Record<string, string> }>(

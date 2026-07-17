@@ -19,14 +19,15 @@ export const styles = StyleSheet.create({
   muted: { fontSize: font.sizeSm, color: colors.textMuted },
   prompt: { fontSize: font.sizeLg, fontWeight: "700", color: colors.text, marginBottom: spacing.md },
   btnPrimary: {
-    backgroundColor: colors.primary,
+    // primaryFill is the only green ≥4.5:1 under this white label
+    backgroundColor: colors.primaryFill,
     borderRadius: radii.md,
     paddingVertical: 14,
     alignItems: "center",
     borderBottomWidth: 4,
-    borderBottomColor: colors.primaryDark,
+    borderBottomColor: colors.primaryDeep,
   },
-  btnPrimaryDisabled: { backgroundColor: colors.border, borderBottomColor: "#d5d5d5" },
+  btnPrimaryDisabled: { backgroundColor: colors.border, borderBottomColor: colors.borderStrong },
   btnPrimaryText: { color: "#fff", fontWeight: "700", fontSize: font.sizeMd },
   btnGhost: {
     borderWidth: 2,
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: spacing.md,
   },
-  optionSelected: { borderColor: colors.accent, backgroundColor: "#e7f6fd" },
+  optionSelected: { borderColor: colors.accent, backgroundColor: colors.accentSoft },
   optionText: { fontSize: font.sizeMd, fontWeight: "600", color: colors.text },
   chipRow: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
 });

@@ -16,6 +16,7 @@ export function TapsView({
 }) {
   // picked = indices into wordBank, in tap order (indices allow duplicate words)
   const [picked, setPicked] = useState<number[]>([]);
+  const [audioFailed, setAudioFailed] = useState(false);
 
   const update = (next: number[]) => {
     setPicked(next);
@@ -29,9 +30,19 @@ export function TapsView({
       {isListen ? (
         <>
           <p className="exercise-prompt">Tap what you hear</p>
-          <button className="audio-btn" onClick={() => playAudio(exercise.audio)}>
+          <button
+            className="audio-btn"
+            onClick={() => void playAudio(exercise.audio).then((ok) => setAudioFailed(!ok))}
+          >
             🔊 Play
           </button>
+          {audioFailed && (
+            // a listen exercise without audio is unanswerable (and would cost
+            // hearts on every forced guess) — fall back to showing the sentence
+            <p className="exercise-hint" role="status">
+              🔇 Audio unavailable — tap the words for: <strong>{exercise.answer}</strong>
+            </p>
+          )}
         </>
       ) : (
         <p className="exercise-prompt">
@@ -63,6 +74,7 @@ export function TapsView({
           <button
             key={i}
             className={`word-chip ${picked.includes(i) ? "used" : ""}`}
+            aria-pressed={picked.includes(i)}
             disabled={disabled || picked.includes(i)}
             onClick={() => update([...picked, i])}
           >

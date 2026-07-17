@@ -8,10 +8,13 @@ export function FillBlankView({
   exercise,
   onAnswerChange,
   disabled,
+  onSubmit,
 }: {
   exercise: FillBlankExercise;
   onAnswerChange: (answer: string | null) => void;
   disabled: boolean;
+  /** invoked on Enter in the free-text input, so typing flows straight to Check */
+  onSubmit?: () => void;
 }) {
   const [value, setValue] = useState<string>("");
   const [before, after] = exercise.sentence.split("___");
@@ -30,7 +33,10 @@ export function FillBlankView({
           </button>
         )}
         {before}
-        <span style={{ borderBottom: "3px solid var(--accent)", minWidth: 60, display: "inline-block", textAlign: "center" }}>
+        <span
+          aria-hidden
+          style={{ borderBottom: "3px solid var(--accent)", minWidth: 60, display: "inline-block", textAlign: "center" }}
+        >
           {value || "    "}
         </span>
         {after}
@@ -44,6 +50,7 @@ export function FillBlankView({
             <button
               key={opt}
               className={`word-chip ${value === opt ? "selected choice-btn" : ""}`}
+              aria-pressed={value === opt}
               disabled={disabled}
               onClick={() => update(opt)}
             >
@@ -57,7 +64,11 @@ export function FillBlankView({
           value={value}
           disabled={disabled}
           placeholder="Type the missing word"
+          aria-label="the missing word"
           onChange={(e) => update(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && value.trim() && !disabled) onSubmit?.();
+          }}
         />
       )}
     </div>
