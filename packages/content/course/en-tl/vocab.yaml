@@ -1020,3 +1020,255 @@
   translation: congratulations / I congratulate you
   audio: binabati_kita
   notes: From "bati" (greeting) — used for weddings, graduations and good news.
+
+# Unit 16 — Colors & Clothing
+- id: kulay
+  lemma: kulay
+  translation: color
+  audio: kulay
+  notes: '"Anong kulay?" = What color?'
+- id: pula
+  lemma: pula
+  translation: red
+  audio: pula
+- id: puti
+  lemma: puti
+  translation: white
+  audio: puti
+- id: itim
+  lemma: itim
+  translation: black
+  audio: itim
+- id: asul
+  lemma: asul
+  translation: blue
+  audio: asul
+  notes: From Spanish "azul".
+- id: dilaw
+  lemma: dilaw
+  translation: yellow
+  audio: dilaw
+- id: berde
+  lemma: berde
+  translation: green
+  audio: berde
+  notes: From Spanish "verde"; the native word "luntian" is more formal.
+- id: kahel
+  lemma: kahel
+  translation: orange
+  audio: kahel
+  notes: Also the orange fruit.
+- id: rosas
+  lemma: rosas
+  translation: pink
+  audio: rosas
+  notes: Also means rose, the flower.
+- id: damit
+  lemma: damit
+  translation: clothes / clothing
+  audio: damit
+  notes: The general word for clothes; also a single garment.
+- id: sapatos
+  lemma: sapatos
+  translation: shoes
+  audio: sapatos
+- id: sombrero
+  lemma: sombrero
+  translation: hat
+  audio: sombrero
+- id: medyas
+  lemma: medyas
+  translation: socks
+  audio: medyas
+  notes: From Spanish "medias".
+- id: pantalon
+  lemma: pantalon
+  translation: pants / trousers
+  audio: pantalon
+  notes: From Spanish "pantalón".
+- id: palda
+  lemma: palda
+  translation: skirt
+  audio: palda
+  notes: From Spanish "falda".
+- id: bestida
+  lemma: bestida
+  translation: dress
+  audio: bestida
+  notes: From Spanish "vestido".
+- id: kamiseta
+  lemma: kamiseta
+  translation: shirt / T-shirt
+  audio: kamiseta
+  notes: The everyday word for a shirt or T-shirt.
+- id: suot
+  lemma: suot
+  translation: worn / to wear
+  audio: suot
+  notes: '"Ano ang suot mo?" = What are you wearing?'
+- id: nakasuot
+  lemma: nakasuot
+  translation: wearing
+  audio: nakasuot
+  notes: 'naka- means "in the state of". "Nakasuot siya ng pulang damit." = She is wearing a red dress.'
+
+# Unit 17 — Animals
+- id: hayop
+  lemma: hayop
+  translation: animal
+  audio: hayop
+- id: aso
+  lemma: aso
+  translation: dog
+  audio: aso
+- id: pusa
+  lemma: pusa
+  translation: cat
+  audio: pusa
+- id: ibon
+  lemma: ibon
+  translation: bird
+  audio: ibon
+- id: kalabaw
+  lemma: kalabaw
+  translation: carabao / water buffalo
+  audio: kalabaw
+  notes: The national animal — the strong, patient work animal of the rice fields.
+- id: kabayo
+  lemma: kabayo
+  translation: horse
+  audio: kabayo
+- id: baka
+  lemma: baka
+  translation: cow
+  audio: baka
+- id: baboy
+  lemma: baboy
+  translation: pig
+  audio: baboy
+  notes: Also the meat, pork — many rural families raise one in the backyard.
+- id: kambing
+  lemma: kambing
+  translation: goat
+  audio: kambing
+- id: daga
+  lemma: daga
+  translation: rat / mouse
+  audio: daga
+  notes: One word for both; do not confuse with "dagat" (sea).
+- id: alaga
+  lemma: alaga
+  translation: pet / someone cared for
+  audio: alaga
+  notes: 'Anyone or anything you look after; takes a linker: "alagang aso" = pet dog.'
+- id: mabagal
+  lemma: mabagal
+  translation: slow
+  audio: mabagal
+  notes: The opposite of "mabilis" (fast).
+- id: buntot
+  lemma: buntot
+  translation: tail
+  audio: buntot
+- id: pakpak
+  lemma: pakpak
+  translation: wing / wings
+  audio: pakpak
+- id: tumatahol
+  lemma: tumatahol
+  translation: barking / barks
+  audio: tumatahol
+  notes: What a dog does; from "tahol" (a bark).
+- id: lumilipad
+  lemma: lumilipad
+  translation: flying / flies
+  audio: lumilipad
+  notes: Present/habitual of "lumipad" (flew). Actor focus.
+
+# Unit 18 — Hobbies & Free Time
+- id: libangan
+  lemma: libangan
+  translation: hobby / pastime
+  audio: libangan
+  notes: From "libang" (to amuse oneself). "Ano ang libangan mo?" = What's your hobby?
+- id: hilig
+  lemma: hilig
+  translation: interest / hobby
+  audio: hilig
+  notes: What you are into. "Ano ang hilig mo?" = What are you into?
+- id: laro
+  lemma: laro
+  translation: game
+  audio: laro
+- id: maglaro
+  lemma: maglaro
+  translation: to play
+  audio: maglaro
+  notes: The infinitive; "naglalaro" is the present (playing now).
+- id: naglalaro
+  lemma: naglalaro
+  translation: playing / plays
+  audio: naglalaro
+- id: basketbol
+  lemma: basketbol
+  translation: basketball
+  audio: basketbol
+  notes: The Philippines' most popular sport — a court stands in nearly every barangay.
+- id: kumanta
+  lemma: kumanta
+  translation: to sing / sang
+  audio: kumanta
+  notes: In -um- verbs the infinitive and past look alike; "kumakanta" = singing now.
+- id: kumakanta
+  lemma: kumakanta
+  translation: singing / sings
+  audio: kumakanta
+- id: kanta
+  lemma: kanta
+  translation: song
+  audio: kanta
+- id: sumayaw
+  lemma: sumayaw
+  translation: to dance / danced
+  audio: sumayaw
+  notes: A -um- verb; "sumasayaw" = dancing now.
+- id: sumasayaw
+  lemma: sumasayaw
+  translation: dancing / dances
+  audio: sumasayaw
+- id: manood
+  lemma: manood
+  translation: to watch
+  audio: manood
+  notes: The infinitive; "nanonood" = watching now.
+- id: nanonood
+  lemma: nanonood
+  translation: watching / watches
+  audio: nanonood
+- id: magbasa
+  lemma: magbasa
+  translation: to read
+  audio: magbasa
+  notes: The infinitive of "nagbabasa" (reading).
+- id: musika
+  lemma: musika
+  translation: music
+  audio: musika
+- id: videoke
+  lemma: videoke
+  translation: videoke / karaoke
+  audio: videoke
+  notes: Karaoke with a scoring machine — a fixture at nearly every Filipino party.
+- id: pelikula
+  lemma: pelikula
+  translation: movie / film
+  audio: pelikula
+- id: gitara
+  lemma: gitara
+  translation: guitar
+  audio: gitara
+- id: paborito
+  lemma: paborito
+  translation: favorite
+  audio: paborito
+  notes: From Spanish "favorito". Takes -ng before a noun — "paborito kong laro".

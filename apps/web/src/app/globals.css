@@ -124,6 +124,21 @@ button {
   text-decoration: none;
 }
 
+/* keep each stat (icon + number) on one line — they wrap vertically otherwise */
+.stats span, .stats a { white-space: nowrap; }
+.header .btn { white-space: nowrap; }
+
+/* phone widths: the default paddings/gaps overflow a 390px header */
+@media (max-width: 480px) {
+  .header-inner { gap: 8px; padding: 8px 10px; }
+  .logo { font-size: 19px; }
+  .stats { gap: 8px; font-size: 14px; }
+  .stats-link { gap: 8px; }
+  .level-chip { font-size: 12px; padding: 2px 8px; }
+  .header .btn { padding: 8px 12px; font-size: 14px; }
+  .theme-toggle { padding: 5px 7px; font-size: 13px; }
+}
+
 /* --- buttons --- */
 .btn {
   display: inline-block;

@@ -1,0 +1,207 @@
+id: hobbies
+title: Hobbies & Free Time
+description: Say what you like to do in your free time — play, sing, dance, and watch.
+tip: >-
+  "Gusto ko" means "I like / I want"; add a verb and it takes the -ng linker:
+  "Gusto kong kumanta" — I want to sing. Filipinos sing anywhere — the videoke
+  machine is a fixture at every party.
+lessons:
+  - id: hobbies-1
+    title: Hobbies and games
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: laro, en: game }
+          - { tl: maglaro, en: to play }
+          - { tl: libangan, en: hobby }
+          - { tl: basketbol, en: basketball }
+      - type: choice
+        prompt: "'Libangan' means..."
+        answer: Hobby
+        distractors: [Game, Sport, Music]
+        audio: libangan
+        audio_text: Libangan
+      - type: translate
+        prompt_tl: Naglalaro sila ng basketbol.
+        answer_en: They are playing basketball.
+        accept: ["They play basketball"]
+        extra_words: [singing, music, watching]
+      - type: translate
+        prompt_en: I am playing.
+        answer_tl: Naglalaro ako.
+        extra_words: [kumakanta, laro, siya]
+      - type: fill_blank
+        sentence: "Naglalaro sila ng ___."
+        translation: "They are playing basketball."
+        answer: basketbol
+        options: [basketbol, musika, laro]
+      - type: listen
+        audio: naglalaro_sila_ng_basketbol
+        answer_tl: Naglalaro sila ng basketbol
+        extra_words: [kumakanta, musika]
+      - type: choice
+        prompt: "'Maglaro' means..."
+        answer: To play
+        distractors: [To sing, To watch, To read]
+        audio: maglaro
+        audio_text: Maglaro
+      - type: translate
+        prompt_tl: Ano ang hilig mo?
+        answer_en: What are you into?
+        accept: ["What is your hobby?", "What are your hobbies?", "What do you like?"]
+        extra_words: [where, who, game]
+        hint: '"hilig" is what you are into — your interest or hobby.'
+  - id: hobbies-2
+    title: Music and dancing
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumakanta, en: singing }
+          - { tl: sumasayaw, en: dancing }
+          - { tl: kanta, en: song }
+          - { tl: musika, en: music }
+      - type: choice
+        prompt: "'Kumakanta' means..."
+        answer: Singing (sings)
+        distractors: [Dancing, Playing, Watching]
+        audio: kumakanta
+        audio_text: Kumakanta
+      - type: translate
+        prompt_tl: Kumakanta siya sa videoke.
+        answer_en: She is singing at the videoke.
+        accept: ["He is singing at the videoke"]
+        extra_words: [dancing, playing, music]
+      - type: translate
+        prompt_en: They are dancing.
+        answer_tl: Sumasayaw sila.
+        extra_words: [kumakanta, musika, ako]
+      - type: fill_blank
+        sentence: "___ ako ng kanta."
+        translation: "I am singing a song."
+        answer: Kumakanta
+        options: [Kumakanta, Sumasayaw, Naglalaro]
+      - type: choice
+        prompt: "'Gitara' means..."
+        answer: Guitar
+        distractors: [Song, Music, Movie]
+        audio: gitara
+        audio_text: Gitara
+      - type: listen
+        audio: kumakanta_siya
+        answer_tl: Kumakanta siya
+        extra_words: [sumasayaw, kanta]
+      - type: translate
+        prompt_tl: Sumasayaw at kumakanta kami.
+        answer_en: We are dancing and singing.
+        accept: ["We dance and sing", "We are singing and dancing"]
+        extra_words: [playing, watching, they]
+      - type: choice
+        prompt: "Filipinos love to sing at a..."
+        answer: Videoke
+        distractors: [Basketbol, Palengke, Ospital]
+        audio: videoke
+        audio_text: Videoke
+  - id: hobbies-3
+    title: Gusto kong...
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Gusto kong kumanta' means..."
+        answer: I want to sing
+        distractors: [I am singing, I sang, Do you want to sing?]
+        audio: gusto_kong_kumanta
+        audio_text: Gusto kong kumanta.
+      - type: translate
+        prompt_tl: Gusto kong maglaro ng basketbol.
+        answer_en: I want to play basketball.
+        accept: ["I like to play basketball"]
+        extra_words: [sing, watch, read]
+      - type: translate
+        prompt_en: I like to sing.
+        answer_tl: Gusto kong kumanta.
+        extra_words: [sumayaw, maglaro, siya]
+        hint: '"gusto ko" + a verb takes the -ng linker → "gusto kong".'
+      - type: fill_blank
+        sentence: "Gusto ___ sumayaw."
+        translation: "I want to dance."
+        answer: kong
+        options: [kong, ko, ang]
+        hint: 'Before a verb, "gusto ko" becomes "gusto kong".'
+      - type: choice
+        prompt: "'Manood' means..."
+        answer: To watch
+        distractors: [To play, To sing, To read]
+        audio: manood
+        audio_text: Manood
+      - type: translate
+        prompt_tl: Gusto niyang manood ng pelikula.
+        answer_en: She wants to watch a movie.
+        accept: ["He wants to watch a movie", "She likes to watch a movie", "He likes to watch a movie"]
+        extra_words: [read, sing, game]
+      - type: listen
+        audio: gusto_kong_magbasa
+        answer_tl: Gusto kong magbasa
+        extra_words: [kumanta, sumayaw]
+      - type: fill_blank
+        sentence: "Gusto ___ maglaro."
+        translation: "They want to play."
+        answer: nilang
+        options: [nilang, nila, mong]
+        hint: '"gusto nila" + a verb → "gusto nilang".'
+      - type: translate
+        prompt_en: We want to watch a movie.
+        answer_tl: Gusto naming manood ng pelikula.
+        extra_words: [kumanta, magbasa, ako]
+        hint: '"gusto namin" + a verb → "gusto naming".'
+  - id: hobbies-4
+    title: My free time
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: manood, en: to watch }
+          - { tl: magbasa, en: to read }
+          - { tl: kumanta, en: to sing }
+          - { tl: sumayaw, en: to dance }
+      - type: choice
+        prompt: "'Paborito' means..."
+        answer: Favorite
+        distractors: [Hobby, Sport, Game]
+        audio: paborito
+        audio_text: Paborito
+      - type: translate
+        prompt_tl: Ano ang paborito mong libangan?
+        answer_en: What is your favorite hobby?
+        extra_words: [song, movie, sport]
+      - type: translate
+        prompt_en: Basketball is my favorite hobby.
+        answer_tl: Basketbol ang paborito kong libangan.
+        extra_words: [kanta, pelikula, gusto]
+      - type: fill_blank
+        sentence: "Gusto kong ___ ng libro."
+        translation: "I like to read a book."
+        answer: magbasa
+        options: [magbasa, manood, maglaro]
+      - type: listen
+        audio: gusto_niyang_sumayaw
+        answer_tl: Gusto niyang sumayaw
+        extra_words: [kumanta, maglaro]
+      - type: translate
+        prompt_tl: Nanonood kami ng pelikula sa bahay.
+        answer_en: We are watching a movie at home.
+        accept: ["We watch a movie at home"]
+        extra_words: [playing, singing, school]
+      - type: choice
+        prompt: "You want to invite a friend to sing. Say:"
+        answer: Gusto mo bang kumanta?
+        distractors: [Kumanta ka na, Ayaw kong kumanta, Sumasayaw siya]
+        audio: gusto_mo_bang_kumanta
+        audio_text: Gusto mo bang kumanta?
+      - type: match
+        pairs:
+          - { tl: naglalaro, en: playing }
+          - { tl: kumakanta, en: singing }
+          - { tl: sumasayaw, en: dancing }
+          - { tl: nanonood, en: watching }

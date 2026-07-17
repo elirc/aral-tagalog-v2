@@ -1,0 +1,209 @@
+id: colors-clothes
+title: Colors & Clothing
+description: Name colors, talk about clothes, and describe what people are wearing.
+tip: >-
+  A color before a noun needs a linker. After a vowel, add -ng: "pulang damit"
+  (red clothes), "puting sapatos" (white shoes). After a consonant, use "na":
+  "asul na sapatos" (blue shoes), "itim na pantalon" (black pants). As the
+  predicate, drop the linker: "Pula ang damit." — The clothes are red.
+lessons:
+  - id: colors-1
+    title: Colors
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pula, en: red }
+          - { tl: puti, en: white }
+          - { tl: itim, en: black }
+          - { tl: asul, en: blue }
+      - type: choice
+        prompt: "'Dilaw' means..."
+        answer: Yellow
+        distractors: [Green, Red, White]
+        audio: dilaw
+        audio_text: Dilaw
+      - type: choice
+        prompt: "'Berde' means..."
+        answer: Green
+        distractors: [Blue, Yellow, Black]
+        audio: berde
+        audio_text: Berde
+      - type: translate
+        prompt_tl: Anong kulay ito?
+        answer_en: What color is this?
+        extra_words: [where, who, how]
+        audio: anong_kulay_ito
+      - type: listen
+        audio: pula
+        answer_tl: Pula
+        extra_words: [puti, itim]
+      - type: translate
+        prompt_en: The flower is red.
+        answer_tl: Pula ang bulaklak.
+        extra_words: [puti, dilaw, langit]
+      - type: fill_blank
+        sentence: "Anong ___ ito?"
+        translation: "What color is this?"
+        answer: kulay
+        options: [kulay, pula, itim]
+      - type: choice
+        prompt: "'Puti' means..."
+        answer: White
+        distractors: [Black, Blue, Yellow]
+        audio: puti
+        audio_text: Puti
+      - type: translate
+        prompt_tl: Asul ang langit.
+        answer_en: The sky is blue.
+        extra_words: [green, black, sea]
+  - id: colors-2
+    title: Clothes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: damit, en: clothes }
+          - { tl: sapatos, en: shoes }
+          - { tl: sombrero, en: hat }
+          - { tl: medyas, en: socks }
+      - type: choice
+        prompt: "'Pantalon' means..."
+        answer: Pants
+        distractors: [Shirt, Shoes, Hat]
+        audio: pantalon
+        audio_text: Pantalon
+      - type: translate
+        prompt_tl: Maganda ang damit mo.
+        answer_en: Your clothes are beautiful.
+        accept: ["Your dress is beautiful"]
+        extra_words: [shoes, hat, socks]
+      - type: fill_blank
+        sentence: "Ano ang ___ mo?"
+        translation: "What are you wearing?"
+        answer: suot
+        options: [suot, damit, kulay]
+      - type: choice
+        prompt: "'Ano ang suot mo?' means..."
+        answer: What are you wearing?
+        distractors: [What is your name?, Where are your clothes?, What color is it?]
+        audio: ano_ang_suot_mo
+        audio_text: Ano ang suot mo?
+      - type: listen
+        audio: sapatos
+        answer_tl: Sapatos
+        extra_words: [medyas, damit]
+      - type: translate
+        prompt_en: The shoes are expensive.
+        answer_tl: Mahal ang sapatos.
+        extra_words: [mura, damit, medyas]
+      - type: translate
+        prompt_tl: Suot ko ang sombrero.
+        answer_en: I am wearing the hat.
+        extra_words: [shoes, socks, pants]
+      - type: choice
+        prompt: "'Medyas' means..."
+        answer: Socks
+        distractors: [Shoes, Hat, Pants]
+        audio: medyas
+        audio_text: Medyas
+  - id: colors-3
+    title: Describing clothes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pulang damit, en: red dress }
+          - { tl: puting sapatos, en: white shoes }
+          - { tl: itim na pantalon, en: black pants }
+          - { tl: asul na sombrero, en: blue hat }
+      - type: choice
+        prompt: "How do you say 'red shoes'?"
+        answer: Pulang sapatos
+        distractors: [Pula sapatos, Sapatos pula, Pula na sapatos]
+        audio: pulang_sapatos
+        audio_text: Pulang sapatos
+      - type: choice
+        prompt: "How do you say 'blue socks'?"
+        answer: Asul na medyas
+        distractors: [Asulng medyas, Asul medyas, Asuling medyas]
+        audio: asul_na_medyas
+        audio_text: Asul na medyas
+      - type: translate
+        prompt_tl: Maganda ang berdeng bestida.
+        answer_en: The green dress is beautiful.
+        extra_words: [black, shoes, red]
+      - type: fill_blank
+        sentence: "Gusto ko ng ___ damit."
+        translation: "I want a red dress."
+        answer: pulang
+        options: [pulang, pula, pula na]
+      - type: listen
+        audio: itim_na_pantalon
+        answer_tl: Itim na pantalon
+        extra_words: [asul, puti]
+      - type: translate
+        prompt_en: I have white socks.
+        answer_tl: May puting medyas ako.
+        extra_words: [pula, sapatos, wala]
+      - type: fill_blank
+        sentence: "Gusto niya ang asul ___ sapatos."
+        translation: "She likes the blue shoes."
+        answer: na
+        options: [na, ng, ang]
+      - type: choice
+        prompt: "'Dilaw na bestida' means..."
+        answer: Yellow dress
+        distractors: [Green dress, Yellow shoes, Yellow hat]
+        audio: dilaw_na_bestida
+        audio_text: Dilaw na bestida
+  - id: colors-4
+    title: What are you wearing?
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: rosas, en: pink }
+          - { tl: kahel, en: orange }
+          - { tl: palda, en: skirt }
+          - { tl: kamiseta, en: shirt }
+      - type: choice
+        prompt: "'Nakasuot' means..."
+        answer: Wearing
+        distractors: [Buying, Washing, Cooking]
+        audio: nakasuot
+        audio_text: Nakasuot
+      - type: translate
+        prompt_tl: Nakasuot siya ng pulang damit.
+        answer_en: She is wearing a red dress.
+        accept: ["He is wearing a red dress"]
+        extra_words: [white, shoes, hat]
+        audio: nakasuot_siya_ng_pulang_damit
+      - type: fill_blank
+        sentence: "___ ako ng puting kamiseta."
+        translation: "I am wearing a white shirt."
+        answer: Nakasuot
+        options: [Nakasuot, Gusto, May]
+      - type: choice
+        prompt: "Ask someone what they are wearing:"
+        answer: Ano ang suot mo?
+        distractors: [Anong kulay ito?, Nasaan ka?, Magkano ito?]
+        audio: ano_ang_suot_mo
+        audio_text: Ano ang suot mo?
+      - type: listen
+        audio: rosas_na_palda
+        answer_tl: Rosas na palda
+        extra_words: [pula, bestida]
+      - type: translate
+        prompt_en: He is wearing black shoes.
+        answer_tl: Nakasuot siya ng itim na sapatos.
+        extra_words: [pula, damit, medyas]
+      - type: fill_blank
+        sentence: "Nakasuot ang babae ng ___ na sombrero."
+        translation: "The woman is wearing a yellow hat."
+        answer: dilaw
+        options: [dilaw, berde, itim]
+      - type: translate
+        prompt_tl: Anong kulay ang bestida mo?
+        answer_en: What color is your dress?
+        extra_words: [where, shoes, who]

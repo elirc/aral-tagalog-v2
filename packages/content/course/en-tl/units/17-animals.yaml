@@ -1,0 +1,193 @@
+id: animals
+title: Animals
+description: Name common animals and pets, describe them, and say which ones you have.
+tip: >-
+  An "alaga" is anything — or anyone — you look after; for an animal it means a
+  pet. Reuse "may" from before and add the "-ng" linker: "May alagang aso ako."
+  = I have a pet dog. Say "Wala akong alaga." when you have none.
+lessons:
+  - id: animals-1
+    title: Pets and animals
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: aso, en: dog }
+          - { tl: pusa, en: cat }
+          - { tl: ibon, en: bird }
+          - { tl: hayop, en: animal }
+      - type: choice
+        prompt: "'Aso' means..."
+        answer: Dog
+        distractors: [Cat, Bird, Pig]
+        audio: aso
+        audio_text: Aso.
+      - type: choice
+        prompt: "'Pusa' means..."
+        answer: Cat
+        distractors: [Dog, Goat, Fish]
+        audio: pusa
+        audio_text: Pusa.
+      - type: translate
+        prompt_tl: Ito ang aso ko.
+        answer_en: This is my dog.
+        extra_words: [cat, bird, my]
+      - type: fill_blank
+        sentence: "May ___ ako sa bahay."
+        translation: "I have a cat at home."
+        answer: pusa
+        options: [pusa, isda, ibon]
+      - type: listen
+        audio: aso
+        answer_tl: Aso
+        extra_words: [pusa, ibon]
+      - type: choice
+        prompt: "'Hayop' means..."
+        answer: Animal
+        distractors: [Pet, Bird, Fish]
+        audio: hayop
+        audio_text: Hayop.
+      - type: translate
+        prompt_en: The cat is beautiful.
+        answer_tl: Maganda ang pusa.
+        extra_words: [aso, malaki, ito]
+  - id: animals-2
+    title: Describing animals
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kalabaw, en: carabao }
+          - { tl: kabayo, en: horse }
+          - { tl: daga, en: rat }
+          - { tl: mabagal, en: slow }
+      - type: choice
+        prompt: "'Kalabaw' means..."
+        answer: Carabao
+        distractors: [Horse, Cow, Goat]
+        audio: kalabaw
+        audio_text: Kalabaw.
+      - type: translate
+        prompt_tl: Malaki ang kalabaw.
+        answer_en: The carabao is big.
+        extra_words: [small, fast, cat]
+      - type: translate
+        prompt_en: The horse is fast.
+        answer_tl: Mabilis ang kabayo.
+        extra_words: [mabagal, aso, malaki]
+      - type: fill_blank
+        sentence: "___ ang daga."
+        translation: "The rat is small."
+        answer: Maliit
+        options: [Maliit, Malaki, Mabilis]
+      - type: choice
+        prompt: "How do you say a dog is fast?"
+        answer: Mabilis ang aso
+        distractors: [Mabagal ang aso, Malaki ang aso, Maliit ang aso]
+        audio: mabilis_ang_aso
+        audio_text: Mabilis ang aso.
+      - type: listen
+        audio: mabagal_ang_kalabaw
+        answer_tl: Mabagal ang kalabaw
+        extra_words: [mabilis, kabayo]
+      - type: translate
+        prompt_tl: Malakas ang kalabaw.
+        answer_en: The carabao is strong.
+        accept: ["The water buffalo is strong"]
+        extra_words: [fast, slow, small]
+  - id: animals-3
+    title: I have a pet
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Alaga' means..."
+        answer: Pet
+        distractors: [Animal, Wild, Farm]
+        audio: alaga
+        audio_text: Alaga.
+      - type: match
+        pairs:
+          - { tl: may, en: have }
+          - { tl: wala, en: don't have }
+          - { tl: alaga, en: pet }
+          - { tl: ilan, en: how many }
+      - type: translate
+        prompt_en: I have a pet dog.
+        answer_tl: May alagang aso ako.
+        extra_words: [pusa, wala, si]
+        hint: '"alaga" takes a "-ng" linker before the animal.'
+      - type: translate
+        prompt_tl: Wala akong pusa.
+        answer_en: I don't have a cat.
+        accept: ["I have no cat"]
+        extra_words: [dog, bird, have]
+      - type: fill_blank
+        sentence: "___ alaga ka ba?"
+        translation: "Do you have a pet?"
+        answer: May
+        options: [May, Wala, Sino]
+        hint: '"May ... ka ba?" asks if you have something.'
+      - type: listen
+        audio: may_alagang_pusa_ako
+        answer_tl: May alagang pusa ako
+        extra_words: [aso, wala]
+      - type: choice
+        prompt: "How do you say you DON'T have a bird?"
+        answer: Wala akong ibon
+        distractors: [May ibon ako, Ibon ko ito, Wala si ibon]
+        audio: wala_akong_ibon
+        audio_text: Wala akong ibon.
+      - type: translate
+        prompt_tl: Ilan ang alaga mo?
+        answer_en: How many pets do you have?
+        extra_words: [who, where, dog]
+  - id: animals-4
+    title: On the farm
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: baboy, en: pig }
+          - { tl: kambing, en: goat }
+          - { tl: baka, en: cow }
+          - { tl: manok, en: chicken }
+      - type: choice
+        prompt: "'Baboy' means..."
+        answer: Pig
+        distractors: [Goat, Cow, Carabao]
+        audio: baboy
+        audio_text: Baboy.
+      - type: translate
+        prompt_tl: Kumakain ang baboy.
+        answer_en: The pig is eating.
+        extra_words: [drinking, cow, goat]
+      - type: fill_blank
+        sentence: "May ___ ang ibon."
+        translation: "The bird has wings."
+        answer: pakpak
+        options: [pakpak, buntot, alaga]
+      - type: translate
+        prompt_en: The cat has a tail.
+        answer_tl: May buntot ang pusa.
+        extra_words: [pakpak, ibon, wala]
+      - type: listen
+        audio: tumatahol_ang_aso
+        answer_tl: Tumatahol ang aso
+        extra_words: [lumilipad, ibon]
+      - type: choice
+        prompt: "'Lumilipad ang ibon' means..."
+        answer: The bird is flying
+        distractors: [The bird is eating, The bird is sleeping, The dog is barking]
+        audio: lumilipad_ang_ibon
+        audio_text: Lumilipad ang ibon.
+      - type: match
+        pairs:
+          - { tl: kalabaw, en: carabao }
+          - { tl: kabayo, en: horse }
+          - { tl: buntot, en: tail }
+          - { tl: pakpak, en: wings }
+      - type: translate
+        prompt_tl: May alagang kambing kami.
+        answer_en: We have a pet goat.
+        accept: ["We have a goat as a pet"]
+        extra_words: [dog, pig, sky]
