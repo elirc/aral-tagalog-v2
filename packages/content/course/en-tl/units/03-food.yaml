@@ -1,6 +1,9 @@
 id: food
 title: Food
 description: Order, eat, and say it's delicious.
+tip: >-
+  "Gusto ko ng kape" — gusto (want/like) takes ng before the thing you
+  want. Masarap (delicious) is the word you'll use most at the table.
 lessons:
   - id: food-1
     title: At the table
@@ -60,6 +63,7 @@ lessons:
         answer: I don't like milk
         distractors: [I like milk, I drink milk, More milk please]
         audio: ayaw_ko_ng_gatas
+        audio_text: Ayaw ko ng gatas.
       - type: fill_blank
         sentence: "___ ko ng tubig."
         translation: "I want water."

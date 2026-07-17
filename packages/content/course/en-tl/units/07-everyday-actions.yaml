@@ -1,0 +1,188 @@
+id: everyday-actions
+title: Everyday Actions
+description: Say what people are doing with everyday -um- and mag- verbs.
+tip: >-
+  Verbs change by focus and aspect, not tense: kumakain (eating now),
+  kumain (ate), kakain (will eat). Spot the pattern: -um- plus repetition.
+lessons:
+  - id: everyday-1
+    title: Eating and drinking
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumakain, en: eating }
+          - { tl: umiinom, en: drinking }
+          - { tl: kumain, en: ate }
+          - { tl: uminom, en: drank }
+      - type: choice
+        prompt: "'Kumakain' means..."
+        answer: Eating (eats)
+        distractors: [Ate, Drinking, Cooking]
+        audio: kumakain
+      - type: translate
+        prompt_tl: Kumakain ako ng kanin.
+        answer_en: I am eating rice.
+        accept: ["I eat rice"]
+        extra_words: [drinking, water, bread]
+        audio: kumakain_ako_ng_kanin
+      - type: translate
+        prompt_en: She is drinking coffee.
+        answer_tl: Umiinom siya ng kape.
+        extra_words: [kumakain, tubig, ako]
+      - type: fill_blank
+        sentence: "___ ako ng tubig."
+        translation: "I am drinking water."
+        answer: Umiinom
+        options: [Umiinom, Kumakain, Uminom]
+      - type: listen
+        audio: umiinom_siya_ng_kape
+        answer_tl: Umiinom siya ng kape
+        extra_words: [kumakain, tubig]
+      - type: choice
+        prompt: "Past is 'kumain'. What is the present ('eats')?"
+        answer: Kumakain
+        distractors: [Uminom, Kumain, Kakain]
+      - type: translate
+        prompt_tl: Kumakain kami ng isda.
+        answer_en: We are eating fish.
+        extra_words: [drinking, chicken, they]
+  - id: everyday-2
+    title: Study, work, walk
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nag-aaral, en: studying }
+          - { tl: nagtatrabaho, en: working }
+          - { tl: naglalakad, en: walking }
+          - { tl: trabaho, en: work }
+      - type: choice
+        prompt: "'Nag-aaral' means..."
+        answer: Studying
+        distractors: [Working, Walking, Sleeping]
+        audio: nag_aaral
+      - type: translate
+        prompt_tl: Nag-aaral ako ng Tagalog.
+        answer_en: I am studying Tagalog.
+        extra_words: [working, walking, coffee]
+        grading: { hyphens: true }
+        audio: nag_aaral_ako_ng_tagalog
+      - type: translate
+        prompt_en: My dad is working.
+        answer_tl: Nagtatrabaho ang tatay ko.
+        extra_words: [nanay, naglalakad, ako]
+      - type: fill_blank
+        sentence: "___ ako sa paaralan."
+        translation: "I am walking to school."
+        answer: Naglalakad
+        options: [Naglalakad, Nagtatrabaho, Nag-aaral]
+      - type: listen
+        audio: nagtatrabaho
+        answer_tl: Nagtatrabaho
+        extra_words: [naglalakad, nag-aaral]
+      - type: choice
+        prompt: "Where do you 'nag-aaral'?"
+        answer: Sa paaralan
+        distractors: [Sa palengke, Sa ospital, Sa simbahan]
+        hint: '"sa paaralan" = at school'
+      - type: translate
+        prompt_tl: Naglalakad kami araw-araw.
+        answer_en: We walk every day.
+        accept: ["We walk everyday"]
+        extra_words: [studying, working, yesterday]
+        grading: { hyphens: true }
+  - id: everyday-3
+    title: At home
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: natutulog, en: sleeping }
+          - { tl: nagluluto, en: cooking }
+          - { tl: nagbabasa, en: reading }
+          - { tl: libro, en: book }
+      - type: choice
+        prompt: "'Natutulog' means..."
+        answer: Sleeping
+        distractors: [Eating, Reading, Cooking]
+        audio: natutulog
+      - type: translate
+        prompt_tl: Natutulog ang anak ko.
+        answer_en: My child is sleeping.
+        extra_words: [eating, reading, mom]
+      - type: translate
+        prompt_en: Mom is cooking fish.
+        answer_tl: Nagluluto ang nanay ng isda.
+        extra_words: [nagbabasa, manok, ako]
+      - type: fill_blank
+        sentence: "___ ako ng libro."
+        translation: "I am reading a book."
+        answer: Nagbabasa
+        options: [Nagbabasa, Nagluluto, Natutulog]
+      - type: listen
+        audio: nagluluto
+        answer_tl: Nagluluto
+        extra_words: [nagbabasa, natutulog]
+      - type: choice
+        prompt: "'Nagluluto' means you are making..."
+        answer: Food
+        distractors: [A book, A house, Money]
+        hint: '"nagluluto" = cooking.'
+      - type: translate
+        prompt_tl: Nagbabasa siya ng libro sa bahay.
+        answer_en: She is reading a book at home.
+        accept: ["He is reading a book at home"]
+        extra_words: [cooking, sleeping, school]
+  - id: everyday-4
+    title: My daily routine
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Araw-araw, nag-aaral ako ng Tagalog.
+        answer_en: Every day, I study Tagalog.
+        accept: ["I study Tagalog every day", "Every day I study Tagalog"]
+        extra_words: [working, walking, coffee]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: In the morning, I drink coffee.
+        answer_tl: Sa umaga, umiinom ako ng kape.
+        extra_words: [gabi, kumakain, tubig]
+      - type: fill_blank
+        sentence: "Sa gabi, ___ ako."
+        translation: "At night, I sleep."
+        answer: natutulog
+        options: [natutulog, nagtatrabaho, kumakain]
+      - type: choice
+        prompt: "'Nagtatrabaho siya sa umaga' means..."
+        answer: She works in the morning
+        distractors: [She sleeps in the morning, She studies at night, She cooks in the evening]
+        audio: nagtatrabaho_siya_sa_umaga
+        audio_text: Nagtatrabaho siya sa umaga.
+      - type: match
+        pairs:
+          - { tl: kumakain, en: eats }
+          - { tl: natutulog, en: sleeps }
+          - { tl: nagtatrabaho, en: works }
+          - { tl: nag-aaral, en: studies }
+      - type: translate
+        prompt_tl: Kumakain kami sa hapon.
+        answer_en: We eat in the afternoon.
+        extra_words: [morning, drinking, they]
+      - type: fill_blank
+        sentence: "Naglalakad ako sa paaralan ___ mabilis."
+        translation: "I walk to school quickly."
+        answer: nang
+        options: [nang, ng, at]
+        grading: { ng_nang: true }
+        hint: '"nang" links a verb to how it is done.'
+      - type: translate
+        prompt_en: Every day I work.
+        answer_tl: Araw-araw nagtatrabaho ako.
+        accept: ["Nagtatrabaho ako araw-araw"]
+        extra_words: [nag-aaral, naglalakad, bukas]
+        grading: { hyphens: true }
+      - type: listen
+        audio: kumakain_ako_ng_kanin
+        answer_tl: Kumakain ako ng kanin
+        extra_words: [umiinom, tubig]

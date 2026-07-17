@@ -1,6 +1,9 @@
 id: numbers-time
 title: Numbers & Time
 description: Count to ten and talk about your day.
+tip: >-
+  Filipinos mix systems daily: native numbers (isa, dalawa) for counting,
+  Spanish ones (alas-dos) for telling time and often for prices.
 lessons:
   - id: numbers-1
     title: One to five
@@ -109,7 +112,7 @@ lessons:
         extra_words: [tomorrow, today, drank]
       - type: fill_blank
         sentence: "Magandang araw ___!"
-        translation: "Have a good day today!"
+        translation: "It's a beautiful day today!"
         answer: ngayon
         options: [ngayon, kahapon, gabi]
       - type: listen
@@ -132,4 +135,7 @@ lessons:
         accept: ["Every day I drink coffee"]
         extra_words: [ate, yesterday, water]
         grading: { hyphens: true }
-        audio: araw_araw
+        # own ref, not the bare "araw_araw" vocab word: the first text registered
+        # for a ref wins, so sharing it made the phrasebook speak this whole
+        # sentence for the entry "araw-araw"
+        audio: araw_araw_umiinom_ako_ng_kape

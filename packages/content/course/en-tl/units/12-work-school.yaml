@@ -1,0 +1,219 @@
+id: work-school
+title: Work & School
+description: Talk about jobs, workplaces, and what you study.
+tip: >-
+  "Ano ang trabaho mo?" asks what someone does for a living. Answer with the
+  job first and the pronoun after — "Guro ako." (I'm a teacher.) Tagalog has
+  no word for "am" or "is", so that is the whole sentence.
+lessons:
+  - id: work-1
+    title: What do you do?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: guro, en: teacher }
+          - { tl: doktor, en: doctor }
+          - { tl: nars, en: nurse }
+          - { tl: pulis, en: police officer }
+      - type: choice
+        prompt: "'Guro' means..."
+        answer: Teacher
+        distractors: [Student, Doctor, Driver]
+        audio: guro
+        audio_text: Guro
+      - type: translate
+        prompt_tl: Guro ako.
+        answer_en: I am a teacher.
+        accept: ["I'm a teacher"]
+        extra_words: [doctor, nurse, you]
+        audio: guro_ako
+      - type: choice
+        prompt: "To ask someone what they do for a living, say:"
+        answer: Ano ang trabaho mo?
+        distractors: [Nasaan ang trabaho mo?, Ilan ang trabaho mo?, Kumusta ang trabaho mo?]
+        audio: ano_ang_trabaho_mo
+        audio_text: Ano ang trabaho mo?
+      - type: translate
+        prompt_en: She is a doctor.
+        answer_tl: Doktor siya.
+        extra_words: [nars, ako, guro]
+        hint: The job comes first, the pronoun after.
+      - type: fill_blank
+        sentence: "___ ang trabaho mo?"
+        translation: "What is your job?"
+        answer: Ano
+        options: [Ano, Sino, Nasaan]
+        hint: '"ano" = what.'
+      - type: listen
+        audio: nars
+        answer_tl: Nars
+        extra_words: [guro, pulis]
+      - type: choice
+        prompt: "Where does a 'nars' work?"
+        answer: Sa ospital
+        distractors: [Sa paaralan, Sa palengke, Sa simbahan]
+      - type: translate
+        prompt_tl: Pulis ang tatay ko.
+        answer_en: My dad is a police officer.
+        accept: ["My dad is a policeman", "My father is a police officer"]
+        extra_words: [teacher, mom, doctor]
+  - id: work-2
+    title: Jobs and workplaces
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magsasaka, en: farmer }
+          - { tl: drayber, en: driver }
+          - { tl: tindera, en: vendor }
+          - { tl: inhinyero, en: engineer }
+      - type: choice
+        prompt: "'Magsasaka' means..."
+        answer: Farmer
+        distractors: [Driver, Vendor, Engineer]
+        audio: magsasaka
+        audio_text: Magsasaka
+        hint: 'From "saka" (to farm) — mag- plus a repeated syllable names many jobs.'
+      - type: translate
+        prompt_tl: Magsasaka ang lolo ko.
+        answer_en: My grandfather is a farmer.
+        accept: ["My grandpa is a farmer"]
+        extra_words: [driver, dad, teacher]
+      - type: fill_blank
+        sentence: "Nagtatrabaho ang ate ko sa ___."
+        translation: "My older sister works in an office."
+        answer: opisina
+        options: [opisina, palengke, bahay]
+      - type: translate
+        prompt_en: He is a driver.
+        answer_tl: Drayber siya.
+        extra_words: [magsasaka, ako, guro]
+      - type: listen
+        audio: nagtatrabaho_ako_sa_opisina
+        answer_tl: Nagtatrabaho ako sa opisina
+        extra_words: [paaralan, guro]
+      - type: choice
+        prompt: "'Mataas ang sahod ko' means..."
+        answer: My salary is high
+        distractors: [My salary is low, I have no money, My work is hard]
+        audio: mataas_ang_sahod_ko
+        audio_text: Mataas ang sahod ko.
+        hint: '"sahod" is your pay — "mataas ang sahod" = a high salary.'
+      - type: translate
+        prompt_tl: Ano ang trabaho ng tatay mo?
+        answer_en: What is your dad's job?
+        accept: ["What does your dad do?", "What is your father's job?"]
+        extra_words: [where, mom, school]
+        audio: ano_ang_trabaho_ng_tatay_mo
+      - type: translate
+        prompt_en: The vendor is at the market.
+        answer_tl: Nasa palengke ang tindera.
+        extra_words: [tindahan, opisina, siya]
+  - id: work-3
+    title: At school
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: estudyante, en: student }
+          - { tl: klase, en: class }
+          - { tl: unibersidad, en: university }
+          - { tl: aralin, en: lesson }
+      - type: choice
+        prompt: "'Estudyante' means..."
+        answer: Student
+        distractors: [Teacher, Class, Lesson]
+        audio: estudyante
+        audio_text: Estudyante
+      - type: translate
+        prompt_tl: Estudyante ako sa unibersidad.
+        answer_en: I am a student at the university.
+        accept: ["I'm a student at the university"]
+        extra_words: [teacher, market, work]
+        audio: estudyante_ako_sa_unibersidad
+      - type: fill_blank
+        sentence: "May ___ ako sa umaga."
+        translation: "I have a class in the morning."
+        answer: klase
+        options: [klase, aralin, bolpen]
+      - type: translate
+        prompt_en: The teacher is at school.
+        answer_tl: Nasa paaralan ang guro.
+        extra_words: [estudyante, opisina, siya]
+      - type: choice
+        prompt: "'Bolpen' means..."
+        answer: Pen
+        distractors: [Book, Paper, Class]
+        audio: bolpen
+        audio_text: Bolpen
+        hint: 'From English "ballpen" — the everyday word for a pen.'
+      - type: listen
+        audio: may_klase_ako_ngayon
+        answer_tl: May klase ako ngayon
+        extra_words: [aralin, bukas]
+      - type: translate
+        prompt_tl: Ano ang aralin ngayon?
+        answer_en: What is the lesson today?
+        accept: ["What's the lesson today?"]
+        extra_words: [where, class, teacher]
+      - type: fill_blank
+        sentence: "Nag-aaral ang mga ___ sa klase."
+        translation: "The students are studying in class."
+        answer: estudyante
+        options: [estudyante, guro, aralin]
+        hint: '"mga" makes it plural — mga estudyante = students.'
+  - id: work-4
+    title: School subjects
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matematika, en: math }
+          - { tl: agham, en: science }
+          - { tl: kasaysayan, en: history }
+          - { tl: Ingles, en: English }
+      - type: choice
+        prompt: "'Kasaysayan' means..."
+        answer: History
+        distractors: [Science, Math, English]
+        audio: kasaysayan
+        audio_text: Kasaysayan
+      - type: translate
+        prompt_tl: Nag-aaral siya ng agham.
+        answer_en: She is studying science.
+        accept: ["He is studying science", "She studies science", "He studies science"]
+        extra_words: [math, history, book]
+      - type: fill_blank
+        sentence: "May ___ kami sa math bukas."
+        translation: "We have a test in math tomorrow."
+        answer: pagsusulit
+        options: [pagsusulit, aralin, sahod]
+        hint: '"Matematika" is the formal word — day to day, people just say "math".'
+      - type: choice
+        prompt: "'Madali ang pagsusulit' means..."
+        answer: The test is easy
+        distractors: [The test is difficult, There is no test, The test is tomorrow]
+        audio: madali_ang_pagsusulit
+        audio_text: Madali ang pagsusulit.
+      - type: translate
+        prompt_en: The English lesson is difficult.
+        answer_tl: Mahirap ang aralin sa Ingles.
+        extra_words: [madali, pagsusulit, siya]
+        hint: '"mahirap" = difficult (it also means poor).'
+      - type: listen
+        audio: may_pagsusulit_kami_bukas
+        answer_tl: May pagsusulit kami bukas
+        extra_words: [klase, ngayon]
+      - type: match
+        pairs:
+          - { tl: bolpen, en: pen }
+          - { tl: libro, en: book }
+          - { tl: pagsusulit, en: test }
+          - { tl: aralin, en: lesson }
+      - type: translate
+        prompt_tl: Magaling siya sa matematika.
+        answer_en: She is good at math.
+        accept: ["He is good at math", "She's good at math"]
+        extra_words: [difficult, easy, history]
+        hint: '"magaling sa..." = good at...'

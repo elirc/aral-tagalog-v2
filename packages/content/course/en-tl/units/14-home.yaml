@@ -1,0 +1,212 @@
+id: home
+title: Home & Household
+description: Rooms, the things in them, and simple chores.
+tip: >-
+  Filipino homes are shoes-off homes — leave yours at the pinto. The host waves
+  you in with "Tuloy po kayo!", literally "go on through", meaning "please come
+  in". Answer with "Salamat po."
+lessons:
+  - id: home-1
+    title: Rooms of the house
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kusina, en: kitchen }
+          - { tl: banyo, en: bathroom }
+          - { tl: kwarto, en: bedroom }
+          - { tl: sala, en: living room }
+      - type: choice
+        prompt: "'Kusina' means..."
+        answer: Kitchen
+        distractors: [Bedroom, Bathroom, Garden]
+        audio: kusina
+        audio_text: Kusina
+      - type: translate
+        prompt_tl: Nasa kusina si Nanay.
+        answer_en: Mom is in the kitchen.
+        extra_words: [garden, dad, bathroom]
+        audio: nasa_kusina_si_nanay
+      - type: fill_blank
+        sentence: "Nasaan ang ___?"
+        translation: "Where is the bathroom?"
+        answer: banyo
+        options: [banyo, sala, hardin]
+      - type: listen
+        audio: kwarto
+        answer_tl: Kwarto
+        extra_words: [sala, banyo]
+      - type: translate
+        prompt_en: The living room is big.
+        answer_tl: Malaki ang sala.
+        extra_words: [maliit, kusina, siya]
+      - type: choice
+        prompt: "'Nasa hardin ang mga bulaklak' means..."
+        answer: The flowers are in the garden
+        distractors:
+          [The garden is beautiful, Where is the garden?, I went to the garden]
+        audio: nasa_hardin_ang_mga_bulaklak
+        audio_text: Nasa hardin ang mga bulaklak.
+        hint: '"ang mga" marks a plural — "the flowers".'
+      - type: translate
+        prompt_tl: Natutulog ako sa kwarto.
+        answer_en: I sleep in the bedroom.
+        extra_words: [kitchen, garden, eat]
+  - id: home-2
+    title: Things in the house
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mesa, en: table }
+          - { tl: silya, en: chair }
+          - { tl: kama, en: bed }
+          - { tl: pinto, en: door }
+      - type: choice
+        prompt: "'Bintana' means..."
+        answer: Window
+        distractors: [Door, Chair, Bed]
+        audio: bintana
+        audio_text: Bintana
+      - type: translate
+        prompt_tl: May bintana ang kwarto ko.
+        answer_en: My room has a window.
+        accept: ["There is a window in my room"]
+        extra_words: [door, table, big]
+      - type: fill_blank
+        sentence: "Natutulog ako sa ___."
+        translation: "I sleep in the bed."
+        answer: kama
+        options: [kama, mesa, pinto]
+      - type: listen
+        audio: mesa
+        answer_tl: Mesa
+        extra_words: [silya, kama]
+      - type: translate
+        prompt_en: There are many chairs in the living room.
+        answer_tl: Maraming silya sa sala.
+        extra_words: [mesa, kusina, ang]
+        hint: '"marami" gains a "-ng" linker before the noun.'
+      - type: choice
+        prompt: "'Ilaw' means..."
+        answer: Light
+        distractors: [Door, Window, Table]
+        audio: ilaw
+        audio_text: Ilaw
+      - type: match
+        pairs:
+          - { tl: aparador, en: cabinet }
+          - { tl: ilaw, en: light }
+          - { tl: ref, en: refrigerator }
+          - { tl: bintana, en: window }
+      - type: translate
+        prompt_en: The door is small.
+        answer_tl: Maliit ang pinto.
+        extra_words: [malaki, bintana, kama]
+  - id: home-3
+    title: Where is it?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nasa, en: is at/in }
+          - { tl: loob, en: inside }
+          - { tl: ibabaw, en: top }
+          - { tl: nasaan, en: where is }
+      - type: choice
+        prompt: "'Nasa ibabaw ng mesa ang libro' means..."
+        answer: The book is on the table
+        distractors:
+          [
+            The book is under the table,
+            The table is on the book,
+            Where is the book?,
+          ]
+        audio: nasa_ibabaw_ng_mesa_ang_libro
+        audio_text: Nasa ibabaw ng mesa ang libro.
+        hint: '"ibabaw" = top; "ng" links it to the thing underneath.'
+      - type: translate
+        prompt_tl: Nasa loob ng aparador ang mga libro.
+        answer_en: The books are inside the cabinet.
+        extra_words: [table, chair, under]
+      - type: fill_blank
+        sentence: "Nasa ___ ang gatas."
+        translation: "The milk is in the refrigerator."
+        answer: ref
+        options: [ref, kama, pinto]
+      - type: translate
+        prompt_en: The chair is in the kitchen.
+        answer_tl: Nasa kusina ang silya.
+        extra_words: [mesa, sala, sa]
+      - type: listen
+        audio: nasa_kusina_ako
+        answer_tl: Nasa kusina ako
+        extra_words: [banyo, sala]
+      - type: choice
+        prompt: "Which one says 'Mom is in the kitchen'?"
+        answer: Nasa kusina si Nanay
+        distractors:
+          [Sa kusina si Nanay, Nagluluto si Nanay sa kusina, Nasaan si Nanay?]
+        hint: '"nasa" says where something IS; "sa" goes with an action.'
+      - type: fill_blank
+        sentence: "___ ang mga silya?"
+        translation: "Where are the chairs?"
+        answer: Nasaan
+        options: [Nasaan, Saan, Sino]
+      - type: translate
+        prompt_en: I am in the bathroom.
+        answer_tl: Nasa banyo ako.
+        extra_words: [kwarto, sa, siya]
+  - id: home-4
+    title: Chores and guests
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naglilinis, en: cleaning }
+          - { tl: naghuhugas, en: washing }
+          - { tl: nagwawalis, en: sweeping }
+          - { tl: basura, en: trash }
+      - type: choice
+        prompt: "'Naghuhugas ako ng plato' means..."
+        answer: I am washing dishes
+        distractors:
+          [I am cooking rice, I am sweeping the floor, I am cleaning the bathroom]
+        audio: naghuhugas_ako_ng_plato
+        audio_text: Naghuhugas ako ng plato.
+        hint: '"plato" = plate; the thing washed takes "ng".'
+      - type: translate
+        prompt_tl: Naglilinis si Nanay ng kusina.
+        answer_en: Mom is cleaning the kitchen.
+        extra_words: [sweeping, garden, washing]
+      - type: fill_blank
+        sentence: "___ ako sa sala."
+        translation: "I am sweeping in the living room."
+        answer: Nagwawalis
+        options: [Nagwawalis, Naghuhugas, Kumakain]
+      - type: listen
+        audio: naglilinis_ako_ng_kwarto
+        answer_tl: Naglilinis ako ng kwarto
+        extra_words: [nagwawalis, banyo]
+      - type: choice
+        prompt: "'Ilabas mo ang basura' means..."
+        answer: Take out the trash
+        distractors: [Clean the bathroom, Wash the dishes, Close the door]
+        audio: ilabas_mo_ang_basura
+        audio_text: Ilabas mo ang basura.
+        hint: '"labas" = outside, so "ilabas mo" = take it out.'
+      - type: translate
+        prompt_en: I am cleaning the house.
+        answer_tl: Naglilinis ako ng bahay.
+        extra_words: [nagwawalis, sa, kusina]
+      - type: choice
+        prompt: "A guest arrives at your door. You say:"
+        answer: Tuloy po kayo
+        distractors: [Paalam po, Salamat po, Nasaan po kayo]
+        audio: tuloy_po_kayo
+        audio_text: Tuloy po kayo.
+      - type: fill_blank
+        sentence: "___ po kayo!"
+        translation: "Please come in!"
+        answer: Tuloy
+        options: [Tuloy, Paalam, Salamat]

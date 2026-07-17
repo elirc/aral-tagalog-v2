@@ -1,6 +1,9 @@
 id: greetings
 title: Greetings
 description: Say hello, be polite, and introduce yourself.
+tip: >-
+  Po and opo add respect when speaking to elders — "Salamat po" is warmer
+  than plain "Salamat". Sprinkle po into almost any sentence to be polite.
 lessons:
   - id: greetings-1
     title: Hello!

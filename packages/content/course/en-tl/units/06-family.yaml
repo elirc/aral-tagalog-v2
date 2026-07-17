@@ -1,0 +1,191 @@
+id: family
+title: Family
+description: Talk about your family, and say what you do and don't have.
+tip: >-
+  May and mayroon both mean "there is / to have"; wala is their opposite.
+  "May kapatid ako" — I have a sibling. "Wala akong pera" — I have no money.
+lessons:
+  - id: family-1
+    title: The family
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nanay, en: mom }
+          - { tl: tatay, en: dad }
+          - { tl: anak, en: child }
+          - { tl: magulang, en: parents }
+      - type: choice
+        prompt: "'Magulang' means..."
+        answer: Parents
+        distractors: [Sibling, Child, Grandparents]
+        audio: magulang
+      - type: translate
+        prompt_tl: Ito ang pamilya ko.
+        answer_en: This is my family.
+        extra_words: [mom, dad, friend]
+        audio: ito_ang_pamilya_ko
+      - type: translate
+        prompt_en: She is my mom.
+        answer_tl: Siya ang nanay ko.
+        extra_words: [tatay, ang, ako]
+        hint: '"ko" after a noun means "my".'
+      - type: fill_blank
+        sentence: "Sila ang mga ___ ko."
+        translation: "They are my parents."
+        answer: magulang
+        options: [magulang, anak, kapatid]
+      - type: listen
+        audio: magulang
+        answer_tl: Magulang
+        extra_words: [nanay, tatay]
+      - type: choice
+        prompt: "Who are your 'magulang'?"
+        answer: Your mom and dad
+        distractors: [Your siblings, Your grandparents, Your children]
+      - type: translate
+        prompt_tl: Maliit ang anak nila.
+        answer_en: Their child is small.
+        extra_words: [big, mom, family]
+  - id: family-2
+    title: Brothers and sisters
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kuya, en: older brother }
+          - { tl: ate, en: older sister }
+          - { tl: bunso, en: youngest }
+          - { tl: pinsan, en: cousin }
+      - type: choice
+        prompt: "'Kuya' means..."
+        answer: Older brother
+        distractors: [Older sister, Younger sibling, Cousin]
+        audio: kuya
+      - type: choice
+        prompt: "'Ate' means..."
+        answer: Older sister
+        distractors: [Older brother, Aunt, Grandmother]
+        audio: ate
+      - type: translate
+        prompt_tl: Kuya ko si Ben.
+        answer_en: Ben is my older brother.
+        accept: ["Ben is my big brother"]
+        extra_words: [sister, cousin, mom]
+      - type: translate
+        prompt_en: She is my older sister.
+        answer_tl: Ate ko siya.
+        extra_words: [kuya, pinsan, ako]
+      - type: fill_blank
+        sentence: "Ang ___ ko si Ana."
+        translation: "Ana is my cousin."
+        answer: pinsan
+        options: [pinsan, ate, kuya]
+      - type: listen
+        audio: kuya
+        answer_tl: Kuya
+        extra_words: [ate, bunso]
+      - type: translate
+        prompt_tl: Ako ang bunso.
+        answer_en: I am the youngest.
+        accept: ["I'm the youngest", "I am the youngest child"]
+        extra_words: [oldest, brother, sister]
+  - id: family-3
+    title: May and wala
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'May kapatid ako' means..."
+        answer: I have a sibling
+        distractors: [I am a sibling, Where is my sibling?, My sibling is here]
+        audio: may_kapatid_ako
+        audio_text: May kapatid ako.
+      - type: translate
+        prompt_tl: May anak sila.
+        answer_en: They have a child.
+        extra_words: [no, mom, friend]
+      - type: translate
+        prompt_en: I have a big family.
+        answer_tl: May malaking pamilya ako.
+        extra_words: [wala, anak, si]
+        hint: '"malaki" gains a "-ng" linker before the noun.'
+      - type: choice
+        prompt: "How do you say you DON'T have a sibling?"
+        answer: Wala akong kapatid
+        distractors: [May kapatid ako, Kapatid ko siya, Wala si kapatid]
+        audio: wala_akong_kapatid
+        audio_text: Wala akong kapatid.
+        hint: '"wala" = none; note the "-ng" linker on "ako".'
+      - type: fill_blank
+        sentence: "___ silang anak."
+        translation: "They don't have a child."
+        answer: Wala
+        options: [Wala, May, Oo]
+      - type: listen
+        audio: may_anak_sila
+        answer_tl: May anak sila
+        extra_words: [wala, kapatid]
+      - type: fill_blank
+        sentence: "___ kapatid ka ba?"
+        translation: "Do you have a sibling?"
+        answer: May
+        options: [May, Wala, Sino]
+        hint: '"May ... ka?" asks if you have something.'
+      - type: translate
+        prompt_tl: Ilan ang kapatid mo?
+        answer_en: How many siblings do you have?
+        extra_words: [who, where, child]
+  - id: family-4
+    title: Family and respect
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lola, en: grandmother }
+          - { tl: lolo, en: grandfather }
+          - { tl: tito, en: uncle }
+          - { tl: tita, en: aunt }
+      - type: choice
+        prompt: "'Apo' means..."
+        answer: Grandchild
+        distractors: [Grandparent, Aunt, Cousin]
+        audio: apo
+      - type: translate
+        prompt_tl: Mag-asawa sina Nanay at Tatay.
+        answer_en: Mom and Dad are a married couple.
+        extra_words: [cousin, child, sibling]
+        grading: { hyphens: true }
+        hint: '"mag-asawa" = a married couple; "sina" is the plural of "si".'
+      - type: translate
+        prompt_en: My grandmother is beautiful.
+        answer_tl: Maganda ang lola ko.
+        extra_words: [lolo, apo, siya]
+      - type: fill_blank
+        sentence: "Siya ang ___ ko."
+        translation: "He is my spouse."
+        answer: asawa
+        options: [asawa, apo, tito]
+      - type: match
+        pairs:
+          - { tl: apo, en: grandchild }
+          - { tl: asawa, en: spouse }
+          - { tl: magulang, en: parents }
+          - { tl: pinsan, en: cousin }
+      - type: translate
+        prompt_tl: Opo, Lola.
+        answer_en: Yes, Grandma.
+        accept: ["Yes, grandmother"]
+        extra_words: [no, mom, dad]
+        hint: '"opo" is the polite "yes" for elders.'
+      - type: fill_blank
+        sentence: "Kumusta ___ kayo, Lolo?"
+        translation: "How are you, Grandpa? (polite)"
+        answer: po
+        options: [po, ka, ako]
+        hint: 'Add "po" to be respectful to elders.'
+      - type: choice
+        prompt: "You greet your grandmother politely. Say:"
+        answer: Magandang umaga po, Lola
+        distractors: [Kumusta ka, Paalam, Magandang gabi]
+        audio: magandang_umaga_po_lola
+        audio_text: Magandang umaga po, Lola.

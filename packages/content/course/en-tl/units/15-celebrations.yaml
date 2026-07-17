@@ -1,0 +1,217 @@
+id: celebrations
+title: Celebrations & Culture
+description: Greet, invite and celebrate — birthdays, the town fiesta, and Pasko.
+tip: >-
+  "Maligaya" means happy, and the set greetings just add the -ng linker:
+  "Maligayang kaarawan!", "Maligayang Pasko!". New Year is the exception —
+  Filipinos wish you a prosperous one: "Manigong Bagong Taon!"
+lessons:
+  - id: fiesta-1
+    title: Happy birthday!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaarawan, en: birthday }
+          - { tl: regalo, en: gift }
+          - { tl: masaya, en: happy }
+      - type: choice
+        prompt: "'Maligayang kaarawan!' means..."
+        answer: Happy birthday!
+        distractors: [Merry Christmas!, Happy New Year!, Congratulations!]
+        audio: maligayang_kaarawan
+        audio_text: Maligayang kaarawan!
+      - type: translate
+        prompt_tl: Kaarawan ko ngayon.
+        answer_en: It's my birthday today.
+        extra_words: [gift, tomorrow, party]
+      - type: translate
+        prompt_en: Happy birthday!
+        answer_tl: Maligayang kaarawan!
+        extra_words: [Pasko, regalo, masaya]
+        audio: maligayang_kaarawan
+        hint: '"maligaya" gains a "-ng" linker before the noun.'
+      - type: fill_blank
+        sentence: "___ kaarawan, Lola!"
+        translation: "Happy birthday, Grandma!"
+        answer: Maligayang
+        options: [Maligayang, Magandang, Maraming]
+        audio: maligayang_kaarawan_lola
+      - type: listen
+        audio: maligayang_kaarawan
+        answer_tl: Maligayang kaarawan
+        accept: ["Maligayang kaarawan!"]
+        extra_words: [Pasko, regalo]
+      - type: choice
+        prompt: "Your friend hands you a regalo at your party. It is..."
+        answer: A gift
+        distractors: [A guest, A song, An invitation]
+      - type: translate
+        prompt_en: I have a gift.
+        answer_tl: May regalo ako.
+        extra_words: [wala, kaarawan, si]
+      - type: fill_blank
+        sentence: "Masaya ang ___ ko."
+        translation: "My birthday is fun."
+        answer: kaarawan
+        options: [kaarawan, regalo, pamilya]
+  - id: fiesta-2
+    title: The fiesta
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pista, en: fiesta }
+          - { tl: handa, en: party food }
+          - { tl: handaan, en: party }
+          - { tl: bisita, en: guest }
+      - type: choice
+        prompt: "'Pista' means..."
+        answer: A town fiesta
+        distractors: [A birthday, A wedding, A market]
+        audio: pista
+        audio_text: Pista.
+      - type: choice
+        prompt: "A town pista is held for..."
+        answer: The town's patron saint
+        distractors: [The mayor, The town's oldest family, The rice harvest]
+        hint: Every town and barangay has its own patron saint and fiesta day.
+      - type: translate
+        prompt_tl: May pista bukas.
+        answer_en: There is a fiesta tomorrow.
+        accept: ["Tomorrow there is a fiesta"]
+        extra_words: [yesterday, church, guest]
+      - type: fill_blank
+        sentence: "Marami ang ___ sa handaan."
+        translation: "There is a lot of food at the party."
+        answer: handa
+        options: [handa, bisita, regalo]
+        hint: '"handa" is the food a host prepares; "handaan" is the party itself.'
+      - type: choice
+        prompt: "Your host says 'Kain tayo!' — they are..."
+        answer: Inviting you to eat
+        distractors: [Saying goodbye, Asking if you cooked, Telling you the food is gone]
+        audio: kain_tayo
+        audio_text: Kain tayo!
+      - type: listen
+        audio: kain_tayo
+        answer_tl: Kain tayo
+        extra_words: [handa, pista]
+      - type: translate
+        prompt_en: Let's eat!
+        answer_tl: Kain tayo!
+        extra_words: [handa, pista, ako]
+        audio: kain_tayo
+      - type: translate
+        prompt_tl: Masarap ang handa nila.
+        answer_en: Their food is delicious.
+        extra_words: [expensive, guest, party]
+  - id: fiesta-3
+    title: Pasko and Bagong Taon
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Pasko, en: Christmas }
+          - { tl: parol, en: Christmas lantern }
+          - { tl: Bagong Taon, en: New Year }
+          - { tl: simbahan, en: church }
+      - type: choice
+        prompt: "'Maligayang Pasko!' means..."
+        answer: Merry Christmas!
+        distractors: [Happy birthday!, Happy New Year!, Good evening!]
+        audio: maligayang_pasko
+        audio_text: Maligayang Pasko!
+      - type: translate
+        prompt_en: Merry Christmas!
+        answer_tl: Maligayang Pasko!
+        extra_words: [kaarawan, parol, masaya]
+        audio: maligayang_pasko
+      - type: choice
+        prompt: "On New Year, Filipinos wish you..."
+        answer: Manigong Bagong Taon
+        distractors: [Maligayang Pasko, Maligayang kaarawan, Magandang gabi]
+        audio: manigong_bagong_taon
+        audio_text: Manigong Bagong Taon!
+        hint: '"manigo" = prosperous; it takes the "-ng" linker too.'
+      - type: fill_blank
+        sentence: "Maligayang ___!"
+        translation: "Merry Christmas!"
+        answer: Pasko
+        options: [Pasko, kaarawan, gabi]
+        audio: maligayang_pasko
+      - type: listen
+        audio: maligayang_pasko
+        answer_tl: Maligayang Pasko
+        extra_words: [kaarawan, parol]
+      - type: choice
+        prompt: "Simbang Gabi is..."
+        answer: Nine dawn Masses before Christmas
+        distractors: [A midnight feast on New Year's Eve, A parade of lanterns, A carol contest]
+        audio: simbang_gabi
+        audio_text: Simbang Gabi.
+        hint: Held at dawn from December 16 to 24.
+      - type: translate
+        prompt_tl: Maraming parol sa simbahan.
+        answer_en: There are many lanterns at the church.
+        extra_words: [few, house, gift]
+      - type: translate
+        prompt_en: We are going to Simbang Gabi.
+        answer_tl: Pupunta kami sa Simbang Gabi.
+        extra_words: [tayo, pista, bukas]
+  - id: fiesta-4
+    title: Inviting and greeting
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: imbitasyon, en: invitation }
+          - { tl: halika, en: come along }
+          - { tl: pagdiriwang, en: celebration }
+          - { tl: bisita, en: guest }
+      - type: choice
+        prompt: "'Halika sa handaan!' means..."
+        answer: Come to the party!
+        distractors: [Leave the party!, Where is the party?, The party is over]
+        audio: halika_sa_handaan
+        audio_text: Halika sa handaan!
+        hint: 'To invite a group, say "halikayo".'
+      - type: translate
+        prompt_tl: Salamat sa imbitasyon.
+        answer_en: Thanks for the invitation.
+        accept: ["Thank you for the invitation"]
+        extra_words: [gift, party, guest]
+        audio: salamat_sa_imbitasyon
+      - type: translate
+        prompt_en: Come to my birthday!
+        answer_tl: Halika sa kaarawan ko!
+        extra_words: [pista, imbitasyon, po]
+      - type: fill_blank
+        sentence: "Tuloy ___ kayo!"
+        translation: "Please come in! (polite)"
+        answer: po
+        options: [po, ka, ako]
+        audio: tuloy_po_kayo
+        hint: What a host says at the door — "po" keeps it respectful.
+      - type: choice
+        prompt: "'Binabati kita!' means..."
+        answer: Congratulations!
+        distractors: [Goodbye!, I'm sorry!, Thank you!]
+        audio: binabati_kita
+        audio_text: Binabati kita!
+        hint: 'From "bati" (greeting) — literally "I greet you".'
+      - type: listen
+        audio: tuloy_po_kayo
+        answer_tl: Tuloy po kayo
+        extra_words: [halika, salamat]
+      - type: translate
+        prompt_tl: Nagdiriwang kami ngayon.
+        answer_en: We are celebrating today.
+        accept: ["Today we are celebrating"]
+        extra_words: [tomorrow, eating, party]
+      - type: choice
+        prompt: "It's Christmas. You greet your grandmother politely. Say:"
+        answer: Maligayang Pasko po, Lola
+        distractors: [Maligayang kaarawan, Manigong Bagong Taon, Kain tayo]
+        audio: maligayang_pasko_po_lola
+        audio_text: Maligayang Pasko po, Lola.

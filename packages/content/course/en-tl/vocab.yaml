@@ -3,6 +3,7 @@
   lemma: kumusta
   translation: how are you / hello
   audio: kumusta
+  notes: From Spanish "¿cómo está?" — the everyday all-purpose greeting.
 - id: magandang_umaga
   lemma: magandang umaga
   translation: good morning
@@ -19,6 +20,7 @@
   lemma: salamat
   translation: thank you
   audio: salamat
+  notes: '"Salamat po" is more respectful; "maraming salamat" = thanks a lot.'
 - id: walang_anuman
   lemma: walang anuman
   translation: you're welcome
@@ -35,6 +37,7 @@
   lemma: hindi
   translation: no / not
   audio: hindi
+  notes: Negates verbs and adjectives too — "hindi masarap" = not delicious.
 - id: opo
   lemma: opo
   translation: yes (polite)
@@ -153,6 +156,7 @@
   lemma: gusto
   translation: to like / to want
   audio: gusto
+  notes: 'Takes ng before the thing wanted: "Gusto ko ng kape."'
 - id: ayaw
   lemma: ayaw
   translation: to not like / to not want
@@ -221,6 +225,7 @@
   lemma: araw
   translation: day / sun
   audio: araw
+  notes: Doubled, araw-araw means "every day".
 - id: ngayon
   lemma: ngayon
   translation: now / today
@@ -282,3 +287,736 @@
   lemma: mabilis
   translation: fast
   audio: mabilis
+# --- Unit 06: Family ---
+- id: magulang
+  lemma: magulang
+  translation: parents
+  audio: magulang
+- id: kuya
+  lemma: kuya
+  translation: older brother
+  audio: kuya
+  notes: Also used to politely address an older man.
+- id: ate
+  lemma: ate
+  translation: older sister
+  audio: ate
+  notes: Also used to politely address an older woman.
+- id: bunso
+  lemma: bunso
+  translation: youngest child
+  audio: bunso
+- id: pinsan
+  lemma: pinsan
+  translation: cousin
+  audio: pinsan
+- id: tito
+  lemma: tito
+  translation: uncle
+  audio: tito
+- id: tita
+  lemma: tita
+  translation: aunt
+  audio: tita
+- id: apo
+  lemma: apo
+  translation: grandchild
+  audio: apo
+- id: asawa
+  lemma: asawa
+  translation: spouse (husband/wife)
+  audio: asawa
+- id: may
+  lemma: may
+  translation: to have / there is
+  audio: may
+  notes: '"May kapatid ako." = I have a sibling.'
+- id: wala
+  lemma: wala
+  translation: none / to not have
+  audio: wala
+  notes: 'Takes a linker: "Wala akong kapatid." = I have no sibling.'
+- id: ilan
+  lemma: ilan
+  translation: how many
+  audio: ilan
+# --- Unit 07: Everyday actions ---
+- id: kumakain
+  lemma: kumakain
+  translation: eating / eats
+  audio: kumakain
+  notes: Present/habitual of "kumain" (ate). Actor focus.
+- id: umiinom
+  lemma: umiinom
+  translation: drinking / drinks
+  audio: umiinom
+- id: natutulog
+  lemma: natutulog
+  translation: sleeping / sleeps
+  audio: natutulog
+- id: nagtatrabaho
+  lemma: nagtatrabaho
+  translation: working / works
+  audio: nagtatrabaho
+- id: nag_aaral
+  lemma: nag-aaral
+  translation: studying / studies
+  audio: nag_aaral
+- id: naglalakad
+  lemma: naglalakad
+  translation: walking / walks
+  audio: naglalakad
+- id: nagluluto
+  lemma: nagluluto
+  translation: cooking / cooks
+  audio: nagluluto
+- id: nagbabasa
+  lemma: nagbabasa
+  translation: reading / reads
+  audio: nagbabasa
+- id: trabaho
+  lemma: trabaho
+  translation: work / job
+  audio: trabaho
+- id: libro
+  lemma: libro
+  translation: book
+  audio: libro
+# --- Unit 08: Shopping ---
+- id: magkano
+  lemma: magkano
+  translation: how much
+  audio: magkano
+  notes: Only for prices — "how many" of countable things is "ilan".
+- id: bumili
+  lemma: bumili
+  translation: bought (to buy)
+  audio: bumili
+- id: bumibili
+  lemma: bumibili
+  translation: buying / buys
+  audio: bumibili
+- id: mahal
+  lemma: mahal
+  translation: expensive / dear
+  audio: mahal
+  notes: Also "beloved" — "Mahal kita" = I love you.
+- id: mura
+  lemma: mura
+  translation: cheap
+  audio: mura
+- id: pera
+  lemma: pera
+  translation: money
+  audio: pera
+- id: tindahan
+  lemma: tindahan
+  translation: store / shop
+  audio: tindahan
+  notes: A small neighborhood shop; a "palengke" is a wet market.
+- id: sukli
+  lemma: sukli
+  translation: change (money returned)
+  audio: sukli
+- id: piso
+  lemma: piso
+  translation: peso
+  audio: piso
+- id: ito
+  lemma: ito
+  translation: this
+  audio: ito
+- id: presyo
+  lemma: presyo
+  translation: price
+  audio: presyo
+# --- Unit 09: Weather & nature ---
+- id: ulan
+  lemma: ulan
+  translation: rain
+  audio: ulan
+- id: umuulan
+  lemma: umuulan
+  translation: it is raining
+  audio: umuulan
+- id: mainit
+  lemma: mainit
+  translation: hot
+  audio: mainit
+- id: malamig
+  lemma: malamig
+  translation: cold
+  audio: malamig
+- id: hangin
+  lemma: hangin
+  translation: wind / air
+  audio: hangin
+- id: bagyo
+  lemma: bagyo
+  translation: storm / typhoon
+  audio: bagyo
+  notes: The Philippines sees ~20 typhoons a year — this word matters.
+- id: langit
+  lemma: langit
+  translation: sky
+  audio: langit
+- id: dagat
+  lemma: dagat
+  translation: sea
+  audio: dagat
+- id: bundok
+  lemma: bundok
+  translation: mountain
+  audio: bundok
+- id: puno
+  lemma: puno
+  translation: tree
+  audio: puno
+- id: bulaklak
+  lemma: bulaklak
+  translation: flower
+  audio: bulaklak
+- id: panahon
+  lemma: panahon
+  translation: weather / season
+  audio: panahon
+- id: malakas
+  lemma: malakas
+  translation: strong
+  audio: malakas
+- id: mataas
+  lemma: mataas
+  translation: tall / high
+  audio: mataas
+- id: marami
+  lemma: marami
+  translation: many / a lot
+  audio: marami
+# --- Unit 10: Travel & directions ---
+- id: saan
+  lemma: saan
+  translation: where (to)
+  audio: saan
+  notes: Used with motion/action; "nasaan" asks the location of a thing.
+- id: dito
+  lemma: dito
+  translation: here
+  audio: dito
+- id: doon
+  lemma: doon
+  translation: there
+  audio: doon
+- id: kanan
+  lemma: kanan
+  translation: right
+  audio: kanan
+- id: kaliwa
+  lemma: kaliwa
+  translation: left
+  audio: kaliwa
+- id: diretso
+  lemma: diretso
+  translation: straight (ahead)
+  audio: diretso
+  notes: From Spanish "derecho". "Diretso lang" = just keep going straight.
+- id: malapit
+  lemma: malapit
+  translation: near
+  audio: malapit
+- id: malayo
+  lemma: malayo
+  translation: far
+  audio: malayo
+- id: sumakay
+  lemma: sumakay
+  translation: rode / boarded (to ride)
+  audio: sumakay
+- id: jeepney
+  lemma: jeepney
+  translation: jeepney
+  audio: jeepney
+  notes: A shared passenger jeep, the classic Philippine public transport.
+- id: istasyon
+  lemma: istasyon
+  translation: station
+  audio: istasyon
+- id: lumiko
+  lemma: lumiko
+  translation: turned (to turn)
+  audio: lumiko
+- id: kanto
+  lemma: kanto
+  translation: corner
+  audio: kanto
+- id: daan
+  lemma: daan
+  translation: road / street / way
+  audio: daan
+- id: pupunta
+  lemma: pupunta
+  translation: will go / going
+  audio: pupunta
+  notes: Future/contemplated form of "pumunta" (went).
+- id: tapos
+  lemma: tapos
+  translation: then / after
+  audio: tapos
+- id: ba
+  lemma: ba
+  translation: (yes/no question particle)
+  audio: ba
+  notes: '"Malayo ba?" = Is it far? Turns a statement into a question.'
+
+# Unit 11 — Health & Body
+- id: katawan
+  lemma: katawan
+  translation: body
+  audio: katawan
+- id: ulo
+  lemma: ulo
+  translation: head
+  audio: ulo
+- id: mata
+  lemma: mata
+  translation: eye / eyes
+  audio: mata
+  notes: One word for one eye or both — "Maganda ang mata mo." = Your eyes are beautiful.
+- id: ilong
+  lemma: ilong
+  translation: nose
+  audio: ilong
+- id: bibig
+  lemma: bibig
+  translation: mouth
+  audio: bibig
+- id: tainga
+  lemma: tainga
+  translation: ear
+  audio: tainga
+  notes: Usually shortened to "tenga" in casual speech.
+- id: ngipin
+  lemma: ngipin
+  translation: tooth / teeth
+  audio: ngipin
+- id: kamay
+  lemma: kamay
+  translation: hand
+  audio: kamay
+- id: paa
+  lemma: paa
+  translation: foot
+  audio: paa
+  notes: The foot only — the leg is "binti".
+- id: tiyan
+  lemma: tiyan
+  translation: stomach / belly
+  audio: tiyan
+- id: likod
+  lemma: likod
+  translation: back
+  audio: likod
+  notes: Also "behind" — "sa likod ng bahay" = behind the house.
+- id: masakit
+  lemma: masakit
+  translation: painful / it hurts
+  audio: masakit
+  notes: 'The body part is the subject: "Masakit ang ulo ko." = My head hurts.'
+- id: sakit
+  lemma: sakit
+  translation: pain / illness
+  audio: sakit
+  notes: '"May sakit ako." = I am sick. Compare "masakit" = painful.'
+- id: lagnat
+  lemma: lagnat
+  translation: fever
+  audio: lagnat
+- id: ubo
+  lemma: ubo
+  translation: cough
+  audio: ubo
+- id: sipon
+  lemma: sipon
+  translation: cold / runny nose
+  audio: sipon
+  notes: The stuffy-nose kind of cold; cold weather is "malamig".
+- id: pagod
+  lemma: pagod
+  translation: tired
+  audio: pagod
+  notes: No ma- on this one — just "Pagod ako."
+- id: gamot
+  lemma: gamot
+  translation: medicine
+  audio: gamot
+  notes: 'You drink medicine in Tagalog: "Uminom ka ng gamot." = Take your medicine.'
+- id: doktor
+  lemma: doktor
+  translation: doctor
+  audio: doktor
+  notes: Used as a direct address too ("Salamat, doktor"); a woman doctor is often "doktora".
+- id: botika
+  lemma: botika
+  translation: pharmacy / drugstore
+  audio: botika
+  notes: From Spanish "botica".
+
+# Unit 12 — Work & School
+- id: guro
+  lemma: guro
+  translation: teacher
+  audio: guro
+  notes: The standard word; "titser" (from English) is just as common in speech.
+- id: estudyante
+  lemma: estudyante
+  translation: student
+  audio: estudyante
+  notes: From Spanish "estudiante". "Mag-aaral" is the native word, used in writing.
+- id: nars
+  lemma: nars
+  translation: nurse
+  audio: nars
+  notes: English "nurse", spelled the Filipino way.
+- id: pulis
+  lemma: pulis
+  translation: police officer
+  audio: pulis
+- id: drayber
+  lemma: drayber
+  translation: driver
+  audio: drayber
+  notes: English "driver", spelled the Filipino way — jeepney and tricycle drivers included.
+- id: magsasaka
+  lemma: magsasaka
+  translation: farmer
+  audio: magsasaka
+  notes: From "saka" (to farm). Mag- plus a repeated syllable names many jobs.
+- id: inhinyero
+  lemma: inhinyero
+  translation: engineer
+  audio: inhinyero
+  notes: From Spanish "ingeniero"; a woman is "inhinyera".
+- id: tindera
+  lemma: tindera
+  translation: vendor / saleswoman
+  audio: tindera
+  notes: From "tinda" (goods for sale); a man is "tindero".
+- id: opisina
+  lemma: opisina
+  translation: office
+  audio: opisina
+- id: unibersidad
+  lemma: unibersidad
+  translation: university
+  audio: unibersidad
+  notes: '"Kolehiyo" is college; "paaralan" covers school in general.'
+- id: klase
+  lemma: klase
+  translation: class
+  audio: klase
+  notes: 'Also means kind or type: "Anong klase?" = What kind?'
+- id: aralin
+  lemma: aralin
+  translation: lesson
+  audio: aralin
+  notes: From "aral" (study) — same root as "nag-aaral".
+- id: pagsusulit
+  lemma: pagsusulit
+  translation: test / exam
+  audio: pagsusulit
+  notes: A written test or quiz; in casual speech many just say "exam" or "quiz".
+- id: matematika
+  lemma: matematika
+  translation: math
+  audio: matematika
+  notes: The formal subject name — day to day, people just say "math".
+- id: agham
+  lemma: agham
+  translation: science
+  audio: agham
+  notes: The native word; "science" is also very common in speech.
+- id: kasaysayan
+  lemma: kasaysayan
+  translation: history
+  audio: kasaysayan
+  notes: From "saysay" (account / meaning) — the telling of what happened.
+- id: ingles
+  lemma: Ingles
+  translation: English (language)
+  audio: ingles
+  notes: The language and the school subject; capitalized like other languages.
+- id: bolpen
+  lemma: bolpen
+  translation: pen
+  audio: bolpen
+  notes: From English "ballpen" — the everyday word for a pen.
+- id: sahod
+  lemma: sahod
+  translation: salary / pay
+  audio: sahod
+  notes: '"Sweldo" (from Spanish sueldo) is just as common in speech.'
+
+# Unit 13 — Feelings & Opinions
+- id: masaya
+  lemma: masaya
+  translation: happy / fun
+  audio: masaya
+  notes: ma- + saya (joy). "Masaya ako." = I am happy.
+- id: malungkot
+  lemma: malungkot
+  translation: sad
+  audio: malungkot
+  notes: ma- + lungkot (sadness).
+- id: galit
+  lemma: galit
+  translation: angry
+  audio: galit
+- id: sabik
+  lemma: sabik
+  translation: excited / eager
+  audio: sabik
+  notes: '"Sabik akong pumunta" = I am excited to go. In everyday speech many Filipinos just say the English "excited".'
+- id: takot
+  lemma: takot
+  translation: afraid / scared
+  audio: takot
+  notes: 'Takes sa for the thing feared: "Takot ako sa bagyo."'
+- id: gutom
+  lemma: gutom
+  translation: hungry
+  audio: gutom
+- id: uhaw
+  lemma: uhaw
+  translation: thirsty
+  audio: uhaw
+- id: pakiramdam
+  lemma: pakiramdam
+  translation: feeling
+  audio: pakiramdam
+  notes: '"Kumusta ang pakiramdam mo?" = How do you feel?'
+- id: ayos_lang
+  lemma: ayos lang
+  translation: it's fine / I'm okay
+  audio: ayos_lang
+  notes: The everyday answer to "Kumusta ka?" when nothing much is wrong.
+- id: bakit
+  lemma: bakit
+  translation: why
+  audio: bakit
+  notes: 'Short pronouns hop in right after it: "Bakit ka malungkot?"'
+- id: kasi
+  lemma: kasi
+  translation: because
+  audio: kasi
+  notes: The everyday spoken "because" — it starts the reason, never the sentence.
+- id: dahil
+  lemma: dahil
+  translation: because
+  audio: dahil
+  notes: The more formal twin of "kasi". "Dahil sa" + a noun = because of.
+- id: nakakatawa
+  lemma: nakakatawa
+  translation: funny
+  audio: nakakatawa
+  notes: naka- + repeated syllable = "causes laughter". Formal spelling is nakatatawa.
+- id: nakakainis
+  lemma: nakakainis
+  translation: annoying
+  audio: nakakainis
+  notes: Same naka- pattern as nakakatawa — this one causes inis (irritation).
+- id: sa_tingin_ko
+  lemma: sa tingin ko
+  translation: I think / in my opinion
+  audio: sa_tingin_ko
+  notes: 'Literally "in my view". Swap the pronoun to ask — "Sa tingin mo?"'
+- id: medyo
+  lemma: medyo
+  translation: a bit / somewhat
+  audio: medyo
+  notes: Goes before the adjective — "Medyo pagod ako."
+- id: sobra
+  lemma: sobra
+  translation: too much / excessive
+  audio: sobra
+  notes: 'Takes -ng before an adjective: "Sobrang pagod ako." = I am so tired.'
+- id: talaga
+  lemma: talaga
+  translation: really
+  audio: talaga
+  notes: On its own, "Talaga?" = Really? / Is that so?
+
+# Unit 14 — Home & Household
+- id: kusina
+  lemma: kusina
+  translation: kitchen
+  audio: kusina
+- id: banyo
+  lemma: banyo
+  translation: bathroom
+  audio: banyo
+  notes: In public places Filipinos ask for the "CR" (comfort room) instead.
+- id: kwarto
+  lemma: kwarto
+  translation: bedroom / room
+  audio: kwarto
+  notes: Also spelled "kuwarto"; the native word is "silid".
+- id: sala
+  lemma: sala
+  translation: living room
+  audio: sala
+- id: hardin
+  lemma: hardin
+  translation: garden
+  audio: hardin
+- id: mesa
+  lemma: mesa
+  translation: table
+  audio: mesa
+- id: silya
+  lemma: silya
+  translation: chair
+  audio: silya
+  notes: From Spanish "silla"; the native word "upuan" also works.
+- id: kama
+  lemma: kama
+  translation: bed
+  audio: kama
+- id: pinto
+  lemma: pinto
+  translation: door
+  audio: pinto
+- id: bintana
+  lemma: bintana
+  translation: window
+  audio: bintana
+- id: aparador
+  lemma: aparador
+  translation: cabinet / wardrobe
+  audio: aparador
+  notes: Usually the tall cabinet where clothes are kept.
+- id: ilaw
+  lemma: ilaw
+  translation: light / lamp
+  audio: ilaw
+- id: ref
+  lemma: ref
+  translation: refrigerator
+  audio: ref
+  notes: Filipinos say "ref", never "fridge".
+- id: loob
+  lemma: loob
+  translation: inside
+  audio: loob
+  notes: '"Nasa loob ng bahay" = inside the house — "ng" links it to the place.'
+- id: ibabaw
+  lemma: ibabaw
+  translation: top / on top of
+  audio: ibabaw
+  notes: '"Nasa ibabaw ng mesa" = on top of the table.'
+- id: naglilinis
+  lemma: naglilinis
+  translation: cleaning / cleans
+  audio: naglilinis
+- id: naghuhugas
+  lemma: naghuhugas
+  translation: washing / washes
+  audio: naghuhugas
+  notes: 'Used for dishes and hands: "Naghuhugas ako ng plato."'
+- id: nagwawalis
+  lemma: nagwawalis
+  translation: sweeping / sweeps
+  audio: nagwawalis
+  notes: From "walis", a broom.
+- id: basura
+  lemma: basura
+  translation: trash / garbage
+  audio: basura
+- id: tuloy_po_kayo
+  lemma: tuloy po kayo
+  translation: please come in
+  audio: tuloy_po_kayo
+  notes: Literally "go on through" — the standard welcome at a Filipino door.
+
+# Unit 15 — Celebrations & Culture
+- id: kaarawan
+  lemma: kaarawan
+  translation: birthday
+  audio: kaarawan
+  notes: Built on "araw" (day). "Kaarawan ko ngayon." = It's my birthday today.
+- id: maligayang_kaarawan
+  lemma: maligayang kaarawan
+  translation: happy birthday
+  audio: maligayang_kaarawan
+  notes: '"maligaya" (happy) + the -ng linker — the set birthday greeting.'
+- id: regalo
+  lemma: regalo
+  translation: gift
+  audio: regalo
+- id: pista
+  lemma: pista
+  translation: fiesta / town festival
+  audio: pista
+  notes: Every town and barangay honors its patron saint with a pista on the saint's day.
+- id: handa
+  lemma: handa
+  translation: party food / the spread
+  audio: handa
+  notes: From "handa" (ready) — the food a host lays out for guests.
+- id: handaan
+  lemma: handaan
+  translation: party / feast
+  audio: handaan
+  notes: The occasion itself; the "handa" is the food served at it.
+- id: bisita
+  lemma: bisita
+  translation: guest / visitor
+  audio: bisita
+- id: kain_tayo
+  lemma: kain tayo
+  translation: let's eat!
+  audio: kain_tayo
+  notes: Said to anyone within earshot when you start eating — an invitation, and a courtesy.
+- id: pasko
+  lemma: Pasko
+  translation: Christmas
+  audio: pasko
+- id: maligayang_pasko
+  lemma: Maligayang Pasko
+  translation: Merry Christmas
+  audio: maligayang_pasko
+- id: bagong_taon
+  lemma: Bagong Taon
+  translation: New Year
+  audio: bagong_taon
+  notes: The greeting is "Manigong Bagong Taon!" — manigo means prosperous, not happy.
+- id: parol
+  lemma: parol
+  translation: Christmas lantern
+  audio: parol
+  notes: The star-shaped lantern hung up for Pasko.
+- id: simbang_gabi
+  lemma: Simbang Gabi
+  translation: the nine dawn Masses before Christmas
+  audio: simbang_gabi
+  notes: Held at dawn from December 16 to 24; finishing all nine is said to grant a wish.
+- id: pagdiriwang
+  lemma: pagdiriwang
+  translation: celebration
+  audio: pagdiriwang
+- id: nagdiriwang
+  lemma: nagdiriwang
+  translation: celebrating / celebrates
+  audio: nagdiriwang
+- id: imbitasyon
+  lemma: imbitasyon
+  translation: invitation
+  audio: imbitasyon
+- id: halika
+  lemma: halika
+  translation: come! / come along
+  audio: halika
+  notes: To a group, say "halikayo".
+- id: binabati_kita
+  lemma: Binabati kita
+  translation: congratulations / I congratulate you
+  audio: binabati_kita
+  notes: From "bati" (greeting) — used for weddings, graduations and good news.

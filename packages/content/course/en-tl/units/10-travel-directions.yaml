@@ -1,0 +1,191 @@
+id: travel-directions
+title: Travel & Directions
+description: Ask where things are, give directions, and ride around town.
+tip: >-
+  Kanan (right), kaliwa (left), diretso (straight) — plus "Para po!"
+  to stop a jeepney. Sakay means to ride or board.
+lessons:
+  - id: travel-1
+    title: Here and there
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dito, en: here }
+          - { tl: doon, en: there }
+          - { tl: saan, en: where }
+          - { tl: malapit, en: near }
+      - type: choice
+        prompt: "'Saan' means..."
+        answer: Where (to)
+        distractors: [When, Who, What]
+        audio: saan
+      - type: translate
+        prompt_tl: Saan ka pupunta?
+        answer_en: Where are you going?
+        extra_words: [here, there, who]
+        audio: saan_ka_pupunta
+      - type: translate
+        prompt_en: I'm going there.
+        answer_tl: Pupunta ako doon.
+        extra_words: [dito, saan, siya]
+      - type: fill_blank
+        sentence: "Pumunta tayo ___."
+        translation: "Let's go here."
+        answer: dito
+        options: [dito, doon, saan]
+      - type: listen
+        audio: saan_ka_pupunta
+        answer_tl: Saan ka pupunta
+        accept: ["Saan ka pupunta?"]
+        extra_words: [dito, doon]
+      - type: choice
+        prompt: "'Malapit' means..."
+        answer: Near
+        distractors: [Far, Here, Left]
+        audio: malapit
+      - type: translate
+        prompt_tl: Malapit ang bahay ko.
+        answer_en: My house is near.
+        extra_words: [far, here, market]
+  - id: travel-2
+    title: Left and right
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanan, en: right }
+          - { tl: kaliwa, en: left }
+          - { tl: diretso, en: straight }
+          - { tl: kanto, en: corner }
+      - type: choice
+        prompt: "'Kaliwa' means..."
+        answer: Left
+        distractors: [Right, Straight, Near]
+        audio: kaliwa
+      - type: translate
+        prompt_tl: Lumiko ka sa kanan.
+        answer_en: Turn right.
+        accept: ["Turn to the right"]
+        extra_words: [left, straight, corner]
+        audio: lumiko_ka_sa_kanan
+        hint: '"Lumiko ka" = you turn (a command).'
+      - type: translate
+        prompt_en: Turn left.
+        answer_tl: Lumiko ka sa kaliwa.
+        extra_words: [kanan, diretso, dito]
+      - type: fill_blank
+        sentence: "___ lang, huwag lumiko."
+        translation: "Just go straight, don't turn."
+        answer: Diretso
+        options: [Diretso, Kanan, Kaliwa]
+        hint: '"lang" = just / only'
+      - type: listen
+        audio: lumiko_ka_sa_kanan
+        answer_tl: Lumiko ka sa kanan
+        extra_words: [kaliwa, diretso]
+      - type: choice
+        prompt: "The store is on your right. It's 'sa'..."
+        answer: kanan
+        distractors: [kaliwa, diretso, malayo]
+      - type: fill_blank
+        sentence: "Lumiko ka sa ___ sa kanto."
+        translation: "Turn left at the corner."
+        answer: kaliwa
+        options: [kaliwa, kanan, dito]
+  - id: travel-3
+    title: Getting around
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: jeepney, en: jeepney }
+          - { tl: istasyon, en: station }
+          - { tl: sumakay, en: rode }
+          - { tl: daan, en: road }
+      - type: choice
+        prompt: "'Sumakay' means..."
+        answer: Rode / boarded
+        distractors: [Walked, Went, Turned]
+        audio: sumakay
+      - type: translate
+        prompt_tl: Sumakay ako ng jeepney.
+        answer_en: I rode a jeepney.
+        extra_words: [walked, station, road]
+        audio: sumakay_ako_ng_jeepney
+      - type: translate
+        prompt_en: Where is the station?
+        answer_tl: Nasaan ang istasyon?
+        accept: ["Saan ang istasyon?"]
+        extra_words: [saan, jeepney, dito]
+        hint: '"Nasaan" asks where something is; colloquially "Saan ang...?" also works.'
+      - type: fill_blank
+        sentence: "___ tayo ng jeepney."
+        translation: "Let's ride a jeepney."
+        answer: Sumakay
+        options: [Sumakay, Naglalakad, Lumiko]
+      - type: listen
+        audio: sumakay_ako_ng_jeepney
+        answer_tl: Sumakay ako ng jeepney
+        extra_words: [istasyon, daan]
+      - type: choice
+        prompt: "You want to reach the station by jeepney. You..."
+        answer: sumakay ng jeepney
+        distractors: [naglakad sa daan, lumiko sa kanan, pumunta sa palengke]
+      - type: translate
+        prompt_tl: Malapit ang istasyon sa palengke.
+        answer_en: The station is near the market.
+        extra_words: [far, road, house]
+  - id: travel-4
+    title: Giving directions
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Saan ang palengke?
+        answer_en: Where is the market?
+        extra_words: [here, there, who]
+        audio: saan_ang_palengke
+        hint: 'Compare with "Nasaan ang palengke?" from Unit 5.'
+      - type: translate
+        prompt_en: Go straight, then turn right.
+        answer_tl: Diretso ka, tapos lumiko sa kanan.
+        extra_words: [kaliwa, dito, malayo]
+        hint: '"tapos" = then / after'
+      - type: fill_blank
+        sentence: "Lumiko ka sa kanan, ___ diretso."
+        translation: "Turn right, then go straight."
+        answer: tapos
+        options: [tapos, dito, saan]
+      - type: choice
+        prompt: "Someone asks 'Malayo ba?' They want to know if it's..."
+        answer: Far
+        distractors: [Near, Left, Here]
+        hint: '"ba" makes a yes/no question.'
+      - type: translate
+        prompt_tl: Malapit lang, hindi malayo.
+        answer_en: It's just near, not far.
+        accept: ["It is just near, not far"]
+        extra_words: [here, straight, road]
+      - type: match
+        pairs:
+          - { tl: saan, en: where }
+          - { tl: kanan, en: right }
+          - { tl: kaliwa, en: left }
+          - { tl: diretso, en: straight }
+      - type: fill_blank
+        sentence: "Sumakay ka ___ jeepney sa istasyon."
+        translation: "Ride a jeepney to the station."
+        answer: ng
+        options: [ng, nang, sa]
+        grading: { ng_nang: true }
+      - type: translate
+        prompt_en: Is the station near or far?
+        answer_tl: Malapit ba o malayo ang istasyon?
+        accept: ["Malapit o malayo ang istasyon?"]
+        extra_words: [dito, kanan, daan]
+        hint: '"ba" = question particle; "o" = or'
+      - type: listen
+        audio: saan_ang_palengke
+        answer_tl: Saan ang palengke
+        accept: ["Saan ang palengke?"]
+        extra_words: [istasyon, jeepney]

@@ -1,6 +1,9 @@
 id: people
 title: People
 description: Pronouns and family.
+tip: >-
+  Tagalog pronouns don't mark gender: siya means both "he" and "she".
+  Context does the work English pronouns do.
 lessons:
   - id: people-1
     title: I, you, they

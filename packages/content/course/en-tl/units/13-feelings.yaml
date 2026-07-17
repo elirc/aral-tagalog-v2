@@ -1,0 +1,226 @@
+id: feelings
+title: Feelings & Opinions
+description: Say how you feel, explain why, and give a simple opinion.
+tip: >-
+  Most Tagalog adjectives are ma- plus a root: saya (joy) → masaya, lungkot
+  (sadness) → malungkot, init (heat) → mainit. A few feelings skip the ma-
+  entirely — pagod, gutom, uhaw, galit, takot. Either way the feeling comes
+  first: "Masaya ako", not "Ako ay masaya", which sounds stiff and bookish.
+lessons:
+  - id: feelings-1
+    title: How I feel
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: masaya, en: happy }
+          - { tl: malungkot, en: sad }
+          - { tl: pagod, en: tired }
+          - { tl: galit, en: angry }
+      - type: choice
+        prompt: "'Malungkot' means..."
+        answer: Sad
+        distractors: [Happy, Tired, Angry]
+        audio: malungkot
+        audio_text: Malungkot
+      - type: translate
+        prompt_tl: Masaya ako ngayon.
+        answer_en: I'm happy today.
+        accept: ["I am happy today", "I'm happy now", "I am happy now"]
+        extra_words: [sad, tired, family]
+        audio: masaya_ako_ngayon
+      - type: translate
+        prompt_en: She is sad.
+        answer_tl: Malungkot siya.
+        extra_words: [masaya, ako, pagod]
+        hint: The feeling goes first, the pronoun after it.
+      - type: fill_blank
+        sentence: "___ ba si Ben?"
+        translation: "Is Ben angry?"
+        answer: Galit
+        options: [Galit, Masaya, Pagod]
+      - type: choice
+        prompt: "You worked all day. You say:"
+        answer: Pagod na ako
+        distractors: [Masaya ako, Malungkot ako, Galit ako]
+        audio: pagod_na_ako
+        audio_text: Pagod na ako.
+        hint: '"na" adds "already" — Pagod na ako = I am tired now.'
+      - type: listen
+        audio: masaya_ako_ngayon
+        answer_tl: Masaya ako ngayon
+        extra_words: [pagod, galit]
+      - type: translate
+        prompt_tl: Hindi ako galit.
+        answer_en: I'm not angry.
+        accept: ["I am not angry", "I'm not mad", "I am not mad"]
+        extra_words: [happy, sad, tired]
+        hint: '"hindi" negates adjectives too, not just verbs.'
+      - type: fill_blank
+        sentence: "Pagod ___ ako."
+        translation: "I'm tired now."
+        answer: na
+        options: [na, ba, ang]
+  - id: feelings-2
+    title: Kumusta ang pakiramdam mo?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: uhaw, en: thirsty }
+          - { tl: takot, en: afraid }
+          - { tl: sabik, en: excited }
+      - type: choice
+        prompt: "'Gutom na ako' means..."
+        answer: I'm hungry now
+        distractors: ["I'm thirsty", "I'm tired", "I already ate"]
+        audio: gutom_na_ako
+        audio_text: Gutom na ako.
+      - type: translate
+        prompt_tl: Uhaw ako. Gusto ko ng tubig.
+        answer_en: I'm thirsty. I want water.
+        accept: ["I am thirsty. I want water"]
+        extra_words: [hungry, coffee, milk]
+      - type: fill_blank
+        sentence: "___ ako sa bagyo."
+        translation: "I'm afraid of storms."
+        answer: Takot
+        options: [Takot, Sabik, Gutom]
+        hint: Takot ako sa ___ = I am afraid of ___.
+      - type: choice
+        prompt: "'Kumusta ang pakiramdam mo?' asks..."
+        answer: How do you feel?
+        distractors: ["What is your name?", "How much is it?", "Where are you going?"]
+        audio: kumusta_ang_pakiramdam_mo
+        audio_text: Kumusta ang pakiramdam mo?
+      - type: translate
+        prompt_en: I'm okay, thanks.
+        answer_tl: Ayos lang ako, salamat.
+        extra_words: [masaya, pagod, hindi]
+        hint: '"ayos lang" = fine / all good.'
+      - type: listen
+        audio: ayos_lang_ako
+        answer_tl: Ayos lang ako
+        extra_words: [gutom, takot]
+      - type: translate
+        prompt_tl: Sabik akong pumunta sa dagat.
+        answer_en: I'm excited to go to the sea.
+        accept: ["I am excited to go to the sea"]
+        extra_words: [tired, mountain, market]
+        hint: '"ako" takes a "-ng" linker before the verb that follows.'
+      - type: fill_blank
+        sentence: "___ ka ba? May tubig dito."
+        translation: "Are you thirsty? There's water here."
+        answer: Uhaw
+        options: [Uhaw, Gutom, Sabik]
+  - id: feelings-3
+    title: Bakit? Kasi...
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bakit, en: why }
+          - { tl: kasi, en: because }
+          - { tl: dahil sa, en: because of }
+          - { tl: ayos lang, en: it is fine }
+      - type: choice
+        prompt: "'Bakit ka malungkot?' means..."
+        answer: Why are you sad?
+        distractors: ["Are you sad?", "Who is sad?", "I am sad"]
+        audio: bakit_ka_malungkot
+        audio_text: Bakit ka malungkot?
+        hint: Short pronouns like "ka" jump in right after the first word.
+      - type: translate
+        prompt_tl: Masaya ako kasi may kape.
+        answer_en: I'm happy because there's coffee.
+        accept: ["I am happy because there is coffee", "I'm happy because there is coffee"]
+        extra_words: [sad, water, tired]
+      - type: fill_blank
+        sentence: "Malungkot ako ___ umuulan."
+        translation: "I'm sad because it's raining."
+        answer: kasi
+        options: [kasi, bakit, tapos]
+      - type: translate
+        prompt_en: Why are you tired?
+        answer_tl: Bakit ka pagod?
+        extra_words: [ako, masaya, kasi]
+        hint: '"ka" comes right after "bakit", before the feeling.'
+      - type: listen
+        audio: bakit_ka_malungkot
+        answer_tl: Bakit ka malungkot
+        extra_words: [pagod, kasi]
+      - type: choice
+        prompt: "You're tired because you work. You say:"
+        answer: Pagod ako kasi nagtatrabaho ako
+        distractors: [Gutom na ako, Bakit ka pagod?, Ayos lang ako]
+        audio: pagod_ako_kasi_nagtatrabaho_ako
+        audio_text: Pagod ako kasi nagtatrabaho ako.
+      - type: translate
+        prompt_tl: Galit siya dahil mahal ang kape.
+        answer_en: She's angry because the coffee is expensive.
+        accept:
+          - "He's angry because the coffee is expensive"
+          - "She is angry because the coffee is expensive"
+          - "He is angry because the coffee is expensive"
+        extra_words: [happy, water, cheap]
+        hint: '"dahil" is the more formal twin of "kasi".'
+      - type: fill_blank
+        sentence: "___ ka galit?"
+        translation: "Why are you angry?"
+        answer: Bakit
+        options: [Bakit, Kasi, Ilan]
+  - id: feelings-4
+    title: Sa tingin ko
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nakakatawa, en: funny }
+          - { tl: nakakainis, en: annoying }
+          - { tl: medyo, en: a bit }
+          - { tl: talaga, en: really }
+      - type: choice
+        prompt: "'Sa tingin ko' means..."
+        answer: I think / In my opinion
+        distractors: ["I don't know", "I like it", "Really?"]
+        audio: sa_tingin_ko
+        audio_text: Sa tingin ko.
+      - type: translate
+        prompt_tl: Sa tingin ko, maganda ang libro.
+        answer_en: I think the book is beautiful.
+        accept:
+          - "I think the book is nice"
+          - "I think the book is good"
+          - "In my opinion, the book is beautiful"
+        extra_words: [small, coffee, expensive]
+      - type: fill_blank
+        sentence: "___ pagod ako ngayon."
+        translation: "I'm a bit tired today."
+        answer: Medyo
+        options: [Medyo, Sobra, Talaga]
+      - type: translate
+        prompt_en: The rain is annoying.
+        answer_tl: Nakakainis ang ulan.
+        extra_words: [nakakatawa, maganda, araw]
+      - type: listen
+        audio: nakakatawa_ang_libro
+        answer_tl: Nakakatawa ang libro
+        extra_words: [nakakainis, maganda]
+      - type: choice
+        prompt: "Your friend says 'Nakakatawa siya.' They mean:"
+        answer: He's funny
+        distractors: ["He's annoying", "He's tired", "He's angry"]
+        audio: nakakatawa_siya
+        audio_text: Nakakatawa siya.
+      - type: translate
+        prompt_en: I'm so tired.
+        answer_tl: Sobrang pagod ako.
+        extra_words: [medyo, masaya, talaga]
+        hint: '"sobrang" + an adjective = so / very.'
+      - type: fill_blank
+        sentence: "Masaya ___ ako!"
+        translation: "I'm really happy!"
+        answer: talaga
+        options: [talaga, medyo, kasi]
+        hint: '"talaga" follows the feeling, before the pronoun.'

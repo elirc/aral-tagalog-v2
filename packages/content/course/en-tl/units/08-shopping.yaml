@@ -1,0 +1,192 @@
+id: shopping
+title: Shopping
+description: Ask prices, haggle, and buy at the store and market.
+tip: >-
+  "Magkano?" is how much. In markets, tawad (haggling) is normal — try
+  "Pwedeng tumawad?" (Can I haggle?) with a smile.
+lessons:
+  - id: shopping-1
+    title: How much?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Magkano' means..."
+        answer: How much
+        distractors: [How many, Where, When]
+        audio: magkano
+      - type: translate
+        prompt_tl: Magkano ito?
+        answer_en: How much is this?
+        extra_words: [where, this, how many]
+        audio: magkano_ito
+      - type: translate
+        prompt_en: How much is the fish?
+        answer_tl: Magkano ang isda?
+        extra_words: [ito, presyo, mura]
+      - type: fill_blank
+        sentence: "___ ang kape?"
+        translation: "How much is the coffee?"
+        answer: Magkano
+        options: [Magkano, Nasaan, Ano]
+      - type: match
+        pairs:
+          - { tl: magkano, en: how much }
+          - { tl: piso, en: peso }
+          - { tl: ito, en: this }
+          - { tl: presyo, en: price }
+      - type: listen
+        audio: magkano_ito
+        answer_tl: Magkano ito
+        accept: ["Magkano ito?"]
+        extra_words: [ano, presyo]
+      - type: choice
+        prompt: "The vendor says 'Sampung piso.' That means..."
+        answer: Ten pesos
+        distractors: [One peso, Ten items, How much?]
+        hint: Reuse the numbers you already know!
+      - type: fill_blank
+        sentence: "Sampung ___."
+        translation: "Ten pesos."
+        answer: piso
+        options: [piso, presyo, ito]
+  - id: shopping-2
+    title: Expensive or cheap
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mahal, en: expensive }
+          - { tl: mura, en: cheap }
+          - { tl: pera, en: money }
+          - { tl: magkano, en: how much }
+      - type: choice
+        prompt: "'Mahal' means..."
+        answer: Expensive
+        distractors: [Cheap, Money, Free]
+        audio: mahal
+      - type: translate
+        prompt_tl: Ang mahal naman!
+        answer_en: That's so expensive!
+        accept: ["How expensive!", "So expensive!"]
+        extra_words: [cheap, money, this]
+        audio: ang_mahal_naman
+        hint: '"naman" adds an emotional tone here.'
+      - type: translate
+        prompt_en: This is cheap.
+        answer_tl: Mura ito.
+        extra_words: [mahal, pera, ang]
+      - type: fill_blank
+        sentence: "___ ang isda, mura ang manok."
+        translation: "The fish is expensive, the chicken is cheap."
+        answer: Mahal
+        options: [Mahal, Mura, Pera]
+      - type: listen
+        audio: mura
+        answer_tl: Mura
+        extra_words: [mahal, pera]
+      - type: choice
+        prompt: "You think the price is too high. Say:"
+        answer: Ang mahal naman!
+        distractors: [Ang mura naman!, Salamat po!, Magkano ito?]
+        audio: ang_mahal_naman
+      - type: translate
+        prompt_tl: Wala akong pera.
+        answer_en: I don't have money.
+        accept: ["I have no money"]
+        extra_words: [have, expensive, cheap]
+  - id: shopping-3
+    title: At the store
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tindahan, en: store }
+          - { tl: palengke, en: market }
+          - { tl: bumili, en: bought }
+          - { tl: sukli, en: change }
+      - type: choice
+        prompt: "'Tindahan' means..."
+        answer: Store
+        distractors: [Market, Church, School]
+        audio: tindahan
+        hint: A "tindahan" is a small shop; a "palengke" is a wet market.
+      - type: translate
+        prompt_tl: Bumili ako ng tinapay.
+        answer_en: I bought bread.
+        extra_words: [drank, water, store]
+        audio: bumili_ako_ng_tinapay
+      - type: translate
+        prompt_en: She buys at the market.
+        answer_tl: Bumibili siya sa palengke.
+        extra_words: [tindahan, bumili, ako]
+      - type: fill_blank
+        sentence: "___ ako ng gatas sa tindahan."
+        translation: "I bought milk at the store."
+        answer: Bumili
+        options: [Bumili, Bumibili, Uminom]
+      - type: listen
+        audio: bumili_ako_ng_tinapay
+        answer_tl: Bumili ako ng tinapay
+        extra_words: [bumibili, gatas]
+      - type: fill_blank
+        sentence: "Nasaan ang ___ ko?"
+        translation: "Where is my change?"
+        answer: sukli
+        options: [sukli, pera, presyo]
+      - type: choice
+        prompt: "The cashier hands you 'sukli'. That's your..."
+        answer: Change
+        distractors: [Receipt, Bag, Bill]
+        audio: sukli
+  - id: shopping-4
+    title: At the market
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Magkano ang tatlong tinapay?
+        answer_en: How much for three pieces of bread?
+        accept: ["How much are three breads?", "How much for three breads?"]
+        extra_words: [this, cheap, price]
+      - type: translate
+        prompt_en: How much are two eggs?
+        answer_tl: Magkano ang dalawang itlog?
+        extra_words: [ito, isa, presyo]
+      - type: choice
+        prompt: "'Ang mura naman!' means..."
+        answer: That's so cheap!
+        distractors: [That's so expensive!, How much?, No money.]
+        audio: ang_mura_naman
+        audio_text: Ang mura naman!
+      - type: fill_blank
+        sentence: "___ po ang isda?"
+        translation: "How much is the fish? (polite)"
+        answer: Magkano
+        options: [Magkano, Nasaan, Sino]
+      - type: translate
+        prompt_tl: Bumibili ako ng isda sa palengke araw-araw.
+        answer_en: I buy fish at the market every day.
+        accept: ["Every day I buy fish at the market"]
+        extra_words: [bought, store, yesterday]
+        grading: { hyphens: true }
+      - type: match
+        pairs:
+          - { tl: bumili, en: bought }
+          - { tl: bumibili, en: buys }
+          - { tl: mahal, en: expensive }
+          - { tl: mura, en: cheap }
+      - type: fill_blank
+        sentence: "Bumili siya ___ mabilis."
+        translation: "She bought quickly."
+        answer: nang
+        options: [nang, ng, sa]
+        grading: { ng_nang: true }
+      - type: listen
+        audio: ang_mahal_naman
+        answer_tl: Ang mahal naman
+        accept: ["Ang mahal naman!"]
+        extra_words: [mura, pera]
+      - type: translate
+        prompt_tl: Salamat po, ito po ang sukli ninyo.
+        answer_en: Thank you, this is your change.
+        hint: '"po" and "ninyo" keep the whole sentence polite.'
+        extra_words: [money, expensive, cheap]

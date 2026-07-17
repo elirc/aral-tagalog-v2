@@ -1,0 +1,214 @@
+id: health-body
+title: Health & Body
+description: Name the parts of the body, say what hurts, and see a doctor.
+tip: >-
+  Pain works backwards from English: the body part is the subject, not you.
+  "Masakit ang ulo ko" = my head hurts (literally "my head is painful").
+  Don't confuse it with "May sakit ako" — that one means "I'm sick".
+lessons:
+  - id: health-1
+    title: Parts of the body
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ulo, en: head }
+          - { tl: mata, en: eye }
+          - { tl: kamay, en: hand }
+          - { tl: paa, en: foot }
+      - type: choice
+        prompt: "'Ulo' means..."
+        answer: Head
+        distractors: [Hand, Eye, Foot]
+        audio: ulo
+        audio_text: Ulo
+      - type: translate
+        prompt_tl: Ito ang kamay ko.
+        answer_en: This is my hand.
+        extra_words: [foot, head, eye]
+        audio: ito_ang_kamay_ko
+      - type: fill_blank
+        sentence: "Dalawa ang ___ ko."
+        translation: "I have two eyes."
+        answer: mata
+        options: [mata, ulo, ilong]
+        hint: 'Tagalog counts things this way — literally "my eyes are two".'
+      - type: match
+        pairs:
+          - { tl: ilong, en: nose }
+          - { tl: bibig, en: mouth }
+          - { tl: tainga, en: ear }
+          - { tl: ngipin, en: tooth }
+      - type: choice
+        prompt: "You hear with your..."
+        answer: tainga
+        distractors: [ilong, bibig, ngipin]
+      - type: listen
+        audio: ulo
+        answer_tl: Ulo
+        extra_words: [mata, paa]
+      - type: translate
+        prompt_en: My hand is small.
+        answer_tl: Maliit ang kamay ko.
+        extra_words: [malaki, paa, siya]
+      - type: translate
+        prompt_tl: Maganda ang mata mo.
+        answer_en: Your eyes are beautiful.
+        accept: ["You have beautiful eyes", "Your eye is beautiful"]
+        extra_words: [my, hand, small]
+        hint: '"mata" covers one eye or both.'
+  - id: health-2
+    title: It hurts
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: masakit, en: it hurts }
+          - { tl: tiyan, en: stomach }
+          - { tl: ngipin, en: tooth }
+          - { tl: likod, en: back }
+      - type: choice
+        prompt: "'Masakit ang ulo ko' means..."
+        answer: My head hurts
+        distractors: [My head is big, Where is my head?, My head is beautiful]
+        audio: masakit_ang_ulo_ko
+        audio_text: Masakit ang ulo ko.
+      - type: translate
+        prompt_tl: Masakit ang tiyan ko.
+        answer_en: My stomach hurts.
+        extra_words: [head, tooth, back]
+        audio: masakit_ang_tiyan_ko
+      - type: translate
+        prompt_en: My tooth hurts.
+        answer_tl: Masakit ang ngipin ko.
+        extra_words: [tiyan, likod, mata]
+        hint: 'The body part comes after "ang"; "ko" makes it yours.'
+      - type: fill_blank
+        sentence: "___ ang likod ko."
+        translation: "My back hurts."
+        answer: Masakit
+        options: [Masakit, Maganda, Malaki]
+      - type: listen
+        audio: masakit_ang_ulo_ko
+        answer_tl: Masakit ang ulo ko
+        extra_words: [tiyan, ngipin]
+      - type: choice
+        prompt: "'Masakit ang katawan ko' means..."
+        answer: My body aches
+        distractors: [My body is strong, I am tired, My head hurts]
+        audio: masakit_ang_katawan_ko
+        audio_text: Masakit ang katawan ko.
+      - type: translate
+        prompt_tl: Masakit ba ang ulo mo?
+        answer_en: Does your head hurt?
+        accept: ["Is your head hurting?"]
+        extra_words: [my, stomach, where]
+        hint: '"ba" turns it into a yes/no question.'
+      - type: fill_blank
+        sentence: "Masakit ang ___ niya."
+        translation: "Her stomach hurts."
+        answer: tiyan
+        options: [tiyan, ulo, ngipin]
+  - id: health-3
+    title: Feeling sick
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lagnat, en: fever }
+          - { tl: ubo, en: cough }
+          - { tl: sipon, en: a cold }
+          - { tl: pagod, en: tired }
+      - type: choice
+        prompt: "'May sakit ako' means..."
+        answer: I am sick
+        distractors: [I am fine, My head hurts, I have medicine]
+        audio: may_sakit_ako
+        audio_text: May sakit ako.
+        hint: 'Same "may" as "May kapatid ako" — literally "I have illness".'
+      - type: translate
+        prompt_tl: May lagnat ang anak ko.
+        answer_en: My child has a fever.
+        extra_words: [cough, cold, tired]
+        audio: may_lagnat_ang_anak_ko
+      - type: translate
+        prompt_en: I have a cough.
+        answer_tl: May ubo ako.
+        extra_words: [sipon, lagnat, wala]
+      - type: fill_blank
+        sentence: "May ___ ako, mainit ang katawan ko."
+        translation: "I have a fever, my body is hot."
+        answer: lagnat
+        options: [lagnat, ubo, sipon]
+      - type: listen
+        audio: may_sakit_ako
+        answer_tl: May sakit ako
+        extra_words: [lagnat, ubo]
+      - type: choice
+        prompt: "You feel weak and want to sleep. You say:"
+        answer: Pagod ako
+        distractors: [Mabuti ako, Malakas ako, Masarap ito]
+        audio: pagod_ako
+        audio_text: Pagod ako.
+      - type: translate
+        prompt_tl: May sipon at ubo ang bunso.
+        answer_en: The youngest has a cold and a cough.
+        accept: ["The youngest child has a cold and a cough"]
+        extra_words: [fever, tired, sick]
+      - type: translate
+        prompt_en: Do you have a fever?
+        answer_tl: May lagnat ka ba?
+        accept: ["May lagnat ka?"]
+        extra_words: [ubo, sipon, ako]
+  - id: health-4
+    title: At the doctor
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: doktor, en: doctor }
+          - { tl: gamot, en: medicine }
+          - { tl: botika, en: pharmacy }
+          - { tl: ospital, en: hospital }
+      - type: choice
+        prompt: "'Botika' means..."
+        answer: Pharmacy
+        distractors: [Hospital, Doctor, Market]
+        audio: botika
+        audio_text: Botika
+      - type: translate
+        prompt_tl: Pupunta ako sa doktor.
+        answer_en: I am going to the doctor.
+        accept: ["I'm going to the doctor", "I will go to the doctor"]
+        extra_words: [pharmacy, medicine, hospital]
+        audio: pupunta_ako_sa_doktor
+      - type: translate
+        prompt_en: I am buying medicine at the pharmacy.
+        answer_tl: Bumibili ako ng gamot sa botika.
+        extra_words: [doktor, ospital, ito]
+      - type: fill_blank
+        sentence: "Uminom ka ng ___."
+        translation: "Take your medicine."
+        answer: gamot
+        options: [gamot, tubig, kape]
+        hint: 'Tagalog "drinks" medicine — uminom, never kumain.'
+      - type: listen
+        audio: pupunta_ako_sa_doktor
+        answer_tl: Pupunta ako sa doktor
+        extra_words: [botika, gamot]
+      - type: choice
+        prompt: "You have a fever. Where do you buy medicine?"
+        answer: Sa botika
+        distractors: [Sa palengke, Sa paaralan, Sa simbahan]
+      - type: translate
+        prompt_tl: Magpahinga ka at uminom ng maraming tubig.
+        answer_en: Rest and drink a lot of water.
+        accept: ["Rest and drink lots of water"]
+        extra_words: [medicine, sleep, food]
+        hint: '"Magpahinga ka" = you rest — a gentle command.'
+      - type: choice
+        prompt: "The doctor says 'Uminom ka ng gamot araw-araw.' You should..."
+        answer: Take the medicine every day
+        distractors: [Buy medicine tomorrow, Drink water every day, Go to the hospital]
+        audio: uminom_ka_ng_gamot_araw_araw
+        audio_text: Uminom ka ng gamot araw-araw.

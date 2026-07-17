@@ -1,0 +1,186 @@
+id: weather-nature
+title: Weather & Nature
+description: Talk about rain, sun, storms, and the world around you.
+tip: >-
+  Weather verbs repeat their first syllable for "happening now": umuulan
+  (it's raining), umaaraw (it's sunny). Bagyo (storm/typhoon) is a word
+  you'll hear every rainy season.
+lessons:
+  - id: weather-1
+    title: Rain and sun
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ulan, en: rain }
+          - { tl: araw, en: sun }
+          - { tl: umuulan, en: raining }
+          - { tl: mainit, en: hot }
+      - type: choice
+        prompt: "'Umuulan' means..."
+        answer: It's raining
+        distractors: [It's sunny, It's cold, It's windy]
+        audio: umuulan
+      - type: translate
+        prompt_tl: Umuulan ngayon.
+        answer_en: It's raining now.
+        accept: ["It is raining today", "It's raining today"]
+        extra_words: [sun, hot, cold]
+        audio: umuulan_ngayon
+      - type: translate
+        prompt_en: The sun is hot.
+        answer_tl: Mainit ang araw.
+        extra_words: [ulan, malamig, hangin]
+      - type: fill_blank
+        sentence: "___ ngayon, malakas ang ulan."
+        translation: "It's raining now, the rain is strong."
+        answer: Umuulan
+        options: [Umuulan, Mainit, Malamig]
+      - type: listen
+        audio: umuulan_ngayon
+        answer_tl: Umuulan ngayon
+        extra_words: [mainit, araw]
+      - type: choice
+        prompt: "It's very sunny and warm. You say:"
+        answer: Mainit ang araw
+        distractors: [Malamig ngayon, Umuulan, Malakas ang hangin]
+      - type: fill_blank
+        sentence: "___ ang araw ngayon."
+        translation: "The sun is hot today."
+        answer: Mainit
+        options: [Mainit, Malamig, Malakas]
+  - id: weather-2
+    title: Hot and cold
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mainit, en: hot }
+          - { tl: malamig, en: cold }
+          - { tl: hangin, en: wind }
+          - { tl: panahon, en: weather }
+      - type: choice
+        prompt: "'Malamig' means..."
+        answer: Cold
+        distractors: [Hot, Windy, Rainy]
+        audio: malamig
+      - type: translate
+        prompt_tl: Malamig ngayon.
+        answer_en: It's cold now.
+        accept: ["It is cold today", "It's cold today"]
+        extra_words: [hot, sun, wind]
+      - type: translate
+        prompt_en: The weather is beautiful.
+        answer_tl: Maganda ang panahon.
+        extra_words: [mainit, hangin, araw]
+      - type: fill_blank
+        sentence: "Malakas ang ___."
+        translation: "The wind is strong."
+        answer: hangin
+        options: [hangin, ulan, araw]
+      - type: listen
+        audio: malamig_ngayon
+        answer_tl: Malamig ngayon
+        extra_words: [mainit, hangin]
+      - type: choice
+        prompt: "'Mainit o malamig?' asks..."
+        answer: Hot or cold?
+        distractors: [Rain or sun?, Big or small?, Near or far?]
+        hint: '"o" = or'
+      - type: translate
+        prompt_tl: Malamig ang tubig.
+        answer_en: The water is cold.
+        extra_words: [hot, wind, sky]
+  - id: weather-3
+    title: Nature
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dagat, en: sea }
+          - { tl: bundok, en: mountain }
+          - { tl: langit, en: sky }
+          - { tl: puno, en: tree }
+      - type: choice
+        prompt: "'Bundok' means..."
+        answer: Mountain
+        distractors: [Sea, Sky, River]
+        audio: bundok
+      - type: translate
+        prompt_tl: Maganda ang langit.
+        answer_en: The sky is beautiful.
+        extra_words: [sea, mountain, tree]
+      - type: translate
+        prompt_en: The sea is big.
+        answer_tl: Malaki ang dagat.
+        extra_words: [bundok, langit, maganda]
+      - type: fill_blank
+        sentence: "Mataas ang ___."
+        translation: "The mountain is tall."
+        answer: bundok
+        options: [bundok, dagat, puno]
+      - type: listen
+        audio: dagat
+        answer_tl: Dagat
+        extra_words: [bundok, langit]
+      - type: choice
+        prompt: "'Maraming puno' means..."
+        answer: Many trees
+        distractors: [One tree, Tall tree, No trees]
+        audio: maraming_puno
+        audio_text: Maraming puno.
+        hint: '"marami" = many / a lot'
+      - type: translate
+        prompt_tl: Maganda ang bulaklak.
+        answer_en: The flower is beautiful.
+        extra_words: [tree, sea, sky]
+  - id: weather-4
+    title: Storms and seasons
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "'Bagyo' means..."
+        answer: Storm / typhoon
+        distractors: [Rain, Wind, Cloud]
+        audio: bagyo
+      - type: translate
+        prompt_tl: May bagyo bukas.
+        answer_en: There's a storm tomorrow.
+        accept: ["There is a storm tomorrow"]
+        extra_words: [rain, today, wind]
+        audio: may_bagyo_bukas
+      - type: translate
+        prompt_en: The wind is strong today.
+        answer_tl: Malakas ang hangin ngayon.
+        extra_words: [ulan, mainit, araw]
+      - type: fill_blank
+        sentence: "May ___ ngayon, malakas ang ulan at hangin."
+        translation: "There's a storm now, the rain and wind are strong."
+        answer: bagyo
+        options: [bagyo, araw, langit]
+        hint: '"at" = and'
+      - type: match
+        pairs:
+          - { tl: bagyo, en: storm }
+          - { tl: malakas, en: strong }
+          - { tl: mataas, en: tall }
+          - { tl: marami, en: many }
+      - type: translate
+        prompt_tl: Umuulan at malamig ngayon.
+        answer_en: It's raining and cold now.
+        accept: ["It is raining and cold now"]
+        extra_words: [hot, sun, wind]
+      - type: fill_blank
+        sentence: "Malamig ___ mainit?"
+        translation: "Cold or hot?"
+        answer: o
+        options: [o, at, ba]
+        hint: '"o" = or'
+      - type: listen
+        audio: may_bagyo_bukas
+        answer_tl: May bagyo bukas
+        extra_words: [ulan, hangin]
+      - type: translate
+        prompt_en: The weather is cold today.
+        answer_tl: Malamig ang panahon ngayon.
+        extra_words: [mainit, hangin, bagyo]

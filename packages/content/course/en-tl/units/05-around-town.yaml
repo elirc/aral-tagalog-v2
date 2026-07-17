@@ -1,6 +1,9 @@
 id: around-town
 title: Around Town
 description: Places, going, and asking where.
+tip: >-
+  Nasaan asks where something IS ("Nasaan ang banyo?"); saan asks where an
+  action happens ("Saan ka pupunta?"). Answers start with nasa or sa.
 lessons:
   - id: town-1
     title: Places
