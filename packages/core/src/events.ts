@@ -1,4 +1,4 @@
-import { addHearts, fullHearts, loseHeart, regenerate, type HeartsState } from "./hearts";
+import { addHearts, fullHearts, loseHeart, MAX_HEARTS, regenerate, type HeartsState } from "./hearts";
 import { applyCompletionDay, emptyStreak, localDayKey, type StreakState } from "./streak";
 
 /**
@@ -28,7 +28,17 @@ export type ProgressEvent =
       occurredAt: number;
       amount: number | "full";
       source: "ad" | "practice";
+    }
+  | {
+      id: string;
+      /** set the user's daily XP goal; last-write-wins, no XP/heart/streak effect */
+      type: "goal_set";
+      occurredAt: number;
+      goalXp: number;
     };
+
+/** Default daily XP goal until the user sets one via a goal_set event. */
+export const DEFAULT_DAILY_GOAL_XP = 30;
 
 export interface UserProgress {
   xpTotal: number;
@@ -36,6 +46,18 @@ export interface UserProgress {
   completedLessonIds: string[];
   streak: StreakState;
   hearts: HeartsState;
+  /** count of every lesson_completed event, including practice replays */
+  lessonsCompleted: number;
+  /** count of lesson_completed events with perfect === true */
+  perfectLessons: number;
+  /** count of practice-replay completions */
+  practiceCount: number;
+  /** localDayKey → XP earned that day (clamped ts + timeZone, like streaks) */
+  xpByDay: Record<string, number>;
+  /** highest streak.count ever reached while folding the stream */
+  longestStreak: number;
+  /** current daily XP goal (DEFAULT_DAILY_GOAL_XP until a goal_set event) */
+  dailyGoalXp: number;
 }
 
 /**
@@ -52,27 +74,62 @@ export function reduceEvents(
   now: number,
   initial?: UserProgress,
 ): UserProgress {
-  const sorted = [...events].sort((a, b) => a.occurredAt - b.occurredAt);
+  // Tie-break equal timestamps by id so the fold is deterministic for the
+  // same event *set* regardless of input order (goal_set is last-write-wins).
+  const sorted = [...events].sort(
+    (a, b) => a.occurredAt - b.occurredAt || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0),
+  );
   const completed = new Set<string>(initial?.completedLessonIds ?? []);
   let xpTotal = initial?.xpTotal ?? 0;
   let streak = initial?.streak ?? emptyStreak;
-  let hearts = initial?.hearts ?? fullHearts(sorted[0]?.occurredAt ?? now);
+  let hearts = initial?.hearts ?? fullHearts(Math.min(sorted[0]?.occurredAt ?? now, now));
+  // New fields read with ?? fallbacks so an older server baseline (missing
+  // them) still overlays sensibly.
+  let lessonsCompleted = initial?.lessonsCompleted ?? initial?.completedLessonIds.length ?? 0;
+  let perfectLessons = initial?.perfectLessons ?? 0;
+  let practiceCount = initial?.practiceCount ?? 0;
+  const xpByDay: Record<string, number> = { ...(initial?.xpByDay ?? {}) };
+  let longestStreak = initial?.longestStreak ?? initial?.streak.count ?? streak.count;
+  let dailyGoalXp = initial?.dailyGoalXp ?? DEFAULT_DAILY_GOAL_XP;
+
+  // `id` is the idempotency key (OFF-03): the same event may reach a stream
+  // twice (client retry after a dropped response) and must count once.
+  const seenIds = new Set<string>();
 
   for (const ev of sorted) {
+    if (seenIds.has(ev.id)) continue;
+    seenIds.add(ev.id);
     // clamp future timestamps (clock tampering / skew) to now (OFF-05)
     const t = Math.min(ev.occurredAt, now);
     switch (ev.type) {
-      case "lesson_completed":
+      case "lesson_completed": {
         xpTotal += ev.xp;
-        streak = applyCompletionDay(streak, localDayKey(t, timeZone));
+        const day = localDayKey(t, timeZone);
+        xpByDay[day] = (xpByDay[day] ?? 0) + ev.xp;
+        streak = applyCompletionDay(streak, day);
+        if (streak.count > longestStreak) longestStreak = streak.count;
+        lessonsCompleted++;
+        if (ev.perfect) perfectLessons++;
         if (!ev.practice) completed.add(ev.lessonId);
-        else hearts = addHearts(hearts, 1, t);
+        else {
+          practiceCount++;
+          hearts = addHearts(hearts, 1, t);
+        }
         break;
-      case "hearts_lost":
-        for (let i = 0; i < ev.count; i++) hearts = loseHeart(hearts, t);
+      }
+      case "hearts_lost": {
+        // losing more than MAX_HEARTS changes nothing; clamp hostile counts
+        const n = Math.min(ev.count, MAX_HEARTS);
+        for (let i = 0; i < n; i++) hearts = loseHeart(hearts, t);
         break;
+      }
       case "hearts_refilled":
         hearts = addHearts(hearts, ev.amount, t);
+        break;
+      case "goal_set":
+        // sorted by occurredAt, so the last valid goal_set wins (last-write-wins);
+        // junk goals (NaN / zero / negative) would make goalMet trivially true
+        if (Number.isFinite(ev.goalXp) && ev.goalXp > 0) dailyGoalXp = ev.goalXp;
         break;
     }
   }
@@ -82,5 +139,11 @@ export function reduceEvents(
     completedLessonIds: [...completed],
     streak,
     hearts: regenerate(hearts, now),
+    lessonsCompleted,
+    perfectLessons,
+    practiceCount,
+    xpByDay,
+    longestStreak,
+    dailyGoalXp,
   };
 }

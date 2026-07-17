@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { asc, eq } from "drizzle-orm";
 import { progressEvents, users, type Db } from "@aral/db";
 import { reduceEvents, type ProgressEvent, type UserProgress } from "@aral/core";
 
@@ -7,7 +7,10 @@ export async function getUserProgress(db: Db, userId: string, tz: string): Promi
   const rows = await db
     .select({ payload: progressEvents.payload })
     .from(progressEvents)
-    .where(eq(progressEvents.userId, userId));
+    .where(eq(progressEvents.userId, userId))
+    // deterministic fold order: the reducer tie-breaks by id, but Postgres
+    // row order is otherwise arbitrary run-to-run
+    .orderBy(asc(progressEvents.occurredAt), asc(progressEvents.id));
   const events = rows.map((r) => r.payload as ProgressEvent);
   return reduceEvents(events, tz, Date.now());
 }

@@ -16,6 +16,12 @@ export const gradingFlagsSchema = z
 const base = {
   id: z.string().optional(), // auto-assigned "<lessonId>-ex<N>" when omitted
   audio: z.string().optional(),
+  /**
+   * What the clip says, in the target language. Only needed where the compiler
+   * can't infer it — notably `choice`, whose answer may be in either language.
+   * Feeds the TTS fallback and scripts/generate-audio (AUD-02).
+   */
+  audio_text: z.string().optional(),
   hint: z.string().optional(),
 };
 
@@ -104,7 +110,10 @@ export const lessonSchema = z
   .object({
     id: z.string(),
     title: z.string(),
-    xp: z.number().int().positive().default(10),
+    // ≤95: /sync caps per-event xp at 100 and a perfect run adds +5 (core
+    // PERFECT_BONUS_XP) — a bigger authored value would produce events the
+    // server rejects
+    xp: z.number().int().positive().max(95).default(10),
     exercises: z.array(exerciseSchema).min(1),
   })
   .strict();
@@ -114,6 +123,7 @@ export const unitSchema = z
     id: z.string(),
     title: z.string(),
     description: z.string().optional(),
+    tip: z.string().optional(),
     lessons: z.array(lessonSchema).min(1),
   })
   .strict();

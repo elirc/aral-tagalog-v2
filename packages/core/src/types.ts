@@ -17,6 +17,11 @@ export interface CourseBundle {
   vocab: Record<string, VocabEntry>;
   /** audioRef -> relative file path within the bundle (e.g. "audio/kumusta_ka.mp3") */
   audio: Record<string, string>;
+  /**
+   * audioRef -> target-language text spoken in that clip (null when unknown).
+   * Lets clients fall back to device TTS while a recording is missing (AUD-02).
+   */
+  audioTexts?: Record<string, string | null>;
 }
 
 export interface VocabEntry {
@@ -31,6 +36,8 @@ export interface Unit {
   id: string;
   title: string;
   description?: string;
+  /** short grammar/culture note shown on the course map */
+  tip?: string;
   lessons: Lesson[];
 }
 

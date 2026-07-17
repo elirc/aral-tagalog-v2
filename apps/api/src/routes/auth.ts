@@ -11,8 +11,11 @@ const credentialsSchema = z.object({
   displayName: z.string().max(80).optional(),
 });
 
+// tighter than the global limit: these routes run argon2 per request
+const authRateLimit = { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } };
+
 export function authRoutes(app: FastifyInstance) {
-  app.post("/auth/register", async (req, reply) => {
+  app.post("/auth/register", authRateLimit, async (req, reply) => {
     const body = credentialsSchema.safeParse(req.body);
     if (!body.success) return reply.code(400).send({ error: body.error.issues[0]?.message ?? "invalid body" });
     const { email, password, tz, displayName } = body.data;
@@ -32,7 +35,7 @@ export function authRoutes(app: FastifyInstance) {
     return reply.code(201).send(await issueTokens(app, user!.id, user!));
   });
 
-  app.post("/auth/login", async (req, reply) => {
+  app.post("/auth/login", authRateLimit, async (req, reply) => {
     const body = credentialsSchema.pick({ email: true, password: true }).safeParse(req.body);
     if (!body.success) return reply.code(400).send({ error: "invalid body" });
 
@@ -42,7 +45,7 @@ export function authRoutes(app: FastifyInstance) {
     return issueTokens(app, user.id, user);
   });
 
-  app.post("/auth/refresh", async (req, reply) => {
+  app.post("/auth/refresh", authRateLimit, async (req, reply) => {
     const body = z.object({ refreshToken: z.string() }).safeParse(req.body);
     if (!body.success) return reply.code(400).send({ error: "invalid body" });
 

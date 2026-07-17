@@ -37,6 +37,8 @@ export function loseHeart(s: HeartsState, now: number): HeartsState {
 export function addHearts(s: HeartsState, amount: number | "full", now: number): HeartsState {
   const cur = regenerate(s, now);
   if (amount === "full") return fullHearts(now);
+  // adding is the only contract; NaN / zero / negative amounts are no-ops
+  if (!Number.isFinite(amount) || amount <= 0) return cur;
   const hearts = Math.min(MAX_HEARTS, cur.hearts + amount);
   return { hearts, updatedAt: hearts >= MAX_HEARTS ? now : cur.updatedAt };
 }

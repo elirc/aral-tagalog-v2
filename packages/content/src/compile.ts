@@ -63,14 +63,19 @@ function regAudio(ref: string | undefined, text?: string) {
 function compileExercise(ex: AuthoredExercise, id: string): Exercise {
   switch (ex.type) {
     case "choice":
-      regAudio(ex.audio, ex.answer);
+      // a choice answer can be in either language (English answers were
+      // poisoning audio_texts.json with English speech text under Tagalog
+      // refs), so the text must be authored explicitly via audio_text.
+      // Without it the ref is registered text-less; vocab lemmas or other
+      // exercises may fill it in later — regAudio overwrites null-text entries.
+      regAudio(ex.audio, ex.audio_text);
       return { id, type: "choice", prompt: ex.prompt, answer: ex.answer, distractors: ex.distractors, audio: ex.audio, hint: ex.hint };
     case "translate": {
       assertTranslateDirection(ex, id);
       const toBase = Boolean(ex.prompt_tl);
       const prompt = (toBase ? ex.prompt_tl : ex.prompt_en)!;
       const answer = (toBase ? ex.answer_en : ex.answer_tl)!;
-      regAudio(ex.audio, toBase ? ex.prompt_tl : ex.answer_tl);
+      regAudio(ex.audio, ex.audio_text ?? (toBase ? ex.prompt_tl : ex.answer_tl));
       return {
         id,
         type: "translate_taps",
@@ -85,7 +90,7 @@ function compileExercise(ex: AuthoredExercise, id: string): Exercise {
       };
     }
     case "listen":
-      regAudio(ex.audio, ex.answer_tl);
+      regAudio(ex.audio, ex.audio_text ?? ex.answer_tl);
       return {
         id,
         type: "listen",
@@ -99,7 +104,7 @@ function compileExercise(ex: AuthoredExercise, id: string): Exercise {
     case "match":
       return { id, type: "match_pairs", pairs: ex.pairs.map((p) => ({ left: p.tl, right: p.en })), hint: ex.hint };
     case "fill_blank":
-      regAudio(ex.audio, ex.sentence.replace("___", ex.answer));
+      regAudio(ex.audio, ex.audio_text ?? ex.sentence.replace("___", ex.answer));
       return {
         id,
         type: "fill_blank",
@@ -120,6 +125,7 @@ function compileUnit(authored: AuthoredUnit): Unit {
     id: authored.id,
     title: authored.title,
     description: authored.description,
+    tip: authored.tip,
     lessons: authored.lessons.map((l) => ({
       id: l.id,
       title: l.title,
@@ -172,6 +178,7 @@ function main() {
     units,
     vocab: Object.fromEntries(vocab.map((v) => [v.id, v])),
     audio,
+    audioTexts: Object.fromEntries([...audioRefs.entries()].sort()),
   };
 
   mkdirSync(outDir, { recursive: true });
