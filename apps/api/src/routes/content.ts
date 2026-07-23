@@ -32,7 +32,13 @@ export function contentRoutes(app: FastifyInstance) {
     const path = join(env.audioDir, req.params.file);
     if (!existsSync(path)) return reply.code(404).send({ error: "no such clip" });
     reply.header("cache-control", "public, max-age=31536000, immutable");
-    const type = req.params.file.endsWith(".wav") ? "audio/wav" : "audio/mpeg";
-    return reply.type(type).send(createReadStream(path));
+    const types: Record<string, string> = {
+      mp3: "audio/mpeg",
+      wav: "audio/wav",
+      m4a: "audio/mp4",
+      ogg: "audio/ogg",
+    };
+    const ext = req.params.file.split(".").pop()!;
+    return reply.type(types[ext] ?? "application/octet-stream").send(createReadStream(path));
   });
 }

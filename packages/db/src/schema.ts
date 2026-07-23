@@ -21,13 +21,23 @@ export const users = pgTable("users", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
-/** rotating refresh tokens; only a hash is stored */
+/**
+ * Rotating refresh tokens; only a hash is stored. Tokens form *families*:
+ * login/register mints a new family, each refresh rotates within it. A
+ * rotated token stays as a tombstone (rotated_at set) until it expires —
+ * presenting one means the token leaked (or a very late retry), and the
+ * whole family is revoked (AUTH reuse detection).
+ */
 export const refreshTokens = pgTable("refresh_tokens", {
   id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
   userId: uuid("user_id")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
   tokenHash: text("token_hash").notNull().unique(),
+  /** all rotations of one login session share this id */
+  familyId: uuid("family_id").notNull().default(sql`gen_random_uuid()`),
+  /** set when this token was exchanged for a newer one (single-use rotation) */
+  rotatedAt: timestamp("rotated_at", { withTimezone: true }),
   expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
@@ -46,7 +56,7 @@ export const progressEvents = pgTable(
     userId: uuid("user_id")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
-    type: text("type").notNull(), // lesson_completed | hearts_lost | hearts_refilled
+    type: text("type").notNull(), // lesson_completed | hearts_lost | hearts_refilled | goal_set
     /** full ProgressEvent JSON as defined in @aral/core */
     payload: jsonb("payload").notNull(),
     /** device wall-clock epoch ms — streaks use this, not sync time (GAM-02) */

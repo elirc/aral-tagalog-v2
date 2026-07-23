@@ -4,6 +4,7 @@ import { z } from "zod";
 import { users } from "@aral/db";
 import { requireAuth } from "../auth";
 import { getUser, getUserProgress } from "../progress";
+import { tzSchema } from "./auth";
 
 export function meRoutes(app: FastifyInstance) {
   app.get("/me", { preHandler: requireAuth }, async (req, reply) => {
@@ -18,7 +19,7 @@ export function meRoutes(app: FastifyInstance) {
   // profile settings are last-writer-wins (OFF-03)
   app.patch("/me", { preHandler: requireAuth }, async (req, reply) => {
     const body = z
-      .object({ tz: z.string().max(64).optional(), displayName: z.string().max(80).nullable().optional() })
+      .object({ tz: tzSchema.optional(), displayName: z.string().max(80).nullable().optional() })
       .safeParse(req.body);
     if (!body.success) return reply.code(400).send({ error: "invalid body" });
     const [user] = await app.db.update(users).set(body.data).where(eq(users.id, req.userId)).returning();
