@@ -45,7 +45,9 @@ export function MatchView({
   const tryMatch = (right: string) => {
     if (!selectedLeft) return;
     if (gradePair(exercise, selectedLeft, right)) {
-      void playAudio(selectedLeft.replace(/\s+/g, "_")); // vocab refs follow this convention when present
+      // vocab refs are the lowercased lemma with spaces/hyphens as underscores
+      // ("Bagong Taon" -> bagong_taon); TTS speaks the word if no clip exists
+      void playAudio(selectedLeft.toLowerCase().replace(/[\s-]+/g, "_"), selectedLeft);
       const next = new Set(matched).add(selectedLeft).add(`r:${right}`);
       setMatched(next);
       setSelectedLeft(null);

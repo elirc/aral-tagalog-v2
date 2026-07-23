@@ -12,9 +12,11 @@ import {
   localDayKey,
   MAX_HEARTS,
   msUntilNextHeart,
+  PRACTICE_XP,
   reduceEvents,
   regenerate,
   sessionProgress,
+  sessionReviewOutcome,
   startSession,
   submitAnswer,
   type Lesson,
@@ -77,9 +79,11 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
     if (!session.done || completionSent.current) return;
     completionSent.current = true;
     const perfect = isPerfect(session);
-    const xp = lessonXp(lesson, perfect);
+    // practice replays earn a flat, smaller award (server clamps to match)
+    const xp = practice ? PRACTICE_XP : lessonXp(lesson, perfect);
     const now = Date.now();
     const tz = deviceTz();
+    const { missedExerciseIds, masteredExerciseIds } = sessionReviewOutcome(session);
     const event: ProgressEvent = {
       id: newEventId(),
       type: "lesson_completed",
@@ -88,6 +92,8 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
       perfect,
       xp,
       practice: practice || undefined,
+      missedExerciseIds: missedExerciseIds.length > 0 ? missedExerciseIds : undefined,
+      masteredExerciseIds: masteredExerciseIds.length > 0 ? masteredExerciseIds : undefined,
     };
     // diff earned achievements before vs. after folding this completion
     const before = new Set(earnedAchievementIds(progress, bundle.units));
@@ -127,23 +133,27 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
 
   // Enter drives the whole flow from the keyboard: check when an answer is
   // staged, continue from feedback. Footer buttons and text inputs keep their
-  // native Enter behavior (double-firing otherwise).
+  // native Enter behavior (double-firing otherwise). The listener is attached
+  // once; a ref keeps the handler's closures fresh without re-subscribing
+  // every render.
+  const keyHandler = useRef<(e: KeyboardEvent) => void>(() => {});
+  keyHandler.current = (e: KeyboardEvent) => {
+    if (e.key !== "Enter") return;
+    const t = e.target instanceof HTMLElement ? e.target : null;
+    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.closest(".player-footer"))) return;
+    if (phase.kind === "feedback") {
+      e.preventDefault();
+      advance();
+    } else if (answer !== null) {
+      e.preventDefault();
+      check();
+    }
+  };
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Enter") return;
-      const t = e.target instanceof HTMLElement ? e.target : null;
-      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.closest(".player-footer"))) return;
-      if (phase.kind === "feedback") {
-        e.preventDefault();
-        advance();
-      } else if (answer !== null) {
-        e.preventDefault();
-        check();
-      }
-    };
+    const onKey = (e: KeyboardEvent) => keyHandler.current(e);
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  });
+  }, []);
 
   if (session.done) {
     const perfect = isPerfect(session);
@@ -152,7 +162,8 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
         <p className="big-emoji">{perfect ? "🏆" : "🎉"}</p>
         <h2>{perfect ? "Perfect lesson!" : "Lesson complete!"}</h2>
         <p>
-          +{lessonXp(lesson, perfect)} XP{perfect ? " (includes perfect bonus)" : ""}
+          +{practice ? PRACTICE_XP : lessonXp(lesson, perfect)} XP
+          {perfect && !practice ? " (includes perfect bonus)" : ""}
           {practice ? " · +1 ❤️ for practicing" : ""}
         </p>
         {summary?.leveledUpTo && (

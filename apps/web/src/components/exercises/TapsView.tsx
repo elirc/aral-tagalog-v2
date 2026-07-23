@@ -45,14 +45,19 @@ export function TapsView({
           )}
         </>
       ) : (
-        <p className="exercise-prompt">
-          {exercise.audio && (
-            <button className="audio-btn" style={{ marginRight: 10, marginBottom: 0 }} onClick={() => playAudio(exercise.audio)} aria-label="play audio">
-              🔊
-            </button>
-          )}
-          {exercise.prompt}
-        </p>
+        <>
+          <p className="exercise-hint" style={{ marginBottom: 4 }}>
+            {exercise.direction === "target_to_base" ? "Translate to English" : "Translate to Tagalog"}
+          </p>
+          <p className="exercise-prompt">
+            {exercise.audio && (
+              <button className="audio-btn" style={{ marginRight: 10, marginBottom: 0 }} onClick={() => playAudio(exercise.audio)} aria-label="play audio">
+                🔊
+              </button>
+            )}
+            {exercise.prompt}
+          </p>
+        </>
       )}
       {exercise.hint && <p className="exercise-hint">{exercise.hint}</p>}
 
@@ -62,6 +67,7 @@ export function TapsView({
             key={`${wordIdx}-${pos}`}
             className="word-chip"
             disabled={disabled}
+            aria-label={`remove ${exercise.wordBank[wordIdx]}`}
             onClick={() => update(picked.filter((_, p) => p !== pos))}
           >
             {exercise.wordBank[wordIdx]}

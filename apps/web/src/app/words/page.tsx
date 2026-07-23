@@ -36,7 +36,7 @@ export default function WordsPage() {
     if (q) return null;
     const by = new Map<string, VocabEntry[]>();
     for (const v of shown) {
-      const letter = v.lemma[0]!.toUpperCase();
+      const letter = (v.lemma[0] ?? "#").toUpperCase();
       if (!by.has(letter)) by.set(letter, []);
       by.get(letter)!.push(v);
     }

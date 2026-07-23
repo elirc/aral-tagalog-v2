@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { DEFAULT_DAILY_GOAL_XP, displayStreak, localDayKey, type Lesson, type Unit } from "@aral/core";
+import {
+  buildReviewLesson,
+  DEFAULT_DAILY_GOAL_XP,
+  displayStreak,
+  localDayKey,
+  PRACTICE_XP,
+  type Lesson,
+  type Unit,
+} from "@aral/core";
 import { Header } from "@/components/Header";
 import { bundle } from "@/lib/content";
 import { deviceTz, useProgress } from "@/lib/progress";
@@ -28,6 +36,10 @@ export default function CourseMapPage() {
   const goal = progress.dailyGoalXp || DEFAULT_DAILY_GOAL_XP;
   const streak = displayStreak(progress.streak, localDayKey(now, tz));
   const started = progress.lessonsCompleted > 0;
+  // count only mistakes whose exercises still exist in this bundle version
+  const reviewable =
+    buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
+      .length ?? 0;
 
   return (
     <>
@@ -67,6 +79,22 @@ export default function CourseMapPage() {
                 </div>
                 <MiniGoalRing todayXp={todayXp} goal={goal} />
               </section>
+            )}
+
+            {reviewable > 0 && (
+              <Link href="/lesson/review" className="review-banner">
+                <span className="review-emoji" aria-hidden>
+                  🧹
+                </span>
+                <span className="review-text">
+                  <strong>Review your mistakes</strong>
+                  <span>
+                    {reviewable} exercise{reviewable > 1 ? "s" : ""} to practice · +{PRACTICE_XP} XP
+                    · +1 ❤️
+                  </span>
+                </span>
+                <span className="btn btn-primary">Review</span>
+              </Link>
             )}
 
             {bundle.units.map((unit, ui) => {

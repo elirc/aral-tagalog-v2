@@ -6,6 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -67,6 +68,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const [auth, setAuth] = useState<AuthTokens | null>(null);
   const [needsRelogin, setNeedsRelogin] = useState(false);
   const [tick, setTick] = useState(0); // re-derive hearts as time passes
+  const outboxRef = useRef<ProgressEvent[]>([]);
+  const hydratedRef = useRef(false);
 
   useEffect(() => {
     setOutbox(load<ProgressEvent[]>(KEYS.outbox) ?? []);
@@ -148,6 +151,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   );
 
   const logout = useCallback(() => {
+    // best-effort server-side revocation of this device's refresh-token family
+    if (auth) void api.logout(auth.refreshToken).catch(() => {});
+    hydratedRef.current = false;
     setNeedsRelogin(false);
     setAuth(null);
     setBaseline(null);
@@ -155,7 +161,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     save(KEYS.auth, null);
     save(KEYS.baseline, null);
     save(KEYS.outbox, []);
-  }, []);
+  }, [auth]);
 
   // background sync: whenever the outbox has items and we're logged in
   useEffect(() => {
@@ -163,6 +169,37 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     const t = setTimeout(() => void syncNow(), 1500);
     return () => clearTimeout(t);
   }, [ready, auth, outbox, syncNow]);
+
+  // Pull server truth once on load. The sync effect above only fires when the
+  // outbox has items, so without this a device with nothing to push never sees
+  // progress made on other devices.
+  outboxRef.current = outbox;
+  useEffect(() => {
+    if (!ready || !auth || hydratedRef.current) return;
+    hydratedRef.current = true;
+    if (outbox.length > 0) return; // /sync's response will refresh the baseline
+    const apply = (serverProgress: UserProgress) => {
+      // a completion may have landed while this request was in flight; the
+      // pending sync's response is fresher than ours, so let it win
+      if (outboxRef.current.length > 0) return;
+      setBaseline(serverProgress);
+      save(KEYS.baseline, serverProgress);
+    };
+    api
+      .me(auth.accessToken)
+      .then(({ progress: serverProgress }) => apply(serverProgress))
+      .catch(async (err) => {
+        if (!(err instanceof ApiError && err.status === 401)) return; // offline — keep local state
+        try {
+          const fresh = await api.refresh(auth.refreshToken);
+          setAuth(fresh);
+          save(KEYS.auth, fresh);
+          apply((await api.me(fresh.accessToken)).progress);
+        } catch (refreshErr) {
+          if (refreshErr instanceof ApiError && refreshErr.status === 401) setNeedsRelogin(true);
+        }
+      });
+  }, [ready, auth, outbox]);
 
   // keep the server-side tz current: the server buckets streak/xpByDay days
   // with users.tz, clients with the device zone — they must agree (GAM-02)

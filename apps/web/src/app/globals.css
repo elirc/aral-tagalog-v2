@@ -1,49 +1,10 @@
-/* Tokens mirror packages/ui/src/index.ts — keep in sync */
+/* Color tokens come from @aral/ui tokens.css (generated — single source of
+   truth; import lives in layout.tsx). Only web-specific tokens live here. */
 :root {
-  --primary: #58a700;
-  --primary-dark: #4a8f00;
-  /* fill under white text — ≥4.5:1 (white on --primary-dark is only 4.0:1) */
-  --primary-fill: #428000;
-  --primary-deep: #3d7a00;
-  --accent: #1cb0f6;
-  --danger: #ea2b2b;
-  --warning: #ffc800;
-  /* amber readable as TEXT on white/#f7f7f7 — #ffc800 is ~1.6:1 there */
-  --warning-text: #a97e00;
-  --heart: #ff4b4b;
-  --text: #3c3c3c;
-  /* was #777 (≈4.2:1 on --bg-muted, below AA for the 12-14px labels using it) */
-  --text-muted: #595959;
-  --bg: #fff;
-  --bg-muted: #f7f7f7;
-  --border: #e5e5e5;
-  --border-strong: #d5d5d5;
-  --correct-bg: #d7ffb8;
-  --wrong-bg: #ffdfe0;
-  /* soft tints used by selected/earned/highlight states */
-  --accent-soft: #e7f6fd;
-  --primary-soft: #eef8e3;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-/* Dark theme: data-theme is stamped on <html> before first paint (layout.tsx).
-   Values re-checked against the same AA targets the light tokens document. */
 :root[data-theme="dark"] {
-  --primary: #6abe1e;
-  --primary-dark: #58a700; /* text role: 5.0:1 on the dark card bg */
-  --primary-fill: #3d7a00; /* fill under white text — 5.3:1 */
-  --primary-deep: #2b5500;
-  --warning-text: #e6c14a;
-  --text: #e6e6e6;
-  --text-muted: #a8a8a8;
-  --bg: #20262e;
-  --bg-muted: #14181d;
-  --border: #39424d;
-  --border-strong: #4a545f;
-  --correct-bg: #24430e;
-  --wrong-bg: #4d1a1f;
-  --accent-soft: #10394f;
-  --primary-soft: #223b10;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -73,6 +34,37 @@ button {
   max-width: 640px;
   margin: 0 auto;
   padding: 16px;
+}
+
+/* --- review-mistakes banner (course map) --- */
+.review-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  color: inherit;
+  box-shadow: var(--shadow);
+}
+.review-banner:hover {
+  border-color: var(--accent);
+}
+.review-emoji {
+  font-size: 28px;
+}
+.review-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.review-text > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
 }
 
 /* --- header --- */

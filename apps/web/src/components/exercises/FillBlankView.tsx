@@ -34,10 +34,11 @@ export function FillBlankView({
         )}
         {before}
         <span
-          aria-hidden
           style={{ borderBottom: "3px solid var(--accent)", minWidth: 60, display: "inline-block", textAlign: "center" }}
         >
-          {value || "    "}
+          {/* screen readers need the gap spoken; sighted users see the underline */}
+          <span className="sr-only">{value ? `${value},` : "blank,"}</span>
+          <span aria-hidden>{value || "    "}</span>
         </span>
         {after}
       </p>

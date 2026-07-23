@@ -398,6 +398,10 @@ function StreakCalendar({
                   "today" in cell && cell.today ? " today" : ""
                 }`}
                 title={cell.key ? `${prettyDay(cell.key)}: ${xpByDay[cell.key] ?? 0} XP` : undefined}
+                // title alone is mouse-only; expose the same data to screen readers
+                role={cell.key ? "img" : undefined}
+                aria-label={cell.key ? `${prettyDay(cell.key)}: ${xpByDay[cell.key] ?? 0} XP` : undefined}
+                aria-hidden={cell.key ? undefined : true}
               />
             ))}
           </div>

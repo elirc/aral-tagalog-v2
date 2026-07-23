@@ -43,6 +43,15 @@ export const api = {
     request<AuthTokens>("/auth/login", { method: "POST", body: JSON.stringify({ email, password }) }),
   refresh: (refreshToken: string) =>
     request<AuthTokens>("/auth/refresh", { method: "POST", body: JSON.stringify({ refreshToken }) }),
+  logout: (refreshToken: string) =>
+    fetch(`${API_URL}/auth/logout`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refreshToken }),
+      // fire-and-forget: the page may be navigating away; keepalive lets the
+      // revocation finish anyway
+      keepalive: true,
+    }).then(() => undefined),
   sync: (accessToken: string, events: ProgressEvent[]) =>
     request<{ accepted: number; rejected: string[]; progress: UserProgress }>("/sync", {
       method: "POST",
