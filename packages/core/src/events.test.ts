@@ -228,4 +228,90 @@ describe("reduceEvents — gamification fields", () => {
     // xpTotal accumulates on top of the baseline
     expect(p.xpTotal).toBe(42);
   });
+
+  it("builds the weak-exercise queue from missed ids, oldest first", () => {
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10, missedExerciseIds: ["a", "b"] },
+      { id: "2", type: "lesson_completed", lessonId: "l2", occurredAt: T0 + 1000, perfect: false, xp: 10, missedExerciseIds: ["c"] },
+    ];
+    const p = reduceEvents(events, TZ, T0 + 2000);
+    expect(p.weakExerciseIds).toEqual(["a", "b", "c"]);
+    expect(p.mistakesCleared).toBe(0);
+  });
+
+  it("clears mastered exercises from the weak queue and counts them", () => {
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10, missedExerciseIds: ["a", "b"] },
+      { id: "2", type: "lesson_completed", lessonId: "review", occurredAt: T0 + 1000, perfect: true, xp: 5, practice: true, masteredExerciseIds: ["a"] },
+    ];
+    const p = reduceEvents(events, TZ, T0 + 2000);
+    expect(p.weakExerciseIds).toEqual(["b"]);
+    expect(p.mistakesCleared).toBe(1);
+  });
+
+  it("does not count mastering an exercise that was never weak", () => {
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: true, xp: 15, masteredExerciseIds: ["a", "b"] },
+    ];
+    const p = reduceEvents(events, TZ, T0 + 1000);
+    expect(p.weakExerciseIds).toEqual([]);
+    expect(p.mistakesCleared).toBe(0);
+  });
+
+  it("treats an id listed as both missed and mastered as still weak", () => {
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10, missedExerciseIds: ["a"], masteredExerciseIds: ["a"] },
+    ];
+    expect(reduceEvents(events, TZ, T0 + 1000).weakExerciseIds).toEqual(["a"]);
+  });
+
+  it("re-missing a cleared exercise puts it back in the queue", () => {
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10, missedExerciseIds: ["a"] },
+      { id: "2", type: "lesson_completed", lessonId: "review", occurredAt: T0 + 1000, perfect: true, xp: 5, practice: true, masteredExerciseIds: ["a"] },
+      { id: "3", type: "lesson_completed", lessonId: "l1", occurredAt: T0 + 2000, perfect: false, xp: 5, practice: true, missedExerciseIds: ["a"] },
+    ];
+    const p = reduceEvents(events, TZ, T0 + 3000);
+    expect(p.weakExerciseIds).toEqual(["a"]);
+    expect(p.mistakesCleared).toBe(1);
+  });
+
+  it("carries the weak queue through a baseline overlay", () => {
+    const baseline = reduceEvents(
+      [{ id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10, missedExerciseIds: ["a"] }],
+      TZ,
+      T0 + 1000,
+    );
+    const local: ProgressEvent[] = [
+      { id: "2", type: "lesson_completed", lessonId: "review", occurredAt: T0 + 2000, perfect: true, xp: 5, practice: true, masteredExerciseIds: ["a"], missedExerciseIds: ["b"] },
+    ];
+    const p = reduceEvents(local, TZ, T0 + 3000, baseline);
+    expect(p.weakExerciseIds).toEqual(["b"]);
+    expect(p.mistakesCleared).toBe(1);
+  });
+
+  it("perfect practice replays do not count toward perfectLessons", () => {
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: true, xp: 15 },
+      { id: "2", type: "lesson_completed", lessonId: "l1", occurredAt: T0 + 1000, perfect: true, xp: 5, practice: true },
+    ];
+    const p = reduceEvents(events, TZ, T0 + 2000);
+    expect(p.perfectLessons).toBe(1);
+    expect(p.practiceCount).toBe(1);
+  });
+
+  it("survives a corrupt baseline missing completedLessonIds and streak entirely", () => {
+    // A hand-edited or truncated localStorage baseline: object exists but the
+    // nested fields the fallbacks read (.length / .count) are gone.
+    const corrupt = { xpTotal: 10 } as unknown as UserProgress;
+    const local: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10 },
+    ];
+    const p = reduceEvents(local, TZ, T0 + 1000, corrupt);
+    expect(p.xpTotal).toBe(20);
+    expect(p.completedLessonIds).toEqual(["l1"]);
+    expect(p.lessonsCompleted).toBe(1);
+    expect(p.streak.count).toBe(1);
+    expect(p.longestStreak).toBe(1);
+  });
 });

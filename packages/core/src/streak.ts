@@ -10,15 +10,33 @@ export interface StreakState {
 
 export const emptyStreak: StreakState = { count: 0, lastDay: null };
 
+/** Is `tz` an IANA timezone this runtime can actually format in? */
+export function isValidTimeZone(tz: string): boolean {
+  try {
+    new Intl.DateTimeFormat("en-CA", { timeZone: tz });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Local calendar day for a timestamp in an IANA timezone. */
 export function localDayKey(timestampMs: number, timeZone: string): string {
   // en-CA formats as YYYY-MM-DD
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date(timestampMs));
+  const format = (tz: string) =>
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: tz,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date(timestampMs));
+  try {
+    return format(timeZone);
+  } catch {
+    // A bad stored timezone must not make progress underivable (it would 500
+    // every /me and /sync for that user until repaired) — UTC beats a crash.
+    return format("UTC");
+  }
 }
 
 function dayNumber(dayKey: string): number {

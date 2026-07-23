@@ -15,6 +15,8 @@ function progress(overrides: Partial<UserProgress> = {}): UserProgress {
     xpByDay: {},
     longestStreak: 0,
     dailyGoalXp: DEFAULT_DAILY_GOAL_XP,
+    weakExerciseIds: [],
+    mistakesCleared: 0,
     ...overrides,
   };
 }
@@ -59,6 +61,11 @@ describe("earnedAchievementIds", () => {
   it("earns the first-practice badge", () => {
     expect(earnedAchievementIds(progress({ practiceCount: 0 }))).not.toContain("first_practice");
     expect(earnedAchievementIds(progress({ practiceCount: 1 }))).toContain("first_practice");
+  });
+
+  it("earns the mistakes-cleared badge at 10 cleared reviews", () => {
+    expect(earnedAchievementIds(progress({ mistakesCleared: 9 }))).not.toContain("mistakes_cleared_10");
+    expect(earnedAchievementIds(progress({ mistakesCleared: 10 }))).toContain("mistakes_cleared_10");
   });
 
   it("earns streak badges from longestStreak, not the current streak", () => {
@@ -110,6 +117,7 @@ describe("earnedAchievementIds", () => {
       longestStreak: 40,
       xpTotal: 3000,
       completedLessonIds: ["l1", "l2"],
+      mistakesCleared: 12,
     });
     const earned = earnedAchievementIds(p, units);
     const order = ACHIEVEMENTS.map((a) => a.id);

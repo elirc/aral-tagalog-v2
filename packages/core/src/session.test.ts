@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { currentExercise, isPerfect, sessionProgress, startSession, submitAnswer } from "./session";
+import {
+  currentExercise,
+  isPerfect,
+  sessionProgress,
+  sessionReviewOutcome,
+  startSession,
+  submitAnswer,
+} from "./session";
 import { lessonXp, PERFECT_BONUS_XP } from "./xp";
 import type { Lesson } from "./types";
 
@@ -54,5 +61,51 @@ describe("lesson session", () => {
     expect(out.state.done).toBe(true);
     expect(out.state.mistakes).toBe(2);
     expect(out.correct).toBe(false);
+  });
+
+  it("records each missed exercise once, even after repeated wrong answers", () => {
+    let s = startSession(lesson);
+    ({ state: s } = submitAnswer(s, "no")); // a wrong -> requeued
+    ({ state: s } = submitAnswer(s, "hindi")); // b wrong -> requeued
+    ({ state: s } = submitAnswer(s, "no")); // a wrong again
+    ({ state: s } = submitAnswer(s, "hindi")); // b wrong again
+    expect(s.missedExerciseIds).toEqual(["a", "b"]);
+  });
+
+  it("marks match_pairs as missed only when it had wrong pairings", () => {
+    const l: Lesson = {
+      id: "l2",
+      title: "Match",
+      xp: 10,
+      exercises: [
+        { id: "m1", type: "match_pairs", pairs: [{ left: "aso", right: "dog" }] },
+        { id: "m2", type: "match_pairs", pairs: [{ left: "pusa", right: "cat" }] },
+      ],
+    };
+    let s = startSession(l);
+    ({ state: s } = submitAnswer(s, "", 1));
+    ({ state: s } = submitAnswer(s, "", 0));
+    expect(s.missedExerciseIds).toEqual(["m1"]);
+  });
+
+  it("splits a finished session into missed and mastered exercises", () => {
+    let s = startSession(lesson);
+    ({ state: s } = submitAnswer(s, "no")); // miss a
+    ({ state: s } = submitAnswer(s, "oo")); // master b
+    ({ state: s } = submitAnswer(s, "yes")); // eventually solve a
+    expect(s.done).toBe(true);
+    expect(sessionReviewOutcome(s)).toEqual({
+      missedExerciseIds: ["a"],
+      masteredExerciseIds: ["b"],
+    });
+  });
+
+  it("never counts unattempted exercises as mastered (abandoned session)", () => {
+    let s = startSession(lesson);
+    ({ state: s } = submitAnswer(s, "yes")); // solve a, never reach b
+    expect(sessionReviewOutcome(s)).toEqual({
+      missedExerciseIds: [],
+      masteredExerciseIds: ["a"],
+    });
   });
 });

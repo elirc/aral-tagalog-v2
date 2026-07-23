@@ -3,6 +3,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
 import type { CourseBundle, Exercise, Unit } from "@aral/core";
+import { validateCourse } from "./validate";
 import {
   assertTranslateDirection,
   courseMetaSchema,
@@ -161,13 +162,11 @@ function main() {
     if (!existsSync(join(audioDir, `${ref}.mp3`))) missing.push(ref);
   }
 
-  // duplicate lesson/exercise id check
-  const seen = new Set<string>();
-  for (const u of units)
-    for (const l of u.lessons) {
-      if (seen.has(l.id)) throw new Error(`duplicate lesson id: ${l.id}`);
-      seen.add(l.id);
-    }
+  const problems = validateCourse(units, vocab);
+  if (problems.length > 0) {
+    console.error(`✗ content validation failed:\n${problems.map((p) => `  ${p}`).join("\n")}`);
+    process.exit(1);
+  }
 
   const bundle: CourseBundle = {
     id: meta.id,

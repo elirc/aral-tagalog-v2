@@ -141,9 +141,9 @@ export const courseMetaSchema = z
 export const vocabFileSchema = z.array(
   z
     .object({
-      id: z.string(),
-      lemma: z.string(),
-      translation: z.string(),
+      id: z.string().min(1),
+      lemma: z.string().min(1),
+      translation: z.string().min(1),
       audio: z.string().optional(),
       notes: z.string().optional(),
     })

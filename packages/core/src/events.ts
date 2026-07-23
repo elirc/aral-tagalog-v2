@@ -20,6 +20,10 @@ export type ProgressEvent =
       xp: number;
       /** practice replays refill a heart instead of granting first-time completion */
       practice?: boolean;
+      /** exercises answered wrong at least once this session (REV-01) */
+      missedExerciseIds?: string[];
+      /** exercises solved without a miss — clears them from the review queue */
+      masteredExerciseIds?: string[];
     }
   | { id: string; type: "hearts_lost"; occurredAt: number; count: number }
   | {
@@ -58,6 +62,13 @@ export interface UserProgress {
   longestStreak: number;
   /** current daily XP goal (DEFAULT_DAILY_GOAL_XP until a goal_set event) */
   dailyGoalXp: number;
+  /**
+   * Exercises whose most recent attempt included a miss, oldest first — the
+   * review queue (REV-01). An exercise leaves when a later session masters it.
+   */
+  weakExerciseIds: string[];
+  /** how many weak exercises the user has cleared by mastering them later */
+  mistakesCleared: number;
 }
 
 /**
@@ -85,12 +96,16 @@ export function reduceEvents(
   let hearts = initial?.hearts ?? fullHearts(Math.min(sorted[0]?.occurredAt ?? now, now));
   // New fields read with ?? fallbacks so an older server baseline (missing
   // them) still overlays sensibly.
-  let lessonsCompleted = initial?.lessonsCompleted ?? initial?.completedLessonIds.length ?? 0;
+  let lessonsCompleted = initial?.lessonsCompleted ?? initial?.completedLessonIds?.length ?? 0;
   let perfectLessons = initial?.perfectLessons ?? 0;
   let practiceCount = initial?.practiceCount ?? 0;
   const xpByDay: Record<string, number> = { ...(initial?.xpByDay ?? {}) };
-  let longestStreak = initial?.longestStreak ?? initial?.streak.count ?? streak.count;
+  let longestStreak = initial?.longestStreak ?? initial?.streak?.count ?? streak.count;
   let dailyGoalXp = initial?.dailyGoalXp ?? DEFAULT_DAILY_GOAL_XP;
+  // insertion-ordered: oldest weak exercise first, deterministic given the
+  // sorted fold (review sessions serve the longest-standing mistakes first)
+  const weak = new Set<string>(initial?.weakExerciseIds ?? []);
+  let mistakesCleared = initial?.mistakesCleared ?? 0;
 
   // `id` is the idempotency key (OFF-03): the same event may reach a stream
   // twice (client retry after a dropped response) and must count once.
@@ -109,12 +124,20 @@ export function reduceEvents(
         streak = applyCompletionDay(streak, day);
         if (streak.count > longestStreak) longestStreak = streak.count;
         lessonsCompleted++;
-        if (ev.perfect) perfectLessons++;
+        // perfect practice runs of an already-learned lesson would farm the
+        // perfect-lesson achievements; only first-time perfection counts
+        if (ev.perfect && !ev.practice) perfectLessons++;
         if (!ev.practice) completed.add(ev.lessonId);
         else {
           practiceCount++;
           hearts = addHearts(hearts, 1, t);
         }
+        // mastered first, then missed: if a hostile event lists an id in both,
+        // "still weak" is the safe reading
+        for (const exId of ev.masteredExerciseIds ?? []) {
+          if (weak.delete(exId)) mistakesCleared++;
+        }
+        for (const exId of ev.missedExerciseIds ?? []) weak.add(exId);
         break;
       }
       case "hearts_lost": {
@@ -145,5 +168,7 @@ export function reduceEvents(
     xpByDay,
     longestStreak,
     dailyGoalXp,
+    weakExerciseIds: [...weak],
+    mistakesCleared,
   };
 }

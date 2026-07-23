@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { applyCompletionDay, displayStreak, emptyStreak, isStreakAlive, localDayKey } from "./streak";
+import {
+  applyCompletionDay,
+  displayStreak,
+  emptyStreak,
+  isStreakAlive,
+  isValidTimeZone,
+  localDayKey,
+} from "./streak";
 
 describe("streak", () => {
   it("computes local day keys per timezone", () => {
@@ -34,5 +41,17 @@ describe("streak", () => {
     const s = applyCompletionDay(emptyStreak, "2026-07-08");
     expect(isStreakAlive(s, "2026-07-09")).toBe(true);
     expect(displayStreak(s, "2026-07-10")).toBe(0);
+  });
+
+  it("validates IANA timezones", () => {
+    expect(isValidTimeZone("Asia/Manila")).toBe(true);
+    expect(isValidTimeZone("UTC")).toBe(true);
+    expect(isValidTimeZone("Mars/Phobos")).toBe(false);
+    expect(isValidTimeZone("")).toBe(false);
+  });
+
+  it("falls back to UTC day keys for an invalid stored timezone instead of throwing", () => {
+    const t = Date.UTC(2026, 6, 9, 3, 0, 0);
+    expect(localDayKey(t, "Mars/Phobos")).toBe("2026-07-09");
   });
 });

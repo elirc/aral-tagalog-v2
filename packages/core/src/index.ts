@@ -7,4 +7,5 @@ export * from "./xp";
 export * from "./level";
 export * from "./events";
 export * from "./achievements";
+export * from "./review";
 export * from "./ads";

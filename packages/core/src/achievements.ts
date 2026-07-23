@@ -36,6 +36,7 @@ export const ACHIEVEMENTS: readonly AchievementDef[] = [
   { id: "streak_7", title: "Isang Linggo", description: "Reach a 7-day streak.", emoji: "🗓️", tier: 2 },
   { id: "xp_500", title: "Limang Daang XP", description: "Earn 500 XP.", emoji: "🌟", tier: 2 },
   { id: "unit_complete", title: "Yugto Tapos", description: "Complete every lesson in a unit.", emoji: "🏅", tier: 2 },
+  { id: "mistakes_cleared_10", title: "Ayos!", description: "Clear 10 mistakes in review.", emoji: "🧹", tier: 2 },
   // Tier 3 — long haul
   { id: "lessons_50", title: "Bihasa", description: "Complete 50 lessons.", emoji: "🎓", tier: 3 },
   { id: "streak_30", title: "Isang Buwan", description: "Reach a 30-day streak.", emoji: "🏆", tier: 3 },
@@ -64,6 +65,7 @@ const CRITERIA: Record<string, Criterion> = {
   streak_7: (p) => (p.longestStreak ?? p.streak?.count ?? 0) >= 7,
   xp_500: (p) => (p.xpTotal ?? 0) >= 500,
   unit_complete: (p, units) => anyUnitCompleted(p, units),
+  mistakes_cleared_10: (p) => (p.mistakesCleared ?? 0) >= 10,
   lessons_50: (p) => (p.lessonsCompleted ?? 0) >= 50,
   streak_30: (p) => (p.longestStreak ?? p.streak?.count ?? 0) >= 30,
   xp_2000: (p) => (p.xpTotal ?? 0) >= 2000,
