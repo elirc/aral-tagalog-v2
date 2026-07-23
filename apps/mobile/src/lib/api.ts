@@ -45,6 +45,14 @@ export const api = {
     request<AuthTokens>("/auth/login", { method: "POST", body: JSON.stringify({ email, password }) }),
   refresh: (refreshToken: string) =>
     request<AuthTokens>("/auth/refresh", { method: "POST", body: JSON.stringify({ refreshToken }) }),
+  // plain fetch, not request(): 204 has no JSON body, and revocation is
+  // best-effort — callers ignore failures rather than blocking logout
+  logout: (refreshToken: string) =>
+    fetch(`${API_URL}/auth/logout`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refreshToken }),
+    }).then(() => undefined),
   sync: (accessToken: string, events: ProgressEvent[]) =>
     request<{ accepted: number; rejected: string[]; progress: UserProgress }>("/sync", {
       method: "POST",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import type { ListenExercise, TranslateTapsExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
-import { colors, spacing, styles } from "@/theme";
+import { spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
 
 export function TapsView({
@@ -14,6 +14,7 @@ export function TapsView({
   onAnswerChange: (answer: string[] | null) => void;
   disabled: boolean;
 }) {
+  const { colors, styles } = useTheme();
   const [picked, setPicked] = useState<number[]>([]);
 
   const update = (next: number[]) => {
@@ -31,10 +32,15 @@ export function TapsView({
           <AudioButton large onPress={() => void playAudio(exercise.audio)} />
         </>
       ) : (
-        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-          {exercise.audio && <AudioButton onPress={() => void playAudio(exercise.audio)} />}
-          <Text style={[styles.prompt, { flex: 1, marginBottom: 0 }]}>{exercise.prompt}</Text>
-        </View>
+        <>
+          <Text style={[styles.muted, { marginBottom: spacing.xs }]}>
+            {exercise.direction === "target_to_base" ? "Translate to English" : "Translate to Tagalog"}
+          </Text>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+            {exercise.audio && <AudioButton onPress={() => void playAudio(exercise.audio)} />}
+            <Text style={[styles.prompt, { flex: 1, marginBottom: 0 }]}>{exercise.prompt}</Text>
+          </View>
+        </>
       )}
       {exercise.hint && <Text style={[styles.muted, { marginTop: spacing.sm }]}>{exercise.hint}</Text>}
 

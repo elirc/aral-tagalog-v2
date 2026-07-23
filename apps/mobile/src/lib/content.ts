@@ -1,4 +1,4 @@
-import type { CourseBundle, Lesson } from "@aral/core";
+import { isLessonUnlocked as coreIsLessonUnlocked, type CourseBundle, type Lesson } from "@aral/core";
 import { api } from "./api";
 import { kvGet, kvSet } from "./storage";
 
@@ -40,12 +40,5 @@ export function findLesson(lessonId: string): { lesson: Lesson; unitTitle: strin
 }
 
 export function isLessonUnlocked(lessonId: string, completed: string[]): boolean {
-  const done = new Set(completed);
-  for (const unit of active.units) {
-    for (const lesson of unit.lessons) {
-      if (lesson.id === lessonId) return true;
-      if (!done.has(lesson.id)) return false;
-    }
-  }
-  return false;
+  return coreIsLessonUnlocked(active.units, lessonId, completed);
 }

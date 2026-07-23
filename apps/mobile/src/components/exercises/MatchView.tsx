@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { gradePair, type MatchPairsExercise } from "@aral/core";
-import { colors, spacing, styles } from "@/theme";
+import { spacing, useTheme } from "@/theme";
 
 function shuffled<T>(items: T[], seed: number): T[] {
   const out = [...items];
@@ -21,6 +21,7 @@ export function MatchView({
   exercise: MatchPairsExercise;
   onComplete: (mistakes: number) => void;
 }) {
+  const { colors, styles } = useTheme();
   const lefts = useMemo(() => shuffled(exercise.pairs.map((p) => p.left), 11), [exercise]);
   const rights = useMemo(() => shuffled(exercise.pairs.map((p) => p.right), 29), [exercise]);
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);

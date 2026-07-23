@@ -34,6 +34,8 @@ interface ProgressContextValue {
   logout: () => void;
   syncNow: () => Promise<void>;
   pendingCount: number;
+  /** refresh token was rejected: still "logged in" locally but nothing syncs */
+  needsRelogin: boolean;
 }
 
 const ProgressContext = createContext<ProgressContextValue | null>(null);
@@ -42,6 +44,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const [outbox, setOutbox] = useState<ProgressEvent[]>(() => outboxAll());
   const [baseline, setBaseline] = useState<UserProgress | null>(() => kvGet<UserProgress>("baseline"));
   const [auth, setAuth] = useState<AuthTokens | null>(() => kvGet<AuthTokens>("auth"));
+  const [needsRelogin, setNeedsRelogin] = useState(false);
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
@@ -71,12 +74,23 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     };
     try {
       await push(tokens);
+      setNeedsRelogin(false);
     } catch (err) {
       if (err instanceof ApiError && err.status === 401) {
-        const fresh = await api.refresh(tokens.refreshToken);
+        // access token expired: rotate via refresh token, retry once
+        let fresh: AuthTokens;
+        try {
+          fresh = await api.refresh(tokens.refreshToken);
+        } catch (refreshErr) {
+          // dead refresh token: the user looks logged in but nothing will
+          // ever sync — surface it instead of failing silently forever
+          if (refreshErr instanceof ApiError && refreshErr.status === 401) setNeedsRelogin(true);
+          throw refreshErr;
+        }
         kvSet("auth", fresh);
         setAuth(fresh);
         await push(fresh);
+        setNeedsRelogin(false);
       } else {
         throw err; // offline — outbox stays for the next attempt (OFF-02)
       }
@@ -92,17 +106,21 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     async (tokens: AuthTokens) => {
       kvSet("auth", tokens);
       setAuth(tokens);
+      setNeedsRelogin(false);
       await syncWith(tokens, outboxAll()).catch(() => {});
     },
     [syncWith],
   );
 
   const logout = useCallback(() => {
+    // best-effort server-side revocation of this device's refresh-token family
+    if (auth) void api.logout(auth.refreshToken).catch(() => {});
     wipeAll();
+    setNeedsRelogin(false);
     setAuth(null);
     setBaseline(null);
     setOutbox([]);
-  }, []);
+  }, [auth]);
 
   // sync worker: on new events (debounced) and when the app foregrounds
   useEffect(() => {
@@ -112,6 +130,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }, [auth, outbox, syncNow]);
 
   useEffect(() => {
+    // launch counts as "coming to the foreground": pull server truth right
+    // away so progress made on other devices shows without a background/resume
+    void syncNow();
     const sub = AppState.addEventListener("change", (state) => {
       if (state === "active") void syncNow();
     });
@@ -143,8 +164,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       logout,
       syncNow,
       pendingCount: outbox.length,
+      needsRelogin,
     }),
-    [progress, auth, addEvents, adoptAuth, logout, syncNow, outbox.length],
+    [progress, auth, addEvents, adoptAuth, logout, syncNow, outbox.length, needsRelogin],
   );
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

@@ -4,10 +4,11 @@ import { KeyboardAvoidingView, Platform, Pressable, Text, TextInput, View } from
 import { SafeAreaView } from "react-native-safe-area-context";
 import { api } from "@/lib/api";
 import { deviceTz, useProgress } from "@/lib/progress";
-import { colors, radii, spacing, styles } from "@/theme";
+import { radii, spacing, useTheme } from "@/theme";
 
 export function AuthScreen({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
+  const { colors, styles } = useTheme();
   const { adoptAuth } = useProgress();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,6 +36,7 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
     padding: 12,
     fontSize: 17,
     backgroundColor: colors.bg,
+    color: colors.text,
   };
 
   return (
@@ -48,6 +50,7 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
         <TextInput
           style={inputStyle}
           placeholder="Email"
+          placeholderTextColor={colors.textMuted}
           autoCapitalize="none"
           keyboardType="email-address"
           value={email}
@@ -56,6 +59,7 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
         <TextInput
           style={inputStyle}
           placeholder={mode === "register" ? "Password (8+ characters)" : "Password"}
+          placeholderTextColor={colors.textMuted}
           secureTextEntry
           value={password}
           onChangeText={setPassword}

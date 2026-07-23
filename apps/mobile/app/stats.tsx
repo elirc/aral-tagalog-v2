@@ -11,7 +11,7 @@ import {
 } from "@aral/core";
 import { getBundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
-import { colors, font, radii, spacing, styles } from "@/theme";
+import { font, radii, spacing, useTheme } from "@/theme";
 
 const GOAL_PRESETS = [10, 20, 30, 50] as const;
 const WEEKDAY = ["S", "M", "T", "W", "T", "F", "S"] as const;
@@ -32,29 +32,41 @@ function dayKeyMinus(todayKey: string, n: number): string {
   return `${dt.getUTCFullYear()}-${mm}-${dd}`;
 }
 
-function Bar({ pct, color = colors.primary, height = 10 }: { pct: number; color?: string; height?: number }) {
+function Bar({ pct, color, height = 10 }: { pct: number; color?: string; height?: number }) {
+  const { colors } = useTheme();
   const clamped = Math.max(0, Math.min(100, pct));
   return (
     <View style={{ height, backgroundColor: colors.border, borderRadius: radii.pill, overflow: "hidden" }}>
-      <View style={{ width: `${clamped}%`, height: "100%", backgroundColor: color, borderRadius: radii.pill }} />
+      <View
+        style={{
+          width: `${clamped}%`,
+          height: "100%",
+          backgroundColor: color ?? colors.primary,
+          borderRadius: radii.pill,
+        }}
+      />
     </View>
   );
 }
 
 function StatTile({ children }: { children: ReactNode }) {
+  const { styles } = useTheme();
   return <View style={[styles.card, { width: "48%", padding: spacing.sm, gap: spacing.xs }]}>{children}</View>;
 }
 
 function TileLabel({ children }: { children: ReactNode }) {
+  const { styles } = useTheme();
   return <Text style={styles.muted}>{children}</Text>;
 }
 
 function TileValue({ children, color }: { children: ReactNode; color?: string }) {
+  const { colors } = useTheme();
   return <Text style={{ fontSize: font.sizeLg, fontWeight: "800", color: color ?? colors.text }}>{children}</Text>;
 }
 
 export default function StatsScreen() {
   const router = useRouter();
+  const { colors, styles } = useTheme();
   const { progress, addEvents } = useProgress();
   const bundle = getBundle();
 

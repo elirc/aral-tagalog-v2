@@ -1,7 +1,8 @@
 import { Pressable, Text } from "react-native";
-import { colors, radii } from "@/theme";
+import { radii, useTheme } from "@/theme";
 
 export function AudioButton({ onPress, large }: { onPress: () => void; large?: boolean }) {
+  const { colors } = useTheme();
   return (
     <Pressable
       onPress={onPress}

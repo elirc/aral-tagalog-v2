@@ -65,5 +65,8 @@ export function outboxClear(ids: string[]): void {
 }
 
 export function wipeAll(): void {
-  db.execSync("DELETE FROM kv; DELETE FROM outbox;");
+  // logout clears *user* data; device-level state survives — the theme
+  // preference isn't account-bound, and the cached bundle is public content
+  // that would just be re-downloaded
+  db.execSync("DELETE FROM kv WHERE key NOT IN ('theme', 'bundle'); DELETE FROM outbox;");
 }

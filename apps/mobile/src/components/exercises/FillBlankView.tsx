@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import type { FillBlankExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
-import { colors, radii, spacing, styles } from "@/theme";
+import { radii, spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
 
 export function FillBlankView({
@@ -14,6 +14,7 @@ export function FillBlankView({
   onAnswerChange: (answer: string | null) => void;
   disabled: boolean;
 }) {
+  const { colors, styles } = useTheme();
   const [value, setValue] = useState("");
   const [before, after] = exercise.sentence.split("___");
 
@@ -59,10 +60,12 @@ export function FillBlankView({
             padding: spacing.sm + 2,
             marginTop: spacing.md,
             fontSize: 17,
+            color: colors.text,
           }}
           value={value}
           editable={!disabled}
           placeholder="Type the missing word"
+          placeholderTextColor={colors.textMuted}
           autoCapitalize="none"
           onChangeText={update}
         />
