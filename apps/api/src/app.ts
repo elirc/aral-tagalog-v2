@@ -1,4 +1,4 @@
-import Fastify from "fastify";
+import Fastify, { type FastifyError } from "fastify";
 import cors from "@fastify/cors";
 import rateLimit from "@fastify/rate-limit";
 import { createDb, type Db } from "@aral/db";
@@ -24,6 +24,22 @@ export function buildApp(opts: { databaseUrl?: string; logger?: boolean } = {}) 
   // CPU-exhaustion vector)
   app.register(rateLimit, { max: 300, timeWindow: "1 minute" });
   app.decorate("db", createDb(opts.databaseUrl ?? env.databaseUrl));
+  // release the pg pool on close so graceful shutdown actually finishes
+  app.addHook("onClose", async () => {
+    await app.db.$client.end({ timeout: 5 });
+  });
+
+  // Expected errors (validation, rate limit, auth) keep their message; an
+  // unexpected throw must not leak internals — pg error strings can contain
+  // query fragments and connection details.
+  app.setErrorHandler((err: FastifyError, req, reply) => {
+    const status = err.statusCode ?? 500;
+    if (status >= 500) {
+      req.log.error(err);
+      return reply.code(500).send({ error: "internal error" });
+    }
+    return reply.code(status).send({ error: err.message });
+  });
 
   app.get("/health", async () => ({ ok: true }));
   // routes live in a child context that loads *after* the plugins above —

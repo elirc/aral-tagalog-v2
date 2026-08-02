@@ -9,7 +9,9 @@
       "dependsOn": ["^build"]
     },
     "typecheck": {
-      "dependsOn": ["^build"]
+      // own build too: web's tsconfig includes .next/types, which next build
+      // rewrites — typechecking while it runs is a race in both directions
+      "dependsOn": ["^build", "build"]
     },
     "dev": {
       "cache": false,

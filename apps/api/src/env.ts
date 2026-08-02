@@ -16,6 +16,7 @@ export const env = {
   // not silently sign tokens with a publicly-committed secret
   jwtSecret: process.env.JWT_SECRET ?? (isDevelopment ? "dev-secret-change-me" : ""),
   port: Number(process.env.PORT ?? 3001),
+  host: process.env.HOST ?? "0.0.0.0",
   contentDir: process.env.CONTENT_DIR ?? join(contentPkg, "dist"),
   audioDir: process.env.AUDIO_DIR ?? join(contentPkg, "audio", "en-tl"),
   /** comma-separated browser origins allowed by CORS; unset = dev-only wildcard */

@@ -21,3 +21,12 @@
 - Web dev expects the API on localhost:3001 (`NEXT_PUBLIC_API_URL` to change).
 - `@types/react` is pinned via root pnpm override to keep web and Expo on the
   same version — don't add per-app versions.
+- The repo lives inside OneDrive. If a build dies with
+  `EINVAL: invalid argument, readlink ... .next\...`, OneDrive dehydrated
+  gitignored build output to a cloud placeholder — delete the dir, rebuild,
+  and re-pin with `attrib +P <dir> /s /d` ("always keep on this device").
+  The tree was pinned 2026-08-01; new gitignored dirs inherit from their
+  parent, but a OneDrive reset can undo it.
+- End-to-end checks: `pnpm smoke` against a running stack
+  (`docker compose up -d && pnpm db:migrate && pnpm api:dev`). Registers a
+  throwaway user; 29 checks over auth rotation, sync clamping, review queue.

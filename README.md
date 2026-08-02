@@ -43,10 +43,13 @@ The web and mobile apps are fully playable **without an account or backend**
 (guest mode, progress on device). Register/login to sync progress via the API.
 
 ```sh
-pnpm test        # core engine tests (vitest)
+pnpm test        # unit suites: core engine, API validation, content validators
 pnpm typecheck   # all packages
-pnpm build       # turbo: content bundle + web build
+pnpm build       # turbo: content bundle + ui tokens + web build
+pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
 ```
+
+`docs/TESTING.md` explains what every test guards and why it exists.
 
 ## How the pieces fit
 
@@ -86,14 +89,21 @@ pnpm build       # turbo: content bundle + web build
 
 ## Course content status
 
-5 units, 17 lessons, 136 exercises (greetings, politeness, introductions,
-pronouns, family, food, numbers, time, places). All five exercise types are
-exercised, including `ng`/`nang` and hyphen-tolerance grading (CNT-04).
-Content is a starter draft — review by a fluent speaker recommended.
+18 units, 69 lessons, 584 exercises (greetings through hobbies). All five
+exercise types are exercised, including `ng`/`nang` and hyphen-tolerance
+grading (CNT-04), and the compiler rejects unsolvable or ambiguous exercises
+at build time. Content is a starter draft — review by a fluent speaker
+recommended.
 
 ## Deploying (near-zero cost)
 
-- **API:** Fly.io/Railway free tier; set `DATABASE_URL` (Neon/Supabase free
-  Postgres) and `JWT_SECRET`. Run `pnpm db:migrate` on deploy.
+- **API:** Fly.io/Railway free tier; copy `apps/api/.env.example` and set
+  `DATABASE_URL` (Neon/Supabase free Postgres), `JWT_SECRET`, and
+  `CORS_ORIGIN`. Run `pnpm db:migrate` on deploy. The server binds
+  `0.0.0.0:3001` by default, shuts down gracefully on SIGTERM, and never
+  leaks internal error details in responses.
 - **Web:** Vercel; set `NEXT_PUBLIC_API_URL`.
 - **Mobile:** EAS builds; set `extra.apiUrl` in `app.json` to the deployed API.
+- **Post-deploy check:** `SMOKE_API_URL=https://your-api pnpm smoke` runs the
+  29-check end-to-end suite (registers a throwaway user; safe on prod data,
+  but it does write one test account).

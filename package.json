@@ -14,6 +14,7 @@
     "content:build": "pnpm --filter @aral/content build",
     "db:migrate": "pnpm --filter @aral/db migrate",
     "api:dev": "pnpm --filter @aral/api dev",
+    "smoke": "node scripts/smoke.mjs",
     "web:dev": "pnpm --filter @aral/web dev",
     "mobile:start": "pnpm --filter @aral/mobile start"
   },
