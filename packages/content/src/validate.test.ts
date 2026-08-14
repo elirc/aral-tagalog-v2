@@ -183,6 +183,13 @@ describe("validateCourse", () => {
     expect(validateCourse(units, [])).toEqual(["duplicate lesson id: l1"]);
   });
 
+  it("reports duplicate unit ids", () => {
+    // two units sharing an id render as separate course-map cards whose
+    // progress is computed from the wrong lesson set
+    const units = [unit("u1", [lesson("l1", [])]), unit("u1", [lesson("l2", [])])];
+    expect(validateCourse(units, [])).toEqual(["duplicate unit id: u1"]);
+  });
+
   it("reports duplicate exercise ids across different lessons", () => {
     const units = [
       unit("u1", [lesson("l1", [choice({ id: "e1" })])]),

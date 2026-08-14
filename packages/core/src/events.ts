@@ -1,5 +1,6 @@
 import { addHearts, fullHearts, loseHeart, MAX_HEARTS, regenerate, type HeartsState } from "./hearts";
 import { applyCompletionDay, emptyStreak, localDayKey, type StreakState } from "./streak";
+import { PRACTICE_XP } from "./xp";
 
 /**
  * All user progress is an append-only event stream (DAT-02). Clients write
@@ -118,16 +119,24 @@ export function reduceEvents(
     const t = Math.min(ev.occurredAt, now);
     switch (ev.type) {
       case "lesson_completed": {
-        xpTotal += ev.xp;
+        // Completing a lesson that is already finished is a *replay*, whatever
+        // the event claims. Trusting the flag let any client farm unlimited XP
+        // by re-sending completions of one easy lesson with practice:false —
+        // the per-event xp clamp caps each event but not the repetition.
+        // Deriving it here fixes clients and server at once (both fold with
+        // this reducer), and keeps the stored event as the raw client claim.
+        const replay = ev.practice === true || completed.has(ev.lessonId);
+        const xp = replay ? Math.min(ev.xp, PRACTICE_XP) : ev.xp;
+        xpTotal += xp;
         const day = localDayKey(t, timeZone);
-        xpByDay[day] = (xpByDay[day] ?? 0) + ev.xp;
+        xpByDay[day] = (xpByDay[day] ?? 0) + xp;
         streak = applyCompletionDay(streak, day);
         if (streak.count > longestStreak) longestStreak = streak.count;
         lessonsCompleted++;
         // perfect practice runs of an already-learned lesson would farm the
         // perfect-lesson achievements; only first-time perfection counts
-        if (ev.perfect && !ev.practice) perfectLessons++;
-        if (!ev.practice) completed.add(ev.lessonId);
+        if (ev.perfect && !replay) perfectLessons++;
+        if (!replay) completed.add(ev.lessonId);
         else {
           practiceCount++;
           hearts = addHearts(hearts, 1, t);

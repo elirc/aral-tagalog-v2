@@ -17,6 +17,14 @@ export const env = {
   jwtSecret: process.env.JWT_SECRET ?? (isDevelopment ? "dev-secret-change-me" : ""),
   port: Number(process.env.PORT ?? 3001),
   host: process.env.HOST ?? "0.0.0.0",
+  /**
+   * Behind a reverse proxy (Fly, Railway, any CDN) every request arrives from
+   * the proxy's IP, so rate limiting keyed on the socket address puts the
+   * whole user base in one bucket — 10 auth requests/minute globally. Enable
+   * this ONLY when a trusted proxy sets X-Forwarded-For; leaving it on with a
+   * directly-exposed server would let clients spoof their own rate-limit key.
+   */
+  trustProxy: process.env.TRUST_PROXY === "true",
   contentDir: process.env.CONTENT_DIR ?? join(contentPkg, "dist"),
   audioDir: process.env.AUDIO_DIR ?? join(contentPkg, "audio", "en-tl"),
   /** comma-separated browser origins allowed by CORS; unset = dev-only wildcard */

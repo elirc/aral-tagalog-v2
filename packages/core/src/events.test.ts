@@ -290,6 +290,37 @@ describe("reduceEvents — gamification fields", () => {
     expect(p.mistakesCleared).toBe(1);
   });
 
+  it("clamps a replay to practice xp even when the event doesn't admit it", () => {
+    // the cheat this guards: re-send completions of one easy lesson with
+    // practice:false and full xp. Each event passes the per-event clamp; only
+    // "already completed -> replay" stops the repetition.
+    const events: ProgressEvent[] = [
+      { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 15 },
+      { id: "2", type: "lesson_completed", lessonId: "l1", occurredAt: T0 + 1000, perfect: true, xp: 15 },
+      { id: "3", type: "lesson_completed", lessonId: "l1", occurredAt: T0 + 2000, perfect: true, xp: 15 },
+    ];
+    const p = reduceEvents(events, TZ, T0 + 3000);
+    expect(p.xpTotal).toBe(15 + 5 + 5);
+    expect(p.completedLessonIds).toEqual(["l1"]);
+    // the unflagged replays are still replays: no perfect credit, and they
+    // count as practice (which is also what refills a heart)
+    expect(p.perfectLessons).toBe(0);
+    expect(p.practiceCount).toBe(2);
+  });
+
+  it("counts a replay of a lesson completed in the server baseline", () => {
+    const baseline = reduceEvents(
+      [{ id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: false, xp: 10 }],
+      TZ,
+      T0 + 1000,
+    );
+    const local: ProgressEvent[] = [
+      { id: "2", type: "lesson_completed", lessonId: "l1", occurredAt: T0 + 2000, perfect: false, xp: 10 },
+    ];
+    // the overlay must see the baseline's completions, not just this batch
+    expect(reduceEvents(local, TZ, T0 + 3000, baseline).xpTotal).toBe(15);
+  });
+
   it("perfect practice replays do not count toward perfectLessons", () => {
     const events: ProgressEvent[] = [
       { id: "1", type: "lesson_completed", lessonId: "l1", occurredAt: T0, perfect: true, xp: 15 },

@@ -16,7 +16,12 @@ declare module "fastify" {
 
 export function buildApp(opts: { databaseUrl?: string; logger?: boolean } = {}) {
   // silence request logs under vitest; every injected request would print pino JSON
-  const app = Fastify({ logger: opts.logger ?? !process.env.VITEST });
+  const app = Fastify({
+    logger: opts.logger ?? !process.env.VITEST,
+    // makes req.ip the client address rather than the proxy's, so the rate
+    // limiter buckets per user instead of per deployment (see env.trustProxy)
+    trustProxy: env.trustProxy,
+  });
   // reflect any origin only in dev; deployments set CORS_ORIGIN
   app.register(cors, { origin: env.corsOrigins ?? env.isDevelopment });
   // global ceiling; auth routes carry tighter per-route limits (argon2 is

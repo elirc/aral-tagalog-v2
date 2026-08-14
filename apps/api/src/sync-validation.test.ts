@@ -112,6 +112,24 @@ describe("sanitizeEvents: timestamps", () => {
     const { events } = sanitizeEvents([completed({ occurredAt: NOW - 5000 })], catalog, NOW);
     expect(events[0]!.occurredAt).toBe(NOW - 5000);
   });
+
+  it("rejects an occurredAt Postgres could not store, instead of poisoning the batch", () => {
+    // occurred_at is a bigint column: a fractional or absurd value passes a
+    // bare z.number() but fails on INSERT, and /sync inserts the batch in one
+    // statement — so one bad event would 500 the request and wedge the client
+    // outbox, which the per-event `rejected` list exists to prevent.
+    for (const bad of [1.5, -1, Number.MAX_SAFE_INTEGER + 2, Number.POSITIVE_INFINITY, NaN]) {
+      const { events, rejected } = sanitizeEvents(
+        [completed({ occurredAt: bad }), completed({ id: uuid(9) })],
+        catalog,
+        NOW,
+      );
+      // the malformed one is rejected by id; the healthy sibling still lands
+      expect(rejected).toEqual([uuid(1)]);
+      expect(events).toHaveLength(1);
+      expect(events[0]!.id).toBe(uuid(9));
+    }
+  });
 });
 
 describe("eventSchema: field bounds", () => {

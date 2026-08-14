@@ -41,6 +41,11 @@ export const ACHIEVEMENTS: readonly AchievementDef[] = [
   { id: "lessons_50", title: "Bihasa", description: "Complete 50 lessons.", emoji: "🎓", tier: 3 },
   { id: "streak_30", title: "Isang Buwan", description: "Reach a 30-day streak.", emoji: "🏆", tier: 3 },
   { id: "xp_2000", title: "Dalubhasa", description: "Earn 2000 XP.", emoji: "👑", tier: 3 },
+  // Tier 3 — end-game, sized for the full 200-lesson course. Without these a
+  // learner unlocks every badge about a quarter of the way in.
+  { id: "lessons_150", title: "Matiyaga", description: "Complete 150 lessons.", emoji: "🧗", tier: 3 },
+  { id: "streak_100", title: "Sandaang Araw", description: "Reach a 100-day streak.", emoji: "☄️", tier: 3 },
+  { id: "course_complete", title: "Tagumpay!", description: "Complete every lesson in the course.", emoji: "🇵🇭", tier: 3 },
 ];
 
 /** Did the user fully complete at least one unit (all its lessons)? */
@@ -50,6 +55,15 @@ function anyUnitCompleted(progress: UserProgress, courseUnits?: AchievementCours
   return courseUnits.some(
     (u) => u.lessons.length > 0 && u.lessons.every((l) => done.has(l.id)),
   );
+}
+
+/** Every lesson of every unit — the course-completion badge. */
+function allUnitsCompleted(progress: UserProgress, courseUnits?: AchievementCourseUnit[]): boolean {
+  if (!courseUnits || courseUnits.length === 0) return false;
+  const done = new Set(progress.completedLessonIds ?? []);
+  // an empty unit can't gate completion, but the course must have real lessons
+  const lessons = courseUnits.flatMap((u) => u.lessons);
+  return lessons.length > 0 && lessons.every((l) => done.has(l.id));
 }
 
 type Criterion = (p: UserProgress, units?: AchievementCourseUnit[]) => boolean;
@@ -69,6 +83,9 @@ const CRITERIA: Record<string, Criterion> = {
   lessons_50: (p) => (p.lessonsCompleted ?? 0) >= 50,
   streak_30: (p) => (p.longestStreak ?? p.streak?.count ?? 0) >= 30,
   xp_2000: (p) => (p.xpTotal ?? 0) >= 2000,
+  lessons_150: (p) => (p.lessonsCompleted ?? 0) >= 150,
+  streak_100: (p) => (p.longestStreak ?? p.streak?.count ?? 0) >= 100,
+  course_complete: (p, units) => allUnitsCompleted(p, units),
 };
 
 /**

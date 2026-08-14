@@ -76,9 +76,15 @@ export function validateExercise(ex: Exercise): string[] {
  */
 export function validateCourse(units: Unit[], vocab: { id: string }[]): string[] {
   const problems: string[] = [];
+  const seenUnits = new Set<string>();
   const seenLessons = new Set<string>();
   const seenExercises = new Set<string>();
-  for (const u of units)
+  for (const u of units) {
+    // unit ids key the course map's per-unit progress and the unit-complete
+    // achievement; two units sharing one id render as separate cards whose
+    // completion state is computed from the wrong lesson set
+    if (seenUnits.has(u.id)) problems.push(`duplicate unit id: ${u.id}`);
+    seenUnits.add(u.id);
     for (const l of u.lessons) {
       if (seenLessons.has(l.id)) problems.push(`duplicate lesson id: ${l.id}`);
       seenLessons.add(l.id);
@@ -88,6 +94,7 @@ export function validateCourse(units: Unit[], vocab: { id: string }[]): string[]
         for (const p of validateExercise(ex)) problems.push(`${ex.id}: ${p}`);
       }
     }
+  }
   const seenVocab = new Set<string>();
   for (const v of vocab) {
     if (seenVocab.has(v.id)) problems.push(`duplicate vocab id: ${v.id}`);

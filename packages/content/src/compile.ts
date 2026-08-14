@@ -86,7 +86,11 @@ function compileExercise(ex: AuthoredExercise, id: string): Exercise {
         accept: ex.accept,
         wordBank: ex.word_bank ?? buildWordBank(answer, ex.extra_words, id),
         grading: ex.grading && { ngNang: ex.grading.ng_nang, hyphens: ex.grading.hyphens },
-        audio: ex.audio,
+        // Only the target->base direction gets a play button: when the answer
+        // is the Tagalog, the clip *is* the answer, and an audio button next
+        // to an English prompt just reads it out before the learner tries.
+        // The ref stays registered above, so the phrasebook/TTS still has it.
+        audio: toBase ? ex.audio : undefined,
         hint: ex.hint,
       };
     }
@@ -157,9 +161,14 @@ function main() {
   // Missing files are allowed (AUD-02 fallback fills them in later) but reported.
   const audio: Record<string, string> = {};
   const missing: string[] = [];
-  for (const ref of [...audioRefs.keys()].sort()) {
+  const silent: string[] = [];
+  for (const [ref, text] of [...audioRefs.entries()].sort()) {
     audio[ref] = `audio/${ref}.mp3`;
-    if (!existsSync(join(audioDir, `${ref}.mp3`))) missing.push(ref);
+    const hasFile = existsSync(join(audioDir, `${ref}.mp3`));
+    if (!hasFile) missing.push(ref);
+    // no recording *and* no spoken text: TTS can't fill this one either, so
+    // the clip is permanently silent until someone records it or adds audio_text
+    if (!hasFile && !text) silent.push(ref);
   }
 
   const problems = validateCourse(units, vocab);
@@ -181,7 +190,9 @@ function main() {
   };
 
   mkdirSync(outDir, { recursive: true });
-  const json = JSON.stringify(bundle, null, 2);
+  // minified: dist/ is gitignored (no diffs to keep readable) and mobile
+  // downloads this file over the network — indentation nearly doubled it
+  const json = JSON.stringify(bundle);
   writeFileSync(join(outDir, `course_en_tl.json`), json);
   writeFileSync(join(outDir, `course_en_tl_v${meta.version}.json`), json);
   writeFileSync(
@@ -204,6 +215,10 @@ function main() {
   console.log(`✓ compiled ${meta.id} v${meta.version}: ${units.length} units, ${lessons} lessons, ${exercises} exercises, ${audioRefs.size} audio refs`);
   if (missing.length > 0)
     console.warn(`⚠ ${missing.length} audio refs have no recording yet (run scripts/generate-audio to fill with TTS)`);
+  if (silent.length > 0)
+    console.warn(
+      `⚠ ${silent.length} of those have no spoken text either — TTS can't voice them. Add audio_text: ${silent.slice(0, 5).join(", ")}${silent.length > 5 ? ", …" : ""}`,
+    );
 }
 
 main();

@@ -19,6 +19,14 @@ const credentialsSchema = z.object({
 // tighter than the global limit: these routes run argon2 per request
 const authRateLimit = { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } };
 
+/**
+ * How long after a rotation the old token may be replayed without it looking
+ * like theft. Covers concurrent refreshes from two tabs or two sync workers;
+ * long enough for a slow mobile round trip, far shorter than the 30-day token
+ * lifetime a real attacker would be working within.
+ */
+export const REFRESH_REUSE_GRACE_MS = Number(process.env.REFRESH_REUSE_GRACE_MS ?? 60_000);
+
 export function authRoutes(app: FastifyInstance) {
   app.post("/auth/register", authRateLimit, async (req, reply) => {
     const body = credentialsSchema.safeParse(req.body);
@@ -66,28 +74,36 @@ export function authRoutes(app: FastifyInstance) {
 
     const tokenHash = hashToken(body.data.refreshToken);
     const [row] = await app.db.select().from(refreshTokens).where(eq(refreshTokens.tokenHash, tokenHash));
-    if (!row || row.expiresAt.getTime() < Date.now())
-      return reply.code(401).send({ error: "invalid refresh token" });
+    if (!row) return reply.code(401).send({ error: "invalid refresh token" });
 
-    // Reuse detection: a rotated token is kept as a tombstone. Someone
-    // presenting it again holds a leaked (or stale-stolen) token — revoke the
-    // whole family so the thief's fresh token dies too.
+    // Reuse detection runs *before* the expiry check: replaying a token that
+    // was rotated and has since expired is still a leak worth revoking.
     if (row.rotatedAt) {
+      // Benign races are common and must not log anyone out: two browser tabs,
+      // or a mobile launch-sync and foreground-sync, can present the same
+      // token milliseconds apart. Inside the grace window the loser simply
+      // fails and retries later with the token the winner stored. Only a
+      // *later* replay looks like theft and revokes the family.
+      if (Date.now() - row.rotatedAt.getTime() <= REFRESH_REUSE_GRACE_MS)
+        return reply.code(409).send({ error: "refresh already in progress" });
       await app.db.delete(refreshTokens).where(eq(refreshTokens.familyId, row.familyId));
       return reply.code(401).send({ error: "refresh token reused" });
     }
 
-    // Atomic claim: of two concurrent refreshes with the same token, exactly
-    // one wins this UPDATE; the loser is treated as reuse.
+    if (row.expiresAt.getTime() < Date.now())
+      return reply.code(401).send({ error: "invalid refresh token" });
+
+    // Atomic claim: of two concurrent refreshes with the same token exactly one
+    // wins this UPDATE. The loser lost by definition to a rotation that just
+    // happened, so it is always the benign race — never revoke here, or the
+    // loser's DELETE could land after the winner's INSERT and strand a live
+    // token in an otherwise-revoked family.
     const claimed = await app.db
       .update(refreshTokens)
       .set({ rotatedAt: new Date() })
       .where(and(eq(refreshTokens.id, row.id), isNull(refreshTokens.rotatedAt)))
       .returning({ id: refreshTokens.id });
-    if (claimed.length === 0) {
-      await app.db.delete(refreshTokens).where(eq(refreshTokens.familyId, row.familyId));
-      return reply.code(401).send({ error: "refresh token reused" });
-    }
+    if (claimed.length === 0) return reply.code(409).send({ error: "refresh already in progress" });
 
     const [user] = await app.db.select().from(users).where(eq(users.id, row.userId));
     if (!user) return reply.code(401).send({ error: "user gone" });

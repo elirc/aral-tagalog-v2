@@ -6,12 +6,22 @@ import { lessonXp, PRACTICE_XP, type Lesson, type ProgressEvent } from "@aral/co
  * so tests can exercise every rule without a database or HTTP server.
  */
 
+/**
+ * occurred_at is a bigint column read in JS-number mode. A non-integer (or
+ * absurd) value passes a bare z.number() but Postgres rejects it on insert —
+ * and because /sync inserts the batch in one statement, one malformed event
+ * would 500 the whole request. Clients keep a batch that didn't 200, so that
+ * single event would wedge the outbox forever: exactly the poison-message
+ * failure the per-event `rejected` list exists to prevent.
+ */
+const timestampSchema = z.number().int().min(0).max(Number.MAX_SAFE_INTEGER);
+
 export const eventSchema = z.discriminatedUnion("type", [
   z.object({
     id: z.string().uuid(),
     type: z.literal("lesson_completed"),
     lessonId: z.string().max(100),
-    occurredAt: z.number(),
+    occurredAt: timestampSchema,
     perfect: z.boolean(),
     xp: z.number().int().min(0).max(100),
     practice: z.boolean().optional(),
@@ -21,20 +31,20 @@ export const eventSchema = z.discriminatedUnion("type", [
   z.object({
     id: z.string().uuid(),
     type: z.literal("hearts_lost"),
-    occurredAt: z.number(),
+    occurredAt: timestampSchema,
     count: z.number().int().min(1).max(20),
   }),
   z.object({
     id: z.string().uuid(),
     type: z.literal("hearts_refilled"),
-    occurredAt: z.number(),
+    occurredAt: timestampSchema,
     amount: z.union([z.number().int().min(1).max(5), z.literal("full")]),
     source: z.enum(["ad", "practice"]),
   }),
   z.object({
     id: z.string().uuid(),
     type: z.literal("goal_set"),
-    occurredAt: z.number(),
+    occurredAt: timestampSchema,
     goalXp: z.number().int().min(10).max(200),
   }),
 ]);

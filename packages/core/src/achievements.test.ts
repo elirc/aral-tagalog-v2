@@ -68,6 +68,26 @@ describe("earnedAchievementIds", () => {
     expect(earnedAchievementIds(progress({ mistakesCleared: 10 }))).toContain("mistakes_cleared_10");
   });
 
+  it("earns course completion only when every unit's lessons are done", () => {
+    // one whole unit done (earns unit_complete) is not the whole course
+    expect(earnedAchievementIds(progress({ completedLessonIds: ["l1", "l2"] }), units)).not.toContain(
+      "course_complete",
+    );
+    // one lesson short of the end still doesn't count
+    expect(
+      earnedAchievementIds(progress({ completedLessonIds: ["l1", "l2", "l3"] }), units),
+    ).not.toContain("course_complete");
+    expect(
+      earnedAchievementIds(progress({ completedLessonIds: ["l1", "l2", "l3", "l4"] }), units),
+    ).toContain("course_complete");
+  });
+
+  it("never earns course completion without the course structure", () => {
+    expect(
+      earnedAchievementIds(progress({ completedLessonIds: ["l1", "l2", "l3", "l4"] })),
+    ).not.toContain("course_complete");
+  });
+
   it("earns streak badges from longestStreak, not the current streak", () => {
     // current streak reset to 1, but longest was 7
     const p = progress({ streak: { count: 1, lastDay: "2026-07-14" }, longestStreak: 7 });
@@ -111,12 +131,12 @@ describe("earnedAchievementIds", () => {
 
   it("returns ids in ACHIEVEMENTS definition order", () => {
     const p = progress({
-      lessonsCompleted: 60,
+      lessonsCompleted: 200,
       perfectLessons: 12,
       practiceCount: 3,
-      longestStreak: 40,
-      xpTotal: 3000,
-      completedLessonIds: ["l1", "l2"],
+      longestStreak: 120,
+      xpTotal: 5000,
+      completedLessonIds: ["l1", "l2", "l3", "l4"],
       mistakesCleared: 12,
     });
     const earned = earnedAchievementIds(p, units);
