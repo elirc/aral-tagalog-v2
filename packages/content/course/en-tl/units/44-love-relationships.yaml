@@ -1,0 +1,268 @@
+id: love-relationships
+title: Love & Friendship
+description: Say "I love you", talk about sweethearts, suitors and best friends, and make it to the wedding.
+tip: >-
+  "Mahal kita" packs "I" and "you" into the single pronoun "kita" — never say
+  "mahal ko ikaw". Watch out that "mahal" does double duty: "Mahal ang isda"
+  means the fish is expensive, but "Mahal ko ang isda" means I love fish.
+  Courtship is still its own stage here — a "manliligaw" visits, wins over the
+  family, and waits for her answer; the old-school version was the "harana", a
+  serenade sung with a guitar outside her window.
+lessons:
+  - id: love-1
+    title: Mahal kita
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "mahal kita", en: "I love you" }
+          - { tl: "pag-ibig", en: "love" }
+          - { tl: "puso", en: "heart" }
+          - { tl: "yakap", en: "hug" }
+      - type: choice
+        prompt: "'Mahal kita' means..."
+        answer: I love you
+        distractors: [I miss you, I like you, You love me]
+        audio: mahal_kita
+        audio_text: Mahal kita.
+      - type: translate
+        prompt_tl: Mahal kita, Nanay.
+        answer_en: I love you, Mom.
+        accept: ["I love you, mother", "I love you Mom"]
+        extra_words: [miss, friend, heart]
+        audio: mahal_kita_nanay
+      - type: translate
+        prompt_en: I love my family.
+        answer_tl: Mahal ko ang pamilya ko.
+        accept: ["Mahal ko ang aking pamilya"]
+        extra_words: [puso, kita, siya]
+        audio: mahal_ko_ang_pamilya_ko
+        hint: '"Mahal ko ang ___" — I love ___. Use "kita" only when the one you love is "you".'
+      - type: fill_blank
+        sentence: "Mahal ko ang ___ ko."
+        translation: "I love my mom."
+        answer: nanay
+        options: [nanay, puso, yakap]
+      - type: listen
+        audio: mahal_din_kita
+        answer_tl: Mahal din kita
+        extra_words: [puso, yakap]
+      - type: choice
+        prompt: "'Miss na kita' means..."
+        answer: I miss you
+        distractors: [I love you, See you soon, I am sad]
+        audio: miss_na_kita
+        audio_text: Miss na kita.
+      - type: translate
+        prompt_tl: Miss na kita, Ate.
+        answer_en: I miss you, big sister.
+        accept: ["I miss you, Ate", "I miss you, sis"]
+        extra_words: [love, heart, hug]
+        audio: miss_na_kita_ate
+      - type: translate
+        prompt_tl: Malaki ang puso mo.
+        answer_en: You have a big heart.
+        accept: ["Your heart is big"]
+        extra_words: [small, hug, love]
+        audio: malaki_ang_puso_mo
+      - type: translate
+        prompt_en: I am sad because I miss my family.
+        answer_tl: Malungkot ako kasi miss ko ang pamilya ko.
+        accept:
+          - Malungkot ako dahil miss ko ang pamilya ko
+          - Malungkot ako kasi miss ko ang aking pamilya
+        extra_words: [masaya, puso, yakap]
+        audio: malungkot_ako_kasi_miss_ko_ang_pamilya_ko
+  - id: love-2
+    title: Nobyo at nobya
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "nobyo", en: "boyfriend" }
+          - { tl: "nobya", en: "girlfriend" }
+          - { tl: "kasintahan", en: "sweetheart" }
+          - { tl: "matalik na kaibigan", en: "best friend" }
+      - type: choice
+        prompt: "'Nobya' means..."
+        answer: Girlfriend
+        distractors: [Boyfriend, Wife, Older sister]
+        audio: nobya
+        audio_text: Nobya
+      - type: translate
+        prompt_tl: May nobyo ba siya?
+        answer_en: Does she have a boyfriend?
+        accept: ["Does he have a boyfriend?"]
+        extra_words: [girlfriend, friend, where]
+        audio: may_nobyo_ba_siya
+      - type: translate
+        prompt_en: She is my girlfriend.
+        answer_tl: Siya ang nobya ko.
+        accept: ["Nobya ko siya", "Siya ang aking nobya"]
+        extra_words: [nobyo, kaibigan, ako]
+        audio: siya_ang_nobya_ko
+      - type: fill_blank
+        sentence: "Ang ___ ko ay guro."
+        translation: "My boyfriend is a teacher."
+        answer: nobyo
+        options: [nobyo, nobya, kapatid]
+      - type: choice
+        prompt: "'Jowa' is the casual, everyday word for a..."
+        answer: Boyfriend or girlfriend
+        distractors: [Best friend, Older brother, Cousin]
+        audio: jowa
+        audio_text: Jowa
+      - type: listen
+        audio: matalik_kong_kaibigan_si_ana
+        answer_tl: Matalik kong kaibigan si Ana
+        extra_words: [nobya, guro]
+      - type: translate
+        prompt_tl: Mahal ko ang kasintahan ko.
+        answer_en: I love my sweetheart.
+        accept: ["I love my partner"]
+        extra_words: [friend, mom, hug]
+        audio: mahal_ko_ang_kasintahan_ko
+      - type: choice
+        prompt: "'Crush ko siya' means..."
+        answer: I have a crush on her
+        distractors: [She is my girlfriend, I miss her, She likes me]
+        audio: crush_ko_siya
+        audio_text: Crush ko siya.
+      - type: translate
+        prompt_en: My older sister's boyfriend is a doctor.
+        answer_tl: Doktor ang nobyo ng ate ko.
+        accept: ["Ang nobyo ng ate ko ay doktor"]
+        extra_words: [nobya, nars, siya]
+        audio: doktor_ang_nobyo_ng_ate_ko
+        hint: '"ng ate ko" = of my older sister. The job word comes first: "Doktor ang ___".'
+  - id: love-3
+    title: Panliligaw
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "ligaw", en: "courtship" }
+          - { tl: "manliligaw", en: "suitor" }
+          - { tl: "harana", en: "serenade" }
+          - { tl: "bulaklak", en: "flower" }
+      - type: choice
+        prompt: "'Manliligaw' means..."
+        answer: A suitor
+        distractors: [A boyfriend, A wedding, A serenade]
+        audio: manliligaw
+        audio_text: Manliligaw
+      - type: translate
+        prompt_tl: Nanliligaw siya kay Maria.
+        answer_en: He is courting Maria.
+        accept: ["She is courting Maria", "He courts Maria"]
+        extra_words: [wedding, sings, sister]
+        audio: nanliligaw_siya_kay_maria
+        hint: '"kay" marks a person as the one being courted — kay Maria.'
+      - type: fill_blank
+        sentence: "May ___ si Ana."
+        translation: "Ana has a suitor."
+        answer: manliligaw
+        options: [manliligaw, harana, kasal]
+      - type: choice
+        prompt: "A 'harana' is..."
+        answer: A serenade sung outside her window
+        distractors: [A wedding reception, A love letter, A first date]
+        audio: harana
+        audio_text: Harana
+      - type: listen
+        audio: kumakanta_ang_manliligaw
+        answer_tl: Kumakanta ang manliligaw
+        extra_words: [gitara, ligaw]
+      - type: translate
+        prompt_en: He is courting my older sister.
+        answer_tl: Nanliligaw siya sa ate ko.
+        accept: ["Nanliligaw siya sa aking ate"]
+        extra_words: [kay, nobya, harana]
+        audio: nanliligaw_siya_sa_ate_ko
+      - type: choice
+        prompt: "A man who is 'torpe' is..."
+        answer: Too shy to confess his feelings
+        distractors: [Already married, Very romantic, Always singing]
+        audio: torpe
+        audio_text: Torpe
+      - type: translate
+        prompt_tl: Hindi siya nanliligaw kasi torpe siya.
+        answer_en: He isn't courting because he is too shy.
+        accept:
+          - He is not courting because he is too shy
+          - He isn't courting because he is shy
+        extra_words: [wedding, happy, tomorrow]
+        audio: hindi_siya_nanliligaw_kasi_torpe_siya
+      - type: translate
+        prompt_en: He wants to court my cousin.
+        answer_tl: Gusto niyang manligaw sa pinsan ko.
+        accept: ["Gusto niyang manligaw sa aking pinsan"]
+        extra_words: [kumanta, harana, kasal]
+        audio: gusto_niyang_manligaw_sa_pinsan_ko
+        hint: '"manligaw" is the plain verb "to court"; "gusto niya" + a verb takes the -ng linker → "gusto niyang".'
+  - id: love-4
+    title: Kasal
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "kasal", en: "wedding" }
+          - { tl: "anibersaryo", en: "anniversary" }
+          - { tl: "simbahan", en: "church" }
+          - { tl: "handaan", en: "party" }
+      - type: choice
+        prompt: "'Ikakasal sila' means..."
+        answer: They will get married
+        distractors: [They are already married, They are courting, They are dancing]
+        audio: ikakasal_sila
+        audio_text: Ikakasal sila.
+      - type: translate
+        prompt_tl: Ikakasal sila sa simbahan bukas.
+        answer_en: They will get married at the church tomorrow.
+        accept:
+          - They are getting married at the church tomorrow
+          - They will get married in the church tomorrow
+        extra_words: [party, suitor, yesterday]
+        audio: ikakasal_sila_sa_simbahan_bukas
+      - type: translate
+        prompt_en: My cousin's wedding is tomorrow.
+        answer_tl: Bukas ang kasal ng pinsan ko.
+        accept: ["Ang kasal ng pinsan ko ay bukas"]
+        extra_words: [kahapon, anibersaryo, simbahan]
+        audio: bukas_ang_kasal_ng_pinsan_ko
+      - type: fill_blank
+        sentence: "Maraming bisita sa ___."
+        translation: "There are many guests at the wedding."
+        answer: kasal
+        options: [kasal, ligaw, puso]
+      - type: listen
+        audio: kasal_na_sila
+        answer_tl: Kasal na sila
+        extra_words: [nobyo, anibersaryo]
+      - type: choice
+        prompt: "'Anibersaryo' means..."
+        answer: Anniversary
+        distractors: [Birthday, Wedding, Invitation]
+        audio: anibersaryo
+        audio_text: Anibersaryo
+      - type: translate
+        prompt_tl: Masaya sila kasi anibersaryo nila ngayon.
+        answer_en: They are happy because it's their anniversary today.
+        accept:
+          - They are happy because it is their anniversary today
+          - They are happy because today is their anniversary
+        extra_words: [sad, wedding, tomorrow]
+        audio: masaya_sila_kasi_anibersaryo_nila_ngayon
+      - type: translate
+        prompt_en: Congratulations! Happy anniversary.
+        answer_tl: Binabati kita! Maligayang anibersaryo.
+        accept: ["Binabati kita, maligayang anibersaryo"]
+        extra_words: [kasal, salamat, kaarawan]
+        audio: binabati_kita_maligayang_anibersaryo
+      - type: translate
+        prompt_en: I will go to my older brother's wedding at the church.
+        answer_tl: Pupunta ako sa kasal ng kuya ko sa simbahan.
+        accept: ["Pupunta ako sa simbahan para sa kasal ng kuya ko"]
+        extra_words: [bahay, nobya, kahapon]
+        audio: pupunta_ako_sa_kasal_ng_kuya_ko_sa_simbahan
+        hint: 'Order it as: verb, then who, then where — "Pupunta ako sa kasal ... sa simbahan."'

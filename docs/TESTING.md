@@ -77,6 +77,7 @@ stream.
 | re-missing a cleared exercise re-queues it | The queue is a live signal, not a one-shot log. |
 | weak queue survives baseline overlay | Cross-device: mistakes made on the phone must be reviewable on the web. |
 | **perfect practice doesn't count toward `perfectLessons`** | **Regression for a real farming hole:** replaying an easy lesson perfectly used to increment the perfect-lesson counters feeding achievements. |
+| **a replay is clamped to practice XP even when the event denies it** | **Regression for an exploit:** the server clamps XP *per event* but nothing capped repetition, so re-sending completions of one lesson with fresh UUIDs and `practice` omitted farmed unlimited XP. Deriving "already completed ⇒ replay" in the reducer closes it for clients and server at once. The companion test uses a *baseline* completion, because the overlay path must see prior completions too. |
 
 ### `streak.test.ts`
 
@@ -160,6 +161,7 @@ exist — it is the anti-cheat boundary between clients and the progress store.
 | xp clamping | Client-asserted XP is clamped to the *authored* value (perfect and non-perfect caps differ); unknown lesson ids clamp to the catalog max instead of rejecting (bundle version skew must not lose a newer client's progress); **practice completions clamp to `PRACTICE_XP` even with no catalog** — the practice cap is policy, not content. |
 | timestamps | Future `occurredAt` clamps to now (OFF-05); past timestamps untouched. |
 | field bounds | missed/mastered arrays capped at 50 ids; `hearts_lost` count 1–20; `goal_set` 10–200 — every numeric bound tested at both edges because these are the DoS/garbage limits. |
+| **timestamp poison-pill** | `occurredAt` was a bare `z.number()`, which accepts `1.5` and `1e30` — values the `bigint` column rejects on INSERT. Since `/sync` inserts the batch in one statement, one bad event 500'd the whole request, and clients only clear their outbox on a 200, so it retried forever. The test sweeps fractional/negative/oversized/`Infinity`/`NaN` and asserts a healthy sibling event still lands. |
 
 ### `app.test.ts`
 
@@ -196,6 +198,31 @@ tests the rules directly.
 | validateCourse | Duplicate lesson/exercise/vocab ids each reported (vocab collisions used to be *silently last-wins* in the bundle build); exercise-level problems are prefixed with the exercise id so authors can find them. |
 
 ---
+
+## `pnpm smoke` — end-to-end against a running stack
+
+33 checks over real HTTP and real Postgres (`scripts/smoke.mjs`). This is the
+only layer that exercises the DB-backed flows, so it carries the checks that
+unit tests structurally cannot:
+
+- **Registration → login → `/me` → `/sync`** round trip, and that `/me` and
+  `/sync` derive identical progress.
+- **XP clamping end to end**: authored value for a first completion, flat
+  practice XP for a replay — including the exploit case where the client omits
+  the `practice` flag entirely.
+- **Poison batch**: a fractional `occurredAt` is rejected on its own while its
+  healthy sibling in the same batch still lands (200, `accepted: 1`).
+- **Review queue**: a missed exercise enters it, mastering clears it, and
+  `mistakesCleared` increments.
+- **Event idempotency**: the same event id twice counts once.
+- **Refresh-token benign race**: replaying a just-rotated token returns 409 and
+  the family **survives** (the new token still works). This guards a real
+  regression — reuse detection originally revoked the family here, silently
+  logging out anyone with two tabs open.
+- **Logout** revokes the family; the token then 401s.
+
+Not covered: revocation *after* the reuse grace window elapses, which needs a
+60s wait or a `REFRESH_REUSE_GRACE_MS=0` run.
 
 ## What is deliberately not unit-tested
 

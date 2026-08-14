@@ -158,6 +158,7 @@ lessons:
       - type: translate
         prompt_en: We are going to Simbang Gabi.
         answer_tl: Pupunta kami sa Simbang Gabi.
+        accept: ["Pupunta tayo sa Simbang Gabi."]
         extra_words: [tayo, pista, bukas]
   - id: fiesta-4
     title: Inviting and greeting
@@ -185,6 +186,7 @@ lessons:
       - type: translate
         prompt_en: Come to my birthday!
         answer_tl: Halika sa kaarawan ko!
+        accept: ["Halika po sa kaarawan ko!"]
         extra_words: [pista, imbitasyon, po]
       - type: fill_blank
         sentence: "Tuloy ___ kayo!"

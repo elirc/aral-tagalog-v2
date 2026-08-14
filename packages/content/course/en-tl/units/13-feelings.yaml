@@ -97,6 +97,7 @@ lessons:
       - type: translate
         prompt_en: I'm okay, thanks.
         answer_tl: Ayos lang ako, salamat.
+        accept: ["Ayos lang, salamat"]
         extra_words: [masaya, pagod, hindi]
         hint: '"ayos lang" = fine / all good.'
       - type: listen
@@ -163,6 +164,7 @@ lessons:
           - "He's angry because the coffee is expensive"
           - "She is angry because the coffee is expensive"
           - "He is angry because the coffee is expensive"
+          - "She's angry because coffee is expensive"
         extra_words: [happy, water, cheap]
         hint: '"dahil" is the more formal twin of "kasi".'
       - type: fill_blank

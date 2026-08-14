@@ -1,0 +1,257 @@
+id: review-actions-time
+title: "Review: Verbs & Time"
+description: Put your verbs on a timeline — every morning, yesterday, right now, and tomorrow.
+tip: >-
+  Tagalog verbs mark aspect, not tense. Kumain / nagtrabaho means the action is
+  finished; kumakain / nagtatrabaho means it is ongoing or habitual; pupunta /
+  kakain — the root's first syllable doubled, with no -um- — means it has not
+  happened yet. Time words pin down when: kahapon (yesterday), ngayon (now),
+  bukas (tomorrow), and "tuwing" (every) — a time phrase often comes first, set
+  off by a comma: "Tuwing umaga, naglalakad ako."
+lessons:
+  - id: revactions-1
+    title: Every morning
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umaga, en: morning }
+          - { tl: hapon, en: afternoon }
+          - { tl: gabi, en: evening }
+          - { tl: araw-araw, en: every day }
+      - type: choice
+        prompt: "'Tuwing' means..."
+        answer: Every
+        distractors: [Always, Sometimes, Never]
+        audio: tuwing
+        audio_text: Tuwing
+      - type: translate
+        prompt_en: Every morning, I walk.
+        answer_tl: Tuwing umaga, naglalakad ako.
+        accept: ["Naglalakad ako tuwing umaga", "Tuwing umaga naglalakad ako"]
+        extra_words: [kumakain, gabi, siya]
+        audio: tuwing_umaga_naglalakad_ako
+      - type: translate
+        prompt_tl: Tuwing gabi, nagbabasa siya ng libro.
+        answer_en: Every evening, he reads a book.
+        accept:
+          - "Every evening, she reads a book"
+          - "Every night, he reads a book"
+          - "Every night, she reads a book"
+          - "He reads a book every evening"
+          - "She reads a book every evening"
+          - "He reads a book every night"
+          - "She reads a book every night"
+        extra_words: [morning, eats, sleeps]
+        audio: tuwing_gabi_nagbabasa_siya_ng_libro
+      - type: fill_blank
+        sentence: "___ umaga, kumakain ako ng tinapay."
+        translation: "Every morning, I eat bread."
+        answer: Tuwing
+        options: [Tuwing, Bukas, Kahapon]
+      - type: listen
+        audio: tuwing_umaga_umiinom_ako_ng_kape
+        answer_tl: Tuwing umaga, umiinom ako ng kape
+        # accept list removed: a listen exercise is graded on the order that was said
+        extra_words: [kumakain, gabi]
+      - type: translate
+        prompt_tl: Araw-araw akong naglalakad.
+        answer_en: I walk every day.
+        accept: ["I am walking every day", "Every day, I walk", "Every day I walk"]
+        extra_words: [eat, sleep, night]
+        audio: araw_araw_akong_naglalakad
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Tuwing hapon, naglalaro sila ng basketbol.
+        answer_en: Every afternoon, they play basketball.
+        accept:
+          - "They play basketball every afternoon"
+          - "Every afternoon, they are playing basketball"
+          - "They are playing basketball every afternoon"
+        extra_words: [morning, sing, watch]
+        audio: tuwing_hapon_naglalaro_sila_ng_basketbol
+  - id: revactions-2
+    title: Yesterday
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kahapon' means..."
+        answer: Yesterday
+        distractors: [Tomorrow, Today, Every day]
+        audio: kahapon
+        audio_text: Kahapon
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: uminom, en: drank }
+          - { tl: pumunta, en: went }
+          - { tl: bumili, en: bought }
+      - type: translate
+        prompt_tl: Kahapon, nagtrabaho siya sa opisina.
+        answer_en: Yesterday, he worked at the office.
+        accept:
+          - "Yesterday, she worked at the office"
+          - "He worked at the office yesterday"
+          - "She worked at the office yesterday"
+        extra_words: [studied, school, today]
+        audio: kahapon_nagtrabaho_siya_sa_opisina
+      - type: choice
+        prompt: "'Nagtrabaho' means..."
+        answer: Worked
+        distractors: [Working, Studied, Walked]
+        audio: nagtrabaho
+        audio_text: Nagtrabaho
+      - type: translate
+        prompt_en: Yesterday, I went to the market.
+        answer_tl: Kahapon, pumunta ako sa palengke.
+        accept: ["Pumunta ako sa palengke kahapon", "Kahapon pumunta ako sa palengke"]
+        extra_words: [bumili, tindahan, bukas]
+        audio: kahapon_pumunta_ako_sa_palengke
+      - type: fill_blank
+        sentence: "Kahapon, ___ ako ng isda sa palengke."
+        translation: "Yesterday, I bought fish at the market."
+        answer: bumili
+        options: [bumili, bumibili, kumain]
+        hint: '"Bumili" is finished (bought); "bumibili" is still happening (buying).'
+      - type: listen
+        audio: uminom_siya_ng_gatas_kahapon
+        answer_tl: Uminom siya ng gatas kahapon
+        accept: ["Kahapon, uminom siya ng gatas"]
+        extra_words: [kumain, bukas]
+      - type: translate
+        prompt_tl: Kumain kami ng manok at kanin kahapon.
+        answer_en: We ate chicken and rice yesterday.
+        accept: ["Yesterday, we ate chicken and rice", "We ate chicken and rice yesterday."]
+        extra_words: [fish, drank, today]
+        audio: kumain_kami_ng_manok_at_kanin_kahapon
+      - type: translate
+        prompt_en: Yesterday, she rode a jeepney.
+        answer_tl: Kahapon, sumakay siya sa jeepney.
+        accept: ["Sumakay siya sa jeepney kahapon", "Kahapon sumakay siya sa jeepney"]
+        extra_words: [pumunta, bumili, bukas]
+        audio: kahapon_sumakay_siya_sa_jeepney
+  - id: revactions-3
+    title: Right now
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ngayon, en: now }
+          - { tl: nagluluto, en: cooking }
+          - { tl: naglilinis, en: cleaning }
+          - { tl: natutulog, en: sleeping }
+      - type: choice
+        prompt: "'Ngayon' means..."
+        answer: Now
+        distractors: [Yesterday, Tomorrow, Later]
+        audio: ngayon
+        audio_text: Ngayon
+      - type: translate
+        prompt_tl: Nagluluto si Nanay ngayon.
+        answer_en: Mom is cooking now.
+        accept: ["Mom is cooking right now", "Mother is cooking now", "Mom cooks now"]
+        extra_words: [cleaning, Dad, yesterday]
+        audio: nagluluto_si_nanay_ngayon
+      - type: translate
+        prompt_en: I am cleaning the house now.
+        answer_tl: Naglilinis ako ng bahay ngayon.
+        accept: ["Ngayon, naglilinis ako ng bahay"]
+        extra_words: [nagluluto, kusina, kahapon]
+        audio: naglilinis_ako_ng_bahay_ngayon
+      - type: fill_blank
+        sentence: "___ ako ng kamay."
+        translation: "I am washing my hands."
+        answer: Naghuhugas
+        options: [Naghuhugas, Nagwawalis, Naglilinis]
+      - type: listen
+        audio: nagwawalis_siya_sa_hardin
+        answer_tl: Nagwawalis siya sa hardin
+        extra_words: [naglilinis, kusina]
+      - type: choice
+        prompt: "'Natutulog' means..."
+        answer: Sleeping (sleeps)
+        distractors: [Eating, Working, Reading]
+        audio: natutulog
+        audio_text: Natutulog
+      - type: translate
+        prompt_tl: Natutulog si Juan ngayon.
+        answer_en: Juan is sleeping now.
+        accept: ["Juan sleeps now", "Juan is sleeping right now"]
+        extra_words: [eating, working, yesterday]
+        audio: natutulog_si_juan_ngayon
+      - type: translate
+        prompt_tl: Nag-aaral ako ngayon dahil may pagsusulit bukas.
+        answer_en: I am studying now because there is a test tomorrow.
+        accept:
+          - "I'm studying now because there is a test tomorrow"
+          - "I am studying now because there is an exam tomorrow"
+          - "I am studying now because I have a test tomorrow"
+        extra_words: [working, yesterday, class]
+        audio: nag_aaral_ako_ngayon_dahil_may_pagsusulit_bukas
+        grading: { hyphens: true }
+  - id: revactions-4
+    title: Yesterday, today, tomorrow
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kahapon, en: yesterday }
+          - { tl: ngayon, en: today }
+          - { tl: bukas, en: tomorrow }
+          - { tl: araw-araw, en: every day }
+      - type: choice
+        prompt: "'Bukas' means..."
+        answer: Tomorrow
+        distractors: [Yesterday, Now, Every day]
+        audio: bukas
+        audio_text: Bukas
+      - type: translate
+        prompt_en: Tomorrow, I will go to school.
+        answer_tl: Bukas, pupunta ako sa paaralan.
+        accept: ["Pupunta ako sa paaralan bukas", "Bukas pupunta ako sa paaralan"]
+        extra_words: [pumunta, kahapon, palengke]
+        audio: bukas_pupunta_ako_sa_paaralan
+      - type: fill_blank
+        sentence: "Bukas, ___ kami sa simbahan."
+        translation: "Tomorrow, we will go to church."
+        answer: pupunta
+        options: [pupunta, pumunta, naglalakad]
+        hint: '"Pupunta" is still to come (will go); "pumunta" already happened (went).'
+      - type: translate
+        prompt_tl: Tuwing umaga, umiinom siya ng kape sa kusina.
+        answer_en: Every morning, she drinks coffee in the kitchen.
+        accept:
+          - "Every morning, he drinks coffee in the kitchen"
+          - "She drinks coffee in the kitchen every morning"
+          - "He drinks coffee in the kitchen every morning"
+        extra_words: [milk, evening, eats]
+        audio: tuwing_umaga_umiinom_siya_ng_kape_sa_kusina
+      - type: listen
+        audio: bukas_pupunta_sila_sa_palengke
+        answer_tl: Bukas, pupunta sila sa palengke
+        accept: ["Pupunta sila sa palengke bukas"]
+        extra_words: [kahapon, paaralan]
+      - type: translate
+        prompt_en: They worked yesterday.
+        answer_tl: Nagtrabaho sila kahapon.
+        accept: ["Kahapon, nagtrabaho sila", "Kahapon nagtrabaho sila"]
+        extra_words: [nagtatrabaho, bukas, kami]
+        audio: nagtrabaho_sila_kahapon
+      - type: choice
+        prompt: "Which sentence means 'I ate yesterday'?"
+        answer: Kumain ako kahapon.
+        distractors:
+          - Kumakain ako ngayon.
+          - Umiinom ako kahapon.
+          - Kumakain ako araw-araw.
+        audio: kumain_ako_kahapon
+        audio_text: Kumain ako kahapon.
+      - type: translate
+        prompt_tl: Bukas ang kaarawan ni Maria. Bumili ako ng regalo kahapon.
+        answer_en: Tomorrow is Maria's birthday. I bought a gift yesterday.
+        accept:
+          - "Maria's birthday is tomorrow. I bought a gift yesterday."
+          - "Tomorrow is Maria's birthday. I bought a present yesterday."
+          - "Maria's birthday is tomorrow. I bought a present yesterday."
+        extra_words: [party, today, store]
+        audio: bukas_ang_kaarawan_ni_maria_bumili_ako_ng_regalo_kahapon

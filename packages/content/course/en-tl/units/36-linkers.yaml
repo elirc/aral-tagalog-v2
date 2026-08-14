@@ -1,0 +1,249 @@
+id: linkers
+title: Connecting Words
+description: >-
+  Link adjectives to nouns with na/-ng, then join whole ideas with at, pero,
+  o, kasi, kung, and habang.
+tip: >-
+  Tagalog glues adjectives and nouns together with a linker. If the first word
+  ends in a vowel, attach -ng to it: maganda + bahay → "magandang bahay". If it
+  ends in -n, add just -g: ulan + malakas → "ulang malakas". If it ends in any
+  other consonant, use the separate word "na": "masarap na kanin". The order can
+  flip with no change in meaning — "malaking bahay" and "bahay na malaki" are
+  both "a big house". You have already met this linker in "gusto kong kumanta"!
+lessons:
+  - id: linkers-1
+    title: The na/-ng linker
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which is correct for 'beautiful house'?"
+        answer: magandang bahay
+        distractors: [maganda bahay, maganda ng bahay, bahay maganda]
+        audio: magandang_bahay
+        audio_text: Magandang bahay
+      - type: choice
+        prompt: "'Masarap na kanin' means..."
+        answer: Delicious rice
+        distractors: [Hot rice, Cheap rice, Delicious bread]
+        audio: masarap_na_kanin
+        audio_text: Masarap na kanin
+      - type: match
+        pairs:
+          - { tl: magandang bulaklak, en: beautiful flower }
+          - { tl: malaking bahay, en: big house }
+          - { tl: masarap na kape, en: delicious coffee }
+          - { tl: maliit na aso, en: small dog }
+      - type: translate
+        prompt_tl: May malaking aso sila.
+        answer_en: They have a big dog.
+        accept: ["They have a large dog"]
+        extra_words: [small, cat, house]
+        audio: may_malaking_aso_sila
+      - type: translate
+        prompt_en: I bought a beautiful flower.
+        answer_tl: Bumili ako ng magandang bulaklak.
+        extra_words: [malaki, aso, kape]
+        audio: bumili_ako_ng_magandang_bulaklak
+        hint: '"maganda" ends in a vowel, so it takes -ng before the noun.'
+      - type: fill_blank
+        sentence: "Bumili siya ng ___ bahay."
+        translation: "He bought a big house."
+        answer: malaking
+        options: [malaking, malaki, malaki ng]
+        hint: 'Adjectives ending in a vowel attach -ng: malaki → malaking.'
+      - type: fill_blank
+        sentence: "Kumain kami ng masarap ___ manok."
+        translation: "We ate delicious chicken."
+        answer: na
+        options: [na, ng, at]
+        hint: '"masarap" ends in a consonant, so the linker is the separate word "na".'
+      - type: listen
+        audio: kumain_ako_ng_masarap_na_tinapay
+        answer_tl: Kumain ako ng masarap na tinapay
+        extra_words: [mainit, kape]
+      - type: translate
+        prompt_tl: Nakasuot siya ng magandang bestida sa handaan.
+        answer_en: She is wearing a beautiful dress at the party.
+        accept:
+          - "He is wearing a beautiful dress at the party"
+          - "She is wearing a beautiful dress at the feast"
+          - "He is wearing a beautiful dress at the feast"
+        extra_words: [red, shoes, small]
+        audio: nakasuot_siya_ng_magandang_bestida_sa_handaan
+  - id: linkers-2
+    title: And and or
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: at, en: and }
+          - { tl: o, en: or }
+          - { tl: tapos, en: then }
+      - type: choice
+        prompt: "'At' means..."
+        answer: And
+        distractors: [Or, But, If]
+        audio: at
+        audio_text: At
+      - type: translate
+        prompt_tl: Kape o gatas?
+        answer_en: Coffee or milk?
+        accept: ["Coffee or milk"]
+        extra_words: [and, water, bread]
+        audio: kape_o_gatas
+      - type: translate
+        prompt_en: The dog and the cat are sleeping.
+        answer_tl: Natutulog ang aso at ang pusa.
+        accept: ["Natutulog ang aso at pusa"]
+        extra_words: [o, ibon, kumakain]
+        audio: natutulog_ang_aso_at_ang_pusa
+      - type: fill_blank
+        sentence: "Bumili ako ng tinapay ___ itlog."
+        translation: "I bought bread and eggs."
+        answer: at
+        options: [at, o, sa]
+      - type: listen
+        audio: kumakanta_at_sumasayaw_sila
+        answer_tl: Kumakanta at sumasayaw sila
+        extra_words: [naglalaro, o]
+      - type: choice
+        prompt: "You are offering a drink. 'Water or milk?' is..."
+        answer: Tubig o gatas?
+        distractors: [Tubig at gatas?, Tubig ba gatas?, Tubig sa gatas?]
+        audio: tubig_o_gatas
+        audio_text: Tubig o gatas?
+      - type: translate
+        prompt_tl: Pupunta ka ba sa palengke o sa tindahan?
+        answer_en: Are you going to the market or to the store?
+        accept:
+          - "Are you going to the market or the store?"
+          - "Will you go to the market or to the store?"
+        extra_words: [and, church, school]
+        audio: pupunta_ka_ba_sa_palengke_o_sa_tindahan
+      - type: translate
+        prompt_en: My mom and my dad are working.
+        answer_tl: Nagtatrabaho ang nanay ko at ang tatay ko.
+        accept: ["Nagtatrabaho ang nanay at tatay ko"]
+        extra_words: [o, kapatid, natutulog]
+        audio: nagtatrabaho_ang_nanay_ko_at_ang_tatay_ko
+  - id: linkers-3
+    title: But and because
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pero' means..."
+        answer: But
+        distractors: [And, Because, Or]
+        audio: pero
+        audio_text: Pero
+      - type: match
+        pairs:
+          - { tl: pero, en: but }
+          - { tl: kasi, en: because }
+          - { tl: at, en: and }
+          - { tl: o, en: or }
+      - type: translate
+        prompt_tl: Gusto ko ng kape pero wala akong pera.
+        answer_en: I want coffee, but I don't have money.
+        accept:
+          - "I want coffee but I have no money"
+          - "I like coffee but I don't have money"
+        extra_words: [because, rice, happy]
+        audio: gusto_ko_ng_kape_pero_wala_akong_pera
+      - type: translate
+        prompt_en: I am happy because it's my birthday.
+        answer_tl: Masaya ako kasi kaarawan ko.
+        accept: ["Masaya ako dahil kaarawan ko"]
+        extra_words: [pero, malungkot, regalo]
+        audio: masaya_ako_kasi_kaarawan_ko
+        hint: '"kasi" and "dahil" both mean "because" — kasi is more casual.'
+      - type: fill_blank
+        sentence: "Malungkot siya ___ malayo ang pamilya niya."
+        translation: "She is sad because her family is far away."
+        answer: kasi
+        options: [kasi, pero, o]
+        accept: [dahil]
+      - type: listen
+        audio: pagod_ako_pero_masaya
+        answer_tl: Pagod ako pero masaya
+        extra_words: [kasi, malungkot]
+      - type: choice
+        prompt: "'Mahal ito pero maganda.' means..."
+        answer: This is expensive but beautiful.
+        distractors:
+          - This is cheap but beautiful.
+          - This is expensive and beautiful.
+          - This is expensive because it's beautiful.
+        audio: mahal_ito_pero_maganda
+        audio_text: Mahal ito pero maganda.
+      - type: translate
+        prompt_tl: Umiinom siya ng gamot dahil masakit ang ulo niya.
+        answer_en: He is taking medicine because his head hurts.
+        accept:
+          - "She is taking medicine because her head hurts"
+          - "He is drinking medicine because his head hurts"
+          - "She is drinking medicine because her head hurts"
+        extra_words: [but, stomach, tired]
+        audio: umiinom_siya_ng_gamot_dahil_masakit_ang_ulo_niya
+      - type: translate
+        prompt_en: The jeepney is cheap but slow.
+        answer_tl: Mura ang jeepney pero mabagal.
+        accept: ["Mura pero mabagal ang jeepney"]
+        extra_words: [mahal, mabilis, kasi]
+        audio: mura_ang_jeepney_pero_mabagal
+  - id: linkers-4
+    title: If and while
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "'Kung' means..."
+        answer: If
+        distractors: [While, Because, But]
+        audio: kung
+        audio_text: Kung
+      - type: match
+        pairs:
+          - { tl: kung, en: if }
+          - { tl: habang, en: while }
+          - { tl: pero, en: but }
+          - { tl: kasi, en: because }
+      - type: translate
+        prompt_tl: Kung umuulan, hindi kami pupunta sa palengke.
+        answer_en: If it's raining, we won't go to the market.
+        accept:
+          - "If it rains, we won't go to the market"
+          - "If it is raining, we will not go to the market"
+        extra_words: [while, store, but]
+        audio: kung_umuulan_hindi_kami_pupunta_sa_palengke
+      - type: translate
+        prompt_en: She is singing while cooking.
+        answer_tl: Kumakanta siya habang nagluluto.
+        extra_words: [kung, sumasayaw, kumakain]
+        audio: kumakanta_siya_habang_nagluluto
+      - type: fill_blank
+        sentence: "Naglilinis ako ng bahay ___ natutulog ang anak ko."
+        translation: "I am cleaning the house while my child is sleeping."
+        answer: habang
+        options: [habang, kung, pero]
+      - type: listen
+        audio: kumakain_sila_habang_nanonood_ng_pelikula
+        answer_tl: Kumakain sila habang nanonood ng pelikula
+        extra_words: [kung, naglalaro]
+      - type: fill_blank
+        sentence: "___ mainit, umiinom ako ng malamig na tubig."
+        translation: "If it's hot, I drink cold water."
+        answer: Kung
+        options: [Kung, Habang, Pero]
+      - type: translate
+        prompt_tl: Nagbabasa ako ng libro habang umuulan.
+        answer_en: I am reading a book while it's raining.
+        accept:
+          - "I read a book while it rains"
+          - "I am reading a book while it is raining"
+        extra_words: [if, sleeping, cold]
+        audio: nagbabasa_ako_ng_libro_habang_umuulan
+      - type: translate
+        prompt_en: We are eating and drinking at the party while they are singing.
+        answer_tl: Kumakain at umiinom kami sa handaan habang kumakanta sila.
+        extra_words: [kung, pero, sumasayaw]
+        audio: kumakain_at_umiinom_kami_sa_handaan_habang_kumakanta_sila

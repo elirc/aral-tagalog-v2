@@ -1,0 +1,231 @@
+id: doctor
+title: At the Doctor
+description: Say what hurts, describe a fever or cough, and get medicine and rest.
+tip: >-
+  To say something hurts, use "masakit" + "ang" + the body part: "Masakit ang
+  ulo ko" — my head hurts. Careful: "masakit" means it hurts, while "may sakit
+  ako" means I'm sick. When talking to a doctor or any elder, slip in "po":
+  "Masakit po ang tiyan ko."
+lessons:
+  - id: doctor-1
+    title: It hurts
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: masakit, en: painful }
+          - { tl: ulo, en: head }
+          - { tl: tiyan, en: stomach }
+          - { tl: ngipin, en: tooth }
+      - type: choice
+        prompt: "'Masakit ang ulo ko' means..."
+        answer: My head hurts
+        distractors: [My stomach hurts, My head is big, I have a fever]
+        audio: masakit_ang_ulo_ko
+        audio_text: Masakit ang ulo ko.
+      - type: translate
+        prompt_tl: Masakit ang tiyan ko.
+        answer_en: My stomach hurts.
+        accept: ["My belly hurts", "My stomach is aching"]
+        extra_words: [head, tooth, his]
+        audio: masakit_ang_tiyan_ko
+      - type: translate
+        prompt_en: My tooth hurts.
+        answer_tl: Masakit ang ngipin ko.
+        extra_words: [ulo, paa, mo]
+        audio: masakit_ang_ngipin_ko
+      - type: fill_blank
+        sentence: "Masakit ang ___ ko."
+        translation: "My back hurts."
+        answer: likod
+        options: [likod, ulo, paa]
+      - type: listen
+        audio: masakit_ang_paa_ko
+        answer_tl: Masakit ang paa ko
+        extra_words: [kamay, ulo]
+      - type: choice
+        prompt: "'Sakit' means..."
+        answer: Pain or illness
+        distractors: [Medicine, Wound, Fever]
+        audio: sakit
+        audio_text: Sakit
+      - type: translate
+        prompt_tl: Masakit ang mata niya.
+        answer_en: His eye hurts.
+        accept: ["Her eye hurts", "His eyes hurt", "Her eyes hurt"]
+        extra_words: [my, hand, tooth]
+        audio: masakit_ang_mata_niya
+      - type: translate
+        prompt_tl: Masakit ang likod ko kasi nagtatrabaho ako araw-araw.
+        answer_en: My back hurts because I work every day.
+        accept: ["My back hurts because I am working every day", "My back hurts because I work everyday"]
+        extra_words: [head, sleeping, tomorrow]
+        audio: masakit_ang_likod_ko_kasi_nagtatrabaho_ako_araw_araw
+        grading: { hyphens: true }
+  - id: doctor-2
+    title: Fever, cough, and cold
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lagnat, en: fever }
+          - { tl: ubo, en: cough }
+          - { tl: sipon, en: a cold }
+          - { tl: gamot, en: medicine }
+      - type: choice
+        prompt: "'May sakit ako' means..."
+        answer: I am sick
+        distractors: [I am tired, I have a fever, I am fine]
+        audio: may_sakit_ako
+        audio_text: May sakit ako.
+      - type: translate
+        prompt_tl: May lagnat ang anak ko.
+        answer_en: My child has a fever.
+        accept: ["My child has fever"]
+        extra_words: [cough, dog, friend]
+        audio: may_lagnat_ang_anak_ko
+      - type: translate
+        prompt_en: I have a cough and a cold.
+        answer_tl: May ubo at sipon ako.
+        accept: ["May sipon at ubo ako"]
+        extra_words: [lagnat, gamot, siya]
+        audio: may_ubo_at_sipon_ako
+      - type: fill_blank
+        sentence: "May ___ ako. Mainit ang katawan ko."
+        translation: "I have a fever. My body is hot."
+        answer: lagnat
+        options: [lagnat, sipon, ubo]
+        hint: 'Which sickness makes your body hot?'
+      - type: listen
+        audio: may_lagnat_ako
+        answer_tl: May lagnat ako
+        extra_words: [ubo, sipon]
+      - type: choice
+        prompt: "'Masama ang pakiramdam ko' means..."
+        answer: I don't feel well
+        distractors: [I feel great, I am tired, My head hurts]
+        audio: masama_ang_pakiramdam_ko
+        audio_text: Masama ang pakiramdam ko.
+      - type: translate
+        prompt_tl: Kumusta ang pakiramdam mo?
+        answer_en: How are you feeling?
+        accept: ["How do you feel?", "How are you feeling now?"]
+        extra_words: [name, doctor, why]
+        audio: kumusta_ang_pakiramdam_mo
+      - type: translate
+        prompt_en: I am not going to school today because I am sick.
+        answer_tl: Hindi ako pupunta sa paaralan ngayon kasi may sakit ako.
+        accept: ["Hindi ako pupunta sa paaralan ngayon dahil may sakit ako"]
+        extra_words: [bukas, trabaho, wala]
+        audio: hindi_ako_pupunta_sa_paaralan_ngayon_kasi_may_sakit_ako
+  - id: doctor-3
+    title: Doctor and medicine
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: doktor, en: doctor }
+          - { tl: nars, en: nurse }
+          - { tl: botika, en: pharmacy }
+          - { tl: ospital, en: hospital }
+      - type: choice
+        prompt: "Where do you buy gamot (medicine)?"
+        answer: Botika
+        distractors: [Palengke, Simbahan, Paaralan]
+        audio: botika
+        audio_text: Botika
+      - type: translate
+        prompt_tl: Pupunta ako sa doktor bukas.
+        answer_en: I will go to the doctor tomorrow.
+        accept: ["I am going to the doctor tomorrow", "I'm going to the doctor tomorrow"]
+        extra_words: [hospital, today, nurse]
+        audio: pupunta_ako_sa_doktor_bukas
+      - type: translate
+        prompt_en: The doctor went to the hospital.
+        answer_tl: Pumunta ang doktor sa ospital.
+        accept: ["Pumunta sa ospital ang doktor"]
+        extra_words: [nars, botika, ako]
+        audio: pumunta_ang_doktor_sa_ospital
+      - type: fill_blank
+        sentence: "Uminom ka ng ___."
+        translation: "Take (drink) your medicine."
+        answer: gamot
+        options: [gamot, tubig, kape]
+        hint: 'In Tagalog you "drink" medicine — uminom ng gamot.'
+      - type: listen
+        audio: uminom_ka_ng_gamot
+        answer_tl: Uminom ka ng gamot
+        extra_words: [tubig, doktor]
+      - type: choice
+        prompt: "You're telling the doctor your head hurts. Politely say:"
+        answer: Masakit po ang ulo ko.
+        distractors: [Masakit ang ulo mo, Mainit po ngayon, Magandang gabi po]
+        audio: masakit_po_ang_ulo_ko
+        audio_text: Masakit po ang ulo ko.
+      - type: translate
+        prompt_tl: Uminom siya ng gamot kahapon.
+        answer_en: She took medicine yesterday.
+        accept: ["He took medicine yesterday", "She drank medicine yesterday", "He drank medicine yesterday"]
+        extra_words: [water, tomorrow, coffee]
+        audio: uminom_siya_ng_gamot_kahapon
+      - type: translate
+        prompt_en: My mom bought medicine at the pharmacy.
+        answer_tl: Bumili ang nanay ko ng gamot sa botika.
+        accept: ["Bumili ng gamot sa botika ang nanay ko", "Bumili ng gamot ang nanay ko sa botika"]
+        extra_words: [ospital, tindahan, kumain]
+        audio: bumili_ang_nanay_ko_ng_gamot_sa_botika
+  - id: doctor-4
+    title: Rest and get well
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Magpahinga' means..."
+        answer: To rest
+        distractors: [To sleep, To work, To play]
+        audio: magpahinga
+        audio_text: Magpahinga
+      - type: match
+        pairs:
+          - { tl: magpahinga, en: to rest }
+          - { tl: sugat, en: wound }
+          - { tl: lagnat, en: fever }
+          - { tl: masakit, en: painful }
+      - type: translate
+        prompt_en: Rest, because you are sick.
+        answer_tl: Magpahinga ka kasi may sakit ka.
+        accept: ["Magpahinga ka dahil may sakit ka"]
+        extra_words: [ako, pagod, gamot]
+        audio: magpahinga_ka_kasi_may_sakit_ka
+      - type: choice
+        prompt: "'Sugat' means..."
+        answer: Wound
+        distractors: [Fever, Pain, Cough]
+        audio: sugat
+        audio_text: Sugat
+      - type: translate
+        prompt_tl: May sugat ang kamay niya.
+        answer_en: His hand has a wound.
+        accept: ["Her hand has a wound", "There is a wound on his hand", "There is a wound on her hand", "He has a wound on his hand", "She has a wound on her hand"]
+        extra_words: [foot, my, fever]
+        audio: may_sugat_ang_kamay_niya
+      - type: fill_blank
+        sentence: "Nagpapahinga siya kasi ___ siya."
+        translation: "She is resting because she is tired."
+        answer: pagod
+        options: [pagod, masaya, gutom]
+      - type: listen
+        audio: nagpapahinga_ako_sa_bahay
+        answer_tl: Nagpapahinga ako sa bahay
+        extra_words: [natutulog, kwarto]
+      - type: translate
+        prompt_tl: Magpahinga po kayo at uminom ng tubig.
+        answer_en: Please rest and drink water.
+        accept: ["Rest and drink water", "Please rest and drink some water"]
+        extra_words: [medicine, eat, sleep]
+        audio: magpahinga_po_kayo_at_uminom_ng_tubig
+      - type: choice
+        prompt: "Your friend has a fever. What do you say?"
+        answer: Magpahinga ka at uminom ka ng gamot.
+        distractors: [Kain tayo sa handaan, Maglaro tayo ng basketbol, Bumili ka ng sapatos]
+        audio: magpahinga_ka_at_uminom_ka_ng_gamot
+        audio_text: Magpahinga ka at uminom ka ng gamot.

@@ -1,0 +1,232 @@
+id: emergencies
+title: Help & Emergencies
+description: Call for help, report a fire or a theft, and keep yourself safe.
+tip: >-
+  "Tulong!" is the everyday shout for help; "Saklolo!" is the more dramatic cry
+  for rescue you hear in movies and news reports. To ask a person directly, use
+  the verb: "Tulungan mo ako" — help me. Note that "Ingat!" does double duty:
+  it warns you of danger, but Filipinos also say it instead of goodbye when
+  someone leaves, the way English uses "take care". The national emergency
+  hotline in the Philippines is 911.
+lessons:
+  - id: emergency-1
+    title: Tulong! Asking for help
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tulong, en: help }
+          - { tl: sunog, en: fire }
+          - { tl: pulis, en: police officer }
+          - { tl: ospital, en: hospital }
+      - type: choice
+        prompt: "'Tulong!' means..."
+        answer: Help!
+        distractors: [Fire!, Stop!, Thank you!]
+        audio: tulong
+        audio_text: Tulong!
+      - type: translate
+        prompt_en: Help me!
+        answer_tl: Tulungan mo ako!
+        extra_words: [pulis, tubig, siya]
+        audio: tulungan_mo_ako
+        hint: '"tulungan mo" = you help — the command form aimed at one person.'
+      - type: translate
+        prompt_tl: Kailangan ko ng tulong.
+        answer_en: I need help.
+        accept: ["I need some help", "I need help!"]
+        extra_words: [water, money, doctor]
+        audio: kailangan_ko_ng_tulong
+      - type: fill_blank
+        sentence: "___ mo ako!"
+        translation: "Help me!"
+        answer: Tulungan
+        options: [Tulungan, Tumawag, Kailangan]
+      - type: choice
+        prompt: "'Saklolo!' means..."
+        answer: Help! (a cry for rescue)
+        distractors: [Fire!, Be careful!, Where is it?]
+        audio: saklolo
+        audio_text: Saklolo!
+      - type: listen
+        audio: tulungan_niyo_po_ako
+        answer_tl: Tulungan niyo po ako
+        accept: ["Tulungan ninyo po ako", "Tulungan po ninyo ako", "Tulungan po niyo ako"]
+        extra_words: [ninyo, pulis]
+      - type: translate
+        prompt_tl: May sakit ang lola ko.
+        answer_en: My grandmother is sick.
+        accept: ["My grandma is sick", "My grandmother is ill"]
+        extra_words: [tired, hungry, friend]
+        audio: may_sakit_ang_lola_ko
+      - type: translate
+        prompt_en: Where is the hospital? I need a doctor.
+        answer_tl: Nasaan ang ospital? Kailangan ko ng doktor.
+        extra_words: [pulis, bahay, tulong]
+        audio: nasaan_ang_ospital_kailangan_ko_ng_doktor
+  - id: emergency-2
+    title: Fire, police, ambulance
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: emerhensiya, en: emergency }
+          - { tl: bumbero, en: firefighter }
+          - { tl: ambulansya, en: ambulance }
+          - { tl: tumawag, en: to call }
+      - type: choice
+        prompt: "'Sunog!' means..."
+        answer: Fire!
+        distractors: [Flood!, Earthquake!, Help!]
+        audio: sunog
+        audio_text: Sunog!
+      - type: translate
+        prompt_en: Call an ambulance!
+        answer_tl: Tumawag ka ng ambulansya!
+        extra_words: [pulis, bumbero, bahay]
+        audio: tumawag_ka_ng_ambulansya
+      - type: translate
+        prompt_tl: May sunog sa palengke!
+        answer_en: There is a fire at the market!
+        accept: ["There's a fire at the market", "There is a fire in the market"]
+        extra_words: [hospital, store, storm]
+        audio: may_sunog_sa_palengke
+      - type: fill_blank
+        sentence: "Tumawag ka ng ___!"
+        translation: "Call the police!"
+        answer: pulis
+        options: [pulis, bumbero, guro]
+      - type: listen
+        audio: tumawag_tayo_ng_ambulansya
+        answer_tl: Tumawag tayo ng ambulansya
+        extra_words: [pulis, bumbero]
+      - type: choice
+        prompt: "'Emerhensiya' means..."
+        answer: Emergency
+        distractors: [Accident, Ambulance, Hospital]
+        audio: emerhensiya
+        audio_text: Emerhensiya
+      - type: translate
+        prompt_tl: Nasaan ang ambulansya?
+        answer_en: Where is the ambulance?
+        extra_words: [police, hospital, fire]
+        audio: nasaan_ang_ambulansya
+      - type: translate
+        prompt_en: There is a fire near the church. Call the firefighters!
+        answer_tl: May sunog malapit sa simbahan. Tumawag ka ng bumbero!
+        extra_words: [pulis, ospital, malayo]
+        audio: may_sunog_malapit_sa_simbahan_tumawag_ka_ng_bumbero
+  - id: emergency-3
+    title: Lost and stolen
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nawawala, en: missing }
+          - { tl: magnanakaw, en: thief }
+          - { tl: pera, en: money }
+          - { tl: pulis, en: police officer }
+      - type: choice
+        prompt: "'Nawawala' means..."
+        answer: Lost / missing
+        distractors: [Stolen, Dangerous, Safe]
+        audio: nawawala
+        audio_text: Nawawala
+      - type: translate
+        prompt_tl: Nawawala ang anak ko.
+        answer_en: My child is missing.
+        accept: ["My child is lost"]
+        extra_words: [money, dog, friend]
+        audio: nawawala_ang_anak_ko
+      - type: translate
+        prompt_en: I am lost.
+        answer_tl: Nawawala ako.
+        extra_words: [siya, pulis, bahay]
+        audio: nawawala_ako
+      - type: fill_blank
+        sentence: "___ ang pera ko."
+        translation: "My money was stolen."
+        answer: Ninakaw
+        options: [Ninakaw, Nawawala, Kailangan]
+        hint: '"nakaw" is theft; "ninakaw" is the completed form — it was stolen.'
+      - type: listen
+        audio: ninakaw_ang_pera_ko
+        answer_tl: Ninakaw ang pera ko
+        extra_words: [nawawala, tulong]
+      - type: choice
+        prompt: "'Magnanakaw' means..."
+        answer: Thief
+        distractors: [Police officer, Driver, Nurse]
+        audio: magnanakaw
+        audio_text: Magnanakaw
+      - type: translate
+        prompt_tl: May magnanakaw sa tindahan!
+        answer_en: There is a thief in the store!
+        accept: ["There's a thief in the store", "There is a thief at the store"]
+        extra_words: [market, police, house]
+        audio: may_magnanakaw_sa_tindahan
+      - type: translate
+        prompt_en: My friend is lost. Where is the police station?
+        answer_tl: Nawawala ang kaibigan ko. Nasaan ang istasyon ng pulis?
+        extra_words: [ospital, tindahan, magnanakaw]
+        audio: nawawala_ang_kaibigan_ko_nasaan_ang_istasyon_ng_pulis
+  - id: emergency-4
+    title: Stay safe
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: delikado, en: dangerous }
+          - { tl: ligtas, en: safe }
+          - { tl: lindol, en: earthquake }
+          - { tl: aksidente, en: accident }
+      - type: choice
+        prompt: "'Ingat!' means..."
+        answer: Take care!
+        distractors: [Help!, Fire!, Please come in!]
+        audio: ingat
+        audio_text: Ingat!
+      - type: translate
+        prompt_tl: Delikado ang daan.
+        answer_en: The road is dangerous.
+        accept: ["The street is dangerous"]
+        extra_words: [safe, house, fast]
+        audio: delikado_ang_daan
+      - type: translate
+        prompt_en: We are safe.
+        answer_tl: Ligtas kami.
+        extra_words: [delikado, sila, bahay]
+        audio: ligtas_kami
+      - type: fill_blank
+        sentence: "___ ka sa daan."
+        translation: "Be careful on the road."
+        answer: Mag-ingat
+        options: [Mag-ingat, Ligtas, Delikado]
+        grading: { hyphens: true }
+      - type: listen
+        audio: mag_ingat_ka_sa_daan
+        answer_tl: Mag-ingat ka sa daan
+        extra_words: [delikado, ligtas]
+      - type: choice
+        prompt: "'Lindol' means..."
+        answer: Earthquake
+        distractors: [Storm, Flood, Fire]
+        audio: lindol
+        audio_text: Lindol
+      - type: translate
+        prompt_tl: May aksidente sa kanto.
+        answer_en: There is an accident at the corner.
+        accept: ["There's an accident at the corner", "There is an accident on the corner"]
+        extra_words: [market, fire, road]
+        audio: may_aksidente_sa_kanto
+      - type: translate
+        prompt_en: There is a wound on my hand.
+        answer_tl: May sugat sa kamay ko.
+        extra_words: [ulo, gamot, ligtas]
+        audio: may_sugat_sa_kamay_ko
+      - type: translate
+        prompt_tl: Mag-ingat kayo, malakas ang bagyo ngayon.
+        answer_en: Be careful, the storm is strong today.
+        accept: ["Take care, the storm is strong today", "Be careful, the typhoon is strong today"]
+        extra_words: [safe, dangerous, market]
+        audio: mag_ingat_kayo_malakas_ang_bagyo_ngayon

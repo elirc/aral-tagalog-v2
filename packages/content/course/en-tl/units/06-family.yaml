@@ -28,6 +28,7 @@ lessons:
       - type: translate
         prompt_en: She is my mom.
         answer_tl: Siya ang nanay ko.
+        accept: ["Nanay ko siya"]
         extra_words: [tatay, ang, ako]
         hint: '"ko" after a noun means "my".'
       - type: fill_blank
@@ -70,7 +71,7 @@ lessons:
       - type: translate
         prompt_tl: Kuya ko si Ben.
         answer_en: Ben is my older brother.
-        accept: ["Ben is my big brother"]
+        accept: ["Ben is my big brother", "My older brother is Ben"]
         extra_words: [sister, cousin, mom]
       - type: translate
         prompt_en: She is my older sister.
@@ -153,6 +154,7 @@ lessons:
       - type: translate
         prompt_tl: Mag-asawa sina Nanay at Tatay.
         answer_en: Mom and Dad are a married couple.
+        accept: ["Mom and Dad are married"]
         extra_words: [cousin, child, sibling]
         grading: { hyphens: true }
         hint: '"mag-asawa" = a married couple; "sina" is the plural of "si".'

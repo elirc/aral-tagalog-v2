@@ -1,0 +1,231 @@
+id: pronouns-possession
+title: Mine & Yours
+description: Say what belongs to whom — my, your, our, their, and who owns what.
+tip: >-
+  Tagalog possessives come AFTER the noun: "bahay ko" — my house, "libro mo" —
+  your book. For names, use "ni": "ang libro ni Maria" — Maria's book. To say
+  something IS yours, the sa-pronouns go up front: "Sa akin ito" — this is
+  mine. And note the two "we"s: "namin/natin" — "natin" includes the person
+  you're talking to, "namin" does not.
+lessons:
+  - id: possess-1
+    title: My, your, his, her
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ko, en: my }
+          - { tl: mo, en: your }
+          - { tl: niya, en: his / her }
+      - type: choice
+        prompt: "'Bahay ko' means..."
+        answer: My house
+        distractors: [Your house, Her house, Our house]
+        audio: bahay_ko
+        audio_text: Bahay ko
+      - type: translate
+        prompt_tl: Maganda ang bahay mo.
+        answer_en: Your house is beautiful.
+        accept: ["Your house is pretty"]
+        extra_words: [my, big, dog]
+        audio: maganda_ang_bahay_mo
+      - type: translate
+        prompt_en: My family is big.
+        answer_tl: Malaki ang pamilya ko.
+        accept: ["Ang pamilya ko ay malaki"]
+        extra_words: [mo, maliit, bahay]
+        audio: malaki_ang_pamilya_ko
+        hint: 'The possessive comes after the noun: "pamilya ko" — my family.'
+      - type: fill_blank
+        sentence: "Ito ang aso ___."
+        translation: "This is his dog."
+        answer: niya
+        options: [niya, ko, mo]
+      - type: listen
+        audio: malaki_ang_bahay_niya
+        answer_tl: Malaki ang bahay niya
+        extra_words: [ko, maliit]
+      - type: choice
+        prompt: "'Libro mo' means..."
+        answer: Your book
+        distractors: [My book, Her book, The book]
+        audio: libro_mo
+        audio_text: Libro mo
+      - type: translate
+        prompt_tl: Kaibigan ko si Juan.
+        answer_en: Juan is my friend.
+        accept: ["Juan is a friend of mine", "My friend is Juan"]
+        extra_words: [her, brother, teacher]
+        audio: kaibigan_ko_si_juan
+      - type: translate
+        prompt_en: My older brother is working.
+        answer_tl: Nagtatrabaho ang kuya ko.
+        accept: ["Ang kuya ko ay nagtatrabaho"]
+        extra_words: [mo, nag-aaral, ate]
+        audio: nagtatrabaho_ang_kuya_ko
+  - id: possess-2
+    title: Our, your, their
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: namin, en: our (not including you) }
+          - { tl: natin, en: our (including you) }
+          - { tl: ninyo, en: your (plural) }
+          - { tl: nila, en: their }
+      - type: choice
+        prompt: "'Bahay namin' means..."
+        answer: Our house (not including you)
+        distractors: [Our house (including you), Their house, Your house]
+        audio: bahay_namin
+        audio_text: Bahay namin
+      - type: translate
+        prompt_tl: Malaki ang paaralan namin.
+        answer_en: Our school is big.
+        accept: ["Our school is large"]
+        extra_words: [their, small, house]
+        audio: malaki_ang_paaralan_namin
+      - type: fill_blank
+        sentence: "Ito ang bahay ___."
+        translation: "This is their house."
+        answer: nila
+        options: [nila, namin, ninyo]
+      - type: translate
+        prompt_en: Our school is beautiful. (including you)
+        answer_tl: Maganda ang paaralan natin.
+        accept: ["Ang paaralan natin ay maganda"]
+        extra_words: [nila, bahay, malaki]
+        audio: maganda_ang_paaralan_natin
+        hint: '"natin" includes the person you are talking to; "namin" does not.'
+      - type: listen
+        audio: guro_nila_si_ana
+        answer_tl: Guro nila si Ana
+        extra_words: [namin, doktor]
+      - type: choice
+        prompt: "'Nila' means..."
+        answer: Their
+        distractors: [Our, Your, His]
+        audio: nila
+        audio_text: Nila
+      - type: translate
+        prompt_tl: Doktor ang tatay nila.
+        answer_en: Their dad is a doctor.
+        accept: ["Their father is a doctor"]
+        extra_words: [our, teacher, mom]
+        audio: doktor_ang_tatay_nila
+      - type: translate
+        prompt_en: We have three dogs at home.
+        answer_tl: May tatlong aso kami sa bahay.
+        accept: ["May tatlo kaming aso sa bahay"]
+        extra_words: [pusa, dalawa, nila]
+        audio: may_tatlong_aso_kami_sa_bahay
+  - id: possess-3
+    title: Mine, yours, and whose
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ang libro ni Maria' means..."
+        answer: Maria's book
+        distractors: [Maria is reading, A book for Maria, Maria has a book]
+        audio: ang_libro_ni_maria
+        audio_text: Ang libro ni Maria
+      - type: match
+        pairs:
+          - { tl: akin, en: mine }
+          - { tl: iyo, en: yours }
+          - { tl: kanya, en: his / hers }
+      - type: translate
+        prompt_tl: Sa akin ang bolpen na ito.
+        answer_en: This pen is mine.
+        accept: ["The pen is mine"]
+        extra_words: [yours, book, that]
+        audio: sa_akin_ang_bolpen_na_ito
+      - type: choice
+        prompt: "'Kanino ito?' means..."
+        answer: Whose is this?
+        distractors: [Who is this?, Where is this?, What is this?]
+        audio: kanino_ito
+        audio_text: Kanino ito?
+      - type: fill_blank
+        sentence: "Sa ___ ba ito?"
+        translation: "Is this yours?"
+        answer: iyo
+        options: [iyo, akin, kanya]
+      - type: translate
+        prompt_en: This is Juan's dog.
+        answer_tl: Aso ni Juan ito.
+        accept: ["Ito ang aso ni Juan"]
+        extra_words: [pusa, kanya, kanino]
+        audio: aso_ni_juan_ito
+        hint: 'Use "ni" before a name to show possession: "aso ni Juan".'
+      - type: listen
+        audio: sa_kanya_ang_pera
+        answer_tl: Sa kanya ang pera
+        extra_words: [akin, regalo]
+      - type: translate
+        prompt_tl: Maganda ang hardin ng lola ko.
+        answer_en: My grandmother's garden is beautiful.
+        accept: ["My grandma's garden is beautiful", "The garden of my grandmother is beautiful"]
+        extra_words: [kitchen, grandfather, big]
+        audio: maganda_ang_hardin_ng_lola_ko
+      - type: translate
+        prompt_en: Whose money is this?
+        answer_tl: Kanino ang perang ito?
+        accept: ["Kaninong pera ito"]
+        extra_words: [regalo, iyo, magkano]
+        audio: kanino_ang_perang_ito
+  - id: possess-4
+    title: Having and owning
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: may, en: to have }
+          - { tl: wala, en: none }
+          - { tl: kanino, en: whose }
+          - { tl: ninyo, en: your (plural) }
+      - type: choice
+        prompt: "'May kapatid ako' means..."
+        answer: I have a sibling
+        distractors: [I am a sibling, My sibling, I have a child]
+        audio: may_kapatid_ako
+        audio_text: May kapatid ako
+      - type: translate
+        prompt_tl: Wala akong pera ngayon.
+        answer_en: I don't have money right now.
+        accept: ["I have no money now", "I don't have money now", "I have no money right now"]
+        extra_words: [sibling, they, store]
+        audio: wala_akong_pera_ngayon
+      - type: fill_blank
+        sentence: "___ regalo ako sa iyo."
+        translation: "I have a gift for you."
+        answer: May
+        options: [May, Wala, Kanino]
+      - type: translate
+        prompt_en: Do you have a pet?
+        answer_tl: May alaga ka ba?
+        accept: ["May alaga ba kayo"]
+        extra_words: [aso, wala, ako]
+        audio: may_alaga_ka_ba
+      - type: listen
+        audio: may_malaking_aso_sila
+        answer_tl: May malaking aso sila
+        extra_words: [pusa, maliit]
+      - type: choice
+        prompt: "'Wala' is the opposite of..."
+        answer: May
+        distractors: [Sa, Ni, Mo]
+        audio: wala
+        audio_text: Wala
+      - type: translate
+        prompt_tl: Kanino ang sapatos na ito?
+        answer_en: Whose shoes are these?
+        accept: ["Whose shoe is this?"]
+        extra_words: [socks, mine, where]
+        audio: kanino_ang_sapatos_na_ito
+      - type: translate
+        prompt_en: Maria's dress is red.
+        answer_tl: Pula ang bestida ni Maria.
+        accept: ["Ang bestida ni Maria ay pula"]
+        extra_words: [puti, palda, niya]
+        audio: pula_ang_bestida_ni_maria

@@ -165,7 +165,7 @@ lessons:
       - type: translate
         prompt_tl: Bumibili ako ng isda sa palengke araw-araw.
         answer_en: I buy fish at the market every day.
-        accept: ["Every day I buy fish at the market"]
+        accept: ["Every day I buy fish at the market", "I buy fish every day at the market"]
         extra_words: [bought, store, yesterday]
         grading: { hyphens: true }
       - type: match
@@ -179,7 +179,6 @@ lessons:
         translation: "She bought quickly."
         answer: nang
         options: [nang, ng, sa]
-        grading: { ng_nang: true }
       - type: listen
         audio: ang_mahal_naman
         answer_tl: Ang mahal naman

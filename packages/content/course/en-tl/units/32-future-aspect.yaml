@@ -1,0 +1,226 @@
+id: future-aspect
+title: Talking About Tomorrow
+description: Say what will happen — eat, drink, cook, play, go, and buy in the future.
+tip: >-
+  Tagalog marks the future (contemplated aspect) by repeating the first
+  syllable of the root: kain → kakain (will eat), inom → iinom (will drink),
+  bili → bibili (will buy), punta → pupunta (will go). -Um- verbs drop the
+  -um- entirely in the future; mag- verbs keep mag- and reduplicate the root:
+  magluto → magluluto, maglaro → maglalaro. Pair these with time words —
+  bukas (tomorrow), mamaya (later today), or "sa" plus a day, like sa Lunes
+  (on Monday).
+lessons:
+  - id: future-1
+    title: Tomorrow I will eat
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kakain, en: will eat }
+          - { tl: iinom, en: will drink }
+          - { tl: kumakain, en: eating }
+          - { tl: umiinom, en: drinking }
+      - type: choice
+        prompt: "'Kakain' means..."
+        answer: Will eat
+        distractors: [Ate, Eating, Will drink]
+        audio: kakain
+        audio_text: Kakain
+      - type: translate
+        prompt_tl: Kakain ako ng kanin bukas.
+        answer_en: I will eat rice tomorrow.
+        accept: ["Tomorrow I will eat rice"]
+        extra_words: [drink, yesterday, bread]
+        audio: kakain_ako_ng_kanin_bukas
+      - type: translate
+        prompt_en: I will drink coffee tomorrow.
+        answer_tl: Iinom ako ng kape bukas.
+        accept: ["Bukas, iinom ako ng kape", "Bukas iinom ako ng kape"]
+        extra_words: [kakain, gatas, kahapon]
+        audio: iinom_ako_ng_kape_bukas
+      - type: fill_blank
+        sentence: "___ ako ng tinapay bukas."
+        translation: "I will eat bread tomorrow."
+        answer: Kakain
+        options: [Kakain, Kumain, Kumakain]
+        hint: 'Future: repeat the first syllable of the root and drop -um- → kakain.'
+      - type: listen
+        audio: iinom_siya_ng_tubig
+        answer_tl: Iinom siya ng tubig
+        extra_words: [kakain, gatas]
+      - type: choice
+        prompt: "'Iinom' means..."
+        answer: Will drink
+        distractors: [Drank, Drinking, Will eat]
+        audio: iinom
+        audio_text: Iinom
+      - type: translate
+        prompt_tl: Kumain kami kahapon at kakain kami bukas.
+        answer_en: We ate yesterday and we will eat tomorrow.
+        accept: ["We ate yesterday and will eat tomorrow"]
+        extra_words: [drank, today, rice]
+        audio: kumain_kami_kahapon_at_kakain_kami_bukas
+  - id: future-2
+    title: Cooking and playing later
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Mamaya' means..."
+        answer: Later today
+        distractors: [Tomorrow, Yesterday, Now]
+        audio: mamaya
+        audio_text: Mamaya
+      - type: match
+        pairs:
+          - { tl: magluluto, en: will cook }
+          - { tl: maglalaro, en: will play }
+          - { tl: nagluluto, en: cooking }
+          - { tl: naglalaro, en: playing }
+      - type: translate
+        prompt_tl: Magluluto si Nanay ng manok mamaya.
+        answer_en: Mom will cook chicken later.
+        accept: ["Mother will cook chicken later", "Mom is going to cook chicken later"]
+        extra_words: [fish, tomorrow, playing]
+        audio: magluluto_si_nanay_ng_manok_mamaya
+      - type: translate
+        prompt_en: We will play basketball later.
+        answer_tl: Maglalaro kami ng basketbol mamaya.
+        accept: ["Maglalaro tayo ng basketbol mamaya"]
+        extra_words: [magluluto, bukas, sila]
+        audio: maglalaro_kami_ng_basketbol_mamaya
+      - type: fill_blank
+        sentence: "___ ako ng isda mamaya."
+        translation: "I will cook fish later."
+        answer: Magluluto
+        options: [Magluluto, Nagluluto, Maglalaro]
+        hint: 'Mag- verbs keep mag- and repeat the root''s first syllable → magluluto.'
+      - type: listen
+        audio: maglalaro_sila_bukas
+        answer_tl: Maglalaro sila bukas
+        extra_words: [mamaya, kami]
+      - type: choice
+        prompt: "'Maglalaro' means..."
+        answer: Will play
+        distractors: [Playing, Played, Will cook]
+        audio: maglalaro
+        audio_text: Maglalaro
+      - type: translate
+        prompt_tl: Nagluluto ako ngayon at maglalaro ako mamaya.
+        answer_en: I am cooking now and I will play later.
+        accept: ["I am cooking now and will play later"]
+        extra_words: [eating, tomorrow, they]
+        audio: nagluluto_ako_ngayon_at_maglalaro_ako_mamaya
+  - id: future-3
+    title: Going and buying
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pupunta, en: will go }
+          - { tl: bibili, en: will buy }
+          - { tl: bumibili, en: buying }
+          - { tl: bumili, en: bought }
+      - type: choice
+        prompt: "'Sa Lunes' means..."
+        answer: On Monday
+        distractors: [On Sunday, Tomorrow, Last Monday]
+        audio: sa_lunes
+        audio_text: Sa Lunes
+      - type: translate
+        prompt_tl: Pupunta ako sa palengke bukas.
+        answer_en: I will go to the market tomorrow.
+        accept: ["Tomorrow I will go to the market", "I am going to the market tomorrow"]
+        extra_words: [church, yesterday, buy]
+        audio: pupunta_ako_sa_palengke_bukas
+      - type: translate
+        prompt_en: She will buy shoes on Monday.
+        answer_tl: Bibili siya ng sapatos sa Lunes.
+        accept: ["Sa Lunes, bibili siya ng sapatos", "Sa Lunes bibili siya ng sapatos"]
+        extra_words: [pupunta, damit, bukas]
+        audio: bibili_siya_ng_sapatos_sa_lunes
+      - type: fill_blank
+        sentence: "___ kami sa simbahan bukas."
+        translation: "We will go to church tomorrow."
+        answer: Pupunta
+        options: [Pupunta, Pumunta, Bibili]
+        hint: 'Future of "pumunta" drops -um- and doubles the first syllable → pupunta.'
+      - type: listen
+        audio: bibili_ako_ng_regalo_bukas
+        answer_tl: Bibili ako ng regalo bukas
+        extra_words: [pupunta, mamaya]
+      - type: choice
+        prompt: "'Bibili' means..."
+        answer: Will buy
+        distractors: [Bought, Buying, Will go]
+        audio: bibili
+        audio_text: Bibili
+      - type: fill_blank
+        sentence: "Bumili ako ng tinapay kahapon at ___ ako ng itlog bukas."
+        translation: "I bought bread yesterday and I will buy eggs tomorrow."
+        answer: bibili
+        options: [bibili, bumili, bumibili]
+      - type: translate
+        prompt_tl: Pupunta ako sa tindahan at bibili ako ng gatas.
+        answer_en: I will go to the store and I will buy milk.
+        accept: ["I will go to the store and buy milk"]
+        extra_words: [market, coffee, cooked]
+        audio: pupunta_ako_sa_tindahan_at_bibili_ako_ng_gatas
+  - id: future-4
+    title: The week ahead
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matutulog, en: will sleep }
+          - { tl: manonood, en: will watch }
+          - { tl: natutulog, en: sleeping }
+          - { tl: nanonood, en: watching }
+      - type: choice
+        prompt: "'Matutulog' means..."
+        answer: Will sleep
+        distractors: [Sleeping, Slept, Will watch]
+        audio: matutulog
+        audio_text: Matutulog
+      - type: translate
+        prompt_tl: Manonood siya ng pelikula mamaya.
+        answer_en: She will watch a movie later.
+        accept: ["He will watch a movie later"]
+        extra_words: [tomorrow, singing, read]
+        audio: manonood_siya_ng_pelikula_mamaya
+      - type: translate
+        prompt_en: I will sleep later.
+        answer_tl: Matutulog ako mamaya.
+        extra_words: [manonood, bukas, siya]
+        audio: matutulog_ako_mamaya
+      - type: fill_blank
+        sentence: "___ ako mamaya kasi pagod ako."
+        translation: "I will sleep later because I am tired."
+        answer: Matutulog
+        options: [Matutulog, Natutulog, Manonood]
+      - type: listen
+        audio: manonood_sila_ng_pelikula_bukas
+        answer_tl: Manonood sila ng pelikula bukas
+        extra_words: [kami, mamaya]
+      - type: match
+        pairs:
+          - { tl: bukas, en: tomorrow }
+          - { tl: mamaya, en: later today }
+          - { tl: kahapon, en: yesterday }
+          - { tl: ngayon, en: now }
+      - type: choice
+        prompt: "How do you say 'will cook' in Tagalog?"
+        answer: Magluluto
+        distractors: [Nagluluto, Nagluto, Kakain]
+        audio: magluluto
+        audio_text: Magluluto
+      - type: fill_blank
+        sentence: "Uminom ako ng kape kahapon at ___ ako ng gatas bukas."
+        translation: "I drank coffee yesterday and I will drink milk tomorrow."
+        answer: iinom
+        options: [iinom, uminom, umiinom]
+      - type: translate
+        prompt_en: Tomorrow I will go to the market and I will buy fish.
+        answer_tl: Bukas, pupunta ako sa palengke at bibili ako ng isda.
+        accept: ["Pupunta ako sa palengke bukas at bibili ako ng isda", "Bukas, pupunta ako sa palengke at bibili ng isda", "Pupunta ako sa palengke bukas at bibili ng isda"]
+        extra_words: [mamaya, manok, kami]
+        audio: bukas_pupunta_ako_sa_palengke_at_bibili_ako_ng_isda

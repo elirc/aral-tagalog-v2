@@ -91,6 +91,7 @@ lessons:
       - type: translate
         prompt_en: Good morning!
         answer_tl: Magandang umaga!
+        accept: ["Magandang umaga po!", "Magandang umaga po"]
         extra_words: [gabi, hapon, po]
         audio: magandang_umaga
   - id: greetings-3
@@ -171,7 +172,7 @@ lessons:
         sentence: "Kumusta ___?"
         translation: "How are you?"
         answer: ka
-        options: [ka, ako, po]
+        options: [ka, ako, siya]
         audio: kumusta_ka
       - type: translate
         prompt_en: How are you? (polite)

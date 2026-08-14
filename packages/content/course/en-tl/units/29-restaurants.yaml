@@ -1,0 +1,238 @@
+id: restaurants
+title: Eating Out
+description: Order food like a local — from the karinderya counter to asking for the bill.
+tip: >-
+  Add "na" to show a change of state: "Gutom na ako" — I'm hungry (now);
+  "Busog na po ako" — I'm full (already). A karinderya is a small local
+  eatery where the day's dishes sit in pots at the counter — you just point
+  at what you want. When you're done, call the server with "Kuya!" or
+  "Ate!" and ask for the chit — the bill.
+lessons:
+  - id: resto-1
+    title: Hungry or full?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: busog, en: full }
+          - { tl: karinderya, en: eatery }
+          - { tl: ulam, en: main dish }
+      - type: choice
+        prompt: "'Gutom' means..."
+        answer: Hungry
+        distractors: [Full, Thirsty, Tired]
+        audio: gutom
+        audio_text: Gutom
+      - type: translate
+        prompt_en: I am hungry.
+        answer_tl: Gutom ako.
+        accept: ["Gutom na ako"]
+        extra_words: [busog, na, uhaw]
+        audio: gutom_ako
+      - type: translate
+        prompt_tl: Busog na ako.
+        answer_en: I am full.
+        accept: ["I'm full", "I am already full", "I'm already full", "I am full now"]
+        extra_words: [hungry, thirsty, tired]
+        audio: busog_na_ako
+      - type: fill_blank
+        sentence: "Kumakain kami sa ___."
+        translation: "We are eating at the eatery."
+        answer: karinderya
+        options: [karinderya, paaralan, ospital]
+      - type: listen
+        audio: kain_tayo
+        answer_tl: Kain tayo
+        extra_words: [gutom, na, busog]
+      - type: choice
+        prompt: "'Busog' means..."
+        answer: Full
+        distractors: [Hungry, Delicious, Happy]
+        audio: busog
+        audio_text: Busog
+      - type: translate
+        prompt_tl: Masarap ang ulam sa karinderya.
+        answer_en: The food at the eatery is delicious.
+        accept: ["The dish at the eatery is delicious", "The dishes at the eatery are delicious", "The main dish at the eatery is delicious"]
+        extra_words: [cheap, restaurant, water]
+        audio: masarap_ang_ulam_sa_karinderya
+      - type: translate
+        prompt_en: I am hungry and I want to eat.
+        answer_tl: Gutom ako at gusto kong kumain.
+        accept: ["Gutom na ako at gusto kong kumain"]
+        extra_words: [busog, uminom, siya]
+        audio: gutom_ako_at_gusto_kong_kumain
+        hint: 'Remember "gusto ko" + verb takes the -ng linker: "gusto kong kumain".'
+  - id: resto-2
+    title: Ordering food
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: menu, en: menu }
+          - { tl: umorder, en: to order }
+          - { tl: restawran, en: restaurant }
+          - { tl: pabili po, en: "I'd like to buy, please" }
+      - type: choice
+        prompt: "'Umorder' means..."
+        answer: To order
+        distractors: [To pay, To cook, To eat]
+        audio: umorder
+        audio_text: Umorder
+      - type: translate
+        prompt_en: I would like to order coffee.
+        answer_tl: Gusto ko pong umorder ng kape.
+        accept: ["Gusto kong umorder ng kape"]
+        extra_words: [tubig, bumili, gatas]
+        audio: gusto_ko_pong_umorder_ng_kape
+      - type: choice
+        prompt: "At a store or karinderya counter, to say you'd like to buy something, you call out..."
+        answer: Pabili po!
+        distractors: [Kain tayo!, Tuloy po kayo!, Paalam po!]
+        audio: pabili_po
+        audio_text: Pabili po!
+      - type: translate
+        prompt_tl: Pabili po ng dalawang itlog.
+        answer_en: I'd like to buy two eggs, please.
+        accept: ["Two eggs, please", "I would like to buy two eggs, please", "Can I buy two eggs, please", "I'd like to buy two eggs"]
+        extra_words: [three, bread, sell]
+        audio: pabili_po_ng_dalawang_itlog
+      - type: fill_blank
+        sentence: "Nasaan ang ___?"
+        translation: "Where is the menu?"
+        answer: menu
+        options: [menu, mesa, ulam]
+      - type: listen
+        audio: umorder_kami_ng_isda
+        answer_tl: Umorder kami ng isda
+        extra_words: [manok, sila]
+      - type: translate
+        prompt_tl: Umorder siya ng manok at kanin.
+        answer_en: He ordered chicken and rice.
+        accept: ["She ordered chicken and rice"]
+        extra_words: [fish, bread, we]
+        audio: umorder_siya_ng_manok_at_kanin
+      - type: translate
+        prompt_en: I'd like to buy three pieces of bread, please.
+        answer_tl: Pabili po ng tatlong tinapay.
+        accept: ["Pabili po ng tatlong tinapay po"]
+        extra_words: [dalawang, itlog, bumili]
+        audio: pabili_po_ng_tatlong_tinapay
+        hint: 'Numbers ending in a vowel link with -ng: "tatlo" → "tatlong tinapay". Numbers ending in a consonant use "na": "apat na tinapay".'
+  - id: resto-3
+    title: Filipino favorites
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: adobo, en: soy-vinegar stew }
+          - { tl: sinigang, en: sour soup }
+          - { tl: pansit, en: noodles }
+          - { tl: halo-halo, en: shaved ice dessert }
+      - type: choice
+        prompt: "Which dish is a sour tamarind soup?"
+        answer: Sinigang
+        distractors: [Adobo, Pansit, Halo-halo]
+        audio: sinigang
+        audio_text: Sinigang
+      - type: choice
+        prompt: "'Halo-halo' is..."
+        answer: A shaved ice dessert
+        distractors: [A noodle dish, A sour soup, A grilled fish]
+        audio: halo_halo
+        audio_text: Halo-halo
+      - type: translate
+        prompt_tl: Masarap ang adobo ng nanay ko.
+        answer_en: My mom's adobo is delicious.
+        accept: ["My mother's adobo is delicious", "The adobo of my mom is delicious"]
+        extra_words: [dad's, sour, cheap]
+        audio: masarap_ang_adobo_ng_nanay_ko
+      - type: translate
+        prompt_en: I want to eat sinigang.
+        answer_tl: Gusto kong kumain ng sinigang.
+        accept: ["Gusto ko pong kumain ng sinigang"]
+        extra_words: [adobo, uminom, pansit]
+        audio: gusto_kong_kumain_ng_sinigang
+      - type: fill_blank
+        sentence: "Paborito kong ulam ang ___."
+        translation: "Adobo is my favorite dish."
+        answer: adobo
+        options: [adobo, halo-halo, gatas]
+        hint: 'An "ulam" is a main dish eaten with rice.'
+      - type: listen
+        audio: gusto_mo_ba_ng_halo_halo
+        answer_tl: Gusto mo ba ng halo-halo
+        extra_words: [pansit, ako]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Kumakain kami ng pansit sa kaarawan ko.
+        answer_en: We eat pancit on my birthday.
+        accept: ["We are eating pancit on my birthday", "We eat noodles on my birthday"]
+        extra_words: [rice, Christmas, party]
+        audio: kumakain_kami_ng_pansit_sa_kaarawan_ko
+        hint: "Pancit at a birthday is a wish for long life."
+      - type: translate
+        prompt_en: I want halo-halo because it is hot today.
+        answer_tl: Gusto ko ng halo-halo kasi mainit ngayon.
+        accept: ["Gusto ko ng halo-halo dahil mainit ngayon"]
+        extra_words: [malamig, umuulan, malungkot]
+        audio: gusto_ko_ng_halo_halo_kasi_mainit_ngayon
+        grading: { hyphens: true }
+  - id: resto-4
+    title: The bill, please
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kutsara, en: spoon }
+          - { tl: tinidor, en: fork }
+          - { tl: baso, en: drinking glass }
+          - { tl: bayad, en: payment }
+      - type: choice
+        prompt: "At a Filipino restaurant, the 'chit' is..."
+        answer: The bill
+        distractors: [The menu, The tip, The change]
+        audio: chit
+        audio_text: Chit
+      - type: translate
+        prompt_tl: Kuya, chit po.
+        answer_en: The bill, please.
+        accept: ["Check, please", "The check, please", "Bill, please", "The bill please"]
+        extra_words: [menu, water, thanks]
+        audio: kuya_chit_po
+        hint: 'Call a male server "kuya" and a female server "ate" — it''s friendly, not rude.'
+      - type: fill_blank
+        sentence: "Magkano po ang ___?"
+        translation: "How much is the bill?"
+        answer: bayad
+        options: [bayad, sukli, presyo]
+        hint: '"Bayad" is what you pay — the bill, or your fare on a jeepney.'
+      - type: translate
+        prompt_en: Where is the spoon?
+        answer_tl: Nasaan ang kutsara?
+        accept: ["Nasaan po ang kutsara"]
+        extra_words: [tinidor, baso, saan]
+        audio: nasaan_ang_kutsara
+      - type: listen
+        audio: salamat_po_sa_masarap_na_ulam
+        answer_tl: Salamat po sa masarap na ulam
+        extra_words: [bayad, kubyertos]
+      - type: choice
+        prompt: "'Kubyertos' means..."
+        answer: Silverware
+        distractors: [Glass, Plate, Napkin]
+        audio: kubyertos
+        audio_text: Kubyertos
+      - type: translate
+        prompt_tl: Wala akong tinidor at kutsara.
+        answer_en: I don't have a fork and spoon.
+        accept: ["I have no fork and spoon", "I don't have a fork and a spoon", "I do not have a fork and spoon"]
+        extra_words: [glass, knife, table]
+        audio: wala_akong_tinidor_at_kutsara
+      - type: translate
+        prompt_tl: Mura ang ulam sa karinderya at masarap talaga.
+        answer_en: The food at the eatery is cheap and really delicious.
+        accept: ["The dishes at the eatery are cheap and really delicious", "The food at the eatery is cheap and truly delicious", "The main dish at the eatery is cheap and really delicious"]
+        extra_words: [expensive, restaurant, bill]
+        audio: mura_ang_ulam_sa_karinderya_at_masarap_talaga

@@ -1,0 +1,232 @@
+id: days-months
+title: Days, Months & Dates
+description: Name the days and months, ask "kailan?", and talk about birthdays and dates.
+tip: >-
+  Day and month names came from Spanish (Lunes, Enero) and are capitalized.
+  Watch out for "Linggo": with a capital L it's Sunday, in lowercase "linggo"
+  it's a week. Use "sa" before a day or month for "on/in": sa Lunes — on
+  Monday, sa Hunyo — in June.
+lessons:
+  - id: days-1
+    title: Days of the week
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Lunes, en: Monday }
+          - { tl: Martes, en: Tuesday }
+          - { tl: Miyerkules, en: Wednesday }
+          - { tl: Huwebes, en: Thursday }
+      - type: choice
+        prompt: "'Biyernes' means..."
+        answer: Friday
+        distractors: [Thursday, Saturday, Monday]
+        audio: biyernes
+        audio_text: Biyernes
+      - type: choice
+        prompt: "Which day is 'Linggo'?"
+        answer: Sunday
+        distractors: [Saturday, Friday, Monday]
+        audio: linggo
+        audio_text: Linggo
+      - type: fill_blank
+        sentence: "Lunes, Martes, ___, Huwebes"
+        translation: "Monday, Tuesday, Wednesday, Thursday"
+        answer: Miyerkules
+        options: [Miyerkules, Biyernes, Sabado]
+      - type: translate
+        prompt_tl: Ngayon ay Lunes.
+        answer_en: Today is Monday.
+        accept: ["It is Monday today", "It's Monday today"]
+        extra_words: [Tuesday, tomorrow, Sunday]
+        audio: ngayon_ay_lunes
+      - type: translate
+        prompt_en: Tomorrow is Saturday.
+        answer_tl: Bukas ay Sabado.
+        accept: ["Sabado bukas"]
+        extra_words: [Linggo, ngayon, Lunes]
+        audio: bukas_ay_sabado
+      - type: listen
+        audio: sabado
+        answer_tl: Sabado
+        extra_words: [Linggo, Huwebes]
+      - type: translate
+        prompt_tl: Pupunta ako sa palengke sa Sabado.
+        answer_en: I will go to the market on Saturday.
+        accept: ["I am going to the market on Saturday", "On Saturday I will go to the market"]
+        extra_words: [church, Sunday, yesterday]
+        audio: pupunta_ako_sa_palengke_sa_sabado
+  - id: days-2
+    title: Months of the year
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Enero, en: January }
+          - { tl: Pebrero, en: February }
+          - { tl: Marso, en: March }
+          - { tl: Disyembre, en: December }
+      - type: choice
+        prompt: "'Buwan' means..."
+        answer: Month (also moon)
+        distractors: [Year, Week, Day]
+        audio: buwan
+        audio_text: Buwan
+      - type: choice
+        prompt: "'Taon' means..."
+        answer: Year
+        distractors: [Month, Week, Date]
+        audio: taon
+        audio_text: Taon
+      - type: choice
+        prompt: "'Hunyo' means..."
+        answer: June
+        distractors: [July, January, March]
+        audio: hunyo
+        audio_text: Hunyo
+      - type: fill_blank
+        sentence: "Enero, ___, Marso"
+        translation: "January, February, March"
+        answer: Pebrero
+        options: [Pebrero, Hunyo, Disyembre]
+      - type: translate
+        prompt_tl: Malamig sa Disyembre.
+        answer_en: It is cold in December.
+        accept: ["It's cold in December", "In December it is cold"]
+        extra_words: [hot, January, rainy]
+        audio: malamig_sa_disyembre
+      - type: translate
+        prompt_en: Christmas is in December.
+        answer_tl: Ang Pasko ay sa Disyembre.
+        accept: ["Sa Disyembre ang Pasko"]
+        extra_words: [Enero, buwan, bukas]
+        audio: ang_pasko_ay_sa_disyembre
+      - type: listen
+        audio: enero
+        answer_tl: Enero
+        extra_words: [Pebrero, Hunyo]
+      - type: choice
+        prompt: "Tagalog day and month names mostly come from..."
+        answer: Spanish
+        distractors: [English, Chinese, Portuguese]
+      - type: translate
+        prompt_tl: Araw-araw umuulan sa Hunyo.
+        answer_en: It rains every day in June.
+        accept: ["Every day it rains in June", "It is raining every day in June"]
+        extra_words: [cold, December, week]
+        grading: { hyphens: true }
+        audio: araw_araw_umuulan_sa_hunyo
+  - id: days-3
+    title: When? Kailan?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ngayon, en: today }
+          - { tl: bukas, en: tomorrow }
+          - { tl: kahapon, en: yesterday }
+          - { tl: mamaya, en: later today }
+      - type: choice
+        prompt: "'Kailan' means..."
+        answer: When
+        distractors: [Where, Why, Who]
+        audio: kailan
+        audio_text: Kailan
+      - type: translate
+        prompt_tl: Kailan ang klase mo?
+        answer_en: When is your class?
+        extra_words: [where, birthday, today]
+        audio: kailan_ang_klase_mo
+      - type: translate
+        prompt_en: When will you go to the market?
+        answer_tl: Kailan ka pupunta sa palengke?
+        extra_words: [saan, kahapon, siya]
+        audio: kailan_ka_pupunta_sa_palengke
+      - type: fill_blank
+        sentence: "___ ka pupunta sa simbahan?"
+        translation: "When will you go to church?"
+        answer: Kailan
+        options: [Kailan, Saan, Bakit]
+      - type: choice
+        prompt: "'Kanina' means..."
+        answer: Earlier today
+        distractors: [Later today, Yesterday, Tomorrow]
+        audio: kanina
+        audio_text: Kanina
+      - type: listen
+        audio: mamaya
+        answer_tl: Mamaya
+        extra_words: [kanina, bukas]
+      - type: translate
+        prompt_tl: Kumain ako kanina.
+        answer_en: I ate earlier.
+        accept: ["I ate earlier today"]
+        extra_words: [later, tomorrow, drank]
+        audio: kumain_ako_kanina
+      - type: fill_blank
+        sentence: "Naglalaro kami ng basketbol ___ Sabado."
+        translation: "We play basketball every Saturday."
+        answer: tuwing
+        options: [tuwing, kailan, mamaya]
+        hint: '"tuwing" + a day means "every": tuwing Sabado — every Saturday.'
+      - type: translate
+        prompt_tl: Nanonood kami ng pelikula tuwing Sabado.
+        answer_en: We watch a movie every Saturday.
+        accept: ["We watch movies every Saturday", "Every Saturday we watch a movie"]
+        extra_words: [Sunday, play, yesterday]
+        audio: nanonood_kami_ng_pelikula_tuwing_sabado
+  - id: days-4
+    title: Birthdays and dates
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaarawan, en: birthday }
+          - { tl: petsa, en: date }
+          - { tl: buwan, en: month }
+          - { tl: taon, en: year }
+      - type: choice
+        prompt: "'Petsa' means..."
+        answer: Date (on the calendar)
+        distractors: [Day, Month, Birthday]
+        audio: petsa
+        audio_text: Petsa
+      - type: translate
+        prompt_tl: Kailan ang kaarawan mo?
+        answer_en: When is your birthday?
+        extra_words: [where, party, today]
+        audio: kailan_ang_kaarawan_mo
+      - type: translate
+        prompt_en: My birthday is in March.
+        answer_tl: Ang kaarawan ko ay sa Marso.
+        accept: ["Sa Marso ang kaarawan ko", "Kaarawan ko sa Marso"]
+        extra_words: [Hunyo, bukas, taon]
+        audio: ang_kaarawan_ko_ay_sa_marso
+      - type: fill_blank
+        sentence: "Ang kaarawan ni Ana ay sa ___."
+        translation: "Ana's birthday is in December."
+        answer: Disyembre
+        options: [Disyembre, Sabado, taon]
+      - type: listen
+        audio: maligayang_kaarawan
+        answer_tl: Maligayang kaarawan
+        extra_words: [salamat, regalo]
+      - type: choice
+        prompt: "It's your friend's birthday. Say:"
+        answer: Maligayang kaarawan!
+        distractors: [Maligayang Pasko!, Tuloy po kayo!, Magandang gabi!]
+        audio: maligayang_kaarawan
+        audio_text: Maligayang kaarawan!
+      - type: translate
+        prompt_tl: Ang kaarawan ni Maria ay bukas.
+        answer_en: Maria's birthday is tomorrow.
+        accept: ["Tomorrow is Maria's birthday", "The birthday of Maria is tomorrow"]
+        extra_words: [today, party, month]
+        audio: ang_kaarawan_ni_maria_ay_bukas
+      - type: translate
+        prompt_tl: Bumili ako ng regalo para sa kaarawan ni Juan.
+        answer_en: I bought a gift for Juan's birthday.
+        accept: ["I bought a present for Juan's birthday"]
+        extra_words: [money, party, tomorrow]
+        hint: '"para sa" means "for".'
+        audio: bumili_ako_ng_regalo_para_sa_kaarawan_ni_juan

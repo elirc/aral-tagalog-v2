@@ -1,0 +1,250 @@
+id: verbs-um-mag
+title: "Verb Builder: UM & MAG"
+description: Build real Tagalog verbs — the -UM- and MAG- families, done vs. happening now.
+tip: >-
+  Tagalog verbs mark aspect, not tense. UM verbs slip -um- in just before the
+  root's first vowel: kain → kumain (ate). If the root starts with a vowel,
+  um- simply goes in front: inom → uminom (drank). MAG verbs
+  put nag- in front: luto → nagluto (cooked). To say something is still
+  happening (or happens every day), repeat the root's first syllable:
+  kumain → kumAKAin (is eating), nagluto → nagLULUto (is cooking).
+lessons:
+  - id: umverbs-1
+    title: "UM verbs: done vs. doing"
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: eating }
+          - { tl: uminom, en: drank }
+          - { tl: umiinom, en: drinking }
+      - type: choice
+        prompt: "'Kumain' means..."
+        answer: Ate
+        distractors: [Eating, Drank, Will eat]
+        audio: kumain
+        audio_text: Kumain
+      - type: translate
+        prompt_tl: Kumain ako ng kanin.
+        answer_en: I ate rice.
+        accept: ["I ate some rice"]
+        extra_words: [eating, drank, water]
+        audio: kumain_ako_ng_kanin
+      - type: translate
+        prompt_en: She is drinking coffee.
+        answer_tl: Umiinom siya ng kape.
+        extra_words: [uminom, gatas, ako]
+        audio: umiinom_siya_ng_kape
+        hint: 'Happening now → repeat the first syllable: uminom → umIInom.'
+      - type: fill_blank
+        sentence: "___ siya ng tubig kahapon."
+        translation: "He drank water yesterday."
+        answer: Uminom
+        options: [Uminom, Umiinom, Kumain]
+        hint: '"Kahapon" (yesterday) calls for the completed form — no repeated syllable.'
+      - type: listen
+        audio: bumibili_ako_ng_tinapay
+        answer_tl: Bumibili ako ng tinapay
+        extra_words: [bumili, gatas]
+      - type: choice
+        prompt: "Which is the 'happening now' form of 'bumili' (bought)?"
+        answer: Bumibili
+        distractors: [Bumili, Bibili, Binili]
+        audio: bumibili
+        audio_text: Bumibili
+      - type: translate
+        prompt_tl: Kumakain kami ng isda ngayon.
+        answer_en: We are eating fish now.
+        accept: ["We eat fish now", "We are eating fish right now"]
+        extra_words: [ate, chicken, yesterday]
+        audio: kumakain_kami_ng_isda_ngayon
+      - type: translate
+        prompt_en: I bought bread and milk at the market.
+        answer_tl: Bumili ako ng tinapay at gatas sa palengke.
+        extra_words: [bumibili, kape, tindahan]
+        audio: bumili_ako_ng_tinapay_at_gatas_sa_palengke
+        hint: 'One completed action, yesterday-style: bumili, not bumibili.'
+  - id: umverbs-2
+    title: "MAG verbs: done vs. doing"
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nagluto, en: cooked }
+          - { tl: nagluluto, en: cooking }
+          - { tl: nag-aral, en: studied }
+          - { tl: nag-aaral, en: studying }
+      - type: choice
+        prompt: "'Nagluto' means..."
+        answer: Cooked
+        distractors: [Cooking, Ate, Will cook]
+        audio: nagluto
+        audio_text: Nagluto
+      - type: translate
+        prompt_tl: Nagluto si Maria ng manok.
+        answer_en: Maria cooked chicken.
+        accept: ["Maria cooked some chicken"]
+        extra_words: [cooking, fish, ate]
+        audio: nagluto_si_maria_ng_manok
+      - type: fill_blank
+        sentence: "___ ako kahapon dahil may pagsusulit ako ngayon."
+        translation: "I studied yesterday because I have a test today."
+        answer: Nag-aral
+        options: [Nag-aral, Nag-aaral, Nagluto]
+        hint: 'Completed MAG verbs use nag- with no repeated syllable: nag-aral.'
+      - type: translate
+        prompt_en: My dad is working in the office.
+        answer_tl: Nagtatrabaho ang tatay ko sa opisina.
+        accept: ["Nagtatrabaho sa opisina ang tatay ko"]
+        extra_words: [nagtrabaho, paaralan, siya]
+        audio: nagtatrabaho_ang_tatay_ko_sa_opisina
+      - type: listen
+        audio: naglalakad_sila_sa_hardin
+        answer_tl: Naglalakad sila sa hardin
+        extra_words: [naglakad, bahay]
+      - type: choice
+        prompt: "Which is the completed (past) form of 'naglalakad' (walking)?"
+        answer: Naglakad
+        distractors: [Maglakad, Maglalakad, Lakad]
+        audio: naglakad
+        audio_text: Naglakad
+      - type: translate
+        prompt_tl: Nag-aaral ang kapatid ko sa unibersidad.
+        answer_en: My sibling is studying at the university.
+        accept:
+          - "My sibling studies at the university"
+          - "My brother is studying at the university"
+          - "My sister is studying at the university"
+        extra_words: [studied, worked, school]
+        audio: nag_aaral_ang_kapatid_ko_sa_unibersidad
+      - type: translate
+        prompt_en: My mom cooked fish and rice in the kitchen.
+        answer_tl: Nagluto ang nanay ko ng isda at kanin sa kusina.
+        accept: ["Nagluto ng isda at kanin ang nanay ko sa kusina", "Nagluto ng isda at kanin sa kusina ang nanay ko"]
+        extra_words: [nagluluto, manok, banyo]
+        audio: nagluto_ang_nanay_ko_ng_isda_at_kanin_sa_kusina
+  - id: umverbs-3
+    title: Mixing UM and MAG
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: nagluto, en: cooked }
+          - { tl: umiinom, en: drinking }
+          - { tl: nagtatrabaho, en: working }
+      - type: choice
+        prompt: "'Nagluto ako kahapon' means..."
+        answer: I cooked yesterday
+        distractors: [I am cooking today, I ate yesterday, I will cook tomorrow]
+        audio: nagluto_ako_kahapon
+        audio_text: Nagluto ako kahapon.
+      - type: translate
+        prompt_tl: Araw-araw akong umiinom ng kape.
+        answer_en: I drink coffee every day.
+        accept: ["Every day I drink coffee", "I am drinking coffee every day"]
+        extra_words: [ate, milk, yesterday]
+        audio: araw_araw_akong_umiinom_ng_kape
+        grading: { hyphens: true }
+        hint: 'Habits ("every day") use the same repeated-syllable form as "right now".'
+      - type: translate
+        prompt_en: He worked yesterday.
+        answer_tl: Nagtrabaho siya kahapon.
+        extra_words: [nagtatrabaho, bukas, ako]
+        audio: nagtrabaho_siya_kahapon
+      - type: fill_blank
+        sentence: "___ ako ng libro araw-araw."
+        translation: "I read a book every day."
+        answer: Nagbabasa
+        options: [Nagbabasa, Magbasa, Kumakain]
+        hint: 'Every day = happening repeatedly → the doubled form: nagBAbasa.'
+      - type: listen
+        audio: kumakain_siya_ng_tinapay_ngayon
+        answer_tl: Kumakain siya ng tinapay ngayon
+        extra_words: [kumain, kahapon]
+      - type: translate
+        prompt_tl: Naglakad kami papunta sa palengke at bumili ng isda.
+        answer_en: We walked to the market and bought fish.
+        accept: ["We walked to the market and bought some fish"]
+        extra_words: [walking, chicken, store]
+        audio: naglakad_kami_sa_palengke_at_bumili_ng_isda
+      - type: choice
+        prompt: "Which sentence means 'They are eating now'?"
+        answer: Kumakain sila ngayon.
+        distractors: [Kumain sila kahapon., Nagluluto sila ngayon., Umiinom sila ngayon.]
+        audio: kumakain_sila_ngayon
+        audio_text: Kumakain sila ngayon.
+      - type: translate
+        prompt_en: My grandmother cooks rice every day.
+        answer_tl: Nagluluto ang lola ko ng kanin araw-araw.
+        accept:
+          - "Araw-araw nagluluto ang lola ko ng kanin"
+          - "Nagluluto ng kanin ang lola ko araw-araw"
+        extra_words: [nagluto, kumakain, bahay]
+        audio: nagluluto_ang_lola_ko_ng_kanin_araw_araw
+        grading: { hyphens: true }
+  - id: umverbs-4
+    title: Kumain ka na ba?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumain ka na ba?' means..."
+        answer: Have you eaten yet?
+        distractors: [Are you eating?, Do you want to eat?, What did you eat?]
+        audio: kumain_ka_na_ba
+        audio_text: Kumain ka na ba?
+      - type: match
+        pairs:
+          - { tl: na, en: already }
+          - { tl: pa, en: still / yet }
+          - { tl: ba, en: question particle }
+          - { tl: kahapon, en: yesterday }
+      - type: translate
+        prompt_tl: Kumain na ako.
+        answer_en: I already ate.
+        accept: ["I have already eaten", "I ate already"]
+        extra_words: [yet, drinking, will]
+        audio: kumain_na_ako
+      - type: translate
+        prompt_tl: Hindi pa ako kumakain.
+        answer_en: I haven't eaten yet.
+        accept: ["I have not eaten yet", "I have not yet eaten"]
+        extra_words: [already, drank, cooking]
+        audio: hindi_pa_ako_kumakain
+        hint: 'After "hindi pa" (not yet), Tagalog uses the doubled form: kumakain.'
+      - type: fill_blank
+        sentence: "Uminom ka ___ ba ng gamot?"
+        translation: "Have you taken your medicine yet?"
+        answer: na
+        options: [na, pa, ba]
+        hint: '"na" turns a question into "...yet / already?"'
+      - type: translate
+        prompt_en: Did you study?
+        answer_tl: Nag-aral ka ba?
+        extra_words: [nag-aaral, na, ako]
+        audio: nag_aral_ka_ba
+      - type: listen
+        audio: nagluto_ka_na_ba
+        answer_tl: Nagluto ka na ba
+        extra_words: [nagluluto, pa]
+      - type: choice
+        prompt: "A friend asks, 'Kumain ka na ba?' You already ate. Say:"
+        answer: Oo, kumain na ako.
+        distractors: [Hindi pa ako kumakain., Kumakain pa ako., Gusto kong kumain.]
+        audio: oo_kumain_na_ako
+        audio_text: Oo, kumain na ako.
+      - type: translate
+        prompt_tl: Bumili ka ba ng gatas sa tindahan?
+        answer_en: Did you buy milk at the store?
+        accept: ["Did you buy some milk at the store"]
+        extra_words: [drink, bread, market]
+        audio: bumili_ka_ba_ng_gatas_sa_tindahan
+      - type: translate
+        prompt_tl: Nag-aral ka na ba? May pagsusulit tayo bukas.
+        answer_en: Have you studied yet? We have a test tomorrow.
+        accept:
+          - "Have you already studied? We have a test tomorrow"
+          - "Did you study already? We have a test tomorrow"
+        extra_words: [worked, yesterday, class]
+        audio: nag_aral_ka_na_ba_may_pagsusulit_tayo_bukas

@@ -82,7 +82,7 @@ lessons:
         sentence: "Ano ang ___ mo?"
         translation: "What are you wearing?"
         answer: suot
-        options: [suot, damit, kulay]
+        options: [suot, sapatos, kulay]
       - type: choice
         prompt: "'Ano ang suot mo?' means..."
         answer: What are you wearing?
@@ -100,6 +100,7 @@ lessons:
       - type: translate
         prompt_tl: Suot ko ang sombrero.
         answer_en: I am wearing the hat.
+        accept: ["I'm wearing the hat"]
         extra_words: [shoes, socks, pants]
       - type: choice
         prompt: "'Medyas' means..."
@@ -113,7 +114,7 @@ lessons:
     exercises:
       - type: match
         pairs:
-          - { tl: pulang damit, en: red dress }
+          - { tl: pulang damit, en: red clothes }
           - { tl: puting sapatos, en: white shoes }
           - { tl: itim na pantalon, en: black pants }
           - { tl: asul na sombrero, en: blue hat }
@@ -135,7 +136,7 @@ lessons:
         extra_words: [black, shoes, red]
       - type: fill_blank
         sentence: "Gusto ko ng ___ damit."
-        translation: "I want a red dress."
+        translation: "I want red clothes."
         answer: pulang
         options: [pulang, pula, pula na]
       - type: listen
@@ -175,8 +176,8 @@ lessons:
         audio_text: Nakasuot
       - type: translate
         prompt_tl: Nakasuot siya ng pulang damit.
-        answer_en: She is wearing a red dress.
-        accept: ["He is wearing a red dress"]
+        answer_en: She is wearing red clothes.
+        accept: ["He is wearing red clothes", "She is wearing a red dress", "He is wearing a red dress"]
         extra_words: [white, shoes, hat]
         audio: nakasuot_siya_ng_pulang_damit
       - type: fill_blank

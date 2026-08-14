@@ -196,7 +196,7 @@ lessons:
       - type: choice
         prompt: "You want to invite a friend to sing. Say:"
         answer: Gusto mo bang kumanta?
-        distractors: [Kumanta ka na, Ayaw kong kumanta, Sumasayaw siya]
+        distractors: [Kumakanta ka ba?, Ayaw kong kumanta, Sumasayaw siya]
         audio: gusto_mo_bang_kumanta
         audio_text: Gusto mo bang kumanta?
       - type: match

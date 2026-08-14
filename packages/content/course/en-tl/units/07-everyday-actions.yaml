@@ -2,8 +2,9 @@ id: everyday-actions
 title: Everyday Actions
 description: Say what people are doing with everyday -um- and mag- verbs.
 tip: >-
-  Verbs change by focus and aspect, not tense: kumakain (eating now),
-  kumain (ate), kakain (will eat). Spot the pattern: -um- plus repetition.
+  Verbs change by focus and aspect, not tense: kumain (ate) has -um-;
+  kumakain (eating now) adds repetition; kakain (will eat) keeps the
+  repetition but drops -um-.
 lessons:
   - id: everyday-1
     title: Eating and drinking
@@ -89,7 +90,7 @@ lessons:
       - type: translate
         prompt_tl: Naglalakad kami araw-araw.
         answer_en: We walk every day.
-        accept: ["We walk everyday"]
+        accept: ["We walk everyday", "Every day we walk"]
         extra_words: [studying, working, yesterday]
         grading: { hyphens: true }
   - id: everyday-3
@@ -114,6 +115,7 @@ lessons:
       - type: translate
         prompt_en: Mom is cooking fish.
         answer_tl: Nagluluto ang nanay ng isda.
+        accept: ["Nagluluto ng isda ang nanay"]
         extra_words: [nagbabasa, manok, ako]
       - type: fill_blank
         sentence: "___ ako ng libro."
@@ -147,6 +149,7 @@ lessons:
       - type: translate
         prompt_en: In the morning, I drink coffee.
         answer_tl: Sa umaga, umiinom ako ng kape.
+        accept: ["Umiinom ako ng kape sa umaga"]
         extra_words: [gabi, kumakain, tubig]
       - type: fill_blank
         sentence: "Sa gabi, ___ ako."
@@ -174,11 +177,10 @@ lessons:
         translation: "I walk to school quickly."
         answer: nang
         options: [nang, ng, at]
-        grading: { ng_nang: true }
         hint: '"nang" links a verb to how it is done.'
       - type: translate
         prompt_en: Every day I work.
-        answer_tl: Araw-araw nagtatrabaho ako.
+        answer_tl: Araw-araw akong nagtatrabaho.
         accept: ["Nagtatrabaho ako araw-araw"]
         extra_words: [nag-aaral, naglalakad, bukas]
         grading: { hyphens: true }

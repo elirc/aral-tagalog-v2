@@ -101,7 +101,10 @@ recommended.
   `DATABASE_URL` (Neon/Supabase free Postgres), `JWT_SECRET`, and
   `CORS_ORIGIN`. Run `pnpm db:migrate` on deploy. The server binds
   `0.0.0.0:3001` by default, shuts down gracefully on SIGTERM, and never
-  leaks internal error details in responses.
+  leaks internal error details in responses. It reads the compiled lesson
+  catalog **once at startup** (that's what caps claimed XP), so restart the
+  API whenever you ship new content — otherwise new lessons fall back to the
+  catalog-wide max instead of their authored value.
 - **Web:** Vercel; set `NEXT_PUBLIC_API_URL`.
 - **Mobile:** EAS builds; set `extra.apiUrl` in `app.json` to the deployed API.
 - **Post-deploy check:** `SMOKE_API_URL=https://your-api pnpm smoke` runs the

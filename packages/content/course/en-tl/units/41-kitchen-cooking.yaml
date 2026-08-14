@@ -1,0 +1,251 @@
+id: kitchen-cooking
+title: In the Kitchen
+description: Cook the way a Filipino kitchen does — fry, boil, and slice, and season with toyo, suka, and asin.
+tip: >-
+  Cooking verbs are mag- verbs. To say it is happening right now, swap mag- for
+  nag- and repeat the root's first consonant + vowel: magluto → nagluluto, magprito →
+  nagpiprito, maghiwa → naghihiwa. Seasoning is rarely measured in
+  cups — you cook to the timpla, tasting and adjusting the toyo, suka, and asin
+  until it is right. Adobo is exactly that: soy sauce, vinegar, and garlic.
+lessons:
+  - id: cooking-1
+    title: Kitchen tools
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaldero, en: pot }
+          - { tl: kawali, en: frying pan }
+          - { tl: kutsilyo, en: knife }
+          - { tl: kalan, en: stove }
+      - type: choice
+        prompt: "'Kawali' means..."
+        answer: Frying pan
+        distractors: [Pot, Knife, Stove]
+        audio: kawali
+        audio_text: Kawali
+      - type: translate
+        prompt_tl: May kaldero sa kusina.
+        answer_en: There is a pot in the kitchen.
+        accept: ["There's a pot in the kitchen", "There is a cooking pot in the kitchen"]
+        extra_words: [pan, knife, table]
+        audio: may_kaldero_sa_kusina
+      - type: translate
+        prompt_en: The knife is small.
+        answer_tl: Maliit ang kutsilyo.
+        extra_words: [malaki, kawali, mesa]
+        audio: maliit_ang_kutsilyo
+      - type: fill_blank
+        sentence: "Nagluluto siya sa ___."
+        translation: "She is cooking on the stove."
+        answer: kalan
+        options: [kalan, kutsilyo, mesa]
+      - type: listen
+        audio: may_kawali_sa_kusina
+        answer_tl: May kawali sa kusina
+        extra_words: [kaldero, mesa]
+      - type: choice
+        prompt: "'Kutsilyo' means..."
+        answer: Knife
+        distractors: [Pot, Frying pan, Stove]
+        audio: kutsilyo
+        audio_text: Kutsilyo
+      - type: translate
+        prompt_tl: Nasaan ang kutsilyo?
+        answer_en: Where is the knife?
+        extra_words: [what, who, pot]
+        audio: nasaan_ang_kutsilyo
+      - type: translate
+        prompt_en: There is a big pot in the kitchen.
+        answer_tl: May malaking kaldero sa kusina.
+        extra_words: [kawali, kutsilyo, mesa]
+        hint: 'An adjective before a noun takes the -ng linker → "malaking kaldero".'
+        audio: may_malaking_kaldero_sa_kusina
+  - id: cooking-2
+    title: Fry, boil, slice
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magluto, en: to cook }
+          - { tl: magprito, en: to fry }
+          - { tl: magpakulo, en: to boil }
+          - { tl: maghiwa, en: to slice }
+      - type: choice
+        prompt: "'Magprito' means..."
+        answer: To fry
+        distractors: [To boil, To slice, To wash]
+        audio: magprito
+        audio_text: Magprito
+      - type: translate
+        prompt_tl: Nagpiprito ako ng isda.
+        answer_en: I am frying fish.
+        accept: ["I fry fish", "I'm frying fish"]
+        extra_words: [boiling, slicing, chicken]
+        audio: nagpiprito_ako_ng_isda
+      - type: translate
+        prompt_en: She is slicing chicken.
+        answer_tl: Naghihiwa siya ng manok.
+        extra_words: [nagpiprito, isda, ako]
+        audio: naghihiwa_siya_ng_manok
+      - type: fill_blank
+        sentence: "___ siya ng itlog."
+        translation: "He is frying an egg."
+        answer: Nagpiprito
+        options: [Nagpiprito, Naghihiwa, Nagluluto]
+      - type: listen
+        audio: naghihiwa_ako_ng_manok
+        answer_tl: Naghihiwa ako ng manok
+        extra_words: [nagpiprito, isda]
+      - type: choice
+        prompt: "'Magpakulo' means..."
+        answer: To boil
+        distractors: [To fry, To slice, To eat]
+        audio: magpakulo
+        audio_text: Magpakulo
+      - type: translate
+        prompt_en: I want to boil water.
+        answer_tl: Gusto kong magpakulo ng tubig.
+        extra_words: [magprito, maghiwa, siya]
+        hint: '"gusto ko" + a verb takes the -ng linker → "gusto kong".'
+        audio: gusto_kong_magpakulo_ng_tubig
+      - type: translate
+        prompt_tl: Nagluluto si Maria ng manok sa kawali.
+        answer_en: Maria is cooking chicken in the pan.
+        accept: ["Maria cooks chicken in the pan", "Maria is cooking chicken in the frying pan"]
+        extra_words: [pot, market, frying]
+        audio: nagluluto_si_maria_ng_manok_sa_kawali
+      - type: translate
+        prompt_en: I cook rice every day.
+        answer_tl: Araw-araw akong nagluluto ng kanin.
+        accept: ["Nagluluto ako ng kanin araw-araw."]
+        extra_words: [nagpiprito, isda, siya]
+        hint: 'After "araw-araw" the pronoun takes the linker → "akong".'
+        grading: { hyphens: true }
+        audio: araw_araw_akong_nagluluto_ng_kanin
+  - id: cooking-3
+    title: Salt, sugar, soy, vinegar
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: asin, en: salt }
+          - { tl: asukal, en: sugar }
+          - { tl: toyo, en: soy sauce }
+          - { tl: suka, en: vinegar }
+      - type: choice
+        prompt: "'Asin' means..."
+        answer: Salt
+        distractors: [Sugar, Vinegar, Oil]
+        audio: asin
+        audio_text: Asin
+      - type: translate
+        prompt_tl: May asin ba sa mesa?
+        answer_en: Is there salt on the table?
+        accept: ["Is there any salt on the table?", "Do we have salt on the table?"]
+        extra_words: [sugar, vinegar, where]
+        audio: may_asin_ba_sa_mesa
+      - type: translate
+        prompt_en: I don't like vinegar.
+        answer_tl: Ayaw ko ng suka.
+        extra_words: [gusto, toyo, asin]
+        hint: '"Ayaw ko ng ___" — I don''t like ___.'
+        audio: ayaw_ko_ng_suka
+      - type: fill_blank
+        sentence: "Masarap ang kapeng may ___."
+        translation: "Coffee with sugar is delicious."
+        answer: asukal
+        options: [asukal, asin, suka]
+      - type: listen
+        audio: gusto_ko_ng_toyo
+        answer_tl: Gusto ko ng toyo
+        extra_words: [suka, asin]
+      - type: choice
+        prompt: "'Mantika' means..."
+        answer: Cooking oil
+        distractors: [Vinegar, Soy sauce, Sugar]
+        audio: mantika
+        audio_text: Mantika
+      - type: translate
+        prompt_en: There is oil in the pan.
+        answer_tl: May mantika sa kawali.
+        extra_words: [asin, kaldero, tubig]
+        audio: may_mantika_sa_kawali
+      - type: choice
+        prompt: "'Masarap ang timpla' means..."
+        answer: The seasoning is just right
+        distractors: [The pan is hot, The pot is big, The coffee is cold]
+        audio: masarap_ang_timpla
+        audio_text: Masarap ang timpla.
+      - type: translate
+        prompt_en: I want to buy salt at the market.
+        answer_tl: Gusto kong bumili ng asin sa palengke.
+        extra_words: [asukal, tindahan, siya]
+        audio: gusto_kong_bumili_ng_asin_sa_palengke
+  - id: cooking-4
+    title: Ingredients and adobo
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sangkap, en: ingredient }
+          - { tl: bawang, en: garlic }
+          - { tl: sibuyas, en: onion }
+          - { tl: timpla, en: seasoning }
+      - type: choice
+        prompt: "'Sangkap' means..."
+        answer: Ingredient
+        distractors: [Seasoning, Dish, Flavor]
+        audio: sangkap
+        audio_text: Sangkap
+      - type: translate
+        prompt_tl: Naghihiwa siya ng sibuyas at bawang.
+        answer_en: She is slicing onion and garlic.
+        accept:
+          [
+            "He is slicing onion and garlic",
+            "She is slicing onions and garlic",
+            "He is slicing onions and garlic",
+            "She slices onions and garlic",
+            "He slices onions and garlic",
+          ]
+        extra_words: [frying, salt, chicken]
+        audio: naghihiwa_siya_ng_sibuyas_at_bawang
+      - type: fill_blank
+        sentence: "Toyo at ___ ang sangkap ng adobo."
+        translation: "Soy sauce and vinegar are the ingredients of adobo."
+        answer: suka
+        options: [suka, asukal, mantika]
+      - type: choice
+        prompt: "Adobo is cooked with toyo, suka, and..."
+        answer: Bawang
+        distractors: [Kape, Gatas, Tinapay]
+        audio: bawang
+        audio_text: Bawang
+      - type: listen
+        audio: ano_ang_sangkap_ng_adobo
+        answer_tl: Ano ang sangkap ng adobo
+        extra_words: [timpla, masarap]
+      - type: translate
+        prompt_en: I am cooking adobo.
+        answer_tl: Nagluluto ako ng adobo.
+        extra_words: [nagpiprito, manok, siya]
+        audio: nagluluto_ako_ng_adobo
+      - type: translate
+        prompt_tl: Masarap ang timpla ng adobo mo.
+        answer_en: Your adobo is seasoned well.
+        accept: ["The seasoning of your adobo is delicious", "Your adobo tastes great"]
+        extra_words: [ingredient, garlic, pan]
+        audio: masarap_ang_timpla_ng_adobo_mo
+      - type: translate
+        prompt_en: We are frying fish in the pan.
+        answer_tl: Nagpiprito kami ng isda sa kawali.
+        extra_words: [kaldero, manok, sila]
+        audio: nagpiprito_kami_ng_isda_sa_kawali
+      - type: translate
+        prompt_en: I am cooking adobo because I am hungry.
+        answer_tl: Nagluluto ako ng adobo kasi gutom ako.
+        accept: ["Nagluluto ako ng adobo dahil gutom ako."]
+        extra_words: [nagpiprito, masarap, siya]
+        hint: '"kasi" and "dahil" both mean "because" — "kasi" is the everyday one.'
+        audio: nagluluto_ako_ng_adobo_kasi_gutom_ako

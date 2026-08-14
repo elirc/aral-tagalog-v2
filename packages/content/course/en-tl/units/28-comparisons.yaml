@@ -1,0 +1,248 @@
+id: comparisons
+title: Comparing Things
+description: Say bigger, cheapest, and just-as-good — compare anything with mas, pinaka-, and kasing-.
+tip: >-
+  Tagalog comparison is wonderfully regular. "Mas" before an adjective means
+  "more" (mas malaki — bigger); add "kaysa sa" for "than" ("kaysa kay" before a
+  person's name). The prefix "pinaka-" makes a superlative (pinakamaganda —
+  the most beautiful), and "kasing-" plus the adjective root means "as ... as":
+  "Kasinglaki ng pusa ang aso" — the dog is as big as the cat.
+lessons:
+  - id: compare-1
+    title: Mas — more
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mas malaki, en: bigger }
+          - { tl: mas maliit, en: smaller }
+          - { tl: mas mura, en: cheaper }
+          - { tl: mas mahal, en: more expensive }
+      - type: choice
+        prompt: "'Mas malaki' means..."
+        answer: Bigger
+        distractors: [Smaller, Biggest, Big]
+        audio: mas_malaki
+        audio_text: Mas malaki
+      - type: translate
+        prompt_tl: Mas mura ang isda sa palengke.
+        answer_en: The fish is cheaper at the market.
+        accept: ["Fish is cheaper at the market", "The fish at the market is cheaper"]
+        extra_words: [expensive, chicken, store]
+        audio: mas_mura_ang_isda_sa_palengke
+      - type: translate
+        prompt_en: This is cheaper.
+        answer_tl: Mas mura ito.
+        extra_words: [mahal, malaki, siya]
+        audio: mas_mura_ito
+      - type: fill_blank
+        sentence: "___ malaki ang bahay nila."
+        translation: "Their house is bigger."
+        answer: Mas
+        options: [Mas, Sobra, Talaga]
+      - type: listen
+        audio: mas_mabilis_ang_jeepney
+        answer_tl: Mas mabilis ang jeepney
+        extra_words: [mabagal, malaki]
+      - type: choice
+        prompt: "'Mas mabilis' means..."
+        answer: Faster
+        distractors: [Slower, Fastest, Fast]
+        audio: mas_mabilis
+        audio_text: Mas mabilis
+      - type: translate
+        prompt_tl: Mas mainit ngayon.
+        answer_en: It is hotter today.
+        accept: ["It's hotter today", "It is hotter now", "It's hotter now"]
+        extra_words: [colder, yesterday, rain]
+        audio: mas_mainit_ngayon
+      - type: translate
+        prompt_tl: Mas malamig sa bundok at mas mainit sa dagat.
+        answer_en: It is colder in the mountains and hotter at the sea.
+        accept:
+          - "It's colder in the mountains and hotter at the sea"
+          - "It is colder in the mountain and hotter at the sea"
+          - "It is colder in the mountains and hotter by the sea"
+        extra_words: [warmer, sky, rain]
+        audio: mas_malamig_sa_bundok_at_mas_mainit_sa_dagat
+        hint: Two comparisons in one sentence — take them one at a time.
+  - id: compare-2
+    title: Kaysa — than
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kaysa' means..."
+        answer: Than
+        distractors: [More, Most, Also]
+        audio: kaysa
+        audio_text: Kaysa
+      - type: match
+        pairs:
+          - { tl: kaysa, en: than }
+          - { tl: mas, en: more }
+          - { tl: mura, en: cheap }
+          - { tl: mahal, en: expensive }
+      - type: translate
+        prompt_tl: Mas malaki ang bahay kaysa sa tindahan.
+        answer_en: The house is bigger than the store.
+        accept: ["The house is bigger than the shop"]
+        extra_words: [smaller, church, market]
+        audio: mas_malaki_ang_bahay_kaysa_sa_tindahan
+      - type: translate
+        prompt_en: Coffee is more expensive than milk.
+        answer_tl: Mas mahal ang kape kaysa sa gatas.
+        accept: ["Mas mahal ang kape kaysa gatas"]
+        extra_words: [mura, tubig, masarap]
+        audio: mas_mahal_ang_kape_kaysa_sa_gatas
+        hint: 'Use "kaysa sa" before a noun.'
+      - type: fill_blank
+        sentence: "Mas mabilis ang kabayo ___ sa kalabaw."
+        translation: "The horse is faster than the carabao."
+        answer: kaysa
+        options: [kaysa, kasi, dahil]
+      - type: listen
+        audio: mas_mura_ang_isda_kaysa_sa_manok
+        answer_tl: Mas mura ang isda kaysa sa manok
+        extra_words: [mahal, baboy]
+      - type: choice
+        prompt: "'Mas mataas si Juan kaysa kay Ana' means..."
+        answer: Juan is taller than Ana
+        distractors: [Ana is taller than Juan, Juan is as tall as Ana, Ana is the tallest]
+        audio: mas_mataas_si_juan_kaysa_kay_ana
+        audio_text: Mas mataas si Juan kaysa kay Ana.
+      - type: translate
+        prompt_tl: Mas masarap ang manok kaysa sa isda.
+        answer_en: The chicken is more delicious than the fish.
+        accept:
+          - "Chicken is more delicious than fish"
+          - "The chicken is tastier than the fish"
+          - "Chicken is tastier than fish"
+        extra_words: [cheaper, pork, egg]
+        audio: mas_masarap_ang_manok_kaysa_sa_isda
+      - type: translate
+        prompt_en: The school is nearer than the hospital.
+        answer_tl: Mas malapit ang paaralan kaysa sa ospital.
+        accept: ["Mas malapit ang paaralan kaysa ospital"]
+        extra_words: [malayo, simbahan, doon]
+        audio: mas_malapit_ang_paaralan_kaysa_sa_ospital
+        hint: Remember your places around town.
+  - id: compare-3
+    title: Pinaka- — the most
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pinakamaganda' means..."
+        answer: The most beautiful
+        distractors: [More beautiful, Beautiful, As beautiful as]
+        audio: pinakamaganda
+        audio_text: Pinakamaganda
+      - type: match
+        pairs:
+          - { tl: pinakamalaki, en: biggest }
+          - { tl: pinakamaliit, en: smallest }
+          - { tl: pinakamabilis, en: fastest }
+          - { tl: pinakamura, en: cheapest }
+      - type: translate
+        prompt_tl: Ito ang pinakamalaking bahay dito.
+        answer_en: This is the biggest house here.
+        extra_words: [smallest, church, there]
+        audio: ito_ang_pinakamalaking_bahay_dito
+      - type: fill_blank
+        sentence: "Si Ana ang ___ sa klase."
+        translation: "Ana is the fastest in the class."
+        answer: pinakamabilis
+        options: [pinakamabilis, mas mabilis, mabilis]
+      - type: listen
+        audio: siya_ang_pinakamataas_sa_pamilya
+        answer_tl: Siya ang pinakamataas sa pamilya
+        extra_words: [pinakamaliit, klase]
+      - type: translate
+        prompt_en: This is the most beautiful flower.
+        answer_tl: Ito ang pinakamagandang bulaklak.
+        accept: ["Pinakamaganda ang bulaklak na ito", "Pinakamagandang bulaklak ito"]
+        extra_words: [malaki, puno, doon]
+        audio: ito_ang_pinakamagandang_bulaklak
+        hint: 'Before a noun the adjective takes a linker: -ng after a vowel (pinakamagandang bulaklak), na after a consonant (pinakamasarap na handa).'
+      - type: choice
+        prompt: "'Sa lahat' means..."
+        answer: Of all
+        distractors: [The most, Than, Right now]
+        audio: sa_lahat
+        audio_text: Sa lahat
+      - type: translate
+        prompt_tl: Siya ang pinakamasaya sa handaan.
+        answer_en: She is the happiest at the party.
+        accept:
+          - "He is the happiest at the party"
+          - "She is the happiest one at the party"
+          - "He is the happiest one at the party"
+        extra_words: [saddest, birthday, house]
+        audio: siya_ang_pinakamasaya_sa_handaan
+      - type: translate
+        prompt_tl: Ito ang pinakamasarap na handa sa pista.
+        answer_en: This is the most delicious food at the fiesta.
+        accept:
+          - "This is the tastiest food at the fiesta"
+          - "This is the most delicious dish at the fiesta"
+          - "This is the most delicious party food at the fiesta"
+        extra_words: [cheapest, gift, market]
+        audio: ito_ang_pinakamasarap_na_handa_sa_pista
+        hint: '"Handa" is the food laid out at a Filipino party.'
+  - id: compare-4
+    title: Kasing- — as big as
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kasinglaki' means..."
+        answer: As big as
+        distractors: [Bigger, Biggest, Very big]
+        audio: kasinglaki
+        audio_text: Kasinglaki
+      - type: translate
+        prompt_tl: Kasinglaki ng aso ang pusa ko.
+        answer_en: My cat is as big as a dog.
+        accept: ["My cat is as big as the dog"]
+        extra_words: [bigger, bird, house]
+        audio: kasinglaki_ng_aso_ang_pusa_ko
+      - type: translate
+        prompt_en: The fish is as expensive as the chicken.
+        answer_tl: Kasingmahal ng manok ang isda.
+        extra_words: [mura, kaysa, baboy]
+        audio: kasingmahal_ng_manok_ang_isda
+        hint: 'kasing- + adjective root, then "ng" before the thing you compare with.'
+      - type: fill_blank
+        sentence: "___ ng nanay ko ang tita ko."
+        translation: "My aunt is as beautiful as my mom."
+        answer: Kasingganda
+        options: [Kasingganda, Pinakamaganda, Mas maganda]
+      - type: match
+        pairs:
+          - { tl: maganda, en: beautiful }
+          - { tl: mas maganda, en: more beautiful }
+          - { tl: pinakamaganda, en: most beautiful }
+          - { tl: kasingganda, en: as beautiful as }
+      - type: listen
+        audio: kasingmura_ng_tinapay_ang_itlog
+        answer_tl: Kasingmura ng tinapay ang itlog
+        extra_words: [kasingmahal, gatas]
+      - type: choice
+        prompt: "Which sentence says 'The cat is as small as the rat'?"
+        answer: Kasingliit ng daga ang pusa.
+        distractors:
+          - Mas maliit ang pusa kaysa sa daga.
+          - Pinakamaliit ang pusa.
+          - Kasinglaki ng daga ang pusa.
+        audio: kasingliit_ng_daga_ang_pusa
+        audio_text: Kasingliit ng daga ang pusa.
+      - type: translate
+        prompt_tl: Mas mainit ngayon kaysa kahapon.
+        answer_en: It is hotter today than yesterday.
+        accept: ["It's hotter today than yesterday"]
+        extra_words: [colder, tomorrow, rain]
+        audio: mas_mainit_ngayon_kaysa_kahapon
+      - type: translate
+        prompt_en: This is the most beautiful dress in the store.
+        answer_tl: Ito ang pinakamagandang bestida sa tindahan.
+        extra_words: [mura, palda, kasingganda]
+        audio: ito_ang_pinakamagandang_bestida_sa_tindahan
+        hint: Mix it with your shopping words.

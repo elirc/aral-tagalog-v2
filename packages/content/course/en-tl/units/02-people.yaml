@@ -68,12 +68,13 @@ lessons:
       - type: translate
         prompt_tl: Siya ang nanay ko.
         answer_en: She is my mom.
-        accept: ["She's my mom", "She is my mother"]
+        accept: ["She's my mom", "She is my mother", "She's my mother"]
         extra_words: [dad, friend, name]
         audio: siya_ang_nanay_ko
       - type: translate
         prompt_en: He is my dad.
         answer_tl: Siya ang tatay ko.
+        accept: ["Tatay ko siya"]
         extra_words: [nanay, lola, si]
       - type: listen
         audio: kapatid
@@ -135,5 +136,5 @@ lessons:
       - type: translate
         prompt_tl: Mabuti siyang kaibigan.
         answer_en: She is a good friend.
-        accept: ["He is a good friend"]
+        accept: ["He is a good friend", "She's a good friend", "He's a good friend"]
         extra_words: [beautiful, mom, they]

@@ -28,6 +28,7 @@ lessons:
       - type: translate
         prompt_en: I'm going there.
         answer_tl: Pupunta ako doon.
+        accept: ["Doon ako pupunta."]
         extra_words: [dito, saan, siya]
       - type: fill_blank
         sentence: "Pumunta tayo ___."
@@ -148,7 +149,7 @@ lessons:
         hint: 'Compare with "Nasaan ang palengke?" from Unit 5.'
       - type: translate
         prompt_en: Go straight, then turn right.
-        answer_tl: Diretso ka, tapos lumiko sa kanan.
+        answer_tl: Diretso ka, tapos lumiko ka sa kanan.
         extra_words: [kaliwa, dito, malayo]
         hint: '"tapos" = then / after'
       - type: fill_blank
@@ -174,14 +175,13 @@ lessons:
           - { tl: diretso, en: straight }
       - type: fill_blank
         sentence: "Sumakay ka ___ jeepney sa istasyon."
-        translation: "Ride a jeepney to the station."
+        translation: "Board a jeepney at the station."
         answer: ng
         options: [ng, nang, sa]
-        grading: { ng_nang: true }
       - type: translate
         prompt_en: Is the station near or far?
         answer_tl: Malapit ba o malayo ang istasyon?
-        accept: ["Malapit o malayo ang istasyon?"]
+        accept: ["Malapit o malayo ang istasyon?", "Malapit o malayo ba ang istasyon?"]
         extra_words: [dito, kanan, daan]
         hint: '"ba" = question particle; "o" = or'
       - type: listen

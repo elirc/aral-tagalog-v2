@@ -1,0 +1,239 @@
+id: review-food-market
+title: "Review: Food & Market"
+description: Put your food, number, and shopping skills together — order, count, and haggle at the palengke.
+tip: >-
+  When counting things, numbers take a linker: -ng after a vowel ("dalawang
+  itlog" — two eggs), "na" after a consonant ("anim na itlog" — six eggs). At
+  the palengke, soften requests with "po" — "Magkano po?" — and it's perfectly
+  normal to ask "May tawad po ba?" (Is there a discount?). Become a suki — a
+  regular — and the best prices find you.
+lessons:
+  - id: revfood-1
+    title: Food favorites
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanin, en: rice }
+          - { tl: tubig, en: water }
+          - { tl: itlog, en: egg }
+          - { tl: isda, en: fish }
+      - type: choice
+        prompt: "'Masarap' means..."
+        answer: Delicious
+        distractors: [Expensive, Cheap, Hungry]
+        audio: masarap
+        audio_text: Masarap
+      - type: translate
+        prompt_tl: Gusto ko ng kape at tinapay.
+        answer_en: I like coffee and bread.
+        accept: ["I want coffee and bread"]
+        extra_words: [milk, water, fish]
+        audio: gusto_ko_ng_kape_at_tinapay
+      - type: translate
+        prompt_en: I don't like fish.
+        answer_tl: Ayaw ko ng isda.
+        accept: ["Ayoko ng isda", "Ayaw ko po ng isda"]
+        extra_words: [gusto, manok, siya]
+        audio: ayaw_ko_ng_isda
+      - type: fill_blank
+        sentence: "___ ang manok na ito."
+        translation: "This chicken is delicious."
+        answer: Masarap
+        options: [Masarap, Mahal, Malaki]
+      - type: listen
+        audio: umiinom_ako_ng_tubig
+        answer_tl: Umiinom ako ng tubig
+        extra_words: [kape, gatas]
+      - type: choice
+        prompt: "'Itlog' means..."
+        answer: Egg
+        distractors: [Fish, Chicken, Rice]
+        audio: itlog
+        audio_text: Itlog
+      - type: translate
+        prompt_tl: Kumakain siya ng kanin at manok.
+        answer_en: He is eating rice and chicken.
+        accept:
+          - "She is eating rice and chicken"
+          - "He eats rice and chicken"
+          - "She eats rice and chicken"
+        extra_words: [fish, bread, drinking]
+        audio: kumakain_siya_ng_kanin_at_manok
+      - type: translate
+        prompt_en: I drink coffee every day.
+        answer_tl: Umiinom ako ng kape araw-araw.
+        accept: ["Araw-araw akong umiinom ng kape"]
+        extra_words: [tubig, gabi, kumakain]
+        audio: umiinom_ako_ng_kape_araw_araw
+        grading: { hyphens: true }
+  - id: revfood-2
+    title: Counting your food
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isa, en: one }
+          - { tl: lima, en: five }
+          - { tl: walo, en: eight }
+          - { tl: sampu, en: ten }
+      - type: choice
+        prompt: "'Anim' means..."
+        answer: Six
+        distractors: [Seven, Nine, Four]
+        audio: anim
+        audio_text: Anim
+      - type: fill_blank
+        sentence: "Bumili ako ng ___ na itlog."
+        translation: "I bought six eggs."
+        answer: anim
+        options: [anim, apat, siyam]
+        hint: 'A number ending in a consonant takes "na" before the noun.'
+      - type: translate
+        prompt_tl: May tatlong itlog sa mesa.
+        answer_en: There are three eggs on the table.
+        accept: ["There are 3 eggs on the table"]
+        extra_words: [four, chicken, floor]
+        audio: may_tatlong_itlog_sa_mesa
+      - type: translate
+        prompt_en: I want two fish.
+        answer_tl: Gusto ko ng dalawang isda.
+        accept: ["Gusto ko po ng dalawang isda"]
+        extra_words: [tatlong, manok, ayaw]
+        audio: gusto_ko_ng_dalawang_isda
+        hint: 'After a vowel, the number takes -ng: dalawang isda.'
+      - type: listen
+        audio: bumili_siya_ng_limang_isda
+        answer_tl: Bumili siya ng limang isda
+        extra_words: [itlog, apat]
+      - type: choice
+        prompt: "How do you say 'seven' in Tagalog?"
+        answer: Pito
+        distractors: [Walo, Siyam, Anim]
+        audio: pito
+        audio_text: Pito
+      - type: translate
+        prompt_tl: Ilan ang gusto mo?
+        answer_en: How many do you want?
+        accept: ["How many would you like?", "How many do you like?"]
+        extra_words: [much, where, who]
+        audio: ilan_ang_gusto_mo
+      - type: translate
+        prompt_tl: May apat na anak ang tita ko.
+        answer_en: My aunt has four children.
+        accept: ["My aunt has four kids", "My aunt has 4 children"]
+        extra_words: [uncle, three, siblings]
+        audio: may_apat_na_anak_ang_tita_ko
+  - id: revfood-3
+    title: Prices and change
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magkano, en: how much }
+          - { tl: mahal, en: expensive }
+          - { tl: mura, en: cheap }
+          - { tl: sukli, en: change }
+      - type: choice
+        prompt: "'Magkano' means..."
+        answer: How much
+        distractors: [How many, Where, What]
+        audio: magkano
+        audio_text: Magkano
+      - type: translate
+        prompt_tl: Magkano ang isda sa palengke?
+        answer_en: How much is the fish at the market?
+        accept: ["How much is fish at the market?"]
+        extra_words: [chicken, store, cheap]
+        audio: magkano_ang_isda_sa_palengke
+      - type: translate
+        prompt_en: The chicken is expensive.
+        answer_tl: Mahal ang manok.
+        accept: ["Mahal po ang manok"]
+        extra_words: [mura, isda, masarap]
+        audio: mahal_ang_manok
+      - type: fill_blank
+        sentence: "___ ang kape dito."
+        translation: "The coffee here is cheap."
+        answer: Mura
+        options: [Mura, Mahal, Masarap]
+      - type: listen
+        audio: magkano_ito
+        answer_tl: Magkano ito
+        accept: ["Magkano po ito"]
+        extra_words: [mahal, mura]
+      - type: choice
+        prompt: "A vendor tells you 'Walang sukli.' This means..."
+        answer: There's no change
+        distractors: [It's too expensive, It's free, There's no discount]
+        audio: walang_sukli
+        audio_text: Walang sukli.
+      - type: translate
+        prompt_en: Do you have change?
+        answer_tl: May sukli ka ba?
+        accept: ["May sukli po ba kayo", "May sukli ba kayo"]
+        extra_words: [pera, wala, magkano]
+        audio: may_sukli_ka_ba
+      - type: translate
+        prompt_tl: Malapit ang palengke sa bahay namin.
+        answer_en: The market is near our house.
+        accept: ["The market is close to our house"]
+        extra_words: [far, store, church]
+        audio: malapit_ang_palengke_sa_bahay_namin
+  - id: revfood-4
+    title: Haggling at the palengke
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Tawad' means..."
+        answer: Discount
+        distractors: [Change, Price, Money]
+        audio: tawad
+        audio_text: Tawad
+      - type: translate
+        prompt_tl: May tawad ba?
+        answer_en: Is there a discount?
+        accept: ["Can I get a discount?", "Is there a discount, please?"]
+        extra_words: [change, money, expensive]
+        audio: may_tawad_ba
+        hint: 'Asking for a "tawad" at the market is completely normal — just add "po" to be polite.'
+      - type: match
+        pairs:
+          - { tl: palengke, en: market }
+          - { tl: tindahan, en: store }
+          - { tl: tindera, en: vendor }
+          - { tl: presyo, en: price }
+      - type: fill_blank
+        sentence: "Mahal ito. May ___ ba?"
+        translation: "This is expensive. Is there a discount?"
+        answer: tawad
+        options: [tawad, sukli, piso]
+      - type: translate
+        prompt_en: How much are three fish?
+        answer_tl: Magkano ang tatlong isda?
+        accept: ["Magkano po ang tatlong isda"]
+        extra_words: [dalawang, manok, mura]
+        audio: magkano_ang_tatlong_isda
+      - type: listen
+        audio: sampung_piso_ang_isa
+        answer_tl: Sampung piso ang isa
+        accept: ["Sampung piso po ang isa"]
+        extra_words: [limang, sukli]
+      - type: choice
+        prompt: "'Suki' refers to..."
+        answer: A regular customer
+        distractors: [A new store, A price tag, A kind of fish]
+        audio: suki
+        audio_text: Suki
+      - type: translate
+        prompt_tl: Suki ako dito.
+        answer_en: I'm a regular customer here.
+        accept: ["I am a regular customer here", "I'm a regular here", "I am a regular here"]
+        extra_words: [vendor, new, there]
+        audio: suki_ako_dito
+      - type: translate
+        prompt_en: I bought five eggs and two fish at the market.
+        answer_tl: Bumili ako ng limang itlog at dalawang isda sa palengke.
+        accept: ["Bumili po ako ng limang itlog at dalawang isda sa palengke"]
+        extra_words: [tatlong, manok, tindahan]
+        audio: bumili_ako_ng_limang_itlog_at_dalawang_isda_sa_palengke

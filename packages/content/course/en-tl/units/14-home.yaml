@@ -85,6 +85,7 @@ lessons:
       - type: translate
         prompt_en: There are many chairs in the living room.
         answer_tl: Maraming silya sa sala.
+        accept: ["Maraming silya ang sala"]
         extra_words: [mesa, kusina, ang]
         hint: '"marami" gains a "-ng" linker before the noun.'
       - type: choice

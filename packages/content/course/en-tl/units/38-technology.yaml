@@ -1,0 +1,254 @@
+id: technology
+title: Phones & Internet
+description: Buy load, text and call, get on the wifi, and talk about photos and videos.
+tip: >-
+  English loanwords take Tagalog affixes and are joined with a hyphen:
+  load → mag-load (to buy credit), naglo-load (is buying credit); text →
+  nag-text (texted), nagte-text (is texting). Phones in the Philippines are
+  mostly prepaid, so "load" is bought in small amounts at any corner store —
+  "Wala akong load" is a real, everyday excuse.
+lessons:
+  - id: tech-1
+    title: Selpon at load
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: selpon, en: cellphone }
+          - { tl: load, en: phone credit }
+          - { tl: baterya, en: battery }
+          - { tl: charger, en: charger }
+      - type: choice
+        prompt: "'Mag-load' means..."
+        answer: To buy phone credit
+        distractors: [To make a call, To send a text, To charge a phone]
+        audio: mag_load
+        audio_text: Mag-load
+      - type: translate
+        prompt_tl: Wala akong load.
+        answer_en: I have no load.
+        accept: ["I don't have load", "I have no phone credit", "I don't have any load"]
+        extra_words: [money, water, phone]
+        audio: wala_akong_load
+      - type: translate
+        prompt_en: Do you have load?
+        answer_tl: May load ka ba?
+        accept: ["May load po ba kayo?"]
+        extra_words: [wala, pera, selpon]
+        audio: may_load_ka_ba
+      - type: fill_blank
+        sentence: "Wala nang ___ ang selpon ko."
+        translation: "My phone has no battery left."
+        answer: baterya
+        options: [baterya, load, tubig]
+        grading: { ng_nang: true }
+      - type: listen
+        audio: may_selpon_ako
+        answer_tl: May selpon ako
+        extra_words: [load, wala]
+      - type: choice
+        prompt: "'Numero' means..."
+        answer: Number
+        distractors: [Name, Price, Money]
+        audio: numero
+        audio_text: Numero
+      - type: translate
+        prompt_en: What is your number?
+        answer_tl: Ano ang numero mo?
+        accept: ["Ano po ang numero ninyo?"]
+        extra_words: [pangalan, magkano, siya]
+        audio: ano_ang_numero_mo
+      - type: choice
+        prompt: "Your phone is about to die. You ask a friend:"
+        answer: "Nasaan ang charger?"
+        distractors: ["Magkano ang selpon?", "May load ka ba?", "Ano ang numero mo?"]
+        audio: nasaan_ang_charger
+        audio_text: Nasaan ang charger?
+      - type: translate
+        prompt_tl: Bumili ako ng load sa tindahan kahapon.
+        answer_en: I bought load at the store yesterday.
+        accept: ["Yesterday I bought load at the store", "I bought phone credit at the store yesterday"]
+        extra_words: [tomorrow, market, sold]
+        audio: bumili_ako_ng_load_sa_tindahan_kahapon
+  - id: tech-2
+    title: Tawag at text
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tumawag, en: called }
+          - { tl: tumatawag, en: is calling }
+          - { tl: tatawag, en: will call }
+          - { tl: nagte-text, en: is texting }
+      - type: choice
+        prompt: "'Tawag' means..."
+        answer: A call
+        distractors: [A text, A photo, A number]
+        audio: tawag
+        audio_text: Tawag
+      - type: choice
+        prompt: "'Tumatawag siya sa nanay niya.' means..."
+        answer: She is calling her mom
+        distractors: [She called her mom, She will call her mom, She is texting her mom]
+        audio: tumatawag_siya_sa_nanay_niya
+        audio_text: Tumatawag siya sa nanay niya.
+      - type: translate
+        prompt_tl: Tumawag ako kahapon.
+        answer_en: I called yesterday.
+        accept: ["I made a call yesterday", "Yesterday I called"]
+        extra_words: [tomorrow, texted, will]
+        audio: tumawag_ako_kahapon
+      - type: translate
+        prompt_en: I will call tomorrow.
+        answer_tl: Tatawag ako bukas.
+        extra_words: [tumawag, kahapon, siya]
+        audio: tatawag_ako_bukas
+      - type: fill_blank
+        sentence: "___ ako sa kaibigan ko ngayon."
+        translation: "I am calling my friend today."
+        answer: Tumatawag
+        options: [Tumatawag, Tumawag, Tatawag]
+        hint: 'Ongoing action → -um- plus a doubled first syllable of the ROOT: tawag → ta-tawag → tumatawag.'
+      - type: listen
+        audio: tumatawag_ang_kaibigan_ko
+        answer_tl: Tumatawag ang kaibigan ko
+        extra_words: [tatawag, nanay]
+      - type: fill_blank
+        sentence: "Marami akong ___ sa selpon ko."
+        translation: "I have a lot of texts on my phone."
+        answer: text
+        options: [text, tawag, load]
+      - type: translate
+        prompt_tl: Nagte-text siya sa kapatid niya.
+        answer_en: He is texting his sibling.
+        accept: ["She is texting her sibling", "He is texting his brother", "She is texting her sister", "She is texting her brother", "He is texting his sister"]
+        extra_words: [calling, mom, friend]
+        grading: { hyphens: true }
+        audio: nagte_text_siya_sa_kapatid_niya
+      - type: translate
+        prompt_en: I will call my mom in the evening.
+        answer_tl: Tatawag ako sa nanay ko sa gabi.
+        extra_words: [tumawag, bukas, kaibigan]
+        audio: tatawag_ako_sa_nanay_ko_sa_gabi
+  - id: tech-3
+    title: Internet at wifi
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: internet, en: internet }
+          - { tl: kompyuter, en: computer }
+          - { tl: mabagal, en: slow }
+          - { tl: mabilis, en: fast }
+      - type: choice
+        prompt: "'Kompyuter' means..."
+        answer: Computer
+        distractors: [Cellphone, Charger, Battery]
+        audio: kompyuter
+        audio_text: Kompyuter
+      - type: translate
+        prompt_tl: Mabagal ang internet dito.
+        answer_en: The internet is slow here.
+        accept: ["The internet here is slow", "Internet here is slow"]
+        extra_words: [fast, expensive, there]
+        audio: mabagal_ang_internet_dito
+      - type: translate
+        prompt_en: There is no wifi at home.
+        answer_tl: Walang wifi sa bahay.
+        accept: ["Wala kaming wifi sa bahay."]
+        extra_words: [may, internet, mabilis]
+        audio: walang_wifi_sa_bahay
+      - type: fill_blank
+        sentence: "Nag-aaral siya sa ___."
+        translation: "He is studying on the computer."
+        answer: kompyuter
+        options: [kompyuter, palengke, botika]
+        grading: { hyphens: true }
+      - type: listen
+        audio: may_wifi_ba_dito
+        answer_tl: May wifi ba dito
+        extra_words: [internet, wala]
+      - type: choice
+        prompt: "You are at a café and need the wifi code. Ask:"
+        answer: "Ano ang password ng wifi?"
+        distractors: ["Magkano ang wifi?", "Nasaan ang wifi?", "Mabilis ba ang wifi?"]
+        audio: ano_ang_password_ng_wifi
+        audio_text: Ano ang password ng wifi?
+      - type: translate
+        prompt_en: I am working on the computer.
+        answer_tl: Nagtatrabaho ako sa kompyuter.
+        extra_words: [nagbabasa, opisina, siya]
+        audio: nagtatrabaho_ako_sa_kompyuter
+      - type: translate
+        prompt_tl: May kompyuter ba sa paaralan?
+        answer_en: Is there a computer at the school?
+        accept: ["Is there a computer at school?", "Do they have a computer at the school?"]
+        extra_words: [market, hospital, phone]
+        audio: may_kompyuter_ba_sa_paaralan
+      - type: translate
+        prompt_tl: Malungkot ako kasi walang internet sa bahay.
+        answer_en: I am sad because there is no internet at home.
+        accept: ["I'm sad because there's no internet at home", "I am sad because we have no internet at home"]
+        extra_words: [happy, school, fast]
+        audio: malungkot_ako_kasi_walang_internet_sa_bahay
+  - id: tech-4
+    title: Litrato at video
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: litrato, en: photo }
+          - { tl: video, en: video }
+          - { tl: kumukuha, en: taking }
+          - { tl: nanonood, en: watching }
+      - type: choice
+        prompt: "'Litrato' means..."
+        answer: Photo
+        distractors: [Video, Song, Movie]
+        audio: litrato
+        audio_text: Litrato
+      - type: translate
+        prompt_en: I am taking a photo.
+        answer_tl: Kumukuha ako ng litrato.
+        extra_words: [kumuha, video, siya]
+        audio: kumukuha_ako_ng_litrato
+      - type: translate
+        prompt_tl: Kumuha kami ng litrato sa pista.
+        answer_en: We took a photo at the fiesta.
+        accept: ["We took photos at the fiesta", "We took a picture at the fiesta"]
+        extra_words: [watched, market, video]
+        audio: kumuha_kami_ng_litrato_sa_pista
+      - type: fill_blank
+        sentence: "Kumukuha siya ng ___ sa kaarawan."
+        translation: "She is taking photos at the birthday party."
+        answer: litrato
+        options: [litrato, gamot, sukli]
+      - type: listen
+        audio: nanonood_ako_ng_video
+        answer_tl: Nanonood ako ng video
+        extra_words: [litrato, pelikula]
+      - type: choice
+        prompt: "A friend posts a nice photo. Comment:"
+        answer: "Maganda ang litrato mo!"
+        distractors: ["Mabagal ang internet.", "Wala akong load.", "Nasaan ang charger?"]
+        audio: maganda_ang_litrato_mo
+        audio_text: Maganda ang litrato mo!
+      - type: translate
+        prompt_tl: Araw-araw akong nanonood ng video sa selpon ko.
+        answer_en: I watch videos on my phone every day.
+        accept: ["Every day I watch videos on my phone", "I watch a video on my phone every day"]
+        extra_words: [read, computer, yesterday]
+        grading: { hyphens: true }
+        audio: araw_araw_akong_nanonood_ng_video_sa_selpon_ko
+      - type: translate
+        prompt_en: I want to watch a video on the computer.
+        answer_tl: Gusto kong manood ng video sa kompyuter.
+        extra_words: [litrato, selpon, siya]
+        hint: '"gusto ko" + a verb takes the -ng linker → "gusto kong".'
+        audio: gusto_kong_manood_ng_video_sa_kompyuter
+      - type: translate
+        prompt_en: I will call tomorrow because I have no load now.
+        answer_tl: Tatawag ako bukas kasi wala akong load ngayon.
+        accept: ["Tatawag ako bukas dahil wala akong load ngayon."]
+        extra_words: [tumawag, kahapon, text]
+        audio: tatawag_ako_bukas_kasi_wala_akong_load_ngayon

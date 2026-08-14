@@ -1,0 +1,238 @@
+id: money-bargaining
+title: Money & Bargaining
+description: Ask prices, haggle politely, and count your change at the palengke.
+tip: >-
+  Bargaining is normal at the palengke — open with "May tawad po ba?" (Is there
+  a discount?). Prices are usually said with Spanish-derived numbers: bente
+  (20), singkwenta (50). Become a suki — a regular customer — and the discounts
+  come on their own. In malls and groceries, prices are fixed: no haggling.
+lessons:
+  - id: bargain-1
+    title: Money basics
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pera, en: money }
+          - { tl: piso, en: peso }
+          - { tl: presyo, en: price }
+          - { tl: barya, en: coins }
+      - type: choice
+        prompt: "'Barya' means..."
+        answer: Coins / small change
+        distractors: [Bills, Payment, Price]
+        audio: barya
+        audio_text: Barya
+      - type: translate
+        prompt_tl: Wala akong pera.
+        answer_en: I have no money.
+        accept: ["I don't have money", "I do not have money"]
+        extra_words: [change, price, much]
+        audio: wala_akong_pera
+      - type: translate
+        prompt_en: This is ten pesos.
+        answer_tl: Sampung piso ito.
+        extra_words: [lima, presyo, pera]
+        audio: sampung_piso_ito
+      - type: fill_blank
+        sentence: "Magkano ang ___ ng isda?"
+        translation: "How much is the price of the fish?"
+        answer: presyo
+        options: [presyo, pera, sukli]
+      - type: listen
+        audio: magkano_ito
+        answer_tl: Magkano ito
+        extra_words: [pera, piso]
+      - type: choice
+        prompt: "'Bente' means..."
+        answer: Twenty
+        distractors: [Fifty, Twelve, Two]
+        audio: bente
+        audio_text: Bente
+        hint: Prices are usually said with Spanish-derived numbers.
+      - type: translate
+        prompt_tl: Bumili ako ng tinapay sa tindahan.
+        answer_en: I bought bread at the store.
+        accept: ["I bought bread in the store"]
+        extra_words: [fish, market, money]
+        audio: bumili_ako_ng_tinapay_sa_tindahan
+  - id: bargain-2
+    title: Magkano ito?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mahal, en: expensive }
+          - { tl: mura, en: cheap }
+          - { tl: magkano, en: how much }
+          - { tl: tindera, en: vendor }
+      - type: choice
+        prompt: "'Singkwenta' means..."
+        answer: Fifty
+        distractors: [Twenty, Fifteen, Five]
+        audio: singkwenta
+        audio_text: Singkwenta
+      - type: translate
+        prompt_tl: Magkano po ito?
+        answer_en: How much is this?
+        accept: ["How much is this, please?", "How much is it?"]
+        extra_words: [where, cheap, that]
+        audio: magkano_po_ito
+      - type: translate
+        prompt_en: The fish is expensive.
+        answer_tl: Mahal ang isda.
+        extra_words: [mura, presyo, manok]
+        audio: mahal_ang_isda
+      - type: fill_blank
+        sentence: "___ ang damit sa palengke."
+        translation: "The clothes at the market are cheap."
+        answer: Mura
+        options: [Mura, Mahal, Marami]
+      - type: listen
+        audio: mahal_ang_sapatos
+        answer_tl: Mahal ang sapatos
+        extra_words: [mura, damit]
+      - type: choice
+        prompt: "A vendor tells you 'Bente lang po.' She means..."
+        answer: It's only twenty
+        distractors: [It's exactly twenty, It's twenty each, Twenty is too much]
+        audio: bente_lang_po
+        audio_text: Bente lang po.
+        hint: '"lang" means "only / just".'
+      - type: translate
+        prompt_tl: Magkano ang isang kilo ng manok?
+        answer_en: How much is one kilo of chicken?
+        accept: ["How much is a kilo of chicken?"]
+        extra_words: [fish, cheap, two]
+        audio: magkano_ang_isang_kilo_ng_manok
+      - type: translate
+        prompt_en: The shoes at the store are expensive.
+        answer_tl: Mahal ang sapatos sa tindahan.
+        extra_words: [mura, palengke, damit]
+        audio: mahal_ang_sapatos_sa_tindahan
+  - id: bargain-3
+    title: Pwedeng tumawad?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tawad, en: discount }
+          - { tl: tumawad, en: to haggle }
+          - { tl: libre, en: free }
+          - { tl: suki, en: regular customer }
+      - type: choice
+        prompt: "'Tawad' means..."
+        answer: Discount
+        distractors: [Change, Price, Payment]
+        audio: tawad
+        audio_text: Tawad
+      - type: translate
+        prompt_tl: Pwede po bang tumawad?
+        answer_en: Can I haggle?
+        accept:
+          [
+            "May I haggle?",
+            "Can I ask for a discount?",
+            "May I ask for a discount?",
+            "Can we haggle?",
+          ]
+        extra_words: [pay, buy, free]
+        audio: pwede_po_bang_tumawad
+        hint: '"tumawad" is to haggle — to ask the price down.'
+      - type: choice
+        prompt: "'Pwede' means..."
+        answer: Can / possible
+        distractors: [Want, Must, Free]
+        audio: pwede
+        audio_text: Pwede
+      - type: translate
+        prompt_en: Is there a discount?
+        answer_tl: May tawad po ba?
+        accept: ["May tawad ba?"]
+        extra_words: [sukli, libre, mura]
+        audio: may_tawad_po_ba
+      - type: fill_blank
+        sentence: "___ po ba ito?"
+        translation: "Is this free?"
+        answer: Libre
+        options: [Libre, Mahal, Bayad]
+      - type: listen
+        audio: may_tawad_po_ba
+        answer_tl: May tawad po ba
+        extra_words: [sukli, libre]
+      - type: choice
+        prompt: "At the palengke, a 'suki' is..."
+        answer: A regular customer
+        distractors: [A first-time buyer, A discount, A market stall]
+        audio: suki
+        audio_text: Suki
+      - type: translate
+        prompt_tl: Mahal po ang isda. May tawad po ba?
+        answer_en: The fish is expensive. Is there a discount?
+        accept:
+          ["The fish is expensive, is there a discount?", "The fish is expensive. Is there a discount, please?"]
+        extra_words: [cheap, chicken, change]
+        audio: mahal_po_ang_isda_may_tawad_po_ba
+  - id: bargain-4
+    title: Bayad and sukli
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bayad, en: payment }
+          - { tl: sukli, en: change }
+          - { tl: gastos, en: expenses }
+          - { tl: pera, en: money }
+      - type: choice
+        prompt: "'Sukli' means..."
+        answer: Change (money returned)
+        distractors: [Payment, Coins, Discount]
+        audio: sukli
+        audio_text: Sukli
+      - type: translate
+        prompt_tl: Heto po ang bayad.
+        answer_en: Here is the payment.
+        accept: ["Here's the payment", "Here is my payment"]
+        extra_words: [change, money, price]
+        audio: heto_po_ang_bayad
+        hint: '"heto" — here it is / here you go.'
+      - type: translate
+        prompt_en: Where is my change?
+        answer_tl: Nasaan ang sukli ko?
+        extra_words: [bayad, pera, mo]
+        audio: nasaan_ang_sukli_ko
+      - type: fill_blank
+        sentence: "Wala po akong ___."
+        translation: "I don't have any coins."
+        answer: barya
+        options: [barya, sukli, pera]
+      - type: listen
+        audio: heto_po_ang_sukli
+        answer_tl: Heto po ang sukli
+        extra_words: [bayad, salamat]
+      - type: choice
+        prompt: "'Gastos' means..."
+        answer: Expenses
+        distractors: [Savings, Change, Payment]
+        audio: gastos
+        audio_text: Gastos
+      - type: choice
+        prompt: "The vendor hands you an extra piece at no cost. She says:"
+        answer: Libre po ito.
+        distractors: [Mahal po ito., Magkano po ito?, Bayad po ito.]
+        audio: libre_po_ito
+        audio_text: Libre po ito.
+      - type: translate
+        prompt_tl: Malaki ang gastos namin araw-araw.
+        answer_en: Our expenses are big every day.
+        accept: ["We spend a lot every day", "Our daily expenses are big", "Every day our expenses are big"]
+        extra_words: [small, money, week]
+        audio: malaki_ang_gastos_namin_araw_araw
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Singkwenta ang bayad ko at sampu ang sukli.
+        answer_en: My payment is fifty and the change is ten.
+        accept:
+          ["I paid fifty and the change is ten", "My payment is fifty and my change is ten"]
+        extra_words: [twenty, price, coins]
+        audio: singkwenta_ang_bayad_ko_at_sampu_ang_sukli

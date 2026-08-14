@@ -119,17 +119,16 @@ lessons:
         answer_tl: Pumunta ako sa palengke
         extra_words: [simbahan, siya]
       - type: translate
-        prompt_tl: Araw-araw pumupunta ako sa paaralan.
+        prompt_tl: Araw-araw akong pumupunta sa paaralan.
         answer_en: I go to school every day.
         accept: ["Every day I go to school"]
         grading: { hyphens: true }
         extra_words: [went, market, yesterday]
       - type: fill_blank
         sentence: "Pumunta siya sa bahay ___ mabilis."
-        translation: "She went home quickly."
+        translation: "She went to the house quickly."
         answer: nang
         options: [nang, ng, at]
-        grading: { ng_nang: true }
       - type: match
         pairs:
           - { tl: pumunta, en: went }

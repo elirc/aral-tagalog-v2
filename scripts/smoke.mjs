@@ -136,6 +136,48 @@ ok("mastering cleared the review queue", s2.json?.progress?.weakExerciseIds?.len
 ok("mistakesCleared counted", s2.json?.progress?.mistakesCleared === 1);
 ok("perfect practice not counted as perfect lesson", s2.json?.progress?.perfectLessons === 0);
 
+// Anti-farming: a completion of an ALREADY-completed lesson is a replay even
+// when the client omits practice:true. Without this, re-sending completions of
+// one easy lesson with fresh uuids farms unlimited XP — each event passes the
+// per-event clamp, and nothing capped the repetition.
+const beforeFarm = s2.json?.progress?.xpTotal ?? 0;
+const farm = await req("/sync", {
+  method: "POST",
+  token: accessToken,
+  body: {
+    events: [1, 2, 3].map(() => ({
+      id: uuid(),
+      type: "lesson_completed",
+      lessonId: lesson.id, // already completed above
+      occurredAt: Date.now(),
+      perfect: true,
+      xp: 100,
+      // practice deliberately omitted — this is the cheat
+    })),
+  },
+});
+ok("replays without the practice flag are clamped to practice xp",
+  farm.json?.progress?.xpTotal === beforeFarm + 3 * 5,
+  `xpTotal ${beforeFarm} -> ${farm.json?.progress?.xpTotal}, expected +15`);
+ok("farmed replays earn no perfect-lesson credit", farm.json?.progress?.perfectLessons === 0);
+
+// A malformed timestamp must be rejected on its own, not 500 the batch: the
+// whole point of per-event `rejected` is that one bad event can't wedge an
+// outbox that retries the same batch forever.
+const poison = await req("/sync", {
+  method: "POST",
+  token: accessToken,
+  body: {
+    events: [
+      { id: uuid(), type: "hearts_lost", occurredAt: 1.5, count: 1 },
+      { id: uuid(), type: "goal_set", occurredAt: Date.now(), goalXp: 40 },
+    ],
+  },
+});
+ok("fractional occurredAt is rejected, not a 500", poison.status === 200, `got ${poison.status}`);
+ok("the healthy event in a poisoned batch still lands", poison.json?.accepted === 1);
+ok("daily goal updated from the surviving event", poison.json?.progress?.dailyGoalXp === 40);
+
 // idempotency: replaying the same event id must not double-count
 const replayId = uuid();
 const mkReplay = () => ({
@@ -150,26 +192,28 @@ ok("duplicate event id counts once", r1.json?.progress?.xpTotal === r2.json?.pro
 const me = await req("/me", { token: accessToken });
 ok("/me matches sync-derived progress", me.json?.progress?.xpTotal === r2.json?.progress?.xpTotal);
 
-// --- refresh rotation + reuse detection (auth hits 3-5) --------------------
+// --- refresh rotation + benign-race handling (auth hits 3-5) ---------------
+// Reuse detection must not punish honest clients: two tabs, or a mobile
+// launch-sync racing its foreground-sync, legitimately present the same token
+// at once. Inside the grace window that is a 409, NOT a family revocation —
+// revoking there logs the user out of a working session.
 console.log("token rotation");
 const rot = await req("/auth/refresh", { method: "POST", body: { refreshToken } });
 ok("refresh rotates 200", rot.status === 200, `got ${rot.status}`);
 const rotated = rot.json ?? {};
 
-const reuse = await req("/auth/refresh", { method: "POST", body: { refreshToken } });
-ok("reusing rotated token 401", reuse.status === 401, `got ${reuse.status}`);
+const raced = await req("/auth/refresh", { method: "POST", body: { refreshToken } });
+ok("replaying the just-rotated token 409s (benign race)", raced.status === 409, `got ${raced.status}`);
 
-// reuse must revoke the WHOLE family: the freshly-minted token dies too
-const familyDead = await req("/auth/refresh", { method: "POST", body: { refreshToken: rotated.refreshToken } });
-ok("reuse revoked the whole family", familyDead.status === 401, `got ${familyDead.status}`);
+const stillAlive = await req("/auth/refresh", { method: "POST", body: { refreshToken: rotated.refreshToken } });
+ok("the race did NOT revoke the family", stillAlive.status === 200, `got ${stillAlive.status}`);
 
-// --- logout (auth hits 6-8) ------------------------------------------------
+// --- logout (auth hits 6-7) ------------------------------------------------
 console.log("logout");
-const relogin = await req("/auth/login", { method: "POST", body: { email, password } });
-ok("re-login 200", relogin.status === 200);
-const out = await req("/auth/logout", { method: "POST", body: { refreshToken: relogin.json?.refreshToken } });
+const live = stillAlive.json ?? {};
+const out = await req("/auth/logout", { method: "POST", body: { refreshToken: live.refreshToken } });
 ok("logout 204", out.status === 204, `got ${out.status}`);
-const afterLogout = await req("/auth/refresh", { method: "POST", body: { refreshToken: relogin.json?.refreshToken } });
+const afterLogout = await req("/auth/refresh", { method: "POST", body: { refreshToken: live.refreshToken } });
 ok("refresh after logout 401", afterLogout.status === 401, `got ${afterLogout.status}`);
 
 // ---------------------------------------------------------------------------

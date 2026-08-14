@@ -1,0 +1,253 @@
+id: city-province
+title: City & Province
+description: Compare city and province life — farms, carabaos, traffic, and going home.
+tip: >-
+  "Lungsod" and "siyudad" both mean city: "lungsod" is the native word you see
+  on signs (Lungsod ng Maynila), "siyudad" the Spanish loan you hear in
+  conversation. Say where you are from with "taga-" plus a place —
+  "taga-probinsya ako". And "umuwi" is not the general "to go" — that is
+  "pumunta"; "umuwi" means going back to your own home or hometown, which is why
+  millions of Filipinos "umuuwi sa
+  probinsya" every Christmas and Holy Week.
+lessons:
+  - id: cityprov-1
+    title: City and province
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lungsod, en: city }
+          - { tl: probinsya, en: province }
+          - { tl: bayan, en: town }
+          - { tl: bahay, en: house }
+      - type: choice
+        prompt: "'Probinsya' means..."
+        answer: Province
+        distractors: [City, Town, Street]
+        audio: probinsya
+        audio_text: Probinsya
+      - type: translate
+        prompt_tl: Malaki ang lungsod.
+        answer_en: The city is big.
+        accept: ["The city is large"]
+        extra_words: [small, province, house]
+        audio: malaki_ang_lungsod
+      - type: translate
+        prompt_en: The province is beautiful.
+        answer_tl: Maganda ang probinsya.
+        extra_words: [lungsod, malaki, bayan]
+        audio: maganda_ang_probinsya
+      - type: fill_blank
+        sentence: "Malaki ang ___."
+        translation: "The city is big."
+        answer: lungsod
+        options: [lungsod, probinsya, bahay]
+      - type: choice
+        prompt: "'Siyudad' means..."
+        answer: City
+        distractors: [Province, Town, Village]
+        audio: siyudad
+        audio_text: Siyudad
+      - type: listen
+        audio: pumunta_ako_sa_bayan
+        answer_tl: Pumunta ako sa bayan
+        extra_words: [lungsod, probinsya]
+      - type: translate
+        prompt_tl: Malayo ang probinsya sa lungsod.
+        answer_en: The province is far from the city.
+        accept: ["The province is far from the city", "The province is far away from the city"]
+        extra_words: [near, town, big]
+        audio: malayo_ang_probinsya_sa_lungsod
+      - type: translate
+        prompt_en: My family went to the city yesterday.
+        answer_tl: Pumunta ang pamilya ko sa lungsod kahapon.
+        accept: ["Pumunta sa lungsod ang pamilya ko kahapon"]
+        extra_words: [probinsya, bukas, maliit]
+        audio: pumunta_ang_pamilya_ko_sa_lungsod_kahapon
+        hint: 'The verb comes first: "Pumunta ang pamilya ko..." — then where and when.'
+  - id: cityprov-2
+    title: Life in the province
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bukid, en: farm }
+          - { tl: nayon, en: village }
+          - { tl: ilog, en: river }
+          - { tl: kalabaw, en: carabao }
+      - type: choice
+        prompt: "'Bukid' means..."
+        answer: Farm / field
+        distractors: [Mountain, River, Village]
+        audio: bukid
+        audio_text: Bukid
+      - type: translate
+        prompt_tl: May kalabaw sa bukid.
+        answer_en: There is a carabao in the field.
+        accept:
+          ["There's a carabao in the field", "There is a carabao on the farm", "There is a water buffalo in the field"]
+        extra_words: [house, river, dog]
+        audio: may_kalabaw_sa_bukid
+      - type: translate
+        prompt_en: The farmer is working on the farm.
+        answer_tl: Nagtatrabaho ang magsasaka sa bukid.
+        accept: ["Nagtatrabaho sa bukid ang magsasaka"]
+        extra_words: [nayon, ilog, kalabaw]
+        audio: nagtatrabaho_ang_magsasaka_sa_bukid
+      - type: fill_blank
+        sentence: "Maraming isda sa ___."
+        translation: "There are a lot of fish in the river."
+        answer: ilog
+        options: [ilog, bukid, nayon]
+      - type: choice
+        prompt: "'Sariwa' means..."
+        answer: Fresh
+        distractors: [Quiet, Cheap, Empty]
+        audio: sariwa
+        audio_text: Sariwa
+      - type: listen
+        audio: sariwa_ang_hangin_sa_probinsya
+        answer_tl: Sariwa ang hangin sa probinsya
+        extra_words: [bukid, mainit]
+      - type: translate
+        prompt_tl: Masaya ang buhay-probinsya.
+        answer_en: Province life is happy.
+        accept: ["Life in the province is happy", "The province life is happy"]
+        extra_words: [city, sad, farm]
+        audio: masaya_ang_buhay_probinsya
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: My grandfather has a small farm in the province.
+        answer_tl: May maliit na bukid ang lolo ko sa probinsya.
+        accept: ["May maliit na bukid sa probinsya ang lolo ko"]
+        extra_words: [malaki, nayon, kalabaw]
+        audio: may_maliit_na_bukid_ang_lolo_ko_sa_probinsya
+        hint: 'An adjective before a noun takes the linker: "maliit na bukid".'
+  - id: cityprov-3
+    title: Noisy and quiet
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maingay, en: noisy }
+          - { tl: tahimik, en: quiet }
+          - { tl: trapik, en: traffic }
+          - { tl: gusali, en: building }
+      - type: choice
+        prompt: "'Tahimik' means..."
+        answer: Quiet
+        distractors: [Noisy, Slow, Dark]
+        audio: tahimik
+        audio_text: Tahimik
+      - type: translate
+        prompt_tl: Maingay ang lungsod.
+        answer_en: The city is noisy.
+        accept: ["The city is loud"]
+        extra_words: [quiet, province, big]
+        audio: maingay_ang_lungsod
+      - type: translate
+        prompt_en: The province is quiet.
+        answer_tl: Tahimik ang probinsya.
+        extra_words: [maingay, lungsod, bayan]
+        audio: tahimik_ang_probinsya
+      - type: fill_blank
+        sentence: "Maraming ___ sa lungsod."
+        translation: "There are a lot of buildings in the city."
+        answer: gusali
+        options: [gusali, kalabaw, ilog]
+      - type: choice
+        prompt: "'Sasakyan' means..."
+        answer: Vehicle
+        distractors: [Building, Traffic, Road]
+        audio: sasakyan
+        audio_text: Sasakyan
+      - type: listen
+        audio: tahimik_ang_gabi_sa_nayon
+        answer_tl: Tahimik ang gabi sa nayon
+        extra_words: [maingay, lungsod]
+      - type: translate
+        prompt_tl: Maganda ang ilaw ng lungsod sa gabi.
+        answer_en: The city lights are beautiful at night.
+        accept: ["The lights of the city are beautiful at night", "The city lights are pretty at night"]
+        extra_words: [morning, quiet, river]
+        audio: maganda_ang_ilaw_ng_lungsod_sa_gabi
+      - type: choice
+        prompt: "You are stuck in heavy traffic. Say:"
+        answer: Sobrang trapik ngayon.
+        distractors: [Tahimik ngayon., Sariwa ang hangin., Maliit ang lungsod.]
+        audio: sobrang_trapik_ngayon
+        audio_text: Sobrang trapik ngayon.
+      - type: translate
+        prompt_en: I don't like the city because it's noisy.
+        answer_tl: Ayaw ko sa lungsod kasi maingay.
+        accept: ["Ayaw ko ng lungsod kasi maingay", "Ayaw ko sa lungsod dahil maingay"]
+        extra_words: [gusto, tahimik, probinsya]
+        audio: ayaw_ko_sa_lungsod_kasi_maingay
+        hint: '"kasi" and "dahil" both mean because; "kasi" is the everyday one.'
+  - id: cityprov-4
+    title: Going home
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Umuwi' means..."
+        answer: Went home
+        distractors: [Went to school, Came in, Woke up]
+        audio: umuwi
+        audio_text: Umuwi
+      - type: match
+        pairs:
+          - { tl: umuwi, en: went home }
+          - { tl: uuwi, en: will go home }
+          - { tl: lumaki, en: grew up }
+          - { tl: buhay, en: life }
+      - type: translate
+        prompt_tl: Umuwi siya sa probinsya kahapon.
+        answer_en: She went home to the province yesterday.
+        accept: ["He went home to the province yesterday"]
+        extra_words: [city, tomorrow, farm]
+        audio: umuwi_siya_sa_probinsya_kahapon
+      - type: fill_blank
+        sentence: "___ ako sa probinsya bukas."
+        translation: "I will go home to the province tomorrow."
+        answer: Uuwi
+        options: [Uuwi, Umuwi, Pumunta]
+        hint: '"umuwi" already happened; "uuwi" has not happened yet.'
+      - type: translate
+        prompt_en: I am from the province.
+        answer_tl: Taga-probinsya ako.
+        accept: ["Taga probinsya ako", "Taga-probinsya po ako"]
+        extra_words: [lungsod, bayan, siya]
+        audio: taga_probinsya_ako
+        grading: { hyphens: true }
+        hint: '"taga-" + a place = from that place.'
+      - type: listen
+        audio: taga_lungsod_ka_ba
+        answer_tl: Taga-lungsod ka ba
+        accept: ["Taga lungsod ka ba"]
+        extra_words: [probinsya, bayan]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Lumaki ako sa bukid' means..."
+        answer: I grew up on a farm
+        distractors: [I live on a farm, I work on a farm, I went to the farm]
+        audio: lumaki_ako_sa_bukid
+        audio_text: Lumaki ako sa bukid.
+      - type: translate
+        prompt_tl: Uuwi kami sa bayan sa Pasko.
+        answer_en: We will go home to the town at Christmas.
+        accept: ["We are going home to the town for Christmas", "We will go home to town for Christmas"]
+        extra_words: [yesterday, city, quiet]
+        audio: uuwi_kami_sa_bayan_sa_pasko
+      - type: fill_blank
+        sentence: "Masaya ang ___ sa probinsya."
+        translation: "Life in the province is happy."
+        answer: buhay
+        options: [buhay, bahay, bukid]
+        hint: '"buhay" is life, "bahay" is house — one vowel apart.'
+      - type: translate
+        prompt_en: I grew up in the province but I work in the city now.
+        answer_tl: Lumaki ako sa probinsya pero nagtatrabaho ako sa lungsod ngayon.
+        accept: ["Lumaki ako sa probinsya pero nagtatrabaho ako ngayon sa lungsod"]
+        extra_words: [bukid, tahimik, umuwi]
+        audio: lumaki_ako_sa_probinsya_pero_nagtatrabaho_ako_sa_lungsod_ngayon
+        hint: '"pero" joins two contrasting halves — it means but.'

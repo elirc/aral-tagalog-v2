@@ -34,7 +34,7 @@ lessons:
         prompt_tl: Dalawang itlog.
         answer_en: Two eggs.
         extra_words: [three, rice, water]
-        hint: Numbers take a "-ng" linker before nouns.
+        hint: 'Numbers link to nouns: "-ng" after a vowel (dalawang itlog), "na" after a consonant (apat na itlog).'
       - type: choice
         prompt: "How many is 'apat'?"
         answer: "4"
@@ -130,7 +130,7 @@ lessons:
         distractors: [Day and night, Sun and moon, Morning and evening]
         audio: araw
       - type: translate
-        prompt_tl: Araw-araw umiinom ako ng kape.
+        prompt_tl: Araw-araw akong umiinom ng kape.
         answer_en: I drink coffee every day.
         accept: ["Every day I drink coffee"]
         extra_words: [ate, yesterday, water]
@@ -138,4 +138,4 @@ lessons:
         # own ref, not the bare "araw_araw" vocab word: the first text registered
         # for a ref wins, so sharing it made the phrasebook speak this whole
         # sentence for the entry "araw-araw"
-        audio: araw_araw_umiinom_ako_ng_kape
+        audio: araw_araw_akong_umiinom_ng_kape

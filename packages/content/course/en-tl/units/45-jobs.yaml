@@ -1,0 +1,256 @@
+id: jobs
+title: Jobs & Professions
+description: Name what people do for a living — teacher, doctor, driver, farmer — and ask about someone's work.
+tip: >-
+  Tagalog needs no verb "to be": the job goes first and the person second —
+  "Guro ako." (I am a teacher), "Pulis ang tatay ko." (My dad is a police
+  officer). Many job words are built from the thing worked with: isda (fish) →
+  mangingisda, saka (farming) → magsasaka. Ask "Ano ang trabaho mo?" for the
+  job and "Saan ka nagtatrabaho?" for the place. About two million Filipinos
+  work abroad as OFWs — Overseas Filipino Workers — so "Nagtatrabaho siya sa
+  ibang bansa" is one of the most common answers you will hear.
+lessons:
+  - id: jobs-1
+    title: Common jobs
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: guro, en: teacher }
+          - { tl: doktor, en: doctor }
+          - { tl: nars, en: nurse }
+          - { tl: pulis, en: police officer }
+      - type: choice
+        prompt: "'Guro' means..."
+        answer: Teacher
+        distractors: [Student, Nurse, Driver]
+        audio: guro
+        audio_text: Guro
+      - type: translate
+        prompt_tl: Guro ako.
+        answer_en: I am a teacher.
+        accept: ["I'm a teacher"]
+        extra_words: [nurse, doctor, student]
+        audio: guro_ako
+        hint: "There is no word for \"am\" — the job simply comes before the pronoun."
+      - type: translate
+        prompt_en: He is a doctor.
+        answer_tl: Doktor siya.
+        extra_words: [nars, ako, guro]
+        audio: doktor_siya
+      - type: fill_blank
+        sentence: "___ siya sa ospital."
+        translation: "She is a nurse at the hospital."
+        answer: Nars
+        options: [Nars, Guro, Pulis]
+      - type: listen
+        audio: pulis_ang_tatay_ko
+        answer_tl: Pulis ang tatay ko
+        extra_words: [guro, nanay]
+      - type: choice
+        prompt: "'Ano ang trabaho mo?' means..."
+        answer: What is your job?
+        distractors: ["Where do you work?", "Do you have a job?", "How is work?"]
+        audio: ano_ang_trabaho_mo
+        audio_text: Ano ang trabaho mo?
+      - type: translate
+        prompt_tl: Doktor ang kapatid ko.
+        answer_en: My sibling is a doctor.
+        accept: ["My brother is a doctor", "My sister is a doctor"]
+        extra_words: [teacher, friend, nurse]
+        audio: doktor_ang_kapatid_ko
+      - type: translate
+        prompt_en: My mom is a teacher and my dad is a police officer.
+        answer_tl: Guro ang nanay ko at pulis ang tatay ko.
+        extra_words: [doktor, nars, siya]
+        audio: guro_ang_nanay_ko_at_pulis_ang_tatay_ko
+  - id: jobs-2
+    title: More kinds of work
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: inhinyero, en: engineer }
+          - { tl: abogado, en: lawyer }
+          - { tl: drayber, en: driver }
+          - { tl: sundalo, en: soldier }
+      - type: choice
+        prompt: "'Abogado' means..."
+        answer: Lawyer
+        distractors: [Engineer, Soldier, Farmer]
+        audio: abogado
+        audio_text: Abogado
+      - type: choice
+        prompt: "'Mangingisda' means..."
+        answer: Fisherman
+        distractors: [Farmer, Carpenter, Cook]
+        audio: mangingisda
+        audio_text: Mangingisda
+      - type: translate
+        prompt_tl: Magsasaka ang lolo ko.
+        answer_en: My grandfather is a farmer.
+        accept: ["My grandpa is a farmer"]
+        extra_words: [fisherman, uncle, soldier]
+        audio: magsasaka_ang_lolo_ko
+      - type: fill_blank
+        sentence: "___ ang tatay ni Juan."
+        translation: "Juan's dad is a fisherman."
+        answer: Mangingisda
+        options: [Mangingisda, Magsasaka, Karpintero]
+      - type: listen
+        audio: drayber_ng_jeepney_ang_kuya_ko
+        answer_tl: Drayber ng jeepney ang kuya ko
+        extra_words: [sundalo, abogado]
+      - type: translate
+        prompt_en: He is an engineer.
+        answer_tl: Inhinyero siya.
+        extra_words: [abogado, ako, sundalo]
+        audio: inhinyero_siya
+      - type: choice
+        prompt: "'Karpintero' means..."
+        answer: Carpenter
+        distractors: [Firefighter, Farmer, Nurse]
+        audio: karpintero
+        audio_text: Karpintero
+      - type: match
+        pairs:
+          - { tl: kusinero, en: cook }
+          - { tl: bumbero, en: firefighter }
+          - { tl: karpintero, en: carpenter }
+          - { tl: magsasaka, en: farmer }
+      - type: translate
+        prompt_en: The farmer works every day.
+        answer_tl: Nagtatrabaho ang magsasaka araw-araw.
+        accept: ["Nagtatrabaho araw-araw ang magsasaka", "Araw-araw nagtatrabaho ang magsasaka"]
+        extra_words: [bukas, kahapon, mangingisda]
+        audio: nagtatrabaho_ang_magsasaka_araw_araw
+        grading: { hyphens: true }
+  - id: jobs-3
+    title: Ano ang trabaho mo?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Saan ka nagtatrabaho?' means..."
+        answer: Where do you work?
+        distractors: ["What is your job?", "When do you work?", "Do you like your job?"]
+        audio: saan_ka_nagtatrabaho
+        audio_text: Saan ka nagtatrabaho?
+      - type: translate
+        prompt_tl: Nagtatrabaho ako sa opisina.
+        answer_en: I work in an office.
+        accept: ["I work at an office", "I am working in an office"]
+        extra_words: [school, market, hospital]
+        audio: nagtatrabaho_ako_sa_opisina
+      - type: translate
+        prompt_en: Where does he work?
+        answer_tl: Saan siya nagtatrabaho?
+        extra_words: [ano, ako, opisina]
+        audio: saan_siya_nagtatrabaho
+      - type: match
+        pairs:
+          - { tl: trabaho, en: work }
+          - { tl: opisina, en: office }
+          - { tl: kompanya, en: company }
+          - { tl: empleyado, en: employee }
+      - type: fill_blank
+        sentence: "___ ang trabaho mo?"
+        translation: "What is your job?"
+        answer: Ano
+        options: [Ano, Saan, Bakit]
+      - type: listen
+        audio: nasa_opisina_ang_amo_ko
+        answer_tl: Nasa opisina ang amo ko
+        extra_words: [kompanya, empleyado]
+      - type: choice
+        prompt: "'Amo' means..."
+        answer: Boss
+        distractors: [Employee, Salary, Office]
+        audio: amo
+        audio_text: Amo
+      - type: translate
+        prompt_tl: Empleyado siya sa isang kompanya.
+        answer_en: He is an employee at a company.
+        accept:
+          - "She is an employee at a company"
+          - "He is an employee of a company"
+          - "She is an employee of a company"
+        extra_words: [boss, school, office]
+        audio: empleyado_siya_sa_isang_kompanya
+      - type: translate
+        prompt_en: I want to work in a big company.
+        answer_tl: Gusto kong magtrabaho sa malaking kompanya.
+        extra_words: [opisina, nagtatrabaho, siya]
+        audio: gusto_kong_magtrabaho_sa_malaking_kompanya
+        hint: '"gusto ko" + a verb takes the -ng linker → "gusto kong magtrabaho".'
+  - id: jobs-4
+    title: Work life and OFWs
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sahod, en: salary }
+          - { tl: manggagawa, en: worker }
+          - { tl: bansa, en: country }
+          - { tl: propesyon, en: profession }
+      - type: choice
+        prompt: "'Balikbayan' means..."
+        answer: A Filipino coming home from abroad
+        distractors:
+          - A foreign tourist
+          - A brand-new employee
+          - A town festival
+        audio: balikbayan
+        audio_text: Balikbayan
+      - type: translate
+        prompt_tl: Nagtatrabaho ang ate ko sa ibang bansa.
+        answer_en: My older sister works in another country.
+        accept:
+          - "My older sister works abroad"
+          - "My sister works in another country"
+          - "My older sister is working in another country"
+        extra_words: [brother, market, school]
+        audio: nagtatrabaho_ang_ate_ko_sa_ibang_bansa
+      - type: fill_blank
+        sentence: "Malaki ang ___ ng doktor."
+        translation: "The doctor's salary is big."
+        answer: sahod
+        options: [sahod, sakit, sapatos]
+      - type: listen
+        audio: tindera_ang_tita_ko_sa_palengke
+        answer_tl: Tindera ang tita ko sa palengke
+        extra_words: [manggagawa, tindahan]
+      - type: choice
+        prompt: "In the Philippines, OFW stands for..."
+        answer: Overseas Filipino Worker
+        distractors:
+          - Office Filipino Worker
+          - Official Family Welfare
+          - Overseas Filipino Weekend
+      - type: translate
+        prompt_en: My cousin is a soldier.
+        answer_tl: Sundalo ang pinsan ko.
+        extra_words: [pulis, bumbero, siya]
+        audio: sundalo_ang_pinsan_ko
+      - type: translate
+        prompt_tl: Ano ang propesyon ng nanay mo?
+        answer_en: What is your mom's profession?
+        accept:
+          - "What is your mother's profession?"
+          - "What is your mom's job?"
+          - "What is your mother's job?"
+        extra_words: [where, dad, salary]
+        audio: ano_ang_propesyon_ng_nanay_mo
+      - type: choice
+        prompt: "A neighbor asks what you do for a living. Say:"
+        answer: Guro ako sa paaralan.
+        distractors:
+          - Ano ang trabaho mo?
+          - Nasaan ang paaralan?
+          - Gusto kong kumanta.
+        audio: guro_ako_sa_paaralan
+        audio_text: Guro ako sa paaralan.
+      - type: translate
+        prompt_en: My older brother works in another country and my mom is a teacher.
+        answer_tl: Nagtatrabaho ang kuya ko sa ibang bansa at guro ang nanay ko.
+        extra_words: [doktor, sahod, sila]
+        audio: nagtatrabaho_ang_kuya_ko_sa_ibang_bansa_at_guro_ang_nanay_ko

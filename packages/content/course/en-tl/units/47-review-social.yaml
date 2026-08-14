@@ -1,0 +1,253 @@
+id: review-social
+title: "Review: People & Social Life"
+description: Talk about the people around you — what your friends are like, what they do for work, and who they love.
+tip: >-
+  "Si" marks one person, "sina" marks two or more: "Si Ana" but "Sina Maria at
+  Ana." The possessive pair works the same way — "ang nobyo ni Maria" (Maria's
+  boyfriend), "ang bahay nina Juan at Ana" (Juan and Ana's house). And when a
+  Filipino says "barkada," they mean their tight-knit group of friends: the
+  ones you grew up with, eat with, and sing videoke with.
+lessons:
+  - id: revsocial-1
+    title: My barkada
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaibigan, en: friend }
+          - { tl: mabait, en: kind }
+          - { tl: masipag, en: hardworking }
+          - { tl: tamad, en: lazy }
+      - type: choice
+        prompt: "'Barkada' means..."
+        answer: A close group of friends
+        distractors: [Your one best friend, A family reunion, A classmate]
+        audio: barkada
+        audio_text: Barkada
+      - type: translate
+        prompt_tl: Mabait ang mga kaibigan ko.
+        answer_en: My friends are kind.
+        accept: ["My friends are nice"]
+        extra_words: [lazy, teacher, tall]
+        audio: mabait_ang_mga_kaibigan_ko
+      - type: translate
+        prompt_en: My friend is smart.
+        answer_tl: Matalino ang kaibigan ko.
+        accept: ["Matalino ang aking kaibigan"]
+        extra_words: [tamad, guro, siya]
+        audio: matalino_ang_kaibigan_ko
+      - type: fill_blank
+        sentence: "___ ang barkada ko kasi nakakatawa sila."
+        translation: "My barkada is fun because they are funny."
+        answer: Masaya
+        options: [Masaya, Malungkot, Tamad]
+        accept: ["masaya"]
+      - type: listen
+        audio: makulit_ang_barkada_ko
+        answer_tl: Makulit ang barkada ko
+        extra_words: [mabait, kaibigan]
+      - type: choice
+        prompt: "'Masipag' means..."
+        answer: Hardworking
+        distractors: [Lazy, Kind, Funny]
+        audio: masipag
+        audio_text: Masipag
+      - type: translate
+        prompt_en: My friends are happy and funny.
+        answer_tl: Masaya at nakakatawa ang mga kaibigan ko.
+        accept: ["Nakakatawa at masaya ang mga kaibigan ko"]
+        extra_words: [malungkot, tamad, barkada]
+        audio: masaya_at_nakakatawa_ang_mga_kaibigan_ko
+      - type: translate
+        prompt_tl: Kumakanta ang barkada ko sa videoke araw-araw.
+        answer_en: My friends sing at the videoke every day.
+        accept:
+          - "My barkada sings at the videoke every day"
+          - "My friends are singing at the videoke every day"
+          - "Every day my friends sing at the videoke"
+        extra_words: [dance, market, tomorrow]
+        audio: kumakanta_ang_barkada_ko_sa_videoke_araw_araw
+        grading: { hyphens: true }
+  - id: revsocial-2
+    title: What my friends do
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: guro, en: teacher }
+          - { tl: nars, en: nurse }
+          - { tl: abogado, en: lawyer }
+          - { tl: inhinyero, en: engineer }
+      - type: choice
+        prompt: "'Ano ang trabaho ng kaibigan mo?' asks..."
+        answer: What your friend's job is
+        distractors:
+          - Where your friend lives
+          - What your friend's name is
+          - How old your friend is
+        audio: ano_ang_trabaho_ng_kaibigan_mo
+        audio_text: Ano ang trabaho ng kaibigan mo?
+      - type: translate
+        prompt_tl: Nars ang kaibigan kong si Maria.
+        answer_en: My friend Maria is a nurse.
+        accept: ["Maria my friend is a nurse"]
+        extra_words: [teacher, sister, lawyer]
+        audio: nars_ang_kaibigan_kong_si_maria
+        hint: '"kaibigan ko" ends in a vowel, so the name links with -ng: "kaibigan kong si Maria".'
+      - type: translate
+        prompt_en: My friend is a teacher at the school.
+        answer_tl: Guro ang kaibigan ko sa paaralan.
+        accept: ["Guro sa paaralan ang kaibigan ko"]
+        extra_words: [nars, ospital, doktor]
+        audio: guro_ang_kaibigan_ko_sa_paaralan
+      - type: fill_blank
+        sentence: "___ ang kaibigan ko sa opisina."
+        translation: "My friend works at the office."
+        answer: Nagtatrabaho
+        options: [Nagtatrabaho, Nag-aaral, Naglalaro]
+      - type: listen
+        audio: abogado_ang_kaibigan_ko
+        answer_tl: Abogado ang kaibigan ko
+        extra_words: [inhinyero, guro]
+      - type: choice
+        prompt: "'Masipag na drayber' means..."
+        answer: A hardworking driver
+        distractors: [A fast driver, A lazy driver, A kind teacher]
+        audio: masipag_na_drayber
+        audio_text: Masipag na drayber
+      - type: translate
+        prompt_tl: Mabait ang doktor sa ospital.
+        answer_en: The doctor at the hospital is kind.
+        accept:
+          - "The doctor in the hospital is kind"
+          - "The doctor at the hospital is nice"
+          - "The doctor in the hospital is nice"
+        extra_words: [nurse, lazy, school]
+        audio: mabait_ang_doktor_sa_ospital
+      - type: translate
+        prompt_en: My friend is a vendor at the market and she is hardworking.
+        answer_tl: Tindera ang kaibigan ko sa palengke at masipag siya.
+        accept: ["Tindera sa palengke ang kaibigan ko at masipag siya"]
+        extra_words: [tamad, tindahan, magsasaka]
+        audio: tindera_ang_kaibigan_ko_sa_palengke_at_masipag_siya
+  - id: revsocial-3
+    title: Love and weddings
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nobyo, en: boyfriend }
+          - { tl: nobya, en: girlfriend }
+          - { tl: pag-ibig, en: love }
+          - { tl: puso, en: heart }
+      - type: choice
+        prompt: "'Mahal kita' means..."
+        answer: I love you
+        distractors: [I miss you, You are expensive, I like you]
+        audio: mahal_kita
+        audio_text: Mahal kita.
+      - type: translate
+        prompt_tl: Mahal ko ang pamilya ko.
+        answer_en: I love my family.
+        accept: ["I love my family."]
+        extra_words: [friend, house, heart]
+        audio: mahal_ko_ang_pamilya_ko
+      - type: translate
+        prompt_en: She is my girlfriend.
+        answer_tl: Nobya ko siya.
+        accept: ["Siya ang nobya ko"]
+        extra_words: [nobyo, kaibigan, ako]
+        audio: nobya_ko_siya
+      - type: fill_blank
+        sentence: "Mabait ang ___ ni Ana."
+        translation: "Ana's boyfriend is kind."
+        answer: nobyo
+        options: [nobyo, nobya, puso]
+      - type: choice
+        prompt: "'Kasal' means..."
+        answer: Wedding
+        distractors: [Birthday, Fiesta, Gift]
+        audio: kasal
+        audio_text: Kasal
+      - type: listen
+        audio: sabik_ako_sa_kasal
+        answer_tl: Sabik ako sa kasal
+        extra_words: [masaya, puso]
+      - type: translate
+        prompt_tl: Masaya ang mga bisita sa kasal.
+        answer_en: The guests at the wedding are happy.
+        accept:
+          - "The guests are happy at the wedding"
+          - "The visitors at the wedding are happy"
+          - "The visitors are happy at the wedding"
+        extra_words: [sad, gift, friend]
+        audio: masaya_ang_mga_bisita_sa_kasal
+      - type: translate
+        prompt_en: My boyfriend is a lawyer and he is hardworking.
+        answer_tl: Abogado ang nobyo ko at masipag siya.
+        accept: ["Abogado ang nobyo ko at siya ay masipag"]
+        extra_words: [nobya, tamad, nars]
+        audio: abogado_ang_nobyo_ko_at_masipag_siya
+  - id: revsocial-4
+    title: The people in my life
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Matulungin' means..."
+        answer: Helpful
+        distractors: [Hardworking, Lazy, Quiet]
+        audio: matulungin
+        audio_text: Matulungin
+      - type: translate
+        prompt_tl: Matulungin ang kaibigan kong si Ana.
+        answer_en: My friend Ana is helpful.
+        accept: ["Ana my friend is helpful"]
+        extra_words: [lazy, sister, smart]
+        audio: matulungin_ang_kaibigan_kong_si_ana
+      - type: fill_blank
+        sentence: "___ Maria at Ana ang mga kaibigan ko."
+        translation: "Maria and Ana are my friends."
+        answer: Sina
+        options: [Sina, Si, Ang]
+        hint: '"si" marks one person; "sina" marks two or more.'
+      - type: translate
+        prompt_en: My friends are a nurse and a teacher.
+        answer_tl: Nars at guro ang mga kaibigan ko.
+        accept: ["Guro at nars ang mga kaibigan ko"]
+        extra_words: [doktor, pulis, siya]
+        audio: nars_at_guro_ang_mga_kaibigan_ko
+      - type: match
+        pairs:
+          - { tl: barkada, en: group of friends }
+          - { tl: matulungin, en: helpful }
+          - { tl: nobya, en: girlfriend }
+          - { tl: sahod, en: salary }
+      - type: listen
+        audio: mas_masipag_si_ana_kaysa_kay_juan
+        answer_tl: Mas masipag si Ana kaysa kay Juan
+        extra_words: [matalino, tamad]
+      - type: choice
+        prompt: "'Sina Juan at Ana ay masipag na magsasaka' means..."
+        answer: Juan and Ana are hardworking farmers
+        distractors:
+          - Juan and Ana are lazy farmers
+          - Only Juan is a hardworking farmer
+          - Juan and Ana are hardworking teachers
+        audio: sina_juan_at_ana_ay_masipag_na_magsasaka
+        audio_text: Sina Juan at Ana ay masipag na magsasaka.
+      - type: translate
+        prompt_tl: Matangkad ang nobyo ni Maria at doktor siya sa ospital.
+        answer_en: Maria's boyfriend is tall and he is a doctor at the hospital.
+        accept:
+          - "Maria's boyfriend is tall and is a doctor at the hospital"
+          - "Maria's boyfriend is tall and he is a doctor in the hospital"
+          - "Maria's boyfriend is tall and is a doctor in the hospital"
+        extra_words: [short, nurse, school]
+        audio: matangkad_ang_nobyo_ni_maria_at_doktor_siya_sa_ospital
+      - type: translate
+        prompt_en: My barkada is helpful and we sing at the videoke every day.
+        answer_tl: Matulungin ang barkada ko at kumakanta kami sa videoke araw-araw.
+        accept: ["Matulungin ang mga kaibigan ko at kumakanta kami sa videoke araw-araw"]
+        extra_words: [tamad, sumasayaw, bukas]
+        audio: matulungin_ang_barkada_ko_at_kumakanta_kami_sa_videoke_araw_araw
+        grading: { hyphens: true }

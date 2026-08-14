@@ -1,0 +1,229 @@
+id: fruits-vegetables
+title: Fruits & Vegetables
+description: Name the fruits and vegetables on a Filipino market table, and say whether they are ripe, fresh, or sweet.
+tip: >-
+  An adjective can go before the noun with a linker: "hinog na mangga" (ripe
+  mango). The linker is "na" after most consonants and "-ng" glued on after a
+  vowel — "sariwang gulay" (fresh vegetables); a word ending in "n" just adds
+  "-g" instead ("kanin" → "kaning mainit"). At the palengke you buy by the
+  kilo, and prices are per kilo unless the vendor says otherwise.
+lessons:
+  - id: fruits-1
+    title: Mga prutas
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: prutas, en: fruit }
+          - { tl: mangga, en: mango }
+          - { tl: saging, en: banana }
+          - { tl: pinya, en: pineapple }
+      - type: choice
+        prompt: "'Mangga' means..."
+        answer: Mango
+        distractors: [Banana, Pineapple, Coconut]
+        audio: mangga
+        audio_text: Mangga
+      - type: translate
+        prompt_tl: Masarap ang mangga.
+        answer_en: The mango is delicious.
+        accept: ["Mangoes are delicious", "The mangoes are delicious"]
+        extra_words: [banana, market, expensive]
+        audio: masarap_ang_mangga
+      - type: translate
+        prompt_en: I am buying bananas.
+        answer_tl: Bumibili ako ng saging.
+        extra_words: [mangga, pinya, siya]
+        audio: bumibili_ako_ng_saging
+      - type: fill_blank
+        sentence: "Bumili ako ng ___ sa palengke."
+        translation: "I bought a pineapple at the market."
+        answer: pinya
+        options: [pinya, gulay, tubig]
+      - type: listen
+        audio: masarap_ang_pinya
+        answer_tl: Masarap ang pinya
+        extra_words: [mangga, saging]
+      - type: choice
+        prompt: "'Buko' means..."
+        answer: Young coconut
+        distractors: [Ripe mango, Banana, Pineapple]
+        audio: buko
+        audio_text: Buko
+      - type: choice
+        prompt: "Which fruit is the small green citrus Filipinos squeeze over food and into drinks?"
+        answer: Kalamansi
+        distractors: [Saging, Pinya, Mangga]
+        audio: kalamansi
+        audio_text: Kalamansi
+      - type: translate
+        prompt_en: How much is the mango at the market?
+        answer_tl: Magkano ang mangga sa palengke?
+        extra_words: [saging, bumili, pera]
+        audio: magkano_ang_mangga_sa_palengke
+        hint: '"magkano" asks the price; "sa palengke" says where.'
+  - id: fruits-2
+    title: Mga gulay
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gulay, en: vegetable }
+          - { tl: kamatis, en: tomato }
+          - { tl: sibuyas, en: onion }
+          - { tl: bawang, en: garlic }
+      - type: choice
+        prompt: "'Gulay' means..."
+        answer: Vegetable
+        distractors: [Fruit, Rice, Fish]
+        audio: gulay
+        audio_text: Gulay
+      - type: translate
+        prompt_tl: Nagluluto siya ng gulay.
+        answer_en: She is cooking vegetables.
+        accept:
+          ["He is cooking vegetables", "She cooks vegetables", "He cooks vegetables"]
+        extra_words: [buying, fish, market]
+        audio: nagluluto_siya_ng_gulay
+      - type: translate
+        prompt_en: I like eggplant.
+        answer_tl: Gusto ko ng talong.
+        accept: ["Gusto ko ang talong"]
+        extra_words: [kamatis, ampalaya, hindi]
+        audio: gusto_ko_ng_talong
+      - type: fill_blank
+        sentence: "May ___ at bawang sa kusina."
+        translation: "There are onions and garlic in the kitchen."
+        answer: sibuyas
+        options: [sibuyas, saging, kamatis]
+      - type: listen
+        audio: bumili_ako_ng_kamatis
+        answer_tl: Bumili ako ng kamatis
+        extra_words: [sibuyas, gulay]
+      - type: choice
+        prompt: "'Ampalaya' means..."
+        answer: Bitter gourd
+        distractors: [Eggplant, Tomato, Garlic]
+        audio: ampalaya
+        audio_text: Ampalaya
+      - type: translate
+        prompt_tl: Ayaw niya ng ampalaya.
+        answer_en: She doesn't like bitter gourd.
+        accept:
+          ["He doesn't like bitter gourd", "She does not like bitter gourd", "He does not like bitter gourd"]
+        extra_words: [tomato, garlic, wants]
+        audio: ayaw_niya_ng_ampalaya
+      - type: translate
+        prompt_en: The vegetables at the market are cheap.
+        answer_tl: Mura ang gulay sa palengke.
+        extra_words: [mahal, prutas, bumili]
+        audio: mura_ang_gulay_sa_palengke
+  - id: fruits-3
+    title: Hinog, hilaw, sariwa
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: hinog, en: ripe }
+          - { tl: hilaw, en: unripe }
+          - { tl: sariwa, en: fresh }
+          - { tl: matamis, en: sweet }
+      - type: choice
+        prompt: "'Hinog' means..."
+        answer: Ripe
+        distractors: [Unripe, Fresh, Sour]
+        audio: hinog
+        audio_text: Hinog
+      - type: translate
+        prompt_tl: Hinog na ang mangga.
+        answer_en: The mango is ripe now.
+        accept: ["The mango is already ripe", "The mango is now ripe", "The mangoes are ripe now"]
+        extra_words: [unripe, fresh, banana]
+        audio: hinog_na_ang_mangga
+      - type: translate
+        prompt_en: The banana is still unripe.
+        answer_tl: Hilaw pa ang saging.
+        extra_words: [hinog, sariwa, mura]
+        audio: hilaw_pa_ang_saging
+        hint: '"pa" means still; "na" means already.'
+      - type: fill_blank
+        sentence: "___ ang gulay sa palengke."
+        translation: "The vegetables at the market are fresh."
+        answer: Sariwa
+        options: [Sariwa, Hilaw, Mahal]
+      - type: listen
+        audio: matamis_ang_pinya
+        answer_tl: Matamis ang pinya
+        extra_words: [maasim, saging]
+      - type: choice
+        prompt: "'Maasim' means..."
+        answer: Sour
+        distractors: [Sweet, Fresh, Ripe]
+        audio: maasim
+        audio_text: Maasim
+      - type: translate
+        prompt_tl: Matamis at hinog ang saging.
+        answer_en: The banana is sweet and ripe.
+        accept: ["The bananas are sweet and ripe"]
+        extra_words: [sour, unripe, fresh]
+        audio: matamis_at_hinog_ang_saging
+      - type: translate
+        prompt_en: I want a ripe mango.
+        answer_tl: Gusto ko ng hinog na mangga.
+        extra_words: [hilaw, saging, sariwa]
+        audio: gusto_ko_ng_hinog_na_mangga
+        hint: 'Adjective before noun needs a linker: "hinog na mangga".'
+  - id: fruits-4
+    title: Sa palengke
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: palengke, en: market }
+          - { tl: magkano, en: how much }
+          - { tl: kilo, en: kilogram }
+          - { tl: tindera, en: vendor }
+      - type: choice
+        prompt: "You want to ask the price of the mangoes. Say:"
+        answer: Magkano ang mangga?
+        distractors: [Masarap ang mangga., Bumili ako ng mangga., Hinog na ang mangga.]
+        audio: magkano_ang_mangga
+        audio_text: Magkano ang mangga?
+      - type: translate
+        prompt_tl: Magkano ang isang kilo ng kamatis?
+        answer_en: How much is one kilo of tomatoes?
+        accept: ["How much is a kilo of tomatoes?", "How much for a kilo of tomatoes?"]
+        extra_words: [where, onion, fresh]
+        audio: magkano_ang_isang_kilo_ng_kamatis
+      - type: translate
+        prompt_en: I bought two kilos of bananas.
+        answer_tl: Bumili ako ng dalawang kilo ng saging.
+        extra_words: [pinya, mura, siya]
+        audio: bumili_ako_ng_dalawang_kilo_ng_saging
+      - type: fill_blank
+        sentence: "___ ang kilo ng mangga?"
+        translation: "How much is a kilo of mangoes?"
+        answer: Magkano
+        options: [Magkano, Ilan, Saan]
+      - type: listen
+        audio: sariwa_ang_isda_at_gulay
+        answer_tl: Sariwa ang isda at gulay
+        extra_words: [hilaw, palengke]
+      - type: choice
+        prompt: "Which one is a vegetable?"
+        answer: Talong
+        distractors: [Mangga, Pinya, Buko]
+        audio: talong
+        audio_text: Talong
+      - type: translate
+        prompt_en: Are the vegetables fresh?
+        answer_tl: Sariwa ba ang gulay?
+        extra_words: [hinog, prutas, mahal]
+        audio: sariwa_ba_ang_gulay
+      - type: translate
+        prompt_tl: Araw-araw akong bumibili ng sariwang gulay sa palengke.
+        answer_en: I buy fresh vegetables at the market every day.
+        accept: ["Every day I buy fresh vegetables at the market", "I buy fresh vegetables every day at the market"]
+        extra_words: [fruit, expensive, tomorrow]
+        audio: araw_araw_akong_bumibili_ng_sariwang_gulay_sa_palengke
+        grading: { hyphens: true }

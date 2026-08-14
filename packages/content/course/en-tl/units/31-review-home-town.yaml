@@ -1,0 +1,215 @@
+id: review-home-town
+title: "Review: Home & Town"
+description: Put it all together — find your way around town, run errands, and head back home.
+tip: >-
+  Refresher: nasaan asks where something IS and the answer starts with nasa
+  ("Nasaan ang banyo?" — "Nasa loob."); saan asks where an action happens and
+  pairs with sa ("Saan ka pupunta?" — "Sa palengke."). Mix them up and
+  Filipinos will still understand you — but now you know better.
+lessons:
+  - id: revhome-1
+    title: Back at the house
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kusina, en: kitchen }
+          - { tl: banyo, en: bathroom }
+          - { tl: kwarto, en: bedroom }
+          - { tl: hardin, en: garden }
+      - type: choice
+        prompt: "'Nasaan ang banyo?' means..."
+        answer: Where is the bathroom?
+        distractors: [The bathroom is small, Is the bathroom near?, I am in the bathroom]
+        audio: nasaan_ang_banyo
+        audio_text: Nasaan ang banyo?
+      - type: translate
+        prompt_tl: Nasa kusina ang ref.
+        answer_en: The refrigerator is in the kitchen.
+        accept: ["The fridge is in the kitchen"]
+        extra_words: [bedroom, table, milk]
+        audio: nasa_kusina_ang_ref
+      - type: translate
+        prompt_en: Mom is cleaning the bedroom.
+        answer_tl: Naglilinis si Nanay ng kwarto.
+        accept: ["Naglilinis ng kwarto si Nanay"]
+        extra_words: [nagwawalis, banyo, ako]
+        audio: naglilinis_si_nanay_ng_kwarto
+      - type: fill_blank
+        sentence: "Nagwawalis ako sa ___."
+        translation: "I am sweeping in the garden."
+        answer: hardin
+        options: [hardin, kama, ilaw]
+      - type: listen
+        audio: nasa_sala_si_tatay
+        answer_tl: Nasa sala si Tatay
+        extra_words: [kusina, nanay]
+      - type: choice
+        prompt: "'Naghuhugas' means..."
+        answer: Washing
+        distractors: [Sweeping, Cleaning, Cooking]
+        audio: naghuhugas
+        audio_text: Naghuhugas
+      - type: translate
+        prompt_tl: Nagluluto si Lola ng manok sa kusina.
+        answer_en: Grandma is cooking chicken in the kitchen.
+        accept: ["Grandmother is cooking chicken in the kitchen"]
+        extra_words: [fish, bathroom, washing]
+        audio: nagluluto_si_lola_ng_manok_sa_kusina
+  - id: revhome-2
+    title: Places in town
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: palengke, en: market }
+          - { tl: simbahan, en: church }
+          - { tl: ospital, en: hospital }
+          - { tl: botika, en: pharmacy }
+      - type: choice
+        prompt: "'Malayo' means..."
+        answer: Far
+        distractors: [Near, Left, Straight]
+        audio: malayo
+        audio_text: Malayo
+      - type: translate
+        prompt_tl: Malapit ang palengke sa bahay namin.
+        answer_en: The market is near our house.
+        accept: ["The market is close to our house"]
+        extra_words: [far, church, school]
+        audio: malapit_ang_palengke_sa_bahay_namin
+      - type: translate
+        prompt_en: Is the church near?
+        answer_tl: Malapit ba ang simbahan?
+        accept: ["Malapit po ba ang simbahan?"]
+        extra_words: [malayo, ospital, saan]
+        audio: malapit_ba_ang_simbahan
+      - type: fill_blank
+        sentence: "___ ang botika?"
+        translation: "Where is the pharmacy?"
+        answer: Nasaan
+        options: [Nasaan, Saan, Sino]
+        hint: '"Nasaan" asks where something is; "saan" asks where an action happens.'
+      - type: listen
+        audio: malayo_ang_ospital
+        answer_tl: Malayo ang ospital
+        extra_words: [malapit, botika]
+      - type: choice
+        prompt: "You have a fever and need medicine. Where do you go?"
+        answer: Sa botika
+        distractors: [Sa palengke, Sa simbahan, Sa istasyon]
+        audio: sa_botika
+        audio_text: Sa botika
+      - type: translate
+        prompt_tl: Pumunta si Ana sa ospital kasi may lagnat siya.
+        answer_en: Ana went to the hospital because she has a fever.
+        accept: ["Ana went to the hospital because he has a fever"]
+        extra_words: [church, cough, near]
+        audio: pumunta_si_ana_sa_ospital_kasi_may_lagnat_siya
+  - id: revhome-3
+    title: Getting there
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaliwa, en: left }
+          - { tl: kanan, en: right }
+          - { tl: diretso, en: straight }
+          - { tl: kanto, en: corner }
+      - type: choice
+        prompt: "'Lumiko' means..."
+        answer: Turned
+        distractors: [Rode, Walked, Went]
+        audio: lumiko
+        audio_text: Lumiko
+      - type: translate
+        prompt_tl: Lumiko ka sa kaliwa sa kanto.
+        answer_en: Turn left at the corner.
+        accept: ["Turn to the left at the corner"]
+        extra_words: [right, straight, station]
+        audio: lumiko_ka_sa_kaliwa_sa_kanto
+      - type: translate
+        prompt_en: Ride a jeepney at the station.
+        answer_tl: Sumakay ka ng jeepney sa istasyon.
+        extra_words: [lumiko, daan, palengke]
+        audio: sumakay_ka_ng_jeepney_sa_istasyon
+      - type: fill_blank
+        sentence: "Lumiko ka sa ___, tapos diretso lang."
+        translation: "Turn right, then just go straight."
+        answer: kanan
+        options: [kanan, kanto, tapos]
+      - type: listen
+        audio: lumiko_ka_sa_kaliwa
+        answer_tl: Lumiko ka sa kaliwa
+        extra_words: [kanan, diretso]
+      - type: choice
+        prompt: "'Sumakay kami ng jeepney' means..."
+        answer: We rode a jeepney
+        distractors: [We are waiting for a jeepney, We got off the jeepney, We saw a jeepney]
+        audio: sumakay_kami_ng_jeepney
+        audio_text: Sumakay kami ng jeepney
+      - type: fill_blank
+        sentence: "Lumiko ang jeepney ___ mabilis sa kanto."
+        translation: "The jeepney turned quickly at the corner."
+        answer: nang
+        options: [nang, ng, na]
+        hint: '"nang" links a verb to how it was done — quickly.'
+      - type: translate
+        prompt_tl: Diretso ka, tapos lumiko ka sa kanan sa simbahan.
+        answer_en: Go straight, then turn right at the church.
+        accept: ["Go straight then turn right at the church"]
+        extra_words: [left, market, corner]
+        audio: diretso_ka_tapos_lumiko_ka_sa_kanan_sa_simbahan
+  - id: revhome-4
+    title: Errand day
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Umuwi' means..."
+        answer: Went home
+        distractors: [Went out, Came in, Stayed]
+        audio: umuwi
+        audio_text: Umuwi
+        hint: 'Going home has its own verb — no need to say "sa bahay".'
+      - type: match
+        pairs:
+          - { tl: pumunta, en: went }
+          - { tl: bumili, en: bought }
+          - { tl: umuwi, en: went home }
+          - { tl: sumakay, en: rode }
+      - type: translate
+        prompt_tl: Pumunta ako sa palengke at bumili ng isda.
+        answer_en: I went to the market and bought fish.
+        extra_words: [church, chicken, rode]
+        audio: pumunta_ako_sa_palengke_at_bumili_ng_isda
+      - type: choice
+        prompt: "'Muna' in 'Pupunta muna ako sa botika' means..."
+        answer: First
+        distractors: [Later, Again, Also]
+        audio: pupunta_muna_ako_sa_botika
+        audio_text: Pupunta muna ako sa botika.
+      - type: translate
+        prompt_en: I will go to the pharmacy first.
+        answer_tl: Pupunta muna ako sa botika.
+        extra_words: [umuwi, palengke, tapos]
+        audio: pupunta_muna_ako_sa_botika
+      - type: fill_blank
+        sentence: "Bumili ako ng tinapay, ___ umuwi ako."
+        translation: "I bought bread, then I went home."
+        answer: tapos
+        options: [tapos, muna, kasi]
+      - type: listen
+        audio: umuwi_ako_kahapon
+        answer_tl: Umuwi ako kahapon
+        extra_words: [pumunta, bukas]
+      - type: fill_blank
+        sentence: "Pupunta ___ ako sa palengke, tapos sa simbahan."
+        translation: "I will go to the market first, then to church."
+        answer: muna
+        options: [muna, tapos, ba]
+      - type: translate
+        prompt_tl: Bumili si Juan ng gamot sa botika, tapos umuwi siya.
+        answer_en: Juan bought medicine at the pharmacy, then he went home.
+        accept: ["Juan bought medicine at the pharmacy, then went home"]
+        extra_words: [market, bread, first]
+        audio: bumili_si_juan_ng_gamot_sa_botika_tapos_umuwi_siya

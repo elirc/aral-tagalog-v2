@@ -1,0 +1,231 @@
+id: commands
+title: Commands & Requests
+description: Tell people what to do — and ask nicely. Commands with ka, huwag for don't, and paki- requests.
+tip: >-
+  To tell someone to do something, use the verb's simple form plus "ka":
+  "Umupo ka" — sit down. To say don't, use "huwag" — "ka" takes the -ng linker:
+  "Huwag kang umupo." For polite requests, prefix paki- to a verb root: "Pakiabot po
+  ang tubig." With elders, add "po" and switch "ka" to "kayo": "Umupo po kayo."
+lessons:
+  - id: commands-1
+    title: Umupo ka! Basic commands
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umupo ka, en: sit down }
+          - { tl: tumayo ka, en: stand up }
+          - { tl: halika, en: come here }
+          - { tl: kumain ka, en: eat }
+      - type: choice
+        prompt: "'Umupo ka' means..."
+        answer: Sit down
+        distractors: [Stand up, Come here, Eat now]
+        audio: umupo_ka
+        audio_text: Umupo ka.
+      - type: translate
+        prompt_en: Sit down.
+        answer_tl: Umupo ka.
+        extra_words: [tumayo, siya, kumain]
+        audio: umupo_ka
+      - type: translate
+        prompt_tl: Kumain ka na.
+        answer_en: Eat now.
+        accept: ["Go ahead and eat", "Eat already"]
+        extra_words: [drink, sleep, later]
+        audio: kumain_ka_na
+      - type: fill_blank
+        sentence: "Uminom ka ng ___."
+        translation: "Drink water."
+        answer: tubig
+        options: [tubig, kape, gatas]
+      - type: listen
+        audio: tumayo_ka
+        answer_tl: Tumayo ka
+        extra_words: [umupo, halika]
+      - type: choice
+        prompt: "'Halika' means..."
+        answer: Come here
+        distractors: [Sit down, Stand up, Go home]
+        audio: halika
+        audio_text: Halika
+      - type: translate
+        prompt_tl: Halika, kain tayo sa bahay.
+        answer_en: Come, let's eat at the house.
+        accept: ["Come, let's eat at home", "Come here, let's eat at the house", "Come here, let's eat at home"]
+        extra_words: [drink, school, sing]
+        audio: halika_kain_tayo_sa_bahay
+  - id: commands-2
+    title: Huwag! Saying don't
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Huwag' means..."
+        answer: Don't
+        distractors: [Please, Yes, Later]
+        audio: huwag
+        audio_text: Huwag
+      - type: match
+        pairs:
+          - { tl: huwag, en: don't }
+          - { tl: dito, en: here }
+          - { tl: diyan, en: there (near you) }
+          - { tl: doon, en: there (far away) }
+      - type: translate
+        prompt_en: Don't play here.
+        answer_tl: Huwag kang maglaro dito.
+        extra_words: [doon, ka, kumain]
+        hint: '"huwag" + "ka" becomes "huwag kang" before a verb.'
+        audio: huwag_kang_maglaro_dito
+      - type: fill_blank
+        sentence: "Huwag ___ uminom ng kape."
+        translation: "Don't drink coffee."
+        answer: kang
+        options: [kang, ka, kong]
+        hint: 'After "huwag", "ka" takes the -ng linker before a verb.'
+      - type: translate
+        prompt_tl: Huwag kang malungkot.
+        answer_en: Don't be sad.
+        accept: ["Do not be sad"]
+        extra_words: [happy, angry, tired]
+        audio: huwag_kang_malungkot
+      - type: listen
+        audio: huwag_dito
+        answer_tl: Huwag dito
+        extra_words: [diyan, doon]
+      - type: choice
+        prompt: "'Diyan' means..."
+        answer: There (near you)
+        distractors: [Here, There (far away), Everywhere]
+        audio: diyan
+        audio_text: Diyan
+      - type: translate
+        prompt_en: Don't sit there.
+        answer_tl: Huwag kang umupo diyan.
+        extra_words: [dito, tumayo, po]
+        audio: huwag_kang_umupo_diyan
+      - type: translate
+        prompt_tl: Huwag kang bumili doon, mahal ang presyo.
+        answer_en: Don't buy there, the price is expensive.
+        accept: ["Do not buy there, the price is expensive", "Don't buy over there, the price is expensive", "Don't buy there, the price is high"]
+        extra_words: [cheap, store, eat]
+        audio: huwag_kang_bumili_doon_mahal_ang_presyo
+  - id: commands-3
+    title: Paki- please
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pakiabot' means..."
+        answer: Please pass
+        distractors: [Please give, Please buy, Please eat]
+        audio: pakiabot
+        audio_text: Pakiabot
+      - type: match
+        pairs:
+          - { tl: pakiabot, en: please pass }
+          - { tl: pakibigay, en: please give }
+          - { tl: po, en: politeness word }
+          - { tl: salamat, en: thank you }
+      - type: translate
+        prompt_en: Please pass the water.
+        answer_tl: Pakiabot po ang tubig.
+        accept: ["Pakiabot ang tubig", "Pakiabot mo ang tubig", "Pakiabot mo po ang tubig"]
+        extra_words: [pakibigay, kape, huwag]
+        audio: pakiabot_po_ang_tubig
+      - type: fill_blank
+        sentence: "Pakibigay ___ ang gamot sa lola."
+        translation: "Please give the medicine to grandma (polite)."
+        answer: po
+        options: [po, ba, at]
+        hint: '"po" slots in right after the first word.'
+      - type: choice
+        prompt: "To be polite with elders, Filipinos add which little word?"
+        answer: Po
+        distractors: [Ba, Na, At]
+        audio: po
+        audio_text: Po
+      - type: translate
+        prompt_tl: Pakibigay ito sa nanay mo.
+        answer_en: Please give this to your mom.
+        accept: ["Please give this to your mother"]
+        extra_words: [water, dad, pass]
+        audio: pakibigay_ito_sa_nanay_mo
+      - type: listen
+        audio: pakiabot_ang_libro
+        answer_tl: Pakiabot ang libro
+        extra_words: [pakibigay, bolpen]
+      - type: choice
+        prompt: "You offer an elder a seat. Say:"
+        answer: Umupo po kayo.
+        distractors: [Umupo ka., Huwag kang umupo., Tumayo ka.]
+        audio: umupo_po_kayo
+        audio_text: Umupo po kayo.
+      - type: translate
+        prompt_tl: Pakiabot po ang kanin at isda.
+        answer_en: Please pass the rice and fish.
+        accept: ["Please pass the rice and the fish"]
+        extra_words: [chicken, water, give]
+        audio: pakiabot_po_ang_kanin_at_isda
+  - id: commands-4
+    title: Pwede ba? Polite asks
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "'Pwede' means..."
+        answer: Can / may
+        distractors: [Want, Don't, Please]
+        audio: pwede
+        audio_text: Pwede
+      - type: translate
+        prompt_en: Can I sit here?
+        answer_tl: Pwede bang umupo dito?
+        accept: ["Pwede po bang umupo dito", "Pwede ba akong umupo dito", "Pwede po ba akong umupo dito"]
+        extra_words: [diyan, tumayo, huwag]
+        audio: pwede_bang_umupo_dito
+      - type: fill_blank
+        sentence: "Pwede ___ uminom ng tubig?"
+        translation: "May I drink water?"
+        answer: bang
+        options: [bang, ba, kang]
+        hint: '"pwede" needs the -ng linker before a verb; when "ba" comes between, the linker rides on "ba" → "Pwede bang uminom".'
+      - type: match
+        pairs:
+          - { tl: pwede, en: can / may }
+          - { tl: sandali lang, en: just a moment }
+          - { tl: huwag, en: don't }
+          - { tl: po, en: politeness word }
+      - type: choice
+        prompt: "'Sandali lang' means..."
+        answer: Just a moment
+        distractors: [Right now, Every day, Come here]
+        audio: sandali_lang
+        audio_text: Sandali lang
+      - type: listen
+        audio: pwede_po_ba
+        answer_tl: Pwede po ba
+        extra_words: [hindi, salamat]
+      - type: translate
+        prompt_tl: Sandali lang po, kumakain ako.
+        answer_en: Just a moment, I am eating.
+        accept: ["Just a moment, I'm eating", "One moment, I am eating", "Just a moment please, I am eating"]
+        extra_words: [drinking, sleeping, now]
+        audio: sandali_lang_po_kumakain_ako
+      - type: choice
+        prompt: "You are at the market and want the vendor to pass you a fish. Say:"
+        answer: Pakiabot po ang isda.
+        distractors: [Huwag kang kumain ng isda., Pwede bang sumayaw?, Umupo po kayo.]
+        audio: pakiabot_po_ang_isda
+        audio_text: Pakiabot po ang isda.
+      - type: translate
+        prompt_en: Can we play basketball tomorrow?
+        answer_tl: Pwede ba tayong maglaro ng basketbol bukas?
+        accept: ["Pwede ba kaming maglaro ng basketbol bukas", "Pwede po ba tayong maglaro ng basketbol bukas"]
+        extra_words: [kumanta, ngayon, dito]
+        hint: '"ba" + "tayo" + linker → "ba tayong".'
+        audio: pwede_ba_tayong_maglaro_ng_basketbol_bukas
+      - type: translate
+        prompt_tl: Pwede po bang bumili ng gamot sa botika?
+        answer_en: May I buy medicine at the pharmacy?
+        accept: ["Can I buy medicine at the pharmacy", "May I please buy medicine at the pharmacy", "Can I please buy medicine at the pharmacy"]
+        extra_words: [doctor, water, store]
+        audio: pwede_po_bang_bumili_ng_gamot_sa_botika

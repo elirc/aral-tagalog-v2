@@ -290,8 +290,9 @@
 # --- Unit 06: Family ---
 - id: magulang
   lemma: magulang
-  translation: parents
+  translation: parent
   audio: magulang
+  notes: 'Singular by itself; "mga magulang" (or just "magulang ko") is how you say parents.'
 - id: kuya
   lemma: kuya
   translation: older brother
@@ -807,7 +808,7 @@
   lemma: kasi
   translation: because
   audio: kasi
-  notes: The everyday spoken "because" — it starts the reason, never the sentence.
+  notes: 'The everyday spoken "because". It can open the answer to "Bakit?" — "Kasi gutom ako." — or tuck in after the first word: "Pagod kasi ako."'
 - id: dahil
   lemma: dahil
   translation: because
@@ -1110,7 +1111,7 @@
   lemma: nakasuot
   translation: wearing
   audio: nakasuot
-  notes: 'naka- means "in the state of". "Nakasuot siya ng pulang damit." = She is wearing a red dress.'
+  notes: 'naka- means "in the state of". "Nakasuot siya ng pulang damit." = He/she is wearing red clothes.'
 
 # Unit 17 — Animals
 - id: hayop
@@ -1271,4 +1272,993 @@
   lemma: paborito
   translation: favorite
   audio: paborito
-  notes: From Spanish "favorito". Takes -ng before a noun — "paborito kong laro".
+  notes: From Spanish "favorito". Takes -ng before a noun — "paboritong kulay".
+- id: sino
+  lemma: sino
+  translation: who
+  notes: "Used for people; \"ano\" asks about things. \"Sino siya?\" — Who is he/she?"
+- id: rin
+  lemma: rin
+  translation: also / too
+  notes: "\"rin\" after vowel-final words, \"din\" after consonant-final words: \"Mabuti rin ako.\""
+- id: nagluto
+  lemma: nagluto
+  translation: cooked (to cook)
+  notes: Completed aspect of magluto; incompleted nagluluto already in course.
+- id: nag_aral
+  lemma: nag-aral
+  translation: studied
+  notes: Completed aspect; incompleted nag-aaral already in course.
+- id: nagtrabaho
+  lemma: nagtrabaho
+  translation: worked
+  notes: Completed aspect; incompleted nagtatrabaho already in course.
+- id: naglakad
+  lemma: naglakad
+  translation: walked
+  notes: Completed aspect; incompleted naglalakad already in course.
+- id: na
+  lemma: na
+  translation: already / now (particle)
+  notes: "Kumain na ako = I already ate; pairs with ba in Kumain ka na ba?"
+- id: pa
+  lemma: pa
+  translation: still / yet (particle)
+  notes: "Hindi pa = not yet; takes the incompleted verb form (Hindi pa ako kumakain)."
+- id: ano
+  lemma: ano
+  translation: what
+- id: kailan
+  lemma: kailan
+  translation: when
+- id: paano
+  lemma: paano
+  translation: how
+  notes: "Asks about manner or method; often heard as 'papaano' or shortened 'pano' in casual speech."
+- id: ko
+  lemma: ko
+  translation: my / I (after the noun or verb)
+  notes: "Possessive follows the noun: bahay ko = my house."
+- id: mo
+  lemma: mo
+  translation: "your (singular, after the noun)"
+- id: niya
+  lemma: niya
+  translation: his / her (after the noun)
+- id: namin
+  lemma: namin
+  translation: our (not including you)
+- id: natin
+  lemma: natin
+  translation: our (including you)
+- id: ninyo
+  lemma: ninyo
+  translation: your (plural / polite)
+- id: nila
+  lemma: nila
+  translation: their
+- id: akin
+  lemma: akin
+  translation: mine / to me
+  notes: "Sa-pronoun: Sa akin ito = this is mine."
+- id: iyo
+  lemma: iyo
+  translation: yours / to you
+- id: kanya
+  lemma: kanya
+  translation: his / hers / to him / to her
+- id: kanino
+  lemma: kanino
+  translation: whose / to whom
+- id: ni
+  lemma: ni
+  translation: (possession marker before a name)
+  notes: "ang libro ni Maria = Maria's book."
+- id: tawad
+  lemma: tawad
+  translation: discount / haggled price
+  notes: "Asking 'May tawad po ba?' is expected market etiquette; vendors rarely mind."
+- id: suki
+  lemma: suki
+  translation: regular customer
+  notes: Names the mutual loyalty between a vendor and a repeat customer; suki often get the best prices.
+- id: lang
+  lemma: lang
+  translation: just / only
+- id: din
+  lemma: din
+  translation: also / too
+  notes: Used after words ending in a consonant.
+- id: naman
+  lemma: naman
+  translation: how about / on the other hand
+  notes: "Also softens statements: Mabuti naman — fine, actually."
+- id: daw
+  lemma: daw
+  translation: they say / reportedly
+  notes: Used after words ending in a consonant.
+- id: raw
+  lemma: raw
+  translation: they say / reportedly
+  notes: Variant of daw after vowel sounds (Masaya raw).
+- id: lunes
+  lemma: Lunes
+  translation: Monday
+- id: martes
+  lemma: Martes
+  translation: Tuesday
+- id: miyerkules
+  lemma: Miyerkules
+  translation: Wednesday
+- id: huwebes
+  lemma: Huwebes
+  translation: Thursday
+- id: biyernes
+  lemma: Biyernes
+  translation: Friday
+- id: sabado
+  lemma: Sabado
+  translation: Saturday
+- id: linggo
+  lemma: Linggo
+  translation: Sunday / week
+  notes: Capitalized Linggo is Sunday; lowercase linggo means a week.
+- id: buwan
+  lemma: buwan
+  translation: month / moon
+- id: taon
+  lemma: taon
+  translation: year
+- id: enero
+  lemma: Enero
+  translation: January
+- id: pebrero
+  lemma: Pebrero
+  translation: February
+- id: marso
+  lemma: Marso
+  translation: March
+- id: hunyo
+  lemma: Hunyo
+  translation: June
+- id: disyembre
+  lemma: Disyembre
+  translation: December
+- id: petsa
+  lemma: petsa
+  translation: date (calendar)
+- id: mamaya
+  lemma: mamaya
+  translation: later (today)
+- id: kanina
+  lemma: kanina
+  translation: earlier (today)
+- id: tuwing
+  lemma: tuwing
+  translation: every (with days/times)
+  notes: "tuwing Sabado = every Saturday"
+- id: traysikel
+  lemma: traysikel
+  translation: tricycle (motorbike with sidecar)
+- id: bus
+  lemma: bus
+  translation: bus
+- id: taksi
+  lemma: taksi
+  translation: taxi
+- id: sasakyan
+  lemma: sasakyan
+  translation: vehicle / ride
+- id: sumasakay
+  lemma: sumasakay
+  translation: riding / rides
+  notes: Present form of sumakay.
+- id: bumaba
+  lemma: bumaba
+  translation: got off (to get off / go down)
+- id: para
+  lemma: para
+  translation: "stop! (to halt a jeepney)"
+  notes: "Shouted as \"Para po!\" to ask the driver to stop; from Spanish parar."
+- id: pamasahe
+  lemma: pamasahe
+  translation: fare
+- id: bayad
+  lemma: bayad
+  translation: payment / fare handed over
+  notes: "\"Bayad po\" is said when passing your fare to the driver."
+- id: barya
+  lemma: barya
+  translation: coins / small change
+- id: trapik
+  lemma: trapik
+  translation: traffic
+- id: biyahe
+  lemma: biyahe
+  translation: trip / journey
+- id: mas
+  lemma: mas
+  translation: more (comparative marker)
+- id: kaysa
+  lemma: kaysa
+  translation: than
+  notes: "Followed by \"sa\" before common nouns (kaysa sa pusa) and \"kay\" before personal names (kaysa kay Ana)."
+- id: pinaka
+  lemma: pinaka-
+  translation: the most (superlative prefix)
+  notes: "Attaches directly to the adjective: pinakamaganda, pinakamalaki. Takes the -ng linker before a noun (pinakamagandang bulaklak)."
+- id: kasing
+  lemma: kasing-
+  translation: as ... as (equality prefix)
+  notes: "kasing- + adjective root, then ng + the standard of comparison: Kasinglaki ng pusa ang aso — the dog is as big as the cat."
+- id: sa_lahat
+  lemma: sa lahat
+  translation: of all / among all
+- id: karinderya
+  lemma: karinderya
+  translation: eatery / small local restaurant
+  notes: "Counter-style eatery; you point at the day's cooked dishes."
+- id: restawran
+  lemma: restawran
+  translation: restaurant
+- id: menu
+  lemma: menu
+  translation: menu
+- id: umorder
+  lemma: umorder
+  translation: ordered (to order)
+- id: pabili_po
+  lemma: pabili po
+  translation: "I'd like to buy, please"
+  notes: "Called out to get a vendor's or storekeeper's attention."
+- id: ulam
+  lemma: ulam
+  translation: main dish / viand
+  notes: The dish eaten with rice.
+- id: busog
+  lemma: busog
+  translation: full (after eating)
+- id: adobo
+  lemma: adobo
+  translation: adobo (meat braised in soy sauce and vinegar)
+- id: sinigang
+  lemma: sinigang
+  translation: sinigang (sour tamarind soup)
+- id: pansit
+  lemma: pansit
+  translation: pancit (stir-fried noodles)
+  notes: Served at birthdays as a wish for long life.
+- id: halo_halo
+  lemma: halo-halo
+  translation: halo-halo (shaved ice dessert)
+  notes: "Hyphenated reduplication; literally 'mix-mix'."
+- id: chit
+  lemma: chit
+  translation: the bill / check (at a restaurant)
+  notes: "Philippine English; asked for as 'Chit po!'"
+- id: kutsara
+  lemma: kutsara
+  translation: spoon
+- id: tinidor
+  lemma: tinidor
+  translation: fork
+- id: baso
+  lemma: baso
+  translation: drinking glass
+- id: kubyertos
+  lemma: kubyertos
+  translation: silverware / cutlery
+- id: tumawad
+  lemma: tumawad
+  translation: to haggle / ask for a discount
+- id: pwede
+  lemma: pwede
+  translation: can / may / possible
+- id: libre
+  lemma: libre
+  translation: free (no cost)
+- id: gastos
+  lemma: gastos
+  translation: expenses / spending
+- id: bente
+  lemma: bente
+  translation: twenty
+  notes: Spanish-derived; the usual way to say prices.
+- id: singkwenta
+  lemma: singkwenta
+  translation: fifty
+  notes: Spanish-derived; the usual way to say prices.
+- id: kilo
+  lemma: kilo
+  translation: kilo / kilogram
+- id: heto
+  lemma: heto
+  translation: here it is / here you go
+- id: umuwi
+  lemma: umuwi
+  translation: went home (to go home)
+  notes: "Going home has its own verb; \"Umuwi ako\" needs no \"sa bahay\"."
+- id: muna
+  lemma: muna
+  translation: first / for now
+  notes: "Sequences actions: \"Pupunta muna ako sa botika\" = I'll go to the pharmacy first."
+- id: kakain
+  lemma: kakain
+  translation: will eat
+  notes: "Contemplated aspect of kumain: -um- drops and the first syllable of the root reduplicates (ka-kain)."
+- id: iinom
+  lemma: iinom
+  translation: will drink
+  notes: Contemplated aspect of uminom (i-inom).
+- id: magluluto
+  lemma: magluluto
+  translation: will cook
+  notes: "Mag- verbs keep mag- and reduplicate the root's first syllable (mag-lu-luto)."
+- id: maglalaro
+  lemma: maglalaro
+  translation: will play
+  notes: Contemplated aspect of maglaro (mag-la-laro).
+- id: bibili
+  lemma: bibili
+  translation: will buy
+  notes: Contemplated aspect of bumili (bi-bili).
+- id: matutulog
+  lemma: matutulog
+  translation: will sleep
+  notes: Contemplated aspect of matulog (ma-tu-tulog).
+- id: manonood
+  lemma: manonood
+  translation: will watch
+  notes: Contemplated aspect of manood (ma-no-nood).
+- id: matangkad
+  lemma: matangkad
+  translation: tall (person)
+- id: pandak
+  lemma: pandak
+  translation: short (person)
+- id: payat
+  lemma: payat
+  translation: thin / slim
+- id: mataba
+  lemma: mataba
+  translation: fat / chubby
+- id: buhok
+  lemma: buhok
+  translation: hair
+- id: mahaba
+  lemma: mahaba
+  translation: long
+- id: maikli
+  lemma: maikli
+  translation: short (in length)
+  notes: "Length, not height — a short person is 'pandak'."
+- id: mabait
+  lemma: mabait
+  translation: kind / nice
+- id: matalino
+  lemma: matalino
+  translation: smart / intelligent
+- id: masipag
+  lemma: masipag
+  translation: hardworking / diligent
+- id: tamad
+  lemma: tamad
+  translation: lazy
+- id: makulit
+  lemma: makulit
+  translation: naughty / pesky
+  notes: "Often affectionate — a persistently playful, nagging child."
+- id: umupo
+  lemma: umupo
+  translation: to sit / sat down
+- id: tumayo
+  lemma: tumayo
+  translation: to stand / stood up
+- id: huwag
+  lemma: huwag
+  translation: "don't"
+  notes: "Takes the -ng linker on the pronoun before a verb: huwag kang umupo."
+- id: diyan
+  lemma: diyan
+  translation: there (near you)
+  notes: "Between dito (here, near me) and doon (there, far from both)."
+- id: pakiabot
+  lemma: pakiabot
+  translation: please pass / please hand over
+  notes: paki- + abot; paki- turns a verb root into a polite request.
+- id: pakibigay
+  lemma: pakibigay
+  translation: please give
+- id: po
+  lemma: po
+  translation: politeness marker
+  notes: Slots in after the first word of the sentence; used with elders and strangers.
+- id: kayo
+  lemma: kayo
+  translation: you (plural / polite)
+  notes: "Also the polite singular 'you' — pairs with po in commands: Umupo po kayo."
+- id: sandali_lang
+  lemma: sandali lang
+  translation: just a moment
+- id: matakaw
+  lemma: matakaw
+  translation: greedy / a big eater
+  notes: "Affectionate, common word for pets and people who eat a lot; not as harsh as English 'greedy'."
+- id: kulot
+  lemma: kulot
+  translation: curly (hair)
+- id: at
+  lemma: at
+  translation: and
+- id: o
+  lemma: o
+  translation: or
+- id: pero
+  lemma: pero
+  translation: but
+- id: kung
+  lemma: kung
+  translation: if
+- id: habang
+  lemma: habang
+  translation: while
+- id: may_sakit
+  lemma: may sakit
+  translation: sick / ill
+  notes: "Literally 'has illness'. 'May sakit ako' = I'm sick; contrast with 'masakit' (it hurts)."
+- id: masama
+  lemma: masama
+  translation: bad
+  notes: "'Masama ang pakiramdam ko' = I don't feel well."
+- id: magpahinga
+  lemma: magpahinga
+  translation: to rest
+- id: nagpapahinga
+  lemma: nagpapahinga
+  translation: resting / rests
+- id: sugat
+  lemma: sugat
+  translation: wound / cut
+- id: selpon
+  lemma: selpon
+  translation: cellphone
+  notes: "Tagalog respelling of \"cellphone\"; \"cellphone\" and \"telepono\" are also heard."
+- id: load
+  lemma: load
+  translation: load (prepaid phone credit)
+  notes: Kept in English spelling. Prepaid credit bought in small amounts at any sari-sari store.
+- id: mag_load
+  lemma: mag-load
+  translation: to buy phone credit / to top up
+  notes: Loanword root takes mag- with a hyphen; progressive is naglo-load.
+- id: tawag
+  lemma: tawag
+  translation: call
+  notes: The noun; also the root of tumawag.
+- id: tumawag
+  lemma: tumawag
+  translation: to call / called
+- id: tumatawag
+  lemma: tumatawag
+  translation: calling / calls
+- id: tatawag
+  lemma: tatawag
+  translation: will call
+  notes: "Contemplated aspect: reduplicate the first syllable of the root, no -um-."
+- id: text
+  lemma: text
+  translation: text message
+  notes: "Used as both noun and verb root (nag-text, nagte-text)."
+- id: nagte_text
+  lemma: nagte-text
+  translation: texting / texts
+  notes: Progressive of nag-text; the reduplicated syllable is hyphenated to the loan root.
+- id: numero
+  lemma: numero
+  translation: number
+- id: baterya
+  lemma: baterya
+  translation: battery
+- id: charger
+  lemma: charger
+  translation: charger
+- id: internet
+  lemma: internet
+  translation: internet
+- id: wifi
+  lemma: wifi
+  translation: wifi
+- id: kompyuter
+  lemma: kompyuter
+  translation: computer
+- id: password
+  lemma: password
+  translation: password
+- id: litrato
+  lemma: litrato
+  translation: photo / picture
+- id: kumuha
+  lemma: kumuha
+  translation: to take / took
+  notes: "Kumuha ng litrato = to take a photo."
+- id: kumukuha
+  lemma: kumukuha
+  translation: taking / takes
+- id: video
+  lemma: video
+  translation: video
+- id: noong
+  lemma: noong
+  translation: back when / when (in the past)
+  notes: "Marks a past time frame: noong Pasko, noong isang araw (the other day)."
+- id: pagkatapos
+  lemma: pagkatapos
+  translation: after / afterwards
+  notes: "Takes a noun with ng: pagkatapos ng klase. Plain tapos links two verbs."
+- id: bago
+  lemma: bago
+  translation: before
+  notes: "Followed directly by a verb: bago kumain. (Also means 'new' as an adjective.)"
+- id: gumising
+  lemma: gumising
+  translation: woke up (to wake up)
+- id: naligo
+  lemma: naligo
+  translation: took a bath / showered
+- id: natulog
+  lemma: natulog
+  translation: slept
+  notes: Completed form of natutulog.
+- id: naglaro
+  lemma: naglaro
+  translation: played
+  notes: Completed form of naglalaro.
+- id: nanood
+  lemma: nanood
+  translation: watched
+  notes: Completed form of nanonood.
+- id: nagkuwento
+  lemma: nagkuwento
+  translation: told a story
+- id: kuwento
+  lemma: kuwento
+  translation: story
+  notes: Also spelled kwento.
+- id: magluto
+  lemma: magluto
+  translation: to cook
+  notes: Infinitive of the already-taught nagluluto.
+- id: magprito
+  lemma: magprito
+  translation: to fry
+- id: nagpiprito
+  lemma: nagpiprito
+  translation: frying / fries
+- id: magpakulo
+  lemma: magpakulo
+  translation: to boil (something)
+- id: maghiwa
+  lemma: maghiwa
+  translation: to slice
+- id: naghihiwaa
+  lemma: naghihiwa
+  translation: slicing / slices
+- id: kaldero
+  lemma: kaldero
+  translation: pot
+- id: kawali
+  lemma: kawali
+  translation: frying pan
+- id: kutsilyo
+  lemma: kutsilyo
+  translation: knife
+- id: kalan
+  lemma: kalan
+  translation: stove
+- id: sangkap
+  lemma: sangkap
+  translation: ingredient
+- id: asin
+  lemma: asin
+  translation: salt
+- id: asukal
+  lemma: asukal
+  translation: sugar
+- id: toyo
+  lemma: toyo
+  translation: soy sauce
+- id: suka
+  lemma: suka
+  translation: vinegar
+- id: mantika
+  lemma: mantika
+  translation: cooking oil
+- id: bawang
+  lemma: bawang
+  translation: garlic
+- id: sibuyas
+  lemma: sibuyas
+  translation: onion
+- id: timpla
+  lemma: timpla
+  translation: seasoning / mix
+  notes: "How a dish is seasoned; \"Masarap ang timpla\" = it is seasoned just right."
+- id: prutas
+  lemma: prutas
+  translation: fruit
+- id: mangga
+  lemma: mangga
+  translation: mango
+- id: saging
+  lemma: saging
+  translation: banana
+- id: pinya
+  lemma: pinya
+  translation: pineapple
+- id: buko
+  lemma: buko
+  translation: young coconut
+  notes: "The soft, jelly-like young coconut — its meat and juice. A mature/dry coconut is niyog."
+- id: kalamansi
+  lemma: kalamansi
+  translation: calamansi (Philippine lime)
+  notes: Small green citrus squeezed over food and into drinks; the everyday Filipino sour note.
+- id: gulay
+  lemma: gulay
+  translation: vegetable / vegetables
+- id: kamatis
+  lemma: kamatis
+  translation: tomato
+- id: talong
+  lemma: talong
+  translation: eggplant
+- id: ampalaya
+  lemma: ampalaya
+  translation: bitter gourd / bitter melon
+- id: hinog
+  lemma: hinog
+  translation: ripe
+- id: hilaw
+  lemma: hilaw
+  translation: unripe / raw
+  notes: "Also used for uncooked meat or fish, not just unripe fruit."
+- id: sariwa
+  lemma: sariwa
+  translation: fresh
+- id: matamis
+  lemma: matamis
+  translation: sweet
+- id: maasim
+  lemma: maasim
+  translation: sour
+- id: palagi
+  lemma: palagi
+  translation: always
+  notes: "Habitual adverb; takes the -ng linker on the following pronoun, as in \"Palagi akong kumakain\" — and the verb stays in the doubled (ongoing) form, not the completed one."
+- id: mahal_kita
+  lemma: Mahal kita
+  translation: I love you
+  notes: "\"kita\" fuses I + you; never \"mahal ko ikaw\""
+- id: pag_ibig
+  lemma: pag-ibig
+  translation: love (the feeling)
+- id: puso
+  lemma: puso
+  translation: heart
+- id: miss_na_kita
+  lemma: Miss na kita
+  translation: I miss you
+  notes: English loan verb; everyday spoken Tagalog
+- id: yakap
+  lemma: yakap
+  translation: hug / embrace
+- id: nobyo
+  lemma: nobyo
+  translation: boyfriend
+- id: nobya
+  lemma: nobya
+  translation: girlfriend
+- id: jowa
+  lemma: jowa
+  translation: boyfriend / girlfriend (slang)
+  notes: "very casual; fine with friends, not with elders"
+- id: kasintahan
+  lemma: kasintahan
+  translation: sweetheart / partner
+- id: crush
+  lemma: crush
+  translation: crush
+  notes: "used as a noun and a predicate: \"Crush ko siya.\""
+- id: matalik_na_kaibigan
+  lemma: matalik na kaibigan
+  translation: best friend
+  notes: "the linker shifts with a pronoun: \"matalik kong kaibigan\""
+- id: ligaw
+  lemma: ligaw
+  translation: courtship
+- id: manligaw
+  lemma: manligaw
+  translation: to court
+- id: manliligaw
+  lemma: manliligaw
+  translation: suitor
+- id: nanliligaw
+  lemma: nanliligaw
+  translation: is courting / courts
+- id: harana
+  lemma: harana
+  translation: serenade
+  notes: traditional courtship song sung with a guitar outside her window
+- id: torpe
+  lemma: torpe
+  translation: "too shy to confess one's feelings"
+  notes: "said of a man; teasing, not insulting"
+- id: kasal
+  lemma: kasal
+  translation: wedding / married
+- id: ikakasal
+  lemma: ikakasal
+  translation: will get married
+- id: anibersaryo
+  lemma: anibersaryo
+  translation: anniversary
+- id: abogado
+  lemma: abogado
+  translation: lawyer
+- id: mangingisda
+  lemma: mangingisda
+  translation: fisherman
+  notes: Built from isda (fish) with the mang- + reduplication worker pattern.
+- id: sundalo
+  lemma: sundalo
+  translation: soldier
+- id: karpintero
+  lemma: karpintero
+  translation: carpenter
+- id: kusinero
+  lemma: kusinero
+  translation: cook / chef
+  notes: Kusinera for a woman; same Spanish-derived -o/-a pairing as tindero/tindera.
+- id: bumbero
+  lemma: bumbero
+  translation: firefighter
+- id: manggagawa
+  lemma: manggagawa
+  translation: worker / laborer
+  notes: "From gawa (work, deed). Labor Day is Araw ng Manggagawa."
+- id: empleyado
+  lemma: empleyado
+  translation: employee
+- id: amo
+  lemma: amo
+  translation: boss / employer
+- id: kompanya
+  lemma: kompanya
+  translation: company
+- id: propesyon
+  lemma: propesyon
+  translation: profession
+- id: magtrabaho
+  lemma: magtrabaho
+  translation: to work
+  notes: "Infinitive of nagtatrabaho; used after gusto + -ng, e.g. \"Gusto kong magtrabaho\"."
+- id: bansa
+  lemma: bansa
+  translation: country
+  notes: "\"Ibang bansa\" (another country) is the everyday way to say abroad."
+- id: balikbayan
+  lemma: balikbayan
+  translation: a Filipino returning home from abroad
+  notes: Balik (return) + bayan (hometown/nation); the gift-stuffed balikbayan box travels with them.
+- id: isport
+  lemma: isport
+  translation: sport
+- id: boksing
+  lemma: boksing
+  translation: boxing
+- id: bolibol
+  lemma: bolibol
+  translation: volleyball
+- id: koponan
+  lemma: koponan
+  translation: team
+- id: bola
+  lemma: bola
+  translation: ball
+- id: manlalaro
+  lemma: manlalaro
+  translation: player
+  notes: "From laro; the man- + reduplication pattern names the doer, like magsasaka from saka."
+- id: laban
+  lemma: laban
+  translation: match / game / fight
+  notes: "Used for any contest — a boxing bout or a basketball game. Also shouted as encouragement: \"Laban!\""
+- id: kampeon
+  lemma: kampeon
+  translation: champion
+- id: mag_ehersisyo
+  lemma: mag-ehersisyo
+  translation: to exercise
+  notes: Keeps the hyphen after mag- because the root starts with a vowel.
+- id: nag_eehersisyo
+  lemma: nag-eehersisyo
+  translation: exercising / exercises
+  notes: Imperfective of mag-ehersisyo; the first syllable of the root doubles (e-ehersisyo).
+- id: tumakbo
+  lemma: tumakbo
+  translation: to run / ran
+  notes: Root takbo with the -um- infix.
+- id: tumatakbo
+  lemma: tumatakbo
+  translation: running / runs
+- id: lumangoy
+  lemma: lumangoy
+  translation: to swim / swam
+  notes: Root langoy with the -um- infix.
+- id: lumalangoy
+  lemma: lumalangoy
+  translation: swimming / swims
+- id: manalo
+  lemma: manalo
+  translation: to win
+- id: nanalo
+  lemma: nanalo
+  translation: won
+  notes: Past of manalo — ma- becomes na-.
+- id: matalo
+  lemma: matalo
+  translation: to lose
+- id: natalo
+  lemma: natalo
+  translation: lost
+  notes: "Past of matalo. \"Natalo kami\" = we lost; the loser is the subject."
+- id: puntos
+  lemma: puntos
+  translation: point / points
+- id: barkada
+  lemma: barkada
+  translation: group of friends / crew
+  notes: "Your tight-knit friend group, not a single friend — culturally central; a Filipino's barkada is a lifelong unit."
+- id: matulungin
+  lemma: matulungin
+  translation: helpful
+  notes: "From tulong (help); patterns with the other ma- personality adjectives (mabait, masipag)."
+- id: isla
+  lemma: isla
+  translation: island
+- id: pulo
+  lemma: pulo
+  translation: island / islet
+  notes: Native counterpart to the Spanish-derived isla; common in place names.
+- id: buhangin
+  lemma: buhangin
+  translation: sand
+- id: alon
+  lemma: alon
+  translation: wave
+- id: bangka
+  lemma: bangka
+  translation: boat
+  notes: The wooden outrigger canoe used all over the islands.
+- id: tabing_dagat
+  lemma: tabing-dagat
+  translation: beach / seaside
+  notes: "Literally \"edge of the sea\"; the hyphen is part of the spelling."
+- id: maaraw
+  lemma: maaraw
+  translation: sunny
+  notes: "ma- + araw (sun), the same pattern as maulan and mahangin."
+- id: bakasyon
+  lemma: bakasyon
+  translation: vacation
+- id: sikat_ng_araw
+  lemma: sikat ng araw
+  translation: sunshine / sunlight
+- id: malinaw
+  lemma: malinaw
+  translation: clear
+- id: pilipinas
+  lemma: Pilipinas
+  translation: the Philippines
+- id: lungsod
+  lemma: lungsod
+  translation: city
+  notes: Native word; used in official names (Lungsod ng Maynila).
+- id: siyudad
+  lemma: siyudad
+  translation: city
+  notes: "Spanish loan, common in speech; interchangeable with lungsod."
+- id: probinsya
+  lemma: probinsya
+  translation: province / the countryside
+- id: bayan
+  lemma: bayan
+  translation: town
+  notes: Also means hometown or nation depending on context.
+- id: nayon
+  lemma: nayon
+  translation: village
+- id: bukid
+  lemma: bukid
+  translation: farm / field
+- id: buhay
+  lemma: buhay
+  translation: life
+  notes: One vowel from bahay (house) — worth drilling.
+- id: tahimik
+  lemma: tahimik
+  translation: quiet
+- id: maingay
+  lemma: maingay
+  translation: noisy / loud
+- id: uuwi
+  lemma: uuwi
+  translation: will go home
+- id: gusali
+  lemma: gusali
+  translation: building
+- id: ilog
+  lemma: ilog
+  translation: river
+- id: taga
+  lemma: taga-
+  translation: from (a place)
+  notes: "Prefix on a place name: taga-probinsya, taga-Maynila."
+- id: lumaki
+  lemma: lumaki
+  translation: grew up
+  notes: "From malaki (big); lumaki sa = grew up in."
+- id: tulong
+  lemma: tulong
+  translation: help
+  notes: "Shouted alone, \"Tulong!\" = Help!"
+- id: tulungan
+  lemma: tulungan
+  translation: to help (someone)
+  notes: "\"Tulungan mo ako\" — help me."
+- id: kailangan
+  lemma: kailangan
+  translation: to need
+  notes: "\"Kailangan ko ng ___\" — I need ___."
+- id: saklolo
+  lemma: saklolo
+  translation: "help! (cry for rescue)"
+  notes: "More urgent and dramatic than \"Tulong!\""
+- id: sunog
+  lemma: sunog
+  translation: fire
+- id: ambulansya
+  lemma: ambulansya
+  translation: ambulance
+- id: emerhensiya
+  lemma: emerhensiya
+  translation: emergency
+- id: nawawala
+  lemma: nawawala
+  translation: lost / missing
+- id: nakaw
+  lemma: nakaw
+  translation: theft / steal
+- id: ninakaw
+  lemma: ninakaw
+  translation: was stolen
+  notes: "Completed object-focus form of \"nakaw\"."
+- id: magnanakaw
+  lemma: magnanakaw
+  translation: thief
+- id: ingat
+  lemma: ingat
+  translation: care / caution
+  notes: "\"Ingat!\" = Take care! — also a common goodbye. Verb form: mag-ingat."
+- id: delikado
+  lemma: delikado
+  translation: dangerous
+- id: ligtas
+  lemma: ligtas
+  translation: safe
+- id: aksidente
+  lemma: aksidente
+  translation: accident
+- id: lindol
+  lemma: lindol
+  translation: earthquake

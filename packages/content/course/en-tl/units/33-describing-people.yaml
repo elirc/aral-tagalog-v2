@@ -1,0 +1,229 @@
+id: describing-people
+title: Describing People
+description: Describe how people look and act — tall or short, kind or naughty, smart and hardworking.
+tip: >-
+  Adjectives link to nouns with "-ng" after a vowel or -n, and "na" after any
+  other consonant: "matalinong estudyante" (a smart student), "matulunging
+  guro" (a helpful teacher), "mabait na guro" (a kind teacher).
+  To compare two people, put "mas" before the adjective and "kaysa kay" before
+  the name: "Mas matangkad si Juan kaysa kay Ana" — Juan is taller than Ana.
+lessons:
+  - id: descpeople-1
+    title: Tall and short
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matangkad, en: tall }
+          - { tl: pandak, en: short }
+          - { tl: payat, en: thin }
+          - { tl: mataba, en: fat }
+      - type: choice
+        prompt: "'Matangkad' means..."
+        answer: Tall
+        distractors: [Short, Thin, Big]
+        audio: matangkad
+        audio_text: Matangkad
+      - type: translate
+        prompt_tl: Matangkad ang lalaki.
+        answer_en: The man is tall.
+        accept: ["The boy is tall"]
+        extra_words: [short, woman, small]
+        audio: matangkad_ang_lalaki
+      - type: translate
+        prompt_en: The woman is thin.
+        answer_tl: Payat ang babae.
+        extra_words: [mataba, lalaki, matangkad]
+        audio: payat_ang_babae
+      - type: fill_blank
+        sentence: "Hindi ___ si Juan; pandak siya."
+        translation: "Juan is not tall; he is short."
+        answer: matangkad
+        options: [matangkad, payat, mataba]
+      - type: listen
+        audio: pandak_si_juan
+        answer_tl: Pandak si Juan
+        extra_words: [matangkad, babae]
+      - type: choice
+        prompt: "'Payat' means..."
+        answer: Thin
+        distractors: [Fat, Tall, Strong]
+        audio: payat
+        audio_text: Payat
+      - type: translate
+        prompt_en: My dad is fat.
+        answer_tl: Mataba ang tatay ko.
+        accept: ["Mataba ang aking tatay"]
+        extra_words: [payat, nanay, matangkad]
+        audio: mataba_ang_tatay_ko
+      - type: translate
+        prompt_tl: Matangkad ang tatay ko at pandak ang nanay ko.
+        answer_en: My dad is tall and my mom is short.
+        accept: ["My father is tall and my mother is short"]
+        extra_words: [thin, sister, fat]
+        audio: matangkad_ang_tatay_ko_at_pandak_ang_nanay_ko
+  - id: descpeople-2
+    title: Hair and eyes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: buhok, en: hair }
+          - { tl: mata, en: eyes }
+          - { tl: mahaba, en: long }
+          - { tl: maikli, en: short (in length) }
+      - type: choice
+        prompt: "'Buhok' means..."
+        answer: Hair
+        distractors: [Eyes, Head, Hand]
+        audio: buhok
+        audio_text: Buhok
+      - type: translate
+        prompt_tl: Mahaba ang buhok ni Maria.
+        answer_en: Maria's hair is long.
+        accept: ["Maria has long hair", "The hair of Maria is long"]
+        extra_words: [short, eyes, black]
+        audio: mahaba_ang_buhok_ni_maria
+      - type: fill_blank
+        sentence: "___ ang buhok ko."
+        translation: "My hair is short."
+        answer: Maikli
+        options: [Maikli, Mahaba, Malaki]
+      - type: listen
+        audio: maganda_ang_mata_niya
+        answer_tl: Maganda ang mata niya
+        extra_words: [buhok, mahaba]
+      - type: translate
+        prompt_en: His hair is black.
+        answer_tl: Itim ang buhok niya.
+        accept: ["Itim ang kanyang buhok"]
+        extra_words: [puti, mata, mahaba]
+        audio: itim_ang_buhok_niya
+      - type: choice
+        prompt: "'Mahaba' means..."
+        answer: Long
+        distractors: [Short, Tall, Big]
+        audio: mahaba
+        audio_text: Mahaba
+      - type: translate
+        prompt_tl: Malaki ang mata niya.
+        answer_en: His eyes are big.
+        accept: ["Her eyes are big", "He has big eyes", "She has big eyes"]
+        extra_words: [small, hair, long]
+        audio: malaki_ang_mata_niya
+      - type: translate
+        prompt_en: Maria's hair is long and black.
+        answer_tl: Mahaba at itim ang buhok ni Maria.
+        accept: ["Itim at mahaba ang buhok ni Maria"]
+        extra_words: [maikli, puti, mata]
+        audio: mahaba_at_itim_ang_buhok_ni_maria
+  - id: descpeople-3
+    title: Kind and smart
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mabait, en: kind }
+          - { tl: matalino, en: smart }
+          - { tl: masipag, en: hardworking }
+          - { tl: tamad, en: lazy }
+      - type: choice
+        prompt: "'Mabait' means..."
+        answer: Kind
+        distractors: [Lazy, Smart, Naughty]
+        audio: mabait
+        audio_text: Mabait
+      - type: translate
+        prompt_tl: Mabait ang guro ko.
+        answer_en: My teacher is kind.
+        accept: ["My teacher is nice"]
+        extra_words: [smart, lazy, friend]
+        audio: mabait_ang_guro_ko
+      - type: translate
+        prompt_en: The student is hardworking.
+        answer_tl: Masipag ang estudyante.
+        extra_words: [tamad, guro, matalino]
+        audio: masipag_ang_estudyante
+      - type: fill_blank
+        sentence: "Hindi siya tamad; ___ siya."
+        translation: "He is not lazy; he is hardworking."
+        answer: masipag
+        options: [masipag, makulit, pandak]
+      - type: choice
+        prompt: "'Makulit' means..."
+        answer: Naughty / pesky
+        distractors: [Kind, Quiet, Smart]
+        audio: makulit
+        audio_text: Makulit
+      - type: listen
+        audio: matalino_si_ana
+        answer_tl: Matalino si Ana
+        extra_words: [mabait, tamad]
+      - type: translate
+        prompt_tl: Makulit ang aso ko.
+        answer_en: My dog is naughty.
+        accept: ["My dog is pesky"]
+        extra_words: [cat, kind, lazy]
+        audio: makulit_ang_aso_ko
+      - type: translate
+        prompt_en: The students are smart and hardworking.
+        answer_tl: Matalino at masipag ang mga estudyante.
+        accept: ["Masipag at matalino ang mga estudyante"]
+        extra_words: [tamad, guro, mabait]
+        audio: matalino_at_masipag_ang_mga_estudyante
+  - id: descpeople-4
+    title: Putting it together
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'The kind woman' in Tagalog is..."
+        answer: Ang mabait na babae
+        distractors: [Ang mabait babae, Ang babae mabait, Ang mabait ng babae]
+        audio: ang_mabait_na_babae
+        audio_text: Ang mabait na babae
+      - type: fill_blank
+        sentence: "Mabait ___ guro si Maria."
+        translation: "Maria is a kind teacher."
+        answer: na
+        options: [na, ng, ay]
+        hint: 'After a vowel or -n, attach "-ng": matalinong estudyante. After any other consonant, use "na": mabait na guro.'
+      - type: translate
+        prompt_tl: Mas matangkad si Juan kaysa kay Ana.
+        answer_en: Juan is taller than Ana.
+        accept: ["Juan is taller compared to Ana"]
+        extra_words: [shorter, kinder, Maria]
+        audio: mas_matangkad_si_juan_kaysa_kay_ana
+      - type: translate
+        prompt_en: Ana is smarter than Juan.
+        answer_tl: Mas matalino si Ana kaysa kay Juan.
+        extra_words: [matangkad, mabait, ako]
+        hint: '"mas" + adjective = more; "kaysa kay" + name = than.'
+        audio: mas_matalino_si_ana_kaysa_kay_juan
+      - type: match
+        pairs:
+          - { tl: matangkad, en: tall }
+          - { tl: mabait, en: kind }
+          - { tl: tamad, en: lazy }
+          - { tl: buhok, en: hair }
+      - type: listen
+        audio: mas_masipag_ang_ate_ko
+        answer_tl: Mas masipag ang ate ko
+        extra_words: [tamad, kuya]
+      - type: choice
+        prompt: "'Mas payat si Maria kaysa kay Ana' means..."
+        answer: Maria is thinner than Ana
+        distractors: [Ana is thinner than Maria, Maria is fatter than Ana, Maria is as thin as Ana]
+        audio: mas_payat_si_maria_kaysa_kay_ana
+        audio_text: Mas payat si Maria kaysa kay Ana.
+      - type: translate
+        prompt_tl: Matangkad ang kaibigan ko at mahaba ang buhok niya.
+        answer_en: My friend is tall and his hair is long.
+        accept: ["My friend is tall and her hair is long", "My friend is tall and has long hair"]
+        extra_words: [short, eyes, smart]
+        audio: matangkad_ang_kaibigan_ko_at_mahaba_ang_buhok_niya
+      - type: translate
+        prompt_en: My grandmother is kind and happy.
+        answer_tl: Mabait at masaya ang lola ko.
+        accept: ["Masaya at mabait ang lola ko"]
+        extra_words: [malungkot, tamad, lolo]
+        audio: mabait_at_masaya_ang_lola_ko

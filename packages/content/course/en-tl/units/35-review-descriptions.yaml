@@ -1,0 +1,247 @@
+id: review-descriptions
+title: "Review: Describing the World"
+description: Put it all together — colors, clothes, animals, looks, and feelings in rich describing sentences.
+tip: >-
+  Linkers glue a description to whatever comes right before it — even a
+  pronoun: "ang aso kong puti" (my white dog), because "ko" ends in a vowel
+  and takes -ng. You can also flip a sentence with "ay" for a more formal
+  feel: "Matakaw ang pusa kong itim" and "Ang pusa kong itim ay matakaw"
+  both mean "My black cat is greedy."
+lessons:
+  - id: revdesc-1
+    title: Colors on clothes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pula, en: red }
+          - { tl: asul, en: blue }
+          - { tl: dilaw, en: yellow }
+          - { tl: berde, en: green }
+      - type: choice
+        prompt: "'Nakasuot' means..."
+        answer: Wearing
+        distractors: [Buying, Washing, Selling]
+        audio: nakasuot
+        audio_text: Nakasuot
+      - type: translate
+        prompt_en: She is wearing a red dress.
+        answer_tl: Nakasuot siya ng pulang bestida.
+        accept: ["Nakasuot siya ng bestidang pula"]
+        extra_words: [asul, sapatos, medyas]
+        audio: nakasuot_siya_ng_pulang_bestida
+      - type: translate
+        prompt_tl: Puti ang kamiseta ko at itim ang pantalon ko.
+        answer_en: My shirt is white and my pants are black.
+        accept:
+          - "My T-shirt is white and my pants are black"
+          - "My shirt is white and my trousers are black"
+          - "My T-shirt is white and my trousers are black"
+        extra_words: [shoes, blue, skirt]
+        audio: puti_ang_kamiseta_ko_at_itim_ang_pantalon_ko
+      - type: fill_blank
+        sentence: "Nakasuot si Ana ng ___ palda."
+        translation: "Ana is wearing a green skirt."
+        answer: berdeng
+        options: [berdeng, berde, itim]
+        hint: 'Colors ending in a vowel take the -ng linker: berdeng palda.'
+      - type: listen
+        audio: itim_ang_sapatos_ko
+        answer_tl: Itim ang sapatos ko
+        extra_words: [puti, medyas]
+      - type: choice
+        prompt: "'Anong kulay ang damit mo?' asks about..."
+        answer: The color of your clothes
+        distractors: [The price of your clothes, The size of your shoes, The color of your hair]
+        audio: anong_kulay_ang_damit_mo
+        audio_text: Anong kulay ang damit mo?
+      - type: translate
+        prompt_en: I bought a yellow hat at the market.
+        answer_tl: Bumili ako ng dilaw na sombrero sa palengke.
+        accept: ["Bumili ako ng sombrerong dilaw sa palengke"]
+        extra_words: [pula, tindahan, mura]
+        audio: bumili_ako_ng_dilaw_na_sombrero_sa_palengke
+  - id: revdesc-2
+    title: What animals are like
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: aso, en: dog }
+          - { tl: pusa, en: cat }
+          - { tl: ibon, en: bird }
+          - { tl: kalabaw, en: carabao }
+      - type: choice
+        prompt: "'Matakaw' means..."
+        answer: Greedy (a big eater)
+        distractors: [Playful, Sleepy, Fast]
+        audio: matakaw
+        audio_text: Matakaw
+      - type: translate
+        prompt_tl: Ang pusa kong itim ay matakaw.
+        answer_en: My black cat is greedy.
+        accept:
+          - "My black cat is a big eater"
+          - "My black cat eats a lot"
+        extra_words: [dog, white, small]
+        audio: ang_pusa_kong_itim_ay_matakaw
+        hint: '"pusa kong itim" — the -ng on "ko" links the cat to its color.'
+      - type: translate
+        prompt_en: My dog is big and fast.
+        answer_tl: Malaki at mabilis ang aso ko.
+        accept: ["Mabilis at malaki ang aso ko"]
+        extra_words: [maliit, pusa, mabagal]
+        audio: malaki_at_mabilis_ang_aso_ko
+      - type: fill_blank
+        sentence: "Hindi mabilis ang kalabaw; ___ ito."
+        translation: "The carabao is not fast; it is slow."
+        answer: mabagal
+        options: [mabagal, malakas, matakaw]
+      - type: listen
+        audio: lumilipad_ang_ibon_sa_langit
+        answer_tl: Lumilipad ang ibon sa langit
+        extra_words: [tumatahol, aso]
+      - type: choice
+        prompt: "'Tumatahol ang aso' means..."
+        answer: The dog is barking
+        distractors: [The dog is flying, The cat is eating, The dog is sleeping]
+        audio: tumatahol_ang_aso
+        audio_text: Tumatahol ang aso.
+      - type: translate
+        prompt_tl: Mahaba ang buntot ng pusa ko.
+        answer_en: My cat's tail is long.
+        accept:
+          - "The tail of my cat is long"
+          - "My cat has a long tail"
+        extra_words: [wing, short, dog]
+        audio: mahaba_ang_buntot_ng_pusa_ko
+      - type: translate
+        prompt_en: My dog plays every day.
+        answer_tl: Naglalaro araw-araw ang aso ko.
+        accept: ["Naglalaro ang aso ko araw-araw", "Araw-araw naglalaro ang aso ko"]
+        extra_words: [pusa, kumakain, bukas]
+        audio: naglalaro_araw_araw_ang_aso_ko
+        grading: { hyphens: true }
+  - id: revdesc-3
+    title: Feelings and looks
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: masaya, en: happy }
+          - { tl: malungkot, en: sad }
+          - { tl: galit, en: angry }
+          - { tl: pagod, en: tired }
+      - type: choice
+        prompt: "'Masaya ang mabait na guro' means..."
+        answer: The kind teacher is happy
+        distractors: [The smart teacher is sad, The kind teacher is angry, The lazy teacher is happy]
+        audio: masaya_ang_mabait_na_guro
+        audio_text: Masaya ang mabait na guro.
+      - type: translate
+        prompt_tl: Malungkot si Maria kasi umuulan.
+        answer_en: Maria is sad because it is raining.
+        accept: ["Maria is sad because it's raining"]
+        extra_words: [happy, hot, angry]
+        audio: malungkot_si_maria_kasi_umuulan
+      - type: translate
+        prompt_en: The tall man is tired.
+        answer_tl: Pagod ang matangkad na lalaki.
+        extra_words: [babae, masaya, pandak]
+        audio: pagod_ang_matangkad_na_lalaki
+      - type: fill_blank
+        sentence: "Galit ang guro ___ makulit ang mga estudyante."
+        translation: "The teacher is angry because the students are naughty."
+        answer: kasi
+        options: [kasi, tapos, ba]
+        accept: ["dahil"]
+      - type: listen
+        audio: pagod_ako_ngayon
+        answer_tl: Pagod ako ngayon
+        extra_words: [masaya, gutom]
+      - type: choice
+        prompt: "'Sabik' means..."
+        answer: Excited
+        distractors: [Tired, Scared, Hungry]
+        audio: sabik
+        audio_text: Sabik
+      - type: translate
+        prompt_tl: Takot ang maliit na aso sa bagyo.
+        answer_en: The small dog is afraid of the storm.
+        accept:
+          - "The little dog is afraid of the storm"
+          - "The small dog is scared of the storm"
+          - "The little dog is scared of the storm"
+        extra_words: [cat, happy, rain]
+        audio: takot_ang_maliit_na_aso_sa_bagyo
+      - type: translate
+        prompt_en: The guests are happy because the food is delicious.
+        answer_tl: Masaya ang mga bisita kasi masarap ang handa.
+        accept: ["Masaya ang mga bisita dahil masarap ang handa"]
+        extra_words: [malungkot, regalo, mahal]
+        audio: masaya_ang_mga_bisita_kasi_masarap_ang_handa
+  - id: revdesc-4
+    title: Rich descriptions
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kulot' means..."
+        answer: Curly
+        distractors: [Straight, Long, Black]
+        audio: kulot
+        audio_text: Kulot
+      - type: translate
+        prompt_tl: Kulot at itim ang buhok ni Ana.
+        answer_en: Ana's hair is curly and black.
+        accept:
+          - "Ana's hair is black and curly"
+          - "Ana has curly and black hair"
+          - "Ana has curly, black hair"
+        extra_words: [long, red, eyes]
+        audio: kulot_at_itim_ang_buhok_ni_ana
+      - type: fill_blank
+        sentence: "Ang aso ___ puti ay matakaw."
+        translation: "My white dog is greedy."
+        answer: kong
+        options: [kong, ko, na]
+        hint: '"ko" ends in a vowel, so it takes -ng before a describing word: ang aso kong puti.'
+      - type: translate
+        prompt_en: My black cat is small and naughty.
+        answer_tl: Maliit at makulit ang pusa kong itim.
+        accept:
+          - "Makulit at maliit ang pusa kong itim"
+          - "Maliit at makulit ang itim kong pusa"
+          - "Makulit at maliit ang itim kong pusa"
+        extra_words: [malaki, aso, puti]
+        audio: maliit_at_makulit_ang_pusa_kong_itim
+      - type: match
+        pairs:
+          - { tl: kulot, en: curly }
+          - { tl: matakaw, en: greedy }
+          - { tl: makulit, en: naughty }
+          - { tl: mabait, en: kind }
+      - type: listen
+        audio: nakasuot_siya_ng_asul_na_kamiseta
+        answer_tl: Nakasuot siya ng asul na kamiseta
+        extra_words: [pula, sapatos]
+      - type: choice
+        prompt: "'Mas malaki ang aso ko kaysa sa pusa mo' means..."
+        answer: My dog is bigger than your cat
+        distractors:
+          - Your cat is bigger than my dog
+          - My dog is smaller than your cat
+          - My dog is as big as your cat
+        audio: mas_malaki_ang_aso_ko_kaysa_sa_pusa_mo
+        audio_text: Mas malaki ang aso ko kaysa sa pusa mo.
+      - type: translate
+        prompt_tl: Nakasuot ng magandang bestida ang matangkad na babae.
+        answer_en: The tall woman is wearing a beautiful dress.
+        accept: ["The tall woman is wearing a pretty dress"]
+        extra_words: [short, man, skirt]
+        audio: nakasuot_ng_magandang_bestida_ang_matangkad_na_babae
+      - type: translate
+        prompt_en: The white bird is flying in the sky.
+        answer_tl: Lumilipad ang puting ibon sa langit.
+        accept: ["Lumilipad sa langit ang puting ibon"]
+        extra_words: [itim, aso, dagat]
+        audio: lumilipad_ang_puting_ibon_sa_langit

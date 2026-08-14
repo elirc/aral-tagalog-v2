@@ -1,0 +1,246 @@
+id: particles
+title: Little Words, Big Meaning
+description: >-
+  Master the tiny words — na, pa, lang, rin, ba, naman, daw — that make
+  Tagalog sound natural.
+tip: >-
+  Tagalog's little particles live in "second position": right after the first
+  word of the sentence. "Kumain na ako" (I already ate) — never "Kumain ako
+  na". One-syllable pronouns like "ka" squeeze in even earlier: "Gutom ka ba?"
+  (Are you hungry?). Two of them change shape after a vowel sound: din → rin
+  and daw → raw ("Ako rin", "Masaya raw").
+lessons:
+  - id: particles-1
+    title: Na and pa — already and still
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: na, en: already }
+          - { tl: pa, en: still }
+          - { tl: hindi pa, en: not yet }
+      - type: choice
+        prompt: "'Kumain na ako' means..."
+        answer: I already ate
+        distractors: [I haven't eaten yet, I am still eating, I will eat]
+        audio: kumain_na_ako
+        audio_text: Kumain na ako.
+      - type: translate
+        prompt_tl: Kumain na ako.
+        answer_en: I already ate.
+        accept: ["I have already eaten", "I ate already"]
+        extra_words: [yet, still, hungry]
+        audio: kumain_na_ako
+      - type: translate
+        prompt_en: I haven't eaten yet.
+        answer_tl: Hindi pa ako kumain.
+        accept: ["Hindi pa po ako kumain"]
+        extra_words: [na, gutom, siya]
+        audio: hindi_pa_ako_kumain
+        hint: '"pa" right after "hindi" — the particle takes second position.'
+      - type: fill_blank
+        sentence: "Kumain ___ ako."
+        translation: "I already ate."
+        answer: na
+        options: [na, pa, ba]
+      - type: listen
+        audio: natutulog_na_siya
+        answer_tl: Natutulog na siya
+        extra_words: [pa, kumakain]
+      - type: choice
+        prompt: "'Hindi pa' means..."
+        answer: Not yet
+        distractors: [Already, No more, Still here]
+        audio: hindi_pa
+        audio_text: Hindi pa.
+      - type: translate
+        prompt_tl: Gutom pa ako.
+        answer_en: I am still hungry.
+        accept: ["I'm still hungry"]
+        extra_words: [already, thirsty, tired]
+        audio: gutom_pa_ako
+      - type: translate
+        prompt_tl: Umiinom pa ng kape si Tatay.
+        answer_en: Dad is still drinking coffee.
+        accept: ["Father is still drinking coffee", "Dad still drinks coffee"]
+        extra_words: [already, milk, water]
+        audio: umiinom_pa_ng_kape_si_tatay
+  - id: particles-2
+    title: Lang and rin — only and also
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lang, en: just / only }
+          - { tl: din, en: also / too }
+          - { tl: isa, en: one }
+          - { tl: marami, en: many }
+      - type: choice
+        prompt: "'Isa lang' means..."
+        answer: Just one
+        distractors: [One more, Only two, Many]
+        audio: isa_lang
+        audio_text: Isa lang.
+      - type: translate
+        prompt_tl: Ako rin.
+        answer_en: Me too.
+        accept: ["Me also", "I also"]
+        extra_words: [you, only, again]
+        audio: ako_rin
+      - type: choice
+        prompt: "After a word ending in a vowel, 'din' becomes..."
+        answer: rin
+        distractors: [raw, lang, na]
+        audio: rin
+        audio_text: Rin
+      - type: translate
+        prompt_en: I just want water.
+        answer_tl: Gusto ko lang ng tubig.
+        accept: ["Gusto ko lang po ng tubig"]
+        extra_words: [kape, rin, na]
+        audio: gusto_ko_lang_ng_tubig
+      - type: fill_blank
+        sentence: "Masaya ___ ako."
+        translation: "I am also happy."
+        answer: rin
+        options: [rin, din, lang]
+        hint: '"Masaya" ends in a vowel, so "din" becomes "rin".'
+      - type: listen
+        audio: estudyante_lang_ako
+        answer_tl: Estudyante lang ako
+        extra_words: [rin, guro]
+      - type: translate
+        prompt_tl: Gusto rin niya ng kape.
+        answer_en: He also wants coffee.
+        accept:
+          - "She also wants coffee"
+          - "He wants coffee too"
+          - "She wants coffee too"
+          - "He also likes coffee"
+          - "She also likes coffee"
+        extra_words: [only, milk, already]
+        audio: gusto_rin_niya_ng_kape
+      - type: translate
+        prompt_tl: Bumili lang ako ng dalawang itlog sa palengke.
+        answer_en: I just bought two eggs at the market.
+        accept: ["I only bought two eggs at the market"]
+        extra_words: [three, chicken, store]
+        audio: bumili_lang_ako_ng_dalawang_itlog_sa_palengke
+  - id: particles-3
+    title: Ba and naman — asking back
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Gutom ka ba?' means..."
+        answer: Are you hungry?
+        distractors: [I am hungry, Are you thirsty?, You are already full]
+        audio: gutom_ka_ba
+        audio_text: Gutom ka ba?
+      - type: match
+        pairs:
+          - { tl: ba, en: yes/no question marker }
+          - { tl: naman, en: how about / in turn }
+          - { tl: na, en: already }
+          - { tl: pa, en: still }
+      - type: translate
+        prompt_tl: Ikaw ba si Maria?
+        answer_en: Are you Maria?
+        extra_words: [she, who, is]
+        audio: ikaw_ba_si_maria
+      - type: translate
+        prompt_en: Are you a teacher?
+        answer_tl: Guro ka ba?
+        accept: ["Guro po ba kayo?"]
+        extra_words: [ako, estudyante, na]
+        audio: guro_ka_ba
+        hint: 'The one-syllable pronoun "ka" comes before "ba".'
+      - type: fill_blank
+        sentence: "Masarap ___ ang kanin?"
+        translation: "Is the rice delicious?"
+        answer: ba
+        options: [ba, na, rin]
+      - type: choice
+        prompt: "'Ikaw naman?' means..."
+        answer: How about you?
+        distractors: [Is that you?, You again?, Only you]
+        audio: ikaw_naman
+        audio_text: Ikaw naman?
+      - type: translate
+        prompt_tl: Mabuti naman ako.
+        answer_en: I'm doing fine.
+        accept: ["I am fine", "I'm fine"]
+        extra_words: [sad, you, tired]
+        audio: mabuti_naman_ako
+        hint: 'Here "naman" just softens the answer — "fine, actually".'
+      - type: listen
+        audio: masaya_ka_ba
+        answer_tl: Masaya ka ba
+        extra_words: [naman, malungkot]
+      - type: translate
+        prompt_tl: Nag-aaral ka pa ba sa unibersidad?
+        answer_en: Are you still studying at the university?
+        accept: ["Do you still study at the university?"]
+        extra_words: [working, school, already]
+        grading: { hyphens: true }
+        audio: nag_aaral_ka_pa_ba_sa_unibersidad
+  - id: particles-4
+    title: Daw and raw — they say
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Daw' (or 'raw') adds the meaning..."
+        answer: They say / reportedly
+        distractors: [Also, Still, Only]
+        audio: daw
+        audio_text: Daw
+      - type: translate
+        prompt_tl: Umuulan daw bukas.
+        answer_en: They say it will rain tomorrow.
+        accept:
+          - "It will rain tomorrow, they say"
+          - "Reportedly it will rain tomorrow"
+          - "It's going to rain tomorrow, they say"
+        extra_words: [today, already, hot]
+        audio: umuulan_daw_bukas
+      - type: fill_blank
+        sentence: "Masarap ___ ang tinapay doon."
+        translation: "They say the bread there is delicious."
+        answer: daw
+        options: [daw, raw, ba]
+        hint: '"Masarap" ends in a consonant, so use "daw".'
+      - type: translate
+        prompt_en: He is sick, they say.
+        answer_tl: May sakit daw siya.
+        extra_words: [pagod, ba, na]
+        audio: may_sakit_daw_siya
+      - type: match
+        pairs:
+          - { tl: daw, en: they say }
+          - { tl: naman, en: how about }
+          - { tl: lang, en: only }
+          - { tl: pa, en: still }
+      - type: listen
+        audio: pagod_daw_si_juan
+        answer_tl: Pagod daw si Juan
+        extra_words: [raw, masaya]
+      - type: choice
+        prompt: "'Masaya raw ang pista' means..."
+        answer: They say the fiesta is fun
+        distractors: [The fiesta is fun, Is the fiesta fun?, The fiesta was not fun]
+        audio: masaya_raw_ang_pista
+        audio_text: Masaya raw ang pista.
+      - type: translate
+        prompt_tl: Kumain na raw sila.
+        answer_en: They say they already ate.
+        accept:
+          - "They already ate, they say"
+          - "They have already eaten, they say"
+        extra_words: [still, we, hungry]
+        audio: kumain_na_raw_sila
+      - type: translate
+        prompt_en: Are you still going to the market tomorrow?
+        answer_tl: Pupunta ka pa ba sa palengke bukas?
+        accept: ["Pupunta ka pa ba bukas sa palengke?"]
+        extra_words: [na, tindahan, kahapon]
+        audio: pupunta_ka_pa_ba_sa_palengke_bukas
+        hint: 'Stack the particles in order after "ka": pa, then ba.'

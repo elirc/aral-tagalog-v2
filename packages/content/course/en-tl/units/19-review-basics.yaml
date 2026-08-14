@@ -1,0 +1,224 @@
+id: review-basics
+title: "Review: First Words"
+description: Put your first words together — greet, introduce yourself, and present your family politely.
+tip: >-
+  Po doesn't go just anywhere — it slips in right after the first word or
+  phrase: "Salamat po", "Ito po ang nanay ko". And Filipinos address elders
+  by title, not by name: your friend's grandmother is "Lola" to you too.
+lessons:
+  - id: revbasics-1
+    title: Hello again
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumusta, en: hello }
+          - { tl: salamat, en: thank you }
+          - { tl: paalam, en: goodbye }
+          - { tl: opo, en: yes (polite) }
+      - type: choice
+        prompt: "It's 2 PM and you meet your neighbor. Greet her:"
+        answer: Magandang hapon
+        distractors: [Magandang umaga, Magandang gabi, Paalam]
+        audio: magandang_hapon
+        audio_text: Magandang hapon!
+      - type: translate
+        prompt_tl: Magandang gabi po, Lola.
+        answer_en: Good evening, Grandma.
+        accept: ["Good evening, Grandmother"]
+        extra_words: [morning, thanks, goodbye]
+        audio: magandang_gabi_po_lola
+      - type: translate
+        prompt_en: Thank you, Grandpa!
+        answer_tl: Salamat po, Lolo!
+        accept: ["Salamat po Lolo"]
+        extra_words: [opo, paalam, oo]
+        audio: salamat_po_lolo
+        hint: 'Add "po" when thanking an elder.'
+      - type: fill_blank
+        sentence: "Salamat po! — ___ anuman."
+        translation: "Thank you! — You're welcome."
+        answer: Walang
+        options: [Walang, Magandang, Paalam]
+      - type: listen
+        audio: kumusta_po_kayo
+        answer_tl: Kumusta po kayo
+        accept: ["Kumusta po kayo?"]
+        extra_words: [ka, mabuti]
+      - type: choice
+        prompt: "Your teacher hands you a snack. Thank her politely:"
+        answer: Salamat po
+        distractors: [Salamat, Walang anuman, Opo]
+        audio: salamat_po
+        audio_text: Salamat po.
+      - type: translate
+        prompt_tl: Salamat po sa kape, Tita.
+        answer_en: Thank you for the coffee, Auntie.
+        accept: ["Thanks for the coffee, Auntie", "Thank you for the coffee, Aunt"]
+        extra_words: [water, uncle, morning]
+        audio: salamat_po_sa_kape_tita
+  - id: revbasics-2
+    title: Who is who
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ako, en: I }
+          - { tl: ikaw, en: you }
+          - { tl: siya, en: he/she }
+          - { tl: sila, en: they }
+      - type: choice
+        prompt: "'Sino' means..."
+        answer: Who
+        distractors: [What, Where, How many]
+        audio: sino
+        audio_text: Sino
+      - type: translate
+        prompt_tl: Sino siya?
+        answer_en: Who is she?
+        accept: ["Who is he?"]
+        extra_words: [what, where, name]
+        audio: sino_siya
+      - type: translate
+        prompt_en: Who are they?
+        answer_tl: Sino sila?
+        extra_words: [siya, ano, kami]
+        audio: sino_sila
+      - type: fill_blank
+        sentence: "Sino ___ kaibigan mo?"
+        translation: "Who is your friend?"
+        answer: ang
+        options: [ang, si, ay]
+      - type: listen
+        audio: siya_si_maria
+        answer_tl: Siya si Maria
+        extra_words: [sila, ako]
+      - type: choice
+        prompt: "Which 'we' does NOT include the person you're talking to?"
+        answer: kami
+        distractors: [tayo, sila, ikaw]
+        audio: kami
+        audio_text: Kami
+      - type: translate
+        prompt_tl: Kaibigan ko sila.
+        answer_en: They are my friends.
+        accept: ["They're my friends"]
+        extra_words: [she, we, family]
+        audio: kaibigan_ko_sila
+      - type: translate
+        prompt_tl: Sino ang nagluluto?
+        answer_en: Who is cooking?
+        accept: ["Who cooks?"]
+        extra_words: [eating, reading, where]
+        audio: sino_ang_nagluluto
+        hint: 'Use "sino" with "ang" + a verb to ask who is doing something.'
+  - id: revbasics-3
+    title: My family
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kuya, en: older brother }
+          - { tl: ate, en: older sister }
+          - { tl: lolo, en: grandfather }
+          - { tl: lola, en: grandmother }
+      - type: choice
+        prompt: "'Mabuti rin ako' means..."
+        answer: I'm fine too
+        distractors: [I'm very well, I'm not well, Are you fine?]
+        audio: mabuti_rin_ako
+        audio_text: Mabuti rin ako.
+        hint: '"rin/din" means "also".'
+      - type: translate
+        prompt_tl: May kuya at ate ako.
+        answer_en: I have an older brother and an older sister.
+        accept: ["I have a big brother and a big sister"]
+        extra_words: [cousin, mom, they]
+        audio: may_kuya_at_ate_ako
+      - type: translate
+        prompt_en: I don't have a sibling.
+        answer_tl: Wala akong kapatid.
+        extra_words: [may, anak, siya]
+        audio: wala_akong_kapatid
+      - type: fill_blank
+        sentence: "Ilan ang ___ mo?"
+        translation: "How many siblings do you have?"
+        answer: kapatid
+        options: [kapatid, pamilya, pangalan]
+      - type: listen
+        audio: malaki_ang_pamilya_ko
+        answer_tl: Malaki ang pamilya ko
+        extra_words: [maliit, kapatid]
+      - type: translate
+        prompt_tl: May asawa at anak ang ate ko.
+        answer_en: My older sister has a spouse and a child.
+        accept: ["My big sister has a spouse and a child", "My older sister has a husband and a child"]
+        extra_words: [brother, cousin, name]
+        audio: may_asawa_at_anak_ang_ate_ko
+      - type: choice
+        prompt: "'Bunso' means..."
+        answer: The youngest child
+        distractors: [The oldest child, The only child, The cousin]
+        audio: bunso
+        audio_text: Bunso
+      - type: translate
+        prompt_tl: Guro ang nanay ko at doktor ang tatay ko.
+        answer_en: My mom is a teacher and my dad is a doctor.
+        extra_words: [nurse, farmer, sibling]
+        audio: guro_ang_nanay_ko_at_doktor_ang_tatay_ko
+  - id: revbasics-4
+    title: Introducing everyone
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pangalan, en: name }
+          - { tl: pamilya, en: family }
+          - { tl: kaibigan, en: friend }
+          - { tl: magulang, en: parents }
+      - type: choice
+        prompt: "You introduce your friend Maria. Say:"
+        answer: Siya si Maria, kaibigan ko.
+        distractors: [Ako si Maria., Sino si Maria?, Kumusta ka, Maria?]
+        audio: siya_si_maria_kaibigan_ko
+        audio_text: Siya si Maria, kaibigan ko.
+      - type: translate
+        prompt_tl: Ito po ang nanay ko.
+        answer_en: This is my mom.
+        accept: ["This is my mother"]
+        extra_words: [dad, grandmother, friend]
+        audio: ito_po_ang_nanay_ko
+      - type: translate
+        prompt_en: This is my older brother. His name is Juan.
+        answer_tl: Ito ang kuya ko. Juan ang pangalan niya.
+        accept: ["Ito po ang kuya ko. Juan po ang pangalan niya", "Kuya ko ito. Juan ang pangalan niya"]
+        extra_words: [ate, siya, pamilya]
+        audio: ito_ang_kuya_ko_juan_ang_pangalan_niya
+      - type: fill_blank
+        sentence: "Ito ___ ang lolo ko."
+        translation: "This is my grandfather. (polite)"
+        answer: po
+        options: [po, ba, si]
+        hint: '"po" slips in right after the first word.'
+      - type: listen
+        audio: ako_si_ana_at_ito_ang_pamilya_ko
+        answer_tl: Ako si Ana at ito ang pamilya ko
+        extra_words: [siya, kaibigan]
+      - type: translate
+        prompt_tl: Kumusta po kayo? Ako po si Ana.
+        answer_en: How are you? I am Ana.
+        accept: ["How are you? I'm Ana"]
+        extra_words: [she, name, goodbye]
+        audio: kumusta_po_kayo_ako_po_si_ana
+      - type: choice
+        prompt: "You meet your friend's grandfather for the first time. Greet him:"
+        answer: Magandang hapon po, Lolo.
+        distractors: [Kumusta ka?, Paalam!, Oo.]
+        audio: magandang_hapon_po_lolo
+        audio_text: Magandang hapon po, Lolo.
+      - type: translate
+        prompt_tl: Kumakain ang pamilya ko sa bahay ng lola ko.
+        answer_en: My family is eating at my grandmother's house.
+        accept: ["My family eats at my grandmother's house", "My family is eating at my grandma's house"]
+        extra_words: [school, cooking, dad]
+        audio: kumakain_ang_pamilya_ko_sa_bahay_ng_lola_ko

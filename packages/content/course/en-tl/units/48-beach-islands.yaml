@@ -1,0 +1,240 @@
+id: beach-islands
+title: Beach & Islands
+description: Talk about the sea, sand, and islands — swimming, boats, and a sunny beach vacation.
+tip: >-
+  Many weather and nature words are just a noun with "ma-" in front: araw (sun) →
+  maaraw (sunny), ulan → maulan, hangin → mahangin, init → mainit. "Tabing-dagat"
+  is literally "edge of the sea". The Philippines is an archipelago of 7,641
+  islands, so almost every town is within a few hours of one.
+lessons:
+  - id: beach-1
+    title: The sea and the sand
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dagat, en: sea }
+          - { tl: buhangin, en: sand }
+          - { tl: alon, en: wave }
+          - { tl: isla, en: island }
+      - type: choice
+        prompt: "'Buhangin' means..."
+        answer: Sand
+        distractors: [Sea, Wave, Island]
+        audio: buhangin
+        audio_text: Buhangin
+      - type: translate
+        prompt_tl: Maganda ang dagat.
+        answer_en: The sea is beautiful.
+        accept: ["The ocean is beautiful"]
+        extra_words: [sand, mountain, big]
+        audio: maganda_ang_dagat
+      - type: translate
+        prompt_en: The sand is hot.
+        answer_tl: Mainit ang buhangin.
+        extra_words: [malamig, dagat, alon]
+        audio: mainit_ang_buhangin
+      - type: fill_blank
+        sentence: "Malakas ang ___ ngayon."
+        translation: "The waves are strong today."
+        answer: alon
+        options: [alon, buhangin, isla]
+      - type: choice
+        prompt: "'Isla' means..."
+        answer: Island
+        distractors: [Mountain, River, Beach]
+        audio: isla
+        audio_text: Isla
+      - type: listen
+        audio: malaki_ang_alon
+        answer_tl: Malaki ang alon
+        extra_words: [buhangin, dagat]
+      - type: translate
+        prompt_tl: Pumunta kami sa tabing-dagat.
+        answer_en: We went to the beach.
+        accept: ["We went to the seaside", "We went to the shore"]
+        extra_words: [mountain, market, they]
+        audio: pumunta_kami_sa_tabing_dagat
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: We want to go to the beach tomorrow.
+        answer_tl: Gusto naming pumunta sa tabing-dagat bukas.
+        accept: ["Bukas, gusto naming pumunta sa tabing-dagat"]
+        extra_words: [bundok, palengke, ako]
+        audio: gusto_naming_pumunta_sa_tabing_dagat_bukas
+        grading: { hyphens: true }
+        hint: '"gusto namin" + a verb → "gusto naming".'
+  - id: beach-2
+    title: Swimming and boats
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lumangoy, en: to swim }
+          - { tl: lumalangoy, en: swimming }
+          - { tl: bangka, en: boat }
+          - { tl: mangingisda, en: fisherman }
+      - type: choice
+        prompt: "'Lumangoy' means..."
+        answer: To swim
+        distractors: [To walk, To ride, To play]
+        audio: lumangoy
+        audio_text: Lumangoy
+      - type: translate
+        prompt_tl: Lumalangoy sila sa dagat.
+        answer_en: They are swimming in the sea.
+        accept: ["They swim in the sea", "They are swimming in the ocean"]
+        extra_words: [walking, boat, sand]
+        audio: lumalangoy_sila_sa_dagat
+      - type: translate
+        prompt_en: I like to swim.
+        answer_tl: Gusto kong lumangoy.
+        extra_words: [sumayaw, kumanta, siya]
+        audio: gusto_kong_lumangoy
+      - type: fill_blank
+        sentence: "Sumakay kami sa ___."
+        translation: "We rode a boat."
+        answer: bangka
+        options: [bangka, jeepney, bundok]
+      - type: choice
+        prompt: "'Bangka' means..."
+        answer: Boat
+        distractors: [Jeepney, Island, Wave]
+        audio: bangka
+        audio_text: Bangka
+      - type: listen
+        audio: lumalangoy_ako_sa_dagat
+        answer_tl: Lumalangoy ako sa dagat
+        extra_words: [bangka, buhangin]
+      - type: translate
+        prompt_tl: Maraming isda sa dagat.
+        answer_en: There are many fish in the sea.
+        accept: ["There are a lot of fish in the sea", "There is a lot of fish in the sea"]
+        extra_words: [sand, boat, small]
+        audio: maraming_isda_sa_dagat
+      - type: translate
+        prompt_en: The fisherman went to the sea yesterday.
+        answer_tl: Pumunta ang mangingisda sa dagat kahapon.
+        accept: ["Kahapon pumunta sa dagat ang mangingisda", "Kahapon pumunta ang mangingisda sa dagat", "Pumunta sa dagat ang mangingisda kahapon"]
+        extra_words: [bundok, bukas, bangka]
+        audio: pumunta_ang_mangingisda_sa_dagat_kahapon
+  - id: beach-3
+    title: A sunny day
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maaraw, en: sunny }
+          - { tl: sikat ng araw, en: sunshine }
+          - { tl: malinaw, en: clear }
+          - { tl: mainit, en: hot }
+      - type: choice
+        prompt: "'Maaraw' means..."
+        answer: Sunny
+        distractors: [Rainy, Windy, Cold]
+        audio: maaraw
+        audio_text: Maaraw
+      - type: translate
+        prompt_tl: Maaraw ngayon sa tabing-dagat.
+        answer_en: It is sunny at the beach today.
+        accept: ["It's sunny at the beach today", "Today it is sunny at the beach"]
+        extra_words: [rainy, mountain, cold]
+        audio: maaraw_ngayon_sa_tabing_dagat
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: The water is clear.
+        answer_tl: Malinaw ang tubig.
+        extra_words: [malamig, dagat, buhangin]
+        audio: malinaw_ang_tubig
+      - type: fill_blank
+        sentence: "Mainit ang ___ ng araw."
+        translation: "The sunshine is hot."
+        answer: sikat
+        options: [sikat, ulan, hangin]
+      - type: choice
+        prompt: "It starts to rain while you are at the beach. Say:"
+        answer: Umuulan sa tabing-dagat.
+        distractors: [Maaraw sa tabing-dagat., Malinaw ang tubig., Mainit ang buhangin.]
+        audio: umuulan_sa_tabing_dagat
+        audio_text: Umuulan sa tabing-dagat.
+      - type: listen
+        audio: maaraw_at_mainit_ngayon
+        answer_tl: Maaraw at mainit ngayon
+        extra_words: [malamig, umuulan]
+      - type: translate
+        prompt_tl: Malamig ang tubig pero masaya kami.
+        answer_en: The water is cold but we are happy.
+        accept: ["The water is cold, but we're happy", "The water is cold but we're happy"]
+        extra_words: [hot, sad, they]
+        audio: malamig_ang_tubig_pero_masaya_kami
+        hint: '"pero" means "but" — the everyday word for it.'
+      - type: translate
+        prompt_en: We are going to the beach because it is sunny today.
+        answer_tl: Pupunta kami sa tabing-dagat dahil maaraw ngayon.
+        accept: ["Pupunta kami sa tabing-dagat kasi maaraw ngayon", "Dahil maaraw ngayon, pupunta kami sa tabing-dagat"]
+        extra_words: [umuulan, bundok, malamig]
+        audio: pupunta_kami_sa_tabing_dagat_dahil_maaraw_ngayon
+        grading: { hyphens: true }
+  - id: beach-4
+    title: Island vacation
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bakasyon, en: vacation }
+          - { tl: buko, en: young coconut }
+          - { tl: isla, en: island }
+          - { tl: mangingisda, en: fisherman }
+      - type: choice
+        prompt: "'Bakasyon' means..."
+        answer: Vacation
+        distractors: [Birthday, Party, Work]
+        audio: bakasyon
+        audio_text: Bakasyon
+      - type: translate
+        prompt_tl: Sa bakasyon, pupunta kami sa isla.
+        answer_en: On vacation, we will go to the island.
+        accept: ["We will go to the island on vacation", "We're going to the island on vacation", "On vacation we are going to the island"]
+        extra_words: [mountain, market, yesterday]
+        audio: sa_bakasyon_pupunta_kami_sa_isla
+      - type: translate
+        prompt_en: There are many islands in the Philippines.
+        answer_tl: Maraming isla sa Pilipinas.
+        accept: ["Sa Pilipinas, maraming isla"]
+        extra_words: [bundok, bangka, maliit]
+        audio: maraming_isla_sa_pilipinas
+      - type: fill_blank
+        sentence: "Umiinom kami ng ___ sa tabing-dagat."
+        translation: "We are drinking young coconut at the beach."
+        answer: buko
+        options: [buko, kape, gatas]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Another Tagalog word for 'isla' is..."
+        answer: Pulo
+        distractors: [Dagat, Bangka, Buhangin]
+        audio: pulo
+        audio_text: Pulo
+      - type: listen
+        audio: masaya_ang_bakasyon_namin
+        answer_tl: Masaya ang bakasyon namin
+        extra_words: [malungkot, isla]
+      - type: translate
+        prompt_en: She wants to swim at the beach.
+        answer_tl: Gusto niyang lumangoy sa tabing-dagat.
+        extra_words: [sumayaw, kumanta, bundok]
+        audio: gusto_niyang_lumangoy_sa_tabing_dagat
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Araw-araw siyang lumalangoy sa dagat.
+        answer_en: He swims in the sea every day.
+        accept: ["She swims in the sea every day", "He is swimming in the sea every day", "She is swimming in the sea every day", "Every day he swims in the sea", "Every day she swims in the sea"]
+        extra_words: [walks, boat, sand]
+        audio: araw_araw_siyang_lumalangoy_sa_dagat
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: We ate fish and drank young coconut at the beach.
+        answer_tl: Kumain kami ng isda at uminom ng buko sa tabing-dagat.
+        extra_words: [kanin, gatas, bundok]
+        audio: kumain_kami_ng_isda_at_uminom_ng_buko_sa_tabing_dagat
+        grading: { hyphens: true }

@@ -1,0 +1,272 @@
+id: review-questions-particles
+title: "Review: Questions & Particles"
+description: Ask real questions and answer like a local — stack na, pa, and ba onto ano, saan, and kailan.
+tip: >-
+  Question words and particles stack in a fixed order: question word, then the
+  one-syllable pronoun (ka, mo), then na or pa, then ba last — two-syllable pronouns like ako and siya come after the particles instead ("Uminom na ako") — "Saan ka na ba
+  pupunta?" (So where are you off to now?). The pair na/pa flips the meaning of
+  the same question: "Ano na?" asks what's happening now, "Ano pa?" asks what
+  else. And "ba" marks the question by itself, so the word order never
+  changes — "Masarap ito." becomes "Masarap ba ito?"
+lessons:
+  - id: revquest-1
+    title: The question words again
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ano, en: what }
+          - { tl: sino, en: who }
+          - { tl: saan, en: where (to) }
+          - { tl: kailan, en: when }
+      - type: choice
+        prompt: "Which one asks where something IS right now?"
+        answer: Nasaan ang nanay mo?
+        distractors:
+          - Saan ka pupunta?
+          - Sino ang nanay mo?
+          - Kailan ka pupunta?
+        audio: nasaan_ang_nanay_mo
+        audio_text: Nasaan ang nanay mo?
+      - type: translate
+        prompt_tl: Sino ang guro mo?
+        answer_en: Who is your teacher?
+        extra_words: [what, where, friend]
+        audio: sino_ang_guro_mo
+      - type: translate
+        prompt_en: Where are you going now?
+        answer_tl: Saan ka pupunta ngayon?
+        accept: ["Saan po kayo pupunta ngayon?"]
+        extra_words: [nasaan, kailan, bukas]
+        audio: saan_ka_pupunta_ngayon
+        hint: '"Saan" pairs with an action; "nasaan" asks where a thing is.'
+      - type: fill_blank
+        sentence: "___ ang pagsusulit?"
+        translation: "When is the test?"
+        answer: Kailan
+        options: [Kailan, Ilan, Magkano]
+      - type: listen
+        audio: bakit_ka_pagod
+        answer_tl: Bakit ka pagod
+        extra_words: [paano, masaya]
+      - type: choice
+        prompt: "'Magkano ang manok?' asks about the..."
+        answer: Price
+        distractors: [Number, Time, Reason]
+        audio: magkano_ang_manok
+        audio_text: Magkano ang manok?
+      - type: translate
+        prompt_tl: Ilan ang anak nila?
+        answer_en: How many children do they have?
+        accept:
+          - "How many kids do they have?"
+          - "How many children do they have"
+        extra_words: [much, when, siblings]
+        audio: ilan_ang_anak_nila
+      - type: translate
+        prompt_en: Why did you go to the hospital yesterday?
+        answer_tl: Bakit ka pumunta sa ospital kahapon?
+        accept: ["Bakit po kayo pumunta sa ospital kahapon?"]
+        extra_words: [paano, botika, bukas]
+        audio: bakit_ka_pumunta_sa_ospital_kahapon
+  - id: revquest-2
+    title: The little words again
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: na, en: already }
+          - { tl: pa, en: still }
+          - { tl: lang, en: only }
+          - { tl: naman, en: how about }
+      - type: choice
+        prompt: "'Isa pa' means..."
+        answer: One more
+        distractors: [Just one, Only two, Not yet]
+        audio: isa_pa
+        audio_text: Isa pa.
+      - type: translate
+        prompt_tl: Natutulog na ang anak ko.
+        answer_en: My child is already sleeping.
+        accept:
+          - "My child is sleeping already"
+          - "My kid is already sleeping"
+          - "My kid is sleeping already"
+        extra_words: [still, eating, tired]
+        audio: natutulog_na_ang_anak_ko
+      - type: translate
+        prompt_en: We are just drinking coffee.
+        answer_tl: Umiinom lang kami ng kape.
+        accept: ["Umiinom lang po kami ng kape."]
+        extra_words: [kumakain, rin, gatas]
+        audio: umiinom_lang_kami_ng_kape
+      - type: fill_blank
+        sentence: "Uminom ___ ako ng tubig."
+        translation: "I already drank water."
+        answer: na
+        options: [na, pa, ba]
+      - type: choice
+        prompt: "After a word ending in a consonant, 'rin' becomes..."
+        answer: din
+        distractors: [raw, naman, lang]
+        audio: din
+        audio_text: Din
+      - type: listen
+        audio: masarap_naman_ang_kanin
+        answer_tl: Masarap naman ang kanin
+        extra_words: [lang, tubig]
+      - type: translate
+        prompt_tl: Nagtatrabaho pa raw siya.
+        answer_en: They say he is still working.
+        accept:
+          - "They say she is still working"
+          - "He is still working, they say"
+          - "She is still working, they say"
+        extra_words: [already, studying, sleeping]
+        audio: nagtatrabaho_pa_raw_siya
+      - type: translate
+        prompt_en: Grandma is still cooking in the kitchen.
+        answer_tl: Nagluluto pa si Lola sa kusina.
+        accept: ["Nagluluto pa si Lola sa kusina"]
+        extra_words: [na, naglilinis, banyo]
+        audio: nagluluto_pa_si_lola_sa_kusina
+  - id: revquest-3
+    title: Stacking them together
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumain ka na ba?' means..."
+        answer: Have you eaten yet?
+        distractors:
+          - Are you still eating?
+          - Do you want to eat?
+          - I already ate.
+        audio: kumain_ka_na_ba
+        audio_text: Kumain ka na ba?
+      - type: match
+        pairs:
+          - { tl: Ano na?, en: What now? }
+          - { tl: Ano pa?, en: What else? }
+          - { tl: Saan na?, en: Where to now? }
+          - { tl: Sino naman?, en: And who? }
+      - type: translate
+        prompt_tl: Ano pa ang gusto mo?
+        answer_en: What else do you want?
+        accept:
+          - "What else would you like?"
+          - "What more do you want?"
+        extra_words: [who, where, only]
+        audio: ano_pa_ang_gusto_mo
+      - type: translate
+        prompt_en: So where are you going?
+        answer_tl: Saan ka na ba pupunta?
+        accept: ["Saan ka na pupunta?", "Saan ka ba pupunta?"]
+        extra_words: [nasaan, lang, bukas]
+        audio: saan_ka_na_ba_pupunta
+        hint: 'Order after "ka": na first, then ba.'
+      - type: fill_blank
+        sentence: "Nasaan ___ ang tatay mo?"
+        translation: "Where is your dad now?"
+        answer: na
+        options: [na, pa, lang]
+      - type: listen
+        audio: magkano_na_ba_ang_isda
+        answer_tl: Magkano na ba ang isda
+        extra_words: [ilan, manok]
+      - type: choice
+        prompt: "Which one asks 'Are you still studying?'"
+        answer: Nag-aaral ka pa ba?
+        distractors:
+          - Nag-aaral ka na ba?
+          - Nagtatrabaho ka pa ba?
+          - Nag-aaral ka lang ba?
+        audio: nag_aaral_ka_pa_ba
+        audio_text: Nag-aaral ka pa ba?
+      - type: translate
+        prompt_tl: Sino pa ang pupunta sa handaan?
+        answer_en: Who else is going to the party?
+        accept: ["Who else will go to the party?"]
+        extra_words: [what, when, already]
+        audio: sino_pa_ang_pupunta_sa_handaan
+      - type: translate
+        prompt_tl: Nasaan na ang kapatid mo? Natutulog pa ba siya?
+        answer_en: Where is your sibling now? Is he still sleeping?
+        accept:
+          - "Where is your sibling now? Is she still sleeping?"
+          - "Where's your sibling now? Is he still sleeping?"
+          - "Where's your sibling now? Is she still sleeping?"
+        extra_words: [who, eating, already]
+        audio: nasaan_na_ang_kapatid_mo_natutulog_pa_ba_siya
+  - id: revquest-4
+    title: Small talk
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kumusta ka na?, en: How have you been? }
+          - { tl: Mabuti naman., en: I'm doing fine. }
+          - { tl: Ikaw naman?, en: How about you? }
+          - { tl: Ako rin., en: Me too. }
+      - type: choice
+        prompt: "A friend asks 'Kumusta ka na?' A natural reply is..."
+        answer: Mabuti naman ako.
+        distractors:
+          - Saan ka pupunta?
+          - Magkano ito?
+          - Sino siya?
+        audio: mabuti_naman_ako
+        audio_text: Mabuti naman ako.
+      - type: translate
+        prompt_tl: Saan ka na ba nagtatrabaho ngayon?
+        answer_en: So where do you work now?
+        accept:
+          - "Where do you work now?"
+          - "Where are you working now?"
+        extra_words: [who, study, yesterday]
+        audio: saan_ka_na_ba_nagtatrabaho_ngayon
+      - type: translate
+        prompt_en: I am still a student. How about you?
+        answer_tl: Estudyante pa ako. Ikaw naman?
+        accept: ["Estudyante pa po ako. Kayo naman?"]
+        extra_words: [guro, lang, na]
+        audio: estudyante_pa_ako_ikaw_naman
+      - type: fill_blank
+        sentence: "Kumain ka na ___?"
+        translation: "Have you eaten yet?"
+        answer: ba
+        options: [ba, na, rin]
+        hint: '"ba" comes after na/pa, at the end of the particle run.'
+      - type: listen
+        audio: gutom_ka_na_ba
+        answer_tl: Gutom ka na ba
+        extra_words: [pa, masaya]
+      - type: choice
+        prompt: "'Ilan pa ba ang bisita?' asks..."
+        answer: How many more guests are there?
+        distractors:
+          - Who are the guests?
+          - Where are the guests?
+          - Are the guests here already?
+        audio: ilan_pa_ba_ang_bisita
+        audio_text: Ilan pa ba ang bisita?
+      - type: translate
+        prompt_tl: Umuulan pa ba doon?
+        answer_en: Is it still raining there?
+        accept: ["Is it still raining over there?"]
+        extra_words: [already, hot, here]
+        audio: umuulan_pa_ba_doon
+      - type: translate
+        prompt_tl: Kumain na raw sila. Gutom ka pa ba?
+        answer_en: They say they already ate. Are you still hungry?
+        accept:
+          - "They already ate, they say. Are you still hungry?"
+          - "They say they have already eaten. Are you still hungry?"
+        extra_words: [thirsty, who, tomorrow]
+        audio: kumain_na_raw_sila_gutom_ka_pa_ba
+      - type: translate
+        prompt_en: They say it is fun there. Do you want to go tomorrow?
+        answer_tl: Masaya raw doon. Gusto mo bang pumunta bukas?
+        accept: ["Masaya raw doon. Gusto mo bang pumunta bukas"]
+        extra_words: [malungkot, dito, kahapon]
+        audio: masaya_raw_doon_gusto_mo_bang_pumunta_bukas
+        hint: '"Masaya" ends in a vowel, so "daw" softens to "raw".'

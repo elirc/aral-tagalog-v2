@@ -24,7 +24,7 @@ lessons:
       - type: translate
         prompt_tl: Umuulan ngayon.
         answer_en: It's raining now.
-        accept: ["It is raining today", "It's raining today"]
+        accept: ["It is raining now", "It is raining today", "It's raining today"]
         extra_words: [sun, hot, cold]
         audio: umuulan_ngayon
       - type: translate
@@ -67,7 +67,7 @@ lessons:
       - type: translate
         prompt_tl: Malamig ngayon.
         answer_en: It's cold now.
-        accept: ["It is cold today", "It's cold today"]
+        accept: ["It is cold now", "It is cold today", "It's cold today"]
         extra_words: [hot, sun, wind]
       - type: translate
         prompt_en: The weather is beautiful.
@@ -168,7 +168,7 @@ lessons:
       - type: translate
         prompt_tl: Umuulan at malamig ngayon.
         answer_en: It's raining and cold now.
-        accept: ["It is raining and cold now"]
+        accept: ["It is raining and cold now", "It's raining and cold today", "It is raining and cold today"]
         extra_words: [hot, sun, wind]
       - type: fill_blank
         sentence: "Malamig ___ mainit?"

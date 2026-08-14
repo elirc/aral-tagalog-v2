@@ -1,0 +1,229 @@
+id: questions
+title: Question Words
+description: Ask what, who, where, when, why, and how — and give natural answers.
+tip: >-
+  Tagalog has two words for "where": "nasaan" asks for the location of a person
+  or thing, with no verb in the sentence (Nasaan ang banyo?), while "saan" pairs
+  with an action (Saan ka pupunta?).
+  To answer a "bakit" (why) question, start with "kasi" or "dahil" — both mean
+  "because", and "kasi" is the one you'll hear in everyday speech.
+lessons:
+  - id: questions-1
+    title: What and who
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ano, en: what }
+          - { tl: sino, en: who }
+          - { tl: pangalan, en: name }
+          - { tl: kaibigan, en: friend }
+      - type: choice
+        prompt: "'Ano' means..."
+        answer: What
+        distractors: [Who, Where, When]
+        audio: ano
+        audio_text: Ano
+      - type: translate
+        prompt_tl: Ano ang pangalan mo?
+        answer_en: What is your name?
+        accept: ["What's your name?"]
+        extra_words: [who, where, friend]
+        audio: ano_ang_pangalan_mo
+      - type: translate
+        prompt_en: Who is she?
+        answer_tl: Sino siya?
+        accept: ["Sino po siya?"]
+        extra_words: [ano, ito, saan]
+        audio: sino_siya
+      - type: fill_blank
+        sentence: "___ ang paborito mong kulay?"
+        translation: "What is your favorite color?"
+        answer: Ano
+        options: [Ano, Sino, Ilan]
+      - type: choice
+        prompt: "'Sino' means..."
+        answer: Who
+        distractors: [What, Where, How many]
+        audio: sino
+        audio_text: Sino
+      - type: listen
+        audio: ano_ito
+        answer_tl: Ano ito
+        extra_words: [sino, saan]
+      - type: translate
+        prompt_tl: Sino ang kaibigan mo?
+        answer_en: Who is your friend?
+        extra_words: [what, teacher, name]
+        audio: sino_ang_kaibigan_mo
+      - type: translate
+        prompt_en: What is the name of your teacher?
+        answer_tl: Ano ang pangalan ng guro mo?
+        accept: ["Ano po ang pangalan ng guro mo?"]
+        extra_words: [sino, kaibigan, saan]
+        audio: ano_ang_pangalan_ng_guro_mo
+  - id: questions-2
+    title: Where — saan and nasaan
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: saan, en: where (to) }
+          - { tl: nasaan, en: where (is) }
+          - { tl: dito, en: here }
+          - { tl: doon, en: there }
+      - type: choice
+        prompt: "'Nasaan' means..."
+        answer: Where is
+        distractors: [Where to, Who, What]
+        audio: nasaan
+        audio_text: Nasaan
+      - type: translate
+        prompt_tl: Nasaan ang nanay mo?
+        answer_en: Where is your mom?
+        accept: ["Where's your mom?", "Where is your mother?"]
+        extra_words: [who, dad, going]
+        audio: nasaan_ang_nanay_mo
+      - type: translate
+        prompt_en: Where are you going?
+        answer_tl: Saan ka pupunta?
+        accept: ["Saan po kayo pupunta?"]
+        extra_words: [nasaan, dito, ano]
+        audio: saan_ka_pupunta
+      - type: fill_blank
+        sentence: "___ ang banyo?"
+        translation: "Where is the bathroom?"
+        answer: Nasaan
+        options: [Nasaan, Saan, Sino]
+        hint: 'Use "nasaan" to ask where a thing or person IS.'
+      - type: listen
+        audio: saan_ka_bumili_ng_tinapay
+        answer_tl: Saan ka bumili ng tinapay
+        extra_words: [nasaan, kumain]
+      - type: translate
+        prompt_tl: Saan ka nagtatrabaho?
+        answer_en: Where do you work?
+        accept: ["Where are you working?"]
+        extra_words: [study, live, when]
+        audio: saan_ka_nagtatrabaho
+      - type: fill_blank
+        sentence: "___ ka umiinom ng kape?"
+        translation: "Where do you drink coffee?"
+        answer: Saan
+        options: [Saan, Nasaan, Ano]
+        hint: '"Saan" pairs with an action word.'
+      - type: translate
+        prompt_en: Where is the jeepney station?
+        answer_tl: Nasaan ang terminal ng jeepney?
+        accept: ["Nasaan po ang terminal ng jeepney?"]
+        extra_words: [saan, palengke, malayo]
+        audio: nasaan_ang_terminal_ng_jeepney
+  - id: questions-3
+    title: When, how many, how much
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kailan, en: when }
+          - { tl: ilan, en: how many }
+          - { tl: magkano, en: how much }
+          - { tl: ngayon, en: now }
+      - type: choice
+        prompt: "'Kailan' means..."
+        answer: When
+        distractors: [Where, Why, How]
+        audio: kailan
+        audio_text: Kailan
+      - type: translate
+        prompt_tl: Kailan ang kaarawan mo?
+        answer_en: When is your birthday?
+        accept: ["When's your birthday?"]
+        extra_words: [how, party, gift]
+        audio: kailan_ang_kaarawan_mo
+      - type: translate
+        prompt_en: When will you go to the market?
+        answer_tl: Kailan ka pupunta sa palengke?
+        accept: ["Kailan po kayo pupunta sa palengke?"]
+        extra_words: [magkano, kahapon, bakit]
+        audio: kailan_ka_pupunta_sa_palengke
+      - type: fill_blank
+        sentence: "___ ang itlog?"
+        translation: "How much are the eggs?"
+        answer: Magkano
+        options: [Magkano, Ilan, Kailan]
+      - type: translate
+        prompt_tl: Ilan ang kapatid mo?
+        answer_en: How many siblings do you have?
+        accept: ["How many are your siblings?"]
+        extra_words: [much, when, cousins]
+        audio: ilan_ang_kapatid_mo
+      - type: listen
+        audio: magkano_ang_isda
+        answer_tl: Magkano ang isda
+        extra_words: [ilan, manok]
+      - type: choice
+        prompt: "You want to know the price of something. Ask..."
+        answer: Magkano ito?
+        distractors: [Ilan ito?, Ano ito?, Kailan ito?]
+        audio: magkano_ito
+        audio_text: Magkano ito?
+      - type: translate
+        prompt_en: When did you buy shoes?
+        answer_tl: Kailan ka bumili ng sapatos?
+        accept: ["Kailan po kayo bumili ng sapatos?"]
+        extra_words: [magkano, kahapon, damit]
+        audio: kailan_ka_bumili_ng_sapatos
+  - id: questions-4
+    title: Why, how, because
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bakit, en: why }
+          - { tl: paano, en: how }
+          - { tl: kasi, en: because }
+          - { tl: kailan, en: when }
+      - type: choice
+        prompt: "'Paano' means..."
+        answer: How
+        distractors: [Why, When, Where]
+        audio: paano
+        audio_text: Paano
+      - type: translate
+        prompt_tl: Bakit ka malungkot?
+        answer_en: Why are you sad?
+        extra_words: [happy, how, tired]
+        audio: bakit_ka_malungkot
+      - type: translate
+        prompt_en: Why is he angry?
+        answer_tl: Bakit siya galit?
+        accept: ["Bakit galit siya?"]
+        extra_words: [paano, masaya, kasi]
+        audio: bakit_siya_galit
+      - type: fill_blank
+        sentence: "Gutom ako ___ hindi ako kumain."
+        translation: "I'm hungry because I didn't eat."
+        answer: kasi
+        options: [kasi, bakit, paano]
+      - type: listen
+        audio: paano_pumunta_sa_istasyon
+        answer_tl: Paano pumunta sa istasyon
+        extra_words: [bakit, saan]
+      - type: translate
+        prompt_tl: Paano ka pumunta sa paaralan?
+        answer_en: How did you go to school?
+        accept: ["How did you get to school?"]
+        extra_words: [why, market, when]
+        audio: paano_ka_pumunta_sa_paaralan
+      - type: choice
+        prompt: "'Kasi' means..."
+        answer: Because
+        distractors: [Why, How, Really]
+        audio: kasi
+        audio_text: Kasi
+      - type: translate
+        prompt_en: I am happy because it is my birthday.
+        answer_tl: Masaya ako kasi kaarawan ko.
+        accept: ["Masaya ako dahil kaarawan ko"]
+        extra_words: [bakit, malungkot, regalo]
+        audio: masaya_ako_kasi_kaarawan_ko

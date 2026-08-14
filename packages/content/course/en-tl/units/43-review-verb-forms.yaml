@@ -1,0 +1,250 @@
+id: review-verb-forms
+title: "Review: All Verb Forms"
+description: One root, three shapes — say what you did, what you are doing, and what you will do.
+tip: >-
+  Every Tagalog verb you have met has three shapes. Completed: kumain, uminom,
+  nagluto. Ongoing — and habits too: double the root's first syllable and keep
+  the -um-/nag- marker → kumakain, umiinom, nagluluto. Contemplated (future):
+  double the same syllable, but drop -um- entirely and swap nag- for mag- →
+  kakain, iinom, magluluto. The time word tells you which to reach for:
+  kahapon and kanina take the completed form, ngayon and araw-araw the ongoing
+  one, bukas and mamaya the future.
+lessons:
+  - id: revverbs-1
+    title: Kahapon, ngayon, bukas
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: eating }
+          - { tl: kakain, en: will eat }
+          - { tl: iinom, en: will drink }
+      - type: choice
+        prompt: "Which sentence means 'I will eat tomorrow'?"
+        answer: Kakain ako bukas.
+        distractors: [Kumain ako kahapon., Kumakain ako ngayon., Kumain ako bukas.]
+        audio: kakain_ako_bukas
+        audio_text: Kakain ako bukas.
+      - type: translate
+        prompt_tl: Kumakain ako ngayon.
+        answer_en: I am eating now.
+        accept: ["I'm eating now", "I am eating right now"]
+        extra_words: [ate, tomorrow, drank]
+        audio: kumakain_ako_ngayon
+      - type: translate
+        prompt_tl: Kumain ako kahapon.
+        answer_en: I ate yesterday.
+        accept: ["Yesterday I ate"]
+        extra_words: [eating, tomorrow, will]
+        audio: kumain_ako_kahapon
+      - type: translate
+        prompt_en: She will drink milk tomorrow.
+        answer_tl: Iinom siya ng gatas bukas.
+        extra_words: [uminom, kape, kahapon]
+        audio: iinom_siya_ng_gatas_bukas
+        hint: 'Future of "uminom": drop the -um- and double the first syllable → iinom.'
+      - type: fill_blank
+        sentence: "___ ako ng kape kahapon."
+        translation: "I drank coffee yesterday."
+        answer: Uminom
+        options: [Uminom, Umiinom, Iinom]
+        hint: '"Kahapon" is done and over — the completed form has no doubled syllable.'
+      - type: listen
+        audio: kumakain_kami_ngayon
+        answer_tl: Kumakain kami ngayon
+        extra_words: [kumain, bukas]
+      - type: choice
+        prompt: "Which form of 'to drink' goes with 'kahapon' (yesterday)?"
+        answer: Uminom
+        distractors: [Umiinom, Iinom, Inom]
+        audio: uminom
+        audio_text: Uminom
+      - type: translate
+        prompt_tl: Kumain ako kahapon, kumakain ako ngayon, at kakain ako bukas.
+        answer_en: I ate yesterday, I am eating now, and I will eat tomorrow.
+        accept:
+          - "I ate yesterday, I'm eating now, and I will eat tomorrow"
+          - "I ate yesterday, I am eating now and I will eat tomorrow"
+        extra_words: [drank, drinking, rice]
+        audio: kumain_ako_kahapon_kumakain_ako_ngayon_at_kakain_ako_bukas
+  - id: revverbs-2
+    title: MAG verbs, three ways
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nagluto, en: cooked }
+          - { tl: nagluluto, en: cooking }
+          - { tl: magluluto, en: will cook }
+          - { tl: naglaro, en: played }
+      - type: choice
+        prompt: "'Magluluto' means..."
+        answer: Will cook
+        distractors: [Cooked, Cooking, Will play]
+        audio: magluluto
+        audio_text: Magluluto
+      - type: translate
+        prompt_tl: Nagluto si Nanay kahapon.
+        answer_en: Mom cooked yesterday.
+        accept: ["Mother cooked yesterday", "My mom cooked yesterday"]
+        extra_words: [cooking, tomorrow, played]
+        audio: nagluto_si_nanay_kahapon
+      - type: translate
+        prompt_en: We will play basketball tomorrow.
+        answer_tl: Maglalaro kami ng basketbol bukas.
+        accept: ["Maglalaro tayo ng basketbol bukas"]
+        extra_words: [naglaro, naglalaro, mamaya]
+        audio: maglalaro_kami_ng_basketbol_bukas
+      - type: fill_blank
+        sentence: "___ ako sa opisina bukas."
+        translation: "I will work at the office tomorrow."
+        answer: Magtatrabaho
+        options: [Magtatrabaho, Nagtatrabaho, Nagtrabaho]
+        hint: 'Future mag- verbs keep mag- and repeat the root''s first consonant + vowel: trabaho → magtatrabaho.'
+      - type: listen
+        audio: nag_aaral_sila_ngayon
+        answer_tl: Nag-aaral sila ngayon
+        extra_words: [nag-aral, bukas]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Which sentence means 'They studied yesterday'?"
+        answer: Nag-aral sila kahapon.
+        distractors: [Nag-aaral sila ngayon., Mag-aaral sila bukas., Nag-aral sila bukas.]
+        audio: nag_aral_sila_kahapon
+        audio_text: Nag-aral sila kahapon.
+      - type: translate
+        prompt_tl: Naglilinis ako ngayon at maglilinis ako bukas.
+        answer_en: I am cleaning now and I will clean tomorrow.
+        accept:
+          - "I'm cleaning now and I will clean tomorrow"
+          - "I am cleaning now and will clean tomorrow"
+        extra_words: [cooked, played, yesterday]
+        audio: naglilinis_ako_ngayon_at_maglilinis_ako_bukas
+      - type: translate
+        prompt_en: Grandma cooked fish yesterday and she will cook chicken tomorrow.
+        answer_tl: Nagluto si Lola ng isda kahapon at magluluto siya ng manok bukas.
+        accept: ["Nagluto ng isda si Lola kahapon at magluluto siya ng manok bukas"]
+        extra_words: [nagluluto, kanin, kusina]
+        audio: nagluto_si_lola_ng_isda_kahapon_at_magluluto_siya_ng_manok_bukas
+        hint: 'Two clauses, two aspects — one done, one still to come.'
+  - id: revverbs-3
+    title: Let the time word decide
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanina, en: earlier today }
+          - { tl: mamaya, en: later today }
+          - { tl: araw-araw, en: every day }
+          - { tl: palagi, en: always }
+      - type: choice
+        prompt: "'Palagi' means..."
+        answer: Always
+        distractors: [Sometimes, Never, Later]
+        audio: palagi
+        audio_text: Palagi
+      - type: translate
+        prompt_tl: Palagi akong kumakain ng kanin.
+        answer_en: I always eat rice.
+        accept: ["I always eat some rice", "I eat rice all the time"]
+        extra_words: [ate, tomorrow, bread]
+        audio: palagi_akong_kumakain_ng_kanin
+        hint: 'A habit uses the same doubled form as "right now" — kumakain.'
+      - type: fill_blank
+        sentence: "Araw-araw akong ___ ng kape."
+        translation: "I drink coffee every day."
+        answer: umiinom
+        options: [umiinom, uminom, iinom]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: We will watch a movie later.
+        answer_tl: Manonood kami ng pelikula mamaya.
+        accept: ["Manonood tayo ng pelikula mamaya"]
+        extra_words: [nanood, nanonood, bukas]
+        audio: manonood_kami_ng_pelikula_mamaya
+      - type: listen
+        audio: naglakad_kami_kanina
+        answer_tl: Naglakad kami kanina
+        extra_words: [maglalakad, bukas]
+      - type: choice
+        prompt: "'Mamaya' calls for which form of 'kumain'?"
+        answer: Kakain
+        distractors: [Kumain, Kumakain, Kain]
+        audio: kakain
+        audio_text: Kakain
+      - type: fill_blank
+        sentence: "___ si Ana sa simbahan kanina."
+        translation: "Ana went to church earlier today."
+        answer: Pumunta
+        options: [Pumunta, Pupunta, Pumupunta]
+        hint: '"Kanina" means earlier today — the trip already happened.'
+      - type: translate
+        prompt_tl: Nag-aaral siya ngayon kasi may pagsusulit siya bukas.
+        answer_en: She is studying now because she has a test tomorrow.
+        accept:
+          - "He is studying now because he has a test tomorrow"
+          - "She's studying now because she has a test tomorrow"
+          - "He's studying now because he has a test tomorrow"
+        extra_words: [studied, yesterday, class]
+        audio: nag_aaral_siya_ngayon_kasi_may_pagsusulit_siya_bukas
+        grading: { hyphens: true }
+  - id: revverbs-4
+    title: A day in three aspects
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: natulog, en: slept }
+          - { tl: natutulog, en: sleeping }
+          - { tl: matutulog, en: will sleep }
+          - { tl: gumising, en: woke up }
+      - type: choice
+        prompt: "Which sentence means 'We will go home later'?"
+        answer: Uuwi kami mamaya.
+        distractors: [Umuwi kami kanina., Umuuwi kami ngayon., Uuwi kami kahapon.]
+        audio: uuwi_kami_mamaya
+        audio_text: Uuwi kami mamaya.
+      - type: translate
+        prompt_tl: Nanood kami ng pelikula kahapon.
+        answer_en: We watched a movie yesterday.
+        accept: ["We saw a movie yesterday"]
+        extra_words: [watching, tomorrow, played]
+        audio: nanood_kami_ng_pelikula_kahapon
+      - type: translate
+        prompt_en: I will sleep later because I am tired.
+        answer_tl: Matutulog ako mamaya kasi pagod ako.
+        extra_words: [natulog, natutulog, bukas]
+        audio: matutulog_ako_mamaya_kasi_pagod_ako
+      - type: fill_blank
+        sentence: "Sumayaw kami kahapon at ___ kami bukas."
+        translation: "We danced yesterday and we will dance tomorrow."
+        answer: sasayaw
+        options: [sasayaw, sumayaw, sumasayaw]
+      - type: listen
+        audio: bibili_ako_ng_damit_bukas
+        answer_tl: Bibili ako ng damit bukas
+        extra_words: [bumili, kahapon]
+      - type: choice
+        prompt: "'Kakanta' means..."
+        answer: Will sing
+        distractors: [Sang, Singing, Will dance]
+        audio: kakanta
+        audio_text: Kakanta
+      - type: translate
+        prompt_tl: Naglinis ako ng bahay kanina, tapos nagluto ako ng kanin.
+        answer_en: I cleaned the house earlier, then I cooked rice.
+        accept:
+          - "I cleaned the house earlier today, then I cooked rice"
+          - "I cleaned the house earlier then cooked rice"
+        extra_words: [cleaning, tomorrow, bought]
+        audio: naglinis_ako_ng_bahay_kanina_tapos_nagluto_ako_ng_kanin
+      - type: translate
+        prompt_en: I went to the market yesterday, I am cooking now, and we will eat later.
+        answer_tl: Pumunta ako sa palengke kahapon, nagluluto ako ngayon, at kakain kami mamaya.
+        accept:
+          - "Pumunta ako sa palengke kahapon nagluluto ako ngayon at kakain kami mamaya"
+          - "Pumunta ako sa palengke kahapon, nagluluto ako ngayon, at kakain tayo mamaya"
+        extra_words: [pupunta, nagluto, bukas]
+        audio: pumunta_ako_sa_palengke_kahapon_nagluluto_ako_ngayon_at_kakain_kami_mamaya
+        hint: 'Three clauses, three aspects: done, happening, still to come.'

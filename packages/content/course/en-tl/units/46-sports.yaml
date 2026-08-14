@@ -1,0 +1,237 @@
+id: sports
+title: Sports & Exercise
+description: Talk about basketball, boxing, and volleyball, and say who runs, swims, wins, and loses.
+tip: >-
+  Sport verbs love the -um- infix: takbo → tumakbo (run), langoy → lumangoy
+  (swim). Matalo (to lose) takes ma-, while manalo (to win) is mang- + talo;
+  both swap the m for n in the past: natalo (lost), nanalo (won). Basketball is
+  the national obsession — nearly every barangay has a covered court, and a
+  fiesta is not a fiesta without a tournament.
+lessons:
+  - id: sports-1
+    title: Mga isport
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isport, en: sport }
+          - { tl: basketbol, en: basketball }
+          - { tl: boksing, en: boxing }
+          - { tl: bolibol, en: volleyball }
+      - type: choice
+        prompt: "'Boksing' means..."
+        answer: Boxing
+        distractors: [Basketball, Volleyball, Swimming]
+        audio: boksing
+        audio_text: Boksing
+      - type: translate
+        prompt_tl: Naglalaro kami ng bolibol.
+        answer_en: We are playing volleyball.
+        accept: ["We play volleyball"]
+        extra_words: [basketball, boxing, running]
+        audio: naglalaro_kami_ng_bolibol
+      - type: translate
+        prompt_en: Basketball is my favorite sport.
+        answer_tl: Basketbol ang paborito kong isport.
+        accept: ["Paborito kong isport ang basketbol"]
+        extra_words: [laro, boksing, koponan]
+        audio: basketbol_ang_paborito_kong_isport
+      - type: fill_blank
+        sentence: "Gusto niyang manood ng ___."
+        translation: "He wants to watch boxing."
+        answer: boksing
+        options: [boksing, kanta, pelikula]
+      - type: choice
+        prompt: "'Bola' means..."
+        answer: Ball
+        distractors: [Team, Game, Player]
+        audio: bola
+        audio_text: Bola
+      - type: listen
+        audio: naglalaro_sila_ng_bolibol
+        answer_tl: Naglalaro sila ng bolibol
+        extra_words: [basketbol, kami]
+      - type: choice
+        prompt: "'Koponan' means..."
+        answer: Team
+        distractors: [Ball, Court, Score]
+        audio: koponan
+        audio_text: Koponan
+      - type: translate
+        prompt_tl: Ano ang paborito mong isport?
+        answer_en: What is your favorite sport?
+        accept: ["What sport is your favorite?"]
+        extra_words: [hobby, song, game]
+        audio: ano_ang_paborito_mong_isport
+  - id: sports-2
+    title: Mag-ehersisyo tayo
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tumakbo, en: to run }
+          - { tl: lumangoy, en: to swim }
+          - { tl: mag-ehersisyo, en: to exercise }
+          - { tl: sumayaw, en: to dance }
+      - type: choice
+        prompt: "'Tumakbo' means..."
+        answer: To run
+        distractors: [To swim, To walk, To play]
+        audio: tumakbo
+        audio_text: Tumakbo
+      - type: choice
+        prompt: "'Lumangoy' means..."
+        answer: To swim
+        distractors: [To run, To dance, To read]
+        audio: lumangoy
+        audio_text: Lumangoy
+      - type: translate
+        prompt_tl: Tumatakbo ako araw-araw.
+        answer_en: I run every day.
+        accept: ["I run everyday", "I go running every day"]
+        extra_words: [swim, walk, night]
+        audio: tumatakbo_ako_araw_araw
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: She is swimming in the sea.
+        answer_tl: Lumalangoy siya sa dagat.
+        extra_words: [tumatakbo, bahay, ako]
+        audio: lumalangoy_siya_sa_dagat
+      - type: fill_blank
+        sentence: "___ tayo bukas."
+        translation: "Let's exercise tomorrow."
+        answer: Mag-ehersisyo
+        options: [Mag-ehersisyo, Kumanta, Magbasa]
+      - type: listen
+        audio: mag_ehersisyo_tayo
+        answer_tl: Mag-ehersisyo tayo
+        extra_words: [tumakbo, ako]
+      - type: translate
+        prompt_tl: Nag-eehersisyo siya sa bahay.
+        answer_en: He exercises at home.
+        accept:
+          ["She exercises at home", "He is exercising at home", "She is exercising at home"]
+        extra_words: [school, swims, market]
+        audio: nag_eehersisyo_siya_sa_bahay
+      - type: translate
+        prompt_en: I want to run fast.
+        answer_tl: Gusto kong tumakbo nang mabilis.
+        extra_words: [lumangoy, mabagal, siya]
+        audio: gusto_kong_tumakbo_nang_mabilis
+        hint: 'Before an adverb of manner, use "nang": tumakbo nang mabilis.'
+  - id: sports-3
+    title: Manalo at matalo
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: manalo, en: to win }
+          - { tl: matalo, en: to lose }
+          - { tl: koponan, en: team }
+          - { tl: puntos, en: points }
+      - type: choice
+        prompt: "'Nanalo kami' means..."
+        answer: We won
+        distractors: [We lost, They won, We are playing]
+        audio: nanalo_kami
+        audio_text: Nanalo kami.
+      - type: translate
+        prompt_tl: Nanalo ang koponan namin.
+        answer_en: Our team won.
+        accept: ["Our team has won"]
+        extra_words: [lost, played, their]
+        audio: nanalo_ang_koponan_namin
+      - type: translate
+        prompt_en: They lost yesterday.
+        answer_tl: Natalo sila kahapon.
+        extra_words: [nanalo, bukas, kami]
+        audio: natalo_sila_kahapon
+      - type: fill_blank
+        sentence: "___ kami sa laro."
+        translation: "We lost the game."
+        answer: Natalo
+        options: [Natalo, Nanalo, Naglalaro]
+      - type: choice
+        prompt: "'Puntos' means..."
+        answer: Points
+        distractors: [Team, Player, Ball]
+        audio: puntos
+        audio_text: Puntos
+      - type: choice
+        prompt: "'Gusto kong manalo' means..."
+        answer: I want to win
+        distractors: [I want to play, I want to lose, I won]
+        audio: gusto_kong_manalo
+        audio_text: Gusto kong manalo.
+      - type: listen
+        audio: nanalo_ang_koponan_ko
+        answer_tl: Nanalo ang koponan ko
+        extra_words: [natalo, kami]
+      - type: translate
+        prompt_tl: Ilang puntos ang koponan mo?
+        answer_en: How many points does your team have?
+        accept: ["How many points does your team have", "How many points did your team get?"]
+        extra_words: [where, who, ball]
+        audio: ilang_puntos_ang_koponan_mo
+      - type: translate
+        prompt_en: We are happy because our team won.
+        answer_tl: Masaya kami kasi nanalo ang koponan namin.
+        accept: ["Masaya kami dahil nanalo ang koponan namin"]
+        extra_words: [malungkot, natalo, sila]
+        audio: masaya_kami_kasi_nanalo_ang_koponan_namin
+  - id: sports-4
+    title: Sa laban
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: manlalaro, en: player }
+          - { tl: laban, en: match }
+          - { tl: bola, en: ball }
+          - { tl: kampeon, en: champion }
+      - type: choice
+        prompt: "'Manlalaro' means..."
+        answer: Player
+        distractors: [Team, Coach, Champion]
+        audio: manlalaro
+        audio_text: Manlalaro
+      - type: translate
+        prompt_tl: Mabilis tumakbo ang manlalaro.
+        answer_en: The player runs fast.
+        accept: ["The player runs quickly", "The player is a fast runner"]
+        extra_words: [slowly, team, swims]
+        audio: mabilis_tumakbo_ang_manlalaro
+      - type: translate
+        prompt_en: There is a game tonight.
+        answer_tl: May laban ngayong gabi.
+        accept: ["May laro ngayong gabi"]
+        extra_words: [wala, bukas, koponan]
+        audio: may_laban_ngayong_gabi
+      - type: fill_blank
+        sentence: "___ ang koponan namin!"
+        translation: "Our team is the champion!"
+        answer: Kampeon
+        options: [Kampeon, Manlalaro, Bola]
+      - type: listen
+        audio: may_laro_sa_paaralan_bukas
+        answer_tl: May laro sa paaralan bukas
+        extra_words: [kahapon, bahay]
+      - type: choice
+        prompt: "Your team just won. Shout:"
+        answer: Nanalo tayo!
+        distractors: [Natalo tayo!, Naglalaro sila., Mabagal ang koponan.]
+        audio: nanalo_tayo
+        audio_text: Nanalo tayo!
+      - type: translate
+        prompt_tl: Tumatakbo at lumalangoy ako araw-araw.
+        answer_en: I run and swim every day.
+        accept: ["I run and I swim every day", "I run and swim everyday"]
+        extra_words: [walk, dance, week]
+        audio: tumatakbo_at_lumalangoy_ako_araw_araw
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Our team is strong but we lost yesterday.
+        answer_tl: Malakas ang koponan namin pero natalo kami kahapon.
+        extra_words: [nanalo, mabilis, bukas]
+        audio: malakas_ang_koponan_namin_pero_natalo_kami_kahapon
+        hint: '"pero" is the everyday word for "but".'

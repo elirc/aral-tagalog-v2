@@ -86,7 +86,7 @@ lessons:
         sentence: "Gusto ko ___ tinapay."
         translation: "I like bread."
         answer: ng
-        options: [ng, si, ang]
+        options: [ng, si, na]
         hint: '"ng" links the verb to its object.'
       - type: translate
         prompt_tl: Gusto ko ng isda at kanin.

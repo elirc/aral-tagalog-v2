@@ -1,0 +1,288 @@
+id: grand-review
+title: The Grand Review
+description: One last pass over everything — greetings, numbers, family, verbs in every aspect, and the little words that hold a Tagalog sentence together.
+tip: >-
+  Three small markers carry most of Tagalog. "ang" points at what the sentence
+  is about, "ng" marks the object or the owner, and "sa" marks a place or a
+  destination: "Bumili ang tatay ng isda sa palengke" — Dad bought fish at the
+  market. Don't confuse "ng" with "nang": "ng" marks an object, but "nang" links
+  a verb to how it was done — "kumakain nang mabilis" (eats quickly).
+lessons:
+  - id: grand-1
+    title: Hello again
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magandang umaga, en: good morning }
+          - { tl: magandang gabi, en: good evening }
+          - { tl: walang anuman, en: you're welcome }
+          - { tl: paalam, en: goodbye }
+      - type: choice
+        prompt: "'Walang anuman' means..."
+        answer: You're welcome
+        distractors: [Thank you, Good evening, Excuse me]
+        audio: walang_anuman
+        audio_text: Walang anuman.
+      - type: translate
+        prompt_tl: Magandang umaga po, kumusta kayo?
+        answer_en: Good morning, how are you?
+        accept: ["Good morning, how are you doing?"]
+        extra_words: [evening, night, goodbye]
+        audio: magandang_umaga_po_kumusta_kayo
+      - type: fill_blank
+        sentence: "Ano ___ pangalan mo?"
+        translation: "What is your name?"
+        answer: ang
+        options: [ang, ng, sa]
+        hint: '"ang" marks the topic — the thing the question is about.'
+      - type: translate
+        prompt_en: My name is Maria and I am a student.
+        answer_tl: Maria ang pangalan ko at estudyante ako.
+        accept:
+          - Ang pangalan ko ay Maria at ako ay estudyante
+          - Maria ang pangalan ko at ako ay estudyante
+        extra_words: [guro, kaibigan, siya]
+        audio: maria_ang_pangalan_ko_at_estudyante_ako
+      - type: listen
+        audio: mabuti_po_ako_salamat
+        answer_tl: Mabuti po ako, salamat
+        accept: ["Mabuti po ako salamat"]
+        extra_words: [malungkot, pagod]
+      - type: choice
+        prompt: "A neighbor arrives at your door. You say:"
+        answer: Tuloy po kayo.
+        distractors: [Paalam po., Salamat po., Walang anuman po.]
+        audio: tuloy_po_kayo
+        audio_text: Tuloy po kayo.
+      - type: translate
+        prompt_tl: Ang nanay ko ay guro at ang tatay ko ay magsasaka.
+        answer_en: My mom is a teacher and my dad is a farmer.
+        accept: ["My mother is a teacher and my father is a farmer"]
+        extra_words: [nurse, doctor, sister]
+        audio: ang_nanay_ko_ay_guro_at_ang_tatay_ko_ay_magsasaka
+      - type: translate
+        prompt_en: Good evening! This is my older sister, she is a nurse at the hospital.
+        answer_tl: Magandang gabi! Ito ang ate ko, nars siya sa ospital.
+        accept:
+          - Magandang gabi po! Ito ang ate ko, nars siya sa ospital
+          - Magandang gabi! Ito ang ate ko, siya ay nars sa ospital
+        extra_words: [kuya, doktor, paaralan]
+        hint: '"Ito ang..." introduces someone — literally "this is the...".'
+        audio: magandang_gabi_ito_ang_ate_ko_nars_siya_sa_ospital
+  - id: grand-2
+    title: Numbers, money, and time
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tatlo, en: three }
+          - { tl: lima, en: five }
+          - { tl: pito, en: seven }
+          - { tl: sampu, en: ten }
+      - type: choice
+        prompt: "'Magkano' means..."
+        answer: How much
+        distractors: [How many, Where, Why]
+        audio: magkano
+        audio_text: Magkano
+      - type: fill_blank
+        sentence: "___ ang isda sa palengke?"
+        translation: "How much is the fish at the market?"
+        answer: Magkano
+        options: [Magkano, Ilan, Bakit]
+      - type: translate
+        prompt_tl: Bumili ako ng limang tinapay sa palengke kahapon.
+        answer_en: I bought five pieces of bread at the market yesterday.
+        accept:
+          - Yesterday I bought five pieces of bread at the market
+          - I bought five breads at the market yesterday
+        extra_words: [store, today, three]
+        audio: bumili_ako_ng_limang_tinapay_sa_palengke_kahapon
+      - type: translate
+        prompt_en: How much is this? Ten pesos.
+        answer_tl: Magkano ito? Sampung piso.
+        accept:
+          - Magkano po ito? Sampung piso
+          - Magkano ito? Sampung piso po
+        extra_words: [mura, mahal, pera]
+        hint: 'A number ending in a vowel takes the -ng linker: sampu → "sampung piso". After a consonant, use na: "apat na piso".'
+        audio: magkano_ito_sampung_piso
+      - type: choice
+        prompt: "'Kahapon' means..."
+        answer: Yesterday
+        distractors: [Tomorrow, Today, Every day]
+        audio: kahapon
+        audio_text: Kahapon
+      - type: listen
+        audio: may_sampung_piso_ako
+        answer_tl: May sampung piso ako
+        extra_words: [wala, tinapay]
+      - type: translate
+        prompt_tl: Ilan ang kapatid mo?
+        answer_en: How many siblings do you have?
+        accept: ["How many brothers and sisters do you have?"]
+        extra_words: [cousins, parents, where]
+        audio: ilan_ang_kapatid_mo
+      - type: fill_blank
+        sentence: "Araw-araw ___ nagtatrabaho sa opisina."
+        translation: "He works at the office every day."
+        answer: siyang
+        options: [siyang, siya, niya]
+        hint: 'After "araw-araw" the pronoun takes the -ng linker: "araw-araw siyang...".'
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Yesterday I bought three eggs and two loaves of bread. I have no money now.
+        answer_tl: Kahapon bumili ako ng tatlong itlog at dalawang tinapay. Wala akong pera ngayon.
+        accept:
+          - Bumili ako kahapon ng tatlong itlog at dalawang tinapay. Wala akong pera ngayon
+          - Kahapon ay bumili ako ng tatlong itlog at dalawang tinapay. Wala akong pera ngayon
+          - Bumili ako ng tatlong itlog at dalawang tinapay kahapon. Wala akong pera ngayon
+        extra_words: [isda, mahal, bukas]
+        audio: kahapon_bumili_ako_ng_tatlong_itlog_at_dalawang_tinapay_wala_akong_pera_ngayon
+  - id: grand-3
+    title: Did it, doing it, will do it
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: is eating }
+          - { tl: uminom, en: drank }
+          - { tl: umiinom, en: is drinking }
+      - type: choice
+        prompt: "'Kumakain sila' means..."
+        answer: They are eating
+        distractors: [They ate, They will eat, They want to eat]
+        audio: kumakain_sila
+        audio_text: Kumakain sila.
+      - type: translate
+        prompt_tl: Nagluluto ang nanay ko at naglilinis ang tatay ko.
+        answer_en: My mom is cooking and my dad is cleaning.
+        accept: ["My mother is cooking and my father is cleaning"]
+        extra_words: [washing, sweeping, reading]
+        audio: nagluluto_ang_nanay_ko_at_naglilinis_ang_tatay_ko
+      - type: fill_blank
+        sentence: "Kahapon ___ kami ng isda at kanin."
+        translation: "Yesterday we ate fish and rice."
+        answer: kumain
+        options: [kumain, kumakain, kumanta]
+      - type: translate
+        prompt_en: I went to school yesterday, then I went to the market.
+        answer_tl: Pumunta ako sa paaralan kahapon, tapos pumunta ako sa palengke.
+        accept: ["Kahapon pumunta ako sa paaralan, tapos pumunta ako sa palengke"]
+        extra_words: [bukas, ospital, sumakay]
+        audio: pumunta_ako_sa_paaralan_kahapon_tapos_pumunta_ako_sa_palengke
+      - type: choice
+        prompt: "'Bukas pupunta ako sa simbahan' means..."
+        answer: Tomorrow I will go to church
+        distractors:
+          - Yesterday I went to church
+          - I am going to church now
+          - I want to go to church
+        audio: bukas_pupunta_ako_sa_simbahan
+        audio_text: Bukas pupunta ako sa simbahan.
+      - type: listen
+        audio: naglalakad_siya_sa_daan
+        answer_tl: Naglalakad siya sa daan
+        extra_words: [natutulog, bahay]
+      - type: translate
+        prompt_tl: Nagbabasa siya ng libro sa sala.
+        answer_en: She is reading a book in the living room.
+        accept:
+          - He is reading a book in the living room
+          - She reads a book in the living room
+          - He reads a book in the living room
+        extra_words: [kitchen, garden, writing]
+        audio: nagbabasa_siya_ng_libro_sa_sala
+      - type: fill_blank
+        sentence: "Gusto ___ manood ng pelikula bukas."
+        translation: "We want to watch a movie tomorrow."
+        answer: naming
+        options: [naming, namin, nilang]
+        hint: '"gusto namin" + a verb takes the -ng linker → "gusto naming".'
+      - type: translate
+        prompt_en: Yesterday we ate chicken and rice at my grandmother's house, and it was really delicious.
+        answer_tl: Kumain kami ng manok at kanin sa bahay ng lola ko kahapon, at masarap talaga.
+        accept:
+          - Kahapon kumain kami ng manok at kanin sa bahay ng lola ko, at masarap talaga
+        extra_words: [isda, mura, bukas]
+        audio: kumain_kami_ng_manok_at_kanin_sa_bahay_ng_lola_ko_kahapon_at_masarap_talaga
+  - id: grand-4
+    title: All of it at once
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bakit, en: why }
+          - { tl: saan, en: where to }
+          - { tl: magkano, en: how much }
+          - { tl: ilan, en: how many }
+      - type: choice
+        prompt: "'Sa tingin ko, masarap ang kape dito' means..."
+        answer: I think the coffee here is delicious
+        distractors:
+          - The coffee here is expensive
+          - I want coffee here
+          - Is the coffee here delicious?
+        audio: sa_tingin_ko_masarap_ang_kape_dito
+        audio_text: Sa tingin ko, masarap ang kape dito.
+      - type: translate
+        prompt_tl: Bakit ka malungkot ngayon?
+        answer_en: Why are you sad today?
+        accept: ["Why are you sad now?"]
+        extra_words: [happy, tired, tomorrow]
+        audio: bakit_ka_malungkot_ngayon
+      - type: translate
+        prompt_en: I am tired because I work every day.
+        answer_tl: Pagod ako kasi nagtatrabaho ako araw-araw.
+        accept:
+          - Pagod ako dahil nagtatrabaho ako araw-araw
+          - Pagod ako kasi araw-araw akong nagtatrabaho
+        extra_words: [gutom, masaya, bukas]
+        audio: pagod_ako_kasi_nagtatrabaho_ako_araw_araw
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "Kumakain siya ___ mabilis."
+        translation: "He eats quickly."
+        answer: nang
+        options: [nang, ng, na]
+        hint: '"nang" tells you how the action is done; "ng" marks the object.'
+        grading: { ng_nang: false }
+      - type: listen
+        audio: nasaan_po_ang_banyo
+        answer_tl: Nasaan po ang banyo
+        accept: ["Nasaan ang banyo po"]
+        extra_words: [kusina, malayo]
+      - type: choice
+        prompt: "You want the jeepney driver to turn right at the corner. Say:"
+        answer: Lumiko po tayo sa kanan sa kanto.
+        distractors:
+          - Lumiko po tayo sa kaliwa sa kanto.
+          - Diretso po tayo sa kanto.
+          - Malayo pa po ang kanto.
+        audio: lumiko_po_tayo_sa_kanan_sa_kanto
+        audio_text: Lumiko po tayo sa kanan sa kanto.
+      - type: translate
+        prompt_tl: Saan ka pupunta? Pupunta ako sa ospital kasi may lagnat ang anak ko.
+        answer_en: Where are you going? I am going to the hospital because my child has a fever.
+        accept:
+          - Where will you go? I will go to the hospital because my child has a fever
+          - Where are you going? I'm going to the hospital because my child has a fever
+        extra_words: [market, cough, sister]
+        audio: saan_ka_pupunta_pupunta_ako_sa_ospital_kasi_may_lagnat_ang_anak_ko
+      - type: translate
+        prompt_en: Come along! Let's eat, the party food is really delicious.
+        answer_tl: Halika! Kain tayo, masarap talaga ang handa.
+        accept: ["Halika, kain tayo, masarap talaga ang handa"]
+        extra_words: [bisita, regalo, mura]
+        audio: halika_kain_tayo_masarap_talaga_ang_handa
+      - type: translate
+        prompt_en: Every day my older sister walks to the market and buys fish, then she cooks at home.
+        answer_tl: Araw-araw naglalakad ang ate ko sa palengke at bumibili ng isda, tapos nagluluto siya sa bahay.
+        accept:
+          - Araw-araw ay naglalakad ang ate ko sa palengke at bumibili ng isda, tapos nagluluto siya sa bahay
+        extra_words: [manok, kuya, kahapon]
+        hint: 'One long sentence, three habits — "araw-araw" sets the whole thing in the everyday.'
+        audio: araw_araw_naglalakad_ang_ate_ko_sa_palengke_at_bumibili_ng_isda_tapos_nagluluto_siya_sa_bahay
+        grading: { hyphens: true }

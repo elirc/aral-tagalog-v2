@@ -1,0 +1,263 @@
+id: past-stories
+title: Telling Stories
+description: Tell what happened — narrate your day in the past with kanina, tapos, bago, and noong.
+tip: >-
+  Completed (past) verbs are easy to spot: -um- verbs look like their plain
+  base form (kumain = ate / to eat), and mag- verbs swap mag- for nag-
+  (magluto → nagluto = cooked). To chain events like a storyteller, use
+  kanina (earlier today), tapos (then), pagkatapos (after), bago (before),
+  muna (first), and noong (back when) — "Kumain ako, tapos naglakad kami."
+  Note that muna and na follow the verb, never the front: "Uminom muna
+  ako." A short pronoun like ka slips in ahead of them: "Uminom ka muna."
+lessons:
+  - id: stories-1
+    title: Earlier today
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: uminom, en: drank }
+          - { tl: pumunta, en: went }
+          - { tl: bumili, en: bought }
+      - type: choice
+        prompt: "'Kanina' means..."
+        answer: Earlier today
+        distractors: [Yesterday, Tomorrow, Right now]
+        audio: kanina
+        audio_text: Kanina
+      - type: translate
+        prompt_tl: Kumain ako kanina.
+        answer_en: I ate earlier.
+        accept:
+          - "I ate earlier today"
+        extra_words: [drank, yesterday, slept]
+        audio: kumain_ako_kanina
+      - type: translate
+        prompt_en: I drank coffee earlier.
+        answer_tl: Uminom ako ng kape kanina.
+        accept:
+          - "Kanina ako uminom ng kape"
+        extra_words: [kumain, gatas, bukas]
+        audio: uminom_ako_ng_kape_kanina
+      - type: choice
+        prompt: "'Gumising' means..."
+        answer: Woke up
+        distractors: [Slept, Went home, Took a bath]
+        audio: gumising
+        audio_text: Gumising
+      - type: fill_blank
+        sentence: "Pumunta si Maria sa ___ kanina."
+        translation: "Maria went to the market earlier."
+        answer: palengke
+        options: [palengke, paaralan, simbahan]
+      - type: listen
+        audio: umuwi_ako_kanina
+        answer_tl: Umuwi ako kanina
+        extra_words: [kumain, bukas]
+      - type: choice
+        prompt: "'Umuwi' means..."
+        answer: Went home
+        distractors: [Woke up, Walked, Arrived]
+        audio: umuwi
+        audio_text: Umuwi
+      - type: translate
+        prompt_tl: Gumising ako kanina, tapos uminom ako ng kape.
+        answer_en: I woke up earlier, then I drank coffee.
+        accept:
+          - "I woke up earlier then I drank coffee"
+          - "I woke up earlier, then drank coffee"
+        extra_words: [slept, milk, yesterday]
+        audio: gumising_ako_kanina_tapos_uminom_ako_ng_kape
+        hint: '"tapos" glues two finished events together — and then...'
+  - id: stories-2
+    title: Then what happened
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pagkatapos' means..."
+        answer: After / afterwards
+        distractors: [Before, First, Earlier]
+        audio: pagkatapos
+        audio_text: Pagkatapos
+      - type: match
+        pairs:
+          - { tl: naglakad, en: walked }
+          - { tl: nagluto, en: cooked }
+          - { tl: naglaro, en: played }
+          - { tl: nanood, en: watched }
+      - type: translate
+        prompt_tl: Kumain kami, tapos naglakad kami.
+        answer_en: We ate, then we walked.
+        accept:
+          - "We ate then we walked"
+          - "We ate, then walked"
+        extra_words: [played, before, slept]
+        audio: kumain_kami_tapos_naglakad_kami
+      - type: translate
+        prompt_en: I cooked, then we ate.
+        answer_tl: Nagluto ako, tapos kumain kami.
+        accept:
+          - "Nagluto ako tapos kumain kami"
+        extra_words: [naglaro, uminom, sila]
+        audio: nagluto_ako_tapos_kumain_kami
+      - type: fill_blank
+        sentence: "Naglaro kami, ___ nanood kami ng pelikula."
+        translation: "We played, then we watched a movie."
+        answer: tapos
+        options: [tapos, bago, muna]
+      - type: listen
+        audio: nagluto_si_nanay_kanina
+        answer_tl: Nagluto si Nanay kanina
+        extra_words: [naglakad, bukas]
+      - type: translate
+        prompt_tl: Pagkatapos ng klase, umuwi ako.
+        answer_en: After class, I went home.
+        accept:
+          - "After class I went home"
+          - "I went home after class"
+        extra_words: [before, school, walked]
+        audio: pagkatapos_ng_klase_umuwi_ako
+        hint: '"pagkatapos ng ___" takes a noun; plain "tapos" links two verbs.'
+      - type: choice
+        prompt: "'Naglakad' means..."
+        answer: Walked
+        distractors: [Cooked, Played, Watched]
+        audio: naglakad
+        audio_text: Naglakad
+      - type: translate
+        prompt_en: We went to the market, then we bought fish.
+        answer_tl: Pumunta kami sa palengke, tapos bumili kami ng isda.
+        accept:
+          - "Pumunta kami sa palengke tapos bumili kami ng isda"
+        extra_words: [manok, umuwi, tindahan]
+        audio: pumunta_kami_sa_palengke_tapos_bumili_kami_ng_isda
+  - id: stories-3
+    title: Before and first
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Muna' means..."
+        answer: First / for now
+        distractors: [Later, Again, Always]
+        audio: muna
+        audio_text: Muna
+      - type: match
+        pairs:
+          - { tl: gumising, en: woke up }
+          - { tl: naligo, en: took a bath }
+          - { tl: natulog, en: slept }
+          - { tl: umuwi, en: went home }
+      - type: translate
+        prompt_tl: Uminom muna ako ng tubig.
+        answer_en: I drank water first.
+        accept:
+          - "First, I drank water"
+          - "I drank some water first"
+        extra_words: [coffee, before, then]
+        audio: uminom_muna_ako_ng_tubig
+        hint: '"muna" follows the verb — never at the start; a short pronoun like ka slips in first (Uminom ka muna).'
+      - type: fill_blank
+        sentence: "Naligo ako ___ pumunta sa paaralan."
+        translation: "I took a bath before going to school."
+        answer: bago
+        options: [bago, tapos, muna]
+        hint: '"bago" + a verb = before doing something.'
+      - type: choice
+        prompt: "'Naligo' means..."
+        answer: Took a bath
+        distractors: [Slept, Woke up, Cooked]
+        audio: naligo
+        audio_text: Naligo
+      - type: translate
+        prompt_en: I studied first, then I played.
+        answer_tl: Nag-aral muna ako, tapos naglaro ako.
+        accept:
+          - "Nag-aral muna ako tapos naglaro ako"
+        extra_words: [natulog, bago, kami]
+        audio: nag_aral_muna_ako_tapos_naglaro_ako
+        grading: { hyphens: true }
+      - type: listen
+        audio: natulog_ako_kanina
+        answer_tl: Natulog ako kanina
+        extra_words: [gumising, bukas]
+      - type: translate
+        prompt_tl: Naligo siya bago kumain.
+        answer_en: She took a bath before eating.
+        accept:
+          - "He took a bath before eating"
+          - "She showered before eating"
+          - "He showered before eating"
+        extra_words: [after, slept, cooked]
+        audio: naligo_siya_bago_kumain
+      - type: translate
+        prompt_tl: Bumili muna kami ng gamot sa botika bago umuwi.
+        answer_en: We bought medicine at the pharmacy first before going home.
+        accept:
+          - "We first bought medicine at the pharmacy before going home"
+          - "We bought medicine first at the pharmacy before going home"
+        extra_words: [hospital, after, ate]
+        audio: bumili_muna_kami_ng_gamot_sa_botika_bago_umuwi
+  - id: stories-4
+    title: Noong... back then
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Noong' means..."
+        answer: Back when (in the past)
+        distractors: [Next time, Right now, Every time]
+        audio: noong
+        audio_text: Noong
+      - type: match
+        pairs:
+          - { tl: noong, en: back when }
+          - { tl: kanina, en: earlier today }
+          - { tl: kahapon, en: yesterday }
+          - { tl: ngayon, en: now }
+      - type: translate
+        prompt_tl: Noong Pasko, kumanta at sumayaw kami.
+        answer_en: Last Christmas, we sang and danced.
+        accept:
+          - "We sang and danced last Christmas"
+          - "Last Christmas we sang and danced"
+        extra_words: [birthday, played, ate]
+        audio: noong_pasko_kumanta_at_sumayaw_kami
+      - type: choice
+        prompt: "'Kuwento' means..."
+        answer: Story
+        distractors: [Song, Game, Movie]
+        audio: kuwento
+        audio_text: Kuwento
+      - type: translate
+        prompt_en: Grandma told a story earlier.
+        answer_tl: Nagkuwento si Lola kanina.
+        accept:
+          - "Kanina nagkuwento si Lola"
+        extra_words: [kumanta, bukas, siya]
+        audio: nagkuwento_si_lola_kanina
+      - type: fill_blank
+        sentence: "___ isang araw, pumunta kami sa palengke."
+        translation: "The other day, we went to the market."
+        answer: Noong
+        options: [Noong, Bukas, Kanina]
+        hint: '"noong isang araw" = the other day.'
+      - type: listen
+        audio: nagkuwento_si_lolo
+        answer_tl: Nagkuwento si Lolo
+        extra_words: [kumanta, kanina]
+      - type: translate
+        prompt_tl: Noong kaarawan ko, bumili si Tatay ng regalo.
+        answer_en: On my birthday, Dad bought a gift.
+        accept:
+          - "Dad bought a gift on my birthday"
+          - "On my birthday, Dad bought a present"
+        extra_words: [Christmas, sang, cooked]
+        audio: noong_kaarawan_ko_bumili_si_tatay_ng_regalo
+      - type: translate
+        prompt_tl: Gumising ako, naligo, kumain, tapos pumunta ako sa paaralan.
+        answer_en: I woke up, took a bath, ate, then I went to school.
+        accept:
+          - "I woke up, took a bath, ate, then went to school"
+          - "I woke up, showered, ate, then I went to school"
+        extra_words: [slept, church, before]
+        audio: gumising_ako_naligo_kumain_tapos_pumunta_ako_sa_paaralan

@@ -56,7 +56,7 @@ lessons:
       - type: translate
         prompt_tl: Pulis ang tatay ko.
         answer_en: My dad is a police officer.
-        accept: ["My dad is a policeman", "My father is a police officer"]
+        accept: ["My dad is a policeman", "My father is a police officer", "My father is a policeman"]
         extra_words: [teacher, mom, doctor]
   - id: work-2
     title: Jobs and workplaces
@@ -103,7 +103,7 @@ lessons:
       - type: translate
         prompt_tl: Ano ang trabaho ng tatay mo?
         answer_en: What is your dad's job?
-        accept: ["What does your dad do?", "What is your father's job?"]
+        accept: ["What does your dad do?", "What is your father's job?", "What does your father do?"]
         extra_words: [where, mom, school]
         audio: ano_ang_trabaho_ng_tatay_mo
       - type: translate
@@ -184,6 +184,7 @@ lessons:
         answer_en: She is studying science.
         accept: ["He is studying science", "She studies science", "He studies science"]
         extra_words: [math, history, book]
+        grading: { hyphens: true }
       - type: fill_blank
         sentence: "May ___ kami sa math bukas."
         translation: "We have a test in math tomorrow."
@@ -214,6 +215,6 @@ lessons:
       - type: translate
         prompt_tl: Magaling siya sa matematika.
         answer_en: She is good at math.
-        accept: ["He is good at math", "She's good at math"]
+        accept: ["He is good at math", "She's good at math", "He's good at math"]
         extra_words: [difficult, easy, history]
         hint: '"magaling sa..." = good at...'

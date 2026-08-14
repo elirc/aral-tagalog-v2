@@ -1,0 +1,219 @@
+id: transportation
+title: Getting Around
+description: Ride jeepneys, tricycles, and buses — pay your fare and call "Para po!" to get off.
+tip: >-
+  Jeepney etiquette — there are no bells or buttons. Call out "Para po!"
+  when you want the driver to stop, and say "Bayad po" as you hand your
+  fare forward; other passengers will pass your coins all the way to the
+  driver (and pass your sukli back). Always carry barya — small change.
+lessons:
+  - id: transport-1
+    title: Jeepney, tricycle, bus
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: jeepney, en: jeepney }
+          - { tl: traysikel, en: tricycle }
+          - { tl: bus, en: bus }
+          - { tl: taksi, en: taxi }
+      - type: choice
+        prompt: "'Sasakyan' means..."
+        answer: Vehicle
+        distractors: [Driver, Road, Station]
+        audio: sasakyan
+        audio_text: Sasakyan
+      - type: translate
+        prompt_tl: Sumakay ako sa jeepney.
+        answer_en: I rode the jeepney.
+        accept: ["I got on the jeepney", "I rode a jeepney", "I took the jeepney"]
+        extra_words: [bus, walked, drove]
+        audio: sumakay_ako_sa_jeepney
+      - type: translate
+        prompt_en: The bus is big.
+        answer_tl: Malaki ang bus.
+        accept: ["Malaki po ang bus"]
+        extra_words: [maliit, jeepney, mabilis]
+        audio: malaki_ang_bus
+      - type: fill_blank
+        sentence: "Mabilis ang ___."
+        translation: "The taxi is fast."
+        answer: taksi
+        options: [taksi, traysikel, daan]
+      - type: listen
+        audio: sumakay_kami_sa_bus
+        answer_tl: Sumakay kami sa bus
+        extra_words: [taksi, sila]
+      - type: choice
+        prompt: "'Traysikel' means..."
+        answer: Tricycle
+        distractors: [Jeepney, Bicycle, Truck]
+        audio: traysikel
+        audio_text: Traysikel
+      - type: translate
+        prompt_tl: Kaibigan ko ang drayber ng jeepney.
+        answer_en: The jeepney driver is my friend.
+        accept: ["The driver of the jeepney is my friend", "My friend is the jeepney driver"]
+        extra_words: [teacher, tricycle, brother]
+        audio: kaibigan_ko_ang_drayber_ng_jeepney
+  - id: transport-2
+    title: Getting on and off
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sumakay, en: got on }
+          - { tl: bumaba, en: got off }
+          - { tl: drayber, en: driver }
+          - { tl: daan, en: road }
+      - type: choice
+        prompt: "'Bumaba' means..."
+        answer: Got off
+        distractors: [Got on, Stopped, Turned]
+        audio: bumaba
+        audio_text: Bumaba
+      - type: choice
+        prompt: "You want the jeepney to stop so you can get off. Call out:"
+        answer: Para po!
+        distractors: [Salamat po!, Tuloy po kayo!, Magandang umaga po!]
+        audio: para_po
+        audio_text: Para po!
+      - type: translate
+        prompt_en: I got off at the corner.
+        answer_tl: Bumaba ako sa kanto.
+        accept: ["Bumaba po ako sa kanto"]
+        extra_words: [sumakay, doon, siya]
+        audio: bumaba_ako_sa_kanto
+      - type: listen
+        audio: sumasakay_ako_sa_bus_araw_araw
+        answer_tl: Sumasakay ako sa bus araw-araw
+        extra_words: [jeepney, kahapon]
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "___ po! Sa kanto lang."
+        translation: "Stop please! Just at the corner."
+        answer: Para
+        options: [Para, Bayad, Sakay]
+        hint: 'This is what you call out to stop a jeepney.'
+      - type: translate
+        prompt_tl: Saan siya bumaba?
+        answer_en: Where did he get off?
+        accept: ["Where did she get off?"]
+        extra_words: [ride, corner, when]
+        audio: saan_siya_bumaba
+      - type: translate
+        prompt_tl: Bumaba ka sa kanto tapos lumiko ka sa kanan.
+        answer_en: Get off at the corner, then turn right.
+        accept: ["Get off at the corner then turn right", "You get off at the corner, then you turn right"]
+        extra_words: [left, straight, station]
+        audio: bumaba_ka_sa_kanto_tapos_lumiko_ka_sa_kanan
+  - id: transport-3
+    title: Paying the fare
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pamasahe, en: fare }
+          - { tl: bayad, en: payment }
+          - { tl: sukli, en: change }
+          - { tl: magkano, en: how much }
+      - type: choice
+        prompt: "'Pamasahe' means..."
+        answer: Fare
+        distractors: [Change, Ticket, Payment]
+        audio: pamasahe
+        audio_text: Pamasahe
+      - type: choice
+        prompt: "You hand your coins forward on the jeepney. Say:"
+        answer: Bayad po.
+        distractors: [Para po!, Magkano po?, Salamat po.]
+        audio: bayad_po
+        audio_text: Bayad po.
+      - type: translate
+        prompt_tl: Magkano po ang pamasahe?
+        answer_en: How much is the fare?
+        accept: ["How much is the fare, please?"]
+        extra_words: [change, ticket, where]
+        audio: magkano_po_ang_pamasahe
+      - type: translate
+        prompt_en: I don't have small change.
+        answer_tl: Wala akong barya.
+        accept: ["Wala po akong barya"]
+        extra_words: [pera, may, sukli]
+        audio: wala_akong_barya
+      - type: choice
+        prompt: "'Barya' means..."
+        answer: Small change (coins)
+        distractors: [Bills, Fare, Salary]
+        audio: barya
+        audio_text: Barya
+      - type: fill_blank
+        sentence: "Magkano ang ___ sa jeepney?"
+        translation: "How much is the fare on the jeepney?"
+        answer: pamasahe
+        options: [pamasahe, sukli, barya]
+      - type: listen
+        audio: bayad_po_dalawa_po
+        answer_tl: Bayad po, dalawa po
+        extra_words: [tatlo, salamat]
+      - type: translate
+        prompt_tl: Sampung piso ang pamasahe sa traysikel.
+        answer_en: The tricycle fare is ten pesos.
+        accept: ["The fare on the tricycle is ten pesos", "Ten pesos is the tricycle fare", "The fare for the tricycle is ten pesos"]
+        extra_words: [jeepney, five, change]
+        audio: sampung_piso_ang_pamasahe_sa_traysikel
+  - id: transport-4
+    title: Traffic and trips
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: trapik, en: traffic }
+          - { tl: biyahe, en: trip }
+          - { tl: malayo, en: far }
+          - { tl: malapit, en: near }
+      - type: choice
+        prompt: "'Trapik' means..."
+        answer: Traffic
+        distractors: [Trip, Road, Vehicle]
+        audio: trapik
+        audio_text: Trapik
+      - type: translate
+        prompt_tl: Sobrang trapik ngayon.
+        answer_en: The traffic is so bad right now.
+        accept: ["Traffic is so bad today", "There is so much traffic now", "There is so much traffic today", "Traffic is so heavy right now"]
+        extra_words: [trip, fast, yesterday]
+        audio: sobrang_trapik_ngayon
+      - type: translate
+        prompt_en: The trip is slow because of the traffic.
+        answer_tl: Mabagal ang biyahe dahil sa trapik.
+        accept: ["Mabagal po ang biyahe dahil sa trapik"]
+        extra_words: [mabilis, malayo, kasi]
+        audio: mabagal_ang_biyahe_dahil_sa_trapik
+      - type: fill_blank
+        sentence: "___ ba ang istasyon?"
+        translation: "Is the station far?"
+        answer: Malayo
+        options: [Malayo, Malapit, Maganda]
+      - type: listen
+        audio: malapit_lang_ang_palengke
+        answer_tl: Malapit lang ang palengke
+        extra_words: [malayo, tindahan]
+      - type: translate
+        prompt_tl: Saan pupunta ang bus na ito?
+        answer_en: Where is this bus going?
+        accept: ["Where does this bus go?", "Where will this bus go?"]
+        extra_words: [jeepney, station, when]
+        audio: saan_pupunta_ang_bus_na_ito
+      - type: choice
+        prompt: "For short rides through small streets, Filipinos usually take a..."
+        answer: Traysikel
+        distractors: [Bus, Taksi, Kalabaw]
+        audio: traysikel
+        audio_text: Traysikel
+      - type: translate
+        prompt_tl: Sumakay kami sa bus at pumunta sa dagat kahapon.
+        answer_en: We rode the bus and went to the sea yesterday.
+        accept: ["We took the bus and went to the beach yesterday", "We rode a bus and went to the sea yesterday", "We got on the bus and went to the sea yesterday"]
+        extra_words: [mountain, walked, today]
+        audio: sumakay_kami_sa_bus_at_pumunta_sa_dagat_kahapon
