@@ -54,12 +54,19 @@ export async function cacheAllAudio(onProgress?: (done: number, total: number) =
     const local = localPath(file);
     const info = await FileSystem.getInfoAsync(local);
     if (!info.exists) {
-      // downloadAsync writes whatever the server returns — a 404 body saved as
-      // .mp3 would permanently shadow the network/TTS fallback, so discard it
-      const res = await FileSystem.downloadAsync(audioUrl(file), local).catch(() => null);
-      if (res && res.status !== 200) {
-        await FileSystem.deleteAsync(local, { idempotent: true }).catch(() => {});
+      // downloadAsync writes whatever the server returns, and a dropped
+      // connection leaves a truncated file behind. Either one would sit in the
+      // cache looking like a finished recording and permanently shadow both
+      // the network URL and the TTS fallback, so anything that isn't a clean
+      // 200 gets deleted.
+      let ok = false;
+      try {
+        const res = await FileSystem.downloadAsync(audioUrl(file), local);
+        ok = res.status === 200;
+      } catch {
+        ok = false; // interrupted mid-write
       }
+      if (!ok) await FileSystem.deleteAsync(local, { idempotent: true }).catch(() => {});
     }
     done += 1;
     onProgress?.(done, files.length);

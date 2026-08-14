@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -97,19 +98,39 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // One /sync at a time: launch, the debounce effect, and the foreground
+  // handler can all fire at once. Overlapping syncs present the same refresh
+  // token to the server and can apply an older progress snapshot last.
+  const syncingRef = useRef(false);
   const syncNow = useCallback(async () => {
-    if (!auth) return;
-    await syncWith(auth, outboxAll()).catch(() => {});
+    if (!auth || syncingRef.current) return;
+    syncingRef.current = true;
+    try {
+      await syncWith(auth, outboxAll());
+    } catch {
+      // offline — the outbox keeps the events for the next attempt (OFF-02)
+    } finally {
+      syncingRef.current = false;
+    }
   }, [auth, syncWith]);
 
   const adoptAuth = useCallback(
     async (tokens: AuthTokens) => {
+      // logging in as a different account must not push the previous user's
+      // unsynced events into it; guest carry-over (auth === null) still works
+      const switchingUser = auth !== null && auth.user.id !== tokens.user.id;
+      if (switchingUser) {
+        outboxClear(outboxAll().map((e) => e.id));
+        kvSet("baseline", null);
+        setBaseline(null);
+        setOutbox([]);
+      }
       kvSet("auth", tokens);
       setAuth(tokens);
       setNeedsRelogin(false);
-      await syncWith(tokens, outboxAll()).catch(() => {});
+      await syncWith(tokens, switchingUser ? [] : outboxAll()).catch(() => {});
     },
-    [syncWith],
+    [auth, syncWith],
   );
 
   const logout = useCallback(() => {

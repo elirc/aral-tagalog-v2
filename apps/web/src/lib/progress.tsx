@@ -134,20 +134,44 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // One /sync at a time. Two overlapping syncs both hit 401 on an expired
+  // access token and both present the same refresh token (the server treats
+  // the loser as a benign race, but the second sync's older server snapshot
+  // could still overwrite the newer baseline and lose events).
+  const syncingRef = useRef(false);
   const syncNow = useCallback(async () => {
-    if (!auth) return;
-    await syncWith(auth, outbox).catch(() => {});
+    if (!auth || syncingRef.current) return;
+    syncingRef.current = true;
+    try {
+      await syncWith(auth, outbox);
+    } catch {
+      // offline or server down — the outbox keeps the events for next time
+    } finally {
+      syncingRef.current = false;
+    }
   }, [auth, outbox, syncWith]);
 
   const adoptAuth = useCallback(
     async (tokens: AuthTokens) => {
+      // Logging in as a *different* account (e.g. after a session expired)
+      // must not push the previous user's unsynced events into the new one.
+      // Coming from guest (auth === null) still carries over, which is the
+      // whole point of guest mode.
+      const switchingUser = auth !== null && auth.user.id !== tokens.user.id;
+      if (switchingUser) {
+        setOutbox([]);
+        save(KEYS.outbox, []);
+        setBaseline(null);
+        save(KEYS.baseline, null);
+        hydratedRef.current = false;
+      }
       setAuth(tokens);
       setNeedsRelogin(false);
       save(KEYS.auth, tokens);
       // push guest progress made before signup, then adopt server truth
-      await syncWith(tokens, outbox).catch(() => {});
+      await syncWith(tokens, switchingUser ? [] : outbox).catch(() => {});
     },
-    [outbox, syncWith],
+    [auth, outbox, syncWith],
   );
 
   const logout = useCallback(() => {

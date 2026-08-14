@@ -20,6 +20,7 @@ export default function LessonScreen() {
   // weakExerciseIds, and a live recompute would yank the completion screen
   // away (or reshuffle exercises) mid-session.
   const reviewRef = useRef<Lesson | null | undefined>(undefined);
+  const practiceRef = useRef<boolean | null>(null);
   if (isReview && reviewRef.current === undefined) {
     reviewRef.current = buildReviewLesson(getBundle().units, progress.weakExerciseIds);
   }
@@ -57,8 +58,14 @@ export default function LessonScreen() {
     );
   }
 
-  // review sessions are always practice: no hearts lost, one refilled at the end
-  const practice = isReview || progress.completedLessonIds.includes(lesson.id);
+  // Review sessions are always practice: no hearts lost, one refilled at the
+  // end. Frozen at entry — finishing the lesson adds it to completedLessonIds,
+  // which would otherwise flip this mid-session and rewrite the summary that
+  // is already on screen ("+5 XP for practicing" over a first-time completion).
+  if (practiceRef.current === null) {
+    practiceRef.current = isReview || progress.completedLessonIds.includes(lesson.id);
+  }
+  const practice = practiceRef.current;
   return (
     <SafeAreaView style={styles.screen} edges={["top", "bottom"]}>
       <LessonPlayer key={lesson.id} lesson={lesson} practice={practice} />
