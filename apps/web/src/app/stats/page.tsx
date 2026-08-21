@@ -11,6 +11,7 @@ import {
   type AchievementDef,
 } from "@aral/core";
 import { Header } from "@/components/Header";
+import { QuestPanel } from "@/components/QuestPanel";
 import { bundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 
@@ -156,6 +157,9 @@ export default function StatsPage() {
             <GoalEditor goal={goal} />
           </div>
         </div>
+
+        {/* --- daily quests (the panel brings its own heading) --- */}
+        <QuestPanel progress={progress} />
 
         {/* --- last-14-days XP --- */}
         <h2 className="section-title">Last 14 days</h2>

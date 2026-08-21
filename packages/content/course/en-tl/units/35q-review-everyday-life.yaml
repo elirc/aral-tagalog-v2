@@ -1,0 +1,249 @@
+id: review-everyday-life
+title: "Review: Everyday Life"
+tier: everyday
+description: Plans, phones, errands, chores and money in one pass.
+tip: >-
+  Everything in this tier hangs on three habits: mark politeness with po and
+  paki-, mark frequency by doubling (araw-araw), and mark wants with a
+  possessive (gusto ko, kailangan ko). Get those three right and an ordinary
+  Filipino day is fully within reach.
+lessons:
+  - id: revday-1
+    title: A day of errands
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lakad, en: errand }
+          - { tl: magbayad, en: to pay }
+          - { tl: pila, en: queue }
+          - { tl: resibo, en: receipt }
+      - type: choice
+        prompt: "You are at the bayad center. The first thing you do is:"
+        answer: pumila
+        distractors: [maglaba, magluto, matulog]
+        audio: pumila
+        audio_text: Pumila.
+      - type: fill_blank
+        sentence: "May tatlong ___ ako ngayong Sabado."
+        translation: "I have three errands this Saturday."
+        answer: lakad
+        options: [lakad, sipit, kandila]
+      - type: translate
+        prompt_tl: Babayaran ko ang kuryente at tubig bukas.
+        answer_en: I will pay the electricity and water tomorrow.
+        accept:
+          - I'll pay for electricity and water tomorrow
+        extra_words: [cheap, market, quickly]
+        audio: babayaran_ko_ang_kuryente_at_tubig_bukas
+      - type: translate
+        prompt_en: May I have the receipt, please?
+        answer_tl: Pahingi po ng resibo
+        accept:
+          - Pwede po bang humingi ng resibo
+        extra_words: [pila, lakad, bayad]
+      - type: listen
+        audio: mahaba_ang_pila_ngayon
+        answer_tl: Mahaba ang pila ngayon
+        extra_words: [resibo, lakad]
+      - type: choice
+        prompt: "Which sentence is a polite request?"
+        answer: Pakiabot po ng resibo.
+        distractors: [Abutin mo!, Bawal iyan., Ayaw ko niyan.]
+      - type: fill_blank
+        sentence: "___ po ang bayarin sa Lunes."
+        translation: "The bill is due on Monday."
+        answer: Deadline
+        options: [Deadline, Regalo, Handaan]
+      - type: arrange
+        prompt: "I have three errands this Saturday."
+        answer_tl: May tatlong lakad ako ngayong Sabado
+
+  - id: revday-2
+    title: Home and chores
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magwalis, en: to sweep }
+          - { tl: maglaba, en: to do laundry }
+          - { tl: magsampay, en: to hang out to dry }
+          - { tl: maghugas, en: to wash }
+      - type: choice
+        prompt: "It is cloudy and the laundry is out. You should..."
+        answer: tanggalin ang sampay
+        distractors: [magluto ng hapunan, matulog muna, magbayad ng kuryente]
+        audio: tanggalin_ang_sampay
+        audio_text: Tanggalin ang sampay.
+      - type: fill_blank
+        sentence: "Paki___ po ng pinggan pagkatapos kumain."
+        translation: "Please wash the plates after eating."
+        answer: hugas
+        options: [hugas, walis, laba]
+      - type: translate
+        prompt_tl: Naglalaba ako tuwing Sabado ng umaga.
+        answer_en: I do laundry every Saturday morning.
+        accept:
+          - I wash clothes every Saturday morning
+        extra_words: [cheap, market, tomorrow]
+        audio: naglalaba_ako_tuwing_sabado_ng_umaga
+      - type: translate
+        prompt_en: Let us split the housework today.
+        answer_tl: Maghati tayo sa gawaing bahay ngayon
+        accept:
+          - Hatiin natin ang gawaing bahay ngayon
+        extra_words: [magwalis, maglaba, maghugas]
+      - type: listen
+        audio: pakiwalis_po_ng_sala
+        answer_tl: Pakiwalis po ng sala
+        extra_words: [maglaba, maghugas]
+      - type: choice
+        prompt: "Which chore needs the sun?"
+        answer: magsampay
+        distractors: [maghugas, magwalis, magbayad]
+      - type: fill_blank
+        sentence: "___ pa ang damit, hindi pa pwedeng tupiin."
+        translation: "The clothes are still wet, they cannot be folded yet."
+        answer: Basa
+        options: [Basa, Tuyo, Bago]
+      - type: arrange
+        prompt: "Please wash the plates after eating."
+        answer_tl: Pakihugas po ng pinggan pagkatapos kumain
+
+  - id: revday-3
+    title: Talking and planning
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: A quick phone call between friends
+        lines:
+          - speaker: Rey
+            text: "Hello po. ___ po ba si Mia?"
+            translation: "Hello. Is Mia there?"
+          - speaker: Mia
+            text: "Ako po ito. Kumusta?"
+            translation: "This is she. How are you?"
+          - speaker: Rey
+            text: "___ ka ba bukas? Kain tayo."
+            translation: "Are you free tomorrow? Let us eat."
+          - speaker: Mia
+            text: "___ ako bukas, pero pwede sa Sabado."
+            translation: "I am busy tomorrow, but Saturday works."
+        blanks:
+          - answer: Nandiyan
+            options: [Nandiyan, Magkano, Bawal]
+          - answer: Libre
+            options: [Libre, Abala, Pagod]
+          - answer: Abala
+            options: [Abala, Libre, Bata]
+      - type: match
+        pairs:
+          - { tl: libre, en: free }
+          - { tl: abala, en: busy }
+          - { tl: susunduin, en: will pick up }
+          - { tl: sa susunod, en: next time }
+      - type: fill_blank
+        sentence: "___ kita ng alas-sais sa bahay mo."
+        translation: "I will pick you up at six at your house."
+        answer: Susunduin
+        options: [Susunduin, Huhugasan, Lalabhan]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Sorry, I am busy tomorrow. Maybe next time.
+        answer_tl: Pasensya na, abala ako bukas. Baka sa susunod.
+        accept:
+          - Pasensya na abala ako bukas baka sa susunod
+        extra_words: [libre, susunduin, tara]
+      - type: translate
+        prompt_tl: Anong oras tayo magkikita sa Sabado?
+        answer_en: What time shall we meet on Saturday?
+        accept:
+          - What time will we meet on Saturday
+        extra_words: [cheap, market, tomorrow]
+        audio: anong_oras_tayo_magkikita_sa_sabado
+      - type: listen
+        audio: libre_ka_ba_sa_sabado_2
+        answer_tl: Libre ka ba sa Sabado
+        extra_words: [abala, susunduin]
+      - type: choice
+        prompt: "In the dialogue, when will they meet?"
+        answer: Saturday
+        distractors: [tomorrow, tonight, next month]
+      - type: fill_blank
+        sentence: "Baka sa ___ na lang tayo magkita."
+        translation: "Maybe we will just meet next time."
+        answer: susunod
+        options: [susunod, resibo, pila]
+      - type: arrange
+        prompt: "Are you free tomorrow? Let us eat."
+        answer_tl: Libre ka ba bukas kain tayo
+        accept:
+          - Libre ka ba bukas? Kain tayo.
+
+  - id: revday-4
+    title: Everything at once
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: A Saturday morning at home
+        lines:
+          - speaker: Nanay
+            text: "Ana, ___ ka muna ng sahig bago tayo umalis."
+            translation: "Ana, sweep the floor first before we leave."
+          - speaker: Ana
+            text: "Opo. ___ po ba tayo sa grocery mamaya?"
+            translation: "Yes. Will we go to the grocery later?"
+          - speaker: Nanay
+            text: "Oo, ___ na rin tayo ng bigas at mantika."
+            translation: "Yes, let us also buy rice and oil."
+          - speaker: Ana
+            text: "Magdadala po ako ng listahan."
+            translation: "I will bring the list."
+        blanks:
+          - answer: magwalis
+            options: [magwalis, matulog, kumain]
+          - answer: pupunta
+            options: [pupunta, natulog, kumain]
+          - answer: bibili
+            options: [bibili, matutulog, maglalaba]
+      - type: match
+        pairs:
+          - { tl: listahan, en: list }
+          - { tl: gastos, en: expenses }
+          - { tl: kapitbahay, en: neighbor }
+          - { tl: araw-araw, en: every day }
+      - type: fill_blank
+        sentence: "Malaki ang ___ namin ngayong buwan."
+        translation: "Our expenses are big this month."
+        answer: gastos
+        options: [gastos, listahan, sipit]
+      - type: translate
+        prompt_en: I need to buy rice, oil, and sugar.
+        answer_tl: Kailangan kong bumili ng bigas, mantika, at asukal
+        accept:
+          - Kailangan kong bumili ng bigas mantika at asukal
+        extra_words: [gastos, listahan, resibo]
+      - type: translate
+        prompt_tl: Tumulong ang kapitbahay namin kahapon.
+        answer_en: Our neighbor helped yesterday.
+        accept:
+          - Our neighbour helped us yesterday
+        extra_words: [cheap, market, tomorrow]
+        audio: tumulong_ang_kapitbahay_namin_kahapon
+      - type: listen
+        audio: nakalimutan_ko_ang_listahan
+        answer_tl: Nakalimutan ko ang listahan
+        extra_words: [gastos, resibo]
+      - type: choice
+        prompt: "In the dialogue, what does Ana do before they leave?"
+        answer: sweep the floor
+        distractors: [wash the plates, pay a bill, cook rice]
+      - type: fill_blank
+        sentence: "Naglalakad ako ___ para sa kalusugan."
+        translation: "I walk every day for my health."
+        answer: araw-araw
+        options: [araw-araw, minsan, bihira]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Let us also buy rice and oil."
+        answer_tl: Bumili rin tayo ng bigas at mantika

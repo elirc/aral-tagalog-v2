@@ -1,0 +1,236 @@
+id: seasons
+title: Seasons and Sky
+tier: foundation
+description: Tag-init and tag-ulan — the two seasons that shape the Philippine year.
+tip: >-
+  The Philippines has no spring or autumn; the year splits into tag-init (hot
+  season) and tag-ulan (rainy season). Season names are built with tag- plus a
+  noun: taglamig, taggutom, tag-ani (harvest). Weather sentences usually skip
+  a subject entirely — "Umuulan" is a full sentence.
+lessons:
+  - id: seas-1
+    title: Two seasons
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tag-init, en: hot season }
+          - { tl: tag-ulan, en: rainy season }
+          - { tl: taglamig, en: cold season }
+          - { tl: panahon, en: weather or season }
+      - type: choice
+        prompt: "'Tag-ulan' runs roughly from..."
+        answer: June to November
+        distractors: [December to February, March to May, all year round]
+        audio: tag_ulan
+        audio_text: Tag-ulan.
+      - type: fill_blank
+        sentence: "Mainit tuwing ___."
+        translation: "It is hot during the hot season."
+        answer: tag-init
+        options: [tag-init, tag-ulan, taglamig]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Malamig ang panahon ngayong Disyembre.
+        answer_en: The weather is cold this December.
+        accept:
+          - It is cold this December
+        extra_words: [cheap, tomorrow, market]
+        audio: malamig_ang_panahon_ngayong_disyembre
+      - type: translate
+        prompt_en: I like the rainy season.
+        answer_tl: Gusto ko ang tag-ulan
+        accept:
+          - Gusto ko ang tag ulan
+        extra_words: [tag-init, panahon, malamig]
+        grading: { hyphens: true }
+      - type: listen
+        audio: tag_init_na_naman
+        answer_tl: Tag-init na naman
+        extra_words: [tag-ulan, panahon]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "The prefix 'tag-' before a noun makes..."
+        answer: a season of that thing
+        distractors: [a person who does it, a place for it, a question]
+      - type: fill_blank
+        sentence: "___ ang tawag sa panahon ng ani."
+        translation: "Tag-ani is what the harvest season is called."
+        answer: Tag-ani
+        options: [Tag-ani, Tag-init, Taglamig]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Anong panahon ngayon sa Pilipinas?
+        answer_en: What season is it now in the Philippines?
+        accept:
+          - What is the season now in the Philippines
+        extra_words: [quickly, morning, cheap]
+        audio: anong_panahon_ngayon_sa_pilipinas
+        grading: { hyphens: true }
+
+  - id: seas-2
+    title: Rain and sun
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umuulan, en: it is raining }
+          - { tl: umaaraw, en: it is sunny }
+          - { tl: mahangin, en: windy }
+          - { tl: maulap, en: cloudy }
+      - type: choice
+        prompt: "'Umuulan' is a complete sentence meaning..."
+        answer: It is raining.
+        distractors: [The rain is gone., Bring an umbrella., It will be sunny.]
+        audio: umuulan
+        audio_text: Umuulan.
+      - type: fill_blank
+        sentence: "___ ngayon, magdala ka ng payong."
+        translation: "It is raining now, bring an umbrella."
+        answer: Umuulan
+        options: [Umuulan, Umaaraw, Mahangin]
+      - type: translate
+        prompt_tl: Mahangin at maulap ngayon.
+        answer_en: It is windy and cloudy now.
+        accept:
+          - It's windy and cloudy today
+        extra_words: [tomorrow, cheap, market]
+        audio: mahangin_at_maulap_ngayon
+      - type: translate
+        prompt_en: It is very sunny today.
+        answer_tl: Maaraw na maaraw ngayon
+        accept:
+          - Umaaraw nang husto ngayon
+        extra_words: [umuulan, maulap, mahangin]
+        grading: { ng_nang: true }
+      - type: listen
+        audio: umuulan_nang_malakas
+        answer_tl: Umuulan nang malakas
+        extra_words: [umaaraw, mahangin]
+        grading: { ng_nang: true }
+      - type: choice
+        prompt: "Which word warns of strong wind and rain together?"
+        answer: bagyo
+        distractors: [araw, ulap, hangin]
+      - type: fill_blank
+        sentence: "May ___ daw bukas, sarado ang paaralan."
+        translation: "They say there is a typhoon tomorrow, school is closed."
+        answer: bagyo
+        options: [bagyo, araw, ulap]
+      - type: translate
+        prompt_en: It rains every afternoon in the rainy season.
+        answer_tl: Umuulan tuwing hapon sa tag-ulan
+        accept:
+          - Umuulan tuwing hapon sa tag ulan
+        extra_words: [umaga, tag-init, mahangin]
+        grading: { hyphens: true }
+
+  - id: seas-3
+    title: Hot and cold
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mainit, en: hot }
+          - { tl: malamig, en: cold }
+          - { tl: maalinsangan, en: humid }
+          - { tl: presko, en: fresh and cool }
+      - type: choice
+        prompt: "'Maalinsangan' describes air that is..."
+        answer: hot and sticky
+        distractors: [dry and cold, clear and breezy, dark and rainy]
+        audio: maalinsangan
+        audio_text: Maalinsangan.
+      - type: fill_blank
+        sentence: "___ sa Baguio kahit tag-init."
+        translation: "It is cold in Baguio even in the hot season."
+        answer: Malamig
+        options: [Malamig, Mainit, Maalinsangan]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Presko ang hangin sa bundok.
+        answer_en: The air in the mountains is cool.
+        accept:
+          - The mountain air is fresh
+        extra_words: [cheap, tomorrow, market]
+        audio: presko_ang_hangin_sa_bundok
+      - type: translate
+        prompt_en: It is very hot today.
+        answer_tl: Napakainit ngayon
+        accept:
+          - Sobrang init ngayon
+        extra_words: [malamig, presko, hangin]
+      - type: listen
+        audio: napakainit_ngayon
+        answer_tl: Napakainit ngayon
+        extra_words: [malamig, presko]
+      - type: choice
+        prompt: "The prefix 'napaka-' makes an adjective..."
+        answer: very strong
+        distractors: [negative, past tense, a question]
+      - type: fill_blank
+        sentence: "___ ang tubig sa dagat sa tanghali."
+        translation: "The sea water is warm at noon."
+        answer: Mainit
+        options: [Mainit, Malamig, Presko]
+      - type: translate
+        prompt_tl: Maalinsangan sa Maynila tuwing Mayo.
+        answer_en: It is humid in Manila every May.
+        accept:
+          - Manila is humid every May
+        extra_words: [quickly, morning, cheap]
+        audio: maalinsangan_sa_maynila_tuwing_mayo
+
+  - id: seas-4
+    title: Talking about the weather
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "The most common small-talk opener about weather is:"
+        answer: Ang init ngayon, ano?
+        distractors: [Magkano po ito?, Taga-saan ka?, Anong pangalan mo?]
+        audio: ang_init_ngayon_ano
+        audio_text: Ang init ngayon, ano?
+      - type: match
+        pairs:
+          - { tl: ulan, en: rain }
+          - { tl: araw, en: sun or day }
+          - { tl: hangin, en: wind }
+          - { tl: ulap, en: cloud }
+      - type: fill_blank
+        sentence: "Baka ___ mamaya, magdala ka ng payong."
+        translation: "It might rain later, bring an umbrella."
+        answer: umulan
+        options: [umulan, umaraw, uminom]
+      - type: translate
+        prompt_en: What is the weather like tomorrow?
+        answer_tl: Kumusta ang panahon bukas?
+        accept:
+          - Ano ang lagay ng panahon bukas
+        extra_words: [ulan, araw, hangin]
+      - type: translate
+        prompt_tl: Malakas ang ulan kagabi.
+        answer_en: The rain was strong last night.
+        accept:
+          - It rained hard last night
+        extra_words: [tomorrow, cheap, market]
+        audio: malakas_ang_ulan_kagabi
+      - type: listen
+        audio: baka_umulan_mamaya
+        answer_tl: Baka umulan mamaya
+        extra_words: [araw, hangin]
+      - type: choice
+        prompt: "'Ang init ngayon, ano?' ends with 'ano?' to..."
+        answer: invite agreement
+        distractors: [ask a name, ask a price, give an order]
+      - type: fill_blank
+        sentence: "Walang ___ ngayon, maulap buong araw."
+        translation: "There is no sun today, it is cloudy all day."
+        answer: araw
+        options: [araw, ulan, hangin]
+      - type: translate
+        prompt_en: It is cold tonight, wear a jacket.
+        answer_tl: Malamig ngayong gabi, magsuot ka ng jacket
+        accept:
+          - Malamig ngayong gabi magsuot ka ng jacket
+        extra_words: [mainit, ulan, araw]

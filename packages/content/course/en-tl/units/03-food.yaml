@@ -1,5 +1,6 @@
 id: food
 title: Food
+tier: foundation
 description: Order, eat, and say it's delicious.
 tip: >-
   "Gusto ko ng kape" — gusto (want/like) takes ng before the thing you

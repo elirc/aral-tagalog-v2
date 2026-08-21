@@ -1,0 +1,249 @@
+id: final-capstone
+title: The Final Capstone
+tier: mastery
+description: Every register, every aspect, every tier — the last stretch of the course.
+tip: >-
+  Fluency here is not more vocabulary but faster switching: formal at the office,
+  clipped in the jeepney, warm with family, and idiomatic when the moment calls
+  for it. If you can move between those four in one afternoon without stopping
+  to translate, the course has done its work.
+lessons:
+  - id: cap-1
+    title: Switching register
+    xp: 30
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pahingi nga, en: give me (casual) }
+          - { tl: pwede po bang humingi, en: may I ask for (polite) }
+          - { tl: maaari po ba akong humiling, en: may I request (formal) }
+          - { tl: pakiabot nga, en: pass it over }
+      - type: choice
+        prompt: "Writing to a government office, you use:"
+        answer: Maaari po ba akong humiling
+        distractors: [Pahingi nga, Pakiabot nga, Tara na]
+        audio: maaari_po_ba_akong_humiling
+        audio_text: Maaari po ba akong humiling?
+      - type: dialogue
+        intro: The same request in three settings
+        lines:
+          - speaker: Sa kaibigan
+            text: "Uy, ___ nga ng tubig."
+            translation: "Hey, pass me some water."
+          - speaker: Sa tindahan
+            text: "___ po bang humingi ng tubig?"
+            translation: "May I ask for water?"
+          - speaker: Sa opisina
+            text: "___ po ba akong humiling ng tubig?"
+            translation: "May I request water?"
+        blanks:
+          - answer: pahingi
+            options: [pahingi, maaari, pwede]
+          - answer: Pwede
+            options: [Pwede, Pahingi, Tara]
+          - answer: Maaari
+            options: [Maaari, Pahingi, Tara]
+      - type: fill_blank
+        sentence: "___ po ninyo ang inyong pangalan sa form."
+        translation: "Please write your name on the form."
+        answer: Pakisulat
+        options: [Pakisulat, Pakikain, Pakiinom]
+      - type: translate
+        prompt_en: I would like to request a certificate, please.
+        answer_tl: Nais ko po sanang humiling ng sertipiko
+        accept:
+          - Gusto ko po sanang humiling ng sertipiko
+        extra_words: [pahingi, pakiabot, tara]
+      - type: translate
+        prompt_tl: Pakiabot nga ng asin, salamat.
+        answer_en: Pass the salt, thanks.
+        accept:
+          - Pass me the salt thanks
+        extra_words: [cheap, market, tomorrow]
+        audio: pakiabot_nga_ng_asin_salamat
+      - type: arrange
+        prompt: "May I request a certificate?"
+        answer_tl: Maaari po ba akong humiling ng sertipiko
+      - type: choice
+        prompt: "The clearest signal of formal register is..."
+        answer: kayo and ninyo instead of ka and mo
+        distractors: [longer sentences, English words, a loud voice]
+      - type: listen
+        audio: maaari_po_ba_akong_humiling_2
+        answer_tl: Maaari po ba akong humiling
+        extra_words: [pahingi, pakiabot]
+
+  - id: cap-2
+    title: Aspect under pressure
+    xp: 30
+    exercises:
+      - type: arrange
+        prompt: "I just arrived from work."
+        answer_tl: Kakadating lang ako galing trabaho
+      - type: arrange
+        prompt: "I will pick you up at six tomorrow."
+        answer_tl: Susunduin kita bukas ng alas-sais
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Whenever it rains, the street floods."
+        answer_tl: Kapag umuulan nagbabaha ang kalye
+        accept:
+          - Kapag umuulan, nagbabaha ang kalye
+      - type: arrange
+        prompt: "I had the car repaired at the mechanic."
+        answer_tl: Nagpaayos ako ng kotse sa mekaniko
+      - type: match
+        pairs:
+          - { tl: pumunta, en: went }
+          - { tl: pumupunta, en: goes }
+          - { tl: pupunta, en: will go }
+          - { tl: kakapunta lang, en: just went }
+      - type: fill_blank
+        sentence: "___ kami sa simbahan tuwing Linggo."
+        translation: "We go to church every Sunday."
+        answer: Pumupunta
+        options: [Pumupunta, Pumunta, Pupunta]
+      - type: choice
+        prompt: "Which sentence is about a habit rather than one event?"
+        answer: Kumakain ako ng gulay araw-araw.
+        distractors: [Kumain ako ng gulay kahapon., Kakain ako ng gulay bukas., Kakakain ko lang ng gulay.]
+      - type: translate
+        prompt_tl: Katatapos ko lang, kakadating lang niya.
+        answer_en: I just finished, he just arrived.
+        accept:
+          - I have just finished and she just arrived
+        extra_words: [cheap, market, tomorrow]
+        audio: katatapos_ko_lang_kakadating_lang_niya
+      - type: listen
+        audio: pumupunta_kami_tuwing_linggo
+        answer_tl: Pumupunta kami tuwing Linggo
+        extra_words: [pumunta, pupunta]
+
+  - id: cap-3
+    title: A long conversation
+    xp: 30
+    exercises:
+      - type: dialogue
+        intro: A returning worker meets an old neighbor
+        lines:
+          - speaker: Aling Ines
+            text: "Naku, ___ lang kayo dumating galing abroad?"
+            translation: "Oh my, did you just arrive from abroad?"
+          - speaker: Rico
+            text: "Opo, kahapon po. ___ po ang biyahe, labing-anim na oras."
+            translation: "Yes, yesterday. The trip was long, sixteen hours."
+          - speaker: Aling Ines
+            text: "___ ka pala. Magpahinga ka muna, ha?"
+            translation: "You must be tired then. Rest first, okay?"
+          - speaker: Rico
+            text: "Salamat po. May ___ po ako para sa inyo."
+            translation: "Thank you. I have a gift for you."
+        blanks:
+          - answer: kakadating
+            options: [kakadating, kakaalis, kakakain]
+          - answer: Matagal
+            options: [Matagal, Maikli, Mura]
+          - answer: Pagod
+            options: [Pagod, Busog, Masaya]
+          - answer: pasalubong
+            options: [pasalubong, bakod, sipit]
+        grading: { hyphens: true }
+      - type: dialogue
+        intro: Later, at the family table
+        lines:
+          - speaker: Lola
+            text: "Kumain ka ___, apo. Marami pang handa."
+            translation: "Eat some more, grandchild. There is plenty of food."
+          - speaker: Rico
+            text: "Busog na po ako, Lola. ___ po talaga."
+            translation: "I am full, Grandma. It was really delicious."
+          - speaker: Lola
+            text: "Huwag mong kalimutan ang ___ mo, kahit nasa malayo ka."
+            translation: "Do not forget where you came from, even when you are far away."
+        blanks:
+          - answer: pa
+            options: [pa, na, ba]
+          - answer: Masarap
+            options: [Masarap, Mahal, Malamig]
+          - answer: pinanggalingan
+            options: [pinanggalingan, paroroonan, pagkain]
+      - type: match
+        pairs:
+          - { tl: pasalubong, en: homecoming gift }
+          - { tl: biyahe, en: trip }
+          - { tl: handa, en: prepared food }
+          - { tl: malayo, en: far }
+      - type: choice
+        prompt: "In the second dialogue, what does Lola remind Rico of?"
+        answer: his origins
+        distractors: [the price of food, the time of mass, his flight schedule]
+      - type: fill_blank
+        sentence: "___ po ang biyahe, labing-anim na oras."
+        translation: "The trip was long, sixteen hours."
+        answer: Matagal
+        options: [Matagal, Maikli, Mura]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Do not forget where you came from, even when you are far away.
+        answer_tl: Huwag mong kalimutan ang pinanggalingan mo kahit nasa malayo ka
+        accept:
+          - Huwag mong kalimutan ang pinanggalingan mo, kahit nasa malayo ka
+        extra_words: [pasalubong, handa, biyahe]
+      - type: arrange
+        prompt: "I have a homecoming gift for you."
+        answer_tl: May pasalubong po ako para sa inyo
+      - type: listen
+        audio: may_pasalubong_po_ako_para_sa_inyo
+        answer_tl: May pasalubong po ako para sa inyo
+        extra_words: [biyahe, handa]
+
+  - id: cap-4
+    title: Tapos na
+    xp: 30
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tagumpay, en: success }
+          - { tl: pagsisikap, en: effort }
+          - { tl: natutunan, en: learned }
+          - { tl: simula, en: beginning }
+      - type: choice
+        prompt: "Which proverb best fits finishing this course?"
+        answer: Kung may tiyaga, may nilaga.
+        distractors: [Bahala na., Isang kahig isang tuka., Ang away ay walang panalo.]
+        audio: kung_may_tiyaga_may_nilaga_3
+        audio_text: Kung may tiyaga, may nilaga.
+      - type: fill_blank
+        sentence: "Marami akong ___ sa kursong ito."
+        translation: "I learned a lot in this course."
+        answer: natutunan
+        options: [natutunan, nakalimutan, natulog]
+      - type: translate
+        prompt_tl: Ang pagsisikap ang susi sa tagumpay.
+        answer_en: Effort is the key to success.
+        accept:
+          - Hard work is the key to success
+        extra_words: [cheap, market, tomorrow]
+        audio: ang_pagsisikap_ang_susi_sa_tagumpay
+      - type: arrange
+        prompt: "I learned a lot in this course."
+        answer_tl: Marami akong natutunan sa kursong ito
+      - type: arrange
+        prompt: "This is not the end, it is the beginning."
+        answer_tl: Hindi ito ang wakas ito ang simula
+        accept:
+          - Hindi ito ang wakas, ito ang simula
+      - type: translate
+        prompt_en: Thank you for everything, and until next time.
+        answer_tl: Salamat sa lahat, at hanggang sa muli
+        accept:
+          - Salamat po sa lahat at hanggang sa muli
+        extra_words: [tagumpay, simula, natutunan]
+      - type: choice
+        prompt: "'Hanggang sa muli' means..."
+        answer: until next time
+        distractors: [goodbye forever, welcome back, thank you]
+      - type: listen
+        audio: salamat_sa_lahat_at_hanggang_sa_muli
+        answer_tl: Salamat sa lahat at hanggang sa muli
+        extra_words: [tagumpay, simula]

@@ -1,0 +1,227 @@
+id: invitations
+title: Invitations
+tier: conversational
+description: Invite, accept, decline gracefully — and the ritual of insisting.
+tip: >-
+  Filipino invitations are repeated on purpose. The first "Kain tayo" may be
+  politeness, so a guest often declines once before accepting; the host then
+  insists. If you truly cannot come, decline with a reason and a future opening:
+  "Hindi po ako makakadalo, may lakad kami — sa susunod po."
+lessons:
+  - id: inv-1
+    title: Inviting
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mag-anyaya, en: to invite }
+          - { tl: imbitado, en: invited }
+          - { tl: handaan, en: celebration }
+          - { tl: sumama, en: to come along }
+      - type: choice
+        prompt: "'Imbitado ka sa kasal namin' means you are..."
+        answer: invited to our wedding
+        distractors: [late for our wedding, paying for our wedding, married already]
+        audio: imbitado_ka_sa_kasal_namin
+        audio_text: Imbitado ka sa kasal namin.
+      - type: fill_blank
+        sentence: "___ ka sa handaan sa Sabado."
+        translation: "You are invited to the celebration on Saturday."
+        answer: Imbitado
+        options: [Imbitado, Bawal, Pagod]
+      - type: translate
+        prompt_tl: Gusto ka naming imbitahan sa binyag.
+        answer_en: We would like to invite you to the baptism.
+        accept:
+          - We want to invite you to the christening
+        extra_words: [cheap, market, tomorrow]
+        audio: gusto_ka_naming_imbitahan_sa_binyag
+      - type: translate
+        prompt_en: Come along, there is a lot of food.
+        answer_tl: Sumama ka, marami namang pagkain
+        accept:
+          - Sumama ka marami namang pagkain
+        extra_words: [imbitado, handaan, anyaya]
+      - type: listen
+        audio: imbitado_ka_sa_handaan
+        answer_tl: Imbitado ka sa handaan
+        extra_words: [sumama, anyaya]
+      - type: arrange
+        prompt: "You are invited to the celebration on Saturday."
+        answer_tl: Imbitado ka sa handaan sa Sabado
+      - type: choice
+        prompt: "Why might a host repeat an invitation three times?"
+        answer: politeness expects one refusal first
+        distractors: [they forgot they asked, it is bad luck to ask once, the guest is deaf]
+      - type: arrange
+        prompt: "We would like to invite you to the baptism."
+        answer_tl: Gusto ka naming imbitahan sa binyag
+
+  - id: inv-2
+    title: Accepting
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sige, en: okay }
+          - { tl: pupunta ako, en: I will come }
+          - { tl: salamat sa anyaya, en: thanks for the invitation }
+          - { tl: anong dala ko, en: what shall I bring }
+      - type: choice
+        prompt: "A warm acceptance sounds like:"
+        answer: Salamat sa anyaya, pupunta ako!
+        distractors: [Bawal po iyan., Magkano po?, Wala akong pakialam.]
+        audio: salamat_sa_anyaya_pupunta_ako
+        audio_text: Salamat sa anyaya, pupunta ako!
+      - type: fill_blank
+        sentence: "Anong ___ ko sa handaan?"
+        translation: "What shall I bring to the celebration?"
+        answer: dala
+        options: [dala, bawal, pagod]
+      - type: translate
+        prompt_tl: Pupunta ako, salamat sa anyaya.
+        answer_en: I will come, thank you for the invitation.
+        accept:
+          - I'll be there thanks for inviting me
+        extra_words: [cheap, market, tomorrow]
+        audio: pupunta_ako_salamat_sa_anyaya
+      - type: translate
+        prompt_en: I will bring dessert.
+        answer_tl: Magdadala ako ng panghimagas
+        accept:
+          - Magdadala ako ng dessert
+        extra_words: [anyaya, handaan, imbitado]
+      - type: listen
+        audio: pupunta_ako_salamat
+        answer_tl: Pupunta ako salamat
+        extra_words: [anyaya, dala]
+      - type: arrange
+        prompt: "What shall I bring to the celebration?"
+        answer_tl: Anong dala ko sa handaan
+      - type: choice
+        prompt: "Offering to bring something is..."
+        answer: expected and appreciated
+        distractors: [considered rude, never done, only for weddings]
+      - type: arrange
+        prompt: "I will come, thank you for the invitation."
+        answer_tl: Pupunta ako salamat sa anyaya
+        accept:
+          - Pupunta ako, salamat sa anyaya
+
+  - id: inv-3
+    title: Declining kindly
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: hindi ako makakadalo, en: I cannot attend }
+          - { tl: may lakad kami, en: we have plans }
+          - { tl: sa susunod po, en: next time }
+          - { tl: pasensya na, en: sorry }
+      - type: choice
+        prompt: "A graceful refusal includes a reason and..."
+        answer: an opening for next time
+        distractors: [a complaint, a price, a question about food]
+        audio: sa_susunod_po
+        audio_text: Sa susunod po.
+      - type: fill_blank
+        sentence: "Pasensya po, hindi ako ___ sa Sabado."
+        translation: "Sorry, I cannot attend on Saturday."
+        answer: makakadalo
+        options: [makakadalo, matutulog, maglalaba]
+      - type: translate
+        prompt_tl: May lakad po kami ng pamilya ko.
+        answer_en: My family and I have plans.
+        accept:
+          - We have plans with my family
+        extra_words: [cheap, market, tomorrow]
+        audio: may_lakad_po_kami_ng_pamilya_ko
+      - type: translate
+        prompt_en: Sorry, next time for sure.
+        answer_tl: Pasensya na po, sa susunod talaga
+        accept:
+          - Pasensya na po sa susunod talaga
+        extra_words: [makakadalo, lakad, anyaya]
+      - type: listen
+        audio: hindi_po_ako_makakadalo
+        answer_tl: Hindi po ako makakadalo
+        extra_words: [lakad, susunod]
+      - type: arrange
+        prompt: "Sorry, I cannot attend on Saturday."
+        answer_tl: Pasensya po hindi ako makakadalo sa Sabado
+        accept:
+          - Pasensya po, hindi ako makakadalo sa Sabado
+      - type: choice
+        prompt: "Which refusal would sound coldest?"
+        answer: Ayaw ko.
+        distractors: [Pasensya po may lakad kami., Sa susunod na lang po., Hindi po ako makakadalo.]
+      - type: arrange
+        prompt: "We have plans with my family."
+        answer_tl: May lakad po kami ng pamilya ko
+
+  - id: inv-4
+    title: An invitation exchange
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: A neighbor invites you to dinner
+        lines:
+          - speaker: Aling Rosa
+            text: "Iho, ___ ka sa hapunan namin mamaya."
+            translation: "Son, you are invited to our dinner later."
+          - speaker: Ikaw
+            text: "Naku po, huwag na po, baka maabala kayo."
+            translation: "Oh no, please don't, you might be troubled."
+          - speaker: Aling Rosa
+            text: "Hindi, marami namang pagkain. ___ ka na."
+            translation: "No, there is plenty of food. Come along."
+          - speaker: Ikaw
+            text: "Sige po, ___ po sa anyaya. Magdadala po ako ng prutas."
+            translation: "All right, thank you for the invitation. I will bring fruit."
+        blanks:
+          - answer: imbitado
+            options: [imbitado, bawal, pagod]
+          - answer: Sumama
+            options: [Sumama, Matulog, Umalis]
+          - answer: salamat
+            options: [salamat, paalam, bawal]
+      - type: match
+        pairs:
+          - { tl: maabala, en: to be troubled }
+          - { tl: hapunan, en: dinner }
+          - { tl: panghimagas, en: dessert }
+          - { tl: pilitin, en: to insist }
+      - type: fill_blank
+        sentence: "Baka ___ kayo, huwag na po."
+        translation: "You might be troubled, please do not bother."
+        answer: maabala
+        options: [maabala, matulog, kumain]
+      - type: translate
+        prompt_en: There is plenty of food, come along.
+        answer_tl: Marami namang pagkain, sumama ka na
+        accept:
+          - Marami namang pagkain sumama ka na
+        extra_words: [maabala, hapunan, pilitin]
+      - type: translate
+        prompt_tl: Pinilit nila akong kumain ulit.
+        answer_en: They insisted that I eat again.
+        accept:
+          - They urged me to eat again
+        extra_words: [cheap, market, tomorrow]
+        audio: pinilit_nila_akong_kumain_ulit
+      - type: listen
+        audio: sumama_ka_na
+        answer_tl: Sumama ka na
+        extra_words: [maabala, hapunan]
+      - type: choice
+        prompt: "In the dialogue, why does the guest refuse at first?"
+        answer: not to trouble the host
+        distractors: [he is not hungry, he dislikes the food, he has other plans]
+      - type: arrange
+        prompt: "Thank you for the invitation, I will bring fruit."
+        answer_tl: Salamat po sa anyaya magdadala po ako ng prutas
+        accept:
+          - Salamat po sa anyaya, magdadala po ako ng prutas
+      - type: arrange
+        prompt: "There is plenty of food, come along."
+        answer_tl: Marami namang pagkain sumama ka na

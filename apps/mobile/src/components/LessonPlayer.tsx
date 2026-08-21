@@ -7,16 +7,15 @@ import {
   earnedAchievementIds,
   INTERSTITIAL_EVERY_N_LESSONS,
   isPerfect,
-  lessonXp,
   levelForXp,
   localDayKey,
   MAX_HEARTS,
   msUntilNextHeart,
-  PRACTICE_XP,
   reduceEvents,
   regenerate,
   sessionProgress,
   sessionReviewOutcome,
+  sessionXp,
   startSession,
   submitAnswer,
   type Lesson,
@@ -29,7 +28,9 @@ import { playAudio } from "@/lib/audio";
 import { getBundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 import { radii, spacing, useTheme } from "@/theme";
+import { ArrangeView } from "./exercises/ArrangeView";
 import { ChoiceView } from "./exercises/ChoiceView";
+import { DialogueView } from "./exercises/DialogueView";
 import { FillBlankView } from "./exercises/FillBlankView";
 import { MatchView } from "./exercises/MatchView";
 import { TapsView } from "./exercises/TapsView";
@@ -72,8 +73,9 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
     if (!session.done || completionSent.current) return;
     completionSent.current = true;
     const perfect = isPerfect(session);
-    // practice replays earn a flat, smaller award (server clamps to match)
-    const xp = practice ? PRACTICE_XP : lessonXp(lesson, perfect);
+    // practice replays earn a flat, smaller award and no combo bonus (server
+    // clamps to match); first-time completions add whatever the combo earned
+    const xp = sessionXp(session, practice);
     const now = Date.now();
     const tz = deviceTz();
     const { missedExerciseIds, masteredExerciseIds } = sessionReviewOutcome(session);
@@ -87,6 +89,7 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
       practice: practice || undefined,
       missedExerciseIds: missedExerciseIds.length > 0 ? missedExerciseIds : undefined,
       masteredExerciseIds: masteredExerciseIds.length > 0 ? masteredExerciseIds : undefined,
+      maxCombo: session.maxCombo > 0 ? session.maxCombo : undefined,
     };
     const before = new Set(earnedAchievementIds(progress, bundle.units));
     const after = reduceEvents([event], tz, now, progress);
@@ -122,7 +125,7 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
           <Text style={{ fontSize: 56 }}>{perfect ? "🏆" : "🎉"}</Text>
           <Text style={styles.subtitle}>{perfect ? "Perfect lesson!" : "Lesson complete!"}</Text>
           <Text style={styles.body}>
-            +{practice ? PRACTICE_XP : lessonXp(lesson, perfect)} XP
+            +{sessionXp(session, practice)} XP
             {perfect && !practice ? " (includes perfect bonus)" : ""}
             {practice ? " · +1 ❤️ for practicing" : ""}
           </Text>
@@ -293,6 +296,12 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
           )}
           {(exercise.type === "translate_taps" || exercise.type === "listen") && (
             <TapsView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
+          )}
+          {exercise.type === "arrange" && (
+            <ArrangeView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
+          )}
+          {exercise.type === "dialogue" && (
+            <DialogueView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
           )}
           {exercise.type === "fill_blank" && (
             <FillBlankView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />

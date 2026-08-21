@@ -1,0 +1,285 @@
+id: street-tagalog
+title: Street Tagalog
+tier: mastery
+description: Jeepneys, sari-sari stores and fast haggling — the clipped Tagalog nobody teaches.
+tip: >-
+  Spoken Tagalog swallows syllables. "Ito" becomes "'to", "iyan" becomes
+  "'yan", "iyong" becomes "'yung", and "mayroon" becomes "meron". Whole
+  sentences shrink: "Magkano ba ito?" is heard as "Magkano ba 'to?". Learn to
+  hear the short forms and the street stops being a wall of noise.
+lessons:
+  - id: street-1
+    title: Jeepney and tricycle
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bayad po, en: here's my fare }
+          - { tl: para po, en: stop here please }
+          - { tl: sukli, en: change (money back) }
+          - { tl: barya, en: coins / small change }
+      - type: choice
+        prompt: "You want the jeepney to stop. You call out:"
+        answer: Para po!
+        distractors: [Bayad po!, Sukli po!, Tuloy po!]
+        audio: para_po
+        audio_text: Para po!
+      - type: fill_blank
+        sentence: "___ po, dalawa."
+        translation: "Here's the fare, for two."
+        answer: Bayad
+        options: [Bayad, Para, Sukli]
+      - type: arrange
+        prompt: "Please pass this fare forward."
+        answer_tl: Pakiabot po ng bayad
+        hint: '"paki-" turns any verb into a polite request — pakiabot, pakibigay, pakisara.'
+      - type: dialogue
+        intro: On a jeepney
+        lines:
+          - speaker: Pasahero
+            text: "___ po, isa lang."
+            translation: "Here's the fare, just one."
+          - speaker: Drayber
+            text: "Saan po kayo bababa?"
+            translation: "Where are you getting off?"
+          - speaker: Pasahero
+            text: "Sa tabi lang po ng simbahan. ___ po!"
+            translation: "Just beside the church. Stop please!"
+          - speaker: Drayber
+            text: "Eto po ang ___ ninyo."
+            translation: "Here is your change."
+        blanks:
+          - answer: Bayad
+            options: [Bayad, Sukli, Barya]
+          - answer: Para
+            options: [Para, Tuloy, Salamat]
+          - answer: sukli
+            options: [sukli, bayad, simbahan]
+      - type: choice
+        prompt: "'Sa tabi lang po' tells the driver:"
+        answer: drop me just at the side here
+        distractors: [drive faster please, I have no change, the fare is too high]
+        audio: sa_tabi_lang_po
+        audio_text: Sa tabi lang po.
+      - type: translate
+        prompt_en: Do you have change for a hundred?
+        answer_tl: May barya po ba kayo sa isang daan?
+        accept:
+          - May barya po ba kayo sa isang daan
+        extra_words: [sukli, bayad, mahal]
+      - type: translate
+        prompt_tl: Wala akong barya, pasensya na po.
+        answer_en: I have no small change, sorry.
+        accept:
+          - I don't have small change sorry
+        extra_words: [market, tomorrow, expensive]
+        audio: wala_akong_barya_pasensya_na_po
+      - type: listen
+        audio: para_po_sa_kanto
+        answer_tl: Para po sa kanto
+        extra_words: [bayad, sukli]
+
+  - id: street-2
+    title: Haggling fast
+    xp: 20
+    exercises:
+      - type: choice
+        prompt: "'Magkano ba 'to?' is the short form of:"
+        answer: Magkano ba ito?
+        distractors: [Magkano ba iyan?, Magkano ba sila?, Magkano ba tayo?]
+        audio: magkano_ba_to
+        audio_text: Magkano ba ito?
+      - type: match
+        pairs:
+          - { tl: tawad, en: a discount }
+          - { tl: mura, en: cheap }
+          - { tl: mahal, en: expensive }
+          - { tl: presyo, en: price }
+      - type: fill_blank
+        sentence: "___ naman po, kukuha ako ng tatlo."
+        translation: "Give me a discount, I'll take three."
+        answer: Tawad
+        options: [Tawad, Bayad, Sukli]
+      - type: arrange
+        prompt: "Isn't there anything cheaper?"
+        answer_tl: Wala po bang mas mura
+        accept:
+          - Wala po bang mas mura?
+      - type: dialogue
+        intro: At a market stall
+        lines:
+          - speaker: Bumibili
+            text: "Magkano ba ___ mangga?"
+            translation: "How much are these mangoes?"
+          - speaker: Tindera
+            text: "Otsenta po ang isang kilo."
+            translation: "Eighty pesos a kilo."
+          - speaker: Bumibili
+            text: "___ naman po. Kukuha ako ng tatlong kilo."
+            translation: "Give me a discount. I'll take three kilos."
+          - speaker: Tindera
+            text: "Sige po, ___ na lang, dalawang daan."
+            translation: "All right, let's just make it two hundred."
+        blanks:
+          - answer: itong
+            options: [itong, sila, tayo]
+          - answer: Tawad
+            options: [Tawad, Sukli, Bayad]
+          - answer: sige
+            options: [sige, mahal, bawal]
+      - type: choice
+        prompt: "The stallholder says 'Huling presyo na po iyan.' She means:"
+        answer: that is the final price
+        distractors: [that is the first price, the item is sold out, you may pay tomorrow]
+        audio: huling_presyo_na_po_iyan
+        audio_text: Huling presyo na po iyan.
+      - type: translate
+        prompt_en: That is too expensive for me.
+        answer_tl: Masyadong mahal iyan para sa akin
+        accept:
+          - Masyadong mahal 'yan para sa akin
+        extra_words: [mura, tawad, presyo]
+      - type: translate
+        prompt_tl: Kung kukuha ako ng tatlo, magkano lahat?
+        answer_en: If I take three, how much is everything?
+        accept:
+          - If I take three how much for all
+        extra_words: [tomorrow, quietly, sorry]
+        audio: kung_kukuha_ako_ng_tatlo_magkano_lahat
+      - type: listen
+        audio: wala_po_bang_mas_mura
+        answer_tl: Wala po bang mas mura
+        extra_words: [tawad, presyo]
+
+  - id: street-3
+    title: The sari-sari store
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tingi, en: sold in small portions }
+          - { tl: piso, en: one peso }
+          - { tl: sachet, en: single-use sachet }
+          - { tl: lista, en: store credit list }
+      - type: choice
+        prompt: "Buying shampoo 'nang tingi' means buying it:"
+        answer: one sachet at a time
+        distractors: [by the case, on credit, at wholesale price]
+        hint: Tingi selling is how sari-sari stores keep everything affordable.
+      - type: fill_blank
+        sentence: "Pabili po ng ___ na shampoo."
+        translation: "I'd like to buy one sachet of shampoo."
+        answer: isang
+        options: [isang, walang, maraming]
+      - type: arrange
+        prompt: "Do you have cooking oil here?"
+        answer_tl: Meron po ba kayong mantika dito
+        accept:
+          - Meron po ba kayong mantika dito?
+        hint: '"Meron" is the spoken form of "mayroon".'
+      - type: dialogue
+        intro: At the neighborhood sari-sari store
+        lines:
+          - speaker: Bata
+            text: "___ po ng dalawang piso na yelo."
+            translation: "I'd like to buy two pesos' worth of ice."
+          - speaker: Tindera
+            text: "Ubos na po ang yelo. ___ na lang po ba?"
+            translation: "The ice is finished. Just soft drinks instead?"
+          - speaker: Bata
+            text: "Sige po. ___ po muna, babayaran ni Nanay mamaya."
+            translation: "All right. On credit first, Mom will pay later."
+        blanks:
+          - answer: Pabili
+            options: [Pabili, Paalam, Pasensya]
+          - answer: Softdrink
+            options: [Softdrink, Sapatos, Sasakyan]
+          - answer: Lista
+            options: [Lista, Barya, Tawad]
+      - type: choice
+        prompt: "'Ubos na po' means:"
+        answer: we've run out
+        distractors: [it is cheap, it is closed, it is free]
+        audio: ubos_na_po
+        audio_text: Ubos na po.
+      - type: translate
+        prompt_en: I would like to buy one kilo of rice.
+        answer_tl: Pabili po ng isang kilong bigas
+        accept:
+          - Pabili po ng isang kilo ng bigas
+        extra_words: [mantika, yelo, asukal]
+      - type: translate
+        prompt_tl: Pwede po bang sa lista muna?
+        answer_en: Can it go on credit for now?
+        accept:
+          - Can I put it on the credit list first
+        extra_words: [tomorrow, market, quickly]
+        audio: pwede_po_bang_sa_lista_muna
+      - type: listen
+        audio: pabili_po_ng_isang_kilong_bigas
+        answer_tl: Pabili po ng isang kilong bigas
+        extra_words: [mantika, tingi]
+
+  - id: street-4
+    title: Getting by
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: Asking directions in a hurry
+        lines:
+          - speaker: Turista
+            text: "Kuya, paano po ___ sa Quiapo?"
+            translation: "Sir, how do I get to Quiapo?"
+          - speaker: Tindero
+            text: "Sumakay ka ng jeep sa kanto, tapos ___ ka sa simbahan."
+            translation: "Take a jeepney at the corner, then get off at the church."
+          - speaker: Turista
+            text: "Magkano po ___ pamasahe?"
+            translation: "How much is the fare?"
+          - speaker: Tindero
+            text: "Trese po. Magsabi ka lang ng 'para' pagdating."
+            translation: "Thirteen pesos. Just say 'para' when you arrive."
+        blanks:
+          - answer: pumunta
+            options: [pumunta, kumain, matulog]
+          - answer: bumaba
+            options: [bumaba, umakyat, tumakbo]
+          - answer: ang
+            options: [ang, ng, sa]
+      - type: choice
+        prompt: "In the dialogue, where should the tourist get off?"
+        answer: at the church
+        distractors: [at the corner, at the market, at Quiapo station]
+      - type: arrange
+        prompt: "Take a jeepney at the corner."
+        answer_tl: Sumakay ka ng jeep sa kanto
+      - type: translate
+        prompt_tl: Magsabi ka lang ng para pagdating.
+        answer_en: Just say para when you arrive.
+        accept:
+          - Just say para when you get there
+        extra_words: [cheaper, tomorrow, sorry]
+        audio: magsabi_ka_lang_ng_para_pagdating
+      - type: fill_blank
+        sentence: "Kuya, paano po ___ sa Quiapo?"
+        translation: "Sir, how do I get to Quiapo?"
+        answer: pumunta
+        options: [pumunta, kumain, uminom]
+      - type: choice
+        prompt: "'Kuya' and 'Ate' used with strangers are:"
+        answer: friendly respect for someone a bit older
+        distractors: [family words only, formal titles for officials, rude in public]
+        hint: Street Tagalog turns everyone into an older sibling.
+      - type: arrange
+        prompt: "How much is the fare to Quiapo?"
+        answer_tl: Magkano po ang pamasahe papuntang Quiapo
+      - type: translate
+        prompt_en: Sir, is this jeepney going to Quiapo?
+        answer_tl: Kuya, dumadaan po ba ito sa Quiapo?
+        accept:
+          - Kuya dumadaan po ba ito sa Quiapo
+        extra_words: [bumaba, kanto, mahal]
+      - type: listen
+        audio: sumakay_ka_ng_jeep_sa_kanto
+        answer_tl: Sumakay ka ng jeep sa kanto
+        extra_words: [bumaba, simbahan]

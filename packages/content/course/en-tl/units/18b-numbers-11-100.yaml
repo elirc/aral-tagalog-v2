@@ -1,0 +1,234 @@
+id: numbers-11-100
+title: Numbers 11 to 100
+tier: foundation
+description: Count past ten — teens, tens, and the numbers you need for prices and ages.
+tip: >-
+  Tagalog builds teens with labing- plus the unit: labing-isa (11), labing-dalawa
+  (12). Tens use -pu: dalawampu (20), tatlumpu (30). Join a ten to a unit with
+  't: dalawampu't lima (25). Filipinos also borrow Spanish numbers for money and
+  time — dose, bente, singkuwenta — so you will hear both.
+lessons:
+  - id: num11-1
+    title: The teens
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: labing-isa, en: eleven }
+          - { tl: labing-dalawa, en: twelve }
+          - { tl: labing-lima, en: fifteen }
+          - { tl: labing-siyam, en: nineteen }
+      - type: choice
+        prompt: "'Labing-tatlo' is..."
+        answer: thirteen
+        distractors: [three, thirty, twelve]
+        audio: labing_tatlo
+        audio_text: Labing-tatlo.
+      - type: fill_blank
+        sentence: "Labing-___ ang edad ko."
+        translation: "I am fourteen years old."
+        answer: apat
+        options: [apat, isa, sampu]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: May labing-anim na mangga.
+        answer_en: There are sixteen mangoes.
+        accept:
+          - There are 16 mangoes
+        extra_words: [tomorrow, cheap, market]
+        audio: may_labing_anim_na_mangga
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I have twelve books.
+        answer_tl: May labing-dalawa akong libro
+        accept:
+          - May labing dalawa akong libro
+        extra_words: [sampu, isa, bahay]
+        grading: { hyphens: true }
+      - type: listen
+        audio: labing_pito
+        answer_tl: Labing-pito
+        extra_words: [labing-lima, labing-walo]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Which prefix builds the teens?"
+        answer: labing-
+        distractors: [dalawampu-, magka-, taga-]
+      - type: fill_blank
+        sentence: "Labing-___ ang bilang pagkatapos ng labing-pito."
+        translation: "Eighteen is the number after seventeen."
+        answer: walo
+        options: [walo, tatlo, anim]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Labing-lima ang edad niya.
+        answer_en: He is fifteen years old.
+        accept:
+          - She is fifteen years old
+        extra_words: [market, cheap, morning]
+        audio: labing_lima_ang_edad_niya
+        grading: { hyphens: true }
+
+  - id: num11-2
+    title: Counting by tens
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dalawampu, en: twenty }
+          - { tl: tatlumpu, en: thirty }
+          - { tl: limampu, en: fifty }
+          - { tl: isang daan, en: one hundred }
+      - type: choice
+        prompt: "'Apatnapu' means..."
+        answer: forty
+        distractors: [four, fourteen, four hundred]
+        audio: apatnapu
+        audio_text: Apatnapu.
+      - type: fill_blank
+        sentence: "___ ang presyo, animnapung piso."
+        translation: "The price is sixty pesos."
+        answer: Animnapu
+        options: [Animnapu, Anim, Isa]
+      - type: translate
+        prompt_en: There are thirty students.
+        answer_tl: May tatlumpung estudyante
+        accept:
+          - Tatlumpu ang estudyante
+        extra_words: [limampu, isa, bahay]
+      - type: translate
+        prompt_tl: Pitumpu ang edad ng lola ko.
+        answer_en: My grandmother is seventy years old.
+        accept:
+          - My grandma is seventy years old
+        extra_words: [cheap, tomorrow, market]
+        audio: pitumpu_ang_edad_ng_lola_ko
+      - type: listen
+        audio: siyamnapu
+        answer_tl: Siyamnapu
+        extra_words: [walumpu, limampu]
+      - type: choice
+        prompt: "Which ending marks the tens?"
+        answer: -pu
+        distractors: [-han, -in, -an]
+      - type: fill_blank
+        sentence: "Walumpung piso ang isang ___ ng bigas."
+        translation: "A kilo of rice is eighty pesos."
+        answer: kilo
+        options: [kilo, bahay, umaga]
+      - type: translate
+        prompt_en: One hundred pesos, please.
+        answer_tl: Isang daang piso po
+        accept:
+          - Isang daan pong piso
+        extra_words: [limampu, tatlumpu, mangga]
+
+  - id: num11-3
+    title: In between
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Dalawampu't lima' is..."
+        answer: twenty-five
+        distractors: [twenty, two hundred five, fifteen]
+        audio: dalawampung_lima
+        audio_text: Dalawampu't lima.
+      - type: match
+        pairs:
+          - { tl: tatlumpu't isa, en: thirty-one }
+          - { tl: apatnapu't dalawa, en: forty-two }
+          - { tl: limampu't tatlo, en: fifty-three }
+          - { tl: animnapu't apat, en: sixty-four }
+      - type: fill_blank
+        sentence: "Pitumpu't ___ ang sagot."
+        translation: "The answer is seventy-five."
+        answer: lima
+        options: [lima, isa, sampu]
+      - type: translate
+        prompt_tl: Tatlumpu't dalawa ang mag-aaral.
+        answer_en: There are thirty-two pupils.
+        accept:
+          - The pupils are thirty-two
+        extra_words: [cheap, market, tomorrow]
+        audio: tatlumpung_dalawa_ang_mag_aaral
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Forty-eight pesos.
+        answer_tl: Apatnapu't walong piso
+        accept:
+          - Apatnapu't walo na piso
+        extra_words: [limampu, isa, bahay]
+      - type: listen
+        audio: limampung_anim
+        answer_tl: Limampu't anim
+        extra_words: [tatlumpu, walo]
+      - type: choice
+        prompt: "The 't in 'dalawampu't lima' is short for..."
+        answer: at (and)
+        distractors: [ang, ng, sa]
+      - type: fill_blank
+        sentence: "Siyamnapu't ___ na taon na siya."
+        translation: "She is ninety-nine years old."
+        answer: siyam
+        options: [siyam, isa, lima]
+      - type: translate
+        prompt_en: Sixty-three pesos, please.
+        answer_tl: Animnapu't tatlong piso po
+        accept:
+          - Animnapu't tatlo pong piso
+        extra_words: [dalawampu, lima, mangga]
+
+  - id: num11-4
+    title: Ages and prices
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ilan, en: how many }
+          - { tl: edad, en: age }
+          - { tl: taon, en: year }
+          - { tl: piso, en: peso }
+      - type: choice
+        prompt: "'Ilang taon ka na?' asks..."
+        answer: How old are you?
+        distractors: [Where are you from?, What is your name?, How much is it?]
+        audio: ilang_taon_ka_na
+        audio_text: Ilang taon ka na?
+      - type: fill_blank
+        sentence: "Dalawampu't lima na akong ___."
+        translation: "I am twenty-five years old."
+        answer: taon
+        options: [taon, piso, bahay]
+      - type: translate
+        prompt_tl: Ilan ang mangga sa mesa?
+        answer_en: How many mangoes are on the table?
+        accept:
+          - How many mangoes are there on the table
+        extra_words: [cheap, tomorrow, quickly]
+        audio: ilan_ang_mangga_sa_mesa
+      - type: translate
+        prompt_en: I am thirty years old.
+        answer_tl: Tatlumpung taon na ako
+        accept:
+          - Tatlumpu na akong taon
+        extra_words: [piso, bahay, edad]
+      - type: listen
+        audio: ilang_taon_ang_kapatid_mo
+        answer_tl: Ilang taon ang kapatid mo
+        extra_words: [edad, piso]
+      - type: choice
+        prompt: "Which question asks a price?"
+        answer: Magkano po?
+        distractors: [Ilang taon ka na?, Taga-saan ka?, Ano ang pangalan mo?]
+      - type: fill_blank
+        sentence: "___ po ang isang kilo?"
+        translation: "How much is one kilo?"
+        answer: Magkano
+        options: [Magkano, Ilan, Sino]
+      - type: translate
+        prompt_tl: Animnapung piso ang isang kilo.
+        answer_en: One kilo is sixty pesos.
+        accept:
+          - A kilo costs sixty pesos
+        extra_words: [tomorrow, market, morning]
+        audio: animnapung_piso_ang_isang_kilo

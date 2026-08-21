@@ -1,0 +1,231 @@
+id: ability-permission
+title: Can and May
+tier: everyday
+description: Kaya, marunong, pwede, bawal — asking what is possible and what is allowed.
+tip: >-
+  Tagalog splits English "can" three ways. Marunong is learned skill (marunong
+  akong magluto — I know how to cook), kaya is capability or strength (kaya ko
+  itong buhatin), and pwede is permission (pwede ba akong pumasok?). Bawal is
+  the flat prohibition you see on every sign.
+lessons:
+  - id: able-1
+    title: Knowing how
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: marunong, en: knows how }
+          - { tl: hindi marunong, en: does not know how }
+          - { tl: matuto, en: to learn }
+          - { tl: turuan, en: to teach }
+      - type: choice
+        prompt: "'Marunong akong magluto' means..."
+        answer: I know how to cook
+        distractors: [I want to cook, I am cooking, I will cook]
+        audio: marunong_akong_magluto
+        audio_text: Marunong akong magluto.
+      - type: fill_blank
+        sentence: "___ ka bang magmaneho?"
+        translation: "Do you know how to drive?"
+        answer: Marunong
+        options: [Marunong, Bawal, Pwede]
+      - type: translate
+        prompt_tl: Hindi ako marunong lumangoy.
+        answer_en: I do not know how to swim.
+        accept:
+          - I can't swim
+        extra_words: [cheap, market, tomorrow]
+        audio: hindi_ako_marunong_lumangoy
+      - type: translate
+        prompt_en: I want to learn Tagalog.
+        answer_tl: Gusto kong matuto ng Tagalog
+        accept:
+          - Gusto kong mag-aral ng Tagalog
+        extra_words: [marunong, turuan, kaya]
+        grading: { hyphens: true }
+      - type: listen
+        audio: marunong_ka_bang_magsalita_ng_tagalog
+        answer_tl: Marunong ka bang magsalita ng Tagalog
+        extra_words: [matuto, turuan]
+      - type: choice
+        prompt: "'Turuan mo ako' asks someone to..."
+        answer: teach you
+        distractors: [help you carry, let you pass, wait for you]
+      - type: fill_blank
+        sentence: "___ mo ako kung paano magluto ng adobo."
+        translation: "Teach me how to cook adobo."
+        answer: Turuan
+        options: [Turuan, Bawalan, Hintayin]
+      - type: arrange
+        prompt: "I know how to cook but not to drive."
+        answer_tl: Marunong akong magluto pero hindi magmaneho
+
+  - id: able-2
+    title: Being able
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaya, en: able to }
+          - { tl: hindi kaya, en: not able to }
+          - { tl: mahirap, en: difficult }
+          - { tl: madali, en: easy }
+      - type: choice
+        prompt: "'Kaya mo ba?' asks whether you..."
+        answer: are able to do it
+        distractors: [know how to do it, want to do it, are allowed to do it]
+        audio: kaya_mo_ba
+        audio_text: Kaya mo ba?
+      - type: fill_blank
+        sentence: "___ ko itong buhatin, magaan lang."
+        translation: "I can carry this, it is light."
+        answer: Kaya
+        options: [Kaya, Bawal, Marunong]
+      - type: translate
+        prompt_tl: Hindi ko kaya mag-isa.
+        answer_en: I cannot do it alone.
+        accept:
+          - I can't manage alone
+        extra_words: [cheap, market, tomorrow]
+        audio: hindi_ko_kaya_mag_isa
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: This is difficult but I can do it.
+        answer_tl: Mahirap ito pero kaya ko
+        accept:
+          - Mahirap ito ngunit kaya ko
+        extra_words: [madali, marunong, bawal]
+      - type: listen
+        audio: kaya_mo_ba_ito
+        answer_tl: Kaya mo ba ito
+        extra_words: [mahirap, madali]
+      - type: choice
+        prompt: "Which is the opposite of 'mahirap'?"
+        answer: madali
+        distractors: [mabigat, mahaba, malaki]
+      - type: fill_blank
+        sentence: "___ lang ang pagsusulit, hindi mahirap."
+        translation: "The test was easy, not difficult."
+        answer: Madali
+        options: [Madali, Mahirap, Mabigat]
+      - type: arrange
+        prompt: "It is difficult but I can do it."
+        answer_tl: Mahirap ito pero kaya ko
+
+  - id: able-3
+    title: Asking permission
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pwede, en: may or allowed }
+          - { tl: bawal, en: forbidden }
+          - { tl: paalam, en: permission }
+          - { tl: sige lang, en: go ahead }
+      - type: choice
+        prompt: "A sign reads 'BAWAL UMIHI DITO'. It..."
+        answer: forbids something
+        distractors: [gives directions, sells something, welcomes visitors]
+        audio: bawal_umihi_dito
+        audio_text: Bawal umihi dito.
+      - type: fill_blank
+        sentence: "___ po ba akong pumasok?"
+        translation: "May I come in?"
+        answer: Pwede
+        options: [Pwede, Bawal, Kaya]
+      - type: translate
+        prompt_tl: Bawal pumasok dito.
+        answer_en: Entering here is forbidden.
+        accept:
+          - It is forbidden to enter here
+        extra_words: [cheap, market, tomorrow]
+        audio: bawal_pumasok_dito
+      - type: translate
+        prompt_en: May I use your phone?
+        answer_tl: Pwede po bang gamitin ang telepono ninyo?
+        accept:
+          - Pwede ko po bang gamitin ang telepono ninyo
+        extra_words: [bawal, kaya, marunong]
+      - type: listen
+        audio: pwede_po_ba_akong_pumasok
+        answer_tl: Pwede po ba akong pumasok
+        extra_words: [bawal, kaya]
+      - type: choice
+        prompt: "'Sige lang' as an answer to a request means..."
+        answer: go ahead
+        distractors: [not allowed, wait a moment, I do not know]
+      - type: fill_blank
+        sentence: "___ magdala ng pagkain sa loob."
+        translation: "Bringing food inside is forbidden."
+        answer: Bawal
+        options: [Bawal, Pwede, Marunong]
+      - type: arrange
+        prompt: "May I ask a question first?"
+        answer_tl: Pwede po ba akong magtanong muna
+
+  - id: able-4
+    title: Rules and requests
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: At a museum entrance
+        lines:
+          - speaker: Bisita
+            text: "___ po bang kumuha ng litrato dito?"
+            translation: "May I take a photo here?"
+          - speaker: Guwardiya
+            text: "___ po ang flash, pero pwede po kung wala."
+            translation: "Flash is forbidden, but it is allowed without it."
+          - speaker: Bisita
+            text: "Salamat po. ___ po ba akong magdala ng bag sa loob?"
+            translation: "Thank you. May I bring a bag inside?"
+          - speaker: Guwardiya
+            text: "Iwan po ninyo sa locker."
+            translation: "Please leave it in the locker."
+        blanks:
+          - answer: Pwede
+            options: [Pwede, Bawal, Kaya]
+          - answer: Bawal
+            options: [Bawal, Pwede, Madali]
+          - answer: Pwede
+            options: [Pwede, Bawal, Marunong]
+      - type: match
+        pairs:
+          - { tl: litrato, en: photograph }
+          - { tl: guwardiya, en: guard }
+          - { tl: iwan, en: to leave behind }
+          - { tl: dalhin, en: to bring }
+      - type: fill_blank
+        sentence: "___ po ninyo ang bag sa labas."
+        translation: "Please leave the bag outside."
+        answer: Iwan
+        options: [Iwan, Dalhin, Kainin]
+      - type: translate
+        prompt_en: Photos are not allowed inside.
+        answer_tl: Bawal kumuha ng litrato sa loob
+        accept:
+          - Bawal ang litrato sa loob
+        extra_words: [pwede, guwardiya, dalhin]
+      - type: translate
+        prompt_tl: Pwede po ba akong magdala ng tubig?
+        answer_en: May I bring water?
+        accept:
+          - Can I bring water
+        extra_words: [cheap, market, tomorrow]
+        audio: pwede_po_ba_akong_magdala_ng_tubig
+      - type: listen
+        audio: bawal_po_ang_flash
+        answer_tl: Bawal po ang flash
+        extra_words: [pwede, litrato]
+      - type: choice
+        prompt: "In the dialogue, what exactly is forbidden?"
+        answer: using the flash
+        distractors: [all photography, entering at all, speaking loudly]
+      - type: fill_blank
+        sentence: "___ po ninyo ang tiket sa pasukan."
+        translation: "Please bring the ticket to the entrance."
+        answer: Dalhin
+        options: [Dalhin, Iwan, Inumin]
+      - type: arrange
+        prompt: "May I take a photo here?"
+        answer_tl: Pwede po bang kumuha ng litrato dito

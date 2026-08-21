@@ -1,5 +1,6 @@
 id: fruits-vegetables
 title: Fruits & Vegetables
+tier: conversational
 description: Name the fruits and vegetables on a Filipino market table, and say whether they are ripe, fresh, or sweet.
 tip: >-
   An adjective can go before the noun with a linker: "hinog na mangga" (ripe

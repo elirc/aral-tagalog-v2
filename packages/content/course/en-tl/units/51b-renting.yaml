@@ -1,0 +1,228 @@
+id: renting
+title: Renting a Place
+tier: conversational
+description: Viewing a room, negotiating terms, and understanding what is included.
+tip: >-
+  Umupa is to rent (as tenant), magpaupa is to rent out (as landlord) — the mag-
+  prefix flips who is doing what. Listings shorten everything: "kasama ang tubig"
+  (water included), "may kuryente", "walang aircon". Deposits are usually one
+  month advance plus two months deposit.
+lessons:
+  - id: rent-1
+    title: Looking for a place
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umupa, en: to rent (as tenant) }
+          - { tl: magpaupa, en: to rent out }
+          - { tl: paupahan, en: a place for rent }
+          - { tl: may-ari, en: owner }
+      - type: choice
+        prompt: "A sign says 'PAUPAHAN'. The place is..."
+        answer: for rent
+        distractors: [for sale, closed, under repair]
+        audio: paupahan
+        audio_text: Paupahan.
+
+      - type: fill_blank
+        sentence: "Naghahanap po ako ng ___ na kuwarto."
+        translation: "I am looking for a room to rent."
+        answer: paupahang
+        options: [paupahang, sirang, lumang]
+      - type: translate
+        prompt_tl: Magkano po ang upa sa isang buwan?
+        answer_en: How much is the rent per month?
+        accept:
+          - How much is the monthly rent
+        extra_words: [cheap, market, tomorrow]
+        audio: magkano_po_ang_upa_sa_isang_buwan
+      - type: translate
+        prompt_en: I would like to see the room.
+        answer_tl: Gusto ko po sanang makita ang kuwarto
+        accept:
+          - Nais ko po sanang makita ang kuwarto
+        extra_words: [upa, may-ari, paupahan]
+        grading: { hyphens: true }
+      - type: listen
+        audio: naghahanap_po_ako_ng_kuwarto
+        answer_tl: Naghahanap po ako ng kuwarto
+        extra_words: [upa, may-ari]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I am looking for a room to rent."
+        answer_tl: Naghahanap po ako ng paupahang kuwarto
+      - type: choice
+        prompt: "'Magpaupa' is done by the..."
+        answer: owner
+        distractors: [tenant, neighbor, barangay]
+      - type: arrange
+        prompt: "How much is the rent per month?"
+        answer_tl: Magkano po ang upa sa isang buwan
+
+  - id: rent-2
+    title: What is included
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kasama ang tubig, en: water included }
+          - { tl: hiwalay ang kuryente, en: electricity separate }
+          - { tl: kasangkapan, en: furniture }
+          - { tl: banyo sa loob, en: private bathroom }
+      - type: choice
+        prompt: "'Hiwalay ang kuryente' means the electricity is..."
+        answer: billed separately
+        distractors: [included, free, shared equally]
+        audio: hiwalay_ang_kuryente
+        audio_text: Hiwalay ang kuryente.
+      - type: fill_blank
+        sentence: "___ po ba ang tubig sa upa?"
+        translation: "Is water included in the rent?"
+        answer: Kasama
+        options: [Kasama, Hiwalay, Mahal]
+      - type: translate
+        prompt_tl: May kasangkapan na po ba ang kuwarto?
+        answer_en: Does the room already have furniture?
+        accept:
+          - Is the room furnished
+        extra_words: [cheap, market, tomorrow]
+        audio: may_kasangkapan_na_po_ba_ang_kuwarto
+      - type: translate
+        prompt_en: Is the bathroom inside or shared?
+        answer_tl: Nasa loob po ba ang banyo o hiwalay?
+        accept:
+          - Nasa loob ba ang banyo o pinaghahatian
+        extra_words: [kasama, kasangkapan, kuryente]
+      - type: listen
+        audio: kasama_po_ba_ang_tubig
+        answer_tl: Kasama po ba ang tubig
+        extra_words: [hiwalay, kuryente]
+      - type: arrange
+        prompt: "Is water included in the rent?"
+        answer_tl: Kasama po ba ang tubig sa upa
+      - type: choice
+        prompt: "Which question would a careful tenant ask first?"
+        answer: Magkano po ang deposito at advance?
+        distractors: [Anong pangalan ninyo?, Ilang taon na kayo?, Taga-saan po kayo?]
+      - type: fill_blank
+        sentence: "Walang ___ ang kuwarto, kailangan kong bumili ng kama."
+        translation: "The room has no furniture, I need to buy a bed."
+        answer: kasangkapan
+        options: [kasangkapan, kuryente, tubig]
+
+  - id: rent-3
+    title: Terms and rules
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kontrata, en: contract }
+          - { tl: patakaran, en: rules }
+          - { tl: curfew, en: curfew }
+          - { tl: bisita, en: visitor }
+      - type: choice
+        prompt: "'Bawal magdala ng bisita pagkatapos ng alas-diyes' is a..."
+        answer: house rule
+        distractors: [price quote, greeting, weather report]
+        audio: bawal_magdala_ng_bisita
+        audio_text: Bawal magdala ng bisita.
+      - type: fill_blank
+        sentence: "Pipirmahan ko po ang ___ bukas."
+        translation: "I will sign the contract tomorrow."
+        answer: kontrata
+        options: [kontrata, patakaran, bisita]
+      - type: translate
+        prompt_tl: Ano po ang mga patakaran sa bahay?
+        answer_en: What are the house rules?
+        accept:
+          - What are the rules of the house
+        extra_words: [cheap, market, tomorrow]
+        audio: ano_po_ang_mga_patakaran_sa_bahay
+      - type: translate
+        prompt_en: The contract is for one year.
+        answer_tl: Isang taon po ang kontrata
+        accept:
+          - Ang kontrata po ay isang taon
+        extra_words: [patakaran, bisita, curfew]
+      - type: listen
+        audio: ano_po_ang_patakaran
+        answer_tl: Ano po ang patakaran
+        extra_words: [kontrata, bisita]
+      - type: arrange
+        prompt: "I will sign the contract tomorrow."
+        answer_tl: Pipirmahan ko po ang kontrata bukas
+      - type: choice
+        prompt: "If the landlord says 'isang buwan advance, dalawang buwan deposito', you pay..."
+        answer: three months up front
+        distractors: [one month up front, two months up front, nothing up front]
+      - type: arrange
+        prompt: "What are the house rules?"
+        answer_tl: Ano po ang mga patakaran sa bahay
+
+  - id: rent-4
+    title: Viewing the room
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: A tenant views a room
+        lines:
+          - speaker: Umuupa
+            text: "Magandang hapon po. Nakita ko po ang karatula, ___ po ba ito?"
+            translation: "Good afternoon. I saw the sign, is this for rent?"
+          - speaker: May-ari
+            text: "Opo. Walong libo po ang upa, ___ na ang tubig."
+            translation: "Yes. The rent is eight thousand, water included."
+          - speaker: Umuupa
+            text: "___ po ba ang kuryente?"
+            translation: "Is electricity separate?"
+          - speaker: May-ari
+            text: "Opo, may sariling metro ang bawat kuwarto."
+            translation: "Yes, each room has its own meter."
+        blanks:
+          - answer: paupahan
+            options: [paupahan, sarado, sira]
+          - answer: kasama
+            options: [kasama, hiwalay, mahal]
+          - answer: Hiwalay
+            options: [Hiwalay, Kasama, Libre]
+      - type: match
+        pairs:
+          - { tl: karatula, en: sign }
+          - { tl: metro, en: meter }
+          - { tl: susi ng kuwarto, en: room key }
+          - { tl: lilipat, en: will move in }
+      - type: fill_blank
+        sentence: "___ po ako sa susunod na buwan."
+        translation: "I will move in next month."
+        answer: Lilipat
+        options: [Lilipat, Maglalaba, Matutulog]
+      - type: translate
+        prompt_en: When can I move in?
+        answer_tl: Kailan po ako pwedeng lumipat?
+        accept:
+          - Kailan po ako maaaring lumipat
+        extra_words: [karatula, metro, susi]
+      - type: translate
+        prompt_tl: May sariling metro ang bawat kuwarto.
+        answer_en: Each room has its own meter.
+        accept:
+          - Every room has its own meter
+        extra_words: [cheap, market, tomorrow]
+        audio: may_sariling_metro_ang_bawat_kuwarto
+      - type: listen
+        audio: kailan_po_ako_pwedeng_lumipat
+        answer_tl: Kailan po ako pwedeng lumipat
+        extra_words: [karatula, metro]
+      - type: choice
+        prompt: "In the dialogue, what is included in the rent?"
+        answer: water
+        distractors: [electricity, internet, furniture]
+      - type: arrange
+        prompt: "The rent is eight thousand, water included."
+        answer_tl: Walong libo po ang upa kasama na ang tubig
+        accept:
+          - Walong libo po ang upa, kasama na ang tubig
+      - type: arrange
+        prompt: "When can I move in?"
+        answer_tl: Kailan po ako pwedeng lumipat

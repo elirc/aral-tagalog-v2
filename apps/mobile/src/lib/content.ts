@@ -39,6 +39,19 @@ export function findLesson(lessonId: string): { lesson: Lesson; unitTitle: strin
   return null;
 }
 
-export function isLessonUnlocked(lessonId: string, completed: string[]): boolean {
-  return coreIsLessonUnlocked(active.units, lessonId, completed);
+/**
+ * Lessons unlock in order *within their difficulty tier*, and a tier opens
+ * once the previous one is finished or the learner placed into it. Callers
+ * must pass `unlockedTierIds` from progress — omitting it silently locks every
+ * tier the learner jumped into, and web would then show lessons mobile hides.
+ */
+export function isLessonUnlocked(
+  lessonId: string,
+  completed: string[],
+  unlockedTierIds: string[] = [],
+): boolean {
+  return coreIsLessonUnlocked(active.units, lessonId, completed, {
+    tiers: active.tiers,
+    unlockedTierIds,
+  });
 }

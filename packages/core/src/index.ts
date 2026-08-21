@@ -8,4 +8,6 @@ export * from "./level";
 export * from "./events";
 export * from "./achievements";
 export * from "./review";
+export * from "./tiers";
+export * from "./quests";
 export * from "./ads";

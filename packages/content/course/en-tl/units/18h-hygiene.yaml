@@ -1,0 +1,232 @@
+id: hygiene
+title: Washing Up
+tier: foundation
+description: Bathing, brushing, and the bathroom words you need on day one.
+tip: >-
+  Maligo means to bathe, and Filipinos do it at least once a day — often twice
+  when it is hot. The tabo (dipper) and the balde (pail) are the classic
+  bathroom pair. Verbs for grooming mostly take mag-: maghilamos (wash the
+  face), magsipilyo (brush teeth), magsuklay (comb hair).
+lessons:
+  - id: hyg-1
+    title: In the bathroom
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sabon, en: soap }
+          - { tl: tuwalya, en: towel }
+          - { tl: tabo, en: dipper }
+          - { tl: balde, en: pail }
+      - type: choice
+        prompt: "'Maligo' means..."
+        answer: to take a bath
+        distractors: [to eat, to sleep, to walk]
+        audio: maligo
+        audio_text: Maligo.
+      - type: fill_blank
+        sentence: "Kailangan ko ng ___ at tuwalya."
+        translation: "I need soap and a towel."
+        answer: sabon
+        options: [sabon, lapis, kanin]
+      - type: translate
+        prompt_tl: Maliligo ako bago matulog.
+        answer_en: I will take a bath before sleeping.
+        accept:
+          - I'll shower before sleeping
+        extra_words: [tomorrow, cheap, market]
+        audio: maliligo_ako_bago_matulog
+      - type: translate
+        prompt_en: Where is the towel?
+        answer_tl: Nasaan ang tuwalya?
+        accept:
+          - Nasaan po ang tuwalya
+        extra_words: [sabon, tabo, balde]
+      - type: listen
+        audio: maliligo_muna_ako
+        answer_tl: Maliligo muna ako
+        extra_words: [sabon, tuwalya]
+      - type: choice
+        prompt: "The 'tabo' is used to..."
+        answer: scoop water
+        distractors: [dry your hair, brush your teeth, hold soap]
+      - type: fill_blank
+        sentence: "Punuin mo ng tubig ang ___."
+        translation: "Fill the pail with water."
+        answer: balde
+        options: [balde, sabon, tuwalya]
+      - type: translate
+        prompt_tl: Walang tubig sa banyo.
+        answer_en: There is no water in the bathroom.
+        accept:
+          - There's no water in the bathroom
+        extra_words: [quickly, morning, cheap]
+        audio: walang_tubig_sa_banyo
+
+  - id: hyg-2
+    title: Face and teeth
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magsipilyo, en: to brush teeth }
+          - { tl: maghilamos, en: to wash the face }
+          - { tl: maghugas, en: to wash (hands or dishes) }
+          - { tl: magsuklay, en: to comb }
+      - type: choice
+        prompt: "After eating you should:"
+        answer: magsipilyo
+        distractors: [magsuklay, matulog, maglakad]
+        audio: magsipilyo
+        audio_text: Magsipilyo.
+      - type: fill_blank
+        sentence: "___ ka ng kamay bago kumain."
+        translation: "Wash your hands before eating."
+        answer: Maghugas
+        options: [Maghugas, Magsuklay, Matulog]
+      - type: translate
+        prompt_en: I brush my teeth every morning.
+        answer_tl: Nagsisipilyo ako tuwing umaga
+        accept:
+          - Nagsisipilyo ako kada umaga
+        extra_words: [gabi, hapon, tubig]
+      - type: translate
+        prompt_tl: Naghilamos siya ng malamig na tubig.
+        answer_en: He washed his face with cold water.
+        accept:
+          - She washed her face with cold water
+        extra_words: [tomorrow, market, cheap]
+        audio: naghilamos_siya_ng_malamig_na_tubig
+      - type: listen
+        audio: maghugas_ka_ng_kamay
+        answer_tl: Maghugas ka ng kamay
+        extra_words: [magsipilyo, magsuklay]
+      - type: choice
+        prompt: "'Magsuklay' involves your..."
+        answer: hair
+        distractors: [teeth, hands, feet]
+      - type: fill_blank
+        sentence: "Nasaan ang ___ ko? Magsisipilyo ako."
+        translation: "Where is my toothbrush? I will brush my teeth."
+        answer: sipilyo
+        options: [sipilyo, suklay, tuwalya]
+      - type: translate
+        prompt_en: Comb your hair before we go.
+        answer_tl: Magsuklay ka bago tayo umalis
+        accept:
+          - Magsuklay ka muna bago tayo umalis
+        extra_words: [maligo, maghugas, matulog]
+
+  - id: hyg-3
+    title: Clean and dirty
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malinis, en: clean }
+          - { tl: marumi, en: dirty }
+          - { tl: mabaho, en: smelly }
+          - { tl: mabango, en: fragrant }
+      - type: choice
+        prompt: "'Mabango' describes something that..."
+        answer: smells good
+        distractors: [smells bad, tastes sweet, looks new]
+        audio: mabango
+        audio_text: Mabango.
+      - type: fill_blank
+        sentence: "___ ang damit ko, maglalaba ako."
+        translation: "My clothes are dirty, I will do laundry."
+        answer: Marumi
+        options: [Marumi, Malinis, Mabango]
+      - type: translate
+        prompt_tl: Malinis ang banyo namin.
+        answer_en: Our bathroom is clean.
+        accept:
+          - Our bathroom is very clean
+        extra_words: [cheap, tomorrow, market]
+        audio: malinis_ang_banyo_namin
+      - type: translate
+        prompt_en: The towel smells good.
+        answer_tl: Mabango ang tuwalya
+        accept:
+          - Mabango ang tuwalya po
+        extra_words: [mabaho, marumi, malinis]
+      - type: listen
+        audio: marumi_ang_kamay_mo
+        answer_tl: Marumi ang kamay mo
+        extra_words: [malinis, mabango]
+      - type: choice
+        prompt: "Which is the opposite of 'malinis'?"
+        answer: marumi
+        distractors: [mabango, mainit, malamig]
+      - type: fill_blank
+        sentence: "Mabaho ang basura, itapon mo na ___."
+        translation: "The garbage smells, throw it out now."
+        answer: iyan
+        options: [iyan, ako, siya]
+      - type: translate
+        prompt_tl: Mabango ang sabon na ito.
+        answer_en: This soap smells good.
+        accept:
+          - This soap is fragrant
+        extra_words: [morning, quickly, cheap]
+        audio: mabango_ang_sabon_na_ito
+
+  - id: hyg-4
+    title: Morning routine
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which order matches a normal morning?"
+        answer: Gumising, maligo, mag-almusal.
+        distractors:
+          - "Matulog, maligo, gumising."
+          - "Mag-almusal, matulog, gumising."
+          - "Maligo, matulog, mag-almusal."
+        audio: gumising_maligo_mag_almusal
+        audio_text: Gumising, maligo, mag-almusal.
+      - type: match
+        pairs:
+          - { tl: gumising, en: to wake up }
+          - { tl: bumangon, en: to get out of bed }
+          - { tl: matulog, en: to sleep }
+          - { tl: magpahinga, en: to rest }
+      - type: fill_blank
+        sentence: "___ ako nang alas-sais tuwing umaga."
+        translation: "I wake up at six every morning."
+        answer: Gumigising
+        options: [Gumigising, Natutulog, Kumakain]
+      - type: translate
+        prompt_en: I wake up early and take a bath.
+        answer_tl: Gumigising ako nang maaga at naliligo
+        accept:
+          - Maaga akong gumigising at naliligo
+        extra_words: [gabi, marumi, tuwalya]
+        grading: { ng_nang: true }
+      - type: translate
+        prompt_tl: Natutulog ako nang alas-diyes.
+        answer_en: I sleep at ten.
+        accept:
+          - I go to sleep at ten
+        extra_words: [tomorrow, market, cheap]
+        audio: natutulog_ako_nang_alas_diyes
+        grading: { ng_nang: true }
+      - type: listen
+        audio: gumising_ka_na
+        answer_tl: Gumising ka na
+        extra_words: [matulog, maligo]
+      - type: choice
+        prompt: "'Magpahinga ka muna' invites you to..."
+        answer: rest first
+        distractors: [eat first, leave now, wake up]
+      - type: fill_blank
+        sentence: "Pagod ako, ___ muna ako."
+        translation: "I am tired, I will rest first."
+        answer: magpapahinga
+        options: [magpapahinga, kakain, maglalaba]
+      - type: translate
+        prompt_en: Wake up, it is already morning.
+        answer_tl: Gumising ka na, umaga na
+        accept:
+          - Gumising ka umaga na
+        extra_words: [gabi, matulog, maligo]

@@ -1,4 +1,4 @@
-import type { Exercise, GradingFlags } from "./types";
+import type { DialogueBlank, DialogueExercise, Exercise, GradingFlags } from "./types";
 
 /**
  * Normalize free-ish text for comparison: case, punctuation, whitespace,
@@ -29,10 +29,37 @@ export interface GradeResult {
   correctAnswer: string;
 }
 
-/** Answer shapes by exercise type. match_pairs is graded per-pair via gradePair. */
+/**
+ * Answer shapes by exercise type. match_pairs is graded per-pair via gradePair.
+ * `dialogue` takes a string[] parallel to its blanks — the only type whose
+ * array entries are *not* joined into one sentence.
+ */
 export type UserAnswer = string | string[];
 
+/** Is `value` an accepted filling for one dialogue blank? */
+export function gradeBlank(blank: DialogueBlank, value: string, flags: GradingFlags = {}): boolean {
+  const normalized = normalizeAnswer(value, flags);
+  if (normalized === "") return false;
+  return [blank.answer, ...(blank.accept ?? [])].some((a) => normalizeAnswer(a, flags) === normalized);
+}
+
+/**
+ * A dialogue is correct only when every blank is. Extra entries beyond the
+ * blank count are ignored; missing ones simply fail to match.
+ */
+export function gradeDialogue(exercise: DialogueExercise, userAnswer: UserAnswer): GradeResult {
+  const given = Array.isArray(userAnswer) ? userAnswer : [userAnswer];
+  const flags = exercise.grading ?? {};
+  return {
+    correct: exercise.blanks.every((b, i) => gradeBlank(b, given[i] ?? "", flags)),
+    correctAnswer: exercise.blanks.map((b) => b.answer).join(" · "),
+  };
+}
+
 export function grade(exercise: Exercise, userAnswer: UserAnswer): GradeResult {
+  // dialogue answers stay an array (one entry per blank); everything else
+  // flattens a word-bank selection into a sentence
+  if (exercise.type === "dialogue") return gradeDialogue(exercise, userAnswer);
   const given = Array.isArray(userAnswer) ? userAnswer.join(" ") : userAnswer;
 
   switch (exercise.type) {
@@ -44,6 +71,7 @@ export function grade(exercise: Exercise, userAnswer: UserAnswer): GradeResult {
     }
     case "translate_taps":
     case "listen":
+    case "arrange":
     case "fill_blank": {
       const flags = exercise.grading ?? {};
       const accepted = [exercise.answer, ...(exercise.accept ?? [])];

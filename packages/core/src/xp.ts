@@ -13,3 +13,16 @@ export const PRACTICE_XP = 5;
 export function lessonXp(lesson: Pick<Lesson, "xp">, perfect: boolean): number {
   return (lesson.xp || DEFAULT_LESSON_XP) + (perfect ? PERFECT_BONUS_XP : 0);
 }
+
+/**
+ * Combo (GAM): consecutive correct answers inside one session. From the
+ * COMBO_MIN-th correct answer in a row, each further correct answer adds 1 XP,
+ * up to MAX_COMBO_BONUS_XP for the session. A wrong answer resets the run.
+ *
+ * The cap is what keeps the reward bounded and server-checkable: /sync clamps
+ * a first-time completion to lessonXp(lesson, perfect) + MAX_COMBO_BONUS_XP.
+ * Practice replays earn PRACTICE_XP flat and no combo bonus, so a completed
+ * lesson can't be farmed by chaining perfect replays.
+ */
+export const COMBO_MIN = 3;
+export const MAX_COMBO_BONUS_XP = 10;

@@ -1,0 +1,230 @@
+id: grocery
+title: At the Grocery
+tier: everyday
+description: Aisles, brands, and the checkout line — shopping indoors instead of at the palengke.
+tip: >-
+  The palengke is for fresh food; the grocery is for packaged goods, and its
+  vocabulary is mostly borrowed: cart, aisle, cashier, resibo. One useful native
+  pair is de-lata (canned) and de-boteng (bottled). Prices here are fixed, so
+  tumawad — haggling — has no place.
+lessons:
+  - id: groc-1
+    title: The aisles
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: de-lata, en: canned goods }
+          - { tl: bigas, en: uncooked rice }
+          - { tl: asukal, en: sugar }
+          - { tl: mantika, en: cooking oil }
+      - type: choice
+        prompt: "'De-lata' refers to food that is..."
+        answer: canned
+        distractors: [frozen, fresh, dried]
+        audio: de_lata
+        audio_text: De-lata.
+      - type: fill_blank
+        sentence: "Bumili ka ng limang kilong ___."
+        translation: "Buy five kilos of rice."
+        answer: bigas
+        options: [bigas, sabon, sipit]
+      - type: translate
+        prompt_tl: Ubos na ang mantika sa bahay.
+        answer_en: The cooking oil at home has run out.
+        accept:
+          - We are out of cooking oil at home
+        extra_words: [cheap, market, tomorrow]
+        audio: ubos_na_ang_mantika_sa_bahay
+      - type: translate
+        prompt_en: I need sugar and salt.
+        answer_tl: Kailangan ko ng asukal at asin
+        accept:
+          - Kailangan ko ng asin at asukal
+        extra_words: [bigas, mantika, sabon]
+      - type: listen
+        audio: nasaan_po_ang_bigas
+        answer_tl: Nasaan po ang bigas
+        extra_words: [asukal, mantika]
+      - type: choice
+        prompt: "Which is sold by the kilo?"
+        answer: bigas
+        distractors: [sabon, plantsa, sipit]
+      - type: fill_blank
+        sentence: "Isang lata ng ___ po."
+        translation: "One can of sardines, please."
+        answer: sardinas
+        options: [sardinas, sabon, sipit]
+      - type: arrange
+        prompt: "Buy five kilos of rice and one liter of oil."
+        answer_tl: Bumili ka ng limang kilong bigas at isang litrong mantika
+
+  - id: groc-2
+    title: Brands and sizes
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maliit na pakete, en: small pack }
+          - { tl: malaking bote, en: big bottle }
+          - { tl: sachet, en: sachet }
+          - { tl: dosena, en: dozen }
+      - type: choice
+        prompt: "'Isang dosenang itlog' is..."
+        answer: twelve eggs
+        distractors: [one egg, ten eggs, twenty eggs]
+        audio: isang_dosenang_itlog
+        audio_text: Isang dosenang itlog.
+      - type: fill_blank
+        sentence: "Malaking ___ po ng suka."
+        translation: "A big bottle of vinegar, please."
+        answer: bote
+        options: [bote, sipit, sabon]
+      - type: translate
+        prompt_tl: Mas mura ang malaking pakete.
+        answer_en: The big pack is cheaper.
+        accept:
+          - The large pack is cheaper
+        extra_words: [cheap, market, tomorrow]
+        audio: mas_mura_ang_malaking_pakete
+      - type: translate
+        prompt_en: One dozen eggs, please.
+        answer_tl: Isang dosenang itlog po
+        accept:
+          - Isang dosena pong itlog
+        extra_words: [bote, pakete, sachet]
+      - type: listen
+        audio: mas_mura_ba_ang_malaki
+        answer_tl: Mas mura ba ang malaki
+        extra_words: [bote, dosena]
+      - type: choice
+        prompt: "Buying in sachets is common because it..."
+        answer: costs less per purchase
+        distractors: [lasts longer, tastes better, is imported]
+      - type: fill_blank
+        sentence: "Isang ___ lang po ng shampoo."
+        translation: "Just one sachet of shampoo, please."
+        answer: sachet
+        options: [sachet, dosena, bote]
+      - type: arrange
+        prompt: "The big pack is cheaper than the small one."
+        answer_tl: Mas mura ang malaking pakete kaysa sa maliit
+
+  - id: groc-3
+    title: The checkout
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kahera, en: cashier }
+          - { tl: pila sa kahera, en: checkout line }
+          - { tl: resibo, en: receipt }
+          - { tl: supot, en: bag }
+      - type: choice
+        prompt: "The cashier asks 'May bag po ba kayo?' — she means..."
+        answer: do you have your own bag
+        distractors: [is your bag heavy, where is your bag, did you lose a bag]
+        audio: may_bag_po_ba_kayo
+        audio_text: May bag po ba kayo?
+      - type: fill_blank
+        sentence: "Pahingi po ng ___."
+        translation: "May I have a bag, please?"
+        answer: supot
+        options: [supot, resibo, kahera]
+      - type: translate
+        prompt_tl: Magkano po ang lahat?
+        answer_en: How much is everything?
+        accept:
+          - What is the total
+        extra_words: [cheap, market, tomorrow]
+        audio: magkano_po_ang_lahat
+      - type: translate
+        prompt_en: May I have the receipt, please?
+        answer_tl: Pahingi po ng resibo
+        accept:
+          - Pwede po bang humingi ng resibo
+        extra_words: [supot, kahera, pila]
+      - type: listen
+        audio: magkano_po_ang_lahat_2
+        answer_tl: Magkano po ang lahat
+        extra_words: [resibo, supot]
+      - type: choice
+        prompt: "Prices at the grocery are..."
+        answer: fixed, so no haggling
+        distractors: [always negotiable, cheaper than the palengke always, set by the buyer]
+      - type: fill_blank
+        sentence: "Mahaba ang ___ sa kahera tuwing Linggo."
+        translation: "The checkout line is long on Sundays."
+        answer: pila
+        options: [pila, supot, resibo]
+      - type: arrange
+        prompt: "May I have a receipt and a bag?"
+        answer_tl: Pahingi po ng resibo at supot
+
+  - id: groc-4
+    title: A grocery run
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Checking a shopping list in the aisle
+        lines:
+          - speaker: Ana
+            text: "May ___ na ba tayong bigas?"
+            translation: "Do we already have rice?"
+          - speaker: Ben
+            text: "Wala na. Kumuha tayo ng limang ___."
+            translation: "None left. Let us get five kilos."
+          - speaker: Ana
+            text: "Sige. ___ na rin tayo ng mantika at asukal."
+            translation: "Okay. Let us also buy oil and sugar."
+          - speaker: Ben
+            text: "Tapos, pumila na tayo sa kahera."
+            translation: "Then, let us line up at the cashier."
+        blanks:
+          - answer: natitira
+            options: [natitira, sabon, sipit]
+          - answer: kilo
+            options: [kilo, bote, sachet]
+          - answer: bumili
+            options: [bumili, matulog, maglaba]
+      - type: match
+        pairs:
+          - { tl: listahan, en: shopping list }
+          - { tl: natitira, en: what is left }
+          - { tl: ubos na, en: all gone }
+          - { tl: promo, en: promotion }
+      - type: fill_blank
+        sentence: "Nakalimutan ko ang ___ sa bahay."
+        translation: "I forgot the shopping list at home."
+        answer: listahan
+        options: [listahan, supot, resibo]
+      - type: translate
+        prompt_en: There is a promo on canned goods today.
+        answer_tl: May promo sa de-lata ngayon
+        accept:
+          - May promo ang de-lata ngayon
+        extra_words: [listahan, resibo, supot]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Ubos na ang asukal, bumili ka.
+        answer_en: The sugar is all gone, buy some.
+        accept:
+          - We are out of sugar buy some
+        extra_words: [cheap, market, tomorrow]
+        audio: ubos_na_ang_asukal_bumili_ka
+      - type: listen
+        audio: nasaan_ang_listahan
+        answer_tl: Nasaan ang listahan
+        extra_words: [promo, resibo]
+      - type: choice
+        prompt: "In the dialogue, how much rice do they take?"
+        answer: five kilos
+        distractors: [one kilo, one dozen, a sachet]
+      - type: fill_blank
+        sentence: "May ___ ang gatas ngayong linggo."
+        translation: "There is a promotion on milk this week."
+        answer: promo
+        options: [promo, supot, pila]
+      - type: arrange
+        prompt: "Let us also buy oil and sugar."
+        answer_tl: Bumili rin tayo ng mantika at asukal

@@ -2262,3 +2262,526 @@
 - id: lindol
   lemma: lindol
   translation: earthquake
+
+# --- Mastery tier (units 52-57) ---
+- id: matigas_ang_ulo
+  lemma: matigas ang ulo
+  translation: stubborn
+  notes: Literally "hard head". The pattern "adjective + ang + body part" builds most Tagalog idioms.
+- id: mababaw_ang_luha
+  lemma: mababaw ang luha
+  translation: cries easily
+  notes: Literally "shallow tears".
+- id: bukas_ang_palad
+  lemma: bukas ang palad
+  translation: generous
+  notes: Literally "open palm".
+- id: makati_ang_dila
+  lemma: makati ang dila
+  translation: can't keep a secret
+  notes: Literally "itchy tongue".
+- id: malikot_ang_kamay
+  lemma: malikot ang kamay
+  translation: light-fingered, thieving
+- id: bahala_na
+  lemma: bahala na
+  translation: come what may
+  notes: The national shrug — accepting an outcome you can't control.
+- id: utang_na_loob
+  lemma: utang na loob
+  translation: debt of gratitude
+  notes: A debt of the heart, never of money; a core Filipino social value.
+- id: isang_kahig_isang_tuka
+  lemma: isang kahig, isang tuka
+  translation: living hand to mouth
+  notes: One scratch, one peck — like a chicken with nothing stored.
+- id: nangangapa_sa_dilim
+  lemma: nangangapa sa dilim
+  translation: clueless, groping in the dark
+- id: kumukulo_ang_dugo
+  lemma: kumukulo ang dugo
+  translation: furious
+  notes: Literally "the blood is boiling".
+- id: balat_sibuyas
+  lemma: balat-sibuyas
+  translation: overly sensitive
+  notes: '"Onion-skinned" — bruises at the slightest touch.'
+- id: nagdadalawang_isip
+  lemma: nagdadalawang-isip
+  translation: having second thoughts
+- id: halang_ang_bituka
+  lemma: halang ang bituka
+  translation: ruthless, capable of anything
+- id: sana_all
+  lemma: sana all
+  translation: lucky them (wish that were me)
+  notes: Modern slang, everywhere online since about 2020.
+- id: charot
+  lemma: charot
+  translation: just kidding
+  notes: Tacked onto a sentence to cancel it — the spoken wink.
+- id: chika
+  lemma: chika
+  translation: gossip, the latest news
+- id: maaari
+  lemma: maaari
+  translation: may, can (formal)
+  notes: The formal twin of "pwede".
+- id: nais
+  lemma: nais
+  translation: to wish, to want (formal)
+  notes: The formal twin of "gusto".
+- id: pakisuyo
+  lemma: pakisuyo
+  translation: kindly, please do
+- id: ipagpaumanhin
+  lemma: ipagpaumanhin
+  translation: please forgive (formal)
+- id: makikiraan
+  lemma: makikiraan
+  translation: excuse me, let me pass
+- id: paunawa
+  lemma: paunawa
+  translation: notice, announcement
+- id: liham
+  lemma: liham
+  translation: letter
+- id: lagda
+  lemma: lagda
+  translation: signature
+- id: pulong
+  lemma: pulong
+  translation: meeting
+- id: noong_unang_panahon
+  lemma: noong unang panahon
+  translation: once upon a time
+- id: kinabukasan
+  lemma: kinabukasan
+  translation: the next day
+- id: sa_wakas
+  lemma: sa wakas
+  translation: at last
+- id: bigla
+  lemma: bigla
+  translation: suddenly
+- id: pala
+  lemma: pala
+  translation: turns out (particle of realisation)
+  notes: '"Kaya pala!" — so that''s why!'
+- id: ulat
+  lemma: ulat
+  translation: report
+- id: naganap
+  lemma: naganap
+  translation: took place, happened
+- id: kinumpirma
+  lemma: kinumpirma
+  translation: confirmed
+- id: ayon_sa
+  lemma: ayon sa
+  translation: according to
+- id: babala
+  lemma: babala
+  translation: warning
+- id: senyales
+  lemma: senyales
+  translation: signal (as in a storm signal)
+- id: suspendido
+  lemma: suspendido
+  translation: suspended (of classes or work)
+- id: bayad_po
+  lemma: bayad po
+  translation: here is my fare
+- id: para_po
+  lemma: para po
+  translation: stop here please
+  notes: Called out to a jeepney driver, not related to Spanish "para".
+- id: tingi
+  lemma: tingi
+  translation: sold in small single portions
+  notes: How sari-sari stores keep everything affordable.
+- id: lista
+  lemma: lista
+  translation: the store credit list
+- id: meron
+  lemma: meron
+  translation: there is, to have
+  notes: Spoken short form of "mayroon".
+- id: ubos_na
+  lemma: ubos na
+  translation: sold out, all gone
+- id: pabili
+  lemma: pabili
+  translation: I'd like to buy
+
+# --- Foundation expansion (units 18a-18r) ---
+- id: taga_saan
+  lemma: taga-saan
+  translation: from where
+- id: labing_isa
+  lemma: labing-isa
+  translation: eleven
+  notes: Teens are labing- plus the unit; tens end in -pu.
+- id: dalawampu
+  lemma: dalawampu
+  translation: twenty
+- id: isang_daan
+  lemma: isang daan
+  translation: one hundred
+- id: yelo
+  lemma: yelo
+  translation: ice
+- id: pahingi
+  lemma: pahingi
+  translation: may I have
+- id: almusal
+  lemma: almusal
+  translation: breakfast
+- id: sinangag
+  lemma: sinangag
+  translation: garlic fried rice
+  notes: The -silog dishes are all sinangag plus itlog plus one salty partner.
+- id: kuwaderno
+  lemma: kuwaderno
+  translation: notebook
+- id: pisara
+  lemma: pisara
+  translation: blackboard
+- id: silid_aralan
+  lemma: silid-aralan
+  translation: classroom
+- id: hagdan
+  lemma: hagdan
+  translation: stairs
+- id: tsinelas
+  lemma: tsinelas
+  translation: rubber slippers
+- id: pitaka
+  lemma: pitaka
+  translation: wallet
+- id: payong
+  lemma: payong
+  translation: umbrella
+- id: nakasalamin
+  lemma: nakasalamin
+  translation: wearing glasses
+  notes: naka- before clothing describes what someone has on.
+- id: tabo
+  lemma: tabo
+  translation: water dipper
+  notes: The tabo and balde are the classic Filipino bathroom pair.
+- id: magsipilyo
+  lemma: magsipilyo
+  translation: to brush one's teeth
+- id: marumi
+  lemma: marumi
+  translation: dirty
+- id: iyan
+  lemma: iyan
+  translation: that (near you)
+- id: iyon
+  lemma: iyon
+  translation: that (far away)
+- id: mano_po
+  lemma: mano po
+  translation: the hand-to-forehead greeting for elders
+- id: alas_dos
+  lemma: alas-dos
+  translation: two o'clock
+  notes: Clock hours are Spanish; one o'clock is ala-una, not alas-una.
+- id: tanghali
+  lemma: tanghali
+  translation: noon
+- id: tag_init
+  lemma: tag-init
+  translation: hot season
+- id: tag_ulan
+  lemma: tag-ulan
+  translation: rainy season
+- id: lamok
+  lemma: lamok
+  translation: mosquito
+- id: langgam
+  lemma: langgam
+  translation: ant
+  notes: False friend — langgam means bird in Cebuano.
+- id: alitaptap
+  lemma: alitaptap
+  translation: firefly
+- id: kangkong
+  lemma: kangkong
+  translation: water spinach
+- id: kalabasa
+  lemma: kalabasa
+  translation: squash
+- id: ninong
+  lemma: ninong
+  translation: godfather
+- id: biyenan
+  lemma: biyenan
+  translation: parent-in-law
+
+# --- Everyday expansion (units 35a-35q) ---
+- id: tara
+  lemma: tara
+  translation: let's go
+- id: susunduin
+  lemma: susunduin
+  translation: will pick up
+- id: abala
+  lemma: abala
+  translation: busy
+- id: walang_signal
+  lemma: walang signal
+  translation: no signal
+- id: ipon
+  lemma: ipon
+  translation: savings
+- id: pirma
+  lemma: pirma
+  translation: signature
+- id: padala
+  lemma: padala
+  translation: remittance
+- id: lakad
+  lemma: lakad
+  translation: an errand
+  notes: '"May lakad ako" means I have somewhere to be, not that I am walking.'
+- id: bayarin
+  lemma: bayarin
+  translation: a bill
+- id: kartero
+  lemma: kartero
+  translation: postman
+- id: magwalis
+  lemma: magwalis
+  translation: to sweep
+- id: magligpit
+  lemma: magligpit
+  translation: to tidy up
+- id: maglaba
+  lemma: maglaba
+  translation: to do laundry
+- id: magsampay
+  lemma: magsampay
+  translation: to hang laundry out to dry
+- id: magplantsa
+  lemma: magplantsa
+  translation: to iron
+- id: katapat
+  lemma: katapat
+  translation: across from
+- id: rider
+  lemma: rider
+  translation: delivery rider
+- id: de_lata
+  lemma: de-lata
+  translation: canned goods
+- id: dosena
+  lemma: dosena
+  translation: dozen
+- id: supot
+  lemma: supot
+  translation: plastic bag
+- id: bilog
+  lemma: bilog
+  translation: round
+- id: makapal
+  lemma: makapal
+  translation: thick
+- id: mabigat
+  lemma: mabigat
+  translation: heavy
+- id: madalas
+  lemma: madalas
+  translation: often
+- id: bihira
+  lemma: bihira
+  translation: rarely
+- id: paminsan_minsan
+  lemma: paminsan-minsan
+  translation: once in a while
+- id: marunong
+  lemma: marunong
+  translation: knows how to
+  notes: Skill, not permission — that is pwede — and not capability, which is kaya.
+- id: bawal
+  lemma: bawal
+  translation: forbidden
+- id: dapat
+  lemma: dapat
+  translation: should, must
+- id: sang_ayon
+  lemma: sang-ayon
+  translation: in agreement
+- id: sa_pagitan_ng
+  lemma: sa pagitan ng
+  translation: between
+- id: libo
+  lemma: libo
+  translation: thousand
+- id: upa
+  lemma: upa
+  translation: rent
+- id: maligayang_bati
+  lemma: maligayang bati
+  translation: happy greetings, congratulations
+- id: kapitbahay
+  lemma: kapitbahay
+  translation: neighbor
+- id: bayanihan
+  lemma: bayanihan
+  translation: neighbors helping without being asked
+- id: barangay
+  lemma: barangay
+  translation: the smallest unit of Philippine local government
+
+# --- Conversational expansion (units 51a-51p) ---
+- id: karanasan
+  lemma: karanasan
+  translation: experience
+- id: kalakasan
+  lemma: kalakasan
+  translation: strength
+- id: paupahan
+  lemma: paupahan
+  translation: a place for rent
+- id: kontrata
+  lemma: kontrata
+  translation: contract
+- id: magpareserba
+  lemma: magpareserba
+  translation: to reserve
+- id: paliparan
+  lemma: paliparan
+  translation: airport
+- id: pasaporte
+  lemma: pasaporte
+  translation: passport
+- id: layunin
+  lemma: layunin
+  translation: purpose
+- id: palitan_ang_sira
+  lemma: palitan
+  translation: to replace
+- id: garantiya
+  lemma: garantiya
+  translation: warranty
+- id: payo
+  lemma: payo
+  translation: advice
+- id: mag_ingat
+  lemma: mag-ingat
+  translation: be careful
+- id: kompromiso
+  lemma: kompromiso
+  translation: compromise
+- id: imbitado
+  lemma: imbitado
+  translation: invited
+- id: makakadalo
+  lemma: makakadalo
+  translation: able to attend
+- id: sana_wish
+  lemma: sana
+  translation: hopefully, if only
+- id: sayang
+  lemma: sayang
+  translation: what a waste, too bad
+- id: kapag
+  lemma: kapag
+  translation: when, whenever
+  notes: Use kung for uncertain conditions and kapag for reliable ones.
+- id: magpagupit
+  lemma: magpagupit
+  translation: to get a haircut
+  notes: magpa- means to have something done for you.
+- id: mekaniko
+  lemma: mekaniko
+  translation: mechanic
+- id: binili_ko
+  lemma: binili ko
+  translation: I bought it (object focus)
+- id: ilagay
+  lemma: ilagay
+  translation: to put it
+- id: kakakain_lang
+  lemma: kakakain lang
+  translation: just ate
+  notes: The kaka- form means minutes ago and always carries lang.
+- id: kamakalawa
+  lemma: kamakalawa
+  translation: the day before yesterday
+- id: pinakamaganda
+  lemma: pinakamaganda
+  translation: most beautiful
+- id: kasingtaas
+  lemma: kasingtaas
+  translation: as tall as
+- id: magsimba
+  lemma: magsimba
+  translation: to attend mass
+- id: biyaya
+  lemma: biyaya
+  translation: blessing
+
+# --- Mastery expansion (units 57a-57f) ---
+- id: salawikain
+  lemma: salawikain
+  translation: proverb
+- id: kung_may_tiyaga
+  lemma: kung may tiyaga, may nilaga
+  translation: perseverance brings reward
+  notes: Literally "if there is patience, there is stew".
+- id: pinanggalingan
+  lemma: pinanggalingan
+  translation: where one came from
+- id: pamahalaan
+  lemma: pamahalaan
+  translation: government
+- id: mamamayan
+  lemma: mamamayan
+  translation: citizen
+- id: karapatan
+  lemma: karapatan
+  translation: a right
+- id: halalan
+  lemma: halalan
+  translation: election
+- id: malasakit
+  lemma: malasakit
+  translation: genuine concern for others
+- id: panukala
+  lemma: panukala
+  translation: proposal
+- id: pag_aaralan_po_namin
+  lemma: pag-aaralan po namin
+  translation: we will study it
+  notes: In business talk this usually means a polite no.
+- id: hulugan
+  lemma: hulugan
+  translation: payment by installment
+- id: tula
+  lemma: tula
+  translation: poem
+- id: damdamin
+  lemma: damdamin
+  translation: feeling
+- id: taludtod
+  lemma: taludtod
+  translation: a line of verse
+- id: kalayaan
+  lemma: kalayaan
+  translation: freedom
+- id: punto
+  lemma: punto
+  translation: accent
+- id: ala_eh
+  lemma: ala eh
+  translation: Batangas filler word
+- id: wika
+  lemma: wika
+  translation: language
+- id: hanggang_sa_muli
+  lemma: hanggang sa muli
+  translation: until next time

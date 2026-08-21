@@ -1,0 +1,231 @@
+id: neighbors
+title: Neighbors and Barangay
+tier: everyday
+description: Small talk over the fence, borrowing, and the barangay that runs your street.
+tip: >-
+  The barangay is the smallest unit of Philippine government, and its captain
+  settles most neighborhood disputes before anything reaches a court. Neighbor
+  talk runs on two habits: bayanihan (helping without being asked) and hiraman
+  (borrowing) — a cup of rice, a hammer, a plastic chair.
+lessons:
+  - id: nbr-1
+    title: Over the fence
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kapitbahay, en: neighbor }
+          - { tl: bakod, en: fence }
+          - { tl: kalye, en: street }
+          - { tl: barangay, en: village district }
+      - type: choice
+        prompt: "Greeting a neighbor in the morning you say:"
+        answer: Magandang umaga po!
+        distractors: [Magkano po ito?, Bawal po dito., Nawala po ang susi.]
+        audio: magandang_umaga_po_kapitbahay
+        audio_text: Magandang umaga po!
+      - type: fill_blank
+        sentence: "Mabait ang mga ___ namin."
+        translation: "Our neighbors are kind."
+        answer: kapitbahay
+        options: [kapitbahay, bakod, kalye]
+      - type: translate
+        prompt_tl: Bago ang kapitbahay namin sa kanto.
+        answer_en: Our neighbor at the corner is new.
+        accept:
+          - The neighbor at the corner is new
+        extra_words: [cheap, market, tomorrow]
+        audio: bago_ang_kapitbahay_namin_sa_kanto
+      - type: translate
+        prompt_en: The children are playing in the street.
+        answer_tl: Naglalaro ang mga bata sa kalye
+        accept:
+          - Ang mga bata ay naglalaro sa kalye
+        extra_words: [bakod, barangay, kapitbahay]
+      - type: listen
+        audio: mabait_ang_kapitbahay_namin
+        answer_tl: Mabait ang kapitbahay namin
+        extra_words: [bakod, kalye]
+      - type: choice
+        prompt: "The 'barangay' is..."
+        answer: the smallest unit of local government
+        distractors: [a private company, a church group, a school district only]
+      - type: fill_blank
+        sentence: "Nasa kabilang ___ ang tindahan."
+        translation: "The store is on the other street."
+        answer: kalye
+        options: [kalye, bakod, regalo]
+      - type: arrange
+        prompt: "Our neighbors are very kind."
+        answer_tl: Napakabait ng mga kapitbahay namin
+
+  - id: nbr-2
+    title: Borrowing
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: manghiram, en: to borrow }
+          - { tl: magpahiram, en: to lend }
+          - { tl: isauli, en: to return }
+          - { tl: sandali lang, en: just a moment }
+      - type: choice
+        prompt: "'Pahiram po ng asin' asks to..."
+        answer: borrow salt
+        distractors: [buy salt, sell salt, return salt]
+        audio: pahiram_po_ng_asin
+        audio_text: Pahiram po ng asin.
+      - type: fill_blank
+        sentence: "___ po ng isang tasang bigas."
+        translation: "May I borrow a cup of rice?"
+        answer: Pahiram
+        options: [Pahiram, Isauli, Bawal]
+      - type: translate
+        prompt_tl: Isasauli ko bukas ang martilyo.
+        answer_en: I will return the hammer tomorrow.
+        accept:
+          - I'll give back the hammer tomorrow
+        extra_words: [cheap, market, quickly]
+        audio: isasauli_ko_bukas_ang_martilyo
+      - type: translate
+        prompt_en: May I borrow your chair for a moment?
+        answer_tl: Pahiram po ng silya ninyo sandali
+        accept:
+          - Pwede po bang manghiram ng silya ninyo sandali
+        extra_words: [isauli, bakod, kalye]
+      - type: listen
+        audio: pahiram_po_sandali
+        answer_tl: Pahiram po sandali
+        extra_words: [isauli, manghiram]
+      - type: choice
+        prompt: "'Magpahiram' is the opposite side of..."
+        answer: manghiram
+        distractors: [isauli, magbayad, magluto]
+      - type: fill_blank
+        sentence: "Salamat po, ___ ko agad."
+        translation: "Thank you, I will return it right away."
+        answer: isasauli
+        options: [isasauli, kakainin, iinumin]
+      - type: arrange
+        prompt: "I will return the hammer tomorrow."
+        answer_tl: Isasauli ko bukas ang martilyo
+
+  - id: nbr-3
+    title: Helping out
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bayanihan, en: communal helping }
+          - { tl: tumulong, en: to help }
+          - { tl: pila ng tubig, en: water queue }
+          - { tl: brownout, en: power outage }
+      - type: choice
+        prompt: "'Bayanihan' describes neighbors who..."
+        answer: help without being asked
+        distractors: [charge for help, compete with each other, avoid each other]
+        audio: bayanihan
+        audio_text: Bayanihan.
+      - type: fill_blank
+        sentence: "May ___ na naman, walang kuryente."
+        translation: "There is a power outage again, there is no electricity."
+        answer: brownout
+        options: [brownout, bakod, regalo]
+      - type: translate
+        prompt_tl: Tumulong ang mga kapitbahay sa paglilinis.
+        answer_en: The neighbors helped with the cleaning.
+        accept:
+          - The neighbors helped clean up
+        extra_words: [cheap, market, tomorrow]
+        audio: tumulong_ang_mga_kapitbahay_sa_paglilinis
+      - type: translate
+        prompt_en: Let us help each other after the storm.
+        answer_tl: Magtulungan tayo pagkatapos ng bagyo
+        accept:
+          - Tulungan natin ang isa't isa pagkatapos ng bagyo
+        extra_words: [bayanihan, brownout, bakod]
+      - type: listen
+        audio: magtulungan_tayo
+        answer_tl: Magtulungan tayo
+        extra_words: [bayanihan, brownout]
+      - type: choice
+        prompt: "During a brownout, neighbors usually..."
+        answer: sit outside and talk
+        distractors: [close all gates, call the police, go to work]
+      - type: fill_blank
+        sentence: "Mahaba ang ___ ng tubig tuwing tag-init."
+        translation: "The water queue is long every hot season."
+        answer: pila
+        options: [pila, bakod, kalye]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Let us help each other after the storm."
+        answer_tl: Magtulungan tayo pagkatapos ng bagyo
+
+  - id: nbr-4
+    title: At the barangay hall
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Reporting a broken street light
+        lines:
+          - speaker: Residente
+            text: "Magandang umaga po. Sira po ang ___ sa kalye namin."
+            translation: "Good morning. The light on our street is broken."
+          - speaker: Kawani
+            text: "Anong ___ po kayo?"
+            translation: "Which street are you from?"
+          - speaker: Residente
+            text: "Sa Mabini po, ___ ng tindahan ni Aling Nena."
+            translation: "On Mabini, across from Aling Nena's store."
+          - speaker: Kawani
+            text: "Isusulat ko po sa listahan."
+            translation: "I will write it on the list."
+        blanks:
+          - answer: ilaw
+            options: [ilaw, bakod, regalo]
+          - answer: kalye
+            options: [kalye, oras, presyo]
+          - answer: katapat
+            options: [katapat, malayo, mahal]
+      - type: match
+        pairs:
+          - { tl: kapitan, en: barangay captain }
+          - { tl: reklamo, en: complaint }
+          - { tl: sertipiko, en: certificate }
+          - { tl: sira, en: broken }
+      - type: fill_blank
+        sentence: "Kukuha ako ng barangay ___."
+        translation: "I will get a barangay certificate."
+        answer: sertipiko
+        options: [sertipiko, reklamo, bakod]
+      - type: translate
+        prompt_en: I want to file a complaint.
+        answer_tl: Gusto ko pong magreklamo
+        accept:
+          - Gusto ko po sanang magreklamo
+        extra_words: [sertipiko, kapitan, sira]
+      - type: translate
+        prompt_tl: Sira ang tubo ng tubig sa kanto.
+        answer_en: The water pipe at the corner is broken.
+        accept:
+          - The water pipe on the corner is broken
+        extra_words: [cheap, market, tomorrow]
+        audio: sira_ang_tubo_ng_tubig_sa_kanto
+      - type: listen
+        audio: gusto_ko_pong_magreklamo
+        answer_tl: Gusto ko pong magreklamo
+        extra_words: [sertipiko, kapitan]
+      - type: choice
+        prompt: "In the dialogue, what is broken?"
+        answer: the street light
+        distractors: [the water pipe, the fence, the gate]
+      - type: fill_blank
+        sentence: "Si ___ ang mag-aayos ng problema sa kalye."
+        translation: "The captain will fix the problem on the street."
+        answer: Kapitan
+        options: [Kapitan, Kartero, Guro]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "The light on our street is broken."
+        answer_tl: Sira ang ilaw sa kalye namin

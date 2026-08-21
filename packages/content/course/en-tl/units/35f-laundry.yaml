@@ -1,0 +1,232 @@
+id: laundry
+title: Laundry Day
+tier: everyday
+description: Washing, hanging, ironing — and the rain that ruins all of it.
+tip: >-
+  Maglaba is to wash clothes; magsampay is to hang them out. Because most drying
+  is done outside, the weather is part of the chore: "Baka umulan, tanggalin mo
+  na ang sampay." Note the pair labahan (things to be washed) and labahan (the
+  place where you wash) — stress does the work in speech.
+lessons:
+  - id: laba-1
+    title: Washing
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maglaba, en: to do laundry }
+          - { tl: sabong panlaba, en: laundry detergent }
+          - { tl: labahan, en: laundry to be washed }
+          - { tl: banlawan, en: to rinse }
+      - type: choice
+        prompt: "'Maglalaba ako bukas' means..."
+        answer: I will do laundry tomorrow
+        distractors: [I will cook tomorrow, I will rest tomorrow, I will travel tomorrow]
+        audio: maglalaba_ako_bukas
+        audio_text: Maglalaba ako bukas.
+      - type: fill_blank
+        sentence: "Ubos na ang ___ panlaba."
+        translation: "The laundry detergent has run out."
+        answer: sabon
+        options: [sabon, tubig, kanin]
+      - type: translate
+        prompt_tl: Maraming labahan ngayong linggo.
+        answer_en: There is a lot of laundry this week.
+        accept:
+          - There's much laundry this week
+        extra_words: [cheap, market, tomorrow]
+        audio: maraming_labahan_ngayong_linggo
+      - type: translate
+        prompt_en: Please rinse the clothes twice.
+        answer_tl: Pakibanlawan po ang damit nang dalawang beses
+        accept:
+          - Banlawan mo ang damit nang dalawang beses
+        extra_words: [sabon, labahan, tubig]
+        grading: { ng_nang: true }
+      - type: listen
+        audio: maglalaba_ka_ba_ngayon
+        answer_tl: Maglalaba ka ba ngayon
+        extra_words: [banlawan, sabon]
+      - type: choice
+        prompt: "'Banlawan' happens..."
+        answer: after soaping
+        distractors: [before soaping, while ironing, after folding]
+      - type: fill_blank
+        sentence: "___ ako ng damit tuwing Sabado."
+        translation: "I wash clothes every Saturday."
+        answer: Naglalaba
+        options: [Naglalaba, Nagluluto, Natutulog]
+      - type: arrange
+        prompt: "I do laundry every Saturday."
+        answer_tl: Naglalaba ako tuwing Sabado
+
+  - id: laba-2
+    title: Hanging out to dry
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magsampay, en: to hang out to dry }
+          - { tl: sampayan, en: clothesline }
+          - { tl: sipit, en: clothes peg }
+          - { tl: tuyo, en: dry }
+      - type: choice
+        prompt: "'Isampay mo ang damit' tells you to..."
+        answer: hang the clothes out
+        distractors: [fold the clothes, wash the clothes, iron the clothes]
+        audio: isampay_mo_ang_damit
+        audio_text: Isampay mo ang damit.
+      - type: fill_blank
+        sentence: "Kulang ang ___, lilipad ang damit."
+        translation: "There are not enough clothes pegs, the clothes will fly away."
+        answer: sipit
+        options: [sipit, sabon, tubig]
+      - type: translate
+        prompt_tl: Tuyo na ba ang sampay?
+        answer_en: Is the laundry dry already?
+        accept:
+          - Are the clothes dry yet
+        extra_words: [cheap, tomorrow, market]
+        audio: tuyo_na_ba_ang_sampay
+      - type: translate
+        prompt_en: Take in the laundry, it might rain.
+        answer_tl: Tanggalin mo ang sampay, baka umulan
+        accept:
+          - Tanggalin mo na ang sampay baka umulan
+        extra_words: [sipit, sabon, tuyo]
+      - type: listen
+        audio: tuyo_na_ba_ang_damit
+        answer_tl: Tuyo na ba ang damit
+        extra_words: [sipit, sampay]
+      - type: choice
+        prompt: "Why do Filipinos watch the sky on laundry day?"
+        answer: rain would soak the hanging clothes
+        distractors: [the sun fades colors, birds steal pegs, wind dries too fast]
+      - type: fill_blank
+        sentence: "Basa pa ang damit, hindi pa ___."
+        translation: "The clothes are still wet, not yet dry."
+        answer: tuyo
+        options: [tuyo, marumi, mahal]
+      - type: arrange
+        prompt: "Take in the laundry, it might rain."
+        answer_tl: Tanggalin mo ang sampay baka umulan
+        accept:
+          - Tanggalin mo ang sampay, baka umulan
+
+  - id: laba-3
+    title: Folding and ironing
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magplantsa, en: to iron }
+          - { tl: plantsa, en: iron (the tool) }
+          - { tl: magtupi, en: to fold }
+          - { tl: kulubot, en: wrinkled }
+      - type: choice
+        prompt: "'Kulubot ang damit' means the clothes are..."
+        answer: wrinkled
+        distractors: [wet, dirty, torn]
+        audio: kulubot_ang_damit
+        audio_text: Kulubot ang damit.
+      - type: fill_blank
+        sentence: "Pakiplantsa po ang ___ ko para bukas."
+        translation: "Please iron my shirt for tomorrow."
+        answer: damit
+        options: [damit, sabon, sipit]
+      - type: translate
+        prompt_tl: Nagpaplantsa si Nanay ng uniporme.
+        answer_en: Mom is ironing the uniform.
+        accept:
+          - Mother is ironing a uniform
+        extra_words: [cheap, market, tomorrow]
+        audio: nagpaplantsa_si_nanay_ng_uniporme
+      - type: translate
+        prompt_en: Fold the clothes and put them in the cabinet.
+        answer_tl: Tupiin mo ang damit at ilagay sa aparador
+        accept:
+          - Itupi mo ang damit at ilagay sa aparador
+        extra_words: [plantsa, kulubot, sipit]
+      - type: listen
+        audio: pakiplantsa_po_ang_damit
+        answer_tl: Pakiplantsa po ang damit
+        extra_words: [tupi, kulubot]
+      - type: choice
+        prompt: "Which tool removes wrinkles?"
+        answer: plantsa
+        distractors: [sipit, walis, balde]
+      - type: fill_blank
+        sentence: "___ mo na ang damit bago ilagay sa aparador."
+        translation: "Fold the clothes before putting them in the cabinet."
+        answer: Tupiin
+        options: [Tupiin, Inumin, Kainin]
+      - type: arrange
+        prompt: "Please iron this shirt for tomorrow."
+        answer_tl: Pakiplantsa po ang damit na ito para bukas
+
+  - id: laba-4
+    title: Laundry day talk
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Two housemates on a cloudy morning
+        lines:
+          - speaker: Mia
+            text: "___ ako ngayon, maraming damit."
+            translation: "I am doing laundry today, there are many clothes."
+          - speaker: Rico
+            text: "Maulap. Baka ___ mamaya."
+            translation: "It is cloudy. It might rain later."
+          - speaker: Mia
+            text: "Kaya bilis-bilisan ko ang ___."
+            translation: "That is why I will hurry with the hanging."
+          - speaker: Rico
+            text: "Tulungan na kita."
+            translation: "Let me help you."
+        blanks:
+          - answer: Maglalaba
+            options: [Maglalaba, Magluluto, Matutulog]
+          - answer: umulan
+            options: [umulan, umaraw, uminom]
+          - answer: sampay
+            options: [sampay, plantsa, sabon]
+      - type: match
+        pairs:
+          - { tl: basa, en: wet }
+          - { tl: bilisan, en: to hurry }
+          - { tl: uniporme, en: uniform }
+          - { tl: mabango, en: fragrant }
+      - type: fill_blank
+        sentence: "___ pa ang damit dahil sa ulan."
+        translation: "The clothes are still wet because of the rain."
+        answer: Basa
+        options: [Basa, Tuyo, Kulubot]
+      - type: translate
+        prompt_en: Hurry, the rain is coming.
+        answer_tl: Bilisan mo, paparating ang ulan
+        accept:
+          - Bilisan mo paparating na ang ulan
+        extra_words: [basa, tuyo, sampay]
+      - type: translate
+        prompt_tl: Mabango ang bagong labang damit.
+        answer_en: Freshly washed clothes smell good.
+        accept:
+          - The newly washed clothes smell good
+        extra_words: [cheap, market, tomorrow]
+        audio: mabango_ang_bagong_labang_damit
+      - type: listen
+        audio: basa_pa_ang_damit
+        answer_tl: Basa pa ang damit
+        extra_words: [tuyo, sampay]
+      - type: choice
+        prompt: "In the dialogue, why does Mia hurry?"
+        answer: it might rain
+        distractors: [she is late for work, the detergent ran out, the iron is broken]
+      - type: fill_blank
+        sentence: "Kailangan kong plantsahin ang ___ ko para sa paaralan."
+        translation: "I need to iron my uniform for school."
+        answer: uniporme
+        options: [uniporme, sabon, sipit]
+      - type: arrange
+        prompt: "Freshly washed clothes smell good."
+        answer_tl: Mabango ang bagong labang damit

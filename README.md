@@ -68,6 +68,19 @@ pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
   offline), refill by practicing a completed lesson (practice runs are
   heart-free). Ads hooks exist behind `AdsProvider` in core; v1 ships a no-op.
 - **Streaks:** local-midnight rollover using the device IANA timezone.
+- **Tiers:** the 114 units form four ordered tracks — Foundations (36 units),
+  Everyday (34), Conversational (32), Mastery (12). A tier opens when the
+  previous one is finished — or immediately, if the learner *places* into it
+  from the course map. Placement writes a `tier_started` event; unlocking is
+  then scoped to the lesson's own tier, so jumping ahead never requires the
+  material you skipped.
+- **Daily quests:** three rotate every local day, drawn deterministically from
+  the day key so every client and the server agree on the set. Finishing one
+  credits bonus XP inside `reduceEvents` itself — derived, not claimed, so
+  there is nothing for a client to forge.
+- **Combo:** from the 3rd consecutive correct answer, each further correct
+  answer adds 1 XP, capped per session. Practice replays earn no combo, and
+  `/sync` clamps a completion to the authored XP plus that same ceiling.
 
 ## Deliberate simplifications vs. the spec
 
@@ -89,11 +102,13 @@ pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
 
 ## Course content status
 
-18 units, 69 lessons, 584 exercises (greetings through hobbies). All five
-exercise types are exercised, including `ng`/`nang` and hyphen-tolerance
-grading (CNT-04), and the compiler rejects unsolvable or ambiguous exercises
-at build time. Content is a starter draft — review by a fluent speaker
-recommended.
+**4 difficulty tiers, 114 units, 453 lessons, 4,054 exercises** (first words
+through idioms, formal register, storytelling, politics, business and poetry).
+All seven exercise types are exercised — including the advanced-tier `arrange`
+(word order) and `dialogue` (multi-turn cloze) — as are `ng`/`nang` and
+hyphen-tolerance grading (CNT-04), and the compiler rejects unsolvable,
+already-solved, or ambiguous exercises at build time. Content is a starter
+draft — review by a fluent speaker recommended.
 
 ## Deploying (near-zero cost)
 

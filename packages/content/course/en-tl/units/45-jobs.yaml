@@ -1,5 +1,6 @@
 id: jobs
 title: Jobs & Professions
+tier: conversational
 description: Name what people do for a living — teacher, doctor, driver, farmer — and ask about someone's work.
 tip: >-
   Tagalog needs no verb "to be": the job goes first and the person second —

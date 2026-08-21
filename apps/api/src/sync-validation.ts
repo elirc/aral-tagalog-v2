@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { lessonXp, PRACTICE_XP, type Lesson, type ProgressEvent } from "@aral/core";
+import { lessonXp, MAX_COMBO_BONUS_XP, PRACTICE_XP, type Lesson, type ProgressEvent } from "@aral/core";
 
 /**
  * Pure validation/sanitization for the /sync write path, split from the route
@@ -16,6 +16,13 @@ import { lessonXp, PRACTICE_XP, type Lesson, type ProgressEvent } from "@aral/co
  */
 const timestampSchema = z.number().int().min(0).max(Number.MAX_SAFE_INTEGER);
 
+/**
+ * Ceiling for a single completion: the most any authored lesson can be worth
+ * (95) + the perfect bonus (5) + the combo bonus (10). Kept above the real cap
+ * computed per lesson below, which is what actually binds.
+ */
+const MAX_EVENT_XP = 120;
+
 export const eventSchema = z.discriminatedUnion("type", [
   z.object({
     id: z.string().uuid(),
@@ -23,10 +30,11 @@ export const eventSchema = z.discriminatedUnion("type", [
     lessonId: z.string().max(100),
     occurredAt: timestampSchema,
     perfect: z.boolean(),
-    xp: z.number().int().min(0).max(100),
+    xp: z.number().int().min(0).max(MAX_EVENT_XP),
     practice: z.boolean().optional(),
     missedExerciseIds: z.array(z.string().max(100)).max(50).optional(),
     masteredExerciseIds: z.array(z.string().max(100)).max(50).optional(),
+    maxCombo: z.number().int().min(0).max(500).optional(),
   }),
   z.object({
     id: z.string().uuid(),
@@ -47,6 +55,12 @@ export const eventSchema = z.discriminatedUnion("type", [
     occurredAt: timestampSchema,
     goalXp: z.number().int().min(10).max(200),
   }),
+  z.object({
+    id: z.string().uuid(),
+    type: z.literal("tier_started"),
+    occurredAt: timestampSchema,
+    tierId: z.string().min(1).max(60),
+  }),
 ]);
 
 /** Authored lesson catalog; null when the content bundle isn't available. */
@@ -65,9 +79,11 @@ export interface SanitizedBatch {
 /**
  * Validate a raw event batch and clamp what clients could lie about:
  * - xp on practice replays is always PRACTICE_XP at most (farming guard)
- * - xp on first-time completions is capped at the authored value; unknown
- *   lesson ids (bundle version skew) get the catalog max rather than a
- *   rejection so a newer client's progress isn't lost
+ * - xp on first-time completions is capped at the authored value plus the
+ *   combo bonus ceiling; unknown lesson ids (bundle version skew) get the
+ *   catalog max rather than a rejection so a newer client's progress isn't lost
+ * - maxCombo can't exceed the lesson's exercise count — a session cannot
+ *   answer more questions than it contains, and combo quests pay XP
  * - future occurredAt timestamps are clamped to `now` (OFF-05)
  * Invalid events are reported in `rejected`, never inserted.
  */
@@ -85,13 +101,19 @@ export function sanitizeEvents(raw: unknown[], catalog: LessonCatalog | null, no
     }
     const ev = parsed.data;
     if (ev.type === "lesson_completed") {
+      const lesson = catalog?.lessonById.get(ev.lessonId);
       if (ev.practice) {
         ev.xp = Math.min(ev.xp, PRACTICE_XP);
       } else if (catalog) {
-        const lesson = catalog.lessonById.get(ev.lessonId);
-        const cap = lesson ? lessonXp(lesson, ev.perfect) : catalog.maxAuthoredXp;
+        const cap = lesson
+          ? lessonXp(lesson, ev.perfect) + MAX_COMBO_BONUS_XP
+          : catalog.maxAuthoredXp + MAX_COMBO_BONUS_XP;
         ev.xp = Math.min(ev.xp, cap);
       }
+      // combo quests pay out on this number, so bound it by what the lesson
+      // could physically produce (unknown lessons keep the schema's cap)
+      if (ev.maxCombo !== undefined && lesson)
+        ev.maxCombo = Math.min(ev.maxCombo, lesson.exercises.length);
     }
     events.push({ ...ev, occurredAt: Math.min(ev.occurredAt, now) } as ProgressEvent);
   }

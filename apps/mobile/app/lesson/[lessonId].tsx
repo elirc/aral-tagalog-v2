@@ -45,7 +45,7 @@ export default function LessonScreen() {
   }
 
   // review skips the unlock check: it's a pseudo-lesson outside the course path
-  if (!lesson || (!isReview && !isLessonUnlocked(lessonId!, progress.completedLessonIds))) {
+  if (!lesson || (!isReview && !isLessonUnlocked(lessonId!, progress.completedLessonIds, progress.unlockedTierIds))) {
     return (
       <SafeAreaView style={styles.screen}>
         <View style={[styles.card, { alignItems: "center", gap: spacing.sm, margin: spacing.md }]}>

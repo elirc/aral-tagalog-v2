@@ -41,8 +41,9 @@ export const ACHIEVEMENTS: readonly AchievementDef[] = [
   { id: "lessons_50", title: "Bihasa", description: "Complete 50 lessons.", emoji: "🎓", tier: 3 },
   { id: "streak_30", title: "Isang Buwan", description: "Reach a 30-day streak.", emoji: "🏆", tier: 3 },
   { id: "xp_2000", title: "Dalubhasa", description: "Earn 2000 XP.", emoji: "👑", tier: 3 },
-  // Tier 3 — end-game, sized for the full 200-lesson course. Without these a
-  // learner unlocks every badge about a quarter of the way in.
+  // Tier 3 — end-game. These were sized when the course was ~200 lessons; it
+  // is now 453, so `lessons_150` lands about a third of the way in and only
+  // `course_complete` still marks the true end. Worth adding a higher rung.
   { id: "lessons_150", title: "Matiyaga", description: "Complete 150 lessons.", emoji: "🧗", tier: 3 },
   { id: "streak_100", title: "Sandaang Araw", description: "Reach a 100-day streak.", emoji: "☄️", tier: 3 },
   { id: "course_complete", title: "Tagumpay!", description: "Complete every lesson in the course.", emoji: "🇵🇭", tier: 3 },

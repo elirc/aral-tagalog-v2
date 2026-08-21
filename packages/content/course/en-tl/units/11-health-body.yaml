@@ -1,5 +1,6 @@
 id: health-body
 title: Health & Body
+tier: foundation
 description: Name the parts of the body, say what hurts, and see a doctor.
 tip: >-
   Pain works backwards from English: the body part is the subject, not you.

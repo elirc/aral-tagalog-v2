@@ -770,3 +770,167 @@ details[open] > summary .unit-chevron { transform: rotate(180deg); }
 .unlocked-item .emoji { font-size: 26px; }
 .unlocked-item .t { font-weight: 800; font-size: 14px; }
 .unlocked-item .d { color: var(--text-muted); font-size: 12px; }
+
+/* --- daily quests (GAM) --- */
+.quest-panel {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+}
+.quest-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.quest-title { font-size: 17px; font-weight: 800; margin: 0; }
+.quest-count { font-size: 13px; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+.quest-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.quest-row { display: flex; align-items: center; gap: 12px; }
+.quest-emoji { font-size: 22px; flex-shrink: 0; width: 26px; text-align: center; }
+.quest-body { flex: 1; min-width: 0; }
+.quest-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.quest-row.done .quest-name { color: var(--text-muted); text-decoration: line-through; }
+.quest-row.done .progress-fill { background: var(--warning); }
+.quest-reward { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; }
+.quest-progress-text { font-size: 13px; font-weight: 700; color: var(--text-muted); }
+.quest-xp { font-size: 12px; font-weight: 800; color: var(--warning-text); }
+.quest-foot { color: var(--text-muted); font-size: 12px; margin: 12px 0 0; }
+
+/* --- difficulty tiers (course map) --- */
+.tier { margin: 26px 0 0; }
+.tier-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-left: 5px solid var(--accent);
+  padding: 2px 0 8px 12px;
+  margin-bottom: 12px;
+}
+.tier-head-main { flex: 1; min-width: 200px; }
+.tier-title {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tier-done-tag { color: var(--warning-text); font-size: 13px; font-weight: 700; }
+.tier-desc { color: var(--text-muted); font-size: 14px; margin: 4px 0 0; }
+.tier-meta { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.tier-meta .progress-track { max-width: 140px; display: block; }
+.tier-count { font-size: 12px; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+.tier.locked .tier-head { opacity: 0.65; }
+.tier-locked-note {
+  color: var(--text-muted);
+  font-size: 14px;
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 0 0 16px;
+}
+/* a lesson that is playable but not the single "next" suggestion */
+.lesson-dot.open { background: var(--bg-muted); color: var(--text-muted); border: 2px solid var(--border); }
+
+/* --- tier placement --- */
+.placement { margin: 16px 0; }
+.placement-toggle {
+  background: transparent;
+  border: 2px dashed var(--border);
+  border-radius: 14px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 14px;
+  width: 100%;
+  text-align: left;
+}
+.placement-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.placement-body {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-top: 10px;
+}
+.placement-lead { color: var(--text-muted); font-size: 14px; margin: 0 0 14px; }
+.placement-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.placement-row:first-of-type { border-top: 0; }
+.placement-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.placement-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.placement-hint { color: var(--text-muted); font-size: 13px; }
+.placement-open-tag { font-size: 13px; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+.placement-confirm {
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.placement-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+
+/* --- dialogue exercise --- */
+.dialogue { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+.dialogue-line {
+  border-left: 3px solid var(--border);
+  padding-left: 12px;
+}
+.dialogue-speaker {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.dialogue-text { font-size: 18px; font-weight: 600; margin: 0; line-height: 1.6; }
+.dialogue-translation { color: var(--text-muted); font-size: 13px; margin: 2px 0 0; }
+.dialogue-blank {
+  background: var(--bg-muted);
+  border: 0;
+  border-bottom: 3px solid var(--border-strong);
+  border-radius: 6px 6px 0 0;
+  padding: 0 8px;
+  min-width: 72px;
+  font-weight: 700;
+  color: var(--text);
+}
+.dialogue-blank.filled { border-bottom-color: var(--accent); }
+.dialogue-blank.active { background: var(--accent-soft); border-bottom-color: var(--accent); }
+.dialogue-blank:disabled { cursor: default; }
+
+/* --- combo (GAM) --- */
+.combo-badge {
+  text-align: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--warning-text);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin: 0 auto 10px;
+  width: fit-content;
+}
+.combo-summary { color: var(--text-muted); font-size: 14px; margin: 6px 0; }

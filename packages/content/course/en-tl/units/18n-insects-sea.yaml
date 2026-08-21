@@ -1,0 +1,230 @@
+id: insects-sea
+title: Insects and Sea Creatures
+tier: foundation
+description: Mosquitoes, ants, fish and crabs — the small creatures of daily life.
+tip: >-
+  Two creatures dominate Filipino household talk: lamok (mosquito) and langgam
+  (ant). Note the false friend — langgam means ant in Tagalog but bird in
+  Cebuano. Sea creature names double as food words, so isda, hipon and alimango
+  belong as much to the kitchen as to the ocean.
+lessons:
+  - id: ins-1
+    title: Around the house
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lamok, en: mosquito }
+          - { tl: langgam, en: ant }
+          - { tl: ipis, en: cockroach }
+          - { tl: gagamba, en: spider }
+      - type: choice
+        prompt: "'Lamok' is the insect that..."
+        answer: bites at night
+        distractors: [carries crumbs, spins a web, flies to lights only]
+        audio: lamok
+        audio_text: Lamok.
+      - type: fill_blank
+        sentence: "Maraming ___ sa asukal."
+        translation: "There are many ants in the sugar."
+        answer: langgam
+        options: [langgam, isda, ipis]
+      - type: translate
+        prompt_tl: Kinagat ako ng lamok kagabi.
+        answer_en: A mosquito bit me last night.
+        accept:
+          - I was bitten by a mosquito last night
+        extra_words: [tomorrow, cheap, market]
+        audio: kinagat_ako_ng_lamok_kagabi
+      - type: translate
+        prompt_en: There is a spider on the wall.
+        answer_tl: May gagamba sa dingding
+        accept:
+          - May gagamba sa pader
+        extra_words: [lamok, langgam, ipis]
+      - type: listen
+        audio: maraming_lamok_dito
+        answer_tl: Maraming lamok dito
+        extra_words: [langgam, ipis]
+      - type: choice
+        prompt: "Which insect do Filipinos chase out of the kitchen at night?"
+        answer: ipis
+        distractors: [paruparo, gagamba, bubuyog]
+      - type: fill_blank
+        sentence: "Takot ako sa ___, malaki ang mga iyon."
+        translation: "I am afraid of cockroaches, they are big."
+        answer: ipis
+        options: [ipis, isda, hipon]
+      - type: translate
+        prompt_tl: Walang lamok sa loob ng kulambo.
+        answer_en: There are no mosquitoes inside the mosquito net.
+        accept:
+          - No mosquitoes inside the net
+        extra_words: [quickly, morning, cheap]
+        audio: walang_lamok_sa_loob_ng_kulambo
+
+  - id: ins-2
+    title: Pretty ones
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: paruparo, en: butterfly }
+          - { tl: bubuyog, en: bee }
+          - { tl: tutubi, en: dragonfly }
+          - { tl: alitaptap, en: firefly }
+      - type: choice
+        prompt: "'Alitaptap' glows at night. In English it is a..."
+        answer: firefly
+        distractors: [butterfly, bee, dragonfly]
+        audio: alitaptap
+        audio_text: Alitaptap.
+      - type: fill_blank
+        sentence: "May ___ sa bulaklak."
+        translation: "There is a butterfly on the flower."
+        answer: paruparo
+        options: [paruparo, isda, lamok]
+      - type: translate
+        prompt_tl: Gumagawa ng pulot ang bubuyog.
+        answer_en: Bees make honey.
+        accept:
+          - The bee makes honey
+        extra_words: [cheap, tomorrow, market]
+        audio: gumagawa_ng_pulot_ang_bubuyog
+      - type: translate
+        prompt_en: The dragonflies fly over the rice field.
+        answer_tl: Lumilipad ang mga tutubi sa bukid
+        accept:
+          - Lumilipad ang tutubi sa bukid
+        extra_words: [paruparo, bubuyog, lamok]
+      - type: listen
+        audio: ang_ganda_ng_paruparo
+        answer_tl: Ang ganda ng paruparo
+        extra_words: [tutubi, bubuyog]
+      - type: choice
+        prompt: "Which one stings?"
+        answer: bubuyog
+        distractors: [paruparo, tutubi, alitaptap]
+      - type: fill_blank
+        sentence: "Kumikislap ang mga ___ sa gabi."
+        translation: "The fireflies sparkle at night."
+        answer: alitaptap
+        options: [alitaptap, isda, langgam]
+      - type: translate
+        prompt_en: I saw a butterfly in the garden.
+        answer_tl: May nakita akong paruparo sa hardin
+        accept:
+          - Nakakita ako ng paruparo sa hardin
+        extra_words: [tutubi, lamok, bahay]
+
+  - id: ins-3
+    title: In the sea
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isda, en: fish }
+          - { tl: hipon, en: shrimp }
+          - { tl: alimango, en: crab }
+          - { tl: pusit, en: squid }
+      - type: choice
+        prompt: "'Hipon' at the market means..."
+        answer: shrimp
+        distractors: [crab, squid, fish]
+        audio: hipon
+        audio_text: Hipon.
+      - type: fill_blank
+        sentence: "Bumili si Nanay ng sariwang ___."
+        translation: "Mom bought fresh fish."
+        answer: isda
+        options: [isda, lamok, papel]
+      - type: translate
+        prompt_tl: Masarap ang inihaw na pusit.
+        answer_en: Grilled squid is delicious.
+        accept:
+          - The grilled squid is delicious
+        extra_words: [tomorrow, cheap, market]
+        audio: masarap_ang_inihaw_na_pusit
+      - type: translate
+        prompt_en: The crab is expensive today.
+        answer_tl: Mahal ang alimango ngayon
+        accept:
+          - Mahal ngayon ang alimango
+        extra_words: [hipon, isda, mura]
+      - type: listen
+        audio: sariwa_ba_ang_isda
+        answer_tl: Sariwa ba ang isda
+        extra_words: [hipon, pusit]
+      - type: choice
+        prompt: "Which creature has many arms?"
+        answer: pusit
+        distractors: [isda, hipon, alimango]
+      - type: fill_blank
+        sentence: "Isang kilong ___ po."
+        translation: "One kilo of shrimp, please."
+        answer: hipon
+        options: [hipon, papel, lamok]
+      - type: translate
+        prompt_tl: Maraming isda sa dagat.
+        answer_en: There are many fish in the sea.
+        accept:
+          - There is a lot of fish in the sea
+        extra_words: [quickly, morning, cheap]
+        audio: maraming_isda_sa_dagat
+
+  - id: ins-4
+    title: Small creatures review
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which group are all from the sea?"
+        answer: isda, hipon, pusit
+        distractors:
+          - "lamok, langgam, ipis"
+          - "paruparo, tutubi, bubuyog"
+          - "isda, lamok, gagamba"
+        audio: isda_hipon_pusit
+        audio_text: Isda, hipon, pusit.
+      - type: match
+        pairs:
+          - { tl: kagat, en: a bite }
+          - { tl: lumipad, en: to fly }
+          - { tl: lumangoy, en: to swim }
+          - { tl: sariwa, en: fresh }
+      - type: fill_blank
+        sentence: "Marunong ___ ang mga isda."
+        translation: "Fish know how to swim."
+        answer: lumangoy
+        options: [lumangoy, lumipad, kumain]
+      - type: translate
+        prompt_en: The bird can fly but the fish cannot.
+        answer_tl: Marunong lumipad ang ibon pero hindi ang isda
+        accept:
+          - Marunong lumipad ang ibon ngunit hindi ang isda
+        extra_words: [lumangoy, hipon, lamok]
+      - type: translate
+        prompt_tl: Masakit ang kagat ng lamok.
+        answer_en: A mosquito bite hurts.
+        accept:
+          - The mosquito bite is painful
+        extra_words: [cheap, market, tomorrow]
+        audio: masakit_ang_kagat_ng_lamok
+      - type: listen
+        audio: marunong_lumangoy_ang_isda
+        answer_tl: Marunong lumangoy ang isda
+        extra_words: [lumipad, hipon]
+      - type: choice
+        prompt: "'Sariwa' at the fish stall means the fish is..."
+        answer: fresh
+        distractors: [frozen, cooked, cheap]
+      - type: fill_blank
+        sentence: "___ pa ba ang hipon na ito?"
+        translation: "Is this shrimp still fresh?"
+        answer: Sariwa
+        options: [Sariwa, Mahal, Malaki]
+      - type: translate
+        prompt_en: There are many ants and mosquitoes in the garden.
+        answer_tl: Maraming langgam at lamok sa hardin
+        accept:
+          - May maraming langgam at lamok sa hardin
+        extra_words: [isda, hipon, bahay]

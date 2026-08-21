@@ -5,9 +5,9 @@ and compiled into an immutable versioned bundle that both clients and the API us
 
 ```
 course/en-tl/
-  course.yaml        # course meta: langs, version, title
+  course.yaml        # course meta: langs, version, title, difficulty tiers
   vocab.yaml         # shared vocabulary (audio + translations, CNT-02)
-  units/NN-slug.yaml # one file per unit, lessons inline
+  units/NN-slug.yaml # one file per unit, lessons inline, `tier:` names its track
 audio/en-tl/         # <audio_ref>.mp3 clips (recorded or TTS-generated)
 ```
 
@@ -51,10 +51,63 @@ Exercise types (see `src/schema.ts` for the full schema):
   sentence: "Magandang ___!"
   answer: umaga
   options: [umaga, gabi]
+
+- type: arrange         # word order: scrambled answer words, no distractors
+  prompt: "I will go to the market tomorrow."   # the English meaning
+  answer_tl: Pupunta ako sa palengke bukas
+  accept: [Bukas pupunta ako sa palengke]
+  # `tokens:` is optional — the compiler scrambles the answer deterministically
+  # and re-rolls if the shuffle lands in answer order
+
+- type: dialogue        # conversation/passage; each ___ takes the next blank
+  intro: At the market
+  lines:
+    - speaker: Ikaw
+      text: "Magkano ___ ang mangga?"
+      translation: "How much are the mangoes?"
+    - speaker: Tindera
+      text: "Otsenta ___ ang isang kilo."
+  blanks:
+    - answer: po
+      options: [po, ba, na]     # omit `options` for a free-text blank
+    - answer: piso
+      accept: [pesos]
+      options: [piso, pera]
 ```
+
+`arrange` and `dialogue` are the advanced-tier types: one tests syntax with
+every word already given, the other tests comprehension across several turns.
+The compiler rejects an `arrange` whose tokens are already in answer order, and
+a `dialogue` whose blank count doesn't match the `___` in its lines.
 
 Word banks are auto-generated (answer words + `extra_words`, deterministic
 shuffle) unless you provide `word_bank` explicitly.
+
+## Difficulty tiers
+
+`course.yaml` declares ordered tiers and every unit names one:
+
+```yaml
+# course.yaml
+tiers:
+  - id: foundation
+    title: Foundations
+    description: Your first words — greetings, people, food, numbers.
+    entry_hint: Start here if Tagalog is completely new to you.
+    color: "#4a8f00"
+
+# units/52-idioms.yaml
+tier: mastery
+```
+
+A tier opens when the previous one is finished, or when a learner places into
+it directly (a `tier_started` progress event, written from the course map). The
+compiler enforces that every unit names a declared tier and that each tier's
+units stay **contiguous** — unlocking is scoped to a tier, so a unit stranded
+inside another tier would be reachable in an order the course map never shows.
+
+Omit `tiers:` entirely and the course behaves exactly as it did before tiers:
+one flat, linearly unlocked sequence.
 
 ## Audio
 

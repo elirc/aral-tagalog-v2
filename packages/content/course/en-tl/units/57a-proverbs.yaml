@@ -1,0 +1,276 @@
+id: proverbs
+title: Salawikain
+tier: mastery
+description: The proverbs Filipinos quote to teach, scold, and console.
+tip: >-
+  Salawikain are compact and often rhyme, which is why they survive. Most follow
+  a two-part shape: a condition then a consequence — "Kung may tiyaga, may
+  nilaga." They are quoted, not explained; using one correctly signals real
+  cultural fluency, and misusing one is instantly obvious.
+lessons:
+  - id: prov-1
+    title: Hard work
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kung may tiyaga may nilaga, en: patience brings reward }
+          - { tl: tiyaga, en: perseverance }
+          - { tl: nilaga, en: stew }
+          - { tl: sipag, en: diligence }
+      - type: choice
+        prompt: "'Kung may tiyaga, may nilaga' teaches that..."
+        answer: persistence is rewarded
+        distractors: [cooking takes time, food is expensive, patience is useless]
+        audio: kung_may_tiyaga_may_nilaga
+        audio_text: Kung may tiyaga, may nilaga.
+      - type: fill_blank
+        sentence: "Kung may ___, may nilaga."
+        translation: "If there is perseverance, there is stew."
+        answer: tiyaga
+        options: [tiyaga, tulog, takot]
+      - type: translate
+        prompt_tl: Ang sipag at tiyaga ang susi sa tagumpay.
+        answer_en: Diligence and perseverance are the key to success.
+        accept:
+          - Hard work and patience are the key to success
+        extra_words: [cheap, market, tomorrow]
+        audio: ang_sipag_at_tiyaga_ang_susi_sa_tagumpay
+      - type: arrange
+        prompt: "If there is perseverance, there is stew."
+        answer_tl: Kung may tiyaga may nilaga
+        accept:
+          - Kung may tiyaga, may nilaga
+      - type: dialogue
+        intro: A parent encouraging a discouraged student
+        lines:
+          - speaker: Anak
+            text: "Ang hirap po ng pagsusulit, susuko na po ako."
+            translation: "The exam is so hard, I am giving up."
+          - speaker: Tatay
+            text: "Huwag. Kung may ___, may nilaga."
+            translation: "Do not. If there is perseverance, there is stew."
+          - speaker: Anak
+            text: "Pero po, ilang beses na akong bumagsak."
+            translation: "But I have failed several times already."
+          - speaker: Tatay
+            text: "Kaya nga, ___ ka lang. Darating din iyan."
+            translation: "That is why, just persevere. It will come."
+        blanks:
+          - answer: tiyaga
+            options: [tiyaga, takot, tulog]
+          - answer: magtiyaga
+            options: [magtiyaga, matulog, umalis]
+      - type: choice
+        prompt: "Salawikain are usually..."
+        answer: quoted whole, not explained
+        distractors: [written on signs, sung at fiestas, used only in school]
+      - type: translate
+        prompt_en: Perseverance is the key to everything.
+        answer_tl: Ang tiyaga ang susi sa lahat
+        accept:
+          - Tiyaga ang susi sa lahat
+        extra_words: [sipag, nilaga, tagumpay]
+      - type: listen
+        audio: kung_may_tiyaga_may_nilaga_2
+        answer_tl: Kung may tiyaga may nilaga
+        extra_words: [sipag, tagumpay]
+
+  - id: prov-2
+    title: Gratitude and roots
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pinanggalingan, en: where one came from }
+          - { tl: paroroonan, en: where one is going }
+          - { tl: lumingon, en: to look back }
+          - { tl: utang na loob, en: debt of gratitude }
+      - type: choice
+        prompt: "'Ang hindi marunong lumingon sa pinanggalingan...' warns against..."
+        answer: forgetting your origins
+        distractors: [walking backwards, moving to the city, changing jobs]
+        audio: ang_hindi_marunong_lumingon
+        audio_text: Ang hindi marunong lumingon sa pinanggalingan.
+      - type: fill_blank
+        sentence: "Ang hindi marunong ___ sa pinanggalingan ay hindi makararating sa paroroonan."
+        translation: "One who cannot look back at their origins will not reach their destination."
+        answer: lumingon
+        options: [lumingon, kumain, matulog]
+      - type: translate
+        prompt_tl: Malaki ang utang na loob ko sa kanila.
+        answer_en: I owe them a great debt of gratitude.
+        accept:
+          - I have a big debt of gratitude to them
+        extra_words: [cheap, market, tomorrow]
+        audio: malaki_ang_utang_na_loob_ko_2
+      - type: arrange
+        prompt: "One who cannot look back at their origins."
+        answer_tl: Ang hindi marunong lumingon sa pinanggalingan
+      - type: dialogue
+        intro: A successful cousin comes home
+        lines:
+          - speaker: Lola
+            text: "Ang tagal mong hindi umuwi, apo."
+            translation: "You have not come home in so long, grandchild."
+          - speaker: Apo
+            text: "Pasensya po, abala po sa trabaho sa siyudad."
+            translation: "Sorry, I have been busy with work in the city."
+          - speaker: Lola
+            text: "Basta huwag mong kalimutan ang ___ mo."
+            translation: "Just do not forget where you came from."
+          - speaker: Apo
+            text: "Hinding-hindi po, Lola. Malaki po ang ___ ko sa inyo."
+            translation: "Never, Grandma. I owe you a great debt of gratitude."
+        blanks:
+          - answer: pinanggalingan
+            options: [pinanggalingan, paroroonan, pagkain]
+          - answer: utang na loob
+            options: [utang na loob, utang na pera, sipag]
+      - type: choice
+        prompt: "'Utang na loob' differs from a money debt because it is..."
+        answer: never fully repayable
+        distractors: [written down, charged interest, forgiven after a year]
+      - type: translate
+        prompt_en: Do not forget where you came from.
+        answer_tl: Huwag mong kalimutan ang pinanggalingan mo
+        accept:
+          - Huwag kalimutan ang pinanggalingan mo
+        extra_words: [paroroonan, lumingon, utang]
+      - type: listen
+        audio: huwag_mong_kalimutan_ang_pinanggalingan_mo
+        answer_tl: Huwag mong kalimutan ang pinanggalingan mo
+        extra_words: [lumingon, paroroonan]
+
+  - id: prov-3
+    title: Patience and haste
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: daig ng maagap ang masipag, en: the early beat the diligent }
+          - { tl: pag may isinuksok may madudukot, en: save and you will have }
+          - { tl: maagap, en: early or prompt }
+          - { tl: mag-ipon, en: to save up }
+      - type: choice
+        prompt: "'Daig ng maagap ang masipag' favours the person who is..."
+        answer: early
+        distractors: [strongest, richest, luckiest]
+        audio: daig_ng_maagap_ang_masipag
+        audio_text: Daig ng maagap ang masipag.
+      - type: fill_blank
+        sentence: "Pag may isinuksok, may ___."
+        translation: "If something is tucked away, there is something to draw out."
+        answer: madudukot
+        options: [madudukot, matutulog, makakain]
+      - type: translate
+        prompt_tl: Mag-ipon ka habang may trabaho.
+        answer_en: Save while you have work.
+        accept:
+          - Save up while you have a job
+        extra_words: [cheap, market, tomorrow]
+        audio: mag_ipon_ka_habang_may_trabaho
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "The early beat the diligent."
+        answer_tl: Daig ng maagap ang masipag
+      - type: dialogue
+        intro: Two coworkers on payday
+        lines:
+          - speaker: Dan
+            text: "Ubos na naman ang sahod ko."
+            translation: "My salary is gone again."
+          - speaker: Rina
+            text: "Pag may ___, may madudukot."
+            translation: "If something is tucked away, there is something to draw out."
+          - speaker: Dan
+            text: "Alam ko, pero mahirap ___."
+            translation: "I know, but saving is hard."
+          - speaker: Rina
+            text: "Simulan mo sa maliit, araw-araw."
+            translation: "Start small, every day."
+        blanks:
+          - answer: isinuksok
+            options: [isinuksok, kinain, natulog]
+          - answer: mag-ipon
+            options: [mag-ipon, maglaba, magluto]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Both proverbs in this lesson reward..."
+        answer: preparation
+        distractors: [luck, strength, silence]
+      - type: translate
+        prompt_en: Start small, every day.
+        answer_tl: Simulan mo sa maliit, araw-araw
+        accept:
+          - Simulan mo sa maliit araw araw
+        extra_words: [maagap, ipon, sipag]
+        grading: { hyphens: true }
+      - type: listen
+        audio: mag_ipon_ka_habang_maaga
+        answer_tl: Mag-ipon ka habang maaga
+        extra_words: [maagap, sipag]
+        grading: { hyphens: true }
+
+  - id: prov-4
+    title: Using proverbs well
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: A grandmother settles an argument between siblings
+        lines:
+          - speaker: Lola
+            text: "Tama na. ___ na bato, nadudurog din."
+            translation: "Enough. Even a hard stone can be crushed."
+          - speaker: Ate
+            text: "Pero po, siya ang nagsimula."
+            translation: "But he started it."
+          - speaker: Lola
+            text: "Ang ___ ay walang panalo, apo."
+            translation: "A quarrel has no winner, grandchild."
+          - speaker: Kuya
+            text: "Pasensya na, Ate."
+            translation: "Sorry, Ate."
+        blanks:
+          - answer: Matigas
+            options: [Matigas, Malambot, Mainit]
+          - answer: away
+            options: [away, pagkain, tulog]
+      - type: match
+        pairs:
+          - { tl: away, en: quarrel }
+          - { tl: pagkakasundo, en: reconciliation }
+          - { tl: aral, en: lesson }
+          - { tl: gamitin, en: to use }
+      - type: choice
+        prompt: "The safest way to use a proverb is..."
+        answer: at the right moment, without explaining it
+        distractors: [as often as possible, only in writing, translated word for word]
+      - type: fill_blank
+        sentence: "Maraming ___ ang matututuhan sa salawikain."
+        translation: "There are many lessons to be learned from proverbs."
+        answer: aral
+        options: [aral, away, bakod]
+      - type: translate
+        prompt_tl: Ang away ay walang panalo.
+        answer_en: A quarrel has no winner.
+        accept:
+          - There is no winner in a quarrel
+        extra_words: [cheap, market, tomorrow]
+        audio: ang_away_ay_walang_panalo
+      - type: translate
+        prompt_en: There are many lessons in the old sayings.
+        answer_tl: Maraming aral sa mga lumang kasabihan
+        accept:
+          - Maraming aral ang mga lumang kasabihan
+        extra_words: [away, gamitin, pagkakasundo]
+      - type: arrange
+        prompt: "A quarrel has no winner."
+        answer_tl: Ang away ay walang panalo
+      - type: arrange
+        prompt: "There are many lessons in the old sayings."
+        answer_tl: Maraming aral sa mga lumang kasabihan
+      - type: listen
+        audio: ang_away_ay_walang_panalo_2
+        answer_tl: Ang away ay walang panalo
+        extra_words: [aral, gamitin]

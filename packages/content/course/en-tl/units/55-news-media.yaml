@@ -1,0 +1,269 @@
+id: news-media
+title: News and Media
+tier: mastery
+description: Headlines, weather bulletins, and reporting what other people said.
+tip: >-
+  News Tagalog has its own grammar. Headlines drop "ang" and "ay" ("Bagyo,
+  papasok bukas"), sources are marked with "ayon sa" (according to) or the
+  particle "daw/raw" (reportedly), and verbs sit in the completed aspect —
+  "naganap" (took place), "kinumpirma" (confirmed), "iniulat" (was reported).
+lessons:
+  - id: news-1
+    title: Reading headlines
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: balita, en: news }
+          - { tl: ulat, en: report }
+          - { tl: naganap, en: took place }
+          - { tl: kinumpirma, en: confirmed }
+      - type: choice
+        prompt: "A headline reads 'Bagyo, papasok bukas'. It means:"
+        answer: A storm will enter tomorrow
+        distractors: [A storm entered yesterday, The storm has weakened, Classes are suspended]
+        audio: bagyo_papasok_bukas
+        audio_text: Bagyo, papasok bukas.
+      - type: fill_blank
+        sentence: "___ sa ulat, tumaas ang presyo ng bigas."
+        translation: "According to the report, the price of rice went up."
+        answer: Ayon
+        options: [Ayon, Bakit, Kaya]
+      - type: arrange
+        prompt: "The meeting took place in Manila yesterday."
+        answer_tl: Naganap ang pulong sa Maynila kahapon
+      - type: translate
+        prompt_tl: Kinumpirma ng gobyerno ang balita kagabi.
+        answer_en: The government confirmed the news last night.
+        accept:
+          - The government confirmed the report last night
+        extra_words: [cheap, market, family]
+        audio: kinumpirma_ng_gobyerno_ang_balita
+      - type: dialogue
+        intro: Watching the evening news
+        lines:
+          - speaker: Tagapagbalita
+            text: "Magandang gabi. Ito po ang mga pangunahing ___."
+            translation: "Good evening. These are the main news stories."
+          - speaker: Tagapagbalita
+            text: "___ sa pulisya, ligtas ang lahat ng pasahero."
+            translation: "According to the police, all the passengers are safe."
+          - speaker: Tagapagbalita
+            text: "___ ng alkalde ang ulat kanina."
+            translation: "The mayor confirmed the report earlier."
+        blanks:
+          - answer: balita
+            options: [balita, palengke, pelikula]
+          - answer: Ayon
+            options: [Ayon, Dahil, Habang]
+          - answer: Kinumpirma
+            options: [Kinumpirma, Kinain, Binili]
+      - type: choice
+        prompt: "Headlines drop small words. 'Presyo ng bigas, tumaas' is short for:"
+        answer: Ang presyo ng bigas ay tumaas.
+        distractors: [Tumaas ba ang presyo ng bigas?, Huwag itaas ang presyo ng bigas., Mura ang presyo ng bigas.]
+      - type: translate
+        prompt_en: According to the report, the road is closed.
+        answer_tl: Ayon sa ulat, sarado ang kalsada
+        accept:
+          - Ayon sa ulat sarado ang kalsada
+        extra_words: [bukas, mahal, kahapon]
+      - type: listen
+        audio: ayon_sa_ulat_tumaas_ang_presyo
+        answer_tl: Ayon sa ulat tumaas ang presyo
+        extra_words: [balita, kahapon]
+
+  - id: news-2
+    title: The weather bulletin
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bagyo, en: typhoon }
+          - { tl: babala, en: warning }
+          - { tl: pag-ulan, en: rainfall }
+          - { tl: lindol, en: earthquake }
+      - type: choice
+        prompt: "'Senyales bilang tatlo' in a storm bulletin refers to:"
+        answer: storm signal number three
+        distractors: [three days of rain, three provinces, three in the afternoon]
+        audio: senyales_bilang_tatlo
+        audio_text: Senyales bilang tatlo.
+      - type: fill_blank
+        sentence: "May ___ ng malakas na pag-ulan sa Silangang Visayas."
+        translation: "There is a warning of heavy rainfall in Eastern Visayas."
+        answer: babala
+        options: [babala, balita, bakasyon]
+      - type: arrange
+        prompt: "Classes are suspended because of the typhoon."
+        answer_tl: Suspendido ang mga klase dahil sa bagyo
+      - type: dialogue
+        intro: A radio weather bulletin
+        lines:
+          - speaker: Anunsyador
+            text: "Magandang umaga. Narito ang ___ ng panahon."
+            translation: "Good morning. Here is the weather report."
+          - speaker: Anunsyador
+            text: "Nakataas ang ___ bilang dalawa sa Bicol."
+            translation: "Signal number two is raised in Bicol."
+          - speaker: Anunsyador
+            text: "___ ang mga klase sa buong rehiyon."
+            translation: "Classes are suspended in the whole region."
+        blanks:
+          - answer: ulat
+            options: [ulat, tinapay, palengke]
+          - answer: senyales
+            options: [senyales, sasakyan, sapatos]
+          - answer: Suspendido
+            options: [Suspendido, Masaya, Mahal]
+      - type: translate
+        prompt_tl: Inaasahan ang malakas na ulan bukas ng gabi.
+        answer_en: Heavy rain is expected tomorrow night.
+        accept:
+          - Strong rain is expected tomorrow night
+        extra_words: [cheap, quietly, market]
+        audio: inaasahan_ang_malakas_na_ulan_bukas
+      - type: choice
+        prompt: "After an earthquake, the bulletin word you listen for is:"
+        answer: aftershock
+        distractors: [bakasyon, palengke, pasalubong]
+        hint: Borrowed straight from English — Tagalog news keeps many such terms.
+      - type: translate
+        prompt_en: There is a warning of an earthquake.
+        answer_tl: May babala ng lindol
+        accept:
+          - Mayroong babala ng lindol
+        extra_words: [bagyo, ulan, araw]
+      - type: listen
+        audio: suspendido_ang_mga_klase_bukas
+        answer_tl: Suspendido ang mga klase bukas
+        extra_words: [bagyo, babala]
+
+  - id: news-3
+    title: Reporting what was said
+    xp: 20
+    exercises:
+      - type: choice
+        prompt: "'Darating daw siya bukas' means:"
+        answer: They say he is arriving tomorrow
+        distractors: [He arrived yesterday, He will not arrive, Is he arriving tomorrow?]
+        audio: darating_daw_siya_bukas
+        audio_text: Darating daw siya bukas.
+      - type: match
+        pairs:
+          - { tl: daw / raw, en: reportedly / they say }
+          - { tl: ayon kay, en: according to (a person) }
+          - { tl: sinabi ng, en: said by }
+          - { tl: idinagdag niya, en: he added }
+      - type: fill_blank
+        sentence: "Mura ___ ang bigas sa palengkeng iyon."
+        translation: "They say rice is cheap in that market."
+        answer: daw
+        options: [daw, ba, na]
+        hint: '"daw" after a consonant, "raw" after a vowel: "mura raw" vs "mahal daw".'
+      - type: arrange
+        prompt: "According to the teacher, the exam is on Friday."
+        answer_tl: Ayon sa guro ang pagsusulit ay sa Biyernes
+        accept:
+          - Ayon sa guro, ang pagsusulit ay sa Biyernes
+      - type: translate
+        prompt_tl: Sinabi ng alkalde na magbubukas muli ang paaralan.
+        answer_en: The mayor said that the school will open again.
+        accept:
+          - The mayor said the school will reopen
+        extra_words: [cheaply, market, yesterday]
+        audio: sinabi_ng_alkalde_na_magbubukas_muli
+      - type: dialogue
+        intro: Two neighbors trading rumours
+        lines:
+          - speaker: Nita
+            text: "Narinig mo ba? Sarado ___ ang tulay bukas."
+            translation: "Did you hear? They say the bridge is closed tomorrow."
+          - speaker: Boy
+            text: "___ kanino?"
+            translation: "According to whom?"
+          - speaker: Nita
+            text: "___ ng kapitan sa pulong kagabi."
+            translation: "Said by the captain at the meeting last night."
+        blanks:
+          - answer: daw
+            options: [daw, ba, pa]
+          - answer: Ayon
+            options: [Ayon, Bakit, Kailan]
+          - answer: Sinabi
+            options: [Sinabi, Kinain, Binili]
+      - type: choice
+        prompt: "Which one signals the speaker did NOT witness the event?"
+        answer: daw
+        distractors: [nga, ba, naman]
+      - type: translate
+        prompt_en: They say the road is closed.
+        answer_tl: Sarado raw ang kalsada
+        accept:
+          - Sarado daw ang kalsada
+        extra_words: [bukas, mahal, malinis]
+      - type: listen
+        audio: sarado_daw_ang_tulay_bukas
+        answer_tl: Sarado daw ang tulay bukas
+        extra_words: [ayon, sinabi]
+
+  - id: news-4
+    title: Reading a report
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: "Ulat: Bagong tulay sa Bulacan"
+        lines:
+          - speaker: Ulat
+            text: "___ kahapon ang pagbubukas ng bagong tulay sa Bulacan."
+            translation: "The opening of the new bridge in Bulacan took place yesterday."
+          - speaker: Ulat
+            text: "___ sa gobernador, aabot sa limang libong sasakyan ang dadaan araw-araw."
+            translation: "According to the governor, up to five thousand vehicles will pass daily."
+          - speaker: Ulat
+            text: "___ niyang libre ang pagtawid sa unang buwan."
+            translation: "He added that crossing is free for the first month."
+        blanks:
+          - answer: Naganap
+            options: [Naganap, Kinain, Binili]
+          - answer: Ayon
+            options: [Ayon, Dahil, Habang]
+          - answer: Idinagdag
+            options: [Idinagdag, Ininom, Tinawag]
+      - type: choice
+        prompt: "In the report, how much does it cost to cross in the first month?"
+        answer: nothing
+        distractors: [five thousand pesos, one peso, it does not say]
+      - type: translate
+        prompt_tl: Aabot sa limang libong sasakyan ang dadaan araw-araw.
+        answer_en: Up to five thousand vehicles will pass every day.
+        accept:
+          - As many as five thousand vehicles will pass every day
+        extra_words: [cheaper, tomorrow, quietly]
+        audio: aabot_sa_limang_libong_sasakyan
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "The opening of the new bridge took place yesterday."
+        answer_tl: Naganap kahapon ang pagbubukas ng bagong tulay
+      - type: fill_blank
+        sentence: "___ niyang libre ang pagtawid sa unang buwan."
+        translation: "He added that crossing is free for the first month."
+        answer: Idinagdag
+        options: [Idinagdag, Ininom, Tinapos]
+      - type: translate
+        prompt_en: The governor confirmed the report yesterday.
+        answer_tl: Kinumpirma ng gobernador ang ulat kahapon
+        accept:
+          - Kinumpirma ng gobernador ang balita kahapon
+        extra_words: [bukas, mura, malaki]
+      - type: choice
+        prompt: "'Araw-araw' in a report means:"
+        answer: every day
+        distractors: [one day, yesterday, all night]
+      - type: arrange
+        prompt: "He added that crossing is free."
+        answer_tl: Idinagdag niyang libre ang pagtawid
+      - type: listen
+        audio: naganap_kahapon_ang_pagbubukas
+        answer_tl: Naganap kahapon ang pagbubukas
+        extra_words: [tulay, ulat]

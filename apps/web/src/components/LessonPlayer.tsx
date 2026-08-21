@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
   ACHIEVEMENTS,
+  COMBO_MIN,
   currentExercise,
   earnedAchievementIds,
   isPerfect,
@@ -13,14 +14,18 @@ import {
   MAX_HEARTS,
   msUntilNextHeart,
   PRACTICE_XP,
+  questStatuses,
   reduceEvents,
   regenerate,
   sessionProgress,
   sessionReviewOutcome,
+  sessionXp,
   startSession,
   submitAnswer,
+  todayStats,
   type Lesson,
   type ProgressEvent,
+  type QuestStatus,
   type SessionState,
   type UserAnswer,
 } from "@aral/core";
@@ -30,6 +35,8 @@ import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 
 interface CompletionSummary {
   xp: number;
+  /** how much of `xp` came from the combo (shown separately on the summary) */
+  comboXp: number;
   perfect: boolean;
   todayXp: number;
   goal: number;
@@ -38,15 +45,19 @@ interface CompletionSummary {
   newlyUnlocked: string[];
   /** the level just reached, when this completion crossed a threshold */
   leveledUpTo: number | null;
+  /** daily quests this completion finished off (GAM) */
+  questsCompleted: QuestStatus[];
 }
+import { ArrangeView } from "./exercises/ArrangeView";
 import { ChoiceView } from "./exercises/ChoiceView";
+import { DialogueView } from "./exercises/DialogueView";
 import { FillBlankView } from "./exercises/FillBlankView";
 import { MatchView } from "./exercises/MatchView";
 import { TapsView } from "./exercises/TapsView";
 
 type Phase =
   | { kind: "answering" }
-  | { kind: "feedback"; correct: boolean; correctAnswer: string; next: SessionState };
+  | { kind: "feedback"; correct: boolean; correctAnswer: string; next: SessionState; comboXp: number };
 
 /**
  * Drives a lesson session from @aral/core. `practice` runs (replaying a
@@ -74,13 +85,14 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   }, [phase.kind, attempt]);
 
   // record the completion event exactly once, and compute the completion summary
-  // (goal progress + newly-unlocked achievements) from the projected progress.
+  // (goal progress, quests, newly-unlocked achievements) from the projected progress.
   useEffect(() => {
     if (!session.done || completionSent.current) return;
     completionSent.current = true;
     const perfect = isPerfect(session);
-    // practice replays earn a flat, smaller award (server clamps to match)
-    const xp = practice ? PRACTICE_XP : lessonXp(lesson, perfect);
+    // practice replays earn a flat, smaller award and no combo bonus (server
+    // clamps to match); first-time completions add whatever the combo earned
+    const xp = sessionXp(session, practice);
     const now = Date.now();
     const tz = deviceTz();
     const { missedExerciseIds, masteredExerciseIds } = sessionReviewOutcome(session);
@@ -94,21 +106,35 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
       practice: practice || undefined,
       missedExerciseIds: missedExerciseIds.length > 0 ? missedExerciseIds : undefined,
       masteredExerciseIds: masteredExerciseIds.length > 0 ? masteredExerciseIds : undefined,
+      maxCombo: session.maxCombo > 0 ? session.maxCombo : undefined,
     };
-    // diff earned achievements before vs. after folding this completion
+    // diff earned achievements and finished quests before vs. after folding
+    // this completion — the reducer credits quest XP itself, so "what did I
+    // just win" is a difference of two derived states, not a separate claim
     const before = new Set(earnedAchievementIds(progress, bundle.units));
+    const dayKey = localDayKey(now, tz);
+    const questsBefore = new Set(
+      questStatuses(dayKey, todayStats(progress, tz, now))
+        .filter((q) => q.complete)
+        .map((q) => q.def.id),
+    );
     const after = reduceEvents([event], tz, now, progress);
     const newlyUnlocked = earnedAchievementIds(after, bundle.units).filter((id) => !before.has(id));
-    const todayXp = after.xpByDay[localDayKey(now, tz)] ?? 0;
+    const questsCompleted = questStatuses(dayKey, todayStats(after, tz, now)).filter(
+      (q) => q.complete && !questsBefore.has(q.def.id),
+    );
+    const todayXp = after.xpByDay[dayKey] ?? 0;
     const levelAfter = levelForXp(after.xpTotal);
     setSummary({
       xp,
+      comboXp: practice ? 0 : session.comboBonusXp,
       perfect,
       todayXp,
       goal: after.dailyGoalXp,
       goalMet: todayXp >= after.dailyGoalXp,
       newlyUnlocked,
       leveledUpTo: levelAfter > levelForXp(progress.xpTotal) ? levelAfter : null,
+      questsCompleted,
     });
     addEvents([event]);
   }, [session, lesson, practice, addEvents, progress]);
@@ -120,7 +146,13 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
       addEvents([{ id: newEventId(), type: "hearts_lost", occurredAt: Date.now(), count: 1 }]);
     }
     if (exercise.audio && outcome.correct) playAudio(exercise.audio);
-    setPhase({ kind: "feedback", correct: outcome.correct, correctAnswer: outcome.correctAnswer, next: outcome.state });
+    setPhase({
+      kind: "feedback",
+      correct: outcome.correct,
+      correctAnswer: outcome.correctAnswer,
+      next: outcome.state,
+      comboXp: outcome.comboXpGained,
+    });
   };
 
   const advance = () => {
@@ -162,10 +194,16 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
         <p className="big-emoji">{perfect ? "🏆" : "🎉"}</p>
         <h2>{perfect ? "Perfect lesson!" : "Lesson complete!"}</h2>
         <p>
-          +{practice ? PRACTICE_XP : lessonXp(lesson, perfect)} XP
+          +{summary?.xp ?? (practice ? PRACTICE_XP : lessonXp(lesson, perfect))} XP
           {perfect && !practice ? " (includes perfect bonus)" : ""}
           {practice ? " · +1 ❤️ for practicing" : ""}
         </p>
+        {summary && summary.comboXp > 0 && (
+          <p className="combo-summary">
+            🔥 Best combo {session.maxCombo} — <strong>+{summary.comboXp} XP</strong> from the streak of
+            correct answers
+          </p>
+        )}
         {summary?.leveledUpTo && (
           <p className="levelup" role="status">
             ⬆️ Level up! You reached <strong>Lv {summary.leveledUpTo}</strong>
@@ -179,6 +217,27 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
               {summary.todayXp}/{summary.goal} XP toward today&apos;s goal
             </p>
           ))}
+        {summary && summary.questsCompleted.length > 0 && (
+          <div className="unlocked">
+            <p className="unlocked-title">
+              ✅ Quest{summary.questsCompleted.length > 1 ? "s" : ""} complete!
+            </p>
+            <div className="unlocked-list">
+              {summary.questsCompleted.map((q) => (
+                <div className="unlocked-item" key={q.def.id}>
+                  <span className="emoji">{q.def.emoji}</span>
+                  <span>
+                    <span className="t">{q.def.title}</span>
+                    <br />
+                    <span className="d">
+                      {q.def.description} · +{q.def.rewardXp} XP
+                    </span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {summary && summary.newlyUnlocked.length > 0 && (
           <div className="unlocked">
             <p className="unlocked-title">
@@ -262,12 +321,27 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
         </span>
       </div>
 
+      {/* the combo only appears once it is actually paying XP, so it reads as a
+          reward rather than a counter that has always been there */}
+      {session.combo >= COMBO_MIN && (
+        <p className="combo-badge" role="status" aria-live="polite">
+          🔥 Combo ×{session.combo}
+          {!practice && <span> · +1 XP each</span>}
+        </p>
+      )}
+
       <div className="exercise-card" ref={cardRef} tabIndex={-1}>
         {exercise.type === "choice" && (
           <ChoiceView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
         )}
         {(exercise.type === "translate_taps" || exercise.type === "listen") && (
           <TapsView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
+        )}
+        {exercise.type === "arrange" && (
+          <ArrangeView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
+        )}
+        {exercise.type === "dialogue" && (
+          <DialogueView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
         )}
         {exercise.type === "fill_blank" && (
           <FillBlankView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} onSubmit={check} />
@@ -284,6 +358,7 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
             <>
               <p className="result-line">
                 {phase.correct ? "Nice!" : "Not quite."}
+                {phase.correct && phase.comboXp > 0 && <small>Combo bonus +{phase.comboXp} XP</small>}
                 {!phase.correct && phase.correctAnswer && <small>Correct answer: {phase.correctAnswer}</small>}
               </p>
               <button ref={continueRef} className="btn btn-primary btn-block" onClick={advance}>

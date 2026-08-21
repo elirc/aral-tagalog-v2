@@ -98,21 +98,77 @@ export const fillBlankSchema = z
   })
   .strict();
 
+/**
+ * arrange: put scrambled words into the right Tagalog order. The learner is
+ * given every word and nothing else, so this tests syntax rather than recall —
+ * `tokens` defaults to the answer's own words, shuffled deterministically.
+ */
+export const arrangeSchema = z
+  .object({
+    ...base,
+    type: z.literal("arrange"),
+    /** English meaning, shown above the tokens */
+    prompt: z.string(),
+    answer_tl: z.string(),
+    accept: z.array(z.string()).optional(),
+    tokens: z.array(z.string()).min(2).optional(),
+    grading: gradingFlagsSchema.optional(),
+  })
+  .strict();
+
+/**
+ * dialogue: a short conversation (or passage) with several blanks. Each "___"
+ * across `lines` consumes the next entry of `blanks`, in order.
+ */
+export const dialogueSchema = z
+  .object({
+    ...base,
+    type: z.literal("dialogue"),
+    /** scene-setter, e.g. "At the market" */
+    intro: z.string().optional(),
+    lines: z
+      .array(
+        z
+          .object({
+            speaker: z.string().optional(),
+            text: z.string(),
+            translation: z.string().optional(),
+          })
+          .strict(),
+      )
+      .min(2),
+    blanks: z
+      .array(
+        z
+          .object({
+            answer: z.string().min(1),
+            accept: z.array(z.string()).optional(),
+            options: z.array(z.string()).min(2).optional(),
+          })
+          .strict(),
+      )
+      .min(1),
+    grading: gradingFlagsSchema.optional(),
+  })
+  .strict();
+
 export const exerciseSchema = z.discriminatedUnion("type", [
   choiceSchema,
   translateSchema,
   listenSchema,
   matchSchema,
   fillBlankSchema,
+  arrangeSchema,
+  dialogueSchema,
 ]);
 
 export const lessonSchema = z
   .object({
     id: z.string(),
     title: z.string(),
-    // ≤95: /sync caps per-event xp at 100 and a perfect run adds +5 (core
-    // PERFECT_BONUS_XP) — a bigger authored value would produce events the
-    // server rejects
+    // ≤95: /sync caps per-event xp at 120 and a perfect run adds +5 (core
+    // PERFECT_BONUS_XP) plus up to +10 of combo bonus (MAX_COMBO_BONUS_XP) —
+    // a bigger authored value would produce events the server rejects
     xp: z.number().int().positive().max(95).default(10),
     exercises: z.array(exerciseSchema).min(1),
   })
@@ -122,9 +178,22 @@ export const unitSchema = z
   .object({
     id: z.string(),
     title: z.string(),
+    /** id of the difficulty tier declared in course.yaml */
+    tier: z.string().optional(),
     description: z.string().optional(),
     tip: z.string().optional(),
     lessons: z.array(lessonSchema).min(1),
+  })
+  .strict();
+
+/** A difficulty track; units name one via `tier`. Order here is course order. */
+export const tierSchema = z
+  .object({
+    id: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().optional(),
+    entry_hint: z.string().optional(),
+    color: z.string().optional(),
   })
   .strict();
 
@@ -135,6 +204,7 @@ export const courseMetaSchema = z
     target_lang: z.string(),
     version: z.number().int().positive(),
     title: z.string(),
+    tiers: z.array(tierSchema).min(1).optional(),
   })
   .strict();
 
@@ -152,4 +222,5 @@ export const vocabFileSchema = z.array(
 
 export type AuthoredExercise = z.infer<typeof exerciseSchema>;
 export type AuthoredUnit = z.infer<typeof unitSchema>;
+export type AuthoredTier = z.infer<typeof tierSchema>;
 export type CourseMeta = z.infer<typeof courseMetaSchema>;

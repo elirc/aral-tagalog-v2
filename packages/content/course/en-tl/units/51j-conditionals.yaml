@@ -1,0 +1,236 @@
+id: conditionals
+title: If and When
+tier: conversational
+description: Kung, kapag, pag — conditions, habits, and what happens next.
+tip: >-
+  Kung is "if" for uncertain things; kapag (shortened to pag) is "when" for
+  things that reliably happen. "Kung uulan, hindi tayo aalis" — if it rains.
+  "Kapag umuulan, nagbabaha dito" — whenever it rains. Choosing the wrong one is
+  the most common learner slip at this level.
+lessons:
+  - id: cond-1
+    title: If it happens
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kung, en: if }
+          - { tl: kapag, en: when or whenever }
+          - { tl: hindi, en: not }
+          - { tl: siguro, en: maybe }
+      - type: choice
+        prompt: "'Kung uulan, hindi tayo aalis' says the rain is..."
+        answer: uncertain
+        distractors: [certain, already happening, finished]
+        audio: kung_uulan_hindi_tayo_aalis
+        audio_text: Kung uulan, hindi tayo aalis.
+      - type: fill_blank
+        sentence: "___ may oras ako, pupunta ako."
+        translation: "If I have time, I will come."
+        answer: Kung
+        options: [Kung, Kapag, Dahil]
+      - type: translate
+        prompt_tl: Kung mahal, huwag mo nang bilhin.
+        answer_en: If it is expensive, do not buy it.
+        accept:
+          - If it's expensive don't buy it
+        extra_words: [cheap, market, tomorrow]
+        audio: kung_mahal_huwag_mo_nang_bilhin
+      - type: translate
+        prompt_en: If you are tired, rest first.
+        answer_tl: Kung pagod ka, magpahinga ka muna
+        accept:
+          - Kung pagod ka magpahinga ka muna
+        extra_words: [kapag, siguro, hindi]
+      - type: listen
+        audio: kung_may_oras_ako
+        answer_tl: Kung may oras ako
+        extra_words: [kapag, siguro]
+      - type: arrange
+        prompt: "If I have time, I will come."
+        answer_tl: Kung may oras ako pupunta ako
+        accept:
+          - Kung may oras ako, pupunta ako
+      - type: choice
+        prompt: "Which sentence uses 'kung' correctly?"
+        answer: Kung libre ka bukas, magkita tayo.
+        distractors: [Kung araw-araw akong kumakain., Kung ako ay tao., Kung umaga ngayon.]
+      - type: arrange
+        prompt: "If it is expensive, do not buy it."
+        answer_tl: Kung mahal huwag mo nang bilhin
+        accept:
+          - Kung mahal, huwag mo nang bilhin
+
+  - id: cond-2
+    title: Whenever it happens
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kapag umuulan, en: whenever it rains }
+          - { tl: pag gabi, en: when it is night }
+          - { tl: tuwing, en: every time }
+          - { tl: palagi, en: always }
+      - type: choice
+        prompt: "'Kapag umuulan, nagbabaha dito' describes something that..."
+        answer: reliably happens
+        distractors: [might happen once, never happens, happened yesterday]
+        audio: kapag_umuulan_nagbabaha_dito
+        audio_text: Kapag umuulan, nagbabaha dito.
+      - type: fill_blank
+        sentence: "___ gabi, malamig dito sa bundok."
+        translation: "When it is night, it is cold here in the mountains."
+        answer: Pag
+        options: [Pag, Kung, Dahil]
+      - type: translate
+        prompt_tl: Kapag Sabado, naglilinis kami ng bahay.
+        answer_en: On Saturdays, we clean the house.
+        accept:
+          - Whenever it's Saturday we clean the house
+        extra_words: [cheap, market, tomorrow]
+        audio: kapag_sabado_naglilinis_kami_ng_bahay
+      - type: translate
+        prompt_en: Whenever it rains, the street floods.
+        answer_tl: Kapag umuulan, nagbabaha ang kalye
+        accept:
+          - Kapag umuulan nagbabaha ang kalye
+        extra_words: [kung, tuwing, palagi]
+      - type: listen
+        audio: kapag_umuulan_nagbabaha
+        answer_tl: Kapag umuulan nagbabaha
+        extra_words: [kung, tuwing]
+      - type: arrange
+        prompt: "Whenever it rains, the street floods."
+        answer_tl: Kapag umuulan nagbabaha ang kalye
+        accept:
+          - Kapag umuulan, nagbabaha ang kalye
+      - type: choice
+        prompt: "Which would a Filipino more likely say about a daily habit?"
+        answer: Pag umaga, kape muna ako.
+        distractors:
+          - "Kung umaga, kape muna ako."
+          - "Dahil umaga, kape muna ako."
+          - "Sana umaga, kape muna ako."
+      - type: arrange
+        prompt: "On Saturdays, we clean the house."
+        answer_tl: Kapag Sabado naglilinis kami ng bahay
+        accept:
+          - Kapag Sabado, naglilinis kami ng bahay
+
+  - id: cond-3
+    title: Cause and result
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dahil, en: because }
+          - { tl: kaya, en: so or therefore }
+          - { tl: kung kaya, en: which is why }
+          - { tl: kaya pala, en: so that is why }
+      - type: choice
+        prompt: "In 'Umuulan kaya hindi ako pumasok', 'kaya' introduces the..."
+        answer: result
+        distractors: [cause, condition, question]
+        audio: umuulan_kaya_hindi_ako_pumasok
+        audio_text: Umuulan kaya hindi ako pumasok.
+      - type: fill_blank
+        sentence: "Hindi ako pumasok ___ may sakit ako."
+        translation: "I did not go to work because I am sick."
+        answer: dahil
+        options: [dahil, kaya, kung]
+      - type: translate
+        prompt_tl: Nagbaha kaya walang pasok.
+        answer_en: It flooded so there are no classes.
+        accept:
+          - There was a flood so no classes
+        extra_words: [cheap, market, tomorrow]
+        audio: nagbaha_kaya_walang_pasok
+      - type: translate
+        prompt_en: Because it is raining, we will stay home.
+        answer_tl: Dahil umuulan, sa bahay na lang tayo
+        accept:
+          - Dahil umuulan sa bahay na lang tayo
+        extra_words: [kaya, kung, kapag]
+      - type: listen
+        audio: dahil_umuulan_sa_bahay_na_lang_tayo
+        answer_tl: Dahil umuulan sa bahay na lang tayo
+        extra_words: [kaya, kung]
+      - type: arrange
+        prompt: "It flooded so there are no classes."
+        answer_tl: Nagbaha kaya walang pasok
+      - type: choice
+        prompt: "'Kaya pala' marks a realisation about..."
+        answer: something already known but unexplained
+        distractors: [a future plan, a polite refusal, a question]
+      - type: arrange
+        prompt: "I did not go to work because I am sick."
+        answer_tl: Hindi ako pumasok dahil may sakit ako
+
+  - id: cond-4
+    title: Planning around conditions
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: Planning a beach trip around the weather
+        lines:
+          - speaker: Ivy
+            text: "___ maganda ang panahon bukas, punta tayo sa dagat."
+            translation: "If the weather is good tomorrow, let us go to the beach."
+          - speaker: Ken
+            text: "___ umuulan tuwing hapon ngayong buwan."
+            translation: "It rains every afternoon this month."
+          - speaker: Ivy
+            text: "Umaga na lang tayo, ___ hindi pa umuulan."
+            translation: "Let us go in the morning then, because it is not raining yet."
+          - speaker: Ken
+            text: "Sige, alas-sais tayo aalis."
+            translation: "Okay, we will leave at six."
+        blanks:
+          - answer: Kung
+            options: [Kung, Dahil, Kaya]
+          - answer: Kapag
+            options: [Kapag, Kung, Sana]
+          - answer: dahil
+            options: [dahil, kung, kapag]
+      - type: match
+        pairs:
+          - { tl: panahon, en: weather }
+          - { tl: baha, en: flood }
+          - { tl: kanselado, en: cancelled }
+          - { tl: itutuloy, en: will push through }
+      - type: fill_blank
+        sentence: "___ ang biyahe kung may bagyo."
+        translation: "The trip is cancelled if there is a typhoon."
+        answer: Kanselado
+        options: [Kanselado, Itutuloy, Libre]
+      - type: translate
+        prompt_en: If there is no rain, the trip will push through.
+        answer_tl: Kung walang ulan, itutuloy ang biyahe
+        accept:
+          - Kung walang ulan itutuloy ang biyahe
+        extra_words: [kanselado, baha, panahon]
+      - type: translate
+        prompt_tl: Kapag may baha, sarado ang paaralan.
+        answer_en: Whenever there is a flood, the school is closed.
+        accept:
+          - When there is flooding the school closes
+        extra_words: [cheap, market, tomorrow]
+        audio: kapag_may_baha_sarado_ang_paaralan
+      - type: listen
+        audio: kung_walang_ulan_itutuloy_natin
+        answer_tl: Kung walang ulan itutuloy natin
+        extra_words: [kanselado, baha]
+      - type: choice
+        prompt: "In the dialogue, why do they choose the morning?"
+        answer: the rain comes in the afternoon
+        distractors: [the beach closes at noon, the bus leaves at six, it is cheaper]
+      - type: arrange
+        prompt: "If there is no rain, the trip will push through."
+        answer_tl: Kung walang ulan itutuloy ang biyahe
+        accept:
+          - Kung walang ulan, itutuloy ang biyahe
+      - type: arrange
+        prompt: "Whenever there is a flood, the school is closed."
+        answer_tl: Kapag may baha sarado ang paaralan
+        accept:
+          - Kapag may baha, sarado ang paaralan

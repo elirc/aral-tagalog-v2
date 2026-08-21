@@ -1,0 +1,229 @@
+id: errands
+title: Running Errands
+tier: everyday
+description: Lakad, bayad, padala — the small trips that fill a Filipino Saturday.
+tip: >-
+  "May lakad ako" means I have somewhere to be — an errand, not a walk. Bills
+  are paid at bayad centers inside sari-sari stores and malls, and the verb for
+  paying a bill is magbayad. Deadlines matter: "deadline na bukas" is the phrase
+  that moves a whole household.
+lessons:
+  - id: err-1
+    title: I have an errand
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lakad, en: an errand }
+          - { tl: bilhin, en: to buy (something) }
+          - { tl: kunin, en: to get }
+          - { tl: ihatid, en: to deliver or drop off }
+      - type: choice
+        prompt: "'May lakad ako mamaya' means..."
+        answer: I have an errand later
+        distractors: [I will walk for exercise, I am tired, I am at home]
+        audio: may_lakad_ako_mamaya
+        audio_text: May lakad ako mamaya.
+      - type: fill_blank
+        sentence: "May ___ ako sa bayan bukas."
+        translation: "I have an errand in town tomorrow."
+        answer: lakad
+        options: [lakad, tubig, silya]
+      - type: translate
+        prompt_tl: Kukunin ko ang gamot sa botika.
+        answer_en: I will get the medicine at the pharmacy.
+        accept:
+          - I'll pick up the medicine at the pharmacy
+        extra_words: [cheap, market, tomorrow]
+        audio: kukunin_ko_ang_gamot_sa_botika
+      - type: translate
+        prompt_en: Please drop off this letter at the office.
+        answer_tl: Pakihatid po ang liham na ito sa opisina
+        accept:
+          - Pakihatid ang sulat na ito sa opisina
+        extra_words: [kunin, bilhin, lakad]
+      - type: listen
+        audio: may_lakad_ka_ba_bukas
+        answer_tl: May lakad ka ba bukas
+        extra_words: [kunin, bilhin]
+      - type: choice
+        prompt: "Which verb means 'to fetch or get'?"
+        answer: kunin
+        distractors: [ihatid, bilhin, matulog]
+      - type: fill_blank
+        sentence: "___ mo na rin ang tinapay pauwi."
+        translation: "Buy the bread too on the way home."
+        answer: Bilhin
+        options: [Bilhin, Kunin, Ihatid]
+      - type: arrange
+        prompt: "I have two errands in town today."
+        answer_tl: May dalawang lakad ako sa bayan ngayon
+
+  - id: err-2
+    title: Paying bills
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magbayad, en: to pay }
+          - { tl: bayarin, en: a bill }
+          - { tl: kuryente, en: electricity }
+          - { tl: deadline, en: deadline }
+      - type: choice
+        prompt: "'Bayad center' is where you..."
+        answer: pay bills
+        distractors: [borrow money, buy clothes, mail letters]
+        audio: bayad_center
+        audio_text: Bayad center.
+      - type: fill_blank
+        sentence: "Babayaran ko ang ___ sa Lunes."
+        translation: "I will pay the electricity on Monday."
+        answer: kuryente
+        options: [kuryente, sapatos, tinapay]
+      - type: translate
+        prompt_tl: Deadline na bukas ng bayarin sa tubig.
+        answer_en: The water bill is due tomorrow.
+        accept:
+          - Tomorrow is the deadline for the water bill
+        extra_words: [cheap, market, quickly]
+        audio: deadline_na_bukas_ng_bayarin_sa_tubig
+      - type: translate
+        prompt_en: Where can I pay the electricity bill?
+        answer_tl: Saan po pwedeng magbayad ng kuryente?
+        accept:
+          - Saan ako pwedeng magbayad ng kuryente
+        extra_words: [tubig, deadline, bayarin]
+      - type: listen
+        audio: saan_po_pwedeng_magbayad
+        answer_tl: Saan po pwedeng magbayad
+        extra_words: [kuryente, tubig]
+      - type: choice
+        prompt: "Missing the deadline usually means..."
+        answer: a penalty
+        distractors: [a discount, a free month, nothing at all]
+      - type: fill_blank
+        sentence: "May multa kung lalampas sa ___."
+        translation: "There is a penalty if you go past the deadline."
+        answer: deadline
+        options: [deadline, tubig, silya]
+      - type: arrange
+        prompt: "I will pay the water bill today."
+        answer_tl: Babayaran ko ang tubig ngayon
+
+  - id: err-3
+    title: Sending things
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magpadala, en: to send }
+          - { tl: pakete, en: parcel }
+          - { tl: sulat, en: letter }
+          - { tl: kartero, en: postman }
+      - type: choice
+        prompt: "'Balikbayan box' is a parcel sent..."
+        answer: home by a relative abroad
+        distractors: [to the bank, to a neighbor, by the postman only]
+        audio: balikbayan_box
+        audio_text: Balikbayan box.
+      - type: fill_blank
+        sentence: "Magpapadala ako ng ___ sa probinsya."
+        translation: "I will send a parcel to the province."
+        answer: pakete
+        options: [pakete, tubig, kuryente]
+      - type: translate
+        prompt_tl: Dumating na ang pakete kahapon.
+        answer_en: The parcel arrived yesterday.
+        accept:
+          - The package came yesterday
+        extra_words: [cheap, market, tomorrow]
+        audio: dumating_na_ang_pakete_kahapon
+      - type: translate
+        prompt_en: How much does it cost to send this?
+        answer_tl: Magkano po ang pagpapadala nito?
+        accept:
+          - Magkano ang padala nito
+        extra_words: [pakete, sulat, kartero]
+      - type: listen
+        audio: magkano_po_ang_pagpapadala
+        answer_tl: Magkano po ang pagpapadala
+        extra_words: [pakete, sulat]
+      - type: choice
+        prompt: "The person who delivers letters is the..."
+        answer: kartero
+        distractors: [tindera, drayber, guro]
+      - type: fill_blank
+        sentence: "Dinala ng ___ ang sulat kaninang umaga."
+        translation: "The postman brought the letter this morning."
+        answer: kartero
+        options: [kartero, tindera, guro]
+      - type: arrange
+        prompt: "I will send a parcel to my mother."
+        answer_tl: Magpapadala ako ng pakete sa nanay ko
+
+  - id: err-4
+    title: A Saturday of errands
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: A couple dividing the day
+        lines:
+          - speaker: Ana
+            text: "May tatlong ___ tayo ngayon."
+            translation: "We have three errands today."
+          - speaker: Ben
+            text: "Ako na ang ___ ng kuryente sa bayad center."
+            translation: "I will be the one to pay the electricity at the bayad center."
+          - speaker: Ana
+            text: "Sige, ___ ko naman ang gamot sa botika."
+            translation: "Okay, I will get the medicine at the pharmacy."
+          - speaker: Ben
+            text: "Tapos, tara na sa palengke."
+            translation: "Then, let us go to the market."
+        blanks:
+          - answer: lakad
+            options: [lakad, tubig, silya]
+          - answer: magbabayad
+            options: [magbabayad, matutulog, kakain]
+          - answer: kukunin
+            options: [kukunin, kakainin, iinumin]
+      - type: match
+        pairs:
+          - { tl: botika, en: pharmacy }
+          - { tl: gamot, en: medicine }
+          - { tl: resibo, en: receipt }
+          - { tl: sunod, en: next }
+      - type: fill_blank
+        sentence: "Ano ang ___ nating lakad?"
+        translation: "What is our next errand?"
+        answer: sunod
+        options: [sunod, tubig, gamot]
+      - type: translate
+        prompt_en: First the bank, then the market.
+        answer_tl: Una ang bangko, tapos ang palengke
+        accept:
+          - Una sa bangko tapos sa palengke
+        extra_words: [botika, gamot, sunod]
+      - type: translate
+        prompt_tl: Tapos na ang lahat ng lakad natin.
+        answer_en: All our errands are done.
+        accept:
+          - We have finished all our errands
+        extra_words: [cheap, market, tomorrow]
+        audio: tapos_na_ang_lahat_ng_lakad_natin
+      - type: listen
+        audio: ano_ang_sunod_nating_lakad
+        answer_tl: Ano ang sunod nating lakad
+        extra_words: [botika, gamot]
+      - type: choice
+        prompt: "In the dialogue, who pays the electricity bill?"
+        answer: Ben
+        distractors: [Ana, the postman, nobody]
+      - type: fill_blank
+        sentence: "Bumili ako ng ___ sa botika."
+        translation: "I bought medicine at the pharmacy."
+        answer: gamot
+        options: [gamot, kuryente, pakete]
+      - type: arrange
+        prompt: "All our errands are finished."
+        answer_tl: Tapos na ang lahat ng lakad natin

@@ -1,0 +1,229 @@
+id: household-chores
+title: Household Chores
+tier: everyday
+description: Sweeping, washing dishes, taking out the trash — and asking for help.
+tip: >-
+  Chore verbs almost all take mag-: magwalis (sweep), maghugas (wash),
+  magligpit (tidy up), magtapon (throw out). To ask someone to do one, swap
+  mag- for paki-: pakiwalis, pakihugas. That single swap turns an order into a
+  request, which is why it appears in every Filipino household.
+lessons:
+  - id: chore-1
+    title: Cleaning up
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magwalis, en: to sweep }
+          - { tl: magpunas, en: to wipe }
+          - { tl: magligpit, en: to tidy up }
+          - { tl: magbunot, en: to polish the floor }
+      - type: choice
+        prompt: "'Magwalis ka ng sahig' asks you to..."
+        answer: sweep the floor
+        distractors: [wash the dishes, cook rice, close the window]
+        audio: magwalis_ka_ng_sahig
+        audio_text: Magwalis ka ng sahig.
+      - type: fill_blank
+        sentence: "Paki___ po ng mesa."
+        translation: "Please wipe the table."
+        answer: punas
+        options: [punas, walis, luto]
+      - type: translate
+        prompt_tl: Nagwawalis si Ate sa sala.
+        answer_en: My older sister is sweeping in the living room.
+        accept:
+          - Ate is sweeping the living room
+        extra_words: [cheap, market, tomorrow]
+        audio: nagwawalis_si_ate_sa_sala
+      - type: translate
+        prompt_en: Please tidy up your room.
+        answer_tl: Pakiligpit po ang kuwarto mo
+        accept:
+          - Ligpitin mo ang kuwarto mo
+        extra_words: [walis, punas, sahig]
+      - type: listen
+        audio: pakiwalis_po_ng_sahig
+        answer_tl: Pakiwalis po ng sahig
+        extra_words: [punas, ligpit]
+      - type: choice
+        prompt: "Swapping 'mag-' for 'paki-' turns a chore verb into..."
+        answer: a polite request
+        distractors: [a past action, a question, a negative]
+      - type: fill_blank
+        sentence: "Marumi ang ___, walisan mo."
+        translation: "The floor is dirty, sweep it."
+        answer: sahig
+        options: [sahig, bintana, kama]
+      - type: arrange
+        prompt: "Please sweep the living room."
+        answer_tl: Pakiwalis po ang sala
+
+  - id: chore-2
+    title: Dishes and kitchen
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maghugas, en: to wash }
+          - { tl: pinggan, en: plate }
+          - { tl: lababo, en: sink }
+          - { tl: sabon panghugas, en: dish soap }
+      - type: choice
+        prompt: "After dinner someone always says:"
+        answer: Sino ang maghuhugas ng pinggan?
+        distractors: [Sino ang matutulog?, Sino ang bibili ng bahay?, Sino ang kartero?]
+        audio: sino_ang_maghuhugas_ng_pinggan
+        audio_text: Sino ang maghuhugas ng pinggan?
+      - type: fill_blank
+        sentence: "Puno ng pinggan ang ___."
+        translation: "The sink is full of plates."
+        answer: lababo
+        options: [lababo, kama, bintana]
+      - type: translate
+        prompt_tl: Ako na ang maghuhugas ngayon.
+        answer_en: I will be the one to wash today.
+        accept:
+          - I'll wash the dishes today
+        extra_words: [cheap, market, tomorrow]
+        audio: ako_na_ang_maghuhugas_ngayon
+      - type: translate
+        prompt_en: Please wash the plates after eating.
+        answer_tl: Pakihugas po ang mga pinggan pagkatapos kumain
+        accept:
+          - Hugasan mo ang mga pinggan pagkatapos kumain
+        extra_words: [lababo, sabon, sahig]
+      - type: listen
+        audio: pakihugas_po_ng_pinggan
+        answer_tl: Pakihugas po ng pinggan
+        extra_words: [lababo, sabon]
+      - type: choice
+        prompt: "Which belongs in the kitchen?"
+        answer: lababo
+        distractors: [aparador, kama, hagdan]
+      - type: fill_blank
+        sentence: "Ubos na ang ___ panghugas."
+        translation: "The dish soap has run out."
+        answer: sabon
+        options: [sabon, tubig, kanin]
+      - type: arrange
+        prompt: "I will wash the plates later."
+        answer_tl: Huhugasan ko ang mga pinggan mamaya
+
+  - id: chore-3
+    title: Trash and water
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: basura, en: garbage }
+          - { tl: magtapon, en: to throw out }
+          - { tl: magdilig, en: to water plants }
+          - { tl: halaman, en: plant }
+      - type: choice
+        prompt: "'Itapon mo ang basura' tells you to..."
+        answer: take out the trash
+        distractors: [water the plants, sweep the floor, close the gate]
+        audio: itapon_mo_ang_basura
+        audio_text: Itapon mo ang basura.
+      - type: fill_blank
+        sentence: "Nagdidilig ako ng ___ tuwing umaga."
+        translation: "I water the plants every morning."
+        answer: halaman
+        options: [halaman, basura, pinggan]
+      - type: translate
+        prompt_tl: Dumaan na ba ang basurero?
+        answer_en: Has the garbage collector passed by?
+        accept:
+          - Did the garbage man come already
+        extra_words: [cheap, tomorrow, market]
+        audio: dumaan_na_ba_ang_basurero
+      - type: translate
+        prompt_en: Please take out the trash tonight.
+        answer_tl: Pakitapon po ang basura mamayang gabi
+        accept:
+          - Itapon mo ang basura mamayang gabi
+        extra_words: [halaman, dilig, pinggan]
+      - type: listen
+        audio: pakitapon_po_ang_basura
+        answer_tl: Pakitapon po ang basura
+        extra_words: [halaman, dilig]
+      - type: choice
+        prompt: "Which chore involves water and plants?"
+        answer: magdilig
+        distractors: [magwalis, magtapon, maghugas]
+      - type: fill_blank
+        sentence: "Tuyo na ang ___, diligan mo."
+        translation: "The plant is dry, water it."
+        answer: halaman
+        options: [halaman, basura, sahig]
+      - type: arrange
+        prompt: "I water the plants every afternoon."
+        answer_tl: Nagdidilig ako ng halaman tuwing hapon
+
+  - id: chore-4
+    title: Dividing the work
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: A family on a Saturday morning
+        lines:
+          - speaker: Nanay
+            text: "Ana, ___ ka muna ng sahig."
+            translation: "Ana, sweep the floor first."
+          - speaker: Ana
+            text: "Opo. Si Ben po ba ang ___ ng pinggan?"
+            translation: "Yes. Will Ben wash the plates?"
+          - speaker: Nanay
+            text: "Oo, at ikaw ang mag___ ng basura mamaya."
+            translation: "Yes, and you will throw out the trash later."
+          - speaker: Ana
+            text: "Sige po, Nay."
+            translation: "All right, Mom."
+        blanks:
+          - answer: magwalis
+            options: [magwalis, matulog, kumain]
+          - answer: maghuhugas
+            options: [maghuhugas, matutulog, kakain]
+          - answer: tatapon
+            options: [tatapon, kakain, iinom]
+      - type: match
+        pairs:
+          - { tl: gawaing bahay, en: housework }
+          - { tl: tulungan, en: to help one another }
+          - { tl: hati, en: to split }
+          - { tl: tapos na, en: already done }
+      - type: fill_blank
+        sentence: "___ tayo sa gawaing bahay."
+        translation: "Let us split the housework."
+        answer: Maghati
+        options: [Maghati, Matulog, Kumain]
+      - type: translate
+        prompt_en: Help me clean the house.
+        answer_tl: Tulungan mo akong maglinis ng bahay
+        accept:
+          - Tulungan mo ako sa paglilinis ng bahay
+        extra_words: [hati, tapos, basura]
+      - type: translate
+        prompt_tl: Tapos na ang lahat ng gawaing bahay.
+        answer_en: All the housework is done.
+        accept:
+          - All the chores are finished
+        extra_words: [cheap, tomorrow, market]
+        audio: tapos_na_ang_lahat_ng_gawaing_bahay
+      - type: listen
+        audio: tulungan_mo_ako
+        answer_tl: Tulungan mo ako
+        extra_words: [hati, tapos]
+      - type: choice
+        prompt: "In the dialogue, what is Ana's second task?"
+        answer: throw out the trash
+        distractors: [wash the plates, water the plants, cook dinner]
+      - type: fill_blank
+        sentence: "___ na ang lahat, magpahinga na tayo."
+        translation: "Everything is done, let us rest."
+        answer: Tapos
+        options: [Tapos, Marumi, Bago]
+      - type: arrange
+        prompt: "Let us split the housework today."
+        answer_tl: Maghati tayo sa gawaing bahay ngayon

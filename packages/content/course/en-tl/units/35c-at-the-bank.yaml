@@ -1,0 +1,232 @@
+id: at-the-bank
+title: At the Bank
+tier: everyday
+description: Deposit, withdraw, and the remittance counter every family knows.
+tip: >-
+  Bank Tagalog is mostly English wrapped in Tagalog grammar: mag-deposit,
+  mag-withdraw, mag-open ng account. Two native words matter — pera (money) and
+  pirma (signature). Remittance counters are everywhere because so many
+  families receive padala from relatives abroad.
+lessons:
+  - id: bank-1
+    title: Money words
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pera, en: money }
+          - { tl: bangko, en: bank }
+          - { tl: ipon, en: savings }
+          - { tl: utang, en: debt or loan }
+      - type: choice
+        prompt: "'Ipon' is money you..."
+        answer: save
+        distractors: [borrow, spend, lose]
+        audio: ipon
+        audio_text: Ipon.
+      - type: fill_blank
+        sentence: "Wala akong ___ ngayon."
+        translation: "I have no money now."
+        answer: pera
+        options: [pera, tubig, papel]
+      - type: translate
+        prompt_tl: Nag-iipon ako para sa bahay.
+        answer_en: I am saving for a house.
+        accept:
+          - I'm saving up for a house
+        extra_words: [cheap, market, tomorrow]
+        audio: nag_iipon_ako_para_sa_bahay
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I will go to the bank tomorrow.
+        answer_tl: Pupunta ako sa bangko bukas
+        accept:
+          - Sa bangko ako pupunta bukas
+        extra_words: [pera, ipon, utang]
+      - type: listen
+        audio: nasaan_ang_pinakamalapit_na_bangko
+        answer_tl: Nasaan ang pinakamalapit na bangko
+        extra_words: [pera, ipon]
+      - type: choice
+        prompt: "'May utang ako' means..."
+        answer: I owe money
+        distractors: [I have savings, I have change, I am rich]
+      - type: fill_blank
+        sentence: "Babayaran ko ang ___ ko sa Biyernes."
+        translation: "I will pay my debt on Friday."
+        answer: utang
+        options: [utang, ipon, tubig]
+      - type: arrange
+        prompt: "I am saving money for school."
+        answer_tl: Nag-iipon ako ng pera para sa paaralan
+        grading: { hyphens: true }
+
+  - id: bank-2
+    title: At the counter
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mag-deposit, en: to deposit }
+          - { tl: mag-withdraw, en: to withdraw }
+          - { tl: pirma, en: signature }
+          - { tl: pila, en: queue }
+      - type: choice
+        prompt: "You want to take money out. You say:"
+        answer: Mag-wi-withdraw po ako.
+        distractors: [Mag-de-deposit po ako., Magluluto po ako., Matutulog po ako.]
+        audio: mag_wi_withdraw_po_ako
+        audio_text: Mag-wi-withdraw po ako.
+      - type: fill_blank
+        sentence: "Pakilagay po ng ___ ninyo dito."
+        translation: "Please put your signature here."
+        answer: pirma
+        options: [pirma, pera, pila]
+      - type: translate
+        prompt_tl: Mahaba ang pila sa bangko.
+        answer_en: The queue at the bank is long.
+        accept:
+          - The line at the bank is long
+        extra_words: [tomorrow, cheap, market]
+        audio: mahaba_ang_pila_sa_bangko
+      - type: translate
+        prompt_en: I want to deposit five thousand pesos.
+        answer_tl: Gusto ko pong mag-deposit ng limang libong piso
+        accept:
+          - Mag-de-deposit po ako ng limang libong piso
+        extra_words: [withdraw, pirma, pila]
+        grading: { hyphens: true }
+      - type: listen
+        audio: mahaba_ba_ang_pila
+        answer_tl: Mahaba ba ang pila
+        extra_words: [pirma, pera]
+      - type: choice
+        prompt: "Which do you need before signing?"
+        answer: bolpen
+        distractors: [kutsara, tuwalya, payong]
+      - type: fill_blank
+        sentence: "Nasa ___ ako, sandali lang."
+        translation: "I am in the queue, just a moment."
+        answer: pila
+        options: [pila, pirma, ipon]
+      - type: arrange
+        prompt: "Please sign here below."
+        answer_tl: Pakipirmahan po dito sa ibaba
+
+  - id: bank-3
+    title: Remittance
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: padala, en: remittance }
+          - { tl: kumuha, en: to collect }
+          - { tl: palitan, en: exchange rate }
+          - { tl: dolyar, en: dollar }
+      - type: choice
+        prompt: "'Padala' from a relative abroad is..."
+        answer: money sent home
+        distractors: [a plane ticket, a phone call, a letter only]
+        audio: padala
+        audio_text: Padala.
+      - type: fill_blank
+        sentence: "Kukunin ko ang ___ ni Ate mamaya."
+        translation: "I will collect my sister's remittance later."
+        answer: padala
+        options: [padala, pirma, pila]
+      - type: translate
+        prompt_tl: Magkano ang palitan ng dolyar ngayon?
+        answer_en: What is the dollar exchange rate today?
+        accept:
+          - How much is the dollar rate today
+        extra_words: [cheap, tomorrow, market]
+        audio: magkano_ang_palitan_ng_dolyar_ngayon
+      - type: translate
+        prompt_en: My brother sends money every month.
+        answer_tl: Nagpapadala ng pera ang kuya ko buwan-buwan
+        accept:
+          - Nagpapadala ng pera ang kuya ko kada buwan
+        extra_words: [padala, dolyar, palitan]
+        grading: { hyphens: true }
+      - type: listen
+        audio: kukunin_ko_ang_padala
+        answer_tl: Kukunin ko ang padala
+        extra_words: [palitan, dolyar]
+      - type: choice
+        prompt: "To collect a remittance you usually bring..."
+        answer: an ID and the reference number
+        distractors: [a bank book only, a passport photo, nothing at all]
+      - type: fill_blank
+        sentence: "Ano po ang ___ number ng padala?"
+        translation: "What is the reference number of the remittance?"
+        answer: reference
+        options: [reference, pirma, pila]
+      - type: arrange
+        prompt: "My mother sends money every month."
+        answer_tl: Nagpapadala ng pera ang nanay ko buwan-buwan
+        grading: { hyphens: true }
+
+  - id: bank-4
+    title: A bank visit
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: At the teller window
+        lines:
+          - speaker: Teller
+            text: "Magandang umaga po. Ano po ang maitutulong ko?"
+            translation: "Good morning. How may I help you?"
+          - speaker: Kliyente
+            text: "Mag-wi-___ po sana ako ng tatlong libo."
+            translation: "I would like to withdraw three thousand."
+          - speaker: Teller
+            text: "Pakilagay po ng ___ ninyo sa form."
+            translation: "Please put your signature on the form."
+          - speaker: Kliyente
+            text: "Ayan po. Salamat po."
+            translation: "There it is. Thank you."
+        blanks:
+          - answer: withdraw
+            options: [withdraw, kain, tulog]
+          - answer: pirma
+            options: [pirma, pila, pera]
+      - type: match
+        pairs:
+          - { tl: form, en: form }
+          - { tl: ID, en: identification }
+          - { tl: barya, en: coins }
+          - { tl: resibo, en: receipt }
+      - type: fill_blank
+        sentence: "Pakidala po ang ___ ninyo."
+        translation: "Please bring your ID."
+        answer: ID
+        options: [ID, barya, resibo]
+      - type: translate
+        prompt_en: May I have a receipt, please?
+        answer_tl: Pahingi po ng resibo
+        accept:
+          - Pwede po bang humingi ng resibo
+        extra_words: [pirma, form, barya]
+      - type: translate
+        prompt_tl: Nawala ang resibo ko.
+        answer_en: I lost my receipt.
+        accept:
+          - My receipt is lost
+        extra_words: [tomorrow, cheap, market]
+        audio: nawala_ang_resibo_ko
+      - type: listen
+        audio: pahingi_po_ng_resibo
+        answer_tl: Pahingi po ng resibo
+        extra_words: [form, barya]
+      - type: choice
+        prompt: "In the dialogue, what does the client do at the counter?"
+        answer: withdraw three thousand
+        distractors: [deposit three thousand, open an account, collect a remittance]
+      - type: fill_blank
+        sentence: "Punan po ninyo ang ___ bago pumila."
+        translation: "Please fill in the form before queuing."
+        answer: form
+        options: [form, barya, resibo]
+      - type: arrange
+        prompt: "Please fill in the form first."
+        answer_tl: Pakipunan po muna ang form

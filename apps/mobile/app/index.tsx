@@ -12,9 +12,15 @@ import {
   regenerate,
   type Unit,
 } from "@aral/core";
-import { getBundle } from "@/lib/content";
+import { getBundle, isLessonUnlocked } from "@/lib/content";
 import { deviceTz, useProgress } from "@/lib/progress";
 import { radii, spacing, useTheme } from "@/theme";
+
+/** Display name of a unit's difficulty tier, or null in a flat bundle. */
+function tierTitle(tierId: string | undefined): string | null {
+  if (!tierId) return null;
+  return getBundle().tiers?.find((t) => t.id === tierId)?.title ?? null;
+}
 
 export default function CourseMapScreen() {
   const router = useRouter();
@@ -31,20 +37,32 @@ export default function CourseMapScreen() {
     buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
       .length ?? 0;
 
-  // The first uncompleted lesson in course order. Computed up front rather
-  // than tracked with a flag while rendering: the list is virtualized, so
-  // unit cards do not render in order (or at all, until scrolled to).
+  // The first uncompleted lesson that is actually *playable*. Computed up
+  // front rather than tracked with a flag while rendering: the list is
+  // virtualized, so unit cards do not render in order (or at all, until
+  // scrolled to). With difficulty tiers "first uncompleted" is no longer
+  // enough — a learner who placed into a later tier has deliberately skipped
+  // hundreds of uncompleted lessons behind it.
   const next = useMemo(() => {
+    const completed = [...done];
     for (let ui = 0; ui < bundle.units.length; ui++) {
       const unit = bundle.units[ui]!;
-      const lesson = unit.lessons.find((l) => !done.has(l.id));
-      if (lesson) return { unit, lesson, unitIndex: ui };
+      for (const lesson of unit.lessons) {
+        if (done.has(lesson.id)) continue;
+        if (isLessonUnlocked(lesson.id, completed, progress.unlockedTierIds))
+          return { unit, lesson, unitIndex: ui };
+      }
     }
     return null;
-  }, [bundle.units, done]);
+  }, [bundle.units, done, progress.unlockedTierIds]);
 
   const renderUnit = ({ item: unit, index: ui }: { item: Unit; index: number }) => (
     <View style={styles.card}>
+      {tierTitle(unit.tier) ? (
+        <Text style={[styles.muted, { fontWeight: "800", textTransform: "uppercase", fontSize: 12 }]}>
+          {tierTitle(unit.tier)}
+        </Text>
+      ) : null}
       <Text style={styles.subtitle}>
         Unit {ui + 1}: {unit.title}
       </Text>
@@ -69,7 +87,10 @@ export default function CourseMapScreen() {
       {unit.lessons.map((lesson) => {
         const isDone = done.has(lesson.id);
         const isNext = lesson.id === next?.lesson.id;
-        const locked = !isDone && !isNext;
+        // ask core rather than assuming "next or done": after a tier jump the
+        // first lesson of the new tier is playable without being `next`
+        const locked =
+          !isDone && !isNext && !isLessonUnlocked(lesson.id, [...done], progress.unlockedTierIds);
         return (
           <View
             key={lesson.id}

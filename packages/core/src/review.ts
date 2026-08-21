@@ -1,4 +1,5 @@
 import type { Lesson, Unit } from "./types";
+import { isTierUnlocked, tierLessonIds, tierOfLesson, type TierUnlockContext } from "./tiers";
 import { PRACTICE_XP } from "./xp";
 
 /**
@@ -44,14 +45,35 @@ export function buildReviewLesson(
  * Linear unlock: a lesson is playable once every lesson before it (across
  * units, in course order) is completed. Shared by both clients so the course
  * map and the lesson route can never disagree.
+ *
+ * With difficulty tiers the sequence is scoped to the lesson's own tier: the
+ * tier must be open (first tier, placed into, or the previous one finished)
+ * and every earlier lesson *within that tier* must be done. That is what makes
+ * placement work — jumping into Conversational must not require Foundations.
+ * Pass no `ctx` (or a bundle without tiers) for the flat behaviour.
  */
-export function isLessonUnlocked(units: Unit[], lessonId: string, completedLessonIds: string[]): boolean {
+export function isLessonUnlocked(
+  units: Unit[],
+  lessonId: string,
+  completedLessonIds: string[],
+  ctx: TierUnlockContext = {},
+): boolean {
   const done = new Set(completedLessonIds);
-  for (const unit of units) {
-    for (const lesson of unit.lessons) {
-      if (lesson.id === lessonId) return true;
-      if (!done.has(lesson.id)) return false;
+  const tierId = (ctx.tiers?.length ?? 0) > 0 ? tierOfLesson(units, lessonId) : null;
+  if (tierId === null) {
+    // flat course, or a unit that names no tier: order across the whole course
+    for (const unit of units) {
+      for (const lesson of unit.lessons) {
+        if (lesson.id === lessonId) return true;
+        if (!done.has(lesson.id)) return false;
+      }
     }
+    return false;
+  }
+  if (!isTierUnlocked(units, tierId, completedLessonIds, ctx)) return false;
+  for (const id of tierLessonIds(units, tierId)) {
+    if (id === lessonId) return true;
+    if (!done.has(id)) return false;
   }
   return false;
 }

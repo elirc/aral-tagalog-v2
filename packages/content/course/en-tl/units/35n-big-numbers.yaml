@@ -1,0 +1,227 @@
+id: big-numbers
+title: Hundreds and Thousands
+tier: everyday
+description: Prices, salaries and rent — counting past one hundred.
+tip: >-
+  Above a hundred, Tagalog and Spanish numbers split by use: daan and libo for
+  counting, but shop prices are often spoken in Spanish — singkuwenta, sitenta,
+  dos mil. Money uses the linker -ng: limang daang piso, tatlong libong piso.
+  Ordinals take ika-: ikalawa (second), ikatlo (third).
+lessons:
+  - id: bignum-1
+    title: Hundreds
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isang daan, en: one hundred }
+          - { tl: dalawang daan, en: two hundred }
+          - { tl: limang daan, en: five hundred }
+          - { tl: siyam na raan, en: nine hundred }
+      - type: choice
+        prompt: "'Tatlong daang piso' is..."
+        answer: three hundred pesos
+        distractors: [thirty pesos, three thousand pesos, thirteen pesos]
+        audio: tatlong_daang_piso
+        audio_text: Tatlong daang piso.
+      - type: fill_blank
+        sentence: "Apat na ___ ang presyo ng sapatos."
+        translation: "The price of the shoes is four hundred."
+        answer: daan
+        options: [daan, libo, piso]
+      - type: translate
+        prompt_tl: Limang daang piso ang bayad.
+        answer_en: The payment is five hundred pesos.
+        accept:
+          - The fee is five hundred pesos
+        extra_words: [cheap, market, tomorrow]
+        audio: limang_daang_piso_ang_bayad
+      - type: translate
+        prompt_en: Two hundred pesos, please.
+        answer_tl: Dalawang daang piso po
+        accept:
+          - Dalawang daan pong piso
+        extra_words: [libo, daan, isa]
+      - type: listen
+        audio: limang_daang_piso
+        answer_tl: Limang daang piso
+        extra_words: [libo, dalawa]
+      - type: choice
+        prompt: "After a word ending in a vowel, 'daan' often becomes..."
+        answer: raan
+        distractors: [libo, laan, piso]
+      - type: fill_blank
+        sentence: "Anim na ___ ang kabuuan."
+        translation: "The total is six hundred."
+        answer: daan
+        options: [daan, libo, taon]
+      - type: arrange
+        prompt: "The price of the shoes is four hundred pesos."
+        answer_tl: Apat na daang piso ang presyo ng sapatos
+
+  - id: bignum-2
+    title: Thousands
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isang libo, en: one thousand }
+          - { tl: limang libo, en: five thousand }
+          - { tl: sampung libo, en: ten thousand }
+          - { tl: milyon, en: million }
+      - type: choice
+        prompt: "'Dalawang libo' is..."
+        answer: two thousand
+        distractors: [two hundred, twenty, twelve]
+        audio: dalawang_libo
+        audio_text: Dalawang libo.
+      - type: fill_blank
+        sentence: "Sampung ___ ang upa sa bahay."
+        translation: "The house rent is ten thousand."
+        answer: libo
+        options: [libo, daan, piso]
+      - type: translate
+        prompt_tl: Tatlong libong piso ang sahod ko sa isang linggo.
+        answer_en: My salary is three thousand pesos a week.
+        accept:
+          - I earn three thousand pesos a week
+        extra_words: [cheap, market, tomorrow]
+        audio: tatlong_libong_piso_ang_sahod_ko
+      - type: translate
+        prompt_en: The phone costs eight thousand pesos.
+        answer_tl: Walong libong piso ang telepono
+        accept:
+          - Ang telepono ay walong libong piso
+        extra_words: [daan, milyon, sahod]
+      - type: listen
+        audio: sampung_libong_piso
+        answer_tl: Sampung libong piso
+        extra_words: [daan, milyon]
+      - type: choice
+        prompt: "In everyday shop talk, 'dos mil' means..."
+        answer: two thousand
+        distractors: [two hundred, twelve, two million]
+      - type: fill_blank
+        sentence: "Isang ___ ang halaga ng bahay na iyon."
+        translation: "That house is worth a million."
+        answer: milyon
+        options: [milyon, libo, daan]
+      - type: arrange
+        prompt: "My weekly salary is three thousand pesos."
+        answer_tl: Tatlong libong piso ang sahod ko sa isang linggo
+
+  - id: bignum-3
+    title: Order and rank
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: una, en: first }
+          - { tl: ikalawa, en: second }
+          - { tl: ikatlo, en: third }
+          - { tl: huli, en: last }
+      - type: choice
+        prompt: "The prefix that makes ordinals is..."
+        answer: ika-
+        distractors: [mag-, taga-, paki-]
+        audio: ikalawa
+        audio_text: Ikalawa.
+      - type: fill_blank
+        sentence: "___ ako sa pila."
+        translation: "I am first in line."
+        answer: Una
+        options: [Una, Huli, Ikatlo]
+      - type: translate
+        prompt_tl: Ikalawang palapag ang opisina namin.
+        answer_en: Our office is on the second floor.
+        accept:
+          - Our office is on the 2nd floor
+        extra_words: [cheap, market, tomorrow]
+        audio: ikalawang_palapag_ang_opisina_namin
+      - type: translate
+        prompt_en: This is my third time here.
+        answer_tl: Ikatlong beses ko na ito dito
+        accept:
+          - Pangatlong beses ko na ito dito
+        extra_words: [una, huli, ikalawa]
+      - type: listen
+        audio: ikalawang_palapag
+        answer_tl: Ikalawang palapag
+        extra_words: [una, ikatlo]
+      - type: choice
+        prompt: "'Huli sa pila' means..."
+        answer: last in line
+        distractors: [first in line, out of line, in the middle]
+      - type: fill_blank
+        sentence: "Ang ___ na araw ng linggo ay Linggo."
+        translation: "The last day of the week is Sunday."
+        answer: huling
+        options: [huling, unang, ikalawang]
+      - type: arrange
+        prompt: "Our office is on the second floor."
+        answer_tl: Ikalawang palapag ang opisina namin
+
+  - id: bignum-4
+    title: Money talk
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Asking about rent
+        lines:
+          - speaker: Umuupa
+            text: "Magkano po ang upa sa isang buwan?"
+            translation: "How much is the rent per month?"
+          - speaker: May-ari
+            text: "Sampung ___ po, kasama na ang tubig."
+            translation: "Ten thousand, water included."
+          - speaker: Umuupa
+            text: "Kailangan po ba ng ___ na buwan na deposito?"
+            translation: "Is a two-month deposit needed?"
+          - speaker: May-ari
+            text: "Opo, at isang buwan na advance."
+            translation: "Yes, and one month advance."
+        blanks:
+          - answer: libo
+            options: [libo, daan, piso]
+          - answer: dalawang
+            options: [dalawang, isang, sampung]
+      - type: match
+        pairs:
+          - { tl: upa, en: rent }
+          - { tl: deposito, en: deposit }
+          - { tl: sahod, en: salary }
+          - { tl: gastos, en: expenses }
+      - type: fill_blank
+        sentence: "Malaki ang ___ sa kuryente ngayong buwan."
+        translation: "The electricity expense is big this month."
+        answer: gastos
+        options: [gastos, upa, sahod]
+      - type: translate
+        prompt_en: My salary is twenty thousand a month.
+        answer_tl: Dalawampung libo ang sahod ko sa isang buwan
+        accept:
+          - Bente mil ang sahod ko sa isang buwan
+        extra_words: [upa, gastos, deposito]
+      - type: translate
+        prompt_tl: Kulang ang sahod para sa lahat ng gastos.
+        answer_en: The salary is not enough for all the expenses.
+        accept:
+          - The pay isn't enough for all the expenses
+        extra_words: [cheap, market, tomorrow]
+        audio: kulang_ang_sahod_para_sa_lahat_ng_gastos
+      - type: listen
+        audio: magkano_po_ang_upa
+        answer_tl: Magkano po ang upa
+        extra_words: [sahod, gastos]
+      - type: choice
+        prompt: "In the dialogue, what is included in the rent?"
+        answer: water
+        distractors: [electricity, internet, nothing]
+      - type: fill_blank
+        sentence: "Isang buwang ___ ang hinihingi nila."
+        translation: "They are asking for one month's deposit."
+        answer: deposito
+        options: [deposito, gastos, sahod]
+      - type: arrange
+        prompt: "The rent is ten thousand a month."
+        answer_tl: Sampung libo ang upa sa isang buwan

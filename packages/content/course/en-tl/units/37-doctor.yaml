@@ -1,5 +1,6 @@
 id: doctor
 title: At the Doctor
+tier: conversational
 description: Say what hurts, describe a fever or cough, and get medicine and rest.
 tip: >-
   To say something hurts, use "masakit" + "ang" + the body part: "Masakit ang

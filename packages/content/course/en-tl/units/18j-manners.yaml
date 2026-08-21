@@ -1,0 +1,228 @@
+id: manners
+title: Yes, No, and Manners
+tier: foundation
+description: Oo, hindi, po, opo — the small words that decide how you come across.
+tip: >-
+  Tagalog has two yeses: oo with friends, opo with elders and strangers. The
+  same split runs through hindi and hindi po. Sprinkling po into a sentence is
+  never wrong; leaving it out with someone older can sound blunt even when your
+  words are perfect.
+lessons:
+  - id: man-1
+    title: Yes and no
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: oo, en: yes (casual) }
+          - { tl: opo, en: yes (respectful) }
+          - { tl: hindi, en: no or not }
+          - { tl: siguro, en: maybe }
+      - type: choice
+        prompt: "Your grandmother asks if you have eaten. You answer:"
+        answer: Opo.
+        distractors: [Oo nga., Hindi ko alam., Siguro.]
+        audio: opo
+        audio_text: Opo.
+      - type: fill_blank
+        sentence: "___ po, hindi pa ako kumakain."
+        translation: "No, I have not eaten yet."
+        answer: Hindi
+        options: [Hindi, Opo, Siguro]
+      - type: translate
+        prompt_tl: Oo, gusto ko iyan.
+        answer_en: Yes, I like that.
+        accept:
+          - Yes I want that
+        extra_words: [tomorrow, cheap, market]
+        audio: oo_gusto_ko_iyan
+      - type: translate
+        prompt_en: Maybe tomorrow.
+        answer_tl: Siguro bukas
+        accept:
+          - Baka bukas
+        extra_words: [oo, hindi, ngayon]
+      - type: listen
+        audio: opo_salamat_po
+        answer_tl: Opo salamat po
+        extra_words: [hindi, oo]
+      - type: choice
+        prompt: "'Hindi po' is different from 'hindi' because it is..."
+        answer: respectful
+        distractors: [stronger, a question, past tense]
+      - type: fill_blank
+        sentence: "___, ayaw ko po ng kape."
+        translation: "No, I do not want coffee."
+        answer: Hindi
+        options: [Hindi, Oo, Opo]
+      - type: translate
+        prompt_tl: Hindi ko alam, siguro bukas.
+        answer_en: I do not know, maybe tomorrow.
+        accept:
+          - I don't know maybe tomorrow
+        extra_words: [quickly, morning, cheap]
+        audio: hindi_ko_alam_siguro_bukas
+
+  - id: man-2
+    title: Please and thank you
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: salamat, en: thank you }
+          - { tl: walang anuman, en: you're welcome }
+          - { tl: paki, en: please (attached to a verb) }
+          - { tl: pasensya na, en: sorry }
+      - type: choice
+        prompt: "Someone thanks you. You reply:"
+        answer: Walang anuman.
+        distractors: [Magkano po?, Taga-saan ka?, Gutom na ako.]
+        audio: walang_anuman
+        audio_text: Walang anuman.
+      - type: fill_blank
+        sentence: "___abot po ang asin."
+        translation: "Please pass the salt."
+        answer: Paki
+        options: [Paki, Hindi, Opo]
+      - type: translate
+        prompt_en: Thank you very much.
+        answer_tl: Maraming salamat po
+        accept:
+          - Maraming salamat
+        extra_words: [walang, anuman, hindi]
+      - type: translate
+        prompt_tl: Pasensya na po sa abala.
+        answer_en: Sorry for the trouble.
+        accept:
+          - Sorry for bothering you
+        extra_words: [tomorrow, market, cheap]
+        audio: pasensya_na_po_sa_abala
+      - type: listen
+        audio: maraming_salamat_po
+        answer_tl: Maraming salamat po
+        extra_words: [walang, anuman]
+      - type: choice
+        prompt: "'Paki-' attaches to a verb to make it..."
+        answer: a polite request
+        distractors: [a past action, a question, a negative]
+      - type: fill_blank
+        sentence: "___sara po ang pinto."
+        translation: "Please close the door."
+        answer: Paki
+        options: [Paki, Oo, Salamat]
+      - type: translate
+        prompt_en: Please wait a moment.
+        answer_tl: Sandali lang po
+        accept:
+          - Maghintay po kayo sandali
+        extra_words: [salamat, hindi, opo]
+
+  - id: man-3
+    title: Excuse me
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: makikiraan po, en: excuse me (let me pass) }
+          - { tl: paumanhin, en: pardon me }
+          - { tl: tabi po, en: step aside please }
+          - { tl: mauna na po ako, en: I'll go ahead }
+      - type: choice
+        prompt: "Squeezing through a crowd, you say:"
+        answer: Makikiraan po.
+        distractors: [Salamat po., Opo., Magkano po?]
+        audio: makikiraan_po
+        audio_text: Makikiraan po.
+      - type: fill_blank
+        sentence: "___ po, may itatanong sana ako."
+        translation: "Excuse me, I would like to ask something."
+        answer: Paumanhin
+        options: [Paumanhin, Salamat, Paalam]
+      - type: translate
+        prompt_tl: Mauna na po ako, salamat.
+        answer_en: I will go ahead, thank you.
+        accept:
+          - I'll go first thank you
+        extra_words: [cheap, market, tomorrow]
+        audio: mauna_na_po_ako_salamat
+      - type: translate
+        prompt_en: Excuse me, where is the bathroom?
+        answer_tl: Paumanhin po, nasaan ang banyo?
+        accept:
+          - Paumanhin po nasaan ang banyo
+        extra_words: [salamat, opo, hindi]
+      - type: listen
+        audio: paumanhin_po
+        answer_tl: Paumanhin po
+        extra_words: [salamat, opo]
+      - type: choice
+        prompt: "Leaving a gathering early, you say:"
+        answer: Mauna na po ako.
+        distractors: [Tuloy po kayo., Kumain na po kayo., Magandang umaga po.]
+      - type: fill_blank
+        sentence: "___ po, padaan lang."
+        translation: "Excuse me, just passing through."
+        answer: Tabi
+        options: [Tabi, Salamat, Opo]
+      - type: translate
+        prompt_tl: Pasensya na po, hindi ko sinasadya.
+        answer_en: Sorry, I did not mean it.
+        accept:
+          - Sorry I didn't mean to
+        extra_words: [quickly, morning, cheap]
+        audio: pasensya_na_po_hindi_ko_sinasadya
+
+  - id: man-4
+    title: Being a good guest
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A host offers food. Even if you are not hungry, the polite reply is:"
+        answer: Salamat po, busog pa ako.
+        distractors: [Hindi ko gusto iyan., Ayaw ko., Mahal ba iyan?]
+        audio: salamat_po_busog_pa_ako
+        audio_text: Salamat po, busog pa ako.
+      - type: match
+        pairs:
+          - { tl: tuloy po kayo, en: come in }
+          - { tl: kumain na po kayo, en: please eat }
+          - { tl: bisita, en: guest }
+          - { tl: pasalubong, en: a gift brought home }
+      - type: fill_blank
+        sentence: "___ po kayo, nakahain na."
+        translation: "Please eat, the food is served."
+        answer: Kumain
+        options: [Kumain, Matulog, Umalis]
+      - type: translate
+        prompt_en: Thank you for inviting me.
+        answer_tl: Salamat po sa pag-aanyaya
+        accept:
+          - Salamat po sa pagyaya
+        extra_words: [bisita, kumain, tuloy]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: May pasalubong ako para sa iyo.
+        answer_en: I have a gift for you.
+        accept:
+          - I brought you a gift
+        extra_words: [tomorrow, cheap, market]
+        audio: may_pasalubong_ako_para_sa_iyo
+      - type: listen
+        audio: tuloy_po_kayo
+        answer_tl: Tuloy po kayo
+        extra_words: [kumain, bisita]
+      - type: choice
+        prompt: "'Pasalubong' is a gift you bring..."
+        answer: home from a trip
+        distractors: [to a wedding only, for a birthday only, to a funeral]
+      - type: fill_blank
+        sentence: "Salamat po sa ___ mula sa Baguio."
+        translation: "Thank you for the gift from Baguio."
+        answer: pasalubong
+        options: [pasalubong, bisita, banyo]
+      - type: translate
+        prompt_en: Come in, the food is ready.
+        answer_tl: Tuloy po kayo, handa na ang pagkain
+        accept:
+          - Tuloy po kayo handa na ang pagkain
+        extra_words: [bisita, salamat, opo]

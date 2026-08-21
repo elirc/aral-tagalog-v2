@@ -2,7 +2,7 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync, existsSync } from 
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
-import type { CourseBundle, Exercise, Unit } from "@aral/core";
+import type { CourseBundle, CourseTier, Exercise, Unit } from "@aral/core";
 import { validateCourse } from "./validate";
 import {
   assertTranslateDirection,
@@ -10,6 +10,7 @@ import {
   unitSchema,
   vocabFileSchema,
   type AuthoredExercise,
+  type AuthoredTier,
   type AuthoredUnit,
 } from "./schema";
 
@@ -51,6 +52,24 @@ function words(sentence: string): string[] {
 
 function buildWordBank(answer: string, extra: string[] | undefined, seed: string): string[] {
   return seededShuffle([...words(answer), ...(extra ?? [])], seed);
+}
+
+/**
+ * Scramble for `arrange`. A shuffle that happens to land in answer order would
+ * ship an exercise solved by tapping left to right, so retry with a salted
+ * seed until the order differs. Answers whose words are all identical have no
+ * other order — those are left alone and the validator lets them through.
+ */
+function scramble(answer: string, seed: string): string[] {
+  const source = words(answer);
+  if (new Set(source).size < 2) return source;
+  for (let attempt = 0; attempt < 12; attempt++) {
+    const shuffled = seededShuffle(source, attempt === 0 ? seed : `${seed}#${attempt}`);
+    if (shuffled.join(" ") !== source.join(" ")) return shuffled;
+  }
+  // 12 collisions in a row is effectively impossible; reversing always differs
+  // for a multiset with 2+ distinct values, so this can't return answer order
+  return [...source].reverse();
 }
 
 /** ref -> Tagalog text to speak (null when we can't infer it from context) */
@@ -122,6 +141,39 @@ function compileExercise(ex: AuthoredExercise, id: string): Exercise {
         audio: ex.audio,
         hint: ex.hint,
       };
+    case "arrange":
+      // like translate, the answer *is* the Tagalog, so no play button —
+      // register the ref for the phrasebook and leave audio off the exercise
+      regAudio(ex.audio, ex.audio_text ?? ex.answer_tl);
+      return {
+        id,
+        type: "arrange",
+        prompt: ex.prompt,
+        answer: ex.answer_tl,
+        accept: ex.accept,
+        tokens: ex.tokens ?? scramble(ex.answer_tl, id),
+        grading: ex.grading && { ngNang: ex.grading.ng_nang, hyphens: ex.grading.hyphens },
+        hint: ex.hint,
+      };
+    case "dialogue": {
+      // the spoken form of a dialogue is the whole exchange with its blanks
+      // filled in — enough for TTS to voice it as one clip (AUD-02)
+      let blankIndex = 0;
+      const spoken = ex.lines
+        .map((l) => l.text.replace(/___/g, () => ex.blanks[blankIndex++]?.answer ?? "___"))
+        .join(" ");
+      regAudio(ex.audio, ex.audio_text ?? spoken);
+      return {
+        id,
+        type: "dialogue",
+        intro: ex.intro,
+        lines: ex.lines.map((l) => ({ speaker: l.speaker, text: l.text, translation: l.translation })),
+        blanks: ex.blanks.map((b) => ({ answer: b.answer, accept: b.accept, options: b.options })),
+        grading: ex.grading && { ngNang: ex.grading.ng_nang, hyphens: ex.grading.hyphens },
+        audio: ex.audio,
+        hint: ex.hint,
+      };
+    }
   }
 }
 
@@ -129,6 +181,7 @@ function compileUnit(authored: AuthoredUnit): Unit {
   return {
     id: authored.id,
     title: authored.title,
+    tier: authored.tier,
     description: authored.description,
     tip: authored.tip,
     lessons: authored.lessons.map((l) => ({
@@ -137,6 +190,16 @@ function compileUnit(authored: AuthoredUnit): Unit {
       xp: l.xp,
       exercises: l.exercises.map((ex, i) => compileExercise(ex, ex.id ?? `${l.id}-ex${i + 1}`)),
     })),
+  };
+}
+
+function compileTier(t: AuthoredTier): CourseTier {
+  return {
+    id: t.id,
+    title: t.title,
+    description: t.description,
+    entryHint: t.entry_hint,
+    color: t.color,
   };
 }
 
@@ -154,6 +217,7 @@ function main() {
     }
     return compileUnit(parsed.data);
   });
+  const tiers = meta.tiers?.map(compileTier);
 
   for (const v of vocab) regAudio(v.audio, v.lemma);
 
@@ -171,7 +235,7 @@ function main() {
     if (!hasFile && !text) silent.push(ref);
   }
 
-  const problems = validateCourse(units, vocab);
+  const problems = validateCourse(units, vocab, tiers);
   if (problems.length > 0) {
     console.error(`✗ content validation failed:\n${problems.map((p) => `  ${p}`).join("\n")}`);
     process.exit(1);
@@ -183,6 +247,7 @@ function main() {
     targetLang: meta.target_lang,
     version: meta.version,
     title: meta.title,
+    tiers,
     units,
     vocab: Object.fromEntries(vocab.map((v) => [v.id, v])),
     audio,
@@ -212,7 +277,9 @@ function main() {
 
   const lessons = units.reduce((n, u) => n + u.lessons.length, 0);
   const exercises = units.reduce((n, u) => n + u.lessons.reduce((m, l) => m + l.exercises.length, 0), 0);
-  console.log(`✓ compiled ${meta.id} v${meta.version}: ${units.length} units, ${lessons} lessons, ${exercises} exercises, ${audioRefs.size} audio refs`);
+  console.log(
+    `✓ compiled ${meta.id} v${meta.version}: ${tiers?.length ?? 0} tiers, ${units.length} units, ${lessons} lessons, ${exercises} exercises, ${audioRefs.size} audio refs`,
+  );
   if (missing.length > 0)
     console.warn(`⚠ ${missing.length} audio refs have no recording yet (run scripts/generate-audio to fill with TTS)`);
   if (silent.length > 0)

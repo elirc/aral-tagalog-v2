@@ -58,7 +58,7 @@ export default function LessonPage() {
     );
   }
 
-  if (!isReview && !isLessonUnlocked(lessonId, progress.completedLessonIds)) {
+  if (!isReview && !isLessonUnlocked(lessonId, progress.completedLessonIds, progress.unlockedTierIds)) {
     return (
       <main className="container">
         <div className="center-card">

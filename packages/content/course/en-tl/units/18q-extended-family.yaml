@@ -1,0 +1,229 @@
+id: extended-family
+title: The Wider Family
+tier: foundation
+description: Cousins, aunts, in-laws, godparents — the relatives a Filipino greets by title.
+tip: >-
+  Filipino families run wide, and you address people by rank, not by name: kuya
+  for an older brother, ate for an older sister, and both are used for any older
+  stranger. Ninong and ninang (godfather, godmother) are real family
+  obligations, not ceremony.
+lessons:
+  - id: fam2-1
+    title: Brothers and sisters
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kuya, en: older brother }
+          - { tl: ate, en: older sister }
+          - { tl: bunso, en: youngest child }
+          - { tl: panganay, en: eldest child }
+      - type: choice
+        prompt: "You address a slightly older stranger as..."
+        answer: kuya or ate
+        distractors: [lolo or lola, bunso, ninong]
+        audio: kuya_o_ate
+        audio_text: Kuya o ate.
+      - type: fill_blank
+        sentence: "___ ako sa amin, wala akong nakababatang kapatid."
+        translation: "I am the youngest at home, I have no younger sibling."
+        answer: Bunso
+        options: [Bunso, Panganay, Pinsan]
+      - type: translate
+        prompt_tl: Dalawa ang kuya ko.
+        answer_en: I have two older brothers.
+        accept:
+          - I have two big brothers
+        extra_words: [tomorrow, cheap, market]
+        audio: dalawa_ang_kuya_ko
+      - type: translate
+        prompt_en: My older sister is a teacher.
+        answer_tl: Guro ang ate ko
+        accept:
+          - Ang ate ko ay guro
+        extra_words: [kuya, bunso, panganay]
+      - type: listen
+        audio: ilan_ang_kapatid_mo
+        answer_tl: Ilan ang kapatid mo
+        extra_words: [kuya, ate]
+      - type: choice
+        prompt: "'Panganay' is the child who is..."
+        answer: eldest
+        distractors: [youngest, in the middle, adopted]
+      - type: fill_blank
+        sentence: "Si Ana ang ___, siya ang pinakamatanda sa magkakapatid."
+        translation: "Ana is the eldest, she is the oldest among the siblings."
+        answer: panganay
+        options: [panganay, bunso, pinsan]
+      - type: translate
+        prompt_tl: Bunso siya kaya laging inaalagaan.
+        answer_en: He is the youngest so he is always looked after.
+        accept:
+          - She is the youngest so she is always cared for
+        extra_words: [quickly, morning, cheap]
+        audio: bunso_siya_kaya_laging_inaalagaan
+
+  - id: fam2-2
+    title: Aunts, uncles, cousins
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tiyo, en: uncle }
+          - { tl: tiya, en: aunt }
+          - { tl: pinsan, en: cousin }
+          - { tl: pamangkin, en: niece or nephew }
+      - type: choice
+        prompt: "Your mother's sister is your..."
+        answer: tiya
+        distractors: [pinsan, pamangkin, ninang]
+        audio: tiya
+        audio_text: Tiya.
+      - type: fill_blank
+        sentence: "Marami akong ___ sa probinsya."
+        translation: "I have many cousins in the province."
+        answer: pinsan
+        options: [pinsan, tuwalya, lapis]
+      - type: translate
+        prompt_en: My uncle lives in Cebu.
+        answer_tl: Nakatira sa Cebu ang tiyo ko
+        accept:
+          - Ang tiyo ko ay nakatira sa Cebu
+        extra_words: [tiya, pinsan, pamangkin]
+      - type: translate
+        prompt_tl: Pamangkin ko si Ben.
+        answer_en: Ben is my nephew.
+        accept:
+          - Ben is my niece
+        extra_words: [tomorrow, cheap, market]
+        audio: pamangkin_ko_si_ben
+      - type: listen
+        audio: pinsan_ko_siya
+        answer_tl: Pinsan ko siya
+        extra_words: [tiyo, tiya]
+      - type: choice
+        prompt: "Your cousin's child is your..."
+        answer: pamangkin sa pinsan
+        distractors: [tiyo, lolo, ninong]
+      - type: fill_blank
+        sentence: "Bumisita ang ___ ko galing Amerika."
+        translation: "My aunt visited from America."
+        answer: tiya
+        options: [tiya, pinsan, bunso]
+      - type: translate
+        prompt_en: We are cousins.
+        answer_tl: Magpinsan kami
+        accept:
+          - Pinsan kami
+        extra_words: [tiyo, tiya, kapatid]
+
+  - id: fam2-3
+    title: Godparents and in-laws
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ninong, en: godfather }
+          - { tl: ninang, en: godmother }
+          - { tl: biyenan, en: parent-in-law }
+          - { tl: manugang, en: son- or daughter-in-law }
+      - type: choice
+        prompt: "At a baptism, the child gains a..."
+        answer: ninong and ninang
+        distractors: [biyenan, manugang, pamangkin]
+        audio: ninong_at_ninang
+        audio_text: Ninong at ninang.
+      - type: fill_blank
+        sentence: "Si Tita Rosa ang ___ ko sa binyag."
+        translation: "Aunt Rosa is my godmother at baptism."
+        answer: ninang
+        options: [ninang, biyenan, pinsan]
+      - type: translate
+        prompt_tl: Mabait ang biyenan ko.
+        answer_en: My mother-in-law is kind.
+        accept:
+          - My parent-in-law is kind
+        extra_words: [cheap, tomorrow, market]
+        audio: mabait_ang_biyenan_ko
+      - type: translate
+        prompt_en: My godfather gave me a gift.
+        answer_tl: Binigyan ako ng regalo ng ninong ko
+        accept:
+          - May regalo sa akin ang ninong ko
+        extra_words: [ninang, biyenan, pinsan]
+      - type: listen
+        audio: sino_ang_ninong_mo
+        answer_tl: Sino ang ninong mo
+        extra_words: [ninang, biyenan]
+      - type: choice
+        prompt: "'Manugang' is the person married to your..."
+        answer: child
+        distractors: [parent, cousin, sibling]
+      - type: fill_blank
+        sentence: "Doktor ang ___ nila, asawa ng anak nila."
+        translation: "Their son-in-law is a doctor, the spouse of their child."
+        answer: manugang
+        options: [manugang, ninong, pamangkin]
+      - type: translate
+        prompt_tl: Kasama namin ang biyenan ko sa bahay.
+        answer_en: My parent-in-law lives with us at home.
+        accept:
+          - My in-law stays with us at home
+        extra_words: [quickly, morning, cheap]
+        audio: kasama_namin_ang_biyenan_ko_sa_bahay
+
+  - id: fam2-4
+    title: Family gatherings
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "At a family reunion, you greet the eldest first because..."
+        answer: respect for elders comes first
+        distractors: [they serve the food, they pay the bill, they leave early]
+        audio: paggalang_sa_matatanda
+        audio_text: Paggalang sa matatanda.
+      - type: match
+        pairs:
+          - { tl: mano po, en: the hand-to-forehead greeting }
+          - { tl: pagtitipon, en: gathering }
+          - { tl: salu-salo, en: shared meal }
+          - { tl: kamag-anak, en: relative }
+      - type: fill_blank
+        sentence: "___ po, Lola."
+        translation: "Bless me, Grandma."
+        answer: Mano
+        options: [Mano, Salamat, Paalam]
+      - type: translate
+        prompt_en: All our relatives came.
+        answer_tl: Dumating ang lahat ng kamag-anak namin
+        accept:
+          - Dumating ang lahat ng kamag anak namin
+        extra_words: [pinsan, tiyo, bunso]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: May salu-salo kami tuwing Pasko.
+        answer_en: We have a shared meal every Christmas.
+        accept:
+          - We have a feast every Christmas
+        extra_words: [tomorrow, cheap, market]
+        audio: may_salu_salo_kami_tuwing_pasko
+        grading: { hyphens: true }
+      - type: listen
+        audio: mano_po_lola
+        answer_tl: Mano po Lola
+        extra_words: [salamat, paalam]
+      - type: choice
+        prompt: "'Mano po' is performed by..."
+        answer: taking an elder's hand to your forehead
+        distractors: [shaking hands firmly, waving from far, bowing deeply]
+      - type: fill_blank
+        sentence: "Malaki ang ___ namin tuwing Pasko."
+        translation: "Our gathering is big every Christmas."
+        answer: pagtitipon
+        options: [pagtitipon, pinsan, tuwalya]
+      - type: translate
+        prompt_en: My cousins and aunts are coming tomorrow.
+        answer_tl: Darating bukas ang mga pinsan at tiya ko
+        accept:
+          - Darating ang mga pinsan at tiya ko bukas
+        extra_words: [ninong, bunso, kamag-anak]

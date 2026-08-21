@@ -1,0 +1,276 @@
+id: formal-register
+title: Formal Tagalog
+tier: mastery
+description: Speaking up in an office, a barangay hall, or a letter — polite forms beyond "po".
+tip: >-
+  Formal Tagalog leans on three moves: address people as "kayo" and "ninyo"
+  instead of "ka" and "mo", swap everyday words for their formal twins (gusto →
+  nais, pwede → maaari, sabi → ayon kay), and open requests with "Maaari po
+  bang…" or "Pakisuyo po…". "Ho" is a softer, more casual cousin of "po" — safe
+  with a neighbor, too light for a letter.
+lessons:
+  - id: formal-1
+    title: Addressing people
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kayo, en: you (formal or plural) }
+          - { tl: ninyo, en: your (formal or plural) }
+          - { tl: sila po, en: they (respectful) }
+          - { tl: ginoo, en: sir / mister }
+      - type: choice
+        prompt: "You are speaking to your friend's grandmother. The right pronoun is:"
+        answer: kayo
+        distractors: [ka, ikaw lang, sila]
+        hint: Plural "you" doubles as the respectful singular, as in Spanish "usted".
+      - type: fill_blank
+        sentence: "Kumusta po ___, Lola?"
+        translation: "How are you, Grandma?"
+        answer: kayo
+        options: [kayo, ka, mo]
+      - type: translate
+        prompt_en: What is your name, sir?
+        answer_tl: Ano po ang pangalan ninyo, ginoo?
+        accept:
+          - Ano po ang pangalan ninyo ginoo
+        extra_words: [mo, siya, bata]
+        audio: ano_po_ang_pangalan_ninyo
+      - type: arrange
+        prompt: "Good day to all of you."
+        answer_tl: Magandang araw po sa inyong lahat
+        hint: The standard opening of any Filipino speech or announcement.
+      - type: dialogue
+        intro: At the barangay hall
+        lines:
+          - speaker: Klerk
+            text: "Magandang umaga po. Ano ___ maipaglilingkod ko sa inyo?"
+            translation: "Good morning. How may I be of service to you?"
+          - speaker: Bisita
+            text: "Kukuha po sana ako ng barangay clearance."
+            translation: "I would like to get a barangay clearance."
+          - speaker: Klerk
+            text: "Maaari po ba ___ ang inyong ID?"
+            translation: "May I see your ID?"
+        blanks:
+          - answer: po
+            options: [po, ba, na]
+          - answer: makita
+            options: [makita, kumain, matulog]
+      - type: choice
+        prompt: "'Ho' compared with 'po' is..."
+        answer: softer and more casual
+        distractors: [more formal, only for children, a question marker]
+      - type: translate
+        prompt_tl: Salamat po sa inyong panahon.
+        answer_en: Thank you for your time.
+        accept:
+          - Thank you for your time sir
+        extra_words: [money, house, quickly]
+        audio: salamat_po_sa_inyong_panahon
+      - type: listen
+        audio: magandang_araw_po_sa_inyong_lahat
+        answer_tl: Magandang araw po sa inyong lahat
+        extra_words: [gabi, ninyo]
+
+  - id: formal-2
+    title: Polite requests
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maaari, en: may / can (formal) }
+          - { tl: nais, en: to wish / want (formal) }
+          - { tl: pakisuyo, en: kindly / please do }
+          - { tl: paumanhin, en: apology / excuse me }
+      - type: choice
+        prompt: "The formal twin of 'Pwede po ba?' is:"
+        answer: Maaari po ba?
+        distractors: [Sige po ba?, Bakit po ba?, Ayaw po ba?]
+        audio: maaari_po_ba
+        audio_text: Maaari po ba?
+      - type: fill_blank
+        sentence: "___ po ba akong magtanong?"
+        translation: "May I ask a question?"
+        answer: Maaari
+        options: [Maaari, Ayaw, Dapat]
+      - type: arrange
+        prompt: "I would like to speak with the manager."
+        answer_tl: Nais ko po sanang makausap ang manedyer
+        accept:
+          - Nais ko pong makausap ang manedyer
+        hint: '"sana" softens a request into a wish — less blunt than plain "nais ko".'
+      - type: translate
+        prompt_en: Kindly send the letter today.
+        answer_tl: Pakisuyo po na ipadala ang liham ngayon
+        accept:
+          - Pakisuyo pong ipadala ang liham ngayon
+        extra_words: [bukas, bahay, mura]
+      - type: dialogue
+        intro: Phoning an office
+        lines:
+          - speaker: Tumatawag
+            text: "Magandang hapon po. ___ ko po sanang makausap si Ginoong Cruz."
+            translation: "Good afternoon. I would like to speak with Mr. Cruz."
+          - speaker: Sekretarya
+            text: "___ po ba ang inyong pangalan?"
+            translation: "May I have your name, please?"
+          - speaker: Tumatawag
+            text: "Ako po si Elena Reyes ng Tanglaw Foundation."
+            translation: "I am Elena Reyes of the Tanglaw Foundation."
+          - speaker: Sekretarya
+            text: "Sandali lang po, ___ ko siya."
+            translation: "One moment, I'll call him."
+        blanks:
+          - answer: Nais
+            options: [Nais, Ayaw, Bawal]
+          - answer: Maaari
+            options: [Maaari, Salamat, Paalam]
+          - answer: tatawagin
+            options: [tatawagin, kakainin, bibilhin]
+      - type: choice
+        prompt: "Which is the most formal way to say 'please wait'?"
+        answer: Maaari po ba kayong maghintay sandali?
+        distractors: [Teka lang., Sandali ka lang., Hintay ka muna.]
+      - type: translate
+        prompt_tl: Maaari po ba kayong magpaliwanag muli?
+        answer_en: Could you explain again?
+        accept:
+          - Could you please explain again
+        extra_words: [tomorrow, cheaper, market]
+        audio: maaari_po_ba_kayong_magpaliwanag_muli
+      - type: listen
+        audio: nais_ko_po_sanang_magtanong
+        answer_tl: Nais ko po sanang magtanong
+        extra_words: [maaari, pakisuyo]
+
+  - id: formal-3
+    title: Apologies and permission
+    xp: 20
+    exercises:
+      - type: choice
+        prompt: "You need to interrupt a meeting. You open with:"
+        answer: Ipagpaumanhin po ninyo.
+        distractors: [Bahala na po., Sana all po., Charot po.]
+        audio: ipagpaumanhin_po_ninyo
+        audio_text: Ipagpaumanhin po ninyo.
+      - type: match
+        pairs:
+          - { tl: ipagpaumanhin ninyo, en: please forgive me }
+          - { tl: makikiraan po, en: excuse me (let me pass) }
+          - { tl: pasensya na po, en: sorry / bear with me }
+          - { tl: walang anuman po, en: you're welcome }
+      - type: fill_blank
+        sentence: "___ po, may naiwan po akong bag dito."
+        translation: "Excuse me, I left a bag here."
+        answer: Paumanhin
+        options: [Paumanhin, Paalam, Pasalamat]
+      - type: arrange
+        prompt: "Please forgive me for being late."
+        answer_tl: Ipagpaumanhin po ninyo ang aking pagkahuli
+        hint: '"aking" is the formal form of "ko" and comes before the noun.'
+      - type: dialogue
+        intro: Arriving late to a meeting
+        lines:
+          - speaker: Empleyado
+            text: "___ po ninyo, naabutan po ako ng trapiko."
+            translation: "Please forgive me, I got caught in traffic."
+          - speaker: Superbisor
+            text: "Ayos lang. ___ na po kayong maupo."
+            translation: "It's fine. You may take a seat."
+          - speaker: Empleyado
+            text: "Maraming salamat po."
+            translation: "Thank you very much."
+        blanks:
+          - answer: Ipagpaumanhin
+            options: [Ipagpaumanhin, Magandang, Maraming]
+          - answer: Maaari
+            options: [Maaari, Bawal, Ayaw]
+      - type: translate
+        prompt_en: Sorry, I cannot come tomorrow.
+        answer_tl: Pasensya na po, hindi po ako makakadalo bukas
+        accept:
+          - Pasensya na po hindi ako makakadalo bukas
+        extra_words: [ngayon, palengke, mahal]
+      - type: choice
+        prompt: "Squeezing past someone in a crowded jeepney, you say:"
+        answer: Makikiraan po.
+        distractors: [Makikikain po., Makikitulog po., Makikinig po.]
+        audio: makikiraan_po
+        audio_text: Makikiraan po.
+      - type: translate
+        prompt_tl: Pasensya na po sa abala.
+        answer_en: Sorry for the trouble.
+        accept:
+          - Sorry for the inconvenience
+        extra_words: [morning, expensive, again]
+        audio: pasensya_na_po_sa_abala
+      - type: listen
+        audio: ipagpaumanhin_po_ninyo_ako
+        answer_tl: Ipagpaumanhin po ninyo ako
+        extra_words: [pasensya, abala]
+
+  - id: formal-4
+    title: Announcements and letters
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: paunawa, en: notice / announcement }
+          - { tl: liham, en: letter }
+          - { tl: lagda, en: signature }
+          - { tl: pulong, en: meeting }
+      - type: choice
+        prompt: "A sign headed 'PAUNAWA' is telling you..."
+        answer: there is an announcement
+        distractors: [the shop is closed, the way is one-way, the price is fixed]
+        audio: paunawa
+        audio_text: Paunawa.
+      - type: fill_blank
+        sentence: "Magkakaroon ng ___ sa Lunes ng ika-siyam ng umaga."
+        translation: "There will be a meeting on Monday at nine in the morning."
+        answer: pulong
+        options: [pulong, liham, lagda]
+      - type: arrange
+        prompt: "Everyone is required to attend the meeting."
+        answer_tl: Inaasahan ang pagdalo ng lahat sa pulong
+        hint: Announcements prefer this impersonal phrasing to a direct command.
+      - type: dialogue
+        intro: A notice on the barangay bulletin board
+        lines:
+          - speaker: PAUNAWA
+            text: "Magkakaroon po ng ___ ng lahat ng residente sa Sabado."
+            translation: "There will be a meeting of all residents on Saturday."
+          - speaker: PAUNAWA
+            text: "Inaasahan po ang inyong ___."
+            translation: "Your attendance is expected."
+          - speaker: PAUNAWA
+            text: "Lagda: Kapitan ng Barangay"
+            translation: "Signed: Barangay Captain"
+        blanks:
+          - answer: pulong
+            options: [pulong, pelikula, palengke]
+          - answer: pagdalo
+            options: [pagdalo, pagkain, pagtulog]
+      - type: translate
+        prompt_en: I am writing to request a certificate.
+        answer_tl: Sumusulat po ako upang humiling ng sertipiko
+        accept:
+          - Sumusulat po ako para humiling ng sertipiko
+        extra_words: [bumili, kotse, kahapon]
+      - type: choice
+        prompt: "The formal closing of a Tagalog letter is:"
+        answer: Lubos na gumagalang
+        distractors: [Bahala na, Sana all, Ingat ka]
+        hint: Literally "deeply respecting" — the Tagalog "Yours sincerely".
+      - type: translate
+        prompt_tl: Ayon sa paunawa, kanselado ang pulong.
+        answer_en: According to the notice, the meeting is cancelled.
+        accept:
+          - According to the announcement the meeting is cancelled
+        extra_words: [cheap, family, yesterday]
+        audio: ayon_sa_paunawa_kanselado_ang_pulong
+      - type: listen
+        audio: inaasahan_po_ang_inyong_pagdalo
+        answer_tl: Inaasahan po ang inyong pagdalo
+        extra_words: [pulong, liham]

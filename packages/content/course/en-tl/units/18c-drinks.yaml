@@ -1,0 +1,228 @@
+id: drinks
+title: Drinks
+tier: foundation
+description: Water, coffee, and everything you order when it's hot outside.
+tip: >-
+  Uminom is "to drink" and tubig is water — the two words that get you through
+  any Philippine afternoon. Malamig (cold) and mainit (hot) go before the drink
+  with na: malamig na tubig. Many drink names are Spanish borrowings: kape,
+  tsokolate, gatas.
+lessons:
+  - id: drinks-1
+    title: Water and coffee
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tubig, en: water }
+          - { tl: kape, en: coffee }
+          - { tl: gatas, en: milk }
+          - { tl: tsaa, en: tea }
+      - type: choice
+        prompt: "'Tubig' means..."
+        answer: water
+        distractors: [coffee, milk, juice]
+        audio: tubig
+        audio_text: Tubig.
+      - type: fill_blank
+        sentence: "Gusto ko ng ___ na tubig."
+        translation: "I want cold water."
+        answer: malamig
+        options: [malamig, mainit, mahal]
+      - type: translate
+        prompt_tl: Umiinom ako ng kape tuwing umaga.
+        answer_en: I drink coffee every morning.
+        accept:
+          - I drink coffee in the morning
+        extra_words: [tomorrow, market, cheap]
+        audio: umiinom_ako_ng_kape_tuwing_umaga
+      - type: translate
+        prompt_en: I want hot tea.
+        answer_tl: Gusto ko ng mainit na tsaa
+        accept:
+          - Gusto ko ng mainit na tsaa po
+        extra_words: [malamig, tubig, gatas]
+      - type: listen
+        audio: isang_baso_ng_tubig_po
+        answer_tl: Isang baso ng tubig po
+        extra_words: [kape, gatas]
+      - type: choice
+        prompt: "Which word means 'glass' (the container)?"
+        answer: baso
+        distractors: [tubig, mesa, bahay]
+      - type: fill_blank
+        sentence: "Uminom ka ng maraming ___."
+        translation: "Drink plenty of water."
+        answer: tubig
+        options: [tubig, bahay, umaga]
+      - type: translate
+        prompt_tl: Walang gatas ang kape ko.
+        answer_en: My coffee has no milk.
+        accept:
+          - There is no milk in my coffee
+        extra_words: [tomorrow, cheap, quickly]
+        audio: walang_gatas_ang_kape_ko
+
+  - id: drinks-2
+    title: Cold drinks
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: juice, en: juice }
+          - { tl: yelo, en: ice }
+          - { tl: buko, en: young coconut }
+          - { tl: sabaw, en: broth }
+      - type: choice
+        prompt: "On a hot day at the beach, Filipinos love:"
+        answer: buko juice
+        distractors: [mainit na tsaa, mainit na sabaw, mainit na kape]
+        audio: buko_juice
+        audio_text: Buko juice.
+      - type: fill_blank
+        sentence: "Pakidagdagan ng ___ ang inumin ko."
+        translation: "Please add ice to my drink."
+        answer: yelo
+        options: [yelo, gatas, sabaw]
+      - type: translate
+        prompt_en: I want cold juice with ice.
+        answer_tl: Gusto ko ng malamig na juice na may yelo
+        accept:
+          - Gusto ko ng malamig na juice may yelo
+        extra_words: [mainit, kape, tsaa]
+      - type: translate
+        prompt_tl: Masarap ang buko sa tag-init.
+        answer_en: Coconut is delicious in the summer.
+        accept:
+          - Young coconut is delicious in summer
+        extra_words: [cheap, tomorrow, quickly]
+        audio: masarap_ang_buko_sa_tag_init
+        grading: { hyphens: true }
+      - type: listen
+        audio: gusto_ko_ng_malamig_na_juice
+        answer_tl: Gusto ko ng malamig na juice
+        extra_words: [yelo, mainit]
+      - type: choice
+        prompt: "'Walang yelo po' asks for the drink..."
+        answer: without ice
+        distractors: [with extra ice, very hot, in a bottle]
+      - type: fill_blank
+        sentence: "___ na tubig ang gusto ko, hindi mainit."
+        translation: "I want cold water, not hot."
+        answer: Malamig
+        options: [Malamig, Mainit, Mahal]
+      - type: translate
+        prompt_en: No ice, please.
+        answer_tl: Walang yelo po
+        accept:
+          - Wala pong yelo
+        extra_words: [malamig, gatas, tubig]
+
+  - id: drinks-3
+    title: Ordering a drink
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "At a small eatery, you order with:"
+        answer: Pahingi po ng tubig.
+        distractors: [Paalam po., Taga-saan po kayo?, Ano po ang pangalan ninyo?]
+        audio: pahingi_po_ng_tubig
+        audio_text: Pahingi po ng tubig.
+      - type: match
+        pairs:
+          - { tl: pahingi, en: may I have }
+          - { tl: bote, en: bottle }
+          - { tl: baso, en: glass }
+          - { tl: tasa, en: cup }
+      - type: fill_blank
+        sentence: "Isang ___ ng kape po."
+        translation: "One cup of coffee, please."
+        answer: tasa
+        options: [tasa, bote, yelo]
+      - type: translate
+        prompt_tl: Isang bote ng tubig po.
+        answer_en: One bottle of water, please.
+        accept:
+          - A bottle of water please
+        extra_words: [tomorrow, cheap, market]
+        audio: isang_bote_ng_tubig_po
+      - type: translate
+        prompt_en: May I have a glass of milk?
+        answer_tl: Pahingi po ng isang baso ng gatas
+        accept:
+          - Pahingi po ng isang basong gatas
+        extra_words: [kape, tsaa, yelo]
+      - type: listen
+        audio: pahingi_po_ng_isang_tasang_kape
+        answer_tl: Pahingi po ng isang tasang kape
+        extra_words: [bote, gatas]
+      - type: choice
+        prompt: "'Pahingi po' is polite because it..."
+        answer: softens the request and adds po
+        distractors: [is a question word, names a drink, means goodbye]
+      - type: fill_blank
+        sentence: "Dalawang ___ ng tubig po."
+        translation: "Two bottles of water, please."
+        answer: bote
+        options: [bote, tasa, yelo]
+      - type: translate
+        prompt_tl: Salamat po sa tubig.
+        answer_en: Thank you for the water.
+        accept:
+          - Thanks for the water
+        extra_words: [cheap, tomorrow, morning]
+        audio: salamat_po_sa_tubig
+
+  - id: drinks-4
+    title: Drinks review
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: uminom, en: to drink }
+          - { tl: inumin, en: a drink }
+          - { tl: mainit, en: hot }
+          - { tl: malamig, en: cold }
+      - type: choice
+        prompt: "Which is NOT a drink?"
+        answer: mesa
+        distractors: [kape, tsaa, gatas]
+      - type: fill_blank
+        sentence: "Ano ang gusto mong ___?"
+        translation: "What do you want to drink?"
+        answer: inumin
+        options: [inumin, kainin, bilhin]
+      - type: translate
+        prompt_en: Do you want coffee or tea?
+        answer_tl: Gusto mo ba ng kape o tsaa?
+        accept:
+          - Gusto mo ba ng kape o tsaa
+        extra_words: [gatas, yelo, tubig]
+      - type: translate
+        prompt_tl: Umiinom siya ng gatas tuwing gabi.
+        answer_en: She drinks milk every night.
+        accept:
+          - He drinks milk every night
+        extra_words: [market, cheap, tomorrow]
+        audio: umiinom_siya_ng_gatas_tuwing_gabi
+      - type: listen
+        audio: gusto_mo_ba_ng_kape
+        answer_tl: Gusto mo ba ng kape
+        extra_words: [tsaa, tubig]
+      - type: choice
+        prompt: "'Inumin' as a noun means..."
+        answer: a drink
+        distractors: [a plate, a table, a spoon]
+        audio: inumin
+        audio_text: Inumin.
+      - type: fill_blank
+        sentence: "___ ka ng tubig, mainit ngayon."
+        translation: "Drink water, it is hot today."
+        answer: Uminom
+        options: [Uminom, Kumain, Matulog]
+      - type: translate
+        prompt_en: I do not drink coffee at night.
+        answer_tl: Hindi ako umiinom ng kape sa gabi
+        accept:
+          - Hindi ako umiinom ng kape kapag gabi
+        extra_words: [umaga, gatas, malamig]

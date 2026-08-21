@@ -1,0 +1,226 @@
+id: complaints
+title: Making a Complaint
+tier: conversational
+description: Say something is wrong without losing face — yours or theirs.
+tip: >-
+  Filipino complaints are wrapped in softeners. Open with "Pasensya na po" even
+  though you are the wronged party, state the problem impersonally ("mali po ang
+  order"), and finish with a request rather than an accusation ("pwede po bang
+  palitan?"). Blunt anger reads as loss of control, which weakens your case.
+lessons:
+  - id: comp-1
+    title: Something is wrong
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mali, en: wrong }
+          - { tl: sira, en: broken }
+          - { tl: kulang, en: lacking }
+          - { tl: sobra, en: too much }
+      - type: choice
+        prompt: "'Mali po ang order ko' says the order is..."
+        answer: wrong
+        distractors: [late, expensive, cold]
+        audio: mali_po_ang_order_ko
+        audio_text: Mali po ang order ko.
+      - type: fill_blank
+        sentence: "___ po ang sukli, dalawampu lang ang binigay ninyo."
+        translation: "The change is lacking, you only gave twenty."
+        answer: Kulang
+        options: [Kulang, Sobra, Mabuti]
+      - type: translate
+        prompt_tl: Sira po ang binili kong bentilador.
+        answer_en: The fan I bought is broken.
+        accept:
+          - The electric fan I bought is broken
+        extra_words: [cheap, market, tomorrow]
+        audio: sira_po_ang_binili_kong_bentilador
+      - type: translate
+        prompt_en: Sorry, I think this is the wrong size.
+        answer_tl: Pasensya na po, mali po yata ang sukat nito
+        accept:
+          - Pasensya po mali yata ang sukat nito
+        extra_words: [sira, kulang, sobra]
+      - type: listen
+        audio: mali_po_ang_order
+        answer_tl: Mali po ang order
+        extra_words: [sira, kulang]
+      - type: arrange
+        prompt: "The change is lacking."
+        answer_tl: Kulang po ang sukli
+      - type: choice
+        prompt: "Why open a complaint with 'Pasensya na po'?"
+        answer: it softens the confrontation
+        distractors: [it admits you are wrong, it demands a refund, it ends the talk]
+      - type: arrange
+        prompt: "The fan I bought is broken."
+        answer_tl: Sira po ang binili kong bentilador
+
+  - id: comp-2
+    title: Asking for a fix
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: palitan, en: to replace }
+          - { tl: ibalik, en: to return }
+          - { tl: isauli ang bayad, en: to refund }
+          - { tl: ayusin, en: to repair }
+      - type: choice
+        prompt: "'Pwede po bang palitan?' asks for..."
+        answer: a replacement
+        distractors: [a discount, a receipt, a delivery]
+        audio: pwede_po_bang_palitan
+        audio_text: Pwede po bang palitan?
+      - type: fill_blank
+        sentence: "Pwede po bang ___ ang sirang bahagi?"
+        translation: "Can the broken part be repaired?"
+        answer: ayusin
+        options: [ayusin, kainin, inumin]
+      - type: translate
+        prompt_tl: Gusto ko po sanang ibalik ito.
+        answer_en: I would like to return this.
+        accept:
+          - I'd like to return this item
+        extra_words: [cheap, market, tomorrow]
+        audio: gusto_ko_po_sanang_ibalik_ito
+      - type: translate
+        prompt_en: May I have a refund instead?
+        answer_tl: Pwede po bang isauli na lang ang bayad?
+        accept:
+          - Pwede po bang refund na lang
+        extra_words: [palitan, ayusin, ibalik]
+      - type: listen
+        audio: pwede_po_bang_ibalik_ito
+        answer_tl: Pwede po bang ibalik ito
+        extra_words: [palitan, ayusin]
+      - type: arrange
+        prompt: "Can this be replaced, please?"
+        answer_tl: Pwede po bang palitan ito
+      - type: choice
+        prompt: "Which is most likely to be granted without a receipt?"
+        answer: a repair
+        distractors: [a full refund, a replacement, a discount]
+      - type: fill_blank
+        sentence: "Dala ko po ang ___ ng binili ko."
+        translation: "I brought the receipt of what I bought."
+        answer: resibo
+        options: [resibo, sukat, bagahe]
+
+  - id: comp-3
+    title: Service problems
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matagal, en: taking long }
+          - { tl: hindi dumating, en: did not arrive }
+          - { tl: malamig na, en: already cold }
+          - { tl: maghintay, en: to wait }
+      - type: choice
+        prompt: "'Isang oras na po kaming naghihintay' is a complaint about..."
+        answer: waiting too long
+        distractors: [the price, the temperature, the address]
+        audio: isang_oras_na_po_kaming_naghihintay
+        audio_text: Isang oras na po kaming naghihintay.
+      - type: fill_blank
+        sentence: "___ na po ang pagkain, pwede pong initin?"
+        translation: "The food is already cold, could it be heated?"
+        answer: Malamig
+        options: [Malamig, Mainit, Mahal]
+      - type: translate
+        prompt_tl: Hindi po dumating ang order namin.
+        answer_en: Our order did not arrive.
+        accept:
+          - Our order never came
+        extra_words: [cheap, market, tomorrow]
+        audio: hindi_po_dumating_ang_order_namin
+      - type: translate
+        prompt_en: We have been waiting for an hour already.
+        answer_tl: Isang oras na po kaming naghihintay
+        accept:
+          - Isang oras na kaming naghihintay po
+        extra_words: [matagal, malamig, dumating]
+      - type: listen
+        audio: matagal_na_po_kami_dito
+        answer_tl: Matagal na po kami dito
+        extra_words: [malamig, dumating]
+      - type: arrange
+        prompt: "The food is already cold."
+        answer_tl: Malamig na po ang pagkain
+      - type: choice
+        prompt: "The most productive way to end a complaint is with..."
+        answer: a specific request
+        distractors: [a raised voice, a threat, silence]
+      - type: arrange
+        prompt: "Our order did not arrive."
+        answer_tl: Hindi po dumating ang order namin
+
+  - id: comp-4
+    title: A complaint that works
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: At a shop counter, returning a broken kettle
+        lines:
+          - speaker: Kliyente
+            text: "___ na po, pero sira po ang binili kong takure."
+            translation: "Sorry, but the kettle I bought is broken."
+          - speaker: Tindera
+            text: "Naku po. May ___ po ba kayo?"
+            translation: "Oh no. Do you have a receipt?"
+          - speaker: Kliyente
+            text: "Opo, narito po. Pwede po bang ___?"
+            translation: "Yes, here it is. Can it be replaced?"
+          - speaker: Tindera
+            text: "Opo, kukuha po ako ng bago."
+            translation: "Yes, I will get a new one."
+        blanks:
+          - answer: Pasensya
+            options: [Pasensya, Salamat, Paalam]
+          - answer: resibo
+            options: [resibo, kandila, sipit]
+          - answer: palitan
+            options: [palitan, kainin, matulog]
+      - type: match
+        pairs:
+          - { tl: takure, en: kettle }
+          - { tl: garantiya, en: warranty }
+          - { tl: reklamo, en: complaint }
+          - { tl: sagot, en: response }
+      - type: fill_blank
+        sentence: "May isang taong ___ po ba ito?"
+        translation: "Does this have a one-year warranty?"
+        answer: garantiya
+        options: [garantiya, reklamo, resibo]
+      - type: translate
+        prompt_en: I would like to file a complaint politely.
+        answer_tl: Gusto ko po sanang magreklamo nang maayos
+        accept:
+          - Nais ko po sanang magreklamo nang maayos
+        extra_words: [garantiya, takure, sagot]
+        grading: { ng_nang: true }
+      - type: translate
+        prompt_tl: Salamat po sa mabilis ninyong sagot.
+        answer_en: Thank you for your quick response.
+        accept:
+          - Thanks for the fast response
+        extra_words: [cheap, market, tomorrow]
+        audio: salamat_po_sa_mabilis_ninyong_sagot
+      - type: listen
+        audio: may_garantiya_po_ba_ito
+        answer_tl: May garantiya po ba ito
+        extra_words: [reklamo, resibo]
+      - type: choice
+        prompt: "In the dialogue, what settles the complaint?"
+        answer: the receipt
+        distractors: [the warranty card, a raised voice, a manager]
+      - type: arrange
+        prompt: "Sorry, but the kettle I bought is broken."
+        answer_tl: Pasensya na po pero sira po ang binili kong takure
+        accept:
+          - Pasensya na po, pero sira po ang binili kong takure
+      - type: arrange
+        prompt: "Thank you for your quick response."
+        answer_tl: Salamat po sa mabilis ninyong sagot
