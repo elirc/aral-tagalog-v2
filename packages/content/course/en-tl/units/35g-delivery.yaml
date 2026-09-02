@@ -3,8 +3,8 @@ title: Ordering Delivery
 tier: everyday
 description: Order food to the house, give directions, and pay the rider.
 tip: >-
-  Delivery Tagalog leans on borrowed nouns with Tagalog verbs: mag-order,
-  i-deliver, mag-cash on delivery. The rider needs landmarks, not street
+  Delivery Tagalog wraps English roots in Tagalog affixes: mag-order,
+  i-deliver, na-receive na ba? Payment is usually cash on delivery. The rider needs landmarks, not street
   numbers — "katapat ng sari-sari store" (across from the sari-sari store) is a
   better address than a house number.
 lessons:
@@ -16,7 +16,7 @@ lessons:
         pairs:
           - { tl: mag-order, en: to order }
           - { tl: ipadala, en: to have delivered }
-          - { tl: bilang, en: quantity }
+          - { tl: dami, en: quantity }
           - { tl: kabuuan, en: total }
       - type: choice
         prompt: "'Pwede po bang mag-order?' opens..."
@@ -70,7 +70,7 @@ lessons:
         pairs:
           - { tl: tirahan, en: address }
           - { tl: katapat, en: across from }
-          - { tl: tabi ng, en: beside }
+          - { tl: katabi ng, en: beside }
           - { tl: kanto ng, en: at the corner of }
       - type: choice
         prompt: "The most useful address detail for a rider is..."

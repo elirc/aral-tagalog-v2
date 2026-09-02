@@ -38,9 +38,9 @@ lessons:
         grading: { hyphens: true }
       - type: translate
         prompt_en: I want pineapple juice.
-        answer_tl: Gusto ko ng juice na pinya
+        answer_tl: Gusto ko ng pineapple juice
         accept:
-          - Gusto ko ng pinya juice
+          - Gusto ko ng katas ng pinya
         extra_words: [mangga, saging, papaya]
       - type: listen
         audio: masarap_ang_saging
@@ -88,7 +88,7 @@ lessons:
         prompt_en: This mango is sour.
         answer_tl: Maasim ang manggang ito
         accept:
-          - Maasim ang mangga na ito
+          - Maasim itong mangga
         extra_words: [matamis, hinog, hilaw]
       - type: translate
         prompt_tl: Matamis ang hinog na papaya.
@@ -160,7 +160,7 @@ lessons:
         answer: ubas
         distractors: [saging, bayabas, buko]
       - type: fill_blank
-        sentence: "Mahal ang ___ kaya bihira namin bilhin."
+        sentence: "Mahal ang ___ kaya bihira naming bilhin."
         translation: "Grapes are expensive so we rarely buy them."
         answer: ubas
         options: [ubas, saging, buko]

@@ -36,7 +36,6 @@ lessons:
           - I'm saving up for a house
         extra_words: [cheap, market, tomorrow]
         audio: nag_iipon_ako_para_sa_bahay
-        grading: { hyphens: true }
       - type: translate
         prompt_en: I will go to the bank tomorrow.
         answer_tl: Pupunta ako sa bangko bukas
@@ -192,7 +191,7 @@ lessons:
             options: [pirma, pila, pera]
       - type: match
         pairs:
-          - { tl: form, en: form }
+          - { tl: pormularyo, en: form }
           - { tl: ID, en: identification }
           - { tl: barya, en: coins }
           - { tl: resibo, en: receipt }
@@ -215,9 +214,9 @@ lessons:
         extra_words: [tomorrow, cheap, market]
         audio: nawala_ang_resibo_ko
       - type: listen
-        audio: pahingi_po_ng_resibo
-        answer_tl: Pahingi po ng resibo
-        extra_words: [form, barya]
+        audio: pakibilang_po_ang_pera
+        answer_tl: Pakibilang po ang pera
+        extra_words: [resibo, barya]
       - type: choice
         prompt: "In the dialogue, what does the client do at the counter?"
         answer: withdraw three thousand

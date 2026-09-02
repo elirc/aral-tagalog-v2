@@ -186,16 +186,15 @@ lessons:
             text: "Pero ___ ko ang pera."
             translation: "But I need the money."
           - speaker: Paolo
-            text: "___ ka rin sa kalusugan mo, ha?"
+            text: "___ mo rin ang kalusugan mo, ha?"
             translation: "Take care of your health too, okay?"
         blanks:
           - answer: Baka
             options: [Baka, Bawal, Ayaw]
           - answer: kailangan
             options: [kailangan, ayaw, bawal]
-          - answer: Mag-ingat
-            options: [Mag-ingat, Matulog, Kumain]
-        grading: { hyphens: true }
+          - answer: Alagaan
+            options: [Alagaan, Matulog, Kumain]
       - type: match
         pairs:
           - { tl: pagod, en: tired }

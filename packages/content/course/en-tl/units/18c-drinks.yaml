@@ -5,8 +5,8 @@ description: Water, coffee, and everything you order when it's hot outside.
 tip: >-
   Uminom is "to drink" and tubig is water — the two words that get you through
   any Philippine afternoon. Malamig (cold) and mainit (hot) go before the drink
-  with na: malamig na tubig. Many drink names are Spanish borrowings: kape,
-  tsokolate, gatas.
+  with na: malamig na tubig. Some drink names are Spanish borrowings — kape,
+  tsokolate — while tubig and gatas are native words.
 lessons:
   - id: drinks-1
     title: Water and coffee
@@ -69,7 +69,7 @@ lessons:
     exercises:
       - type: match
         pairs:
-          - { tl: juice, en: juice }
+          - { tl: katas, en: juice }
           - { tl: yelo, en: ice }
           - { tl: buko, en: young coconut }
           - { tl: sabaw, en: broth }
@@ -87,8 +87,6 @@ lessons:
       - type: translate
         prompt_en: I want cold juice with ice.
         answer_tl: Gusto ko ng malamig na juice na may yelo
-        accept:
-          - Gusto ko ng malamig na juice may yelo
         extra_words: [mainit, kape, tsaa]
       - type: translate
         prompt_tl: Masarap ang buko sa tag-init.

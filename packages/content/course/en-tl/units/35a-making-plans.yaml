@@ -49,7 +49,7 @@ lessons:
       - type: choice
         prompt: "'Sige' as a one-word reply means..."
         answer: okay
-        distractors: [no, why, later]
+        distractors: ["no", why, later]
       - type: fill_blank
         sentence: "___ ako sa Linggo, walang trabaho."
         translation: "I am free on Sunday, there is no work."
@@ -58,8 +58,6 @@ lessons:
       - type: arrange
         prompt: "Let us meet on Saturday afternoon."
         answer_tl: Magkita tayo sa Sabado ng hapon
-        accept:
-          - Magkita tayo ng Sabado ng hapon
 
   - id: plan-2
     title: Setting a time and place
@@ -83,13 +81,12 @@ lessons:
         answer: Saan
         options: [Saan, Sino, Magkano]
       - type: translate
-        prompt_tl: Susunduin kita ng alas-sais.
+        prompt_tl: Susunduin kita nang alas-sais.
         answer_en: I will pick you up at six.
         accept:
           - I'll fetch you at six
         extra_words: [cheap, market, tomorrow]
-        audio: susunduin_kita_ng_alas_sais
-        grading: { hyphens: true }
+        audio: susunduin_kita_nang_alas_sais
       - type: translate
         prompt_en: I will wait for you at the corner.
         answer_tl: Maghihintay ako sa iyo sa kanto
@@ -105,7 +102,7 @@ lessons:
         answer: Sa harap ng simbahan.
         distractors: [Alas-sais., Baka., Sige.]
       - type: fill_blank
-        sentence: "___ na lang kita sa bahay."
+        sentence: "___ na lang kita sa bahay mo."
         translation: "I will just pick you up at your house."
         answer: Susunduin
         options: [Susunduin, Kakainin, Bibilhin]
@@ -206,9 +203,9 @@ lessons:
         options: [Sigurado, Abala, Libre]
       - type: translate
         prompt_en: See you tomorrow, do not forget.
-        answer_tl: Kita tayo bukas, huwag mong kalimutan
+        answer_tl: Magkita tayo bukas, huwag mong kalimutan
         accept:
-          - Magkita tayo bukas huwag mong kalimutan
+          - Kita tayo bukas huwag mong kalimutan
         extra_words: [sigurado, pangako, abala]
       - type: translate
         prompt_tl: Kumpirmado na ang biyahe namin.

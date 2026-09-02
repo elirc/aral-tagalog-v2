@@ -68,7 +68,7 @@ lessons:
           - { tl: magbayad, en: to pay }
           - { tl: bayarin, en: a bill }
           - { tl: kuryente, en: electricity }
-          - { tl: deadline, en: deadline }
+          - { tl: takdang araw, en: deadline }
       - type: choice
         prompt: "'Bayad center' is where you..."
         answer: pay bills
@@ -81,12 +81,12 @@ lessons:
         answer: kuryente
         options: [kuryente, sapatos, tinapay]
       - type: translate
-        prompt_tl: Deadline na bukas ng bayarin sa tubig.
+        prompt_tl: Bukas na ang deadline ng bayarin sa tubig.
         answer_en: The water bill is due tomorrow.
         accept:
           - Tomorrow is the deadline for the water bill
         extra_words: [cheap, market, quickly]
-        audio: deadline_na_bukas_ng_bayarin_sa_tubig
+        audio: bukas_na_ang_deadline_ng_bayarin_sa_tubig
       - type: translate
         prompt_en: Where can I pay the electricity bill?
         answer_tl: Saan po pwedeng magbayad ng kuryente?
@@ -142,7 +142,7 @@ lessons:
         prompt_en: How much does it cost to send this?
         answer_tl: Magkano po ang pagpapadala nito?
         accept:
-          - Magkano ang padala nito
+          - Magkano ang pagpapadala nito
         extra_words: [pakete, sulat, kartero]
       - type: listen
         audio: magkano_po_ang_pagpapadala
@@ -192,18 +192,18 @@ lessons:
           - { tl: botika, en: pharmacy }
           - { tl: gamot, en: medicine }
           - { tl: resibo, en: receipt }
-          - { tl: sunod, en: next }
+          - { tl: susunod, en: next }
       - type: fill_blank
         sentence: "Ano ang ___ nating lakad?"
         translation: "What is our next errand?"
-        answer: sunod
-        options: [sunod, tubig, gamot]
+        answer: susunod
+        options: [susunod, tubig, gamot]
       - type: translate
         prompt_en: First the bank, then the market.
         answer_tl: Una ang bangko, tapos ang palengke
         accept:
           - Una sa bangko tapos sa palengke
-        extra_words: [botika, gamot, sunod]
+        extra_words: [botika, gamot, susunod]
       - type: translate
         prompt_tl: Tapos na ang lahat ng lakad natin.
         answer_en: All our errands are done.
@@ -212,8 +212,8 @@ lessons:
         extra_words: [cheap, market, tomorrow]
         audio: tapos_na_ang_lahat_ng_lakad_natin
       - type: listen
-        audio: ano_ang_sunod_nating_lakad
-        answer_tl: Ano ang sunod nating lakad
+        audio: may_lakad_pa_tayo_mamaya
+        answer_tl: May lakad pa tayo mamaya
         extra_words: [botika, gamot]
       - type: choice
         prompt: "In the dialogue, who pays the electricity bill?"
@@ -225,5 +225,7 @@ lessons:
         answer: gamot
         options: [gamot, kuryente, pakete]
       - type: arrange
-        prompt: "All our errands are finished."
-        answer_tl: Tapos na ang lahat ng lakad natin
+        prompt: "All our errands are done, let us go home."
+        answer_tl: Tapos na ang lakad natin umuwi na tayo
+        accept:
+          - Tapos na ang lakad natin, umuwi na tayo

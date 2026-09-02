@@ -37,7 +37,7 @@ lessons:
         extra_words: [tomorrow, cheap, market]
         audio: saan_ka_pupunta
       - type: translate
-        prompt_en: I am going home now.
+        prompt_en: I will go home now.
         answer_tl: Uuwi na ako
         accept:
           - Uuwi na ako ngayon
@@ -182,10 +182,10 @@ lessons:
     exercises:
       - type: choice
         prompt: "To invite someone along you say:"
-        answer: Sama ka sa akin.
+        answer: Sumama ka sa akin.
         distractors: [Alis ka na., Uwi ka na., Wala akong barya.]
-        audio: sama_ka_sa_akin
-        audio_text: Sama ka sa akin.
+        audio: sumama_ka_sa_akin
+        audio_text: Sumama ka sa akin.
       - type: match
         pairs:
           - { tl: sumama, en: to come along }

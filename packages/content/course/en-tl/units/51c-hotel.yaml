@@ -66,7 +66,7 @@ lessons:
           - { tl: mag-check in, en: to check in }
           - { tl: susi ng kuwarto, en: room key }
           - { tl: palapag, en: floor }
-          - { tl: elevator, en: elevator }
+          - { tl: hagdanan, en: staircase }
       - type: choice
         prompt: "'Ikatlong palapag po' tells you the room is on the..."
         answer: third floor
@@ -150,7 +150,7 @@ lessons:
         prompt: "May I have the room cleaned later?"
         answer_tl: Pwede po bang magpalinis ng kuwarto mamaya
       - type: choice
-        prompt: "'Magpagising po kayo sa akin ng alas-singko' asks staff to..."
+        prompt: "'Pakigising po ninyo ako nang alas-singko' asks staff to..."
         answer: wake you at five
         distractors: [clean at five, serve breakfast at five, check out at five]
       - type: arrange
@@ -177,8 +177,8 @@ lessons:
             text: "Pasensya na po, iaayos namin agad."
             translation: "We are sorry, we will fix it right away."
         blanks:
-          - answer: check
-            options: [check, kain, tulog]
+          - answer: Check
+            options: [Check, Kain, Tulog]
           - answer: pamamalagi
             options: [pamamalagi, sipit, kandila]
           - answer: aircon

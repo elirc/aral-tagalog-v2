@@ -4,9 +4,10 @@ tier: everyday
 description: Describe an object well enough that someone can find it for you.
 tip: >-
   Size adjectives stack with intensifiers rather than new words: malaki (big),
-  napakalaki (very big), sobrang laki (extremely big). Shapes borrow from
-  Spanish — bilog (round) is native, but kuwadrado and tatsulok show the
-  loanword layer. Use "parang" (like) when you cannot name a shape at all.
+  napakalaki (very big), sobrang laki (extremely big). Most shape words are
+  native — bilog (round), parisukat, tatsulok (tatlo + sulok, three corners) —
+  while kuwadrado shows the Spanish loanword layer. Use "parang" (like) when
+  you cannot name a shape at all.
 lessons:
   - id: shape-1
     title: Shapes
@@ -153,8 +154,8 @@ lessons:
         answer: mabigat and magaan
         distractors: [malambot and maliit, matigas and mahaba, bilog and makapal]
       - type: fill_blank
-        sentence: "___ ang bato, huwag mong hawakan nang mabilis."
-        translation: "The stone is hard, do not grab it quickly."
+        sentence: "___ ang bato, mag-ingat ka."
+        translation: "The stone is hard, be careful."
         answer: Matigas
         options: [Matigas, Malambot, Magaan]
       - type: arrange

@@ -28,7 +28,7 @@ lessons:
         sentence: "___ malaki ang bahay nila kaysa sa amin."
         translation: "Their house is bigger than ours."
         answer: Mas
-        options: [Mas, Pinaka, Kasing]
+        options: [Mas, Pinakamalaki, Kasinglaki]
       - type: translate
         prompt_tl: Mas gusto ko ang kape kaysa tsaa.
         answer_en: I prefer coffee to tea.
@@ -41,7 +41,7 @@ lessons:
         answer_tl: Mas mura ang bus kaysa taksi
         accept:
           - Mas mura ang bus kaysa sa taksi
-        extra_words: [pinakamura, kasing, mahal]
+        extra_words: [pinakamura, kasingmura, mahal]
       - type: listen
         audio: mas_mura_ang_bus
         answer_tl: Mas mura ang bus
@@ -89,8 +89,8 @@ lessons:
         prompt_en: Palawan is the most beautiful island for me.
         answer_tl: Ang Palawan ang pinakamagandang isla para sa akin
         accept:
-          - Pinakamaganda ang Palawan na isla para sa akin
-        extra_words: [pinakamura, mas, kaysa]
+          - Pinakamagandang isla ang Palawan para sa akin
+        extra_words: [pinakamura, mas mura, kaysa]
       - type: listen
         audio: alin_ang_pinakamalapit
         answer_tl: Alin ang pinakamalapit
@@ -123,7 +123,7 @@ lessons:
         audio: kasingtaas_ko_siya
         audio_text: Kasingtaas ko siya.
       - type: fill_blank
-        sentence: "___ ang bag mo sa akin."
+        sentence: "___ ng bag ko ang bag mo."
         translation: "Your bag is as big as mine."
         answer: Kasinglaki
         options: [Kasinglaki, Pinakamalaki, Mas malaki]
@@ -136,14 +136,14 @@ lessons:
         audio: pareho_lang_ang_presyo_nila
       - type: translate
         prompt_en: This one is as good as that one.
-        answer_tl: Kasinggaling nito ang isang iyon
+        answer_tl: Kasinggaling niyan ito
         accept:
-          - Pareho lang ang galing nito at ng isang iyon
-        extra_words: [pinakamura, mas, kaysa]
+          - Pareho lang ang galing nito at niyon
+        extra_words: [pinakamura, mas mura, kaysa]
       - type: listen
         audio: pareho_lang_sila
         answer_tl: Pareho lang sila
-        extra_words: [kasing, mas]
+        extra_words: [kasingmura, mas]
       - type: arrange
         prompt: "Their prices are the same."
         answer_tl: Pareho lang ang presyo nila
@@ -153,7 +153,7 @@ lessons:
         distractors: [superiority, inferiority, negation]
       - type: arrange
         prompt: "Your bag is as big as mine."
-        answer_tl: Kasinglaki ang bag mo sa akin
+        answer_tl: Kasinglaki ng bag ko ang bag mo
 
   - id: sup-4
     title: Comparing at the market
@@ -169,14 +169,14 @@ lessons:
             text: "Opo, ___ po ang akin sa buong palengke."
             translation: "Yes, mine is the cheapest in the whole market."
           - speaker: Bumibili
-            text: "Pero ___ lang ng mangga ninyo sa kanila ang laki."
+            text: "Pero ___ lang ng mangga nila ang mangga ninyo."
             translation: "But your mangoes are only as big as theirs."
           - speaker: Tindera
             text: "Mas matamis po ang akin, tikman ninyo."
             translation: "Mine are sweeter, taste them."
         blanks:
           - answer: Mas
-            options: [Mas, Pinaka, Kasing]
+            options: [Mas, Pinakamura, Kasingmura]
           - answer: pinakamura
             options: [pinakamura, mas mura, kasingmura]
           - answer: kasinglaki
@@ -197,7 +197,7 @@ lessons:
         answer_tl: Mas matamis ito pero mas mura iyon
         accept:
           - Mas matamis ito ngunit mas mura iyon
-        extra_words: [pinakamura, kasing, tikman]
+        extra_words: [pinakamura, kasingmura, tikman]
       - type: translate
         prompt_tl: Ito ang pinakamatamis na mangga dito.
         answer_en: This is the sweetest mango here.

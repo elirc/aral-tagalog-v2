@@ -3,10 +3,10 @@ title: Wishes and Regrets
 tier: conversational
 description: Sana, dapat, kung — talking about what you hope for and what you missed.
 tip: >-
-  Sana is the wish word and it bends with tense: "Sana pumunta ka" (I hope you
-  go) versus "Sana pumunta ka" said of the past — regret is marked by the verb,
-  not by sana. Regret over what should have happened uses dapat plus the
-  completed form: "Dapat sana ako nag-aral."
+  Sana is the wish word and it never changes — the verb does. "Sana makapunta
+  ka" (I hope you can come) versus "Sana nakapunta ka" (I wish you had come):
+  the completed form is what turns hope into regret. Regret over what should
+  have happened uses dapat plus the completed form: "Dapat sana akong nag-aral."
 lessons:
   - id: wish-1
     title: I hope
@@ -90,7 +90,7 @@ lessons:
         prompt_en: I should have called you yesterday.
         answer_tl: Dapat sana kitang tinawagan kahapon
         accept:
-          - Dapat ko sanang tinawagan ka kahapon
+          - Dapat sanang tinawagan kita kahapon
         extra_words: [sayang, nakalimutan, napansin]
       - type: listen
         audio: sayang_hindi_ako_nakapunta_2
@@ -102,7 +102,7 @@ lessons:
         grading: { hyphens: true, ng_nang: true }
       - type: choice
         prompt: "Which sentence is a regret rather than a plan?"
-        answer: Dapat sana ako pumunta.
+        answer: Dapat sana akong pumunta.
         distractors: [Balak kong pumunta., Pupunta ako bukas., Sana makapunta ako.]
       - type: fill_blank
         sentence: "___ ko ang susi sa opisina."
@@ -194,10 +194,10 @@ lessons:
           - { tl: nakalusot, en: managed to get through }
           - { tl: sa susunod, en: next time }
       - type: fill_blank
-        sentence: "Wala nang ___ na tiket."
+        sentence: "Wala nang ___ tiket."
         translation: "There are no tickets left."
-        answer: natira
-        options: [natira, nakalimutan, nabili]
+        answer: natirang
+        options: [natirang, nakalimutang, nabiling]
       - type: translate
         prompt_en: I hope there is another concert next year.
         answer_tl: Sana may konsyerto ulit sa susunod na taon

@@ -162,7 +162,7 @@ lessons:
         answer: sit down
         distractors: [stand up, write, leave]
       - type: fill_blank
-        sentence: "___ ka ng pangalan mo sa papel."
+        sentence: "___ mo ang pangalan mo sa papel."
         translation: "Write your name on the paper."
         answer: Isulat
         options: [Isulat, Inumin, Kainin]
@@ -191,7 +191,7 @@ lessons:
         audio: hindi_ko_po_naintindihan
         audio_text: Hindi ko po naintindihan.
       - type: fill_blank
-        sentence: "Pakiulit po ng ___."
+        sentence: "Pakiulit po ang ___."
         translation: "Please repeat the lesson."
         answer: aralin
         options: [aralin, tubig, silya]
@@ -223,7 +223,7 @@ lessons:
         options: [pagsusulit, almusal, tubig]
       - type: translate
         prompt_en: I do not understand the lesson.
-        answer_tl: Hindi ko naintindihan ang aralin
+        answer_tl: Hindi ko naiintindihan ang aralin
         accept:
           - Hindi ko maintindihan ang aralin
         extra_words: [guro, papel, mesa]

@@ -3,8 +3,8 @@ title: How Often
 tier: everyday
 description: Always, sometimes, never — putting a rhythm on what you do.
 tip: >-
-  Frequency words sit right after the verb or at the front of the sentence:
-  "Palagi akong late" or "Late ako palagi." For "every X", Tagalog doubles the
+  Frequency words sit at the front — taking the linker, "Palagi akong late" —
+  or at the very end: "Late ako palagi." For "every X", Tagalog doubles the
   noun — araw-araw (daily), gabi-gabi (nightly), taon-taon (yearly). The
   strongest negative is "hindi kailanman", but everyday speech just uses "hindi
   ako kumakain ng…".
@@ -31,12 +31,12 @@ lessons:
         answer: Madalas
         options: [Madalas, Palagi, Minsan]
       - type: translate
-        prompt_tl: Minsan lang ako pumupunta doon.
+        prompt_tl: Minsan lang akong pumupunta doon.
         answer_en: I only go there sometimes.
         accept:
           - I go there only sometimes
         extra_words: [cheap, market, tomorrow]
-        audio: minsan_lang_ako_pumupunta_doon
+        audio: minsan_lang_akong_pumupunta_doon
       - type: translate
         prompt_en: She always drinks coffee in the morning.
         answer_tl: Palagi siyang umiinom ng kape sa umaga
@@ -99,14 +99,14 @@ lessons:
         extra_words: [araw-araw, gabi-gabi, minsan]
         grading: { hyphens: true }
       - type: listen
-        audio: araw_araw_ako_naglalakad
-        answer_tl: Araw-araw ako naglalakad
+        audio: araw_araw_akong_naglalakad
+        answer_tl: Araw-araw akong naglalakad
         extra_words: [gabi-gabi, minsan]
         grading: { hyphens: true }
       - type: choice
         prompt: "'Tuwing Linggo' means..."
         answer: every Sunday
-        distractors: [every week, one Sunday, last Sunday]
+        distractors: [every month, one Sunday, last Sunday]
       - type: fill_blank
         sentence: "___ Sabado kami namimili."
         translation: "We shop every Saturday."
@@ -154,7 +154,7 @@ lessons:
       - type: listen
         audio: ilang_beses_sa_isang_linggo
         answer_tl: Ilang beses sa isang linggo
-        extra_words: [beses, taon]
+        extra_words: [oras, taon]
       - type: choice
         prompt: "'Paminsan-minsan' is closest to..."
         answer: once in a while
@@ -211,9 +211,9 @@ lessons:
         grading: { hyphens: true }
       - type: translate
         prompt_en: What is your daily routine?
-        answer_tl: Ano ang rutina mo araw-araw?
+        answer_tl: Ano ang pang-araw-araw mong rutina?
         accept:
-          - Ano ang araw-araw mong rutina
+          - Ano ang rutina mo araw-araw
         extra_words: [ugali, kalusugan, minsan]
         grading: { hyphens: true }
       - type: translate

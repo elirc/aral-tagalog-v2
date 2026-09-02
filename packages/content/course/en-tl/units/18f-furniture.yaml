@@ -5,8 +5,9 @@ description: Name the rooms of a house and the things standing in them.
 tip: >-
   Location sentences start with nasa: "Nasa kusina ang mesa" — the table is in
   the kitchen. For a person or a name use nasa plus si → nasa is followed by
-  kay: "Nasa kay Ana ang susi." Room names often pair silid (room) with a verb:
-  silid-tulugan, bedroom; silid-kainan, dining room.
+  kay: "Nasa kay Ana ang susi." Room names pair silid (room) with an -an
+  place-noun built from a verb: tulog → silid-tulugan (bedroom), kain →
+  silid-kainan (dining room).
 lessons:
   - id: furn-1
     title: Rooms
@@ -150,8 +151,6 @@ lessons:
       - type: translate
         prompt_en: The children are outside the house.
         answer_tl: Nasa labas ng bahay ang mga bata
-        accept:
-          - Nasa labas ang mga bata ng bahay
         extra_words: [loob, ilalim, kusina]
       - type: listen
         audio: nasa_loob_ng_bahay_ako

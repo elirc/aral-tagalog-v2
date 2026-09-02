@@ -27,8 +27,8 @@ lessons:
       - type: fill_blank
         sentence: "Apat na ___ ang presyo ng sapatos."
         translation: "The price of the shoes is four hundred."
-        answer: daan
-        options: [daan, libo, piso]
+        answer: raan
+        options: [raan, libo, piso]
       - type: translate
         prompt_tl: Limang daang piso ang bayad.
         answer_en: The payment is five hundred pesos.
@@ -40,7 +40,7 @@ lessons:
         prompt_en: Two hundred pesos, please.
         answer_tl: Dalawang daang piso po
         accept:
-          - Dalawang daan pong piso
+          - Dalawang daan po
         extra_words: [libo, daan, isa]
       - type: listen
         audio: limang_daang_piso
@@ -53,11 +53,11 @@ lessons:
       - type: fill_blank
         sentence: "Anim na ___ ang kabuuan."
         translation: "The total is six hundred."
-        answer: daan
-        options: [daan, libo, taon]
+        answer: raan
+        options: [raan, libo, taon]
       - type: arrange
         prompt: "The price of the shoes is four hundred pesos."
-        answer_tl: Apat na daang piso ang presyo ng sapatos
+        answer_tl: Apat na raang piso ang presyo ng sapatos
 
   - id: bignum-2
     title: Thousands
@@ -140,9 +140,9 @@ lessons:
         audio: ikalawang_palapag_ang_opisina_namin
       - type: translate
         prompt_en: This is my third time here.
-        answer_tl: Ikatlong beses ko na ito dito
+        answer_tl: Ikatlong beses ko na ito
         accept:
-          - Pangatlong beses ko na ito dito
+          - Pangatlong beses ko na ito
         extra_words: [una, huli, ikalawa]
       - type: listen
         audio: ikalawang_palapag
@@ -153,7 +153,7 @@ lessons:
         answer: last in line
         distractors: [first in line, out of line, in the middle]
       - type: fill_blank
-        sentence: "Ang ___ na araw ng linggo ay Linggo."
+        sentence: "Ang ___ araw ng linggo ay Linggo."
         translation: "The last day of the week is Sunday."
         answer: huling
         options: [huling, unang, ikalawang]
@@ -175,7 +175,7 @@ lessons:
             text: "Sampung ___ po, kasama na ang tubig."
             translation: "Ten thousand, water included."
           - speaker: Umuupa
-            text: "Kailangan po ba ng ___ na buwan na deposito?"
+            text: "Kailangan po ba ng ___ buwan na deposito?"
             translation: "Is a two-month deposit needed?"
           - speaker: May-ari
             text: "Opo, at isang buwan na advance."

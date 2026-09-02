@@ -1,12 +1,14 @@
 id: recent-past
 title: Just Happened
 tier: conversational
-description: Kaka-, katatapos, saka lang — the aspect for things that just occurred.
+description: Kaka-, katatapos, kanina lang — the aspect for things that just occurred.
 tip: >-
-  Tagalog has a dedicated "just did it" form: repeat the first syllable after
-  ka-. Kakakain lang (just ate), kakaalis lang (just left), katatapos lang (just
-  finished). It always carries lang, and it means minutes ago, not hours. This
-  aspect has no English word — only the phrase "just".
+  Tagalog has a dedicated "just did it" form. The textbook shape doubles the
+  root’s first syllable after ka- (katatapos, kararating), but everyday speech
+  has generalised kaka- to almost any root: kakakain lang, kakaalis lang,
+  kakadating lang — both are understood everywhere. The doer is usually marked
+  with ko/niya/namin, though ako/kami also occur casually. It always carries
+  lang, and it means minutes ago, not hours.
 lessons:
   - id: rec-1
     title: Just now
@@ -25,7 +27,7 @@ lessons:
         audio: kakakain_lang_ako
         audio_text: Kakakain lang ako.
       - type: fill_blank
-        sentence: "___ lang siya, hindi mo na siya aabutan."
+        sentence: "___ lang niya, hindi mo na siya aabutan."
         translation: "He just left, you will not catch him."
         answer: Kakaalis
         options: [Kakaalis, Kakakain, Katatapos]
@@ -167,7 +169,7 @@ lessons:
         intro: Two friends bump into each other
         lines:
           - speaker: Nel
-            text: "Uy! ___ lang ako dumating galing trabaho."
+            text: "Uy! ___ lang ako galing trabaho."
             translation: "Hey! I just arrived from work."
           - speaker: Cris
             text: "Ako rin, ___ lang ang shift ko."

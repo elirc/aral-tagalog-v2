@@ -165,8 +165,8 @@ lessons:
         answer: karot
         distractors: [kangkong, talong, bawang]
       - type: fill_blank
-        sentence: "Malaki ang ___ na binili ni Nanay."
-        translation: "The squash Mom bought is big."
+        sentence: "Binili ni Nanay ang malaking ___."
+        translation: "Mom bought a big squash."
         answer: kalabasa
         options: [kalabasa, kamatis, sibuyas]
       - type: translate

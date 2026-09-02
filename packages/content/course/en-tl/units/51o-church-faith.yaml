@@ -3,9 +3,9 @@ title: Church and Faith
 tier: conversational
 description: Sunday mass, blessings, and the religious phrases woven into daily speech.
 tip: >-
-  Faith vocabulary leaks into ordinary Tagalog. "Bahala na" descends from Bathala
-  (God), "salamat" from Arabic through Malay, and "Diyos ko" works as a mild
-  exclamation. Knowing simsimba (to attend mass), dasal (prayer) and biyaya
+  Faith vocabulary leaks into ordinary Tagalog. "Bahala na" is popularly traced
+  to Bathala (God), "salamat" from Arabic through Malay, and "Diyos ko" works as a mild
+  exclamation. Knowing magsimba (to attend mass), dasal (prayer) and biyaya
   (blessing) makes a great deal of everyday speech clearer.
 lessons:
   - id: faith-1
@@ -89,9 +89,9 @@ lessons:
         audio: maraming_biyaya_ngayong_taon
       - type: translate
         prompt_en: Please pray for my family.
-        answer_tl: Pakidasal po ang pamilya ko
+        answer_tl: Ipagdasal po ninyo ang pamilya ko
         accept:
-          - Ipagdasal po ninyo ang pamilya ko
+          - Idalangin po ninyo ang pamilya ko
         extra_words: [biyaya, misa, pari]
       - type: listen
         audio: ipagdasal_mo_kami
@@ -119,7 +119,7 @@ lessons:
           - { tl: salamat sa Diyos, en: thank God }
           - { tl: sana nga, en: I hope so }
       - type: choice
-        prompt: "'Bahala na' descends from the word..."
+        prompt: "'Bahala na' is popularly traced to the word..."
         answer: Bathala
         distractors: [bahay, bata, bayan]
         audio: bahala_na_2

@@ -93,8 +93,6 @@ lessons:
       - type: translate
         prompt_tl: Pamangkin ko si Ben.
         answer_en: Ben is my nephew.
-        accept:
-          - Ben is my niece
         extra_words: [tomorrow, cheap, market]
         audio: pamangkin_ko_si_ben
       - type: listen
@@ -106,7 +104,7 @@ lessons:
         answer: pamangkin sa pinsan
         distractors: [tiyo, lolo, ninong]
       - type: fill_blank
-        sentence: "Bumisita ang ___ ko galing Amerika."
+        sentence: "Bumisita ang ___ ko galing sa Amerika."
         translation: "My aunt visited from America."
         answer: tiya
         options: [tiya, pinsan, bunso]
@@ -140,16 +138,16 @@ lessons:
         options: [ninang, biyenan, pinsan]
       - type: translate
         prompt_tl: Mabait ang biyenan ko.
-        answer_en: My mother-in-law is kind.
+        answer_en: My parent-in-law is kind.
         accept:
-          - My parent-in-law is kind
+          - My mother-in-law is kind
         extra_words: [cheap, tomorrow, market]
         audio: mabait_ang_biyenan_ko
       - type: translate
         prompt_en: My godfather gave me a gift.
         answer_tl: Binigyan ako ng regalo ng ninong ko
         accept:
-          - May regalo sa akin ang ninong ko
+          - Nagbigay ng regalo sa akin ang ninong ko
         extra_words: [ninang, biyenan, pinsan]
       - type: listen
         audio: sino_ang_ninong_mo
@@ -161,7 +159,7 @@ lessons:
         distractors: [parent, cousin, sibling]
       - type: fill_blank
         sentence: "Doktor ang ___ nila, asawa ng anak nila."
-        translation: "Their son-in-law is a doctor, the spouse of their child."
+        translation: "Their son- or daughter-in-law is a doctor, the spouse of their child."
         answer: manugang
         options: [manugang, ninong, pamangkin]
       - type: translate

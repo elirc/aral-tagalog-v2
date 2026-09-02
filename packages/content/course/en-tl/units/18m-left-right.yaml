@@ -79,15 +79,13 @@ lessons:
         audio: malayo_pa_ba
         audio_text: Malayo pa ba?
       - type: fill_blank
-        sentence: "___ lang, limang minuto na lakad."
+        sentence: "___ lang, limang minutong lakad."
         translation: "It is near, a five-minute walk."
         answer: Malapit
         options: [Malapit, Malayo, Mahal]
       - type: translate
         prompt_en: The market is in front of the school.
         answer_tl: Nasa harap ng paaralan ang palengke
-        accept:
-          - Nasa harap ang palengke ng paaralan
         extra_words: [likod, tabi, malayo]
       - type: translate
         prompt_tl: Katabi ng bahay namin ang tindahan.
@@ -138,12 +136,12 @@ lessons:
         answer: Bababa
         options: [Bababa, Sasakay, Kakain]
       - type: translate
-        prompt_tl: Dumaan ba ito sa palengke?
+        prompt_tl: Dumadaan ba ito sa palengke?
         answer_en: Does this pass by the market?
         accept:
           - Does it pass the market
         extra_words: [cheap, tomorrow, quickly]
-        audio: dumaan_ba_ito_sa_palengke
+        audio: dumadaan_ba_ito_sa_palengke
       - type: translate
         prompt_en: Stop here, please.
         answer_tl: Tumigil po kayo dito

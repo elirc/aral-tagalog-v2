@@ -47,7 +47,7 @@ lessons:
         answer_tl: Maraming lamok dito
         extra_words: [langgam, ipis]
       - type: choice
-        prompt: "Which insect do Filipinos chase out of the kitchen at night?"
+        prompt: "Which creature do Filipinos chase out of the kitchen at night?"
         answer: ipis
         distractors: [paruparo, gagamba, bubuyog]
       - type: fill_blank

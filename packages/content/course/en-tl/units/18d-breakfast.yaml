@@ -166,12 +166,12 @@ lessons:
         answer: asin
         options: [asin, gatas, yelo]
       - type: translate
-        prompt_tl: Maalat ang itlog na maalat.
-        answer_en: The salted egg is salty.
+        prompt_tl: Masarap ang itlog na maalat at kamatis.
+        answer_en: Salted egg and tomato are delicious.
         accept:
-          - Salted egg is salty
+          - Salted egg with tomato is delicious
         extra_words: [market, tomorrow, morning]
-        audio: maalat_ang_itlog_na_maalat
+        audio: masarap_ang_itlog_na_maalat_at_kamatis
 
   - id: bfast-4
     title: Breakfast talk

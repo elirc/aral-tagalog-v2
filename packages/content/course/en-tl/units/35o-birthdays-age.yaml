@@ -119,7 +119,7 @@ lessons:
           - { tl: pancit, en: noodles }
           - { tl: keyk, en: cake }
           - { tl: kandila, en: candle }
-          - { tl: kantahan, en: singing }
+          - { tl: kantahan, en: to sing for someone }
       - type: choice
         prompt: "Pancit appears at every birthday because noodles mean..."
         answer: a long life

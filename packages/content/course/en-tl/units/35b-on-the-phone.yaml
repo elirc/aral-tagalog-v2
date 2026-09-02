@@ -38,9 +38,9 @@ lessons:
         audio: tumawag_ka_sa_akin_mamaya
       - type: translate
         prompt_en: I think you have the wrong number.
-        answer_tl: Sa tingin ko mali po ang numero
+        answer_tl: Mali po yata ang numero
         accept:
-          - Mali po yata ang numero
+          - Sa tingin ko po, mali ang numero
         extra_words: [tumawag, sumagot, sandali]
       - type: listen
         audio: sandali_lang_po
@@ -195,7 +195,7 @@ lessons:
           - { tl: tatawag ulit, en: will call again }
           - { tl: mensahe, en: message }
           - { tl: numero, en: number }
-          - { tl: appointment, en: appointment }
+          - { tl: tipanan, en: appointment }
       - type: fill_blank
         sentence: "Ano po ang ___ ninyo?"
         translation: "What is your number?"
@@ -214,7 +214,6 @@ lessons:
           - I'd like to set an appointment
         extra_words: [tomorrow, cheap, market]
         audio: gusto_ko_po_sanang_magpa_appointment
-        grading: { hyphens: true }
       - type: listen
         audio: ano_po_ang_numero_ninyo
         answer_tl: Ano po ang numero ninyo
@@ -230,5 +229,5 @@ lessons:
         options: [Mag-iiwan, Kakain, Bibili]
         grading: { hyphens: true }
       - type: arrange
-        prompt: "What time will you call again?"
-        answer_tl: Anong oras po kayo tatawag ulit
+        prompt: "I will call again tomorrow morning."
+        answer_tl: Tatawag ulit ako bukas ng umaga

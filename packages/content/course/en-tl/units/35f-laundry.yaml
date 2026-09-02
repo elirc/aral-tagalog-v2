@@ -131,7 +131,7 @@ lessons:
         audio_text: Kulubot ang damit.
       - type: fill_blank
         sentence: "Pakiplantsa po ang ___ ko para bukas."
-        translation: "Please iron my shirt for tomorrow."
+        translation: "Please iron my clothes for tomorrow."
         answer: damit
         options: [damit, sabon, sipit]
       - type: translate
@@ -161,7 +161,7 @@ lessons:
         answer: Tupiin
         options: [Tupiin, Inumin, Kainin]
       - type: arrange
-        prompt: "Please iron this shirt for tomorrow."
+        prompt: "Please iron this garment for tomorrow."
         answer_tl: Pakiplantsa po ang damit na ito para bukas
 
   - id: laba-4
@@ -173,7 +173,7 @@ lessons:
         lines:
           - speaker: Mia
             text: "___ ako ngayon, maraming damit."
-            translation: "I am doing laundry today, there are many clothes."
+            translation: "I will do laundry today, there are many clothes."
           - speaker: Rico
             text: "Maulap. Baka ___ mamaya."
             translation: "It is cloudy. It might rain later."

@@ -4,8 +4,8 @@ tier: everyday
 description: Aisles, brands, and the checkout line — shopping indoors instead of at the palengke.
 tip: >-
   The palengke is for fresh food; the grocery is for packaged goods, and its
-  vocabulary is mostly borrowed: cart, aisle, cashier, resibo. One useful native
-  pair is de-lata (canned) and de-boteng (bottled). Prices here are fixed, so
+  vocabulary is mostly borrowed: cart, aisle, cashier, resibo, plus the Spanish
+  pair de-lata (canned) and de-bote (bottled). Prices here are fixed, so
   tumawad — haggling — has no place.
 lessons:
   - id: groc-1
@@ -169,8 +169,8 @@ lessons:
         intro: Checking a shopping list in the aisle
         lines:
           - speaker: Ana
-            text: "May ___ na ba tayong bigas?"
-            translation: "Do we already have rice?"
+            text: "May ___ pa ba tayong bigas?"
+            translation: "Do we still have any rice left?"
           - speaker: Ben
             text: "Wala na. Kumuha tayo ng limang ___."
             translation: "None left. Let us get five kilos."

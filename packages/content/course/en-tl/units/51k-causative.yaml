@@ -212,7 +212,7 @@ lessons:
         answer_tl: Kailan po matatapos
         extra_words: [talyer, serbisyo]
       - type: choice
-        prompt: "In the dialogue, how many things does Ben have to arrange?"
+        prompt: "How many tasks are mentioned in the dialogue in total?"
         answer: three
         distractors: [one, two, four]
       - type: arrange

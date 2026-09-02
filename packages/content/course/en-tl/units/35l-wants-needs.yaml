@@ -107,8 +107,8 @@ lessons:
         answer: Mahalaga
         options: [Mahalaga, Bawal, Madali]
       - type: arrange
-        prompt: "I need to buy medicine today."
-        answer_tl: Kailangan kong bumili ng gamot ngayon
+        prompt: "I need to buy rice and medicine today."
+        answer_tl: Kailangan kong bumili ng bigas at gamot ngayon
 
   - id: want-3
     title: Should and must

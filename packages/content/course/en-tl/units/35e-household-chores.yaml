@@ -25,7 +25,7 @@ lessons:
         audio: magwalis_ka_ng_sahig
         audio_text: Magwalis ka ng sahig.
       - type: fill_blank
-        sentence: "Paki___ po ng mesa."
+        sentence: "Paki___ po ang mesa."
         translation: "Please wipe the table."
         answer: punas
         options: [punas, walis, luto]
@@ -43,8 +43,8 @@ lessons:
           - Ligpitin mo ang kuwarto mo
         extra_words: [walis, punas, sahig]
       - type: listen
-        audio: pakiwalis_po_ng_sahig
-        answer_tl: Pakiwalis po ng sahig
+        audio: pakiwalis_po_ang_sahig
+        answer_tl: Pakiwalis po ang sahig
         extra_words: [punas, ligpit]
       - type: choice
         prompt: "Swapping 'mag-' for 'paki-' turns a chore verb into..."
@@ -68,7 +68,7 @@ lessons:
           - { tl: maghugas, en: to wash }
           - { tl: pinggan, en: plate }
           - { tl: lababo, en: sink }
-          - { tl: sabon panghugas, en: dish soap }
+          - { tl: sabong panghugas, en: dish soap }
       - type: choice
         prompt: "After dinner someone always says:"
         answer: Sino ang maghuhugas ng pinggan?
@@ -94,8 +94,8 @@ lessons:
           - Hugasan mo ang mga pinggan pagkatapos kumain
         extra_words: [lababo, sabon, sahig]
       - type: listen
-        audio: pakihugas_po_ng_pinggan
-        answer_tl: Pakihugas po ng pinggan
+        audio: pakihugas_po_ang_pinggan
+        answer_tl: Pakihugas po ang pinggan
         extra_words: [lababo, sabon]
       - type: choice
         prompt: "Which belongs in the kitchen?"
@@ -104,8 +104,8 @@ lessons:
       - type: fill_blank
         sentence: "Ubos na ang ___ panghugas."
         translation: "The dish soap has run out."
-        answer: sabon
-        options: [sabon, tubig, kanin]
+        answer: sabong
+        options: [sabong, sabon, tubig]
       - type: arrange
         prompt: "I will wash the plates later."
         answer_tl: Huhugasan ko ang mga pinggan mamaya
@@ -190,8 +190,8 @@ lessons:
       - type: match
         pairs:
           - { tl: gawaing bahay, en: housework }
-          - { tl: tulungan, en: to help one another }
-          - { tl: hati, en: to split }
+          - { tl: tulungan, en: to help (someone) }
+          - { tl: maghati, en: to split }
           - { tl: tapos na, en: already done }
       - type: fill_blank
         sentence: "___ tayo sa gawaing bahay."

@@ -51,10 +51,10 @@ lessons:
         answer: Pakiabot po ng resibo.
         distractors: [Abutin mo!, Bawal iyan., Ayaw ko niyan.]
       - type: fill_blank
-        sentence: "___ po ang bayarin sa Lunes."
-        translation: "The bill is due on Monday."
-        answer: Deadline
-        options: [Deadline, Regalo, Handaan]
+        sentence: "Sa Lunes po ang ___ ng bayarin."
+        translation: "The deadline of the bill is on Monday."
+        answer: deadline
+        options: [deadline, regalo, handaan]
       - type: arrange
         prompt: "I have three errands this Saturday."
         answer_tl: May tatlong lakad ako ngayong Sabado
@@ -76,7 +76,7 @@ lessons:
         audio: tanggalin_ang_sampay
         audio_text: Tanggalin ang sampay.
       - type: fill_blank
-        sentence: "Paki___ po ng pinggan pagkatapos kumain."
+        sentence: "Paki___ po ang pinggan pagkatapos kumain."
         translation: "Please wash the plates after eating."
         answer: hugas
         options: [hugas, walis, laba]
@@ -94,8 +94,8 @@ lessons:
           - Hatiin natin ang gawaing bahay ngayon
         extra_words: [magwalis, maglaba, maghugas]
       - type: listen
-        audio: pakiwalis_po_ng_sala
-        answer_tl: Pakiwalis po ng sala
+        audio: pakiwalis_po_ang_sala
+        answer_tl: Pakiwalis po ang sala
         extra_words: [maglaba, maghugas]
       - type: choice
         prompt: "Which chore needs the sun?"
@@ -108,7 +108,7 @@ lessons:
         options: [Basa, Tuyo, Bago]
       - type: arrange
         prompt: "Please wash the plates after eating."
-        answer_tl: Pakihugas po ng pinggan pagkatapos kumain
+        answer_tl: Pakihugas po ang pinggan pagkatapos kumain
 
   - id: revday-3
     title: Talking and planning
@@ -143,7 +143,7 @@ lessons:
           - { tl: susunduin, en: will pick up }
           - { tl: sa susunod, en: next time }
       - type: fill_blank
-        sentence: "___ kita ng alas-sais sa bahay mo."
+        sentence: "___ kita nang alas-sais sa bahay mo."
         translation: "I will pick you up at six at your house."
         answer: Susunduin
         options: [Susunduin, Huhugasan, Lalabhan]

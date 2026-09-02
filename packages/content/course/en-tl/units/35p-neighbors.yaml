@@ -89,7 +89,7 @@ lessons:
         audio: isasauli_ko_bukas_ang_martilyo
       - type: translate
         prompt_en: May I borrow your chair for a moment?
-        answer_tl: Pahiram po ng silya ninyo sandali
+        answer_tl: Pahiram po ng silya ninyo sandali lang
         accept:
           - Pwede po bang manghiram ng silya ninyo sandali
         extra_words: [isauli, bakod, kalye]
@@ -159,8 +159,8 @@ lessons:
         options: [pila, bakod, kalye]
         grading: { hyphens: true }
       - type: arrange
-        prompt: "Let us help each other after the storm."
-        answer_tl: Magtulungan tayo pagkatapos ng bagyo
+        prompt: "Let us help each other tomorrow morning."
+        answer_tl: Magtulungan tayo bukas ng umaga
 
   - id: nbr-4
     title: At the barangay hall
@@ -173,8 +173,8 @@ lessons:
             text: "Magandang umaga po. Sira po ang ___ sa kalye namin."
             translation: "Good morning. The light on our street is broken."
           - speaker: Kawani
-            text: "Anong ___ po kayo?"
-            translation: "Which street are you from?"
+            text: "Saang ___ po kayo nakatira?"
+            translation: "Which street do you live on?"
           - speaker: Residente
             text: "Sa Mabini po, ___ ng tindahan ni Aling Nena."
             translation: "On Mabini, across from Aling Nena's store."

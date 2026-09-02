@@ -6,7 +6,7 @@ tip: >-
   Airport Tagalog is heavily borrowed, but the grammar stays Tagalog: "Saan po
   ang check-in counter?" Two useful verbs are lumipad (to fly) and sumakay (to
   board). Domestic flights are announced in a Taglish blend, so training your
-  ear on paalis (departing) and pumapasok (arriving) pays off.
+  ear on paalis (departing) and dumarating (arriving) pays off.
 lessons:
   - id: air-1
     title: Check-in
@@ -69,9 +69,9 @@ lessons:
       - type: match
         pairs:
           - { tl: pila sa seguridad, en: security line }
-          - { tl: gate, en: gate }
+          - { tl: hintayan, en: waiting area }
           - { tl: paalis, en: departing }
-          - { tl: pumapasok, en: arriving }
+          - { tl: dumarating, en: arriving }
       - type: choice
         prompt: "A board lists 'PAALIS'. Those flights are..."
         answer: departing
@@ -84,7 +84,7 @@ lessons:
         answer: gate
         options: [gate, kama, pinggan]
       - type: translate
-        prompt_tl: Naantala po ang flight namin ng dalawang oras.
+        prompt_tl: Naantala po ang flight namin nang dalawang oras.
         answer_en: Our flight was delayed by two hours.
         accept:
           - Our flight is delayed two hours
@@ -102,7 +102,7 @@ lessons:
         extra_words: [paalis, bagahe]
       - type: arrange
         prompt: "Our flight was delayed by two hours."
-        answer_tl: Naantala po ang flight namin ng dalawang oras
+        answer_tl: Naantala po ang flight namin nang dalawang oras
       - type: choice
         prompt: "'Boarding na po' tells you to..."
         answer: go to the plane now
@@ -145,11 +145,11 @@ lessons:
         prompt_en: I will stay for two weeks.
         answer_tl: Dalawang linggo po akong mananatili
         accept:
-          - Mananatili po ako ng dalawang linggo
+          - Mananatili po ako nang dalawang linggo
         extra_words: [layunin, bakasyon, negosyo]
       - type: listen
-        audio: gaano_po_katagal_kayo
-        answer_tl: Gaano po katagal kayo
+        audio: gaano_po_katagal_kayo_dito_2
+        answer_tl: Gaano po katagal kayo dito
         extra_words: [layunin, bakasyon]
       - type: arrange
         prompt: "I will stay for two weeks on vacation."

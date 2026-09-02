@@ -38,7 +38,7 @@ lessons:
         audio: natapos_ko_ang_kolehiyo
       - type: translate
         prompt_en: I worked for three years in a bank.
-        answer_tl: Nagtrabaho po ako ng tatlong taon sa isang bangko
+        answer_tl: Nagtrabaho po ako nang tatlong taon sa isang bangko
         accept:
           - Tatlong taon po akong nagtrabaho sa isang bangko
         extra_words: [karanasan, kasanayan, natapos]
@@ -52,7 +52,7 @@ lessons:
       - type: choice
         prompt: "Which register belongs in an interview?"
         answer: Nais ko pong mag-apply.
-        distractors: [Gusto ko mag-apply., Tara mag-apply., Pwede ba mag-apply?]
+        distractors: [Gusto kong mag-apply., Tara mag-apply., Pwede bang mag-apply?]
       - type: arrange
         prompt: "I finished college in the province."
         answer_tl: Natapos ko po ang kolehiyo sa probinsya
@@ -117,7 +117,7 @@ lessons:
           - { tl: inaasahang sahod, en: expected salary }
           - { tl: benepisyo, en: benefits }
           - { tl: oras ng trabaho, en: working hours }
-          - { tl: overtime, en: overtime }
+          - { tl: lagpas sa oras, en: overtime }
       - type: choice
         prompt: "'Magkano po ang inaasahan ninyong sahod?' asks for..."
         answer: your expected salary
@@ -145,7 +145,7 @@ lessons:
         extra_words: [sahod, benepisyo, overtime]
       - type: listen
         audio: handa_po_ako_mag_overtime
-        answer_tl: Handa po ako mag-overtime
+        answer_tl: Handa po akong mag-overtime
         extra_words: [sahod, benepisyo]
         grading: { hyphens: true }
       - type: arrange
@@ -194,7 +194,7 @@ lessons:
         pairs:
           - { tl: aplikante, en: applicant }
           - { tl: tagapanayam, en: interviewer }
-          - { tl: resume, en: resume }
+          - { tl: panayam, en: interview }
           - { tl: tanggapin, en: to accept or hire }
       - type: fill_blank
         sentence: "Dala ko po ang aking ___."

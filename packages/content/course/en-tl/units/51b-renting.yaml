@@ -26,7 +26,7 @@ lessons:
         audio_text: Paupahan.
 
       - type: fill_blank
-        sentence: "Naghahanap po ako ng ___ na kuwarto."
+        sentence: "Naghahanap po ako ng ___ kuwarto."
         translation: "I am looking for a room to rent."
         answer: paupahang
         options: [paupahang, sirang, lumang]
@@ -89,7 +89,7 @@ lessons:
         extra_words: [cheap, market, tomorrow]
         audio: may_kasangkapan_na_po_ba_ang_kuwarto
       - type: translate
-        prompt_en: Is the bathroom inside or shared?
+        prompt_en: Is the bathroom inside or separate?
         answer_tl: Nasa loob po ba ang banyo o hiwalay?
         accept:
           - Nasa loob ba ang banyo o pinaghahatian
@@ -119,7 +119,7 @@ lessons:
         pairs:
           - { tl: kontrata, en: contract }
           - { tl: patakaran, en: rules }
-          - { tl: curfew, en: curfew }
+          - { tl: oras ng pag-uwi, en: curfew }
           - { tl: bisita, en: visitor }
       - type: choice
         prompt: "'Bawal magdala ng bisita pagkatapos ng alas-diyes' is a..."

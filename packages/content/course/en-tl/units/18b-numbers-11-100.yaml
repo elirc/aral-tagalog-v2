@@ -3,10 +3,12 @@ title: Numbers 11 to 100
 tier: foundation
 description: Count past ten — teens, tens, and the numbers you need for prices and ages.
 tip: >-
-  Tagalog builds teens with labing- plus the unit: labing-isa (11), labing-dalawa
-  (12). Tens use -pu: dalawampu (20), tatlumpu (30). Join a ten to a unit with
-  't: dalawampu't lima (25). Filipinos also borrow Spanish numbers for money and
-  time — dose, bente, singkuwenta — so you will hear both.
+  Tagalog builds teens with labing- plus the unit, but the hyphen survives only
+  before a vowel: labing-isa (11), labing-apat (14) — yet labindalawa (12),
+  labimpito (17), the nasal assimilating to the consonant. Tens use -pu:
+  dalawampu (20), tatlumpu (30). Join a ten to a unit with 't: dalawampu't lima
+  (25). Filipinos also borrow Spanish numbers for money and time — dose, bente,
+  singkuwenta — so you will hear both.
 lessons:
   - id: num11-1
     title: The teens
@@ -15,20 +17,20 @@ lessons:
       - type: match
         pairs:
           - { tl: labing-isa, en: eleven }
-          - { tl: labing-dalawa, en: twelve }
-          - { tl: labing-lima, en: fifteen }
-          - { tl: labing-siyam, en: nineteen }
+          - { tl: labindalawa, en: twelve }
+          - { tl: labinlima, en: fifteen }
+          - { tl: labinsiyam, en: nineteen }
       - type: choice
-        prompt: "'Labing-tatlo' is..."
+        prompt: "'Labintatlo' is..."
         answer: thirteen
         distractors: [three, thirty, twelve]
-        audio: labing_tatlo
-        audio_text: Labing-tatlo.
+        audio: labintatlo
+        audio_text: Labintatlo.
       - type: fill_blank
         sentence: "Labing-___ ang edad ko."
         translation: "I am fourteen years old."
         answer: apat
-        options: [apat, isa, sampu]
+        options: [apat, isa, anim]
         grading: { hyphens: true }
       - type: translate
         prompt_tl: May labing-anim na mangga.
@@ -40,34 +42,30 @@ lessons:
         grading: { hyphens: true }
       - type: translate
         prompt_en: I have twelve books.
-        answer_tl: May labing-dalawa akong libro
+        answer_tl: May labindalawa akong libro
         accept:
-          - May labing dalawa akong libro
+          - Labindalawa ang libro ko
         extra_words: [sampu, isa, bahay]
-        grading: { hyphens: true }
       - type: listen
-        audio: labing_pito
-        answer_tl: Labing-pito
-        extra_words: [labing-lima, labing-walo]
-        grading: { hyphens: true }
+        audio: labimpito
+        answer_tl: Labimpito
+        extra_words: [labinlima, labingwalo]
       - type: choice
         prompt: "Which prefix builds the teens?"
         answer: labing-
         distractors: [dalawampu-, magka-, taga-]
       - type: fill_blank
-        sentence: "Labing-___ ang bilang pagkatapos ng labing-pito."
+        sentence: "___ ang bilang pagkatapos ng labimpito."
         translation: "Eighteen is the number after seventeen."
-        answer: walo
-        options: [walo, tatlo, anim]
-        grading: { hyphens: true }
+        answer: labingwalo
+        options: [labingwalo, labintatlo, labing-anim]
       - type: translate
-        prompt_tl: Labing-lima ang edad niya.
+        prompt_tl: Labinlima ang edad niya.
         answer_en: He is fifteen years old.
         accept:
           - She is fifteen years old
         extra_words: [market, cheap, morning]
-        audio: labing_lima_ang_edad_niya
-        grading: { hyphens: true }
+        audio: labinlima_ang_edad_niya
 
   - id: num11-2
     title: Counting by tens
@@ -86,8 +84,8 @@ lessons:
         audio: apatnapu
         audio_text: Apatnapu.
       - type: fill_blank
-        sentence: "___ ang presyo, animnapung piso."
-        translation: "The price is sixty pesos."
+        sentence: "___ ang presyo ng isang kilo."
+        translation: "The price of one kilo is sixty."
         answer: Animnapu
         options: [Animnapu, Anim, Isa]
       - type: translate
@@ -155,8 +153,6 @@ lessons:
       - type: translate
         prompt_en: Forty-eight pesos.
         answer_tl: Apatnapu't walong piso
-        accept:
-          - Apatnapu't walo na piso
         extra_words: [limampu, isa, bahay]
       - type: listen
         audio: limampung_anim
@@ -195,7 +191,7 @@ lessons:
         audio: ilang_taon_ka_na
         audio_text: Ilang taon ka na?
       - type: fill_blank
-        sentence: "Dalawampu't lima na akong ___."
+        sentence: "Dalawampu't limang ___ na ako."
         translation: "I am twenty-five years old."
         answer: taon
         options: [taon, piso, bahay]
@@ -210,7 +206,7 @@ lessons:
         prompt_en: I am thirty years old.
         answer_tl: Tatlumpung taon na ako
         accept:
-          - Tatlumpu na akong taon
+          - Tatlumpung taon na po ako
         extra_words: [piso, bahay, edad]
       - type: listen
         audio: ilang_taon_ang_kapatid_mo

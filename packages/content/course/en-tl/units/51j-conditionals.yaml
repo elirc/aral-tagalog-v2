@@ -28,7 +28,7 @@ lessons:
         sentence: "___ may oras ako, pupunta ako."
         translation: "If I have time, I will come."
         answer: Kung
-        options: [Kung, Kapag, Dahil]
+        options: [Kung, Kaya, Dahil]
       - type: translate
         prompt_tl: Kung mahal, huwag mo nang bilhin.
         answer_en: If it is expensive, do not buy it.
@@ -177,8 +177,8 @@ lessons:
             text: "___ maganda ang panahon bukas, punta tayo sa dagat."
             translation: "If the weather is good tomorrow, let us go to the beach."
           - speaker: Ken
-            text: "___ umuulan tuwing hapon ngayong buwan."
-            translation: "It rains every afternoon this month."
+            text: "___ hapon, umuulan ngayong buwan."
+            translation: "Whenever it is afternoon, it rains this month."
           - speaker: Ivy
             text: "Umaga na lang tayo, ___ hindi pa umuulan."
             translation: "Let us go in the morning then, because it is not raining yet."

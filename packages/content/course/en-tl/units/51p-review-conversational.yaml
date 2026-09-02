@@ -176,13 +176,13 @@ lessons:
             text: "Uy, ___ lang kayo galing biyahe?"
             translation: "Hey, did you just get back from the trip?"
           - speaker: Rico
-            text: "Opo, ___ lang po kami dumating kanina."
+            text: "Opo, ___ lang po kami kanina."
             translation: "Yes, we just arrived earlier."
           - speaker: Aling Nena
             text: "___ ba ang panahon doon?"
             translation: "Was the weather good there?"
           - speaker: Rico
-            text: "___ umuulan tuwing hapon, pero maganda pa rin."
+            text: "Umuulan ___ hapon, pero maganda pa rin."
             translation: "It rained every afternoon, but it was still nice."
         blanks:
           - answer: kakauwi
@@ -191,8 +191,8 @@ lessons:
             options: [kakadating, kakaalis, kakainom]
           - answer: Maganda
             options: [Maganda, Sira, Mahal]
-          - answer: Kapag
-            options: [Kapag, Sana, Dahil]
+          - answer: tuwing
+            options: [tuwing, kung, sana]
       - type: match
         pairs:
           - { tl: biyahe, en: trip }
