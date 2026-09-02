@@ -84,7 +84,7 @@ export const emptyDayStats: DayStats = Object.freeze({
   practice: 0,
   mistakesCleared: 0,
   maxCombo: 0,
-  questIds: Object.freeze([]) as string[],
+  questIds: Object.freeze([] as string[]) as string[],
 });
 
 /** FNV-1a over the day key — a stable seed shared by every client and the server. */
