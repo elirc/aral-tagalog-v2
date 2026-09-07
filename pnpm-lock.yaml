@@ -25,6 +25,9 @@ importers:
 
   apps/api:
     dependencies:
+      '@aral/content':
+        specifier: workspace:*
+        version: link:../../packages/content
       '@aral/core':
         specifier: workspace:*
         version: link:../../packages/core

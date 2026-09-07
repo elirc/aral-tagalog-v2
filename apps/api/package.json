@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@aral/content": "workspace:*",
     "@aral/core": "workspace:*",
     "@aral/db": "workspace:*",
     "@fastify/cors": "^10.1.0",
