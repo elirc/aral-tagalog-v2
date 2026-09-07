@@ -38,8 +38,10 @@ export async function requireAuth(req: FastifyRequest, reply: FastifyReply) {
   const token = header?.startsWith("Bearer ") ? header.slice(7) : null;
   if (!token) return reply.code(401).send({ error: "missing token" });
   try {
-    const { payload } = await jwtVerify(token, secret);
-    if (!payload.sub) throw new Error("no sub");
+    const { payload } = await jwtVerify(token, secret, { algorithms: ["HS256"] });
+    if (!payload.sub || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(payload.sub)) {
+      throw new Error("invalid subject");
+    }
     req.userId = payload.sub;
   } catch {
     return reply.code(401).send({ error: "invalid token" });

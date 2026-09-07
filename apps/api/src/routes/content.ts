@@ -22,7 +22,9 @@ export function contentRoutes(app: FastifyInstance) {
       return reply.code(400).send({ error: "bad bundle name" });
     const path = join(env.contentDir, req.params.name);
     if (!existsSync(path)) return reply.code(404).send({ error: "no such bundle" });
-    reply.header("cache-control", "public, max-age=31536000, immutable");
+    reply.header("cache-control", /_v\d+\.json$/.test(req.params.name)
+      ? "public, max-age=31536000, immutable"
+      : "public, max-age=0, must-revalidate");
     return reply.type("application/json").send(createReadStream(path));
   });
 

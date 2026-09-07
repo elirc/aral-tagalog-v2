@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import {
   buildReviewLesson,
   DEFAULT_DAILY_GOAL_XP,
@@ -141,6 +142,7 @@ export default function CourseMapPage() {
             ) : (
               // flat bundle (no tiers authored): render units straight through
               <UnitList
+                key={next?.unit.id ?? "complete"}
                 units={bundle.units}
                 offset={0}
                 done={done}
@@ -203,6 +205,7 @@ function TierSection({
 
       {status.unlocked ? (
         <UnitList
+          key={currentUnitId ?? "complete"}
           units={units}
           offset={offset}
           done={done}
@@ -237,15 +240,31 @@ function UnitList({
   nextLessonId: string | null;
   currentUnitId: string | null;
 }) {
+  const pageSize = 12;
+  const currentIndex = units.findIndex((unit) => unit.id === currentUnitId);
+  const [page, setPage] = useState(() => Math.max(0, Math.floor(currentIndex / pageSize)));
+  const start = page * pageSize;
+  const visibleUnits = units.slice(start, start + pageSize);
   return (
     <>
-      {units.map((unit, i) => {
+      {units.length > pageSize && (
+        <nav className="unit-pages" aria-label="Course units">
+          <button className="btn btn-ghost" disabled={page === 0} onClick={() => setPage((value) => value - 1)}>
+            Previous units
+          </button>
+          <span role="status">{start + 1}–{Math.min(start + pageSize, units.length)} of {units.length} units</span>
+          <button className="btn btn-ghost" disabled={start + pageSize >= units.length} onClick={() => setPage((value) => value + 1)}>
+            Next units
+          </button>
+        </nav>
+      )}
+      {visibleUnits.map((unit, i) => {
         const total = unit.lessons.length;
         const doneCount = unit.lessons.filter((l) => done.has(l.id)).length;
         const pct = total > 0 ? (doneCount / total) * 100 : 0;
         const isCurrent = currentUnitId === unit.id;
-        const number = offset + i + 1;
-        const color = UNIT_COLORS[(offset + i) % UNIT_COLORS.length];
+        const number = offset + start + i + 1;
+        const color = UNIT_COLORS[(offset + start + i) % UNIT_COLORS.length];
         return (
           <details className="unit-card" key={unit.id} open={isCurrent}>
             <summary>

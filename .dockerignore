@@ -1,0 +1,17 @@
+**/node_modules
+**/.next
+**/dist
+**/.turbo
+**/.expo
+**/*.tsbuildinfo
+**/.env
+**/.env.*
+**/coverage
+.git
+.tools
+.pnpm-store
+.audit-*.json
+backups
+test-results
+playwright-report
+docs

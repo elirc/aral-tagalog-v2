@@ -10,6 +10,11 @@ import { useProgress } from "@/lib/progress";
 
 export default function LessonPage() {
   const { lessonId } = useParams<{ lessonId: string }>();
+  const { user } = useProgress();
+  return <LessonContent key={`${user?.id ?? "guest"}:${lessonId}`} lessonId={lessonId} />;
+}
+
+function LessonContent({ lessonId }: { lessonId: string }) {
   const { progress, ready } = useProgress();
 
   const isReview = lessonId === REVIEW_LESSON_ID;

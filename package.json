@@ -4,14 +4,17 @@
   "version": "0.1.0",
   "packageManager": "pnpm@9.12.3",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "build": "turbo run build",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
+    "security:audit": "pnpm audit --prod --audit-level=moderate",
+    "release:check": "pnpm security:audit && turbo run test typecheck",
     "dev": "turbo run dev --parallel",
     "content:build": "pnpm --filter @aral/content build",
+    "content:generate": "pnpm --filter @aral/content generate",
     "db:migrate": "pnpm --filter @aral/db migrate",
     "api:dev": "pnpm --filter @aral/api dev",
     "smoke": "node scripts/smoke.mjs",
@@ -19,12 +22,17 @@
     "mobile:start": "pnpm --filter @aral/mobile start"
   },
   "devDependencies": {
-    "turbo": "^2.3.0",
-    "typescript": "^5.6.0"
+    "turbo": "^2.10.12",
+    "typescript": "^5.9.3"
   },
   "pnpm": {
     "overrides": {
-      "@types/react": "~19.0.10"
+      "@types/react": "~19.0.10",
+      "drizzle-orm>expo-sqlite": "-",
+      "postcss@<8.5.23": "^8.5.23",
+      "xcode@3.0.1>uuid": "11.1.1",
+      "metro@0.82.5>image-size": "file:./vendor/image-size",
+      "query-string@7.1.3>decode-uri-component": "file:./vendor/decode-uri-component"
     }
   }
 }

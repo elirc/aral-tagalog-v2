@@ -17,7 +17,7 @@ export default function RootLayout() {
   // Then pull audio clips to device storage so lessons are playable offline
   // (OFF-01) — cacheAllAudio skips files it already has.
   useEffect(() => {
-    void refreshBundleIfNewer().then(() => cacheAllAudio());
+    void refreshBundleIfNewer().then(() => cacheAllAudio()).catch(() => {});
   }, []);
 
   return (

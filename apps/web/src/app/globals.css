@@ -82,6 +82,23 @@ button {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
+}
+.save-notice {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.unit-pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 .logo {
   font-weight: 800;

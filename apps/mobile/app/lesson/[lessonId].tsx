@@ -9,9 +9,15 @@ import { useProgress } from "@/lib/progress";
 import { spacing, useTheme } from "@/theme";
 
 export default function LessonScreen() {
+  const { lessonId } = useLocalSearchParams<{ lessonId: string }>();
+  return <LessonSession key={lessonId} lessonId={lessonId} />;
+}
+
+// Expo can reuse this route when its params change. Reset all captured state
+// for each lesson, while keeping it stable through that lesson's completion.
+function LessonSession({ lessonId }: { lessonId: string }) {
   const router = useRouter();
   const { styles } = useTheme();
-  const { lessonId } = useLocalSearchParams<{ lessonId: string }>();
   const { progress } = useProgress();
 
   const isReview = lessonId === REVIEW_LESSON_ID;

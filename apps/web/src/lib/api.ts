@@ -1,6 +1,7 @@
 import type { ProgressEvent, UserProgress } from "@aral/core";
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ??
+  (process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3001");
 
 export interface AuthUser {
   id: string;
@@ -16,15 +17,28 @@ export interface AuthTokens {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers: { "Content-Type": "application/json", ...init?.headers },
-  });
-  if (!res.ok) {
-    const body = await res.json().catch(() => ({}));
-    throw new ApiError(res.status, (body as { error?: string }).error ?? res.statusText);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15_000);
+  try {
+    const res = await fetch(`${API_URL}${path}`, {
+      ...init,
+      signal: controller.signal,
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...init?.headers },
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new ApiError(res.status, (body as { error?: string }).error ?? res.statusText);
+    }
+    if (res.status === 204) return undefined as T;
+    return await res.json() as T;
+  } catch (error) {
+    if (controller.signal.aborted) throw new Error("The request timed out. Please try again.");
+    if (error instanceof TypeError) throw new Error("Unable to connect. Check your connection and try again.");
+    throw error;
+  } finally {
+    clearTimeout(timer);
   }
-  return res.json() as Promise<T>;
 }
 
 export class ApiError extends Error {
@@ -44,14 +58,14 @@ export const api = {
   refresh: (refreshToken: string) =>
     request<AuthTokens>("/auth/refresh", { method: "POST", body: JSON.stringify({ refreshToken }) }),
   logout: (refreshToken: string) =>
-    fetch(`${API_URL}/auth/logout`, {
+    request<void>("/auth/logout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ refreshToken }),
       // fire-and-forget: the page may be navigating away; keepalive lets the
       // revocation finish anyway
       keepalive: true,
-    }).then(() => undefined),
+    }),
   sync: (accessToken: string, events: ProgressEvent[]) =>
     request<{ accepted: number; rejected: string[]; progress: UserProgress }>("/sync", {
       method: "POST",

@@ -1,0 +1,11 @@
+# CI only: use Caddy's localhost CA and expose PostgreSQL to integration tests.
+services:
+  db:
+    ports:
+      - "127.0.0.1:5433:5432"
+  api:
+    environment:
+      CORS_ORIGIN: https://localhost
+  proxy:
+    environment:
+      DOMAIN: localhost

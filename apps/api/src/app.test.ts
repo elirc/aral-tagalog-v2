@@ -1,5 +1,7 @@
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { buildApp } from "./app";
+import { signAccessToken } from "./auth";
+import { randomUUID } from "node:crypto";
 
 // These routes never touch the database (postgres-js connects lazily), so the
 // app can be exercised end-to-end with inject() and no Postgres running.
@@ -13,12 +15,40 @@ beforeAll(async () => {
 afterAll(async () => {
   await app.close();
 });
+afterEach(() => vi.restoreAllMocks());
 
 describe("GET /health", () => {
   it("responds 200 ok", async () => {
     const res = await app.inject({ method: "GET", url: "/health" });
     expect(res.statusCode).toBe(200);
     expect(res.json()).toEqual({ ok: true });
+  });
+});
+
+describe("readiness and private responses", () => {
+  it("returns 503 without database details when storage is unavailable", async () => {
+    vi.spyOn(app.db, "execute").mockRejectedValue(new Error("postgres://secret:password@internal/db"));
+    const response = await app.inject({ method: "GET", url: "/ready" });
+    expect(response.statusCode).toBe(503);
+    expect(response.json()).toEqual({ ok: false });
+    expect(response.headers["cache-control"]).toBe("no-store");
+  });
+
+  it("never caches authentication errors", async () => {
+    const response = await app.inject({ method: "GET", url: "/me" });
+    expect(response.statusCode).toBe(401);
+    expect(response.headers["cache-control"]).toBe("no-store");
+    expect(response.headers["x-content-type-options"]).toBe("nosniff");
+  });
+
+  it("rejects an empty profile patch before querying storage", async () => {
+    const update = vi.spyOn(app.db, "update");
+    const response = await app.inject({
+      method: "PATCH", url: "/me", payload: {},
+      headers: { authorization: `Bearer ${await signAccessToken(randomUUID())}` },
+    });
+    expect(response.statusCode).toBe(400);
+    expect(update).not.toHaveBeenCalled();
   });
 });
 

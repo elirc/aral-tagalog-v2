@@ -12,7 +12,7 @@
  * Exits 0 when every check passes, 1 with a failure list otherwise.
  */
 
-const API = process.env.SMOKE_API_URL ?? "http://localhost:3001";
+const API = (process.env.SMOKE_API_URL ?? "http://localhost:3001").replace(/\/$/, "");
 
 const failures = [];
 let checks = 0;
@@ -28,6 +28,7 @@ function ok(name, cond, detail = "") {
 
 async function req(path, { method = "GET", token, body } = {}) {
   const res = await fetch(`${API}${path}`, {
+    signal: AbortSignal.timeout(15_000),
     method,
     headers: {
       "Content-Type": "application/json",
@@ -57,6 +58,7 @@ const email = `smoke-${Date.now()}-${Math.floor(Math.random() * 1e6)}@example.te
 const password = "smoke-test-password";
 
 console.log(`smoke: ${API}`);
+ok("API and database ready", (await req("/ready")).status === 200);
 
 // --- content ---------------------------------------------------------------
 console.log("content");
@@ -224,7 +226,7 @@ const placed = await req("/sync", {
         perfect: false,
         xp: 5,
         practice: true,
-        maxCombo: 9999,
+        maxCombo: 500,
       },
     ],
   },

@@ -14,10 +14,23 @@ pnpm --filter @aral/api test
 pnpm --filter @aral/content test
 ```
 
-All suites are Vitest. `@aral/web` and `@aral/mobile` have no unit suites —
-their logic lives in `@aral/core` by design (ARCH: game logic is pure TS in
-core, UI apps are thin shells), so the highest-value tests sit below the UI.
-The apps are gated by `pnpm typecheck` and `pnpm build`.
+All suites are Vitest. Game logic lives in `@aral/core`; web and mobile also test
+their own persistence and sync workers because account-switch and network races
+can lose progress without changing any game rules. `pnpm release:check` runs the
+production dependency audit, suites, typechecks, content compilation, and web build. Database integration tests
+need an isolated database in `TEST_DATABASE_URL` and are skipped when it is unset.
+The GitHub release workflow supplies a fresh database and exercises the production
+Docker images, migrations, and proxy over verified HTTPS. It also exports both
+Android and iOS production bundles. `scripts/proxy-smoke.mjs` checks HTTP redirects,
+TLS, security headers, static assets, API routing, and request body limits; use
+`SMOKE_WEB_URL=https://YOUR_DOMAIN` and `SMOKE_HTTP_URL=http://YOUR_DOMAIN`.
+For a local Caddy CA, supply its root certificate through `NODE_EXTRA_CA_CERTS`.
+
+Mobile security tests resolve the actual Metro, React Navigation and Xcode
+dependency chains. They check the patched image parser against malicious files
+in killable subprocesses, the fixed URI decoder against upstream fixtures and
+malformed input, and Xcode UUID compatibility. The private compatibility packages
+under `vendor/` include their source provenance and licenses.
 
 ---
 
@@ -266,9 +279,9 @@ tests the rules directly.
 
 ## `pnpm smoke` — end-to-end against a running stack
 
-38 checks over real HTTP and real Postgres (`scripts/smoke.mjs`). This is the
-only layer that exercises the DB-backed flows, so it carries the checks that
-unit tests structurally cannot:
+39 checks over real HTTP and real Postgres (`scripts/smoke.mjs`), including
+database readiness. Together with the optional API integration suite, this
+exercises the database-backed flows that unit tests structurally cannot:
 
 - **Registration → login → `/me` → `/sync`** round trip, and that `/me` and
   `/sync` derive identical progress.
@@ -285,12 +298,13 @@ unit tests structurally cannot:
   regression — reuse detection originally revoked the family here, silently
   logging out anyone with two tabs open.
 - **Tier placement**: a `tier_started` event round-trips into
-  `progress.unlockedTierIds`, and a completion claiming a 9999 combo comes back
+  `progress.unlockedTierIds`, and a completion claiming a 500 combo comes back
   clamped to the lesson's exercise count.
 - **Logout** revokes the family; the token then 401s.
 
-Not covered: revocation *after* the reuse grace window elapses, which needs a
-60s wait or a `REFRESH_REUSE_GRACE_MS=0` run.
+The API integration suite also tests post-grace revocation, concurrent refresh,
+logout racing refresh, and transaction rollback after a failed replacement-token
+insert. It adjusts the test token timestamp rather than waiting a minute.
 
 ## What is deliberately not unit-tested
 

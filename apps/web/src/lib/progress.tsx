@@ -1,274 +1,247 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { reduceEvents, type ProgressEvent, type UserProgress } from "@aral/core";
 import { api, ApiError, type AuthTokens, type AuthUser } from "./api";
-
-/**
- * Progress store: works logged-out (guest) with everything in localStorage,
- * and logged-in by overlaying the unsynced outbox on the server baseline.
- * The same event-sourced model the mobile app uses with SQLite (OFF-02).
- */
-
-const KEYS = { outbox: "aral.outbox", baseline: "aral.baseline", auth: "aral.auth" };
-
-function load<T>(key: string): T | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : null;
-  } catch {
-    return null;
-  }
-}
-
-function save(key: string, value: unknown) {
-  if (value === null) window.localStorage.removeItem(key);
-  else window.localStorage.setItem(key, JSON.stringify(value));
-}
+import { AUTH_KEY, authScope, ProgressStorage, type LocalProgress } from "./progress-storage";
 
 export function deviceTz(): string {
-  try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
-  } catch {
-    return "UTC";
-  }
+  try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; }
+  catch { return "UTC"; }
 }
-
+type SyncStatus = "idle" | "syncing" | "error";
 interface ProgressContextValue {
   ready: boolean;
   progress: UserProgress;
   user: AuthUser | null;
   addEvents: (events: ProgressEvent[]) => void;
-  /** register or login result -> adopt tokens, push outbox, pull baseline */
   adoptAuth: (tokens: AuthTokens) => Promise<void>;
   logout: () => void;
   syncNow: () => Promise<void>;
-  /** unsynced events waiting in the outbox (0 when everything is saved) */
   pendingCount: number;
-  /** refresh token was rejected: still "logged in" locally but nothing syncs */
   needsRelogin: boolean;
+  syncStatus: SyncStatus;
+  storageError: boolean;
+  rejectedCount: number;
 }
-
 const ProgressContext = createContext<ProgressContextValue | null>(null);
 
 export function ProgressProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
-  const [outbox, setOutbox] = useState<ProgressEvent[]>([]);
-  const [baseline, setBaseline] = useState<UserProgress | null>(null);
+  const [local, setLocal] = useState<LocalProgress>({ outbox: [], baseline: null });
   const [auth, setAuth] = useState<AuthTokens | null>(null);
   const [needsRelogin, setNeedsRelogin] = useState(false);
-  const [tick, setTick] = useState(0); // re-derive hearts as time passes
-  const outboxRef = useRef<ProgressEvent[]>([]);
-  const hydratedRef = useRef(false);
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>("idle");
+  const [storageError, setStorageError] = useState(false);
+  const [rejectedCount, setRejectedCount] = useState(0);
+  const [tick, setTick] = useState(0);
+  const storageRef = useRef<ProgressStorage | null>(null);
+  const authRef = useRef<AuthTokens | null>(null);
+  const generationRef = useRef(0);
+  const syncingRef = useRef(false);
+  const mountedRef = useRef(false);
+  const syncAgainRef = useRef(false);
+
+  const applyLocal = useCallback(() => {
+    const storage = storageRef.current;
+    if (storage && mountedRef.current) setLocal(storage.readProgress(authScope(authRef.current)));
+  }, []);
 
   useEffect(() => {
-    setOutbox(load<ProgressEvent[]>(KEYS.outbox) ?? []);
-    setBaseline(load<UserProgress>(KEYS.baseline));
-    setAuth(load<AuthTokens>(KEYS.auth));
+    mountedRef.current = true;
+    let browserStorage: Storage | null = null;
+    try { browserStorage = window.localStorage; } catch { setStorageError(true); }
+    const storage = new ProgressStorage(browserStorage, () => setStorageError(true));
+    storageRef.current = storage;
+    storage.migrateLegacy();
+    authRef.current = storage.readAuth();
+    setAuth(authRef.current);
+    applyLocal();
     setReady(true);
-    const t = setInterval(() => setTick((n) => n + 1), 30_000);
-    return () => clearInterval(t);
-  }, []);
+    const onStorage = (event: StorageEvent) => {
+      if (event.key !== null && !event.key.startsWith("aral.")) return;
+      if (event.key === AUTH_KEY || event.key === null) {
+        const next = storage.readAuth();
+        if (next?.user.id !== authRef.current?.user.id) {
+          generationRef.current += 1;
+          setRejectedCount(0);
+          setSyncStatus("idle");
+        }
+        authRef.current = next;
+        setAuth(next);
+        setNeedsRelogin(false);
+      }
+      applyLocal();
+    };
+    window.addEventListener("storage", onStorage);
+    const timer = setInterval(() => setTick((n) => n + 1), 30_000);
+    return () => {
+      mountedRef.current = false;
+      generationRef.current += 1;
+      window.removeEventListener("storage", onStorage);
+      clearInterval(timer);
+    };
+  }, [applyLocal]);
 
   const progress = useMemo(
-    () => reduceEvents(outbox, deviceTz(), Date.now(), baseline ?? undefined),
-    [outbox, baseline, tick],
+    () => reduceEvents(local.outbox, deviceTz(), Date.now(), local.baseline ?? undefined),
+    [local, tick],
   );
-
   const addEvents = useCallback((events: ProgressEvent[]) => {
-    setOutbox((prev) => {
-      const next = [...prev, ...events];
-      save(KEYS.outbox, next);
-      return next;
-    });
-  }, []);
+    storageRef.current?.append(authScope(authRef.current), events);
+    applyLocal();
+  }, [applyLocal]);
 
-  const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]) => {
-    // the server caps batches at 500; leftovers flush on the next debounce
-    const batch = events.slice(0, 500);
-    const push = async (t: AuthTokens) => {
-      const { progress: serverProgress } = await api.sync(t.accessToken, batch);
-      setBaseline(serverProgress);
-      save(KEYS.baseline, serverProgress);
-      // a 200 resolves every sent event (accepted or rejected) — remove only
-      // those ids, never events appended while this request was in flight
-      const sent = new Set(batch.map((e) => e.id));
-      setOutbox((prev) => {
-        const next = prev.filter((e) => !sent.has(e.id));
-        save(KEYS.outbox, next);
-        return next;
-      });
+  const syncNow = useCallback(async () => {
+    const storage = storageRef.current;
+    const initialAuth = authRef.current;
+    if (!storage || !initialAuth || !mountedRef.current) return;
+    if (syncingRef.current) {
+      syncAgainRef.current = true;
+      return;
+    }
+    syncingRef.current = true;
+    const generation = generationRef.current;
+    const scope = authScope(initialAuth);
+    const active = () => mountedRef.current && generationRef.current === generation &&
+      authRef.current?.user.id === initialAuth.user.id && storage.readAuth()?.user.id === initialAuth.user.id;
+    const run = async () => {
+      if (!active()) return;
+      setSyncStatus("syncing");
+      // Read inside the cross-tab lock: another tab may have rotated the token.
+      let tokens = storage.readAuth() ?? initialAuth;
+      const request = async <T,>(operation: (accessToken: string) => Promise<T>): Promise<T> => {
+        try { return await operation(tokens.accessToken); }
+        catch (error) {
+          if (!(error instanceof ApiError) || error.status !== 401 || !active()) throw error;
+          const latest = storage.readAuth();
+          if (latest && latest.refreshToken !== tokens.refreshToken) tokens = latest;
+          else {
+            try {
+              const fresh = await api.refresh(tokens.refreshToken);
+              if (!active()) throw new Error("Session changed");
+              const current = storage.readAuth();
+              tokens = current && current.refreshToken !== tokens.refreshToken ? current : fresh;
+              storage.writeAuth(tokens);
+              authRef.current = tokens;
+              setAuth(tokens);
+            } catch (refreshError) {
+              const current = storage.readAuth();
+              if (active() && current && current.refreshToken !== tokens.refreshToken) tokens = current;
+              else {
+                if (active() && refreshError instanceof ApiError && refreshError.status === 401) setNeedsRelogin(true);
+                throw refreshError;
+              }
+            }
+          }
+          if (!active()) throw new Error("Session changed");
+          return operation(tokens.accessToken);
+        }
+      };
+      // Keep server and client calendar-day bucketing in agreement.
+      const tz = deviceTz();
+      if (tokens.user.tz !== tz) {
+        const { user } = await request((accessToken) => api.updateMe(accessToken, { tz }));
+        if (!active()) return;
+        tokens = { ...(storage.readAuth() ?? tokens), user };
+        storage.writeAuth(tokens);
+        authRef.current = tokens;
+        setAuth(tokens);
+      }
+      // An empty /sync also pulls progress. One queue avoids stale /me races.
+      do {
+        const batch = storage.readProgress(scope).outbox.slice(0, 500);
+        const result = await request((accessToken) => api.sync(accessToken, batch));
+        if (!active()) return;
+        storage.settle(scope, result.progress, batch.map((event) => event.id));
+        if (result.rejected.length > 0) setRejectedCount((count) => count + result.rejected.length);
+        applyLocal();
+      } while (active() && storage.readProgress(scope).outbox.length > 0);
+      if (active()) {
+        setNeedsRelogin(false);
+        setSyncStatus("idle");
+      }
     };
     try {
-      await push(tokens);
-      setNeedsRelogin(false);
-    } catch (err) {
-      if (err instanceof ApiError && err.status === 401) {
-        // access token expired: rotate via refresh token, retry once
-        let fresh: AuthTokens;
-        try {
-          fresh = await api.refresh(tokens.refreshToken);
-        } catch (refreshErr) {
-          // dead refresh token: the user looks logged in but nothing will
-          // ever sync — surface it instead of failing silently forever
-          if (refreshErr instanceof ApiError && refreshErr.status === 401) setNeedsRelogin(true);
-          throw refreshErr;
-        }
-        setAuth(fresh);
-        save(KEYS.auth, fresh);
-        await push(fresh);
-        setNeedsRelogin(false);
-      } else {
-        throw err; // offline or server down — outbox stays, retried next time
-      }
-    }
-  }, []);
-
-  // One /sync at a time. Two overlapping syncs both hit 401 on an expired
-  // access token and both present the same refresh token (the server treats
-  // the loser as a benign race, but the second sync's older server snapshot
-  // could still overwrite the newer baseline and lose events).
-  const syncingRef = useRef(false);
-  const syncNow = useCallback(async () => {
-    if (!auth || syncingRef.current) return;
-    syncingRef.current = true;
-    try {
-      await syncWith(auth, outbox);
+      if (navigator.locks) {
+        await navigator.locks.request(`aral.sync.${scope}`, { ifAvailable: true }, async (lock) => {
+          if (lock) await run();
+        });
+      } else await run();
     } catch {
-      // offline or server down — the outbox keeps the events for next time
+      if (active()) setSyncStatus("error");
     } finally {
       syncingRef.current = false;
-    }
-  }, [auth, outbox, syncWith]);
-
-  const adoptAuth = useCallback(
-    async (tokens: AuthTokens) => {
-      // Logging in as a *different* account (e.g. after a session expired)
-      // must not push the previous user's unsynced events into the new one.
-      // Coming from guest (auth === null) still carries over, which is the
-      // whole point of guest mode.
-      const switchingUser = auth !== null && auth.user.id !== tokens.user.id;
-      if (switchingUser) {
-        setOutbox([]);
-        save(KEYS.outbox, []);
-        setBaseline(null);
-        save(KEYS.baseline, null);
-        hydratedRef.current = false;
+      if (syncAgainRef.current && mountedRef.current) {
+        syncAgainRef.current = false;
+        void syncNow();
       }
-      setAuth(tokens);
-      setNeedsRelogin(false);
-      save(KEYS.auth, tokens);
-      // push guest progress made before signup, then adopt server truth
-      await syncWith(tokens, switchingUser ? [] : outbox).catch(() => {});
-    },
-    [auth, outbox, syncWith],
-  );
+    }
+  }, [applyLocal]);
+
+  const adoptAuth = useCallback(async (tokens: AuthTokens) => {
+    const storage = storageRef.current;
+    if (!storage) throw new Error("Your progress is still loading. Please try again.");
+    generationRef.current += 1;
+    if (authRef.current === null) storage.adoptGuest(authScope(tokens));
+    storage.writeAuth(tokens);
+    authRef.current = tokens;
+    setAuth(tokens);
+    setNeedsRelogin(false);
+    setRejectedCount(0);
+    setSyncStatus("idle");
+    applyLocal();
+    await syncNow();
+  }, [applyLocal, syncNow]);
 
   const logout = useCallback(() => {
-    // best-effort server-side revocation of this device's refresh-token family
-    if (auth) void api.logout(auth.refreshToken).catch(() => {});
-    hydratedRef.current = false;
-    setNeedsRelogin(false);
+    const tokens = authRef.current;
+    generationRef.current += 1;
+    authRef.current = null;
+    storageRef.current?.writeAuth(null);
     setAuth(null);
-    setBaseline(null);
-    setOutbox([]);
-    save(KEYS.auth, null);
-    save(KEYS.baseline, null);
-    save(KEYS.outbox, []);
-  }, [auth]);
+    setNeedsRelogin(false);
+    setSyncStatus("idle");
+    setRejectedCount(0);
+    // Keep unsynced lessons for the next login to this account.
+    applyLocal();
+    if (tokens) void api.logout(tokens.refreshToken).catch(() => {});
+  }, [applyLocal]);
 
-  // background sync: whenever the outbox has items and we're logged in
   useEffect(() => {
-    if (!ready || !auth || outbox.length === 0) return;
-    const t = setTimeout(() => void syncNow(), 1500);
-    return () => clearTimeout(t);
-  }, [ready, auth, outbox, syncNow]);
+    if (!ready || !auth || needsRelogin) return;
+    const timer = setTimeout(() => void syncNow(), local.outbox.length > 0 ? 1500 : 0);
+    return () => clearTimeout(timer);
+    // Baseline responses must not cause an endless chain of empty syncs.
+  }, [ready, auth, needsRelogin, local.outbox.length, syncNow]);
 
-  // Pull server truth once on load. The sync effect above only fires when the
-  // outbox has items, so without this a device with nothing to push never sees
-  // progress made on other devices.
-  outboxRef.current = outbox;
   useEffect(() => {
-    if (!ready || !auth || hydratedRef.current) return;
-    hydratedRef.current = true;
-    if (outbox.length > 0) return; // /sync's response will refresh the baseline
-    const apply = (serverProgress: UserProgress) => {
-      // a completion may have landed while this request was in flight; the
-      // pending sync's response is fresher than ours, so let it win
-      if (outboxRef.current.length > 0) return;
-      setBaseline(serverProgress);
-      save(KEYS.baseline, serverProgress);
+    if (!ready) return;
+    const retry = () => { if (document.visibilityState === "visible") void syncNow(); };
+    window.addEventListener("online", retry);
+    window.addEventListener("focus", retry);
+    document.addEventListener("visibilitychange", retry);
+    const timer = setInterval(retry, 30_000);
+    return () => {
+      window.removeEventListener("online", retry);
+      window.removeEventListener("focus", retry);
+      document.removeEventListener("visibilitychange", retry);
+      clearInterval(timer);
     };
-    api
-      .me(auth.accessToken)
-      .then(({ progress: serverProgress }) => apply(serverProgress))
-      .catch(async (err) => {
-        if (!(err instanceof ApiError && err.status === 401)) return; // offline — keep local state
-        try {
-          const fresh = await api.refresh(auth.refreshToken);
-          setAuth(fresh);
-          save(KEYS.auth, fresh);
-          apply((await api.me(fresh.accessToken)).progress);
-        } catch (refreshErr) {
-          if (refreshErr instanceof ApiError && refreshErr.status === 401) setNeedsRelogin(true);
-        }
-      });
-  }, [ready, auth, outbox]);
+  }, [ready, syncNow]);
 
-  // keep the server-side tz current: the server buckets streak/xpByDay days
-  // with users.tz, clients with the device zone — they must agree (GAM-02)
-  useEffect(() => {
-    if (!ready || !auth) return;
-    const tz = deviceTz();
-    if (auth.user.tz === tz) return;
-    api
-      .updateMe(auth.accessToken, { tz })
-      .then(({ user }) => {
-        const next = { ...auth, user };
-        setAuth(next);
-        save(KEYS.auth, next);
-      })
-      .catch(() => {}); // best-effort; retried after the next token refresh
-  }, [ready, auth]);
-
-  const value = useMemo(
-    () => ({
-      ready,
-      progress,
-      user: auth?.user ?? null,
-      addEvents,
-      adoptAuth,
-      logout,
-      syncNow,
-      pendingCount: outbox.length,
-      needsRelogin,
-    }),
-    [ready, progress, auth, addEvents, adoptAuth, logout, syncNow, outbox.length, needsRelogin],
-  );
-
+  const value = useMemo(() => ({
+    ready, progress, user: auth?.user ?? null, addEvents, adoptAuth, logout, syncNow,
+    pendingCount: local.outbox.length, needsRelogin, syncStatus, storageError, rejectedCount,
+  }), [ready, progress, auth, addEvents, adoptAuth, logout, syncNow, local.outbox.length, needsRelogin, syncStatus, storageError, rejectedCount]);
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }
-
 export function useProgress(): ProgressContextValue {
-  const ctx = useContext(ProgressContext);
-  if (!ctx) throw new Error("useProgress must be used inside ProgressProvider");
-  return ctx;
+  const context = useContext(ProgressContext);
+  if (!context) throw new Error("useProgress must be used inside ProgressProvider");
+  return context;
 }
-
 export function newEventId(): string {
-  // crypto.randomUUID needs a secure context (plain-http LAN hosts lack it);
-  // the fallback must still be a well-formed v4 UUID — /sync rejects anything
-  // else, and one bad id would poison the outbox
   return typeof crypto !== "undefined" && crypto.randomUUID
     ? crypto.randomUUID()
     : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (ch) => {

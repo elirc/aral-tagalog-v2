@@ -1,0 +1,612 @@
+[
+  {
+    "group": "tests",
+    "input": "test",
+    "expected": "test"
+  },
+  {
+    "group": "tests",
+    "input": "a+b",
+    "expected": "a+b"
+  },
+  {
+    "group": "tests",
+    "input": "a+b+c+d",
+    "expected": "a+b+c+d"
+  },
+  {
+    "group": "tests",
+    "input": "=a",
+    "expected": "=a"
+  },
+  {
+    "group": "tests",
+    "input": "%",
+    "expected": "%"
+  },
+  {
+    "group": "tests",
+    "input": "%25",
+    "expected": "%"
+  },
+  {
+    "group": "tests",
+    "input": "%%25%%",
+    "expected": "%%%%"
+  },
+  {
+    "group": "tests",
+    "input": "st%C3%A5le",
+    "expected": "ståle"
+  },
+  {
+    "group": "tests",
+    "input": "st%C3%A5le%",
+    "expected": "ståle%"
+  },
+  {
+    "group": "tests",
+    "input": "%st%C3%A5le%",
+    "expected": "%ståle%"
+  },
+  {
+    "group": "tests",
+    "input": "%%7Bst%C3%A5le%7D%",
+    "expected": "%{ståle}%"
+  },
+  {
+    "group": "tests",
+    "input": "%ab%C3%A5le%",
+    "expected": "%abåle%"
+  },
+  {
+    "group": "tests",
+    "input": "%C3%A5%able%",
+    "expected": "å%able%"
+  },
+  {
+    "group": "tests",
+    "input": "%7B%ab%7C%de%7D",
+    "expected": "{%ab|%de}"
+  },
+  {
+    "group": "tests",
+    "input": "%7B%ab%%7C%de%%7D",
+    "expected": "{%ab%|%de%}"
+  },
+  {
+    "group": "tests",
+    "input": "%7 B%ab%%7C%de%%7 D",
+    "expected": "%7 B%ab%|%de%%7 D"
+  },
+  {
+    "group": "tests",
+    "input": "%ab",
+    "expected": "%ab"
+  },
+  {
+    "group": "tests",
+    "input": "%ab%ab%ab",
+    "expected": "%ab%ab%ab"
+  },
+  {
+    "group": "tests",
+    "input": "%61+%4d%4D",
+    "expected": "a+MM"
+  },
+  {
+    "group": "tests",
+    "input": "﻿test2",
+    "expected": "﻿test2"
+  },
+  {
+    "group": "tests",
+    "input": "﻿",
+    "expected": "﻿"
+  },
+  {
+    "group": "tests",
+    "input": "%EF%BB%BFtest",
+    "expected": "﻿test"
+  },
+  {
+    "group": "tests",
+    "input": "%EF%BB%BF",
+    "expected": "﻿"
+  },
+  {
+    "group": "tests",
+    "input": "%FE%FF",
+    "expected": "��"
+  },
+  {
+    "group": "tests",
+    "input": "%FF%FE",
+    "expected": "��"
+  },
+  {
+    "group": "tests",
+    "input": "†",
+    "expected": "†"
+  },
+  {
+    "group": "tests",
+    "input": "%C2",
+    "expected": "�"
+  },
+  {
+    "group": "tests",
+    "input": "%C2x",
+    "expected": "�x"
+  },
+  {
+    "group": "tests",
+    "input": "%C2%B5",
+    "expected": "µ"
+  },
+  {
+    "group": "tests",
+    "input": "%C2%B5%",
+    "expected": "µ%"
+  },
+  {
+    "group": "tests",
+    "input": "%%C2%B5%",
+    "expected": "%µ%"
+  },
+  {
+    "group": "tests",
+    "input": "%ea%ba%5a%ba",
+    "expected": "%ea%baZ%ba"
+  },
+  {
+    "group": "tests",
+    "input": "%C3%5A%A5",
+    "expected": "%C3Z%A5"
+  },
+  {
+    "group": "tests",
+    "input": "%C3%5A%A5%AB",
+    "expected": "%C3Z%A5%AB"
+  },
+  {
+    "group": "validInputTests",
+    "input": "",
+    "expected": ""
+  },
+  {
+    "group": "validInputTests",
+    "input": "%20",
+    "expected": " "
+  },
+  {
+    "group": "validInputTests",
+    "input": "%2B",
+    "expected": "+"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%2b",
+    "expected": "+"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%00",
+    "expected": "\u0000"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%7F",
+    "expected": ""
+  },
+  {
+    "group": "validInputTests",
+    "input": "%09",
+    "expected": "\t"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%0A",
+    "expected": "\n"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%0D%0A",
+    "expected": "\r\n"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%61%62%63",
+    "expected": "abc"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%2F%3F%23",
+    "expected": "/?#"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%7E",
+    "expected": "~"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%E2%80%A0",
+    "expected": "†"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%F4%8F%BF%BF",
+    "expected": "􏿿"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%ED%9F%BF",
+    "expected": "퟿"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%F0%9F%98%80%F0%9F%98%81",
+    "expected": "😀😁"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%2525",
+    "expected": "%25"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%E4%BD%A0%E5%A5%BD",
+    "expected": "你好"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%E4%BD%A0%20%E5%A5%BD%21��",
+    "expected": "你 好!��"
+  },
+  {
+    "group": "validInputTests",
+    "input": "%F0%9D%84%9E",
+    "expected": "𝄞"
+  },
+  {
+    "group": "hexCaseTests",
+    "input": "%c3%a5",
+    "expected": "å"
+  },
+  {
+    "group": "hexCaseTests",
+    "input": "%C3%a5",
+    "expected": "å"
+  },
+  {
+    "group": "hexCaseTests",
+    "input": "%7b%ab%7c%de%7d",
+    "expected": "{%ab|%de}"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%C2%41",
+    "expected": "�A"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%C2%C2",
+    "expected": "��"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%C2G5",
+    "expected": "�G5"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "prefix%C2suffix",
+    "expected": "prefix�suffix"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%C3%A5%C2",
+    "expected": "å�"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%C2%B5%C2",
+    "expected": "µ�"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%C2%C2%B5",
+    "expected": "�µ"
+  },
+  {
+    "group": "c2ReplacementTests",
+    "input": "%%C2%%",
+    "expected": "%�%%"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0%9F%98%80",
+    "expected": "😀"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0%9F%98",
+    "expected": "%F0%9F%98"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0%9F",
+    "expected": "%F0%9F"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0",
+    "expected": "%F0"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0%9F%41",
+    "expected": "%F0%9FA"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0%41%82%83",
+    "expected": "%F0A%82%83"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F5%80%80%80",
+    "expected": "%F5%80%80%80"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F8%88%88%88",
+    "expected": "%F8%88%88%88"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%C0%AF",
+    "expected": "%C0%AF"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%C1%BF",
+    "expected": "%C1%BF"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%E2%82%AC",
+    "expected": "€"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%E2%82",
+    "expected": "%E2%82"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%E2%41%AC",
+    "expected": "%E2A%AC"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%E0%80%41",
+    "expected": "%E0%80A"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%ED%A0%80",
+    "expected": "%ED%A0%80"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%80",
+    "expected": "%80"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%BF",
+    "expected": "%BF"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%C3",
+    "expected": "%C3"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%DF",
+    "expected": "%DF"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%C3%41",
+    "expected": "%C3A"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%F0%9F%98%80%ab",
+    "expected": "😀%ab"
+  },
+  {
+    "group": "invalidUtf8SequenceTests",
+    "input": "%C3%A5%ab",
+    "expected": "å%ab"
+  },
+  {
+    "group": "innerCatchTests",
+    "input": "%E0%80%80",
+    "expected": "%E0%80%80"
+  },
+  {
+    "group": "innerCatchTests",
+    "input": "%E0%80%81",
+    "expected": "%E0%80%81"
+  },
+  {
+    "group": "innerCatchTests",
+    "input": "%F0%80%80%80",
+    "expected": "%F0%80%80%80"
+  },
+  {
+    "group": "innerCatchTests",
+    "input": "%F0%8F%BF%BF",
+    "expected": "%F0%8F%BF%BF"
+  },
+  {
+    "group": "innerCatchTests",
+    "input": "%E0%80%80%ab",
+    "expected": "%E0%80%80%ab"
+  },
+  {
+    "group": "unicodeBoundaryTests",
+    "input": "%ED%BF%BF",
+    "expected": "%ED%BF%BF"
+  },
+  {
+    "group": "unicodeBoundaryTests",
+    "input": "%F4%90%80%80",
+    "expected": "%F4%90%80%80"
+  },
+  {
+    "group": "invalidHexTests",
+    "input": "%G0",
+    "expected": "%G0"
+  },
+  {
+    "group": "invalidHexTests",
+    "input": "%0G",
+    "expected": "%0G"
+  },
+  {
+    "group": "invalidHexTests",
+    "input": "%GG",
+    "expected": "%GG"
+  },
+  {
+    "group": "invalidHexTests",
+    "input": "foo%bar",
+    "expected": "foo%bar"
+  },
+  {
+    "group": "invalidHexTests",
+    "input": "%u0041",
+    "expected": "%u0041"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%C1%88",
+    "expected": "%C1%88"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%F9%80%80%80",
+    "expected": "%F9%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FA%80%80%80",
+    "expected": "%FA%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FB%80%80%80",
+    "expected": "%FB%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FC%80%80%80",
+    "expected": "%FC%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FD%80%80%80",
+    "expected": "%FD%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FE%80%80%80",
+    "expected": "%FE%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FF%80%80%80",
+    "expected": "%FF%80%80%80"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%FF",
+    "expected": "%FF"
+  },
+  {
+    "group": "invalidLeadByteTests",
+    "input": "%80%80%80",
+    "expected": "%80%80%80"
+  },
+  {
+    "group": "mixedSequenceTests",
+    "input": "%C3%A5%80%C3%A5",
+    "expected": "å%80å"
+  },
+  {
+    "group": "mixedSequenceTests",
+    "input": "%G0%C3%A5%ab",
+    "expected": "%G0å%ab"
+  },
+  {
+    "group": "mixedSequenceTests",
+    "input": "%F0%9F%98%80%G0",
+    "expected": "😀%G0"
+  },
+  {
+    "group": "mixedSequenceTests",
+    "input": "%C3%A5%%C3%A5",
+    "expected": "å%å"
+  },
+  {
+    "group": "mixedSequenceTests",
+    "input": "%ab%cd%ef",
+    "expected": "%ab%cd%ef"
+  },
+  {
+    "group": "bomContextTests",
+    "input": "a%FE%FFb",
+    "expected": "a��b"
+  },
+  {
+    "group": "bomContextTests",
+    "input": "%FE%FF%FE%FF",
+    "expected": "����"
+  },
+  {
+    "group": "doubleEncodingTests",
+    "input": "%252525",
+    "expected": "%2525"
+  },
+  {
+    "group": "miscTests",
+    "input": "%%%",
+    "expected": "%%%"
+  },
+  {
+    "group": "miscTests",
+    "input": "%25C2%25",
+    "expected": "%C2%"
+  },
+  {
+    "group": "miscTests",
+    "input": "%2525C2",
+    "expected": "%25C2"
+  },
+  {
+    "group": "percentSeparatorTests",
+    "input": "%84%D7%25%88%90",
+    "expected": "%84%D7%%88%90"
+  },
+  {
+    "group": "percentSeparatorTests",
+    "input": "%20%20%25%80",
+    "expected": "  %%80"
+  }
+]

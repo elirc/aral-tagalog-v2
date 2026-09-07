@@ -6,7 +6,7 @@ import { deviceTz, useProgress } from "@/lib/progress";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
-  const { progress, user, logout, ready, pendingCount, needsRelogin } = useProgress();
+  const { progress, user, logout, ready, pendingCount, needsRelogin, syncStatus, syncNow, storageError, rejectedCount } = useProgress();
   if (!ready) return <header className="header"><div className="header-inner"><span className="logo">Aral</span></div></header>;
 
   const now = Date.now();
@@ -52,6 +52,27 @@ export function Header() {
           <Link href="/login" className="btn btn-ghost">Log in</Link>
         )}
       </div>
+      {storageError && (
+        <p className="save-notice" role="alert">
+          Browser storage is unavailable. Keep this tab open until your progress syncs to your account.
+          {!user && <> <Link href="/login">Log in to save your progress.</Link></>}
+        </p>
+      )}
+      {user && needsRelogin ? (
+        <p className="save-notice" role="status">
+          Your session expired. Log in to sync your saved progress.
+        </p>
+      ) : user && syncStatus === "error" ? (
+        <p className="save-notice" role="status">
+          {storageError ? "Progress has not synced." : "Progress is saved on this device. Sync will retry automatically."}
+          {" "}<button className="btn btn-ghost" onClick={() => void syncNow()}>Retry sync</button>
+        </p>
+      ) : null}
+      {rejectedCount > 0 && (
+        <p className="save-notice" role="alert">
+          {rejectedCount} saved change{rejectedCount === 1 ? "" : "s"} could not be accepted. Your progress now reflects the server record.
+        </p>
+      )}
     </header>
   );
 }

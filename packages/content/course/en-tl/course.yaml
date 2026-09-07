@@ -1,7 +1,7 @@
 id: en-tl
 base_lang: en
 target_lang: tl
-version: 6
+version: 7
 title: "Tagalog for English speakers"
 
 # Difficulty tracks. Units name one via `tier:` and must stay contiguous —

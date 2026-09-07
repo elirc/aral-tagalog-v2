@@ -1,6 +1,6 @@
 # Aral monorepo notes
 
-- pnpm workspaces + Turborepo. Node ≥20. `pnpm install` at root.
+- pnpm workspaces + Turborepo. Node 24 LTS. `pnpm install` at root.
 - Build order matters once: `pnpm content:build` must run before web/mobile
   bundling (they import `@aral/content/bundle` from `packages/content/dist`,
   which is gitignored). Same for `@aral/ui` — its build generates
@@ -21,7 +21,10 @@
   Don't add direct state-mutation endpoints.
 - Content: YAML in `packages/content/course/en-tl/`, schema in
   `src/schema.ts`. Bump `version` in `course.yaml` when editing published
-  content. Units are grouped into ordered **difficulty tiers** declared in
+  content. Most units are **generated** — `pnpm content:generate` rewrites
+  every `units/18t-g*|35r-g*|51q-g*|57g-g*.yaml` from `packages/content/
+  generator/` (lexicon + grammar focuses). Edit the generator, not those
+  files; hand-authored units are left alone. Units are grouped into ordered **difficulty tiers** declared in
   `course.yaml`; each unit names one with `tier:` and a tier's units must stay
   contiguous (the compiler enforces both). Unlocking is scoped to a tier, so a
   learner can place into a later one instead of starting at unit 1.
@@ -38,5 +41,5 @@
   parent, but a OneDrive reset can undo it.
 - End-to-end checks: `pnpm smoke` against a running stack
   (`docker compose up -d && pnpm db:migrate && pnpm api:dev`). Registers a
-  throwaway user; 38 checks over auth rotation, sync clamping, review queue,
+  throwaway user; 39 checks over readiness, auth rotation, sync clamping, review queue,
   tier placement, and combo bounding.

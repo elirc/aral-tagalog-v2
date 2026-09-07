@@ -164,15 +164,16 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   };
 
   // Enter drives the whole flow from the keyboard: check when an answer is
-  // staged, continue from feedback. Footer buttons and text inputs keep their
-  // native Enter behavior (double-firing otherwise). The listener is attached
+  // staged, continue from feedback. Interactive controls keep their native
+  // Enter behavior, so choosing an answer cannot submit a previous selection.
+  // The listener is attached
   // once; a ref keeps the handler's closures fresh without re-subscribing
   // every render.
   const keyHandler = useRef<(e: KeyboardEvent) => void>(() => {});
   keyHandler.current = (e: KeyboardEvent) => {
-    if (e.key !== "Enter") return;
+    if (e.key !== "Enter" || e.repeat || e.isComposing) return;
     const t = e.target instanceof HTMLElement ? e.target : null;
-    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.closest(".player-footer"))) return;
+    if (t?.closest("button, a, input, textarea, select, [contenteditable='true']")) return;
     if (phase.kind === "feedback") {
       e.preventDefault();
       advance();

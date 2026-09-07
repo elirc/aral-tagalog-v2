@@ -1,0 +1,17 @@
+{
+  skip_install_trust
+}
+
+{$DOMAIN} {
+  encode zstd gzip
+  header Strict-Transport-Security "max-age=31536000"
+  request_body {
+    max_size 1MB
+  }
+  handle_path /api/* {
+    reverse_proxy api:3001
+  }
+  handle {
+    reverse_proxy web:3000
+  }
+}

@@ -6,6 +6,15 @@ dist/
 *.tsbuildinfo
 .env
 .env.local
+.env.*
+!.env.example
+!.env.*.example
 coverage/
+.tools/
+.pnpm-store/
+.audit-*.json
+backups/
+playwright-report/
+test-results/
 # compiled content bundles are build artifacts
 packages/content/dist/

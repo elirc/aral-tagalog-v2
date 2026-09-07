@@ -1,9 +1,10 @@
 import * as SQLite from "expo-sqlite";
-import type { ProgressEvent } from "@aral/core";
+import type { ProgressEvent, UserProgress } from "@aral/core";
+import type { AuthTokens } from "./api";
 
 /**
  * Device persistence (OFF-01/OFF-02):
- *  - kv: auth tokens, server progress baseline, cached content bundle
+ *  - kv: active auth, progress baseline, account progress archives, cached bundle
  *  - outbox: progress events awaiting sync, flushed by the sync worker
  */
 const db = SQLite.openDatabaseSync("aral.db");
@@ -39,17 +40,19 @@ export function kvSet(key: string, value: unknown): void {
   }
 }
 
+function insertEvents(events: ProgressEvent[]): void {
+  for (const ev of events) {
+    db.runSync(
+      "INSERT OR IGNORE INTO outbox (id, payload, created_at) VALUES (?, ?, ?)",
+      ev.id,
+      JSON.stringify(ev),
+      Date.now(),
+    );
+  }
+}
+
 export function outboxAdd(events: ProgressEvent[]): void {
-  db.withTransactionSync(() => {
-    for (const ev of events) {
-      db.runSync(
-        "INSERT OR IGNORE INTO outbox (id, payload, created_at) VALUES (?, ?, ?)",
-        ev.id,
-        JSON.stringify(ev),
-        Date.now(),
-      );
-    }
-  });
+  db.withTransactionSync(() => insertEvents(events));
 }
 
 export function outboxAll(): ProgressEvent[] {
@@ -64,9 +67,46 @@ export function outboxClear(ids: string[]): void {
   });
 }
 
-export function wipeAll(): void {
-  // logout clears *user* data; device-level state survives — the theme
-  // preference isn't account-bound, and the cached bundle is public content
-  // that would just be re-downloaded
-  db.execSync("DELETE FROM kv WHERE key NOT IN ('theme', 'bundle'); DELETE FROM outbox;");
+/** A crash must never leave acknowledged events overlaid on their new baseline. */
+export function commitSync(progress: UserProgress, ids: string[]): void {
+  db.withTransactionSync(() => {
+    kvSet("baseline", progress);
+    for (const id of ids) db.runSync("DELETE FROM outbox WHERE id = ?", id);
+  });
+}
+
+export interface LocalProgressSnapshot {
+  baseline: UserProgress | null;
+  events: ProgressEvent[];
+}
+
+function activeProgress(): LocalProgressSnapshot {
+  return { baseline: kvGet<UserProgress>("baseline"), events: outboxAll() };
+}
+
+/**
+ * Switching accounts must hide the previous account's progress without losing
+ * offline work. Archives contain progress only; logout removes the active tokens.
+ * Guest events join the account explicitly chosen at login, never another archive.
+ */
+export function switchUser(nextAuth: AuthTokens | null): LocalProgressSnapshot {
+  db.withTransactionSync(() => {
+    const previousAuth = kvGet<AuthTokens>("auth");
+    if (previousAuth?.user.id === nextAuth?.user.id) {
+      kvSet("auth", nextAuth);
+      return;
+    }
+
+    const guestEvents = previousAuth ? [] : outboxAll();
+    if (previousAuth) kvSet(`account-progress:${previousAuth.user.id}`, activeProgress());
+
+    const archiveKey = nextAuth ? `account-progress:${nextAuth.user.id}` : null;
+    const restored = archiveKey ? kvGet<LocalProgressSnapshot>(archiveKey) : null;
+    kvSet("auth", nextAuth);
+    kvSet("baseline", restored?.baseline ?? null);
+    db.execSync("DELETE FROM outbox");
+    insertEvents([...(restored?.events ?? []), ...guestEvents]);
+    if (archiveKey) kvSet(archiveKey, null);
+  });
+  return activeProgress();
 }

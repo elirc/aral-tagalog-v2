@@ -1,0 +1,67 @@
+name: Release checks
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DOMAIN: localhost
+      POSTGRES_PASSWORD: ci-only-postgres-password
+      JWT_SECRET: ci-only-jwt-secret-with-at-least-48-random-characters
+      NEXT_TELEMETRY_DISABLED: "1"
+      TEST_DATABASE_URL: postgres://aral:ci-only-postgres-password@localhost:5433/aral
+      SMOKE_API_URL: https://localhost/api
+      SMOKE_WEB_URL: https://localhost
+      SMOKE_HTTP_URL: http://localhost
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - name: Build and start production containers
+        run: docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml up --build -d --wait --wait-timeout 180
+      - name: Obtain the local HTTPS test certificate
+        run: |
+          mkdir -p .tools
+          for attempt in $(seq 1 15); do
+            if docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml cp proxy:/data/caddy/pki/authorities/local/root.crt .tools/ci-root.crt; then
+              break
+            fi
+            sleep 2
+          done
+          test -s .tools/ci-root.crt
+          curl --fail --cacert .tools/ci-root.crt --retry 5 --retry-connrefused https://localhost/api/ready
+      - name: Unit, database integration, type and web build checks
+        run: pnpm release:check
+      - name: Export Android and iOS production bundles
+        env:
+          EXPO_PUBLIC_API_URL: https://aral.example.com/api
+          EXPO_NO_TELEMETRY: "1"
+          EXPO_OFFLINE: "1"
+          NODE_ENV: production
+        run: pnpm --filter @aral/mobile exec expo export --platform android --platform ios --output-dir .expo/release-export --max-workers 2
+      - name: Exercise accounts and progress through the proxy
+        env:
+          NODE_EXTRA_CA_CERTS: ${{ github.workspace }}/.tools/ci-root.crt
+        run: pnpm smoke
+      - name: Verify HTTPS, redirects, headers, assets and request limits
+        env:
+          NODE_EXTRA_CA_CERTS: ${{ github.workspace }}/.tools/ci-root.crt
+        run: node scripts/proxy-smoke.mjs
+      - name: Container logs
+        if: failure()
+        run: docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml logs --tail=100
+      - name: Stop test containers
+        if: always()
+        run: docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml down -v

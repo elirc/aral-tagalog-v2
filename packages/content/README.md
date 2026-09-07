@@ -109,6 +109,49 @@ inside another tier would be reachable in an order the course map never shows.
 Omit `tiers:` entirely and the course behaves exactly as it did before tiers:
 one flat, linearly unlocked sequence.
 
+## Generated units
+
+Most of the course is generated. `generator/` holds a lexicon and a set of
+grammar *focuses*; `pnpm content:generate` crosses every focus with every noun
+theme and writes the result into `course/en-tl/units` as ordinary YAML.
+
+```sh
+pnpm content:generate                       # rewrite all generated units
+node generator/generate.mjs --scale 0.01    # a small sample, for eyeballing
+node generator/generate.mjs --clean         # delete them again
+node generator/generate.mjs --bump          # also increment course.yaml version
+```
+
+```
+generator/
+  lexicon.mjs      words: nouns (theme + category), verbs (every aspect form
+                   written out, plus `objIds` where a verb only takes certain
+                   objects), adjectives, numbers, time words
+  themes.mjs       41 noun themes: display title, dialogue scene, and the
+                   places that theme can plausibly happen in
+  grammar.mjs      surface rules: the linker, mga/ang/ng/sa, articles and
+                   plurals on the English side, pronoun cases
+  makers.mjs       reusable clause builders (clause, baQuestion, command,
+                   comparison, objectFocus, joinClauses, …)
+  focus-*.mjs      one file per tier; each focus = a grammar point, its tip,
+                   four lesson titles, its sentence makers and a Q/A pair that
+                   becomes the unit's dialogue
+  context.mjs      the word picker handed to makers — keeps a unit thematic
+  build.mjs        sentences -> nine exercises per lesson, four lessons per unit
+```
+
+Editing rules of thumb:
+
+- **Change the generator, not the generated YAML.** Regenerating overwrites
+  every `18t-g*/35r-g*/51q-g*/57g-g*` file. Hand-authored units are never
+  touched, and generated unit ids never shadow one.
+- Generated files are named so they sort *inside* their tier's run, which is
+  what keeps the compiler's tier-contiguity check happy.
+- Sentences are deduped course-wide, and each unit is seeded from
+  `tier:focus:theme:pass`, so a run is reproducible.
+- Every exercise is built through the same checks `validate.ts` enforces, so a
+  shape that would fail the build is dropped at generation time instead.
+
 ## Audio
 
 1. **Recordings win (AUD-01):** drop `<ref>.mp3` into `audio/en-tl/`.

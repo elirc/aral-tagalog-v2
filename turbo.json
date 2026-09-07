@@ -3,9 +3,12 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_API_URL"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "test": {
+      "cache": false,
+      "passThroughEnv": ["TEST_DATABASE_URL"],
       "dependsOn": ["^build"]
     },
     "typecheck": {

@@ -27,15 +27,25 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers: { "Content-Type": "application/json", ...(init?.headers as Record<string, string>) },
-  });
-  if (!res.ok) {
-    const body = (await res.json().catch(() => ({}))) as { error?: string };
-    throw new ApiError(res.status, body.error ?? `HTTP ${res.status}`);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+  try {
+    const res = await fetch(`${API_URL}${path}`, {
+      ...init,
+      signal: controller.signal,
+      headers: { "Content-Type": "application/json", ...(init?.headers as Record<string, string>) },
+    });
+    if (!res.ok) {
+      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      throw new ApiError(res.status, body.error ?? `HTTP ${res.status}`);
+    }
+    return res.status === 204 ? (undefined as T) : ((await res.json()) as T);
+  } catch (error) {
+    if (controller.signal.aborted) throw new Error("The request timed out. Please try again.");
+    throw error;
+  } finally {
+    clearTimeout(timeout);
   }
-  return (await res.json()) as T;
 }
 
 export const api = {
@@ -45,14 +55,11 @@ export const api = {
     request<AuthTokens>("/auth/login", { method: "POST", body: JSON.stringify({ email, password }) }),
   refresh: (refreshToken: string) =>
     request<AuthTokens>("/auth/refresh", { method: "POST", body: JSON.stringify({ refreshToken }) }),
-  // plain fetch, not request(): 204 has no JSON body, and revocation is
-  // best-effort — callers ignore failures rather than blocking logout
   logout: (refreshToken: string) =>
-    fetch(`${API_URL}/auth/logout`, {
+    request<void>("/auth/logout", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ refreshToken }),
-    }).then(() => undefined),
+    }),
   sync: (accessToken: string, events: ProgressEvent[]) =>
     request<{ accepted: number; rejected: string[]; progress: UserProgress }>("/sync", {
       method: "POST",
