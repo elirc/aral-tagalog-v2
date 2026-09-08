@@ -23,6 +23,7 @@ Verified on Windows with Node 24 and a separate PostgreSQL test database:
 - 13 Vercel-path checks and 39 account/progress smoke checks passed against the production Next.js server.
 - Browser checks passed for mobile/desktop layout, pagination, lesson completion, guest persistence, account creation, guest-progress merge, logout isolation, login recovery, cross-tab state, delayed-sync logout, settings and phrasebook search.
 - A signed-in lesson completed offline, remained queued locally, synced to PostgreSQL after reconnection, and survived reloading.
+- Android and iOS production exports were generated; both bundles and their referenced assets were verified.
 
 The release workflow also checks Linux containers and native exports. Hosted Vercel acceptance still requires configuring the intended database and environment variables, then using the [preview checklist](VERCEL.md).
 
