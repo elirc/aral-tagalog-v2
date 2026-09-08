@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { lessonXp, MAX_COMBO_BONUS_XP, PRACTICE_XP, type Lesson, type ProgressEvent } from "@aral/core";
+import { lessonXp, MAX_COMBO_BONUS_XP, PRACTICE_XP, type ProgressEvent } from "@aral/core";
 
 /**
  * Pure validation/sanitization for the /sync write path, split from the route
@@ -63,9 +63,16 @@ export const eventSchema = z.discriminatedUnion("type", [
   }),
 ]);
 
-/** Authored lesson catalog; null when the content bundle isn't available. */
+/** Minimal compiler-produced data needed to validate completion events. */
+export interface CatalogLesson {
+  id: string;
+  xp: number;
+  exerciseCount: number;
+}
+
+/** Authored lesson catalog; null when compiled content is unavailable. */
 export interface LessonCatalog {
-  lessonById: Map<string, Lesson>;
+  lessonById: Map<string, CatalogLesson>;
   /** highest lessonXp(l, perfect=true) across the catalog */
   maxAuthoredXp: number;
 }
@@ -113,7 +120,7 @@ export function sanitizeEvents(raw: unknown[], catalog: LessonCatalog | null, no
       // combo quests pay out on this number, so bound it by what the lesson
       // could physically produce (unknown lessons keep the schema's cap)
       if (ev.maxCombo !== undefined && lesson)
-        ev.maxCombo = Math.min(ev.maxCombo, lesson.exercises.length);
+        ev.maxCombo = Math.min(ev.maxCombo, lesson.exerciseCount);
     }
     events.push({ ...ev, occurredAt: Math.min(ev.occurredAt, now) } as ProgressEvent);
   }

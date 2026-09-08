@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "node scripts/prepare-content.mjs && next build && node ../../scripts/verify-vercel-build.mjs",
+    "build": "node scripts/prepare-content.mjs && next build && node ../../scripts/finalize-vercel-trace.mjs && node ../../scripts/verify-vercel-build.mjs",
     "start": "next start -p 3000",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"

@@ -194,3 +194,34 @@ export type Exercise =
   | DialogueExercise;
 
 export type ExerciseType = Exercise["type"];
+
+/** Lightweight navigation data: exercise bodies are loaded only for play. */
+export type LessonOverview = Pick<Lesson, "id" | "title" | "xp">;
+export type UnitOverview = Omit<Unit, "lessons"> & { lessons: LessonOverview[] };
+
+export interface WebCourseIndex extends Omit<CourseBundle, "units" | "vocab" | "audio" | "audioTexts"> {
+  units: Array<UnitOverview & { file: string }>;
+  vocabFile: string;
+  /** Hashed, partitioned exercise-ID lookups, fetched only for mistake review. */
+  reviewFiles: string[];
+}
+
+export interface WebUnitContent {
+  courseId: string;
+  version: number;
+  unit: Unit;
+  audio: CourseBundle["audio"];
+  audioTexts: NonNullable<CourseBundle["audioTexts"]>;
+}
+export interface WebVocabContent {
+  courseId: string;
+  version: number;
+  vocab: CourseBundle["vocab"];
+  audio: CourseBundle["audio"];
+}
+export interface WebReviewIndex {
+  courseId: string;
+  version: number;
+  /** Exercise ID to the index of its unit in WebCourseIndex.units. */
+  unitsByExercise: Record<string, number>;
+}

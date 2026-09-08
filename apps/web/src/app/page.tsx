@@ -5,17 +5,16 @@ import { useClock } from "@/lib/use-clock";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
-  buildReviewLesson,
   findNextLesson,
   matchesSearch,
   DEFAULT_DAILY_GOAL_XP,
   displayStreak,
-  isLessonUnlocked,
+  playableLessonIds,
   localDayKey,
   PRACTICE_XP,
   tierStatuses,
   type TierStatus,
-  type Unit,
+  type UnitOverview,
 } from "@aral/core";
 import { Header } from "@/components/Header";
 import { QuestPanel } from "@/components/QuestPanel";
@@ -40,15 +39,14 @@ export default function CourseMapPage() {
   const goal = progress.dailyGoalXp || DEFAULT_DAILY_GOAL_XP;
   const streak = displayStreak(progress.streak, localDayKey(now, tz));
   const started = progress.lessonsCompleted > 0;
-  // count only mistakes whose exercises still exist in this bundle version
-  const reviewable =
-    buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
-      .length ?? 0;
-
-  const tiers = tierStatuses(bundle.units, progress.completedLessonIds, {
-    tiers: bundle.tiers,
-    unlockedTierIds: progress.unlockedTierIds,
-  });
+  // Exact current exercise IDs are resolved lazily when review starts.
+  const hasReview = progress.weakExerciseIds.length > 0;
+  const available = useMemo(() => playableLessonIds(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }), [progress.completedLessonIds, progress.unlockedTierIds]);
+  const tiers = useMemo(() => tierStatuses(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }), [progress.completedLessonIds, progress.unlockedTierIds]);
 
   return (
     <>
@@ -94,7 +92,7 @@ export default function CourseMapPage() {
 
             <QuestPanel progress={progress} />
 
-            {reviewable > 0 && (
+            {hasReview && (
               <Link href="/lesson/review" className="review-banner">
                 <span className="review-emoji" aria-hidden>
                   🧹
@@ -102,7 +100,7 @@ export default function CourseMapPage() {
                 <span className="review-text">
                   <strong>Review your mistakes</strong>
                   <span>
-                    {reviewable} exercise{reviewable > 1 ? "s" : ""} to practice · +{PRACTICE_XP} XP
+                    Practice saved mistakes · +{PRACTICE_XP} XP
                     · +1 ❤️
                   </span>
                 </span>
@@ -129,7 +127,7 @@ export default function CourseMapPage() {
                   key={status.tier.id}
                   status={status}
                   done={done}
-                  unlockedTierIds={progress.unlockedTierIds}
+                  available={available}
                   nextLessonId={next?.lesson.id ?? null}
                   currentUnitId={next?.unit.id ?? null}
                 />
@@ -141,7 +139,7 @@ export default function CourseMapPage() {
                 units={bundle.units}
                 offset={0}
                 done={done}
-                unlockedTierIds={progress.unlockedTierIds}
+                available={available}
                 nextLessonId={next?.lesson.id ?? null}
                 currentUnitId={next?.unit.id ?? null}
               />
@@ -157,17 +155,17 @@ export default function CourseMapPage() {
 function TierSection({
   status,
   done,
-  unlockedTierIds,
+  available,
   nextLessonId,
   currentUnitId,
 }: {
   status: TierStatus;
   done: Set<string>;
-  unlockedTierIds: string[];
+  available: Set<string>;
   nextLessonId: string | null;
   currentUnitId: string | null;
 }) {
-  const units = bundle.units.filter((u) => u.tier === status.tier.id);
+  const units = useMemo(() => bundle.units.filter((u) => u.tier === status.tier.id), [status.tier.id]);
   // the compiler rejects empty tiers, but a hand-edited bundle should not crash
   if (units.length === 0) return null;
   const offset = bundle.units.indexOf(units[0]!);
@@ -204,7 +202,7 @@ function TierSection({
           units={units}
           offset={offset}
           done={done}
-          unlockedTierIds={unlockedTierIds}
+          available={available}
           nextLessonId={nextLessonId}
           currentUnitId={currentUnitId}
         />
@@ -223,15 +221,15 @@ function UnitList({
   units,
   offset,
   done,
-  unlockedTierIds,
+  available,
   nextLessonId,
   currentUnitId,
 }: {
-  units: Unit[];
+  units: UnitOverview[];
   /** index of the first unit within the whole course, for the numbered badge */
   offset: number;
   done: Set<string>;
-  unlockedTierIds: string[];
+  available: Set<string>;
   nextLessonId: string | null;
   currentUnitId: string | null;
 }) {
@@ -318,7 +316,7 @@ function UnitList({
               <UnitLessons
                 unit={unit}
                 done={done}
-                unlockedTierIds={unlockedTierIds}
+                available={available}
                 nextLessonId={nextLessonId}
               />
             </div>
@@ -332,29 +330,20 @@ function UnitList({
 function UnitLessons({
   unit,
   done,
-  unlockedTierIds,
+  available,
   nextLessonId,
 }: {
-  unit: Unit;
+  unit: UnitOverview;
   done: Set<string>;
-  unlockedTierIds: string[];
+  available: Set<string>;
   nextLessonId: string | null;
 }) {
-  const completed = [...done];
   return (
     <>
       {unit.lessons.map((lesson) => {
         const isDone = done.has(lesson.id);
         const isNext = lesson.id === nextLessonId;
-        // ask core rather than assuming "next or done": after a tier jump,
-        // the first lesson of the new tier is playable without being `next`
-        const locked =
-          !isDone &&
-          !isNext &&
-          !isLessonUnlocked(bundle.units, lesson.id, completed, {
-            tiers: bundle.tiers,
-            unlockedTierIds,
-          });
+        const locked = !available.has(lesson.id);
         return (
           <div className="lesson-row" key={lesson.id}>
             <div className={`lesson-dot ${isDone ? "done" : isNext ? "next" : locked ? "locked" : "open"}`}>
@@ -363,7 +352,7 @@ function UnitLessons({
             <span className="lesson-name">{lesson.title}</span>
             <span className="spacer" />
             {!locked && (
-              <Link className="btn btn-primary" href={`/lesson/${lesson.id}`}>
+              <Link prefetch={false} className="btn btn-primary" href={`/lesson/${lesson.id}`}>
                 {isDone ? "Practice" : "Start"}
               </Link>
             )}

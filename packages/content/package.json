@@ -9,6 +9,10 @@
     "./bundle": {
       "types": "./src/bundle.d.ts",
       "default": "./dist/course_en_tl.json"
+    },
+    "./web-index": {
+      "types": "./src/web-index.d.ts",
+      "default": "./dist/web/index.json"
     }
   },
   "scripts": {

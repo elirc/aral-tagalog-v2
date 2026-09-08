@@ -5,13 +5,11 @@ import { eventSchema, sanitizeEvents, type LessonCatalog } from "./sync-validati
 const uuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, "0")}`;
 const NOW = 1_700_000_000_000;
 
-const ex = (id: string) => ({ id, type: "choice" as const, prompt: "p", answer: "a", distractors: ["b"] });
-
 const catalog: LessonCatalog = {
   lessonById: new Map([
-    ["l1", { id: "l1", title: "T", xp: 10, exercises: [] }],
-    // a lesson with real exercises, so the maxCombo clamp has something to bound to
-    ["l2", { id: "l2", title: "T2", xp: 10, exercises: [ex("e1"), ex("e2"), ex("e3")] }],
+    ["l1", { id: "l1", xp: 10, exerciseCount: 1 }],
+    // The catalog stores counts rather than full exercise payloads.
+    ["l2", { id: "l2", xp: 10, exerciseCount: 3 }],
   ]),
   maxAuthoredXp: 100,
 };

@@ -1,11 +1,12 @@
-import { useMemo, useState } from "react";
+import { useDeferredValue, useMemo, useState } from "react";
 import { Link, useRouter } from "expo-router";
 import { Alert, FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   buildReviewLesson,
   findNextLesson,
-  matchesSearch,
+  normalizeSearch,
+  playableLessonIds,
   tierStatuses,
   displayStreak,
   levelForXp,
@@ -15,7 +16,7 @@ import {
   regenerate,
   type Unit,
 } from "@aral/core";
-import { getBundle, isLessonUnlocked } from "@/lib/content";
+import { getBundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 import { radii, spacing, useTheme } from "@/theme";
 
@@ -32,7 +33,11 @@ export default function CourseMapScreen() {
   const bundle = getBundle();
   const [selectedTier, setSelectedTier] = useState("");
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
   const done = useMemo(() => new Set(progress.completedLessonIds), [progress.completedLessonIds]);
+  const playable = useMemo(() => playableLessonIds(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }), [bundle, progress.completedLessonIds, progress.unlockedTierIds]);
   const now = Date.now();
   const hearts = regenerate(progress.hearts, now).hearts;
   const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
@@ -45,10 +50,17 @@ export default function CourseMapScreen() {
   }, selectedTier || undefined), [bundle, progress.completedLessonIds, progress.unlockedTierIds, selectedTier]);
   const tracks = useMemo(() => tierStatuses(bundle.units, progress.completedLessonIds, { tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds }), [bundle, progress.completedLessonIds, progress.unlockedTierIds]);
   const activeTier = selectedTier || next?.unit.tier || tracks[0]?.tier.id;
-  const visibleUnits = useMemo(() => bundle.units.filter((unit, index) => (!activeTier || unit.tier === activeTier) &&
-    matchesSearch(query, unit.title, unit.description, String(index + 1), ...unit.lessons.map((lesson) => lesson.title))), [bundle, activeTier, query]);
+  const searchTerms = useMemo(() => normalizeSearch(deferredQuery).split(" ").filter(Boolean), [deferredQuery]);
+  const hasSearch = searchTerms.length > 0;
+  // Build the search index only when needed, then reuse it while typing.
+  const unitSearch = useMemo(() => hasSearch ? bundle.units.map((unit, index) =>
+    normalizeSearch([unit.title, unit.description, String(index + 1), ...unit.lessons.map((lesson) => lesson.title)].filter(Boolean).join(" ")),
+  ) : [], [bundle, hasSearch]);
+  const visibleUnits = useMemo(() => bundle.units.filter((unit, index) =>
+    (!activeTier || unit.tier === activeTier) && searchTerms.every((term) => unitSearch[index]?.includes(term))),
+  [bundle, unitSearch, activeTier, searchTerms]);
 
-  const renderUnit = ({ item: unit, index: ui }: { item: Unit; index: number }) => (
+  const renderUnit = ({ item: unit }: { item: Unit }) => (
     <View style={styles.card}>
       {tierTitle(unit.tier) ? (
         <Text style={[styles.muted, { fontWeight: "800", textTransform: "uppercase", fontSize: 12 }]}>
@@ -79,10 +91,9 @@ export default function CourseMapScreen() {
       {unit.lessons.map((lesson) => {
         const isDone = done.has(lesson.id);
         const isNext = lesson.id === next?.lesson.id;
-        // ask core rather than assuming "next or done": after a tier jump the
-        // first lesson of the new tier is playable without being `next`
-        const locked =
-          !isDone && !isNext && !isLessonUnlocked(lesson.id, [...done], progress.unlockedTierIds);
+        // Derive access once per progress snapshot instead of scanning the
+        // full course for every visible lesson. The route checks access again.
+        const locked = !playable.has(lesson.id);
         return (
           <View
             key={lesson.id}

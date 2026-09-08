@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
+import { useDeferredValue, useMemo, useState } from "react";
 import { useRouter } from "expo-router";
 import { Pressable, SectionList, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { searchVocab, type VocabEntry } from "@aral/core";
+import { normalizeSearch, type VocabEntry } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 import { getBundle } from "@/lib/content";
 import { font, radii, spacing, useTheme } from "@/theme";
@@ -16,19 +16,23 @@ export default function WordsScreen() {
   const router = useRouter();
   const { colors, styles } = useTheme();
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
 
-  const all = useMemo(
-    () =>
-      Object.values(getBundle().vocab).sort((a, b) =>
-        a.lemma.localeCompare(b.lemma, "fil", { sensitivity: "base" }),
-      ),
-    [],
-  );
-
-  const q = query.trim().toLowerCase();
+  const all = useMemo(() => {
+    // Reuse the collator instead of rebuilding locale options per comparison.
+    const collator = new Intl.Collator("fil", { sensitivity: "base" });
+    return Object.values(getBundle().vocab).sort((a, b) => collator.compare(a.lemma, b.lemma));
+  }, []);
+  const q = normalizeSearch(deferredQuery);
+  const hasSearch = q.length > 0;
+  const searchIndex = useMemo(() => hasSearch ? all.map((entry) => ({
+    entry,
+    text: normalizeSearch([entry.lemma, entry.translation, entry.notes].filter(Boolean).join(" ")),
+  })) : [], [all, hasSearch]);
   const sections = useMemo(() => {
     if (q) {
-      const hits = searchVocab(all, query);
+      const terms = q.split(" ");
+      const hits = searchIndex.filter(({ text }) => terms.every((term) => text.includes(term))).map(({ entry }) => entry);
       // no sections at all when nothing matches, so ListEmptyComponent shows
       return hits.length > 0 ? [{ title: "", data: hits }] : [];
     }
@@ -40,7 +44,7 @@ export default function WordsScreen() {
       by.get(letter)!.push(v);
     }
     return [...by.entries()].map(([title, data]) => ({ title, data }));
-  }, [q, all]);
+  }, [q, all, searchIndex]);
 
   return (
     <SafeAreaView style={styles.screen} edges={["top"]}>

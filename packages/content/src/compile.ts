@@ -1,3 +1,5 @@
+import { readFile, writeFile } from "node:fs/promises";
+import { buildWebAssets, buildSyncCatalog } from "./web-assets";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -203,20 +205,22 @@ function compileTier(t: AuthoredTier): CourseTier {
   };
 }
 
-function main() {
+async function main() {
   const meta = courseMetaSchema.parse(parse(readFileSync(join(courseDir, "course.yaml"), "utf8")));
   const vocab = vocabFileSchema.parse(parse(readFileSync(join(courseDir, "vocab.yaml"), "utf8")));
 
   const unitFiles = readdirSync(join(courseDir, "units")).filter((f) => f.endsWith(".yaml")).sort();
-  const units = unitFiles.map((f) => {
-    const raw = parse(readFileSync(join(courseDir, "units", f), "utf8"));
-    const parsed = unitSchema.safeParse(raw);
-    if (!parsed.success) {
-      console.error(`✗ ${f}:\n${parsed.error.issues.map((i) => `  ${i.path.join(".")}: ${i.message}`).join("\n")}`);
-      process.exit(1);
-    }
-    return compileUnit(parsed.data);
-  });
+  const units: Unit[] = [];
+  // Bound filesystem concurrency while preserving source order and deterministic audio registration.
+  for (let offset = 0; offset < unitFiles.length; offset += 32) {
+    const batch = unitFiles.slice(offset, offset + 32);
+    const sources = await Promise.all(batch.map((file) => readFile(join(courseDir, "units", file), "utf8")));
+    sources.forEach((source, index) => {
+      const parsed = unitSchema.safeParse(parse(source));
+      if (!parsed.success) throw new Error(batch[index] + ": " + parsed.error.issues.map((issue) => issue.path.join(".") + ": " + issue.message).join("; "));
+      units.push(compileUnit(parsed.data));
+    });
+  }
   const tiers = meta.tiers?.map(compileTier);
 
   for (const v of vocab) regAudio(v.audio, v.lemma);
@@ -269,6 +273,17 @@ function main() {
     ),
   );
 
+  const webAssets = buildWebAssets(bundle);
+  const webDir = join(outDir, "web");
+  mkdirSync(webDir, { recursive: true });
+  const webFiles = [...webAssets.files];
+  for (let offset = 0; offset < webFiles.length; offset += 32) {
+    await Promise.all(webFiles.slice(offset, offset + 32).map(([file, body]) => writeFile(join(webDir, file), body)));
+  }
+  // Publish the index only after all of its immutable files have been written.
+  writeFileSync(join(webDir, "index.json"), JSON.stringify(webAssets.index));
+  writeFileSync(join(outDir, "sync_catalog.json"), JSON.stringify(buildSyncCatalog(bundle)));
+
   // ref -> spoken text, consumed by scripts/generate-audio.mjs (AUD-02)
   writeFileSync(
     join(outDir, "audio_texts.json"),
@@ -288,4 +303,4 @@ function main() {
     );
 }
 
-main();
+void main().catch((error) => { console.error(error); process.exitCode = 1; });

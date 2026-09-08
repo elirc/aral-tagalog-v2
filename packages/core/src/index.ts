@@ -12,3 +12,5 @@ export * from "./tiers";
 export * from "./quests";
 export * from "./ads";
 export * from "./discovery";
+
+export * from "./content-index";

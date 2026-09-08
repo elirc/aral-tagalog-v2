@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { findNextLesson, matchesSearch, searchVocab } from "./discovery";
+import { findNextLesson, matchesSearch, searchVocab, playableLessonIds } from "./discovery";
 import type { Unit } from "./types";
+import { isLessonUnlocked } from "./review";
 
 const lesson = (id: string) => ({ id, title: id, xp: 10, exercises: [] });
 const units: Unit[] = [
@@ -44,5 +45,23 @@ describe("search", () => {
     expect(searchVocab(entries, "po formal")).toEqual(entries);
     expect(searchVocab(entries, "  ")).toEqual(entries);
     expect(searchVocab(entries, "absent")).toEqual([]);
+  });
+});
+
+
+describe("course-map availability", () => {
+  it("matches existing row access for gaps, placement, historical access and stale IDs", () => {
+    const ids = units.flatMap((unit) => unit.lessons.map((entry) => entry.id));
+    for (const completed of [[], ["a"], ["a", "b"], ["c"], ["b", "d", "removed"], ids]) {
+      for (const ctx of [context, { ...context, unlockedTierIds: ["advanced"] }]) {
+        const available = playableLessonIds(units, completed, ctx);
+        for (const id of ids) expect(available.has(id)).toBe(completed.includes(id) || isLessonUnlocked(units, id, completed, ctx));
+      }
+    }
+  });
+  it("supports flat metadata without loading exercise bodies", () => {
+    const flat = units.map(({ tier, ...unit }) => ({ ...unit, lessons: unit.lessons.map(({ exercises, ...entry }) => entry) }));
+    expect([...playableLessonIds(flat, ["a"])]).toEqual(["a", "b"]);
+    expect([...playableLessonIds([], [])]).toEqual([]);
   });
 });

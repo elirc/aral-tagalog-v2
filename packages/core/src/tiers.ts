@@ -1,4 +1,4 @@
-import type { CourseTier, Unit } from "./types";
+import type { CourseTier, UnitOverview } from "./types";
 
 /**
  * Difficulty tracks (CNT). A tier is a run of units at one skill level;
@@ -12,7 +12,7 @@ import type { CourseTier, Unit } from "./types";
  */
 
 /** Units belonging to a tier, in course order. */
-export function unitsInTier(units: Unit[], tierId: string): Unit[] {
+export function unitsInTier(units: UnitOverview[], tierId: string): UnitOverview[] {
   return units.filter((u) => u.tier === tierId);
 }
 
@@ -20,14 +20,14 @@ export function unitsInTier(units: Unit[], tierId: string): Unit[] {
  * The tier a lesson sits in, or null when the course is flat / the unit names
  * no tier. Lessons outside every tier fall back to linear unlocking.
  */
-export function tierOfLesson(units: Unit[], lessonId: string): string | null {
+export function tierOfLesson(units: UnitOverview[], lessonId: string): string | null {
   for (const unit of units)
     if (unit.lessons.some((l) => l.id === lessonId)) return unit.tier ?? null;
   return null;
 }
 
 /** Every lesson id in a tier, in course order. */
-export function tierLessonIds(units: Unit[], tierId: string): string[] {
+export function tierLessonIds(units: UnitOverview[], tierId: string): string[] {
   return unitsInTier(units, tierId).flatMap((u) => u.lessons.map((l) => l.id));
 }
 
@@ -45,7 +45,7 @@ export interface TierUnlockContext {
  * treated as locked rather than throwing.
  */
 export function isTierUnlocked(
-  units: Unit[],
+  units: UnitOverview[],
   tierId: string,
   completedLessonIds: string[],
   ctx: TierUnlockContext = {},
@@ -76,7 +76,7 @@ export interface TierStatus {
 
 /** Per-tier unlock + completion summary for the course map. */
 export function tierStatuses(
-  units: Unit[],
+  units: UnitOverview[],
   completedLessonIds: string[],
   ctx: TierUnlockContext = {},
 ): TierStatus[] {
@@ -110,7 +110,7 @@ export function tierStatuses(
  * they could plausibly skip into. Purely advisory — the UI lets them pick any.
  */
 export function suggestedTier(
-  units: Unit[],
+  units: UnitOverview[],
   completedLessonIds: string[],
   ctx: TierUnlockContext = {},
 ): CourseTier | null {

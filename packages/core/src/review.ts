@@ -1,4 +1,4 @@
-import type { Lesson, Unit } from "./types";
+import type { Lesson, Unit, UnitOverview } from "./types";
 import { isTierUnlocked, tierLessonIds, tierOfLesson, type TierUnlockContext } from "./tiers";
 import { PRACTICE_XP } from "./xp";
 
@@ -53,7 +53,7 @@ export function buildReviewLesson(
  * Pass no `ctx` (or a bundle without tiers) for the flat behaviour.
  */
 export function isLessonUnlocked(
-  units: Unit[],
+  units: UnitOverview[],
   lessonId: string,
   completedLessonIds: string[],
   ctx: TierUnlockContext = {},

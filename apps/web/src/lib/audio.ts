@@ -1,4 +1,4 @@
-import { bundle } from "./content";
+import { contentLoader } from "./content";
 import { audioUrl } from "./api";
 
 /**
@@ -12,9 +12,10 @@ import { audioUrl } from "./api";
  * the device has one. Recorded clips always win once they exist.
  */
 export function playAudio(ref: string | undefined, fallbackText?: string): Promise<boolean> {
-  const text = (ref && bundle.audioTexts?.[ref]) || fallbackText;
+  const source = ref ? contentLoader.audioFor(ref) : undefined;
+  const text = source?.text || fallbackText;
   if (!ref) return text ? speak(text) : Promise.resolve(false);
-  const file = bundle.audio[ref];
+  const file = source?.file;
   if (!file) return text ? speak(text) : Promise.resolve(false);
   const el = new Audio(audioUrl(file));
   return el.play().then(

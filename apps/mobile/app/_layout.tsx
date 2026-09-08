@@ -1,7 +1,6 @@
 import { Stack } from "expo-router";
 import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import { cacheAllAudio } from "@/lib/audio";
 import { refreshBundleIfNewer } from "@/lib/content";
 import { ProgressProvider } from "@/lib/progress";
 import { ThemeProvider, useTheme } from "@/theme";
@@ -13,11 +12,10 @@ function ThemedStatusBar() {
 }
 
 export default function RootLayout() {
-  // OFF-04: check for newer content in the background; never blocks play.
-  // Then pull audio clips to device storage so lessons are playable offline
-  // (OFF-01) — cacheAllAudio skips files it already has.
+  // Check for newer content without downloading the entire audio catalog.
+  // Recordings are cached when played; bundled lessons stay available offline.
   useEffect(() => {
-    void refreshBundleIfNewer().then(() => cacheAllAudio()).catch(() => {});
+    void refreshBundleIfNewer();
   }, []);
 
   return (

@@ -1,34 +1,15 @@
-import { isLessonUnlocked as unlockedInUnits, type CourseBundle, type Lesson } from "@aral/core";
-import bundleJson from "@aral/content/bundle";
+﻿import { isLessonUnlocked as unlockedInUnits, type WebCourseIndex } from "@aral/core";
+import courseIndex from "@aral/content/web-index";
+import { CourseContentLoader } from "./content-loader";
 
-/**
- * The web app ships the compiled bundle at build time (simplest online-first
- * setup, ARCH-05). Mobile downloads it at runtime instead; content updates on
- * web arrive with the next deploy.
- */
-export const bundle = bundleJson as unknown as CourseBundle;
+/** Browsing needs only titles and ordering; exercise bodies arrive per unit on demand. */
+export const bundle = courseIndex as WebCourseIndex;
+export const contentLoader = new CourseContentLoader(bundle);
+export const findLesson = (lessonId: string) => contentLoader.findLesson(lessonId);
+export const loadLesson = (lessonId: string) => contentLoader.loadLesson(lessonId);
+export const loadReview = (weakIds: string[]) => contentLoader.loadReview(weakIds);
+export const loadVocabulary = () => contentLoader.loadVocabulary();
 
-export function findLesson(lessonId: string): { lesson: Lesson; unitTitle: string } | null {
-  for (const unit of bundle.units) {
-    const lesson = unit.lessons.find((l) => l.id === lessonId);
-    if (lesson) return { lesson, unitTitle: unit.title };
-  }
-  return null;
-}
-
-/**
- * Lessons unlock in order *within their difficulty tier*, and a tier opens
- * once the previous one is finished or the learner placed into it. Callers
- * must pass `unlockedTierIds` from progress — omitting it silently locks
- * every tier the learner jumped into.
- */
-export function isLessonUnlocked(
-  lessonId: string,
-  completed: string[],
-  unlockedTierIds: string[] = [],
-): boolean {
-  return unlockedInUnits(bundle.units, lessonId, completed, {
-    tiers: bundle.tiers,
-    unlockedTierIds,
-  });
+export function isLessonUnlocked(lessonId: string, completed: string[], unlockedTierIds: string[] = []): boolean {
+  return unlockedInUnits(bundle.units, lessonId, completed, { tiers: bundle.tiers, unlockedTierIds });
 }
