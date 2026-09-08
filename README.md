@@ -117,10 +117,11 @@ draft — review by a fluent speaker recommended.
 
 ## Production release
 
-See [the small-production release guide](docs/RELEASE.md) for the supplied
-single-host Docker deployment, HTTPS, migrations, backups, rollback and smoke
-checks. Run `pnpm release:check` before shipping. The GitHub release workflow
-also tests the actual containers with Postgres.
+Use [the Vercel testing and deployment guide](docs/VERCEL.md) for one Next.js
+project with managed PostgreSQL. The [single-host Docker guide](docs/RELEASE.md)
+covers HTTPS, migrations, backups and rollback for that hosting option. Run
+`pnpm release:check` before shipping. CI tests both API hosting paths, including
+accounts, progress sync, large content downloads and production packaging.
 
 The web app and API share one origin through `/api`; production builds use this
 by default. A separate API host can be set with `NEXT_PUBLIC_API_URL` at build

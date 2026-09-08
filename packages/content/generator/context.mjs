@@ -8,6 +8,7 @@
 
 import {
   ADJECTIVES,
+  NOUN_ACTIONS,
   DAYS,
   NAMES,
   NUMBERS,
@@ -54,7 +55,8 @@ export function makeContext(theme, rng) {
   const pairs = [];
   for (const verb of TRANSITIVE.filter((verb) => !NARROW.has(verb.id)))
     for (const obj of objects)
-      if (verb.objIds ? verb.objIds.includes(obj.tl) : verb.obj.includes(obj.cat))
+      if ((!NOUN_ACTIONS[obj.tl] || NOUN_ACTIONS[obj.tl].includes(verb.id)) &&
+          (verb.objIds ? verb.objIds.includes(obj.tl) : verb.obj.includes(obj.cat)))
         pairs.push({ verb, obj });
 
   const ctx = {

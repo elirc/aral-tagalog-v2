@@ -14,8 +14,8 @@ export function createDb(databaseUrl: string) {
     prepare: false,
     connect_timeout: 5,
     idle_timeout: process.env.VERCEL === "1" ? 5 : 20,
-    // Transaction poolers reject arbitrary startup parameters.
-    ...(process.env.VERCEL === "1" ? {} : { connection: { statement_timeout: 10_000 } }),
+    // Avoid startup statement_timeout: managed transaction poolers reject it,
+    // including when a developer connects to the preview database locally.
   });
   return drizzle(client, { schema });
 }

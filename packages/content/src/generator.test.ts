@@ -5,15 +5,24 @@ import { comparative, equalityAdjective, superlative } from "../generator/makers
 // @ts-expect-error JavaScript authoring module has no declaration file.
 import { reviewValue } from "../generator/review.mjs";
 // @ts-expect-error JavaScript authoring module has no declaration file.
-import { proofreadEnglish, repeatedTemporalClause } from "../generator/proofread.mjs";
+import { proofreadEnglish, repeatedTemporalClause, invalidNounAction } from "../generator/proofread.mjs";
 // @ts-expect-error JavaScript authoring module has no declaration file.
 import { makeContext } from "../generator/context.mjs";
 // @ts-expect-error JavaScript authoring module has no declaration file.
 import { rngFrom } from "../generator/grammar.mjs";
 // @ts-expect-error JavaScript authoring module has no declaration file.
 import { THEMES } from "../generator/themes.mjs";
+// @ts-expect-error JavaScript authoring module has no declaration file.
+import { NOUN_ACTIONS } from "../generator/lexicon.mjs";
 
 describe("generated sentence review", () => {
+  it("flags concrete invalid object phrases without matching instructions", () => {
+    expect(invalidNounAction("Kumukuha ako ng altar.")).toBe(true);
+    expect(invalidNounAction("Nililinis ko ang altar.")).toBe(false);
+    expect(invalidNounAction("Bumibili siya ng awit.")).toBe(true);
+    expect(invalidNounAction("Naghahanap siya ng awit.")).toBe(false);
+    expect(invalidNounAction("Keep the words in order.")).toBe(false);
+  });
   it.each([
     ["If he will look for a drum, he will buy it.", "If he looks for a drum, he will buy it."],
     ["If we will not arrive, we will call.", "If we do not arrive, we will call."],
@@ -34,7 +43,10 @@ describe("generated sentence review", () => {
         expect(["hinog", "magulang"]).not.toContain(ctx.adj({ tl: "hapunan", cat: "food" }).tl);
         const action = ctx.action();
         expect(["sundo", "lagay"]).not.toContain(action.verb.id);
-        if (action.obj) expect(["himig", "tugtog"]).not.toContain(action.obj.tl);
+        if (action.obj) {
+          expect(["himig", "tugtog"]).not.toContain(action.obj.tl);
+          if (NOUN_ACTIONS[action.obj.tl]) expect(NOUN_ACTIONS[action.obj.tl]).toContain(action.verb.id);
+        }
       }
     }
   });

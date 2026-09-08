@@ -1,3 +1,4 @@
+import { writeTextAtomically as writeFileSync } from "./write.mjs";
 /**
  * Course generator (CNT-10): expands the hand-authored course with themed,
  * grammar-focused units built from the lexicon in generator/lexicon.mjs.
@@ -11,11 +12,11 @@
  *
  * Generated units are written as ordinary YAML into course/en-tl/units, named
  * so they sort *inside* their tier's run (tier contiguity is enforced by the
- * compiler). Re-running replaces them wholesale — nothing else is touched, so
- * hand-authored units and the review history on them stay put.
+ * compiler). Default runs retain published units. --rebuild explicitly replaces
+ * generated units; hand-authored units are never rewritten.
  */
 
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse, stringify } from "yaml";

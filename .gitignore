@@ -22,3 +22,6 @@ packages/content/dist/
 apps/web/public/_course/
 
 .vercel/
+
+# Interrupted content authoring leaves only temporary files.
+packages/content/course/**/*.tmp

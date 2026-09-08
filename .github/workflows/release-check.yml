@@ -29,14 +29,10 @@ jobs:
           node-version: "24"
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      - name: Apply repeatable content review
-        run: pnpm --filter @aral/content review
-      - name: Save reviewed course sources
-        uses: actions/upload-artifact@v4
-        with:
-          name: reviewed-course
-          path: packages/content/course/en-tl/units/*.yaml
-          retention-days: 7
+      - name: Verify content review is repeatable
+        run: |
+          pnpm --filter @aral/content review
+          git diff --exit-code -- packages/content/course/en-tl/units
       - name: Build and start production containers
         run: docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml up --build -d --wait --wait-timeout 180
       - name: Obtain the local HTTPS test certificate

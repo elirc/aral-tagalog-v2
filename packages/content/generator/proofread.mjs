@@ -1,4 +1,4 @@
-import { VERBS } from "./lexicon.mjs";
+import { VERBS, NOUN_ACTIONS } from "./lexicon.mjs";
 export function proofreadEnglish(text) {
   text = text.replace(/\b(am|are) cries easily\b/g, "cry easily")
     .replace(/\bis cries easily\b/g, "cries easily")
@@ -18,4 +18,15 @@ export function proofreadEnglish(text) {
 export function repeatedTemporalClause(text) {
   const match = /^(?:After|Before) (.+), (.+)[.!?]$/i.exec(text);
   return !!match && match[1].toLowerCase() === match[2].toLowerCase();
+}
+
+// Check concrete Tagalog object phrases, avoiding English words such as "order"
+// in instructions and vocabulary-only appearances that do not form a sentence.
+const nounActionPatterns = Object.entries(NOUN_ACTIONS).map(([noun, allowed]) => {
+  const forms = [...new Set(VERBS.filter((verb) => verb.obj && !allowed.includes(verb.id))
+    .flatMap((verb) => [...Object.values(verb.f), ...Object.values(verb.o ?? {})]))];
+  return [noun, new RegExp("\\b(?:" + forms.join("|") + ")\\b[^,.!?;]*\\b(?:ng|ang) (?:mga )?" + noun + "\\b", "i")];
+});
+export function invalidNounAction(text) {
+  return nounActionPatterns.some(([noun, pattern]) => text.toLowerCase().includes(noun) && pattern.test(text));
 }

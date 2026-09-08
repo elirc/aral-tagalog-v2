@@ -988,3 +988,73 @@ export function nounsFor(theme, cats = null) {
 export function adjectivesFor(cat) {
   return ADJECTIVES.filter((x) => x.fits.includes(cat));
 }
+
+/** Semantic restrictions for intangible nouns and fixed furnishings. */
+export const NOUN_ACTIONS = {
+  "kilo": [],
+  "altar": [
+    "linis"
+  ],
+  "awit": [
+    "basa",
+    "hanap",
+    "pili"
+  ],
+  "kanta": [
+    "hanap",
+    "pili"
+  ],
+  "kuwento": [
+    "basa",
+    "sulat",
+    "hanap",
+    "pili"
+  ],
+  "tula": [
+    "basa",
+    "sulat",
+    "hanap",
+    "pili"
+  ],
+  "password": [
+    "hanap",
+    "pili",
+    "kuha"
+  ],
+  "email": [
+    "basa",
+    "sulat",
+    "hanap"
+  ],
+  "mensahe": [
+    "basa",
+    "sulat",
+    "hanap"
+  ],
+  "text": [
+    "basa",
+    "sulat",
+    "hanap"
+  ],
+  "pirma": [
+    "hanap",
+    "kuha"
+  ],
+  "resipe": [
+    "basa",
+    "sulat",
+    "hanap",
+    "pili"
+  ],
+  "order": [
+    "kuha",
+    "hanap",
+    "handa",
+    "hatid"
+  ],
+  "ringtone": [
+    "hanap",
+    "pili",
+    "bili"
+  ]
+};
