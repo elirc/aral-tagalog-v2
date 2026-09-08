@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link, useRouter } from "expo-router";
-import { FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { Alert, FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   buildReviewLesson,
@@ -16,7 +16,7 @@ import {
   type Unit,
 } from "@aral/core";
 import { getBundle, isLessonUnlocked } from "@/lib/content";
-import { deviceTz, useProgress } from "@/lib/progress";
+import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 import { radii, spacing, useTheme } from "@/theme";
 
 /** Display name of a unit's difficulty tier, or null in a flat bundle. */
@@ -28,7 +28,7 @@ function tierTitle(tierId: string | undefined): string | null {
 export default function CourseMapScreen() {
   const router = useRouter();
   const { colors, styles, toggle } = useTheme();
-  const { progress, user, logout, pendingCount, needsRelogin } = useProgress();
+  const { progress, user, logout, pendingCount, needsRelogin, addEvents } = useProgress();
   const bundle = getBundle();
   const [selectedTier, setSelectedTier] = useState("");
   const [query, setQuery] = useState("");
@@ -235,6 +235,11 @@ export default function CourseMapScreen() {
                 <Text style={styles.btnGhostText}>{track.unlocked ? "" : "?? "}{track.tier.title}</Text>
               </Pressable>)}
             </ScrollView>
+            {tracks.find((track) => track.tier.id === activeTier)?.unlocked === false && <Pressable style={styles.btnPrimary} accessibilityRole="button"
+              onPress={() => Alert.alert("Start this track?", "Earlier lessons stay available. Your XP, streak and hearts stay the same.", [
+                { text: "Cancel", style: "cancel" },
+                { text: "Start here", onPress: () => { if (activeTier) addEvents([{ id: newEventId(), type: "tier_started", occurredAt: Date.now(), tierId: activeTier }]); } },
+              ])}><Text style={styles.btnPrimaryText}>Start this track</Text></Pressable>}
             <TextInput accessibilityLabel="Search units" value={query} onChangeText={setQuery} autoCorrect={false}
               placeholder="Search topics, lessons or unit number" placeholderTextColor={colors.textMuted}
               style={{ backgroundColor: colors.bg, color: colors.text, borderWidth: 2, borderColor: colors.border, borderRadius: radii.md, padding: spacing.md }} />

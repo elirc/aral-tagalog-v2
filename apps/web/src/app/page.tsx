@@ -110,7 +110,7 @@ export default function CourseMapPage() {
               </Link>
             )}
 
-            <TierPlacement progress={progress} />
+            <TierPlacement progress={progress} onPlace={setSelectedTier} />
 
             {tiers.length > 0 && (
               <div className="course-toolbar">

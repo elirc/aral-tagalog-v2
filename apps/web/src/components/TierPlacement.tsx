@@ -11,7 +11,7 @@ import { newEventId, useProgress } from "@/lib/progress";
  * (core's isLessonUnlocked reads progress.unlockedTierIds) — no separate
  * state, no server call.
  */
-export function TierPlacement({ progress }: { progress: UserProgress }) {
+export function TierPlacement({ progress, onPlace }: { progress: UserProgress; onPlace?: (tierId: string) => void }) {
   const { addEvents } = useProgress();
   const [open, setOpen] = useState(false);
   const [confirming, setConfirming] = useState<CourseTier | null>(null);
@@ -28,6 +28,7 @@ export function TierPlacement({ progress }: { progress: UserProgress }) {
 
   const place = (tier: CourseTier) => {
     addEvents([{ id: newEventId(), type: "tier_started", occurredAt: Date.now(), tierId: tier.id }]);
+    onPlace?.(tier.id);
     setConfirming(null);
     setOpen(false);
   };
