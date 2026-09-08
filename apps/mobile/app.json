@@ -14,9 +14,6 @@
     "android": {
       "package": "app.aral.mobile"
     },
-    "plugins": ["expo-router", "expo-sqlite"],
-    "extra": {
-      "apiUrl": "http://localhost:3001"
-    }
+    "plugins": ["expo-router", "expo-sqlite"]
   }
 }

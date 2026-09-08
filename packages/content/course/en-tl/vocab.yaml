@@ -2262,3 +2262,2515 @@
 - id: lindol
   lemma: lindol
   translation: earthquake
+
+# --- Mastery tier (units 52-57) ---
+- id: matigas_ang_ulo
+  lemma: matigas ang ulo
+  translation: stubborn
+  notes: Literally "hard head". The pattern "adjective + ang + body part" builds most Tagalog idioms.
+- id: mababaw_ang_luha
+  lemma: mababaw ang luha
+  translation: cries easily
+  notes: Literally "shallow tears".
+- id: bukas_ang_palad
+  lemma: bukas ang palad
+  translation: generous
+  notes: Literally "open palm".
+- id: makati_ang_dila
+  lemma: makati ang dila
+  translation: can't keep a secret
+  notes: Literally "itchy tongue".
+- id: malikot_ang_kamay
+  lemma: malikot ang kamay
+  translation: light-fingered, thieving
+- id: bahala_na
+  lemma: bahala na
+  translation: come what may
+  notes: The national shrug — accepting an outcome you can't control.
+- id: utang_na_loob
+  lemma: utang na loob
+  translation: debt of gratitude
+  notes: A debt of the heart, never of money; a core Filipino social value.
+- id: isang_kahig_isang_tuka
+  lemma: isang kahig, isang tuka
+  translation: living hand to mouth
+  notes: One scratch, one peck — like a chicken with nothing stored.
+- id: nangangapa_sa_dilim
+  lemma: nangangapa sa dilim
+  translation: clueless, groping in the dark
+- id: kumukulo_ang_dugo
+  lemma: kumukulo ang dugo
+  translation: furious
+  notes: Literally "the blood is boiling".
+- id: balat_sibuyas
+  lemma: balat-sibuyas
+  translation: overly sensitive
+  notes: '"Onion-skinned" — bruises at the slightest touch.'
+- id: nagdadalawang_isip
+  lemma: nagdadalawang-isip
+  translation: having second thoughts
+- id: halang_ang_bituka
+  lemma: halang ang bituka
+  translation: ruthless, capable of anything
+- id: sana_all
+  lemma: sana all
+  translation: lucky them (wish that were me)
+  notes: Modern slang, everywhere online since about 2020.
+- id: charot
+  lemma: charot
+  translation: just kidding
+  notes: Tacked onto a sentence to cancel it — the spoken wink.
+- id: chika
+  lemma: chika
+  translation: gossip, the latest news
+- id: maaari
+  lemma: maaari
+  translation: may, can (formal)
+  notes: The formal twin of "pwede".
+- id: nais
+  lemma: nais
+  translation: to wish, to want (formal)
+  notes: The formal twin of "gusto".
+- id: pakisuyo
+  lemma: pakisuyo
+  translation: kindly, please do
+- id: ipagpaumanhin
+  lemma: ipagpaumanhin
+  translation: please forgive (formal)
+- id: makikiraan
+  lemma: makikiraan
+  translation: excuse me, let me pass
+- id: paunawa
+  lemma: paunawa
+  translation: notice, announcement
+- id: liham
+  lemma: liham
+  translation: letter
+- id: lagda
+  lemma: lagda
+  translation: signature
+- id: pulong
+  lemma: pulong
+  translation: meeting
+- id: noong_unang_panahon
+  lemma: noong unang panahon
+  translation: once upon a time
+- id: kinabukasan
+  lemma: kinabukasan
+  translation: the next day
+- id: sa_wakas
+  lemma: sa wakas
+  translation: at last
+- id: bigla
+  lemma: bigla
+  translation: suddenly
+- id: pala
+  lemma: pala
+  translation: turns out (particle of realisation)
+  notes: '"Kaya pala!" — so that''s why!'
+- id: ulat
+  lemma: ulat
+  translation: report
+- id: naganap
+  lemma: naganap
+  translation: took place, happened
+- id: kinumpirma
+  lemma: kinumpirma
+  translation: confirmed
+- id: ayon_sa
+  lemma: ayon sa
+  translation: according to
+- id: babala
+  lemma: babala
+  translation: warning
+- id: senyales
+  lemma: senyales
+  translation: signal (as in a storm signal)
+- id: suspendido
+  lemma: suspendido
+  translation: suspended (of classes or work)
+- id: bayad_po
+  lemma: bayad po
+  translation: here is my fare
+- id: para_po
+  lemma: para po
+  translation: stop here please
+  notes: Called out to a jeepney driver, not related to Spanish "para".
+- id: tingi
+  lemma: tingi
+  translation: sold in small single portions
+  notes: How sari-sari stores keep everything affordable.
+- id: lista
+  lemma: lista
+  translation: the store credit list
+- id: meron
+  lemma: meron
+  translation: there is, to have
+  notes: Spoken short form of "mayroon".
+- id: ubos_na
+  lemma: ubos na
+  translation: sold out, all gone
+- id: pabili
+  lemma: pabili
+  translation: I'd like to buy
+
+# --- Foundation expansion (units 18a-18r) ---
+- id: taga_saan
+  lemma: taga-saan
+  translation: from where
+- id: labing_isa
+  lemma: labing-isa
+  translation: eleven
+  notes: Teens are labing- plus the unit; tens end in -pu.
+- id: dalawampu
+  lemma: dalawampu
+  translation: twenty
+- id: isang_daan
+  lemma: isang daan
+  translation: one hundred
+- id: yelo
+  lemma: yelo
+  translation: ice
+- id: pahingi
+  lemma: pahingi
+  translation: may I have
+- id: almusal
+  lemma: almusal
+  translation: breakfast
+- id: sinangag
+  lemma: sinangag
+  translation: garlic fried rice
+  notes: The -silog dishes are all sinangag plus itlog plus one salty partner.
+- id: kuwaderno
+  lemma: kuwaderno
+  translation: notebook
+- id: pisara
+  lemma: pisara
+  translation: blackboard
+- id: silid_aralan
+  lemma: silid-aralan
+  translation: classroom
+- id: hagdan
+  lemma: hagdan
+  translation: stairs
+- id: tsinelas
+  lemma: tsinelas
+  translation: rubber slippers
+- id: pitaka
+  lemma: pitaka
+  translation: wallet
+- id: payong
+  lemma: payong
+  translation: umbrella
+- id: nakasalamin
+  lemma: nakasalamin
+  translation: wearing glasses
+  notes: naka- before clothing describes what someone has on.
+- id: tabo
+  lemma: tabo
+  translation: water dipper
+  notes: The tabo and balde are the classic Filipino bathroom pair.
+- id: magsipilyo
+  lemma: magsipilyo
+  translation: to brush one's teeth
+- id: marumi
+  lemma: marumi
+  translation: dirty
+- id: iyan
+  lemma: iyan
+  translation: that (near you)
+- id: iyon
+  lemma: iyon
+  translation: that (far away)
+- id: mano_po
+  lemma: mano po
+  translation: the hand-to-forehead greeting for elders
+- id: alas_dos
+  lemma: alas-dos
+  translation: two o'clock
+  notes: Clock hours are Spanish; one o'clock is ala-una, not alas-una.
+- id: tanghali
+  lemma: tanghali
+  translation: noon
+- id: tag_init
+  lemma: tag-init
+  translation: hot season
+- id: tag_ulan
+  lemma: tag-ulan
+  translation: rainy season
+- id: lamok
+  lemma: lamok
+  translation: mosquito
+- id: langgam
+  lemma: langgam
+  translation: ant
+  notes: False friend — langgam means bird in Cebuano.
+- id: alitaptap
+  lemma: alitaptap
+  translation: firefly
+- id: kangkong
+  lemma: kangkong
+  translation: water spinach
+- id: kalabasa
+  lemma: kalabasa
+  translation: squash
+- id: ninong
+  lemma: ninong
+  translation: godfather
+- id: biyenan
+  lemma: biyenan
+  translation: parent-in-law
+
+# --- Everyday expansion (units 35a-35q) ---
+- id: tara
+  lemma: tara
+  translation: let's go
+- id: susunduin
+  lemma: susunduin
+  translation: will pick up
+- id: abala
+  lemma: abala
+  translation: busy
+- id: walang_signal
+  lemma: walang signal
+  translation: no signal
+- id: ipon
+  lemma: ipon
+  translation: savings
+- id: pirma
+  lemma: pirma
+  translation: signature
+- id: padala
+  lemma: padala
+  translation: remittance
+- id: lakad
+  lemma: lakad
+  translation: an errand
+  notes: '"May lakad ako" means I have somewhere to be, not that I am walking.'
+- id: bayarin
+  lemma: bayarin
+  translation: a bill
+- id: kartero
+  lemma: kartero
+  translation: postman
+- id: magwalis
+  lemma: magwalis
+  translation: to sweep
+- id: magligpit
+  lemma: magligpit
+  translation: to tidy up
+- id: maglaba
+  lemma: maglaba
+  translation: to do laundry
+- id: magsampay
+  lemma: magsampay
+  translation: to hang laundry out to dry
+- id: magplantsa
+  lemma: magplantsa
+  translation: to iron
+- id: katapat
+  lemma: katapat
+  translation: across from
+- id: rider
+  lemma: rider
+  translation: delivery rider
+- id: de_lata
+  lemma: de-lata
+  translation: canned goods
+- id: dosena
+  lemma: dosena
+  translation: dozen
+- id: supot
+  lemma: supot
+  translation: plastic bag
+- id: bilog
+  lemma: bilog
+  translation: round
+- id: makapal
+  lemma: makapal
+  translation: thick
+- id: mabigat
+  lemma: mabigat
+  translation: heavy
+- id: madalas
+  lemma: madalas
+  translation: often
+- id: bihira
+  lemma: bihira
+  translation: rarely
+- id: paminsan_minsan
+  lemma: paminsan-minsan
+  translation: once in a while
+- id: marunong
+  lemma: marunong
+  translation: knows how to
+  notes: Skill, not permission — that is pwede — and not capability, which is kaya.
+- id: bawal
+  lemma: bawal
+  translation: forbidden
+- id: dapat
+  lemma: dapat
+  translation: should, must
+- id: sang_ayon
+  lemma: sang-ayon
+  translation: in agreement
+- id: sa_pagitan_ng
+  lemma: sa pagitan ng
+  translation: between
+- id: libo
+  lemma: libo
+  translation: thousand
+- id: upa
+  lemma: upa
+  translation: rent
+- id: maligayang_bati
+  lemma: maligayang bati
+  translation: happy greetings, congratulations
+- id: kapitbahay
+  lemma: kapitbahay
+  translation: neighbor
+- id: bayanihan
+  lemma: bayanihan
+  translation: neighbors helping without being asked
+- id: barangay
+  lemma: barangay
+  translation: the smallest unit of Philippine local government
+
+# --- Conversational expansion (units 51a-51p) ---
+- id: karanasan
+  lemma: karanasan
+  translation: experience
+- id: kalakasan
+  lemma: kalakasan
+  translation: strength
+- id: paupahan
+  lemma: paupahan
+  translation: a place for rent
+- id: kontrata
+  lemma: kontrata
+  translation: contract
+- id: magpareserba
+  lemma: magpareserba
+  translation: to reserve
+- id: paliparan
+  lemma: paliparan
+  translation: airport
+- id: pasaporte
+  lemma: pasaporte
+  translation: passport
+- id: layunin
+  lemma: layunin
+  translation: purpose
+- id: palitan_ang_sira
+  lemma: palitan
+  translation: to replace
+- id: garantiya
+  lemma: garantiya
+  translation: warranty
+- id: payo
+  lemma: payo
+  translation: advice
+- id: mag_ingat
+  lemma: mag-ingat
+  translation: be careful
+- id: kompromiso
+  lemma: kompromiso
+  translation: compromise
+- id: imbitado
+  lemma: imbitado
+  translation: invited
+- id: makakadalo
+  lemma: makakadalo
+  translation: able to attend
+- id: sana_wish
+  lemma: sana
+  translation: hopefully, if only
+- id: sayang
+  lemma: sayang
+  translation: what a waste, too bad
+- id: kapag
+  lemma: kapag
+  translation: when, whenever
+  notes: Use kung for uncertain conditions and kapag for reliable ones.
+- id: magpagupit
+  lemma: magpagupit
+  translation: to get a haircut
+  notes: magpa- means to have something done for you.
+- id: mekaniko
+  lemma: mekaniko
+  translation: mechanic
+- id: binili_ko
+  lemma: binili ko
+  translation: I bought it (object focus)
+- id: ilagay
+  lemma: ilagay
+  translation: to put it
+- id: kakakain_lang
+  lemma: kakakain lang
+  translation: just ate
+  notes: The kaka- form means minutes ago and always carries lang.
+- id: kamakalawa
+  lemma: kamakalawa
+  translation: the day before yesterday
+- id: pinakamaganda
+  lemma: pinakamaganda
+  translation: most beautiful
+- id: kasingtaas
+  lemma: kasingtaas
+  translation: as tall as
+- id: magsimba
+  lemma: magsimba
+  translation: to attend mass
+- id: biyaya
+  lemma: biyaya
+  translation: blessing
+
+# --- Mastery expansion (units 57a-57f) ---
+- id: salawikain
+  lemma: salawikain
+  translation: proverb
+- id: kung_may_tiyaga
+  lemma: kung may tiyaga, may nilaga
+  translation: perseverance brings reward
+  notes: Literally "if there is patience, there is stew".
+- id: pinanggalingan
+  lemma: pinanggalingan
+  translation: where one came from
+- id: pamahalaan
+  lemma: pamahalaan
+  translation: government
+- id: mamamayan
+  lemma: mamamayan
+  translation: citizen
+- id: karapatan
+  lemma: karapatan
+  translation: a right
+- id: halalan
+  lemma: halalan
+  translation: election
+- id: malasakit
+  lemma: malasakit
+  translation: genuine concern for others
+- id: panukala
+  lemma: panukala
+  translation: proposal
+- id: pag_aaralan_po_namin
+  lemma: pag-aaralan po namin
+  translation: we will study it
+  notes: In business talk this usually means a polite no.
+- id: hulugan
+  lemma: hulugan
+  translation: payment by installment
+- id: tula
+  lemma: tula
+  translation: poem
+- id: damdamin
+  lemma: damdamin
+  translation: feeling
+- id: taludtod
+  lemma: taludtod
+  translation: a line of verse
+- id: kalayaan
+  lemma: kalayaan
+  translation: freedom
+- id: punto
+  lemma: punto
+  translation: accent
+- id: ala_eh
+  lemma: ala eh
+  translation: Batangas filler word
+- id: wika
+  lemma: wika
+  translation: language
+- id: hanggang_sa_muli
+  lemma: hanggang sa muli
+  translation: until next time
+
+# --- generated vocabulary (generator/generate.mjs) ---
+- id: karne
+  lemma: karne
+  translation: meat
+  audio: karne
+- id: lugaw
+  lemma: lugaw
+  translation: rice porridge
+  audio: lugaw
+- id: sopas
+  lemma: sopas
+  translation: soup
+  audio: sopas
+- id: sabaw
+  lemma: sabaw
+  translation: broth
+  audio: sabaw
+- id: keso
+  lemma: keso
+  translation: cheese
+  audio: keso
+- id: sorbetes
+  lemma: sorbetes
+  translation: ice cream
+  audio: sorbetes
+- id: meryenda
+  lemma: meryenda
+  translation: snack
+  audio: meryenda
+- id: pandesal
+  lemma: pandesal
+  translation: bread roll
+  audio: pandesal
+- id: tuyo
+  lemma: tuyo
+  translation: dried fish
+  audio: tuyo
+- id: tapa
+  lemma: tapa
+  translation: cured beef
+  audio: tapa
+- id: longganisa
+  lemma: longganisa
+  translation: sausage
+  audio: longganisa
+- id: mantikilya
+  lemma: mantikilya
+  translation: butter
+  audio: mantikilya
+- id: palaman
+  lemma: palaman
+  translation: spread
+  audio: palaman
+- id: champorado
+  lemma: champorado
+  translation: chocolate rice porridge
+  audio: champorado
+- id: hapunan
+  lemma: hapunan
+  translation: dinner
+  audio: hapunan
+- id: tanghalian
+  lemma: tanghalian
+  translation: lunch
+  audio: tanghalian
+- id: panaderya
+  lemma: panaderya
+  translation: bakery
+  audio: panaderya
+- id: mansanas
+  lemma: mansanas
+  translation: apple
+  audio: mansanas
+- id: papaya
+  lemma: papaya
+  translation: papaya
+  audio: papaya
+- id: ubas
+  lemma: ubas
+  translation: grape
+  audio: ubas
+- id: dalandan
+  lemma: dalandan
+  translation: orange
+  audio: dalandan
+- id: bayabas
+  lemma: bayabas
+  translation: guava
+  audio: bayabas
+- id: pakwan
+  lemma: pakwan
+  translation: watermelon
+  audio: pakwan
+- id: melon
+  lemma: melon
+  translation: melon
+  audio: melon
+- id: santol
+  lemma: santol
+  translation: santol
+  audio: santol
+- id: lansones
+  lemma: lansones
+  translation: lanzones
+  audio: lansones
+- id: repolyo
+  lemma: repolyo
+  translation: cabbage
+  audio: repolyo
+- id: karot
+  lemma: karot
+  translation: carrot
+  audio: karot
+- id: patatas
+  lemma: patatas
+  translation: potato
+  audio: patatas
+- id: sitaw
+  lemma: sitaw
+  translation: string bean
+  audio: sitaw
+- id: malunggay
+  lemma: malunggay
+  translation: moringa
+  audio: malunggay
+- id: luya
+  lemma: luya
+  translation: ginger
+  audio: luya
+- id: mais
+  lemma: mais
+  translation: corn
+  audio: mais
+- id: tsaa
+  lemma: tsaa
+  translation: tea
+  audio: tsaa
+- id: juice
+  lemma: juice
+  translation: juice
+  audio: juice
+- id: softdrink
+  lemma: softdrink
+  translation: soda
+  audio: softdrink
+- id: serbesa
+  lemma: serbesa
+  translation: beer
+  audio: serbesa
+- id: tsokolate
+  lemma: tsokolate
+  translation: hot chocolate
+  audio: tsokolate
+- id: tasa
+  lemma: tasa
+  translation: cup
+  audio: tasa
+- id: bote
+  lemma: bote
+  translation: bottle
+  audio: bote
+- id: timbangan
+  lemma: timbangan
+  translation: scale
+  audio: timbangan
+- id: bayong
+  lemma: bayong
+  translation: woven basket
+  audio: bayong
+- id: listahan
+  lemma: listahan
+  translation: list
+  audio: listahan
+- id: sako
+  lemma: sako
+  translation: sack
+  audio: sako
+- id: puwesto
+  lemma: puwesto
+  translation: stall
+  audio: puwesto
+- id: waiter
+  lemma: waiter
+  translation: waiter
+  audio: waiter
+- id: upuan
+  lemma: upuan
+  translation: seat
+  audio: upuan
+- id: plato
+  lemma: plato
+  translation: plate
+  audio: plato
+- id: tisyu
+  lemma: tisyu
+  translation: tissue
+  audio: tisyu
+- id: resibo
+  lemma: resibo
+  translation: receipt
+  audio: resibo
+- id: order
+  lemma: order
+  translation: order
+  audio: order
+- id: sandok
+  lemma: sandok
+  translation: ladle
+  audio: sandok
+- id: repridyereytor
+  lemma: repridyereytor
+  translation: refrigerator
+  audio: repridyereytor
+- id: hurno
+  lemma: hurno
+  translation: oven
+  audio: hurno
+- id: lababo
+  lemma: lababo
+  translation: sink
+  audio: lababo
+- id: mangkok
+  lemma: mangkok
+  translation: bowl
+  audio: mangkok
+- id: takip
+  lemma: takip
+  translation: lid
+  audio: takip
+- id: kahoy
+  lemma: kahoy
+  translation: firewood
+  audio: kahoy
+- id: resipe
+  lemma: resipe
+  translation: recipe
+  audio: resipe
+- id: kuwarto
+  lemma: kuwarto
+  translation: room
+  audio: kuwarto
+- id: bubong
+  lemma: bubong
+  translation: roof
+  audio: bubong
+- id: dingding
+  lemma: dingding
+  translation: wall
+  audio: dingding
+- id: sahig
+  lemma: sahig
+  translation: floor
+  audio: sahig
+- id: bakuran
+  lemma: bakuran
+  translation: yard
+  audio: bakuran
+- id: sopa
+  lemma: sopa
+  translation: sofa
+  audio: sopa
+- id: istante
+  lemma: istante
+  translation: shelf
+  audio: istante
+- id: unan
+  lemma: unan
+  translation: pillow
+  audio: unan
+- id: kumot
+  lemma: kumot
+  translation: blanket
+  audio: kumot
+- id: kurtina
+  lemma: kurtina
+  translation: curtain
+  audio: kurtina
+- id: orasan
+  lemma: orasan
+  translation: clock
+  audio: orasan
+- id: salamin
+  lemma: salamin
+  translation: mirror
+  audio: salamin
+- id: alpombra
+  lemma: alpombra
+  translation: rug
+  audio: alpombra
+- id: sumbrero
+  lemma: sumbrero
+  translation: hat
+  audio: sumbrero
+- id: dyaket
+  lemma: dyaket
+  translation: jacket
+  audio: dyaket
+- id: sinturon
+  lemma: sinturon
+  translation: belt
+  audio: sinturon
+- id: relo
+  lemma: relo
+  translation: watch
+  audio: relo
+- id: kuwintas
+  lemma: kuwintas
+  translation: necklace
+  audio: kuwintas
+- id: braso
+  lemma: braso
+  translation: arm
+  audio: braso
+- id: binti
+  lemma: binti
+  translation: leg
+  audio: binti
+- id: mukha
+  lemma: mukha
+  translation: face
+  audio: mukha
+- id: leeg
+  lemma: leeg
+  translation: neck
+  audio: leeg
+- id: klinika
+  lemma: klinika
+  translation: clinic
+  audio: klinika
+- id: bitamina
+  lemma: bitamina
+  translation: vitamin
+  audio: bitamina
+- id: resepta
+  lemma: resepta
+  translation: prescription
+  audio: resepta
+- id: tao
+  lemma: tao
+  translation: person
+  audio: tao
+- id: bata
+  lemma: bata
+  translation: child
+  audio: bata
+- id: matanda
+  lemma: matanda
+  translation: elder
+  audio: matanda
+- id: kasama
+  lemma: kasama
+  translation: companion
+  audio: kasama
+- id: dayuhan
+  lemma: dayuhan
+  translation: foreigner
+  audio: dayuhan
+- id: binata
+  lemma: binata
+  translation: young man
+  audio: binata
+- id: dalaga
+  lemma: dalaga
+  translation: young woman
+  audio: dalaga
+- id: artista
+  lemma: artista
+  translation: actor
+  audio: artista
+- id: sekretarya
+  lemma: sekretarya
+  translation: secretary
+  audio: sekretarya
+- id: katulong
+  lemma: katulong
+  translation: helper
+  audio: katulong
+- id: papel
+  lemma: papel
+  translation: paper
+  audio: papel
+- id: lapis
+  lemma: lapis
+  translation: pencil
+  audio: lapis
+- id: bag
+  lemma: bag
+  translation: bag
+  audio: bag
+- id: takdang_aralin
+  lemma: takdang-aralin
+  translation: homework
+  audio: takdang_aralin
+- id: guhit
+  lemma: guhit
+  translation: drawing
+  audio: guhit
+- id: papeles
+  lemma: papeles
+  translation: papers
+  audio: papeles
+- id: kliyente
+  lemma: kliyente
+  translation: client
+  audio: kliyente
+- id: proyekto
+  lemma: proyekto
+  translation: project
+  audio: proyekto
+- id: mensahe
+  lemma: mensahe
+  translation: message
+  audio: mensahe
+- id: larawan
+  lemma: larawan
+  translation: photo
+  audio: larawan
+- id: bidyo
+  lemma: bidyo
+  translation: video
+  audio: bidyo
+- id: tsarger
+  lemma: tsarger
+  translation: charger
+  audio: tsarger
+- id: app
+  lemma: app
+  translation: app
+  audio: app
+- id: email
+  lemma: email
+  translation: email
+  audio: email
+- id: signal
+  lemma: signal
+  translation: signal
+  audio: signal
+- id: dyip
+  lemma: dyip
+  translation: jeepney
+  audio: dyip
+- id: kotse
+  lemma: kotse
+  translation: car
+  audio: kotse
+- id: motorsiklo
+  lemma: motorsiklo
+  translation: motorcycle
+  audio: motorsiklo
+- id: eroplano
+  lemma: eroplano
+  translation: airplane
+  audio: eroplano
+- id: tren
+  lemma: tren
+  translation: train
+  audio: tren
+- id: bisikleta
+  lemma: bisikleta
+  translation: bicycle
+  audio: bisikleta
+- id: barko
+  lemma: barko
+  translation: ship
+  audio: barko
+- id: gulong
+  lemma: gulong
+  translation: tire
+  audio: gulong
+- id: bagahe
+  lemma: bagahe
+  translation: luggage
+  audio: bagahe
+- id: tiket
+  lemma: tiket
+  translation: ticket
+  audio: tiket
+- id: hotel
+  lemma: hotel
+  translation: hotel
+  audio: hotel
+- id: mapa
+  lemma: mapa
+  translation: map
+  audio: mapa
+- id: turista
+  lemma: turista
+  translation: tourist
+  audio: turista
+- id: terminal
+  lemma: terminal
+  translation: terminal
+  audio: terminal
+- id: gabay
+  lemma: gabay
+  translation: guide
+  audio: gabay
+- id: plaza
+  lemma: plaza
+  translation: plaza
+  audio: plaza
+- id: bangko
+  lemma: bangko
+  translation: bank
+  audio: bangko
+- id: mall
+  lemma: mall
+  translation: mall
+  audio: mall
+- id: parke
+  lemma: parke
+  translation: park
+  audio: parke
+- id: munisipyo
+  lemma: munisipyo
+  translation: town hall
+  audio: munisipyo
+- id: sinehan
+  lemma: sinehan
+  translation: cinema
+  audio: sinehan
+- id: kalye
+  lemma: kalye
+  translation: street
+  audio: kalye
+- id: tulay
+  lemma: tulay
+  translation: bridge
+  audio: tulay
+- id: ulap
+  lemma: ulap
+  translation: cloud
+  audio: ulap
+- id: bituin
+  lemma: bituin
+  translation: star
+  audio: bituin
+- id: dahon
+  lemma: dahon
+  translation: leaf
+  audio: dahon
+- id: bato
+  lemma: bato
+  translation: stone
+  audio: bato
+- id: gubat
+  lemma: gubat
+  translation: forest
+  audio: gubat
+- id: talon
+  lemma: talon
+  translation: waterfall
+  audio: talon
+- id: init
+  lemma: init
+  translation: heat
+  audio: init
+- id: lamig
+  lemma: lamig
+  translation: cold
+  audio: lamig
+- id: kidlat
+  lemma: kidlat
+  translation: lightning
+  audio: kidlat
+- id: kulog
+  lemma: kulog
+  translation: thunder
+  audio: kulog
+- id: baha
+  lemma: baha
+  translation: flood
+  audio: baha
+- id: hamog
+  lemma: hamog
+  translation: dew
+  audio: hamog
+- id: ahas
+  lemma: ahas
+  translation: snake
+  audio: ahas
+- id: unggoy
+  lemma: unggoy
+  translation: monkey
+  audio: unggoy
+- id: pagong
+  lemma: pagong
+  translation: turtle
+  audio: pagong
+- id: palaka
+  lemma: palaka
+  translation: frog
+  audio: palaka
+- id: butiki
+  lemma: butiki
+  translation: lizard
+  audio: butiki
+- id: hipon
+  lemma: hipon
+  translation: shrimp
+  audio: hipon
+- id: alimango
+  lemma: alimango
+  translation: crab
+  audio: alimango
+- id: pusit
+  lemma: pusit
+  translation: squid
+  audio: pusit
+- id: tahong
+  lemma: tahong
+  translation: mussel
+  audio: tahong
+- id: baybayin
+  lemma: baybayin
+  translation: shore
+  audio: baybayin
+- id: korales
+  lemma: korales
+  translation: coral
+  audio: korales
+- id: lambat
+  lemma: lambat
+  translation: net
+  audio: lambat
+- id: pating
+  lemma: pating
+  translation: shark
+  audio: pating
+- id: dolphin
+  lemma: dolphin
+  translation: dolphin
+  audio: dolphin
+- id: bakawan
+  lemma: bakawan
+  translation: mangrove
+  audio: bakawan
+- id: ipis
+  lemma: ipis
+  translation: cockroach
+  audio: ipis
+- id: gagamba
+  lemma: gagamba
+  translation: spider
+  audio: gagamba
+- id: paruparo
+  lemma: paruparo
+  translation: butterfly
+  audio: paruparo
+- id: bubuyog
+  lemma: bubuyog
+  translation: bee
+  audio: bubuyog
+- id: tutubi
+  lemma: tutubi
+  translation: dragonfly
+  audio: tutubi
+- id: langaw
+  lemma: langaw
+  translation: fly
+  audio: langaw
+- id: kuliglig
+  lemma: kuliglig
+  translation: cricket
+  audio: kuliglig
+- id: uod
+  lemma: uod
+  translation: worm
+  audio: uod
+- id: alupihan
+  lemma: alupihan
+  translation: centipede
+  audio: alupihan
+- id: anay
+  lemma: anay
+  translation: termite
+  audio: anay
+- id: takbuhan
+  lemma: takbuhan
+  translation: race
+  audio: takbuhan
+- id: badminton
+  lemma: badminton
+  translation: badminton
+  audio: badminton
+- id: iskor
+  lemma: iskor
+  translation: score
+  audio: iskor
+- id: korte
+  lemma: korte
+  translation: court
+  audio: korte
+- id: medalya
+  lemma: medalya
+  translation: medal
+  audio: medalya
+- id: sayaw
+  lemma: sayaw
+  translation: dance
+  audio: sayaw
+- id: baraha
+  lemma: baraha
+  translation: playing cards
+  audio: baraha
+- id: kamera
+  lemma: kamera
+  translation: camera
+  audio: kamera
+- id: pintura
+  lemma: pintura
+  translation: paint
+  audio: pintura
+- id: koleksiyon
+  lemma: koleksiyon
+  translation: collection
+  audio: koleksiyon
+- id: hardinero
+  lemma: hardinero
+  translation: gardener
+  audio: hardinero
+- id: tugtog
+  lemma: tugtog
+  translation: tune
+  audio: tugtog
+- id: banda
+  lemma: banda
+  translation: band
+  audio: banda
+- id: mikropono
+  lemma: mikropono
+  translation: microphone
+  audio: mikropono
+- id: tambol
+  lemma: tambol
+  translation: drum
+  audio: tambol
+- id: boses
+  lemma: boses
+  translation: voice
+  audio: boses
+- id: konsiyerto
+  lemma: konsiyerto
+  translation: concert
+  audio: konsiyerto
+- id: mang_aawit
+  lemma: mang-aawit
+  translation: singer
+  audio: mang_aawit
+- id: piyano
+  lemma: piyano
+  translation: piano
+  audio: piyano
+- id: plawta
+  lemma: plawta
+  translation: flute
+  audio: plawta
+- id: himig
+  lemma: himig
+  translation: melody
+  audio: himig
+- id: koro
+  lemma: koro
+  translation: choir
+  audio: koro
+- id: diskwento
+  lemma: diskwento
+  translation: discount
+  audio: diskwento
+- id: utang
+  lemma: utang
+  translation: debt
+  audio: utang
+- id: kita
+  lemma: kita
+  translation: income
+  audio: kita
+- id: buwis
+  lemma: buwis
+  translation: tax
+  audio: buwis
+- id: oras
+  lemma: oras
+  translation: hour
+  audio: oras
+- id: minuto
+  lemma: minuto
+  translation: minute
+  audio: minuto
+- id: sandali
+  lemma: sandali
+  translation: moment
+  audio: sandali
+- id: kalendaryo
+  lemma: kalendaryo
+  translation: calendar
+  audio: kalendaryo
+- id: keyk
+  lemma: keyk
+  translation: cake
+  audio: keyk
+- id: kandila
+  lemma: kandila
+  translation: candle
+  audio: kandila
+- id: palamuti
+  lemma: palamuti
+  translation: decoration
+  audio: palamuti
+- id: prusisyon
+  lemma: prusisyon
+  translation: procession
+  audio: prusisyon
+- id: saya
+  lemma: saya
+  translation: joy
+  audio: saya
+- id: lungkot
+  lemma: lungkot
+  translation: sadness
+  audio: lungkot
+- id: hiya
+  lemma: hiya
+  translation: shame
+  audio: hiya
+- id: pag_asa
+  lemma: pag-asa
+  translation: hope
+  audio: pag_asa
+- id: inggit
+  lemma: inggit
+  translation: envy
+  audio: inggit
+- id: tiwala
+  lemma: tiwala
+  translation: trust
+  audio: tiwala
+- id: halik
+  lemma: halik
+  translation: kiss
+  audio: halik
+- id: pangako
+  lemma: pangako
+  translation: promise
+  audio: pangako
+- id: away
+  lemma: away
+  translation: quarrel
+  audio: away
+- id: alaala
+  lemma: alaala
+  translation: memory
+  audio: alaala
+- id: sulat
+  lemma: sulat
+  translation: letter
+  audio: sulat
+- id: petsahan
+  lemma: petsahan
+  translation: date
+  audio: petsahan
+- id: singsing
+  lemma: singsing
+  translation: ring
+  audio: singsing
+- id: panganay
+  lemma: panganay
+  translation: eldest child
+  audio: panganay
+- id: telepono
+  lemma: telepono
+  translation: telephone
+  audio: telepono
+- id: sagot
+  lemma: sagot
+  translation: answer
+  audio: sagot
+- id: linya
+  lemma: linya
+  translation: line
+  audio: linya
+- id: miskol
+  lemma: miskol
+  translation: missed call
+  audio: miskol
+- id: kausap
+  lemma: kausap
+  translation: the person on the line
+  audio: kausap
+- id: ringtone
+  lemma: ringtone
+  translation: ringtone
+  audio: ringtone
+- id: headset
+  lemma: headset
+  translation: headset
+  audio: headset
+- id: tono
+  lemma: tono
+  translation: tone
+  audio: tono
+- id: labada
+  lemma: labada
+  translation: laundry
+  audio: labada
+- id: plantsa
+  lemma: plantsa
+  translation: iron
+  audio: plantsa
+- id: walis
+  lemma: walis
+  translation: broom
+  audio: walis
+- id: sabon
+  lemma: sabon
+  translation: soap
+  audio: sabon
+- id: pinggan
+  lemma: pinggan
+  translation: dish
+  audio: pinggan
+- id: timba
+  lemma: timba
+  translation: pail
+  audio: timba
+- id: basahan
+  lemma: basahan
+  translation: rag
+  audio: basahan
+- id: alikabok
+  lemma: alikabok
+  translation: dust
+  audio: alikabok
+- id: gamit
+  lemma: gamit
+  translation: belongings
+  audio: gamit
+- id: sampayan
+  lemma: sampayan
+  translation: clothesline
+  audio: sampayan
+- id: almusalan
+  lemma: almusalan
+  translation: dining area
+  audio: almusalan
+- id: misa
+  lemma: misa
+  translation: mass
+  audio: misa
+- id: dasal
+  lemma: dasal
+  translation: prayer
+  audio: dasal
+- id: pari
+  lemma: pari
+  translation: priest
+  audio: pari
+- id: diyos
+  lemma: Diyos
+  translation: God
+  audio: diyos
+- id: bibliya
+  lemma: bibliya
+  translation: bible
+  audio: bibliya
+- id: pananampalataya
+  lemma: pananampalataya
+  translation: faith
+  audio: pananampalataya
+- id: awit
+  lemma: awit
+  translation: hymn
+  audio: awit
+- id: santo
+  lemma: santo
+  translation: saint
+  audio: santo
+- id: kapilya
+  lemma: kapilya
+  translation: chapel
+  audio: kapilya
+- id: krus
+  lemma: krus
+  translation: cross
+  audio: krus
+- id: altar
+  lemma: altar
+  translation: altar
+  audio: altar
+- id: binyag
+  lemma: binyag
+  translation: baptism
+  audio: binyag
+- id: palay
+  lemma: palay
+  translation: rice plant
+  audio: palay
+- id: ani
+  lemma: ani
+  translation: harvest
+  audio: ani
+- id: araro
+  lemma: araro
+  translation: plow
+  audio: araro
+- id: binhi
+  lemma: binhi
+  translation: seed
+  audio: binhi
+- id: lupa
+  lemma: lupa
+  translation: soil
+  audio: lupa
+- id: damo
+  lemma: damo
+  translation: grass
+  audio: damo
+- id: kamalig
+  lemma: kamalig
+  translation: barn
+  audio: kamalig
+- id: itik
+  lemma: itik
+  translation: duck
+  audio: itik
+- id: tubo
+  lemma: tubo
+  translation: sugarcane
+  audio: tubo
+- id: niyog
+  lemma: niyog
+  translation: coconut
+  audio: niyog
+- id: kapitan
+  lemma: kapitan
+  translation: barangay captain
+  audio: kapitan
+- id: ingay
+  lemma: ingay
+  translation: noise
+  audio: ingay
+- id: eskinita
+  lemma: eskinita
+  translation: alley
+  audio: eskinita
+- id: poste
+  lemma: poste
+  translation: post
+  audio: poste
+- id: gate
+  lemma: gate
+  translation: gate
+  audio: gate
+- id: sari_sari_store
+  lemma: sari-sari store
+  translation: sundry store
+  audio: sari_sari_store
+- id: bantay
+  lemma: bantay
+  translation: guard
+  audio: bantay
+- id: kapilyahan
+  lemma: kapilyahan
+  translation: neighborhood chapel
+  audio: kapilyahan
+- id: kapistahan
+  lemma: kapistahan
+  translation: town fiesta
+  audio: kapistahan
+- id: basketbolan
+  lemma: basketbolan
+  translation: basketball court
+  audio: basketbolan
+- id: kanal
+  lemma: kanal
+  translation: canal
+  audio: kanal
+- id: susi
+  lemma: susi
+  translation: key
+  audio: susi
+- id: resepsiyon
+  lemma: resepsiyon
+  translation: reception
+  audio: resepsiyon
+- id: tuwalya
+  lemma: tuwalya
+  translation: towel
+  audio: tuwalya
+- id: serbisyo
+  lemma: serbisyo
+  translation: service
+  audio: serbisyo
+- id: reklamo
+  lemma: reklamo
+  translation: complaint
+  audio: reklamo
+- id: pila
+  lemma: pila
+  translation: queue
+  audio: pila
+- id: porma
+  lemma: porma
+  translation: form
+  audio: porma
+- id: koreo
+  lemma: koreo
+  translation: post office
+  audio: koreo
+- id: parsela
+  lemma: parsela
+  translation: parcel
+  audio: parsela
+- id: kard
+  lemma: kard
+  translation: card
+  audio: kard
+- id: maalat
+  lemma: maalat
+  translation: salty
+  audio: maalat
+- id: maanghang
+  lemma: maanghang
+  translation: spicy
+  audio: maanghang
+- id: mapait
+  lemma: mapait
+  translation: bitter
+  audio: mapait
+- id: mababa
+  lemma: mababa
+  translation: low
+  audio: mababa
+- id: magaan
+  lemma: magaan
+  translation: light
+  audio: magaan
+- id: pangit
+  lemma: pangit
+  translation: ugly
+  audio: pangit
+- id: luma
+  lemma: luma
+  translation: old
+  audio: luma
+- id: malinis
+  lemma: malinis
+  translation: clean
+  audio: malinis
+- id: madali
+  lemma: madali
+  translation: easy
+  audio: madali
+- id: mahirap
+  lemma: mahirap
+  translation: difficult
+  audio: mahirap
+- id: mayaman
+  lemma: mayaman
+  translation: rich
+  audio: mayaman
+- id: maputi
+  lemma: maputi
+  translation: white
+  audio: maputi
+- id: maitim
+  lemma: maitim
+  translation: dark
+  audio: maitim
+- id: makulay
+  lemma: makulay
+  translation: colorful
+  audio: makulay
+- id: matigas
+  lemma: matigas
+  translation: hard
+  audio: matigas
+- id: malambot
+  lemma: malambot
+  translation: soft
+  audio: malambot
+- id: basa
+  lemma: basa
+  translation: wet
+  audio: basa
+- id: sira
+  lemma: sira
+  translation: broken
+  audio: sira
+- id: mahangin
+  lemma: mahangin
+  translation: windy
+  audio: mahangin
+- id: maulan
+  lemma: maulan
+  translation: rainy
+  audio: maulan
+- id: mahina
+  lemma: mahina
+  translation: weak
+  audio: mahina
+- id: matapang
+  lemma: matapang
+  translation: brave
+  audio: matapang
+- id: maingat
+  lemma: maingat
+  translation: careful
+  audio: maingat
+- id: magulo
+  lemma: magulo
+  translation: messy
+  audio: magulo
+- id: maayos
+  lemma: maayos
+  translation: orderly
+  audio: maayos
+- id: sikat
+  lemma: sikat
+  translation: famous
+  audio: sikat
+- id: manipis
+  lemma: manipis
+  translation: thin
+  audio: manipis
+- id: malusog
+  lemma: malusog
+  translation: healthy
+  audio: malusog
+- id: masustansiya
+  lemma: masustansiya
+  translation: nutritious
+  audio: masustansiya
+- id: antok
+  lemma: antok
+  translation: sleepy
+  audio: antok
+- id: excited
+  lemma: excited
+  translation: excited
+  audio: excited
+- id: kayumanggi
+  lemma: kayumanggi
+  translation: brown
+  audio: kayumanggi
+- id: lila
+  lemma: lila
+  translation: purple
+  audio: lila
+- id: abo
+  lemma: abo
+  translation: gray
+  audio: abo
+- id: ginto
+  lemma: ginto
+  translation: gold
+  audio: ginto
+- id: labindalawa
+  lemma: labindalawa
+  translation: twelve
+  audio: labindalawa
+- id: labintatlo
+  lemma: labintatlo
+  translation: thirteen
+  audio: labintatlo
+- id: labinlima
+  lemma: labinlima
+  translation: fifteen
+  audio: labinlima
+- id: tatlumpu
+  lemma: tatlumpu
+  translation: thirty
+  audio: tatlumpu
+- id: apatnapu
+  lemma: apatnapu
+  translation: forty
+  audio: apatnapu
+- id: limampu
+  lemma: limampu
+  translation: fifty
+  audio: limampu
+- id: kagabi
+  lemma: kagabi
+  translation: last night
+  audio: kagabi
+- id: noong_lunes
+  lemma: noong Lunes
+  translation: last Monday
+  audio: noong_lunes
+- id: noong_isang_linggo
+  lemma: noong isang linggo
+  translation: last week
+  audio: noong_isang_linggo
+- id: noong_isang_taon
+  lemma: noong isang taon
+  translation: last year
+  audio: noong_isang_taon
+- id: kaninang_umaga
+  lemma: kaninang umaga
+  translation: this morning
+  audio: kaninang_umaga
+- id: sa_ngayon
+  lemma: sa ngayon
+  translation: right now
+  audio: sa_ngayon
+- id: tuwing_lunes
+  lemma: tuwing Lunes
+  translation: every Monday
+  audio: tuwing_lunes
+- id: tuwing_umaga
+  lemma: tuwing umaga
+  translation: every morning
+  audio: tuwing_umaga
+- id: tuwing_gabi
+  lemma: tuwing gabi
+  translation: every night
+  audio: tuwing_gabi
+- id: minsan
+  lemma: minsan
+  translation: sometimes
+  audio: minsan
+- id: mamayang_gabi
+  lemma: mamayang gabi
+  translation: tonight
+  audio: mamayang_gabi
+- id: sa_lunes
+  lemma: sa Lunes
+  translation: on Monday
+  audio: sa_lunes
+- id: sa_susunod_na_linggo
+  lemma: sa susunod na linggo
+  translation: next week
+  audio: sa_susunod_na_linggo
+- id: sa_isang_taon
+  lemma: sa isang taon
+  translation: in a year
+  audio: sa_isang_taon
+- id: pumupunta
+  lemma: pumupunta
+  translation: is going
+  audio: pumupunta
+- id: umalis
+  lemma: umalis
+  translation: to leave
+  audio: umalis
+- id: umaalis
+  lemma: umaalis
+  translation: is leaving
+  audio: umaalis
+- id: umuuwi
+  lemma: umuuwi
+  translation: is going home
+  audio: umuuwi
+- id: dumating
+  lemma: dumating
+  translation: to arrive
+  audio: dumating
+- id: dumarating
+  lemma: dumarating
+  translation: is arriving
+  audio: dumarating
+- id: matulog
+  lemma: matulog
+  translation: to sleep
+  audio: matulog
+- id: gumigising
+  lemma: gumigising
+  translation: is waking up
+  audio: gumigising
+- id: lumakad
+  lemma: lumakad
+  translation: to walk
+  audio: lumakad
+- id: lumalakad
+  lemma: lumalakad
+  translation: is walking
+  audio: lumalakad
+- id: umuupo
+  lemma: umuupo
+  translation: is sitting
+  audio: umuupo
+- id: tumatayo
+  lemma: tumatayo
+  translation: is standing
+  audio: tumatayo
+- id: bumasa
+  lemma: bumasa
+  translation: to read
+  audio: bumasa
+- id: bumabasa
+  lemma: bumabasa
+  translation: is reading
+  audio: bumabasa
+- id: sumulat
+  lemma: sumulat
+  translation: to write
+  audio: sumulat
+- id: sumusulat
+  lemma: sumusulat
+  translation: is writing
+  audio: sumusulat
+- id: tumawa
+  lemma: tumawa
+  translation: to laugh
+  audio: tumawa
+- id: tumatawa
+  lemma: tumatawa
+  translation: is laughing
+  audio: tumatawa
+- id: umiyak
+  lemma: umiyak
+  translation: to cry
+  audio: umiyak
+- id: umiiyak
+  lemma: umiiyak
+  translation: is crying
+  audio: umiiyak
+- id: maligo
+  lemma: maligo
+  translation: to take a bath
+  audio: maligo
+- id: naliligo
+  lemma: naliligo
+  translation: is taking a bath
+  audio: naliligo
+- id: naglaba
+  lemma: naglaba
+  translation: did the laundry
+  audio: naglaba
+- id: naglalaba
+  lemma: naglalaba
+  translation: is doing the laundry
+  audio: naglalaba
+- id: maglinis
+  lemma: maglinis
+  translation: to clean
+  audio: maglinis
+- id: naglinis
+  lemma: naglinis
+  translation: cleaned
+  audio: naglinis
+- id: mag_aral
+  lemma: mag-aral
+  translation: to study
+  audio: mag_aral
+- id: magbayad
+  lemma: magbayad
+  translation: to pay
+  audio: magbayad
+- id: nagbayad
+  lemma: nagbayad
+  translation: paid
+  audio: nagbayad
+- id: nagbabayad
+  lemma: nagbabayad
+  translation: is paying
+  audio: nagbabayad
+- id: magsalita
+  lemma: magsalita
+  translation: to speak
+  audio: magsalita
+- id: nagsalita
+  lemma: nagsalita
+  translation: spoke
+  audio: nagsalita
+- id: nagsasalita
+  lemma: nagsasalita
+  translation: is speaking
+  audio: nagsasalita
+- id: maghintay
+  lemma: maghintay
+  translation: to wait
+  audio: maghintay
+- id: naghintay
+  lemma: naghintay
+  translation: waited
+  audio: naghintay
+- id: naghihintay
+  lemma: naghihintay
+  translation: is waiting
+  audio: naghihintay
+- id: magdala
+  lemma: magdala
+  translation: to bring
+  audio: magdala
+- id: nagdala
+  lemma: nagdala
+  translation: brought
+  audio: nagdala
+- id: nagdadala
+  lemma: nagdadala
+  translation: is bringing
+  audio: nagdadala
+- id: magbigay
+  lemma: magbigay
+  translation: to give
+  audio: magbigay
+- id: nagbigay
+  lemma: nagbigay
+  translation: gave
+  audio: nagbigay
+- id: nagbibigay
+  lemma: nagbibigay
+  translation: is giving
+  audio: nagbibigay
+- id: maghanap
+  lemma: maghanap
+  translation: to look for
+  audio: maghanap
+- id: naghanap
+  lemma: naghanap
+  translation: looked for
+  audio: naghanap
+- id: naghahanap
+  lemma: naghahanap
+  translation: is looking for
+  audio: naghahanap
+- id: magtanong
+  lemma: magtanong
+  translation: to ask
+  audio: magtanong
+- id: nagtanong
+  lemma: nagtanong
+  translation: asked
+  audio: nagtanong
+- id: nagtatanong
+  lemma: nagtatanong
+  translation: is asking
+  audio: nagtatanong
+- id: sumagot
+  lemma: sumagot
+  translation: to answer
+  audio: sumagot
+- id: sumasagot
+  lemma: sumasagot
+  translation: is answering
+  audio: sumasagot
+- id: makinig
+  lemma: makinig
+  translation: to listen
+  audio: makinig
+- id: nakinig
+  lemma: nakinig
+  translation: listened
+  audio: nakinig
+- id: nakikinig
+  lemma: nakikinig
+  translation: is listening
+  audio: nakikinig
+- id: gumawa
+  lemma: gumawa
+  translation: to make
+  audio: gumawa
+- id: gumagawa
+  lemma: gumagawa
+  translation: is making
+  audio: gumagawa
+- id: magbukas
+  lemma: magbukas
+  translation: to open
+  audio: magbukas
+- id: nagbukas
+  lemma: nagbukas
+  translation: opened
+  audio: nagbukas
+- id: nagbubukas
+  lemma: nagbubukas
+  translation: is opening
+  audio: nagbubukas
+- id: magsara
+  lemma: magsara
+  translation: to close
+  audio: magsara
+- id: nagsara
+  lemma: nagsara
+  translation: closed
+  audio: nagsara
+- id: nagsasara
+  lemma: nagsasara
+  translation: is closing
+  audio: nagsasara
+- id: bumababa
+  lemma: bumababa
+  translation: is getting off
+  audio: bumababa
+- id: umakyat
+  lemma: umakyat
+  translation: to climb
+  audio: umakyat
+- id: umaakyat
+  lemma: umaakyat
+  translation: is climbing
+  audio: umaakyat
+- id: pumasok
+  lemma: pumasok
+  translation: to go in
+  audio: pumasok
+- id: pumapasok
+  lemma: pumapasok
+  translation: is going in
+  audio: pumapasok
+- id: lumabas
+  lemma: lumabas
+  translation: to go out
+  audio: lumabas
+- id: lumalabas
+  lemma: lumalabas
+  translation: is going out
+  audio: lumalabas
+- id: bumalik
+  lemma: bumalik
+  translation: to come back
+  audio: bumalik
+- id: bumabalik
+  lemma: bumabalik
+  translation: is coming back
+  audio: bumabalik
+- id: humiram
+  lemma: humiram
+  translation: to borrow
+  audio: humiram
+- id: humihiram
+  lemma: humihiram
+  translation: is borrowing
+  audio: humihiram
+- id: tumulong
+  lemma: tumulong
+  translation: to help
+  audio: tumulong
+- id: tumutulong
+  lemma: tumutulong
+  translation: is helping
+  audio: tumutulong
+- id: magturo
+  lemma: magturo
+  translation: to teach
+  audio: magturo
+- id: nagturo
+  lemma: nagturo
+  translation: taught
+  audio: nagturo
+- id: nagtuturo
+  lemma: nagtuturo
+  translation: is teaching
+  audio: nagtuturo
+- id: magbilang
+  lemma: magbilang
+  translation: to count
+  audio: magbilang
+- id: nagbilang
+  lemma: nagbilang
+  translation: counted
+  audio: nagbilang
+- id: nagbibilang
+  lemma: nagbibilang
+  translation: is counting
+  audio: nagbibilang
+- id: mag_ayos
+  lemma: mag-ayos
+  translation: to tidy up
+  audio: mag_ayos
+- id: nag_ayos
+  lemma: nag-ayos
+  translation: tidied up
+  audio: nag_ayos
+- id: nag_aayos
+  lemma: nag-aayos
+  translation: is tidying up
+  audio: nag_aayos
+- id: maghugas
+  lemma: maghugas
+  translation: to wash
+  audio: maghugas
+- id: naghugas
+  lemma: naghugas
+  translation: washed
+  audio: naghugas
+- id: nagwalis
+  lemma: nagwalis
+  translation: swept
+  audio: nagwalis
+- id: nagplantsa
+  lemma: nagplantsa
+  translation: ironed clothes
+  audio: nagplantsa
+- id: nagpaplantsa
+  lemma: nagpaplantsa
+  translation: is ironing clothes
+  audio: nagpaplantsa
+- id: magtapon
+  lemma: magtapon
+  translation: to throw away
+  audio: magtapon
+- id: nagtapon
+  lemma: nagtapon
+  translation: threw away
+  audio: nagtapon
+- id: nagtatapon
+  lemma: nagtatapon
+  translation: is throwing away
+  audio: nagtatapon
+- id: magsimula
+  lemma: magsimula
+  translation: to start
+  audio: magsimula
+- id: nagsimula
+  lemma: nagsimula
+  translation: started
+  audio: nagsimula
+- id: nagsisimula
+  lemma: nagsisimula
+  translation: is starting
+  audio: nagsisimula
+- id: ngumiti
+  lemma: ngumiti
+  translation: to smile
+  audio: ngumiti
+- id: ngumingiti
+  lemma: ngumingiti
+  translation: is smiling
+  audio: ngumingiti
+- id: yumakap
+  lemma: yumakap
+  translation: to hug
+  audio: yumakap
+- id: yumayakap
+  lemma: yumayakap
+  translation: is hugging
+  audio: yumayakap
+- id: bumisita
+  lemma: bumisita
+  translation: to visit
+  audio: bumisita
+- id: bumibisita
+  lemma: bumibisita
+  translation: is visiting
+  audio: bumibisita
+- id: pumili
+  lemma: pumili
+  translation: to choose
+  audio: pumili
+- id: pumipili
+  lemma: pumipili
+  translation: is choosing
+  audio: pumipili
+- id: tumira
+  lemma: tumira
+  translation: to live
+  audio: tumira
+- id: tumitira
+  lemma: tumitira
+  translation: is living
+  audio: tumitira
+- id: humiga
+  lemma: humiga
+  translation: to lie down
+  audio: humiga
+- id: humihiga
+  lemma: humihiga
+  translation: is lying down
+  audio: humihiga
+- id: sumundo
+  lemma: sumundo
+  translation: to pick up
+  audio: sumundo
+- id: sumusundo
+  lemma: sumusundo
+  translation: is picking up
+  audio: sumusundo
+- id: maghatid
+  lemma: maghatid
+  translation: to deliver
+  audio: maghatid
+- id: naghatid
+  lemma: naghatid
+  translation: delivered
+  audio: naghatid
+- id: naghahatid
+  lemma: naghahatid
+  translation: is delivering
+  audio: naghahatid
+- id: maglagay
+  lemma: maglagay
+  translation: to put
+  audio: maglagay
+- id: naglagay
+  lemma: naglagay
+  translation: put
+  audio: naglagay
+- id: naglalagay
+  lemma: naglalagay
+  translation: is putting
+  audio: naglalagay
+- id: mag_isip
+  lemma: mag-isip
+  translation: to think
+  audio: mag_isip
+- id: nag_isip
+  lemma: nag-isip
+  translation: thought
+  audio: nag_isip
+- id: nag_iisip
+  lemma: nag-iisip
+  translation: is thinking
+  audio: nag_iisip
+- id: magdasal
+  lemma: magdasal
+  translation: to pray
+  audio: magdasal
+- id: nagdasal
+  lemma: nagdasal
+  translation: prayed
+  audio: nagdasal
+- id: nagdarasal
+  lemma: nagdarasal
+  translation: is praying
+  audio: nagdarasal
+- id: magtanim
+  lemma: magtanim
+  translation: to plant
+  audio: magtanim
+- id: nagtanim
+  lemma: nagtanim
+  translation: planted
+  audio: nagtanim
+- id: nagtatanim
+  lemma: nagtatanim
+  translation: is planting
+  audio: nagtatanim
+- id: mag_ani
+  lemma: mag-ani
+  translation: to harvest
+  audio: mag_ani
+- id: nag_ani
+  lemma: nag-ani
+  translation: harvested
+  audio: nag_ani
+- id: nag_aani
+  lemma: nag-aani
+  translation: is harvesting
+  audio: nag_aani
+- id: magbenta
+  lemma: magbenta
+  translation: to sell
+  audio: magbenta
+- id: nagbenta
+  lemma: nagbenta
+  translation: sold
+  audio: nagbenta
+- id: nagbebenta
+  lemma: nagbebenta
+  translation: is selling
+  audio: nagbebenta
+- id: magkasakit
+  lemma: magkasakit
+  translation: to get sick
+  audio: magkasakit
+- id: nagkasakit
+  lemma: nagkasakit
+  translation: got sick
+  audio: nagkasakit
+- id: nagkakasakit
+  lemma: nagkakasakit
+  translation: is getting sick
+  audio: nagkakasakit
+- id: magbihis
+  lemma: magbihis
+  translation: to get dressed
+  audio: magbihis
+- id: nagbihis
+  lemma: nagbihis
+  translation: got dressed
+  audio: nagbihis
+- id: nagbibihis
+  lemma: nagbibihis
+  translation: is getting dressed
+  audio: nagbibihis
+- id: magkuwento
+  lemma: magkuwento
+  translation: to tell a story
+  audio: magkuwento
+- id: nagkukuwento
+  lemma: nagkukuwento
+  translation: is telling a story
+  audio: nagkukuwento
+- id: magsaya
+  lemma: magsaya
+  translation: to have fun
+  audio: magsaya
+- id: nagsaya
+  lemma: nagsaya
+  translation: had fun
+  audio: nagsaya
+- id: nagsasaya
+  lemma: nagsasaya
+  translation: is having fun
+  audio: nagsasaya
+- id: maghanda
+  lemma: maghanda
+  translation: to prepare
+  audio: maghanda
+- id: naghanda
+  lemma: naghanda
+  translation: prepared
+  audio: naghanda
+- id: naghahanda
+  lemma: naghahanda
+  translation: is preparing
+  audio: naghahanda
+- id: magsukat
+  lemma: magsukat
+  translation: to try on
+  audio: magsukat
+- id: nagsukat
+  lemma: nagsukat
+  translation: tried on
+  audio: nagsukat
+- id: nagsusukat
+  lemma: nagsusukat
+  translation: is trying on
+  audio: nagsusukat
+- id: mag_ipon
+  lemma: mag-ipon
+  translation: to save up
+  audio: mag_ipon
+- id: nag_ipon
+  lemma: nag-ipon
+  translation: saved up
+  audio: nag_ipon
+- id: nag_iipon
+  lemma: nag-iipon
+  translation: is saving up
+  audio: nag_iipon
+- id: mabigat_ang_kamay
+  lemma: mabigat ang kamay
+  translation: unwilling to help
+  audio: mabigat_ang_kamay
+  notes: "Literally: heavy hand."
+- id: mahaba_ang_pisi
+  lemma: mahaba ang pisi
+  translation: very patient
+  audio: mahaba_ang_pisi
+  notes: "Literally: long rope."
+- id: maikli_ang_pisi
+  lemma: maikli ang pisi
+  translation: short-tempered
+  audio: maikli_ang_pisi
+  notes: "Literally: short rope."
+- id: malamig_ang_dugo
+  lemma: malamig ang dugo
+  translation: cold-blooded
+  audio: malamig_ang_dugo
+  notes: "Literally: cold blood."
+- id: mainit_ang_ulo
+  lemma: mainit ang ulo
+  translation: hot-tempered
+  audio: mainit_ang_ulo
+  notes: "Literally: hot head."
+- id: bukambibig
+  lemma: bukambibig
+  translation: a favorite saying
+  audio: bukambibig
+  notes: "Literally: mouth-opening."
+- id: balita_sa_bayan
+  lemma: balita sa bayan
+  translation: the talk of the town
+  audio: balita_sa_bayan
+  notes: "Literally: news in town."
+- id: hindi_mahulugang_karayom
+  lemma: hindi mahulugang karayom
+  translation: packed with people
+  audio: hindi_mahulugang_karayom
+  notes: "Literally: not even a needle could drop."
+- id: nagbibilang_ng_poste
+  lemma: nagbibilang ng poste
+  translation: jobless
+  audio: nagbibilang_ng_poste
+  notes: "Literally: counting the posts."
+- id: nasa_langit
+  lemma: nasa langit
+  translation: overjoyed
+  audio: nasa_langit
+  notes: "Literally: in heaven."
+- id: kabute_sa_ulan
+  lemma: kabute sa ulan
+  translation: popping up everywhere
+  audio: kabute_sa_ulan
+  notes: "Literally: mushrooms in the rain."

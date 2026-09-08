@@ -1,0 +1,240 @@
+id: regional-flavors
+title: Regional Flavors
+tier: mastery
+description: Taglish, Batangas Tagalog, and the loanwords that mark where someone is from.
+tip: >-
+  "Tagalog" is not one thing. Manila speech is heavily Taglish; Batangas keeps
+  older forms and the famous "ala eh"; Bulacan Tagalog is considered the most
+  formal. Cebuano speakers bring their own words north — gwapo, palihug — and
+  Filipino, the national language, officially absorbs all of it.
+lessons:
+  - id: reg-1
+    title: Taglish
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Taglish, en: Tagalog-English mix }
+          - { tl: nag-isip, en: thought }
+          - { tl: na-late, en: was late }
+          - { tl: mag-meeting, en: to have a meeting }
+      - type: choice
+        prompt: "'Na-cancel ang meeting kanina' shows Taglish because..."
+        answer: an English root takes Tagalog affixes
+        distractors: [it uses only English, it uses only Tagalog, it has no verb]
+        audio: na_cancel_ang_meeting_kanina
+        audio_text: Na-cancel ang meeting kanina.
+      - type: fill_blank
+        sentence: "___-late ako kanina dahil sa trapiko."
+        translation: "I was late earlier because of traffic."
+        answer: Na
+        options: [Na, Mag, Pag]
+      - type: translate
+        prompt_tl: Nag-usap kami tungkol sa proyekto.
+        answer_en: We talked about the project.
+        accept:
+          - We discussed the project
+        extra_words: [cheap, market, tomorrow]
+        audio: nag_usap_kami_tungkol_sa_proyekto
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "The meeting was cancelled earlier."
+        answer_tl: Na-cancel ang meeting kanina
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Taglish is most common in..."
+        answer: Metro Manila and offices
+        distractors: [old poetry, church sermons, government laws]
+      - type: translate
+        prompt_en: I will have a meeting at three.
+        answer_tl: Mag-mi-meeting ako ng alas-tres
+        accept:
+          - May meeting ako ng alas-tres
+        extra_words: [na-late, nag-isip, proyekto]
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "___-isip muna ako bago sumagot."
+        translation: "I thought first before answering."
+        answer: Nag
+        options: [Nag, Na, Pa]
+      - type: listen
+        audio: na_cancel_ang_meeting
+        answer_tl: Na-cancel ang meeting
+        extra_words: [na-late, nag-usap]
+        grading: { hyphens: true }
+
+  - id: reg-2
+    title: Batangas and the provinces
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ala eh, en: Batangas filler word }
+          - { tl: kita, en: you and I (Batangas usage) }
+          - { tl: bakit ga, en: why (provincial) }
+          - { tl: aba, en: expression of surprise }
+      - type: choice
+        prompt: "'Ala eh' marks a speaker from..."
+        answer: Batangas
+        distractors: [Cebu, Ilocos, Davao]
+        audio: ala_eh
+        audio_text: Ala eh.
+      - type: fill_blank
+        sentence: "___, ang ganda naman ng bahay ninyo!"
+        translation: "Wow, your house is beautiful!"
+        answer: Aba
+        options: [Aba, Bawal, Sayang]
+      - type: translate
+        prompt_tl: Taga-Batangas siya, halata sa punto niya.
+        answer_en: He is from Batangas, you can tell from his accent.
+        accept:
+          - She is from Batangas you can tell by her accent
+        extra_words: [cheap, market, tomorrow]
+        audio: taga_batangas_siya_halata_sa_punto_niya
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "He is from Batangas, you can tell from his accent."
+        answer_tl: Taga-Batangas siya halata sa punto niya
+        accept:
+          - Taga-Batangas siya, halata sa punto niya
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Punto' in this context means..."
+        answer: accent
+        distractors: [a point in a game, a location, a period]
+      - type: translate
+        prompt_en: Bulacan Tagalog is considered the most formal.
+        answer_tl: Itinuturing na pinakapormal ang Tagalog ng Bulacan
+        accept:
+          - Ang Tagalog ng Bulacan ang itinuturing na pinakapormal
+        extra_words: [punto, Batangas, Taglish]
+      - type: fill_blank
+        sentence: "Iba ang ___ ng mga taga-probinsya."
+        translation: "The accent of people from the province is different."
+        answer: punto
+        options: [punto, bakod, kandila]
+        grading: { hyphens: true }
+      - type: listen
+        audio: iba_ang_punto_niya
+        answer_tl: Iba ang punto niya
+        extra_words: [Batangas, Taglish]
+
+  - id: reg-3
+    title: Words from other islands
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gwapo, en: handsome }
+          - { tl: palihug, en: please (Cebuano) }
+          - { tl: bugoy, en: rascal }
+          - { tl: lami, en: delicious (Cebuano) }
+      - type: choice
+        prompt: "'Gwapo' entered Tagalog from..."
+        answer: Spanish through the Visayas
+        distractors: [English, Chinese, Malay only]
+        audio: gwapo
+        audio_text: Gwapo.
+      - type: fill_blank
+        sentence: "___ ang bagong artista sa pelikula."
+        translation: "The new actor in the film is handsome."
+        answer: Gwapo
+        options: [Gwapo, Bakod, Kandila]
+      - type: translate
+        prompt_tl: Marunong siyang magsalita ng Bisaya at Tagalog.
+        answer_en: She can speak Cebuano and Tagalog.
+        accept:
+          - He can speak Bisaya and Tagalog
+        extra_words: [cheap, market, tomorrow]
+        audio: marunong_siyang_magsalita_ng_bisaya_at_tagalog
+      - type: arrange
+        prompt: "She can speak Cebuano and Tagalog."
+        answer_tl: Marunong siyang magsalita ng Bisaya at Tagalog
+      - type: choice
+        prompt: "Filipino, the national language, officially..."
+        answer: absorbs words from all Philippine languages
+        distractors: [uses only pure Tagalog, bans loanwords, is the same as English]
+      - type: translate
+        prompt_en: Filipino borrows words from many languages.
+        answer_tl: Humihiram ang Filipino ng salita mula sa maraming wika
+        accept:
+          - Ang Filipino ay humihiram ng salita mula sa maraming wika
+        extra_words: [gwapo, Bisaya, punto]
+      - type: fill_blank
+        sentence: "Maraming ___ ang Filipino mula sa Espanyol."
+        translation: "Filipino has many loanwords from Spanish."
+        answer: hiram
+        options: [hiram, bakod, kandila]
+      - type: listen
+        audio: humihiram_ang_filipino_ng_salita
+        answer_tl: Humihiram ang Filipino ng salita
+        extra_words: [Bisaya, punto]
+
+  - id: reg-4
+    title: Hearing where someone is from
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: Two strangers on a long bus ride
+        lines:
+          - speaker: Lito
+            text: "___ po kayo? Iba ang punto ninyo."
+            translation: "Where are you from? Your accent is different."
+          - speaker: Maring
+            text: "Taga-Batangas po ako. ___ eh, halata talaga."
+            translation: "I am from Batangas. Ala eh, it really shows."
+          - speaker: Lito
+            text: "Ako po ay taga-Maynila. Puro ___ po kami magsalita."
+            translation: "I am from Manila. We speak pure Taglish."
+          - speaker: Maring
+            text: "Naiintindihan ko naman po kayo."
+            translation: "I understand you anyway."
+        blanks:
+          - answer: Taga-saan
+            options: [Taga-saan, Magkano, Kailan]
+          - answer: Ala
+            options: [Ala, Aba, Sana]
+          - answer: Taglish
+            options: [Taglish, Bisaya, Espanyol]
+        grading: { hyphens: true }
+      - type: match
+        pairs:
+          - { tl: wika, en: language }
+          - { tl: diyalekto, en: dialect }
+          - { tl: salita, en: word }
+          - { tl: naiintindihan, en: understood }
+      - type: choice
+        prompt: "In the dialogue, what gives Maring away?"
+        answer: her accent
+        distractors: [her clothes, her bag, her name]
+      - type: fill_blank
+        sentence: "Walong daang ___ ang sinasalita sa Pilipinas."
+        translation: "Around eight hundred languages are spoken in the Philippines."
+        answer: wika
+        options: [wika, bakod, kandila]
+      - type: translate
+        prompt_tl: Naiintindihan ko naman po kayo.
+        answer_en: I understand you anyway.
+        accept:
+          - I do understand you
+        extra_words: [cheap, market, tomorrow]
+        audio: naiintindihan_ko_naman_po_kayo
+      - type: translate
+        prompt_en: Where are you from? Your accent is different.
+        answer_tl: Taga-saan po kayo? Iba ang punto ninyo.
+        accept:
+          - Taga-saan po kayo iba ang punto ninyo
+        extra_words: [wika, salita, diyalekto]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I am from Batangas."
+        answer_tl: Taga-Batangas po ako
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I understand you anyway."
+        answer_tl: Naiintindihan ko naman po kayo
+      - type: listen
+        audio: taga_saan_po_kayo
+        answer_tl: Taga-saan po kayo
+        extra_words: [wika, punto]
+        grading: { hyphens: true }

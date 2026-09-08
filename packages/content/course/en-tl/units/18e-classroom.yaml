@@ -1,0 +1,229 @@
+id: classroom
+title: In the Classroom
+tier: foundation
+description: Pencils, notebooks, and the words a teacher says all day.
+tip: >-
+  Classroom Tagalog is full of Spanish borrowings — lapis (lápiz), papel,
+  silya, pisara — sitting next to native words like guro (teacher) and aklat
+  (book). Both libro and aklat mean book; aklat sounds more formal and shows up
+  in school signs and titles.
+lessons:
+  - id: class-1
+    title: School things
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lapis, en: pencil }
+          - { tl: papel, en: paper }
+          - { tl: aklat, en: book }
+          - { tl: kuwaderno, en: notebook }
+      - type: choice
+        prompt: "'Lapis' means..."
+        answer: pencil
+        distractors: [paper, book, chair]
+        audio: lapis
+        audio_text: Lapis.
+      - type: fill_blank
+        sentence: "Pahiram po ng ___."
+        translation: "May I borrow a pencil?"
+        answer: lapis
+        options: [lapis, tubig, bahay]
+      - type: translate
+        prompt_tl: Nasa bag ang aklat ko.
+        answer_en: My book is in the bag.
+        accept:
+          - The book is in my bag
+        extra_words: [tomorrow, cheap, market]
+        audio: nasa_bag_ang_aklat_ko
+      - type: translate
+        prompt_en: I need paper and a pencil.
+        answer_tl: Kailangan ko ng papel at lapis
+        accept:
+          - Kailangan ko ng lapis at papel
+        extra_words: [aklat, silya, mesa]
+      - type: listen
+        audio: pahiram_po_ng_lapis
+        answer_tl: Pahiram po ng lapis
+        extra_words: [papel, aklat]
+      - type: choice
+        prompt: "Which one do you write in?"
+        answer: kuwaderno
+        distractors: [silya, pisara, bintana]
+      - type: fill_blank
+        sentence: "Bumili ako ng bagong ___ para sa klase."
+        translation: "I bought a new notebook for class."
+        answer: kuwaderno
+        options: [kuwaderno, tubig, gatas]
+      - type: translate
+        prompt_tl: Wala akong papel.
+        answer_en: I have no paper.
+        accept:
+          - I don't have paper
+        extra_words: [cheap, tomorrow, quickly]
+        audio: wala_akong_papel
+
+  - id: class-2
+    title: The room
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: silid-aralan, en: classroom }
+          - { tl: pisara, en: blackboard }
+          - { tl: silya, en: chair }
+          - { tl: mesa, en: table }
+      - type: choice
+        prompt: "The teacher writes on the..."
+        answer: pisara
+        distractors: [silya, bintana, pinto]
+        audio: pisara
+        audio_text: Pisara.
+      - type: fill_blank
+        sentence: "Maupo ka sa ___."
+        translation: "Sit on the chair."
+        answer: silya
+        options: [silya, pisara, papel]
+      - type: translate
+        prompt_en: The classroom is big.
+        answer_tl: Malaki ang silid-aralan
+        accept:
+          - Malaki ang silid aralan
+        extra_words: [maliit, silya, mesa]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nasa mesa ang mga aklat.
+        answer_en: The books are on the table.
+        accept:
+          - The books are on the desk
+        extra_words: [market, cheap, tomorrow]
+        audio: nasa_mesa_ang_mga_aklat
+      - type: listen
+        audio: maupo_ka_sa_silya
+        answer_tl: Maupo ka sa silya
+        extra_words: [mesa, pisara]
+      - type: choice
+        prompt: "'Silid-aralan' is literally..."
+        answer: a room for studying
+        distractors: [a house for eating, a place for sleeping, a shop for buying]
+      - type: fill_blank
+        sentence: "Buksan mo ang ___, mainit dito."
+        translation: "Open the window, it is hot here."
+        answer: bintana
+        options: [bintana, pisara, lapis]
+      - type: translate
+        prompt_en: There are thirty chairs in the classroom.
+        answer_tl: May tatlumpung silya sa silid-aralan
+        accept:
+          - May tatlumpung silya sa silid aralan
+        extra_words: [mesa, aklat, papel]
+        grading: { hyphens: true }
+
+  - id: class-3
+    title: What the teacher says
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "The teacher says 'Tumayo kayo.' You should..."
+        answer: stand up
+        distractors: [sit down, go home, be quiet]
+        audio: tumayo_kayo
+        audio_text: Tumayo kayo.
+      - type: match
+        pairs:
+          - { tl: tumayo, en: to stand }
+          - { tl: maupo, en: to sit }
+          - { tl: makinig, en: to listen }
+          - { tl: sumulat, en: to write }
+      - type: fill_blank
+        sentence: "___ kayo sa akin."
+        translation: "Listen to me."
+        answer: Makinig
+        options: [Makinig, Kumain, Uminom]
+      - type: translate
+        prompt_tl: Sumulat kayo sa kuwaderno.
+        answer_en: Write in your notebooks.
+        accept:
+          - Write in the notebook
+        extra_words: [tomorrow, cheap, market]
+        audio: sumulat_kayo_sa_kuwaderno
+      - type: translate
+        prompt_en: Please open your books.
+        answer_tl: Pakibuksan po ang inyong aklat
+        accept:
+          - Buksan po ninyo ang inyong aklat
+        extra_words: [papel, silya, mesa]
+      - type: listen
+        audio: makinig_kayong_mabuti
+        answer_tl: Makinig kayong mabuti
+        extra_words: [tumayo, maupo]
+      - type: choice
+        prompt: "'Maupo kayo' tells the class to..."
+        answer: sit down
+        distractors: [stand up, write, leave]
+      - type: fill_blank
+        sentence: "___ mo ang pangalan mo sa papel."
+        translation: "Write your name on the paper."
+        answer: Isulat
+        options: [Isulat, Inumin, Kainin]
+      - type: translate
+        prompt_tl: Tahimik kayo, may pagsusulit tayo.
+        answer_en: Be quiet, we have a test.
+        accept:
+          - Quiet please we have a test
+        extra_words: [cheap, market, morning]
+        audio: tahimik_kayo_may_pagsusulit_tayo
+
+  - id: class-4
+    title: Asking in class
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: guro, en: teacher }
+          - { tl: mag-aaral, en: pupil }
+          - { tl: aralin, en: lesson }
+          - { tl: pagsusulit, en: test }
+      - type: choice
+        prompt: "You did not understand. You raise your hand and say:"
+        answer: Hindi ko po naintindihan.
+        distractors: [Busog na po ako., Taga-Cebu po ako., Malamig po ang tubig.]
+        audio: hindi_ko_po_naintindihan
+        audio_text: Hindi ko po naintindihan.
+      - type: fill_blank
+        sentence: "Pakiulit po ang ___."
+        translation: "Please repeat the lesson."
+        answer: aralin
+        options: [aralin, tubig, silya]
+      - type: translate
+        prompt_en: May I ask a question?
+        answer_tl: Pwede po bang magtanong?
+        accept:
+          - Pwede po ba akong magtanong
+        extra_words: [aralin, guro, papel]
+      - type: translate
+        prompt_tl: Mabait ang guro namin.
+        answer_en: Our teacher is kind.
+        accept:
+          - Our teacher is nice
+        extra_words: [tomorrow, cheap, quickly]
+        audio: mabait_ang_guro_namin
+      - type: listen
+        audio: pakiulit_po
+        answer_tl: Pakiulit po
+        extra_words: [aralin, guro]
+      - type: choice
+        prompt: "Which word means 'pupil' or 'student'?"
+        answer: mag-aaral
+        distractors: [guro, aklat, silya]
+      - type: fill_blank
+        sentence: "May ___ kami bukas sa Matematika."
+        translation: "We have a test tomorrow in Math."
+        answer: pagsusulit
+        options: [pagsusulit, almusal, tubig]
+      - type: translate
+        prompt_en: I do not understand the lesson.
+        answer_tl: Hindi ko naiintindihan ang aralin
+        accept:
+          - Hindi ko maintindihan ang aralin
+        extra_words: [guro, papel, mesa]

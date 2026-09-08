@@ -41,10 +41,17 @@ export const ACHIEVEMENTS: readonly AchievementDef[] = [
   { id: "lessons_50", title: "Bihasa", description: "Complete 50 lessons.", emoji: "🎓", tier: 3 },
   { id: "streak_30", title: "Isang Buwan", description: "Reach a 30-day streak.", emoji: "🏆", tier: 3 },
   { id: "xp_2000", title: "Dalubhasa", description: "Earn 2000 XP.", emoji: "👑", tier: 3 },
-  // Tier 3 — end-game, sized for the full 200-lesson course. Without these a
-  // learner unlocks every badge about a quarter of the way in.
+  // Tier 3 — end-game. These were sized when the course was ~200 lessons; it
+  // is now 453, so `lessons_150` lands about a third of the way in and only
+  // `course_complete` still marks the true end. Worth adding a higher rung.
   { id: "lessons_150", title: "Matiyaga", description: "Complete 150 lessons.", emoji: "🧗", tier: 3 },
   { id: "streak_100", title: "Sandaang Araw", description: "Reach a 100-day streak.", emoji: "☄️", tier: 3 },
+  // Sized for the doubled course (453 lessons): without these, everything
+  // above unlocks by roughly the end of the second tier.
+  { id: "lessons_300", title: "Hindi Titigil", description: "Complete 300 lessons.", emoji: "🏔️", tier: 3 },
+  { id: "perfects_50", title: "Walang Kapintasan", description: "Finish 50 perfect lessons.", emoji: "🏵️", tier: 3 },
+  { id: "xp_10000", title: "Sampung Libo", description: "Earn 10,000 XP.", emoji: "💫", tier: 3 },
+  { id: "streak_365", title: "Isang Taon", description: "Reach a 365-day streak.", emoji: "🎆", tier: 3 },
   { id: "course_complete", title: "Tagumpay!", description: "Complete every lesson in the course.", emoji: "🇵🇭", tier: 3 },
 ];
 
@@ -85,6 +92,10 @@ const CRITERIA: Record<string, Criterion> = {
   xp_2000: (p) => (p.xpTotal ?? 0) >= 2000,
   lessons_150: (p) => (p.lessonsCompleted ?? 0) >= 150,
   streak_100: (p) => (p.longestStreak ?? p.streak?.count ?? 0) >= 100,
+  lessons_300: (p) => (p.lessonsCompleted ?? 0) >= 300,
+  perfects_50: (p) => (p.perfectLessons ?? 0) >= 50,
+  xp_10000: (p) => (p.xpTotal ?? 0) >= 10000,
+  streak_365: (p) => (p.longestStreak ?? p.streak?.count ?? 0) >= 365,
   course_complete: (p, units) => allUnitsCompleted(p, units),
 };
 

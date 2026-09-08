@@ -1,0 +1,229 @@
+id: opinions
+title: Opinions and Agreement
+tier: conversational
+description: Say what you think, agree, disagree, and change your mind politely.
+tip: >-
+  Openers matter more than the opinion. "Sa tingin ko" (in my view) and "Para sa
+  akin" (for me) mark a statement as personal, which keeps disagreement from
+  sounding like an attack. To disagree, lead with partial agreement: "Tama ka
+  doon, pero…". Filipinos rarely say "mali ka" to someone's face.
+lessons:
+  - id: opin-1
+    title: In my opinion
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sa tingin ko, en: I think }
+          - { tl: para sa akin, en: for me }
+          - { tl: sa palagay ko, en: in my view }
+          - { tl: opinyon, en: opinion }
+      - type: choice
+        prompt: "'Sa tingin ko' marks what follows as..."
+        answer: a personal opinion
+        distractors: [a fact, a command, a question]
+        audio: sa_tingin_ko
+        audio_text: Sa tingin ko.
+      - type: fill_blank
+        sentence: "___ ko, mas maganda ang una."
+        translation: "I think the first one is better."
+        answer: Sa tingin
+        options: [Sa tingin, Sa bahay, Sa umaga]
+      - type: translate
+        prompt_tl: Para sa akin, sapat na ang ganoon.
+        answer_en: For me, that is enough.
+        accept:
+          - In my view that is enough
+        extra_words: [cheap, market, tomorrow]
+        audio: para_sa_akin_sapat_na_ang_ganoon
+      - type: translate
+        prompt_en: In my view the plan is good.
+        answer_tl: Sa palagay ko maganda ang plano
+        accept:
+          - Sa tingin ko maganda ang plano
+        extra_words: [opinyon, akin, tingin]
+      - type: listen
+        audio: ano_ang_opinyon_mo
+        answer_tl: Ano ang opinyon mo
+        extra_words: [tingin, palagay]
+      - type: arrange
+        prompt: "I think the first one is better."
+        answer_tl: Sa tingin ko mas maganda ang una
+      - type: choice
+        prompt: "Which is the most neutral way to ask for a view?"
+        answer: Ano sa tingin mo?
+        distractors: [Bakit ka mali?, Sino ang tama?, Magkano iyan?]
+      - type: arrange
+        prompt: "For me, that is enough."
+        answer_tl: Para sa akin sapat na ang ganoon
+
+  - id: opin-2
+    title: Agreeing
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sang-ayon ako, en: I agree }
+          - { tl: tama ka, en: you are right }
+          - { tl: totoo nga, en: that is true }
+          - { tl: ganoon din ako, en: same for me }
+      - type: choice
+        prompt: "'Totoo nga' expresses..."
+        answer: agreement
+        distractors: [doubt, refusal, surprise only]
+        audio: totoo_nga
+        audio_text: Totoo nga.
+      - type: fill_blank
+        sentence: "___ ako sa iyo, mahal na talaga ngayon."
+        translation: "I agree with you, things really are expensive now."
+        answer: Sang-ayon
+        options: [Sang-ayon, Tutol, Bawal]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Tama ka, mas mabuti ang umaga.
+        answer_en: You are right, morning is better.
+        accept:
+          - You're right morning is better
+        extra_words: [cheap, market, tomorrow]
+        audio: tama_ka_mas_mabuti_ang_umaga
+      - type: translate
+        prompt_en: I agree with your plan.
+        answer_tl: Sang-ayon ako sa plano mo
+        accept:
+          - Sang ayon ako sa plano mo
+        extra_words: [tutol, totoo, tama]
+        grading: { hyphens: true }
+      - type: listen
+        audio: sang_ayon_ako_sa_iyo
+        answer_tl: Sang-ayon ako sa iyo
+        extra_words: [tutol, totoo]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I agree with your plan."
+        answer_tl: Sang-ayon ako sa plano mo
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Ganoon din ako' means..."
+        answer: same for me
+        distractors: [not me, I disagree, ask someone else]
+      - type: fill_blank
+        sentence: "___ nga, hindi ko naisip iyan."
+        translation: "That is true, I did not think of that."
+        answer: Totoo
+        options: [Totoo, Mali, Bawal]
+
+  - id: opin-3
+    title: Disagreeing politely
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tutol ako, en: I am opposed }
+          - { tl: sa tingin ko naman, en: but I think }
+          - { tl: hindi ako sigurado, en: I am not sure }
+          - { tl: iba ang tingin ko, en: I see it differently }
+      - type: choice
+        prompt: "The politest way to disagree begins by..."
+        answer: agreeing with part of it
+        distractors: [saying mali ka, raising your voice, staying silent]
+        audio: tama_ka_doon_pero
+        audio_text: Tama ka doon, pero...
+      - type: fill_blank
+        sentence: "Tama ka doon, ___ iba ang tingin ko sa presyo."
+        translation: "You are right there, but I see the price differently."
+        answer: pero
+        options: [pero, kaya, dahil]
+      - type: translate
+        prompt_tl: Hindi ako sigurado diyan.
+        answer_en: I am not sure about that.
+        accept:
+          - I'm not certain about that
+        extra_words: [cheap, market, tomorrow]
+        audio: hindi_ako_sigurado_diyan
+      - type: translate
+        prompt_en: I see it differently, but I understand you.
+        answer_tl: Iba ang tingin ko, pero naiintindihan kita
+        accept:
+          - Iba ang tingin ko pero naiintindihan kita
+        extra_words: [tutol, sigurado, tama]
+      - type: listen
+        audio: iba_ang_tingin_ko
+        answer_tl: Iba ang tingin ko
+        extra_words: [tutol, sigurado]
+      - type: arrange
+        prompt: "I see it differently, but I understand you."
+        answer_tl: Iba ang tingin ko pero naiintindihan kita
+        accept:
+          - Iba ang tingin ko, pero naiintindihan kita
+      - type: choice
+        prompt: "'Baka nga' as a reply means..."
+        answer: you might be right
+        distractors: [you are wrong, I refuse, ask again]
+      - type: arrange
+        prompt: "I am not sure about that."
+        answer_tl: Hindi ako sigurado diyan
+
+  - id: opin-4
+    title: A friendly debate
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: Two coworkers on where to hold a party
+        lines:
+          - speaker: Del
+            text: "___ ko, mas mabuti sa bahay para mura."
+            translation: "I think it is better at home so it is cheap."
+          - speaker: Fely
+            text: "___ ka doon, pero mahirap ang linis pagkatapos."
+            translation: "You are right there, but the cleaning afterwards is hard."
+          - speaker: Del
+            text: "___ nga. Baka sa restawran na lang."
+            translation: "That is true. Maybe at a restaurant instead."
+          - speaker: Fely
+            text: "Sang-ayon ako diyan."
+            translation: "I agree with that."
+        blanks:
+          - answer: Sa tingin
+            options: [Sa tingin, Sa bahay, Sa umaga]
+          - answer: Tama
+            options: [Tama, Mali, Bawal]
+          - answer: Totoo
+            options: [Totoo, Bawal, Hindi]
+      - type: match
+        pairs:
+          - { tl: pagpipilian, en: options }
+          - { tl: pagkakataon, en: opportunity }
+          - { tl: pasya, en: decision }
+          - { tl: kompromiso, en: compromise }
+      - type: fill_blank
+        sentence: "Dalawa lang ang ___ natin."
+        translation: "We only have two options."
+        answer: pagpipilian
+        options: [pagpipilian, pasya, kompromiso]
+      - type: translate
+        prompt_en: Let us find a compromise.
+        answer_tl: Maghanap tayo ng kompromiso
+        accept:
+          - Humanap tayo ng kompromiso
+        extra_words: [pasya, pagpipilian, opinyon]
+      - type: translate
+        prompt_tl: Ano ang huling pasya natin?
+        answer_en: What is our final decision?
+        accept:
+          - What's our final decision
+        extra_words: [cheap, market, tomorrow]
+        audio: ano_ang_huling_pasya_natin
+      - type: listen
+        audio: maghanap_tayo_ng_kompromiso
+        answer_tl: Maghanap tayo ng kompromiso
+        extra_words: [pasya, opinyon]
+      - type: choice
+        prompt: "In the dialogue, what changes Del's mind?"
+        answer: the cleaning afterwards
+        distractors: [the price of food, the distance, the weather]
+      - type: arrange
+        prompt: "We only have two options."
+        answer_tl: Dalawa lang ang pagpipilian natin
+      - type: arrange
+        prompt: "What is our final decision?"
+        answer_tl: Ano ang huling pasya natin

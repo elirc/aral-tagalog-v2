@@ -1,0 +1,229 @@
+id: recent-past
+title: Just Happened
+tier: conversational
+description: Kaka-, katatapos, kanina lang — the aspect for things that just occurred.
+tip: >-
+  Tagalog has a dedicated "just did it" form. The textbook shape doubles the
+  root’s first syllable after ka- (katatapos, kararating), but everyday speech
+  has generalised kaka- to almost any root: kakakain lang, kakaalis lang,
+  kakadating lang — both are understood everywhere. The doer is usually marked
+  with ko/niya/namin, though ako/kami also occur casually. It always carries
+  lang, and it means minutes ago, not hours.
+lessons:
+  - id: rec-1
+    title: Just now
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kakakain lang, en: just ate }
+          - { tl: kakaalis lang, en: just left }
+          - { tl: kakadating lang, en: just arrived }
+          - { tl: katatapos lang, en: just finished }
+      - type: choice
+        prompt: "'Kakakain lang ako' means I ate..."
+        answer: a moment ago
+        distractors: [yesterday, last week, tomorrow]
+        audio: kakakain_lang_ako
+        audio_text: Kakakain lang ako.
+      - type: fill_blank
+        sentence: "___ lang niya, hindi mo na siya aabutan."
+        translation: "He just left, you will not catch him."
+        answer: Kakaalis
+        options: [Kakaalis, Kakakain, Katatapos]
+      - type: translate
+        prompt_tl: Kakadating lang namin galing Baguio.
+        answer_en: We just arrived from Baguio.
+        accept:
+          - We have just arrived from Baguio
+        extra_words: [cheap, market, tomorrow]
+        audio: kakadating_lang_namin_galing_baguio
+      - type: translate
+        prompt_en: I just finished work.
+        answer_tl: Katatapos lang ng trabaho ko
+        accept:
+          - Katatapos ko lang sa trabaho
+        extra_words: [kakakain, kakaalis, kakadating]
+      - type: listen
+        audio: kakadating_lang_ako
+        answer_tl: Kakadating lang ako
+        extra_words: [kakaalis, katatapos]
+      - type: arrange
+        prompt: "We just arrived from Baguio."
+        answer_tl: Kakadating lang namin galing Baguio
+      - type: choice
+        prompt: "The word that must accompany the kaka- form is..."
+        answer: lang
+        distractors: [na, ba, po]
+      - type: arrange
+        prompt: "He just left, you will not catch him."
+        answer_tl: Kakaalis lang niya hindi mo na siya aabutan
+        accept:
+          - Kakaalis lang niya, hindi mo na siya aabutan
+
+  - id: rec-2
+    title: Already and not yet
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: na, en: already }
+          - { tl: pa, en: still or yet }
+          - { tl: hindi pa, en: not yet }
+          - { tl: tapos na, en: already done }
+      - type: choice
+        prompt: "'Kumain ka na ba?' asks whether you have..."
+        answer: eaten already
+        distractors: [not eaten, cooked, bought food]
+        audio: kumain_ka_na_ba
+        audio_text: Kumain ka na ba?
+      - type: fill_blank
+        sentence: "Hindi ___ ako tapos sa trabaho."
+        translation: "I am not finished with work yet."
+        answer: pa
+        options: [pa, na, ba]
+      - type: translate
+        prompt_tl: Tapos na ang pulong, kakalabas lang nila.
+        answer_en: The meeting is over, they just came out.
+        accept:
+          - The meeting has ended they just came out
+        extra_words: [cheap, market, tomorrow]
+        audio: tapos_na_ang_pulong
+      - type: translate
+        prompt_en: I have not eaten yet, I just arrived.
+        answer_tl: Hindi pa ako kumakain, kakadating lang ako
+        accept:
+          - Hindi pa ako kumakain kakadating lang ako
+        extra_words: [tapos, kakaalis, katatapos]
+      - type: listen
+        audio: hindi_pa_ako_tapos
+        answer_tl: Hindi pa ako tapos
+        extra_words: [tapos, kakakain]
+      - type: arrange
+        prompt: "I have not eaten yet."
+        answer_tl: Hindi pa ako kumakain
+      - type: choice
+        prompt: "'Na' and 'pa' are opposites meaning..."
+        answer: already and not yet
+        distractors: [here and there, big and small, yes and no]
+      - type: arrange
+        prompt: "The meeting is over, they just came out."
+        answer_tl: Tapos na ang pulong kakalabas lang nila
+        accept:
+          - Tapos na ang pulong, kakalabas lang nila
+
+  - id: rec-3
+    title: How long ago
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanina, en: earlier today }
+          - { tl: kanina lang, en: just a while ago }
+          - { tl: kagabi, en: last night }
+          - { tl: kamakalawa, en: the day before yesterday }
+      - type: choice
+        prompt: "'Kamakalawa' is..."
+        answer: two days ago
+        distractors: [yesterday, last week, this morning]
+        audio: kamakalawa
+        audio_text: Kamakalawa.
+      - type: fill_blank
+        sentence: "___ lang siya umalis, mga limang minuto."
+        translation: "He left just a while ago, about five minutes."
+        answer: Kanina
+        options: [Kanina, Kagabi, Bukas]
+      - type: translate
+        prompt_tl: Nakita ko siya kanina sa palengke.
+        answer_en: I saw him earlier at the market.
+        accept:
+          - I saw her earlier at the market
+        extra_words: [cheap, tomorrow, quickly]
+        audio: nakita_ko_siya_kanina_sa_palengke
+      - type: translate
+        prompt_en: We arrived the day before yesterday.
+        answer_tl: Dumating kami kamakalawa
+        accept:
+          - Kamakalawa kami dumating
+        extra_words: [kanina, kagabi, bukas]
+      - type: listen
+        audio: kanina_lang_siya_umalis
+        answer_tl: Kanina lang siya umalis
+        extra_words: [kagabi, kamakalawa]
+      - type: arrange
+        prompt: "I saw him earlier at the market."
+        answer_tl: Nakita ko siya kanina sa palengke
+      - type: choice
+        prompt: "Which is nearest to now?"
+        answer: kanina lang
+        distractors: [kagabi, kamakalawa, noong isang linggo]
+      - type: arrange
+        prompt: "We arrived the day before yesterday."
+        answer_tl: Dumating kami kamakalawa
+
+  - id: rec-4
+    title: Catching up
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: Two friends bump into each other
+        lines:
+          - speaker: Nel
+            text: "Uy! ___ lang ako galing trabaho."
+            translation: "Hey! I just arrived from work."
+          - speaker: Cris
+            text: "Ako rin, ___ lang ang shift ko."
+            translation: "Me too, my shift just ended."
+          - speaker: Nel
+            text: "Kumain ka ___ ba?"
+            translation: "Have you eaten already?"
+          - speaker: Cris
+            text: "Hindi pa. Tara, kain tayo."
+            translation: "Not yet. Come on, let us eat."
+        blanks:
+          - answer: kakadating
+            options: [kakadating, kakaalis, kakakain]
+          - answer: katatapos
+            options: [katatapos, kakabili, kakainom]
+          - answer: na
+            options: [na, pa, ba]
+      - type: match
+        pairs:
+          - { tl: shift, en: work shift }
+          - { tl: pagod, en: tired }
+          - { tl: gutom, en: hungry }
+          - { tl: pahinga, en: rest }
+      - type: fill_blank
+        sentence: "___ na ako, buong araw akong nagtrabaho."
+        translation: "I am tired, I worked all day."
+        answer: Pagod
+        options: [Pagod, Busog, Masaya]
+      - type: translate
+        prompt_en: My shift just ended and I am very hungry.
+        answer_tl: Katatapos lang ng shift ko at gutom na gutom ako
+        accept:
+          - Katatapos lang ang shift ko at gutom na gutom ako
+        extra_words: [pahinga, pagod, kakadating]
+      - type: translate
+        prompt_tl: Magpahinga ka muna bago ka umuwi.
+        answer_en: Rest first before you go home.
+        accept:
+          - Take a rest before going home
+        extra_words: [cheap, market, tomorrow]
+        audio: magpahinga_ka_muna_bago_ka_umuwi
+      - type: listen
+        audio: katatapos_lang_ng_shift_ko
+        answer_tl: Katatapos lang ng shift ko
+        extra_words: [pagod, gutom]
+      - type: choice
+        prompt: "In the dialogue, what do they decide to do?"
+        answer: eat together
+        distractors: [go back to work, go home to sleep, take a taxi]
+      - type: arrange
+        prompt: "I just arrived from work."
+        answer_tl: Kakadating lang ako galing trabaho
+      - type: arrange
+        prompt: "I am tired, I worked all day."
+        answer_tl: Pagod na ako buong araw akong nagtrabaho
+        accept:
+          - Pagod na ako, buong araw akong nagtrabaho

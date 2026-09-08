@@ -1,0 +1,227 @@
+id: footwear-accessories
+title: Shoes and Accessories
+tier: foundation
+description: Slippers, bags, watches — the things you put on before leaving the house.
+tip: >-
+  Everyday footwear in the Philippines is tsinelas (rubber slippers), and you
+  take them off at the door. To say you are wearing something, use the naka-
+  prefix: nakasapatos ako (I have shoes on), nakasalamin siya (she wears
+  glasses). It describes a state, not an action.
+lessons:
+  - id: shoe-1
+    title: On your feet
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sapatos, en: shoes }
+          - { tl: tsinelas, en: slippers }
+          - { tl: medyas, en: socks }
+          - { tl: sandalyas, en: sandals }
+      - type: choice
+        prompt: "'Tsinelas' are..."
+        answer: rubber slippers
+        distractors: [leather boots, wool socks, dress shoes]
+        audio: tsinelas
+        audio_text: Tsinelas.
+      - type: fill_blank
+        sentence: "Maghubad ka ng ___ bago pumasok."
+        translation: "Take off your shoes before coming in."
+        answer: sapatos
+        options: [sapatos, tubig, lapis]
+      - type: translate
+        prompt_tl: Bago ang tsinelas ko.
+        answer_en: My slippers are new.
+        accept:
+          - My slippers are brand new
+        extra_words: [tomorrow, cheap, market]
+        audio: bago_ang_tsinelas_ko
+      - type: translate
+        prompt_en: I need new socks.
+        answer_tl: Kailangan ko ng bagong medyas
+        accept:
+          - Kailangan ko ng bagong medyas po
+        extra_words: [sapatos, tsinelas, damit]
+      - type: listen
+        audio: nasaan_ang_tsinelas_ko
+        answer_tl: Nasaan ang tsinelas ko
+        extra_words: [sapatos, medyas]
+      - type: choice
+        prompt: "You wear these under your shoes:"
+        answer: medyas
+        distractors: [salamin, relo, bag]
+      - type: fill_blank
+        sentence: "Masikip ang ___ ko, masakit ang paa ko."
+        translation: "My shoes are tight, my feet hurt."
+        answer: sapatos
+        options: [sapatos, bag, relo]
+      - type: translate
+        prompt_tl: Mura ang sandalyas sa palengke.
+        answer_en: The sandals at the market are cheap.
+        accept:
+          - Sandals are cheap at the market
+        extra_words: [quickly, morning, tomorrow]
+        audio: mura_ang_sandalyas_sa_palengke
+
+  - id: shoe-2
+    title: Things you carry
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bag, en: bag }
+          - { tl: pitaka, en: wallet }
+          - { tl: payong, en: umbrella }
+          - { tl: susi, en: key }
+      - type: choice
+        prompt: "It is raining. You bring a..."
+        answer: payong
+        distractors: [medyas, relo, salamin]
+        audio: payong
+        audio_text: Payong.
+      - type: fill_blank
+        sentence: "Nasa ___ ko ang pera."
+        translation: "The money is in my wallet."
+        answer: pitaka
+        options: [pitaka, payong, susi]
+      - type: translate
+        prompt_en: Do not forget your umbrella.
+        answer_tl: Huwag mong kalimutan ang payong mo
+        accept:
+          - Huwag kalimutan ang payong mo
+        extra_words: [pitaka, susi, bag]
+      - type: translate
+        prompt_tl: Nawala ang susi ko kahapon.
+        answer_en: I lost my key yesterday.
+        accept:
+          - My key was lost yesterday
+        extra_words: [cheap, market, quickly]
+        audio: nawala_ang_susi_ko_kahapon
+      - type: listen
+        audio: nasaan_ang_pitaka_ko
+        answer_tl: Nasaan ang pitaka ko
+        extra_words: [susi, payong]
+      - type: choice
+        prompt: "Which opens a door?"
+        answer: susi
+        distractors: [payong, medyas, relo]
+      - type: fill_blank
+        sentence: "Mabigat ang ___ ko, maraming aklat."
+        translation: "My bag is heavy, there are many books."
+        answer: bag
+        options: [bag, susi, payong]
+      - type: translate
+        prompt_en: My wallet is in my bag.
+        answer_tl: Nasa bag ko ang pitaka ko
+        accept:
+          - Nasa bag ang pitaka ko
+        extra_words: [susi, payong, medyas]
+
+  - id: shoe-3
+    title: Wearing things
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: salamin, en: eyeglasses }
+          - { tl: relo, en: watch }
+          - { tl: sumbrero, en: hat }
+          - { tl: singsing, en: ring }
+      - type: choice
+        prompt: "'Nakasalamin siya' means she..."
+        answer: is wearing glasses
+        distractors: [is looking at a mirror, broke the glass, is buying glasses]
+        audio: nakasalamin_siya
+        audio_text: Nakasalamin siya.
+      - type: fill_blank
+        sentence: "Naka___ ako ngayon, mainit ang araw."
+        translation: "I am wearing a hat today, the sun is hot."
+        answer: sumbrero
+        options: [sumbrero, medyas, susi]
+      - type: translate
+        prompt_tl: Bago ang relo ng tatay ko.
+        answer_en: My father's watch is new.
+        accept:
+          - My dad's watch is new
+        extra_words: [tomorrow, cheap, market]
+        audio: bago_ang_relo_ng_tatay_ko
+      - type: translate
+        prompt_en: She is wearing a ring.
+        answer_tl: Nakasingsing siya
+        accept:
+          - May singsing siya
+        extra_words: [salamin, relo, sumbrero]
+      - type: listen
+        audio: nakasapatos_ako_ngayon
+        answer_tl: Nakasapatos ako ngayon
+        extra_words: [nakasalamin, tsinelas]
+      - type: choice
+        prompt: "The prefix 'naka-' before clothing describes..."
+        answer: what someone has on
+        distractors: [what someone bought, where something is, when it happened]
+      - type: fill_blank
+        sentence: "___ ang lola ko kaya malinaw ang paningin niya."
+        translation: "My grandmother wears glasses so her sight is clear."
+        answer: Nakasalamin
+        options: [Nakasalamin, Nakasumbrero, Nakamedyas]
+      - type: translate
+        prompt_tl: Nakasumbrero ang magsasaka sa bukid.
+        answer_en: The farmer in the field is wearing a hat.
+        accept:
+          - The farmer is wearing a hat in the field
+        extra_words: [cheap, quickly, morning]
+        audio: nakasumbrero_ang_magsasaka_sa_bukid
+
+  - id: shoe-4
+    title: Getting ready
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Before leaving, you check for wallet, keys, and phone. You say:"
+        answer: Nakalimutan ko ba ang susi?
+        distractors: [Busog na ako., Malamig ang tubig., Taga-Cebu ako.]
+        audio: nakalimutan_ko_ba_ang_susi
+        audio_text: Nakalimutan ko ba ang susi?
+      - type: match
+        pairs:
+          - { tl: magbihis, en: to get dressed }
+          - { tl: maghubad, en: to take off }
+          - { tl: magsuot, en: to put on }
+          - { tl: kalimutan, en: to forget }
+      - type: fill_blank
+        sentence: "___ ka na, aalis na tayo."
+        translation: "Get dressed, we are leaving."
+        answer: Magbihis
+        options: [Magbihis, Matulog, Kumain]
+      - type: translate
+        prompt_en: Put on your shoes, it is raining.
+        answer_tl: Magsuot ka ng sapatos, umuulan
+        accept:
+          - Magsuot ka ng sapatos umuulan
+        extra_words: [tsinelas, payong, medyas]
+      - type: translate
+        prompt_tl: Huwag mong kalimutan ang pitaka mo.
+        answer_en: Do not forget your wallet.
+        accept:
+          - Don't forget your wallet
+        extra_words: [market, tomorrow, cheap]
+        audio: huwag_mong_kalimutan_ang_pitaka_mo
+      - type: listen
+        audio: magbihis_ka_na
+        answer_tl: Magbihis ka na
+        extra_words: [magsuot, maghubad]
+      - type: choice
+        prompt: "'Maghubad' is the opposite of..."
+        answer: magsuot
+        distractors: [kumain, matulog, magbasa]
+      - type: fill_blank
+        sentence: "Maghubad ka ng ___ bago maligo."
+        translation: "Take off your clothes before bathing."
+        answer: damit
+        options: [damit, susi, payong]
+      - type: translate
+        prompt_en: I forgot my umbrella at home.
+        answer_tl: Nakalimutan ko ang payong ko sa bahay
+        accept:
+          - Naiwan ko ang payong ko sa bahay
+        extra_words: [pitaka, susi, sapatos]

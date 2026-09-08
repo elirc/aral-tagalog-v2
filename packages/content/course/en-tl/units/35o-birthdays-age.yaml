@@ -1,0 +1,229 @@
+id: birthdays-age
+title: Birthdays and Age
+tier: everyday
+description: Greet, congratulate, and survive a Filipino birthday party.
+tip: >-
+  "Maligayang bati" covers birthdays, weddings and graduations alike — it is the
+  all-purpose congratulation. Age uses taon with a linker: "dalawampung taong
+  gulang". At a party, expect pancit, because long noodles are said to bring a
+  long life.
+lessons:
+  - id: bday-1
+    title: Greetings
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaarawan, en: birthday }
+          - { tl: maligayang bati, en: happy greetings }
+          - { tl: handaan, en: party }
+          - { tl: regalo, en: gift }
+      - type: choice
+        prompt: "The standard birthday greeting is:"
+        answer: Maligayang kaarawan!
+        distractors: [Magandang gabi!, Paalam na po!, Magkano po ito?]
+        audio: maligayang_kaarawan
+        audio_text: Maligayang kaarawan!
+      - type: fill_blank
+        sentence: "___ bati sa iyong kaarawan!"
+        translation: "Happy greetings on your birthday!"
+        answer: Maligayang
+        options: [Maligayang, Magandang, Maraming]
+      - type: translate
+        prompt_tl: Kailan ang kaarawan mo?
+        answer_en: When is your birthday?
+        accept:
+          - When's your birthday
+        extra_words: [cheap, market, tomorrow]
+        audio: kailan_ang_kaarawan_mo
+      - type: translate
+        prompt_en: There is a party at their house tonight.
+        answer_tl: May handaan sa bahay nila mamayang gabi
+        accept:
+          - May salu-salo sa bahay nila mamayang gabi
+        extra_words: [regalo, kaarawan, bati]
+      - type: listen
+        audio: maligayang_kaarawan_2
+        answer_tl: Maligayang kaarawan
+        extra_words: [handaan, regalo]
+      - type: choice
+        prompt: "'Maligayang bati' can also be said at a..."
+        answer: wedding or graduation
+        distractors: [funeral, doctor's visit, traffic stop]
+      - type: fill_blank
+        sentence: "May dala akong ___ para sa iyo."
+        translation: "I brought a gift for you."
+        answer: regalo
+        options: [regalo, handaan, bati]
+      - type: arrange
+        prompt: "When is your birthday?"
+        answer_tl: Kailan ang kaarawan mo
+
+  - id: bday-2
+    title: How old
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: taong gulang, en: years old }
+          - { tl: edad, en: age }
+          - { tl: bata pa, en: still young }
+          - { tl: matanda na, en: already old }
+      - type: choice
+        prompt: "'Dalawampung taong gulang ako' means I am..."
+        answer: twenty years old
+        distractors: [twenty months old, born in twenty, twenty-first]
+        audio: dalawampung_taong_gulang_ako
+        audio_text: Dalawampung taong gulang ako.
+      - type: fill_blank
+        sentence: "Ilang ___ ka na?"
+        translation: "How old are you?"
+        answer: taon
+        options: [taon, piso, oras]
+      - type: translate
+        prompt_tl: Limang taong gulang na ang anak ko.
+        answer_en: My child is five years old.
+        accept:
+          - My kid is five years old
+        extra_words: [cheap, market, tomorrow]
+        audio: limang_taong_gulang_na_ang_anak_ko
+      - type: translate
+        prompt_en: My grandmother is eighty years old.
+        answer_tl: Walumpung taong gulang ang lola ko
+        accept:
+          - Walumpu na ang lola ko
+        extra_words: [edad, bata, matanda]
+      - type: listen
+        audio: ilang_taon_ka_na_po
+        answer_tl: Ilang taon ka na po
+        extra_words: [edad, gulang]
+      - type: choice
+        prompt: "Asking a stranger's age directly is..."
+        answer: normal in Filipino small talk
+        distractors: [always rude, illegal, only for children]
+      - type: fill_blank
+        sentence: "___ pa siya, sampung taong gulang lang."
+        translation: "She is still young, only ten years old."
+        answer: Bata
+        options: [Bata, Matanda, Mahal]
+      - type: arrange
+        prompt: "My child is five years old."
+        answer_tl: Limang taong gulang na ang anak ko
+
+  - id: bday-3
+    title: At the party
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pancit, en: noodles }
+          - { tl: keyk, en: cake }
+          - { tl: kandila, en: candle }
+          - { tl: kantahan, en: to sing for someone }
+      - type: choice
+        prompt: "Pancit appears at every birthday because noodles mean..."
+        answer: a long life
+        distractors: [good luck with money, many children, safe travel]
+        audio: pancit
+        audio_text: Pancit.
+      - type: fill_blank
+        sentence: "Hipan mo ang ___ at humiling ka."
+        translation: "Blow out the candle and make a wish."
+        answer: kandila
+        options: [kandila, keyk, pancit]
+      - type: translate
+        prompt_tl: Masarap ang keyk sa handaan.
+        answer_en: The cake at the party is delicious.
+        accept:
+          - The cake at the party was delicious
+        extra_words: [cheap, market, tomorrow]
+        audio: masarap_ang_keyk_sa_handaan
+      - type: translate
+        prompt_en: Let us sing for the birthday celebrant.
+        answer_tl: Kantahan natin ang may kaarawan
+        accept:
+          - Kumanta tayo para sa may kaarawan
+        extra_words: [keyk, kandila, pancit]
+      - type: listen
+        audio: kumain_ka_ng_pancit
+        answer_tl: Kumain ka ng pancit
+        extra_words: [keyk, kandila]
+      - type: choice
+        prompt: "'Ang may kaarawan' refers to..."
+        answer: the birthday celebrant
+        distractors: [the host of the house, the oldest guest, the cook]
+      - type: fill_blank
+        sentence: "Humiling ka bago mo hipan ang ___."
+        translation: "Make a wish before you blow out the candle."
+        answer: kandila
+        options: [kandila, pancit, regalo]
+      - type: arrange
+        prompt: "Blow out the candle and make a wish."
+        answer_tl: Hipan mo ang kandila at humiling ka
+
+  - id: bday-4
+    title: A birthday invitation
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: An invitation by phone
+        lines:
+          - speaker: Lena
+            text: "May ___ ako sa Sabado, sumama ka."
+            translation: "I have a party on Saturday, come along."
+          - speaker: Karl
+            text: "___ kaarawan! Ilang taon ka na?"
+            translation: "Happy birthday! How old are you?"
+          - speaker: Lena
+            text: "Tatlumpung ___ gulang na ako."
+            translation: "I am thirty years old now."
+          - speaker: Karl
+            text: "Magdadala ako ng regalo."
+            translation: "I will bring a gift."
+        blanks:
+          - answer: handaan
+            options: [handaan, plantsa, sipit]
+          - answer: Maligayang
+            options: [Maligayang, Magandang, Mahal]
+          - answer: taong
+            options: [taong, pisong, orasang]
+      - type: match
+        pairs:
+          - { tl: imbitasyon, en: invitation }
+          - { tl: dumalo, en: to attend }
+          - { tl: humiling, en: to make a wish }
+          - { tl: sorpresa, en: surprise }
+      - type: fill_blank
+        sentence: "Hindi ako makakadalo, may ___ ako sa trabaho."
+        translation: "I cannot attend, I have work."
+        answer: pasok
+        options: [pasok, keyk, kandila]
+      - type: translate
+        prompt_en: Thank you for the invitation.
+        answer_tl: Salamat sa imbitasyon
+        accept:
+          - Salamat po sa imbitasyon
+        extra_words: [dumalo, sorpresa, regalo]
+      - type: translate
+        prompt_tl: Sorpresa ang handaan, huwag mong sabihin.
+        answer_en: The party is a surprise, do not tell.
+        accept:
+          - It's a surprise party don't tell
+        extra_words: [cheap, market, tomorrow]
+        audio: sorpresa_ang_handaan_huwag_mong_sabihin
+      - type: listen
+        audio: salamat_sa_imbitasyon
+        answer_tl: Salamat sa imbitasyon
+        extra_words: [dumalo, sorpresa]
+      - type: choice
+        prompt: "In the dialogue, how old is Lena turning?"
+        answer: thirty
+        distractors: [twenty, thirteen, forty]
+      - type: fill_blank
+        sentence: "___ ka ba sa handaan bukas?"
+        translation: "Will you attend the party tomorrow?"
+        answer: Dadalo
+        options: [Dadalo, Maglalaba, Matutulog]
+      - type: arrange
+        prompt: "I will bring a gift on Saturday."
+        answer_tl: Magdadala ako ng regalo sa Sabado

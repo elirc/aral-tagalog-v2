@@ -5,6 +5,8 @@ mobile (Expo) clients share all game logic through a pnpm/Turborepo monorepo;
 the backend is Fastify + PostgreSQL. Built to the spec in `SPEC.md` with a few
 documented simplifications (see below).
 
+For Vercel preview testing and deployment, follow [the Vercel guide](docs/VERCEL.md).
+
 ## Layout
 
 ```
@@ -22,6 +24,8 @@ packages/
 ```
 
 ## Quickstart
+
+Use Node 24 LTS (`.nvmrc`) and enable the pinned pnpm version with `corepack enable`.
 
 ```sh
 pnpm install
@@ -68,6 +72,19 @@ pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
   offline), refill by practicing a completed lesson (practice runs are
   heart-free). Ads hooks exist behind `AdsProvider` in core; v1 ships a no-op.
 - **Streaks:** local-midnight rollover using the device IANA timezone.
+- **Tiers:** the 2,850 units form four ordered tracks — Foundations,
+  Everyday, Conversational, and Mastery. A tier opens when the
+  previous one is finished — or immediately, if the learner *places* into it
+  from the course map. Placement writes a `tier_started` event; unlocking is
+  then scoped to the lesson's own tier, so jumping ahead never requires the
+  material you skipped.
+- **Daily quests:** three rotate every local day, drawn deterministically from
+  the day key so every client and the server agree on the set. Finishing one
+  credits bonus XP inside `reduceEvents` itself — derived, not claimed, so
+  there is nothing for a client to forge.
+- **Combo:** from the 3rd consecutive correct answer, each further correct
+  answer adds 1 XP, capped per session. Practice replays earn no combo, and
+  `/sync` clamps a completion to the authored XP plus that same ceiling.
 
 ## Deliberate simplifications vs. the spec
 
@@ -82,31 +99,30 @@ pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
 - **Web ships the bundle at build time** rather than downloading it (content
   updates ride deploys). Mobile does runtime download/versioning per OFF-04.
 - **Audio files aren't recorded yet.** Every exercise/vocab entry has an
-  `audio_ref`; players fail silently when a clip is missing. Record clips into
+  `audio_ref`; players fall back to device speech synthesis when a clip is missing;
+  listening exercises show a fallback when audio is unavailable. Record clips into
   `packages/content/audio/en-tl/<ref>.mp3`, or generate with Piper via
   `packages/content/scripts/generate-audio.mjs` (AUD-02).
 - **Ads are a no-op provider** (GAM-04 seam is in place; AdMob lands in M5).
 
 ## Course content status
 
-18 units, 69 lessons, 584 exercises (greetings through hobbies). All five
-exercise types are exercised, including `ng`/`nang` and hyphen-tolerance
-grading (CNT-04), and the compiler rejects unsolvable or ambiguous exercises
-at build time. Content is a starter draft — review by a fluent speaker
-recommended.
+**4 difficulty tiers, 2,850 units, 11,397 lessons, 102,550 exercises** (first words
+through idioms, formal register, storytelling, politics, business and poetry).
+All seven exercise types are exercised — including the advanced-tier `arrange`
+(word order) and `dialogue` (multi-turn cloze) — as are `ng`/`nang` and
+hyphen-tolerance grading (CNT-04), and the compiler rejects unsolvable,
+already-solved, or ambiguous exercises at build time. Content is a starter
+draft — review by a fluent speaker recommended.
 
-## Deploying (near-zero cost)
+## Production release
 
-- **API:** Fly.io/Railway free tier; copy `apps/api/.env.example` and set
-  `DATABASE_URL` (Neon/Supabase free Postgres), `JWT_SECRET`, and
-  `CORS_ORIGIN`. Run `pnpm db:migrate` on deploy. The server binds
-  `0.0.0.0:3001` by default, shuts down gracefully on SIGTERM, and never
-  leaks internal error details in responses. It reads the compiled lesson
-  catalog **once at startup** (that's what caps claimed XP), so restart the
-  API whenever you ship new content — otherwise new lessons fall back to the
-  catalog-wide max instead of their authored value.
-- **Web:** Vercel; set `NEXT_PUBLIC_API_URL`.
-- **Mobile:** EAS builds; set `extra.apiUrl` in `app.json` to the deployed API.
-- **Post-deploy check:** `SMOKE_API_URL=https://your-api pnpm smoke` runs the
-  29-check end-to-end suite (registers a throwaway user; safe on prod data,
-  but it does write one test account).
+Use [the Vercel testing and deployment guide](docs/VERCEL.md) for one Next.js
+project with managed PostgreSQL. The [single-host Docker guide](docs/RELEASE.md)
+covers HTTPS, migrations, backups and rollback for that hosting option. Run
+`pnpm release:check` before shipping. CI tests both API hosting paths, including
+accounts, progress sync, large content downloads and production packaging.
+
+The web app and API share one origin through `/api`; production builds use this
+by default. A separate API host can be set with `NEXT_PUBLIC_API_URL` at build
+time. Native app-store distribution still needs signing and real-device checks.

@@ -4,21 +4,16 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
   type ReactNode,
 } from "react";
 import { AppState } from "react-native";
 import { reduceEvents, type ProgressEvent, type UserProgress } from "@aral/core";
-import { api, ApiError, type AuthTokens, type AuthUser } from "./api";
-import { kvGet, kvSet, outboxAdd, outboxAll, outboxClear, wipeAll } from "./storage";
+import { api, type AuthTokens, type AuthUser } from "./api";
+import { commitSync, kvGet, kvSet, outboxAdd, outboxAll, switchUser } from "./storage";
+import { ProgressSyncWorker } from "./sync-worker";
 
-/**
- * Same event-sourced model as the web app, persisted in SQLite (OFF-02):
- * progress = server baseline (last /sync response) + unsynced outbox events.
- * The sync worker flushes the outbox when the app foregrounds or events land.
- */
-
+/** Progress = the last server baseline plus the durable SQLite outbox. */
 export function deviceTz(): string {
   try {
     return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
@@ -35,7 +30,7 @@ interface ProgressContextValue {
   logout: () => void;
   syncNow: () => Promise<void>;
   pendingCount: number;
-  /** refresh token was rejected: still "logged in" locally but nothing syncs */
+  /** Refresh token was rejected; local progress is retained until login. */
   needsRelogin: boolean;
 }
 
@@ -47,11 +42,40 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const [auth, setAuth] = useState<AuthTokens | null>(() => kvGet<AuthTokens>("auth"));
   const [needsRelogin, setNeedsRelogin] = useState(false);
   const [tick, setTick] = useState(0);
+  const [worker] = useState(() => new ProgressSyncWorker({
+    auth,
+    api,
+    timeZone: deviceTz,
+    storage: {
+      outboxAll,
+      saveAuth: (tokens) => kvSet("auth", tokens),
+      commitSync,
+      switchUser,
+    },
+    onAuth: setAuth,
+    onNeedsRelogin: setNeedsRelogin,
+    onSynced: (serverProgress) => {
+      setBaseline(serverProgress);
+      setOutbox(outboxAll());
+    },
+    onSessionChanged: ({ baseline: restored, events }) => {
+      setBaseline(restored);
+      setOutbox(events);
+    },
+  }));
+
+  const syncNow = useCallback(() => worker.syncNow(), [worker]);
+  const adoptAuth = useCallback((tokens: AuthTokens) => worker.adoptAuth(tokens), [worker]);
+  const logout = useCallback(() => worker.logout(), [worker]);
 
   useEffect(() => {
-    const t = setInterval(() => setTick((n) => n + 1), 30_000);
-    return () => clearInterval(t);
-  }, []);
+    const timer = setInterval(() => {
+      setTick((n) => n + 1);
+      // A failed debounce used to leave events stuck until the next app launch.
+      if (AppState.currentState === "active" && outboxAll().length > 0) void syncNow();
+    }, 30_000);
+    return () => clearInterval(timer);
+  }, [syncNow]);
 
   const progress = useMemo(
     () => reduceEvents(outbox, deviceTz(), Date.now(), baseline ?? undefined),
@@ -63,118 +87,19 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setOutbox(outboxAll());
   }, []);
 
-  const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]) => {
-    // the server caps batches at 500; leftovers flush on the next debounce
-    const batch = events.slice(0, 500);
-    const push = async (t: AuthTokens) => {
-      const { progress: serverProgress } = await api.sync(t.accessToken, batch);
-      kvSet("baseline", serverProgress);
-      setBaseline(serverProgress);
-      outboxClear(batch.map((e) => e.id));
-      setOutbox(outboxAll());
-    };
-    try {
-      await push(tokens);
-      setNeedsRelogin(false);
-    } catch (err) {
-      if (err instanceof ApiError && err.status === 401) {
-        // access token expired: rotate via refresh token, retry once
-        let fresh: AuthTokens;
-        try {
-          fresh = await api.refresh(tokens.refreshToken);
-        } catch (refreshErr) {
-          // dead refresh token: the user looks logged in but nothing will
-          // ever sync — surface it instead of failing silently forever
-          if (refreshErr instanceof ApiError && refreshErr.status === 401) setNeedsRelogin(true);
-          throw refreshErr;
-        }
-        kvSet("auth", fresh);
-        setAuth(fresh);
-        await push(fresh);
-        setNeedsRelogin(false);
-      } else {
-        throw err; // offline — outbox stays for the next attempt (OFF-02)
-      }
-    }
-  }, []);
-
-  // One /sync at a time: launch, the debounce effect, and the foreground
-  // handler can all fire at once. Overlapping syncs present the same refresh
-  // token to the server and can apply an older progress snapshot last.
-  const syncingRef = useRef(false);
-  const syncNow = useCallback(async () => {
-    if (!auth || syncingRef.current) return;
-    syncingRef.current = true;
-    try {
-      await syncWith(auth, outboxAll());
-    } catch {
-      // offline — the outbox keeps the events for the next attempt (OFF-02)
-    } finally {
-      syncingRef.current = false;
-    }
-  }, [auth, syncWith]);
-
-  const adoptAuth = useCallback(
-    async (tokens: AuthTokens) => {
-      // logging in as a different account must not push the previous user's
-      // unsynced events into it; guest carry-over (auth === null) still works
-      const switchingUser = auth !== null && auth.user.id !== tokens.user.id;
-      if (switchingUser) {
-        outboxClear(outboxAll().map((e) => e.id));
-        kvSet("baseline", null);
-        setBaseline(null);
-        setOutbox([]);
-      }
-      kvSet("auth", tokens);
-      setAuth(tokens);
-      setNeedsRelogin(false);
-      await syncWith(tokens, switchingUser ? [] : outboxAll()).catch(() => {});
-    },
-    [auth, syncWith],
-  );
-
-  const logout = useCallback(() => {
-    // best-effort server-side revocation of this device's refresh-token family
-    if (auth) void api.logout(auth.refreshToken).catch(() => {});
-    wipeAll();
-    setNeedsRelogin(false);
-    setAuth(null);
-    setBaseline(null);
-    setOutbox([]);
-  }, [auth]);
-
-  // sync worker: on new events (debounced) and when the app foregrounds
   useEffect(() => {
     if (!auth || outbox.length === 0) return;
-    const t = setTimeout(() => void syncNow(), 2000);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => void syncNow(), 2000);
+    return () => clearTimeout(timer);
   }, [auth, outbox, syncNow]);
 
   useEffect(() => {
-    // launch counts as "coming to the foreground": pull server truth right
-    // away so progress made on other devices shows without a background/resume
     void syncNow();
-    const sub = AppState.addEventListener("change", (state) => {
+    const subscription = AppState.addEventListener("change", (state) => {
       if (state === "active") void syncNow();
     });
-    return () => sub.remove();
+    return () => subscription.remove();
   }, [syncNow]);
-
-  // keep the server-side tz current: the server buckets streak/xpByDay days
-  // with users.tz, clients with the device zone — they must agree (GAM-02)
-  useEffect(() => {
-    if (!auth) return;
-    const tz = deviceTz();
-    if (auth.user.tz === tz) return;
-    api
-      .updateMe(auth.accessToken, { tz })
-      .then(({ user }) => {
-        const next = { ...auth, user };
-        kvSet("auth", next);
-        setAuth(next);
-      })
-      .catch(() => {}); // best-effort; retried after the next token refresh
-  }, [auth]);
 
   const value = useMemo(
     () => ({
@@ -200,7 +125,7 @@ export function useProgress(): ProgressContextValue {
 }
 
 export function newEventId(): string {
-  // RN Hermes has crypto.randomUUID on new arch; fall back just in case
+  // RN Hermes has crypto.randomUUID on new arch; fall back just in case.
   const c = globalThis.crypto as Crypto | undefined;
   return c?.randomUUID
     ? c.randomUUID()

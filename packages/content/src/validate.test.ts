@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import type {
+  ArrangeExercise,
   ChoiceExercise,
+  CourseTier,
+  DialogueExercise,
   Exercise,
   FillBlankExercise,
   Lesson,
@@ -9,7 +12,7 @@ import type {
   TranslateTapsExercise,
   Unit,
 } from "@aral/core";
-import { validateCourse, validateExercise } from "./validate";
+import { validateCourse, validateExercise, validateTiers } from "./validate";
 
 const choice = (over: Partial<ChoiceExercise> = {}): ChoiceExercise => ({
   id: "c1",
@@ -206,5 +209,215 @@ describe("validateCourse", () => {
     const broken = choice({ id: "e9", distractors: ["Magandang gabi", "Magandang gabi"] });
     const units = [unit("u1", [lesson("l1", [broken])])];
     expect(validateCourse(units, [])).toEqual(["e9: duplicate distractors"]);
+  });
+});
+
+const arrange = (over: Partial<ArrangeExercise> = {}): ArrangeExercise => ({
+  id: "a1",
+  type: "arrange",
+  prompt: "I will go to the market tomorrow.",
+  answer: "Pupunta ako sa palengke bukas",
+  tokens: ["palengke", "ako", "bukas", "Pupunta", "sa"],
+  ...over,
+});
+
+const dialogue = (over: Partial<DialogueExercise> = {}): DialogueExercise => ({
+  id: "d1",
+  type: "dialogue",
+  lines: [
+    { speaker: "Ikaw", text: "Magkano ___ ang mangga?" },
+    { speaker: "Tindera", text: "Otsenta ___ ang isang kilo." },
+  ],
+  blanks: [
+    { answer: "po", options: ["po", "ba", "na"] },
+    { answer: "piso", options: ["piso", "pera"] },
+  ],
+  ...over,
+});
+
+describe("validateExercise: arrange", () => {
+  it("passes a clean exercise", () => {
+    expect(validateExercise(arrange())).toEqual([]);
+  });
+
+  it("flags tokens that cannot spell the answer", () => {
+    const problems = validateExercise(arrange({ tokens: ["ako", "bukas", "Pupunta", "sa"] }));
+    expect(problems.join(" ")).toContain("cannot spell");
+  });
+
+  it("flags tokens already in answer order — nothing to arrange", () => {
+    const problems = validateExercise(
+      arrange({ tokens: ["Pupunta", "ako", "sa", "palengke", "bukas"] }),
+    );
+    expect(problems).toContain("tokens are already in answer order — nothing to arrange");
+  });
+
+  it("allows answer order when every word is identical (no other order exists)", () => {
+    expect(
+      validateExercise(
+        arrange({ id: "a2", answer: "araw araw", tokens: ["araw", "araw"] }),
+      ),
+    ).toEqual([]);
+  });
+
+  it("flags spare tokens — arrange takes no distractors", () => {
+    const problems = validateExercise(
+      arrange({ tokens: ["palengke", "ako", "bukas", "Pupunta", "sa", "kahapon"] }),
+    );
+    expect(problems.join(" ")).toContain("beyond the answer");
+  });
+
+  it("counts a hyphenated chip as the words it normalizes to", () => {
+    expect(
+      validateExercise(
+        arrange({
+          id: "a3",
+          answer: "Kumakain siya araw-araw",
+          tokens: ["araw-araw", "Kumakain", "siya"],
+          grading: { hyphens: true },
+        }),
+      ),
+    ).toEqual([]);
+  });
+
+  it("accepts an authored alternative as the formable answer", () => {
+    expect(
+      validateExercise(
+        arrange({
+          id: "a4",
+          answer: "Bukas pupunta ako",
+          accept: ["Pupunta ako bukas"],
+          tokens: ["ako", "Pupunta", "bukas"],
+        }),
+      ),
+    ).toEqual([]);
+  });
+});
+
+describe("validateExercise: dialogue", () => {
+  it("passes a clean exercise", () => {
+    expect(validateExercise(dialogue())).toEqual([]);
+  });
+
+  it("flags a blank count that does not match the ___ in the lines", () => {
+    // a mismatch silently shifts every later blank onto the wrong answer
+    const problems = validateExercise(dialogue({ blanks: [{ answer: "po" }] }));
+    expect(problems).toEqual(["2 blank(s) in the lines but 1 answer(s)"]);
+  });
+
+  it("flags a blank whose options never contain the answer", () => {
+    const problems = validateExercise(
+      dialogue({
+        blanks: [
+          { answer: "po", options: ["po", "ba"] },
+          { answer: "piso", options: ["pera", "bayad"] },
+        ],
+      }),
+    );
+    expect(problems).toEqual([`blank 2: no option matches the answer "piso"`]);
+  });
+
+  it("flags duplicate options within one blank", () => {
+    const problems = validateExercise(
+      dialogue({
+        blanks: [
+          { answer: "po", options: ["po", "po"] },
+          { answer: "piso", options: ["piso", "pera"] },
+        ],
+      }),
+    );
+    expect(problems).toEqual(["blank 1: duplicate options"]);
+  });
+
+  it("accepts an alternative spelling among the options", () => {
+    expect(
+      validateExercise(
+        dialogue({
+          blanks: [
+            { answer: "po", options: ["po", "ba", "na"] },
+            { answer: "piso", accept: ["pesos"], options: ["pesos", "pera"] },
+          ],
+        }),
+      ),
+    ).toEqual([]);
+  });
+
+  it("allows free-text blanks with no options at all", () => {
+    expect(
+      validateExercise(dialogue({ blanks: [{ answer: "po" }, { answer: "piso" }] })),
+    ).toEqual([]);
+  });
+
+  it("counts several blanks on one line", () => {
+    const problems = validateExercise(
+      dialogue({
+        lines: [{ text: "___ po ___ mangga?" }, { text: "Otsenta." }],
+        blanks: [{ answer: "Magkano" }, { answer: "ang" }],
+      }),
+    );
+    expect(problems).toEqual([]);
+  });
+});
+
+describe("validateTiers", () => {
+  const tiers: CourseTier[] = [
+    { id: "t1", title: "Foundations" },
+    { id: "t2", title: "Mastery" },
+  ];
+  // local helpers: the validateCourse block above scopes its own
+  const tieredUnit = (id: string, tier: string | undefined): Unit => ({
+    id,
+    title: id,
+    tier,
+    lessons: [{ id: id + "-l", title: id, xp: 10, exercises: [choice({ id: id + "-e" })] }],
+  });
+
+  it("passes a well-formed tiered course", () => {
+    const units = [tieredUnit("u1", "t1"), tieredUnit("u2", "t1"), tieredUnit("u3", "t2")];
+    expect(validateTiers(units, tiers)).toEqual([]);
+  });
+
+  it("passes a flat course with no tiers anywhere", () => {
+    expect(validateTiers([tieredUnit("u1", undefined)], undefined)).toEqual([]);
+  });
+
+  it("flags units naming tiers the course never declares", () => {
+    const problems = validateTiers([tieredUnit("u1", "t1")], undefined);
+    expect(problems.join(" ")).toContain("declares none");
+  });
+
+  it("flags a unit naming an undeclared tier", () => {
+    const units = [tieredUnit("u1", "t1"), tieredUnit("u2", "ghost"), tieredUnit("u3", "t2")];
+    expect(validateTiers(units, tiers).join(" ")).toContain(`names undeclared tier "ghost"`);
+  });
+
+  it("flags a unit with no tier once the course declares them", () => {
+    const units = [tieredUnit("u1", "t1"), tieredUnit("u2", undefined), tieredUnit("u3", "t2")];
+    expect(validateTiers(units, tiers).join(" ")).toContain("has no tier");
+  });
+
+  it("flags non-contiguous tier units", () => {
+    // unlocking is scoped to a tier, so a stranded unit would be reachable in
+    // an order the course map never shows
+    const units = [tieredUnit("u1", "t1"), tieredUnit("u2", "t2"), tieredUnit("u3", "t1")];
+    expect(validateTiers(units, tiers).join(" ")).toContain("not contiguous");
+  });
+
+  it("flags a declared tier with no units", () => {
+    expect(validateTiers([tieredUnit("u1", "t1")], tiers).join(" ")).toContain(
+      `tier "t2" has no units`,
+    );
+  });
+
+  it("flags duplicate tier ids", () => {
+    const dupes: CourseTier[] = [...tiers, { id: "t1", title: "Again" }];
+    expect(validateTiers([tieredUnit("u1", "t1"), tieredUnit("u2", "t2")], dupes).join(" ")).toContain(
+      "duplicate tier id: t1",
+    );
+  });
+
+  it("runs as part of validateCourse", () => {
+    const units = [tieredUnit("u1", "ghost")];
+    expect(validateCourse(units, [], tiers).join(" ")).toContain("undeclared tier");
   });
 });

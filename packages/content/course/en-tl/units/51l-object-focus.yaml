@@ -1,0 +1,224 @@
+id: object-focus
+title: Object Focus
+tier: conversational
+description: The -in and i- verbs that put the thing, not the doer, in the spotlight.
+tip: >-
+  Tagalog verbs choose a focus. Actor focus asks "who did it" — bumili ako ng
+  tinapay. Object focus asks "what was done to it" — binili ko ang tinapay. The
+  object takes ang and the actor drops to ko/mo/niya. Object focus is the more
+  natural choice whenever the thing is already known.
+lessons:
+  - id: obj-1
+    title: Two ways to say it
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bumili ako, en: I bought (actor focus) }
+          - { tl: binili ko, en: I bought it (object focus) }
+          - { tl: kumain ako, en: I ate }
+          - { tl: kinain ko, en: I ate it }
+      - type: choice
+        prompt: "In 'Binili ko ang tinapay', the word 'ang' marks the..."
+        answer: bread
+        distractors: [buyer, store, price]
+        audio: binili_ko_ang_tinapay
+        audio_text: Binili ko ang tinapay.
+      - type: fill_blank
+        sentence: "___ ko ang libro kahapon."
+        translation: "I read the book yesterday."
+        answer: Binasa
+        options: [Binasa, Bumasa, Magbabasa]
+      - type: translate
+        prompt_tl: Kinain ko na ang kanin.
+        answer_en: I already ate the rice.
+        accept:
+          - I have eaten the rice
+        extra_words: [cheap, market, tomorrow]
+        audio: kinain_ko_na_ang_kanin
+      - type: translate
+        prompt_en: I bought the bread at the store.
+        answer_tl: Binili ko ang tinapay sa tindahan
+        accept:
+          - Binili ko sa tindahan ang tinapay
+        extra_words: [kinain, binasa, bumili]
+      - type: listen
+        audio: binili_ko_ito_kahapon
+        answer_tl: Binili ko ito kahapon
+        extra_words: [kinain, binasa]
+      - type: arrange
+        prompt: "I already ate the rice."
+        answer_tl: Kinain ko na ang kanin
+      - type: choice
+        prompt: "Object focus is preferred when the thing is..."
+        answer: already known to both speakers
+        distractors: [brand new information, a person, a place]
+      - type: arrange
+        prompt: "I read the book yesterday."
+        answer_tl: Binasa ko ang libro kahapon
+
+  - id: obj-2
+    title: The -in verbs
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kainin, en: to eat it }
+          - { tl: bilhin, en: to buy it }
+          - { tl: basahin, en: to read it }
+          - { tl: gawin, en: to do it }
+      - type: choice
+        prompt: "'Bilhin mo ang isda' is..."
+        answer: a command about the fish
+        distractors: [a question, a past statement, a refusal]
+        audio: bilhin_mo_ang_isda
+        audio_text: Bilhin mo ang isda.
+      - type: fill_blank
+        sentence: "___ mo ang liham bago ka pumirma."
+        translation: "Read the letter before you sign."
+        answer: Basahin
+        options: [Basahin, Kainin, Bilhin]
+      - type: translate
+        prompt_tl: Gawin mo na ang takdang-aralin.
+        answer_en: Do the homework now.
+        accept:
+          - Do your homework already
+        extra_words: [cheap, market, tomorrow]
+        audio: gawin_mo_na_ang_takdang_aralin
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Eat the fish while it is hot.
+        answer_tl: Kainin mo ang isda habang mainit
+        accept:
+          - Kainin mo na ang isda habang mainit
+        extra_words: [bilhin, basahin, gawin]
+      - type: listen
+        audio: basahin_mo_ito
+        answer_tl: Basahin mo ito
+        extra_words: [kainin, bilhin]
+      - type: arrange
+        prompt: "Read the letter before you sign."
+        answer_tl: Basahin mo ang liham bago ka pumirma
+      - type: choice
+        prompt: "Which is the object-focus command form?"
+        answer: Bilhin mo.
+        distractors: [Bumili ka., Bibili ako., Bumibili siya.]
+      - type: arrange
+        prompt: "Eat the fish while it is hot."
+        answer_tl: Kainin mo ang isda habang mainit
+
+  - id: obj-3
+    title: The i- verbs
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ibigay, en: to give it }
+          - { tl: ilagay, en: to put it }
+          - { tl: itapon, en: to throw it }
+          - { tl: isara, en: to close it }
+      - type: choice
+        prompt: "The 'i-' verbs usually involve..."
+        answer: moving something
+        distractors: [eating something, seeing something, hearing something]
+        audio: ilagay_mo_dito
+        audio_text: Ilagay mo dito.
+      - type: fill_blank
+        sentence: "___ mo ang susi sa mesa."
+        translation: "Put the key on the table."
+        answer: Ilagay
+        options: [Ilagay, Kainin, Basahin]
+      - type: translate
+        prompt_tl: Ibigay mo ito kay Nanay.
+        answer_en: Give this to Mom.
+        accept:
+          - Hand this to Mom
+        extra_words: [cheap, market, tomorrow]
+        audio: ibigay_mo_ito_kay_nanay
+      - type: translate
+        prompt_en: Close the window, it is cold.
+        answer_tl: Isara mo ang bintana, malamig
+        accept:
+          - Isara mo ang bintana malamig
+        extra_words: [ilagay, ibigay, itapon]
+      - type: listen
+        audio: ibigay_mo_sa_kanya
+        answer_tl: Ibigay mo sa kanya
+        extra_words: [ilagay, isara]
+      - type: arrange
+        prompt: "Put the key on the table."
+        answer_tl: Ilagay mo ang susi sa mesa
+      - type: choice
+        prompt: "'Itapon mo' and 'kainin mo' differ because i- verbs move a thing while -in verbs..."
+        answer: act directly on it
+        distractors: [always mean to buy, only work in the past, need no object]
+      - type: arrange
+        prompt: "Give this to Mom."
+        answer_tl: Ibigay mo ito kay Nanay
+
+  - id: obj-4
+    title: Choosing a focus
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: Cooking together in the kitchen
+        lines:
+          - speaker: Ate
+            text: "___ mo ang gulay habang naghihiwa ako ng karne."
+            translation: "Wash the vegetables while I slice the meat."
+          - speaker: Bunso
+            text: "Opo. Saan ko po ___ ang hinugasang gulay?"
+            translation: "Yes. Where should I put the washed vegetables?"
+          - speaker: Ate
+            text: "___ mo sa malaking mangkok."
+            translation: "Put them in the big bowl."
+          - speaker: Bunso
+            text: "Tapos na po. Ano pa po?"
+            translation: "Done. What else?"
+        blanks:
+          - answer: Hugasan
+            options: [Hugasan, Kainin, Itapon]
+          - answer: ilalagay
+            options: [ilalagay, kakainin, babasahin]
+          - answer: Ilagay
+            options: [Ilagay, Kainin, Basahin]
+      - type: match
+        pairs:
+          - { tl: hugasan, en: to wash it }
+          - { tl: hiwain, en: to slice it }
+          - { tl: lutuin, en: to cook it }
+          - { tl: haluin, en: to stir it }
+      - type: fill_blank
+        sentence: "___ mo ang sabaw nang dahan-dahan."
+        translation: "Stir the soup slowly."
+        answer: Haluin
+        options: [Haluin, Hugasan, Ilagay]
+        grading: { hyphens: true, ng_nang: true }
+      - type: translate
+        prompt_en: Slice the onion and put it in the pan.
+        answer_tl: Hiwain mo ang sibuyas at ilagay sa kawali
+        accept:
+          - Hiwain mo ang sibuyas at ilagay mo sa kawali
+        extra_words: [haluin, lutuin, hugasan]
+      - type: translate
+        prompt_tl: Lutuin mo ang isda nang mabagal.
+        answer_en: Cook the fish slowly.
+        accept:
+          - Cook the fish on low heat
+        extra_words: [cheap, market, tomorrow]
+        audio: lutuin_mo_ang_isda_nang_mabagal
+        grading: { ng_nang: true }
+      - type: listen
+        audio: hugasan_mo_ang_gulay
+        answer_tl: Hugasan mo ang gulay
+        extra_words: [haluin, lutuin]
+      - type: choice
+        prompt: "In the dialogue, why is object focus natural throughout?"
+        answer: both already know what is being handled
+        distractors: [they are strangers, it is a formal setting, it happened long ago]
+      - type: arrange
+        prompt: "Wash the vegetables and slice the meat."
+        answer_tl: Hugasan mo ang gulay at hiwain ang karne
+      - type: arrange
+        prompt: "Put them in the big bowl."
+        answer_tl: Ilagay mo sa malaking mangkok

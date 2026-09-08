@@ -1,0 +1,235 @@
+id: wants-needs
+title: Wants and Needs
+tier: everyday
+description: Gusto, ayaw, kailangan, dapat — saying what you want and what you must do.
+tip: >-
+  Gusto, ayaw and kailangan take a possessive pronoun, not the ordinary one:
+  "gusto ko" not "gusto ako". Dapat means should or must and sits at the front:
+  "Dapat kang matulog." Note the polite softener sana, which turns a demand into
+  a wish: "Gusto ko sanang…".
+lessons:
+  - id: want-1
+    title: I want, I do not want
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gusto ko, en: I want }
+          - { tl: ayaw ko, en: I do not want }
+          - { tl: gusto mo, en: you want }
+          - { tl: ayaw niya, en: he or she does not want }
+      - type: choice
+        prompt: "Which is correct?"
+        answer: Gusto ko ng kape.
+        distractors: [Gusto ako ng kape., Gusto siya ng kape., Gusto ikaw ng kape.]
+        audio: gusto_ko_ng_kape
+        audio_text: Gusto ko ng kape.
+      - type: fill_blank
+        sentence: "___ ko ng malamig na tubig."
+        translation: "I want cold water."
+        answer: Gusto
+        options: [Gusto, Ayaw, Dapat]
+      - type: translate
+        prompt_tl: Ayaw niya ng maanghang.
+        answer_en: He does not want spicy food.
+        accept:
+          - She doesn't like spicy food
+        extra_words: [cheap, market, tomorrow]
+        audio: ayaw_niya_ng_maanghang
+      - type: translate
+        prompt_en: I do not want to go out tonight.
+        answer_tl: Ayaw kong lumabas mamayang gabi
+        accept:
+          - Ayaw ko pong lumabas mamayang gabi
+        extra_words: [gusto, dapat, kailangan]
+      - type: listen
+        audio: ano_ang_gusto_mo
+        answer_tl: Ano ang gusto mo
+        extra_words: [ayaw, dapat]
+      - type: choice
+        prompt: "'Gusto ko sana' is softer because 'sana' adds..."
+        answer: a wish, not a demand
+        distractors: [the past tense, a question, a negative]
+      - type: fill_blank
+        sentence: "___ ko sanang humingi ng tulong."
+        translation: "I would like to ask for help."
+        answer: Gusto
+        options: [Gusto, Ayaw, Bawal]
+      - type: arrange
+        prompt: "I would like to ask for help."
+        answer_tl: Gusto ko sanang humingi ng tulong
+
+  - id: want-2
+    title: Needs
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kailangan, en: need }
+          - { tl: kailangan ko, en: I need }
+          - { tl: hindi kailangan, en: not needed }
+          - { tl: mahalaga, en: important }
+      - type: choice
+        prompt: "'Kailangan ko ng tulong' means..."
+        answer: I need help
+        distractors: [I want help, I gave help, I refused help]
+        audio: kailangan_ko_ng_tulong
+        audio_text: Kailangan ko ng tulong.
+      - type: fill_blank
+        sentence: "___ mo bang sumama?"
+        translation: "Do you need to come along?"
+        answer: Kailangan
+        options: [Kailangan, Bawal, Marunong]
+      - type: translate
+        prompt_tl: Hindi kailangan ng resibo.
+        answer_en: A receipt is not needed.
+        accept:
+          - You don't need a receipt
+        extra_words: [cheap, market, tomorrow]
+        audio: hindi_kailangan_ng_resibo
+      - type: translate
+        prompt_en: I need to buy medicine today.
+        answer_tl: Kailangan kong bumili ng gamot ngayon
+        accept:
+          - Kailangan ko pong bumili ng gamot ngayon
+        extra_words: [gusto, ayaw, dapat]
+      - type: listen
+        audio: kailangan_mo_ba_ng_tulong
+        answer_tl: Kailangan mo ba ng tulong
+        extra_words: [gusto, dapat]
+      - type: choice
+        prompt: "The difference between 'gusto' and 'kailangan' is..."
+        answer: want versus need
+        distractors: [past versus future, polite versus rude, singular versus plural]
+      - type: fill_blank
+        sentence: "___ ang tubig sa buhay."
+        translation: "Water is important in life."
+        answer: Mahalaga
+        options: [Mahalaga, Bawal, Madali]
+      - type: arrange
+        prompt: "I need to buy rice and medicine today."
+        answer_tl: Kailangan kong bumili ng bigas at gamot ngayon
+
+  - id: want-3
+    title: Should and must
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dapat, en: should or must }
+          - { tl: hindi dapat, en: should not }
+          - { tl: mabuti, en: good }
+          - { tl: masama, en: bad }
+      - type: choice
+        prompt: "'Dapat kang matulog' means you..."
+        answer: should sleep
+        distractors: [are sleeping, slept, want to sleep]
+        audio: dapat_kang_matulog
+        audio_text: Dapat kang matulog.
+      - type: fill_blank
+        sentence: "___ tayong maghintay dito."
+        translation: "We should wait here."
+        answer: Dapat
+        options: [Dapat, Bawal, Ayaw]
+      - type: translate
+        prompt_tl: Hindi ka dapat pumunta doon mag-isa.
+        answer_en: You should not go there alone.
+        accept:
+          - You shouldn't go there alone
+        extra_words: [cheap, market, tomorrow]
+        audio: hindi_ka_dapat_pumunta_doon_mag_isa
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: You should eat vegetables every day.
+        answer_tl: Dapat kang kumain ng gulay araw-araw
+        accept:
+          - Dapat kang kumain ng gulay araw araw
+        extra_words: [gusto, ayaw, kailangan]
+        grading: { hyphens: true }
+      - type: listen
+        audio: dapat_ka_nang_umuwi
+        answer_tl: Dapat ka nang umuwi
+        extra_words: [gusto, kailangan]
+      - type: choice
+        prompt: "Which sentence gives advice?"
+        answer: Dapat kang magpahinga.
+        distractors: [Nagpapahinga ako., Nagpahinga siya kahapon., Ayaw kong magpahinga.]
+      - type: fill_blank
+        sentence: "___ ang manigarilyo para sa kalusugan."
+        translation: "Smoking is bad for your health."
+        answer: Masama
+        options: [Masama, Mabuti, Mahalaga]
+      - type: arrange
+        prompt: "You should not go there alone."
+        answer_tl: Hindi ka dapat pumunta doon mag-isa
+        grading: { hyphens: true }
+
+  - id: want-4
+    title: Deciding together
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Deciding what to have for dinner
+        lines:
+          - speaker: Rio
+            text: "Ano ang ___ mong kainin mamaya?"
+            translation: "What do you want to eat later?"
+          - speaker: Bea
+            text: "___ ko ng maanghang, sumasakit ang tiyan ko."
+            translation: "I do not want spicy food, my stomach hurts."
+          - speaker: Rio
+            text: "Sige, ___ tayong kumain ng sopas."
+            translation: "Okay, we should eat soup."
+          - speaker: Bea
+            text: "Mabuti iyan, salamat."
+            translation: "That is good, thank you."
+        blanks:
+          - answer: gusto
+            options: [gusto, bawal, marunong]
+          - answer: Ayaw
+            options: [Ayaw, Gusto, Dapat]
+          - answer: dapat
+            options: [dapat, bawal, ayaw]
+      - type: match
+        pairs:
+          - { tl: pumili, en: to choose }
+          - { tl: magpasya, en: to decide }
+          - { tl: sang-ayon, en: in agreement }
+          - { tl: tutol, en: opposed }
+      - type: fill_blank
+        sentence: "___ ako sa plano mo."
+        translation: "I agree with your plan."
+        answer: Sang-ayon
+        options: [Sang-ayon, Tutol, Bawal]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: We need to decide today.
+        answer_tl: Kailangan nating magpasya ngayon
+        accept:
+          - Dapat tayong magpasya ngayon
+        extra_words: [pumili, tutol, sang-ayon]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Tutol ako sa desisyon na iyan.
+        answer_en: I am opposed to that decision.
+        accept:
+          - I disagree with that decision
+        extra_words: [cheap, market, tomorrow]
+        audio: tutol_ako_sa_desisyon_na_iyan
+      - type: listen
+        audio: sang_ayon_ka_ba
+        answer_tl: Sang-ayon ka ba
+        extra_words: [tutol, pumili]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "In the dialogue, why does Bea refuse spicy food?"
+        answer: her stomach hurts
+        distractors: [it is expensive, she is not hungry, she is allergic]
+      - type: fill_blank
+        sentence: "___ ka na ng gusto mo."
+        translation: "Choose what you want already."
+        answer: Pumili
+        options: [Pumili, Matulog, Maglaba]
+      - type: arrange
+        prompt: "We should eat soup instead."
+        answer_tl: Dapat na lang tayong kumain ng sopas

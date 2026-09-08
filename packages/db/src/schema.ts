@@ -56,7 +56,8 @@ export const progressEvents = pgTable(
     userId: uuid("user_id")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
-    type: text("type").notNull(), // lesson_completed | hearts_lost | hearts_refilled | goal_set
+    // lesson_completed | hearts_lost | hearts_refilled | goal_set | tier_started
+    type: text("type").notNull(),
     /** full ProgressEvent JSON as defined in @aral/core */
     payload: jsonb("payload").notNull(),
     /** device wall-clock epoch ms — streaks use this, not sync time (GAM-02) */

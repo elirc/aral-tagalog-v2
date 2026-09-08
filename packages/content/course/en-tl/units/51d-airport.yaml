@@ -1,0 +1,231 @@
+id: airport
+title: The Airport
+tier: conversational
+description: Check-in counters, boarding calls, and the questions at immigration.
+tip: >-
+  Airport Tagalog is heavily borrowed, but the grammar stays Tagalog: "Saan po
+  ang check-in counter?" Two useful verbs are lumipad (to fly) and sumakay (to
+  board). Domestic flights are announced in a Taglish blend, so training your
+  ear on paalis (departing) and dumarating (arriving) pays off.
+lessons:
+  - id: air-1
+    title: Check-in
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: paliparan, en: airport }
+          - { tl: pasaporte, en: passport }
+          - { tl: bagahe, en: luggage }
+          - { tl: tiket, en: ticket }
+      - type: choice
+        prompt: "'Paliparan' is..."
+        answer: the airport
+        distractors: [the runway only, the ticket, the flight]
+        audio: paliparan
+        audio_text: Paliparan.
+      - type: fill_blank
+        sentence: "Nasaan po ang ___ counter?"
+        translation: "Where is the check-in counter?"
+        answer: check-in
+        options: [check-in, banyo, kama]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Dalawang bag lang po ang bagahe ko.
+        answer_en: My luggage is only two bags.
+        accept:
+          - I only have two bags of luggage
+        extra_words: [cheap, market, tomorrow]
+        audio: dalawang_bag_lang_po_ang_bagahe_ko
+      - type: translate
+        prompt_en: Here is my ticket and passport.
+        answer_tl: Narito po ang tiket at pasaporte ko
+        accept:
+          - Eto po ang tiket at pasaporte ko
+        extra_words: [bagahe, paliparan, upuan]
+      - type: listen
+        audio: nasaan_po_ang_check_in_counter
+        answer_tl: Nasaan po ang check-in counter
+        extra_words: [bagahe, tiket]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Where is the check-in counter?"
+        answer_tl: Nasaan po ang check-in counter
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Sobra po ang bigat ng bagahe' means the luggage is..."
+        answer: overweight
+        distractors: [missing, fragile, too small]
+      - type: fill_blank
+        sentence: "Gusto ko po sana ng upuan sa tabi ng ___."
+        translation: "I would like a seat next to the window."
+        answer: bintana
+        options: [bintana, banyo, pasilyo]
+
+  - id: air-2
+    title: Security and gates
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pila sa seguridad, en: security line }
+          - { tl: hintayan, en: waiting area }
+          - { tl: paalis, en: departing }
+          - { tl: dumarating, en: arriving }
+      - type: choice
+        prompt: "A board lists 'PAALIS'. Those flights are..."
+        answer: departing
+        distractors: [arriving, cancelled, delayed]
+        audio: paalis
+        audio_text: Paalis.
+      - type: fill_blank
+        sentence: "Anong ___ po ang flight papuntang Cebu?"
+        translation: "What gate is the flight to Cebu?"
+        answer: gate
+        options: [gate, kama, pinggan]
+      - type: translate
+        prompt_tl: Naantala po ang flight namin nang dalawang oras.
+        answer_en: Our flight was delayed by two hours.
+        accept:
+          - Our flight is delayed two hours
+        extra_words: [cheap, market, tomorrow]
+        audio: naantala_po_ang_flight_namin
+      - type: translate
+        prompt_en: Please remove your belt and shoes.
+        answer_tl: Pakitanggal po ang sinturon at sapatos ninyo
+        accept:
+          - Tanggalin po ninyo ang sinturon at sapatos
+        extra_words: [gate, paalis, bagahe]
+      - type: listen
+        audio: anong_gate_po
+        answer_tl: Anong gate po
+        extra_words: [paalis, bagahe]
+      - type: arrange
+        prompt: "Our flight was delayed by two hours."
+        answer_tl: Naantala po ang flight namin nang dalawang oras
+      - type: choice
+        prompt: "'Boarding na po' tells you to..."
+        answer: go to the plane now
+        distractors: [wait longer, leave the airport, claim your bag]
+      - type: fill_blank
+        sentence: "___ na po ang flight papuntang Davao."
+        translation: "The flight to Davao is boarding now."
+        answer: Boarding
+        options: [Boarding, Sarado, Mahal]
+
+  - id: air-3
+    title: Immigration questions
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: layunin, en: purpose }
+          - { tl: bakasyon, en: vacation }
+          - { tl: negosyo, en: business }
+          - { tl: gaano katagal, en: how long }
+      - type: choice
+        prompt: "'Ano po ang layunin ng biyahe ninyo?' asks the..."
+        answer: purpose of your trip
+        distractors: [cost of your ticket, name of your hotel, weight of your bag]
+        audio: ano_po_ang_layunin_ng_biyahe_ninyo
+        audio_text: Ano po ang layunin ng biyahe ninyo?
+      - type: fill_blank
+        sentence: "___ po ang layunin ko, hindi negosyo."
+        translation: "Vacation is my purpose, not business."
+        answer: Bakasyon
+        options: [Bakasyon, Negosyo, Trabaho]
+      - type: translate
+        prompt_tl: Gaano po katagal kayo dito sa Pilipinas?
+        answer_en: How long will you be here in the Philippines?
+        accept:
+          - How long are you staying in the Philippines
+        extra_words: [cheap, market, tomorrow]
+        audio: gaano_po_katagal_kayo_dito
+      - type: translate
+        prompt_en: I will stay for two weeks.
+        answer_tl: Dalawang linggo po akong mananatili
+        accept:
+          - Mananatili po ako nang dalawang linggo
+        extra_words: [layunin, bakasyon, negosyo]
+      - type: listen
+        audio: gaano_po_katagal_kayo_dito_2
+        answer_tl: Gaano po katagal kayo dito
+        extra_words: [layunin, bakasyon]
+      - type: arrange
+        prompt: "I will stay for two weeks on vacation."
+        answer_tl: Dalawang linggo po akong mananatili para sa bakasyon
+      - type: choice
+        prompt: "Which answer names a place of stay?"
+        answer: Sa hotel po sa Makati.
+        distractors: [Dalawang linggo po., Bakasyon po., Isang bag lang po.]
+      - type: fill_blank
+        sentence: "Sa ___ po ako mananatili sa Maynila."
+        translation: "I will stay at a hotel in Manila."
+        answer: hotel
+        options: [hotel, paliparan, gate]
+
+  - id: air-4
+    title: A trip through the airport
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: At the check-in counter
+        lines:
+          - speaker: Kawani
+            text: "Magandang umaga po. Pakiabot po ng ___ at tiket."
+            translation: "Good morning. Please hand over your passport and ticket."
+          - speaker: Pasahero
+            text: "Narito po. Isang ___ lang po ang ipapa-check in ko."
+            translation: "Here they are. I will only check in one bag."
+          - speaker: Kawani
+            text: "Salamat po. Nasa ___ tatlo po ang flight ninyo."
+            translation: "Thank you. Your flight is at gate three."
+          - speaker: Pasahero
+            text: "Anong oras po ang boarding?"
+            translation: "What time is boarding?"
+        blanks:
+          - answer: pasaporte
+            options: [pasaporte, kandila, sipit]
+          - answer: bag
+            options: [bag, kama, pinggan]
+          - answer: gate
+            options: [gate, banyo, kusina]
+      - type: match
+        pairs:
+          - { tl: pasahero, en: passenger }
+          - { tl: eroplano, en: airplane }
+          - { tl: upuan, en: seat }
+          - { tl: kunin ang bagahe, en: claim the luggage }
+      - type: fill_blank
+        sentence: "Saan po namin kukunin ang ___?"
+        translation: "Where do we claim the luggage?"
+        answer: bagahe
+        options: [bagahe, upuan, eroplano]
+      - type: translate
+        prompt_en: My luggage did not arrive.
+        answer_tl: Hindi po dumating ang bagahe ko
+        accept:
+          - Nawawala po ang bagahe ko
+        extra_words: [upuan, eroplano, pasahero]
+      - type: translate
+        prompt_tl: Nasa upuan bente-dos po ako.
+        answer_en: I am in seat twenty-two.
+        accept:
+          - My seat is twenty-two
+        extra_words: [cheap, market, tomorrow]
+        audio: nasa_upuan_bente_dos_po_ako
+        grading: { hyphens: true }
+      - type: listen
+        audio: saan_po_kukunin_ang_bagahe
+        answer_tl: Saan po kukunin ang bagahe
+        extra_words: [upuan, eroplano]
+      - type: choice
+        prompt: "In the dialogue, how many bags is the passenger checking in?"
+        answer: one
+        distractors: [two, three, none]
+      - type: arrange
+        prompt: "Where do we claim the luggage?"
+        answer_tl: Saan po namin kukunin ang bagahe
+      - type: arrange
+        prompt: "My luggage did not arrive."
+        answer_tl: Hindi po dumating ang bagahe ko

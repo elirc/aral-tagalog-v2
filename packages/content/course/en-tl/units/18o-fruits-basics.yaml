@@ -1,0 +1,227 @@
+id: fruits-basics
+title: Common Fruits
+tier: foundation
+description: Mangga, saging, buko — the fruit you will be handed on any visit.
+tip: >-
+  Fruit sellers quote prices per kilo or per piece: "Magkano ang isang kilo?"
+  versus "Magkano ang isa?". Ripe is hinog, unripe is hilaw — and green mango
+  (manggang hilaw) with bagoong is a snack, not a mistake.
+lessons:
+  - id: fruit-1
+    title: Everyday fruit
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mangga, en: mango }
+          - { tl: saging, en: banana }
+          - { tl: papaya, en: papaya }
+          - { tl: pinya, en: pineapple }
+      - type: choice
+        prompt: "The Philippine national fruit is the..."
+        answer: mangga
+        distractors: [saging, pinya, ubas]
+        audio: mangga
+        audio_text: Mangga.
+      - type: fill_blank
+        sentence: "Kumakain ako ng ___ tuwing umaga."
+        translation: "I eat a banana every morning."
+        answer: saging
+        options: [saging, lamok, papel]
+      - type: translate
+        prompt_tl: Matamis ang mangga sa tag-init.
+        answer_en: Mangoes are sweet in the hot season.
+        accept:
+          - The mango is sweet in summer
+        extra_words: [tomorrow, cheap, market]
+        audio: matamis_ang_mangga_sa_tag_init
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I want pineapple juice.
+        answer_tl: Gusto ko ng pineapple juice
+        accept:
+          - Gusto ko ng katas ng pinya
+        extra_words: [mangga, saging, papaya]
+      - type: listen
+        audio: masarap_ang_saging
+        answer_tl: Masarap ang saging
+        extra_words: [mangga, pinya]
+      - type: choice
+        prompt: "Which fruit is orange inside and often eaten at breakfast?"
+        answer: papaya
+        distractors: [saging, ubas, buko]
+      - type: fill_blank
+        sentence: "Isang kilong ___ po."
+        translation: "One kilo of mangoes, please."
+        answer: mangga
+        options: [mangga, lapis, tubig]
+      - type: translate
+        prompt_tl: Bumili ako ng papaya sa palengke.
+        answer_en: I bought papaya at the market.
+        accept:
+          - I bought a papaya in the market
+        extra_words: [quickly, morning, cheap]
+        audio: bumili_ako_ng_papaya_sa_palengke
+
+  - id: fruit-2
+    title: Ripe or unripe
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: hinog, en: ripe }
+          - { tl: hilaw, en: unripe }
+          - { tl: matamis, en: sweet }
+          - { tl: maasim, en: sour }
+      - type: choice
+        prompt: "'Manggang hilaw' is a mango that is..."
+        answer: green and sour
+        distractors: [yellow and sweet, cooked, dried]
+        audio: manggang_hilaw
+        audio_text: Manggang hilaw.
+      - type: fill_blank
+        sentence: "___ na ang saging, kainin mo na."
+        translation: "The banana is ripe, eat it now."
+        answer: Hinog
+        options: [Hinog, Hilaw, Mahal]
+      - type: translate
+        prompt_en: This mango is sour.
+        answer_tl: Maasim ang manggang ito
+        accept:
+          - Maasim itong mangga
+        extra_words: [matamis, hinog, hilaw]
+      - type: translate
+        prompt_tl: Matamis ang hinog na papaya.
+        answer_en: The ripe papaya is sweet.
+        accept:
+          - Ripe papaya is sweet
+        extra_words: [tomorrow, cheap, market]
+        audio: matamis_ang_hinog_na_papaya
+      - type: listen
+        audio: hinog_na_ba_ito
+        answer_tl: Hinog na ba ito
+        extra_words: [hilaw, matamis]
+      - type: choice
+        prompt: "Filipinos eat green mango with..."
+        answer: bagoong
+        distractors: [gatas, asukal, tinapay]
+      - type: fill_blank
+        sentence: "___ pa ang pinya, huwag mo munang bilhin."
+        translation: "The pineapple is still unripe, do not buy it yet."
+        answer: Hilaw
+        options: [Hilaw, Hinog, Matamis]
+      - type: translate
+        prompt_en: Is this mango ripe or unripe?
+        answer_tl: Hinog ba o hilaw ang manggang ito?
+        accept:
+          - Hinog o hilaw ang manggang ito
+        extra_words: [matamis, maasim, saging]
+
+  - id: fruit-3
+    title: More fruit
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: buko, en: young coconut }
+          - { tl: bayabas, en: guava }
+          - { tl: kalamansi, en: calamansi }
+          - { tl: ubas, en: grapes }
+      - type: choice
+        prompt: "'Kalamansi' is squeezed into..."
+        answer: drinks and dipping sauce
+        distractors: [rice only, coffee only, soap]
+        audio: kalamansi
+        audio_text: Kalamansi.
+      - type: fill_blank
+        sentence: "Pigain mo ang ___ sa toyo."
+        translation: "Squeeze the calamansi into the soy sauce."
+        answer: kalamansi
+        options: [kalamansi, ubas, saging]
+      - type: translate
+        prompt_tl: Malamig ang buko juice sa dagat.
+        answer_en: The coconut juice at the beach is cold.
+        accept:
+          - Coconut juice at the beach is cold
+        extra_words: [cheap, tomorrow, market]
+        audio: malamig_ang_buko_juice_sa_dagat
+      - type: translate
+        prompt_en: The guava is sweet and ripe.
+        answer_tl: Matamis at hinog ang bayabas
+        accept:
+          - Hinog at matamis ang bayabas
+        extra_words: [ubas, buko, hilaw]
+      - type: listen
+        audio: pahingi_po_ng_buko
+        answer_tl: Pahingi po ng buko
+        extra_words: [bayabas, ubas]
+      - type: choice
+        prompt: "Which fruit is imported and usually expensive?"
+        answer: ubas
+        distractors: [saging, bayabas, buko]
+      - type: fill_blank
+        sentence: "Mahal ang ___ kaya bihira naming bilhin."
+        translation: "Grapes are expensive so we rarely buy them."
+        answer: ubas
+        options: [ubas, saging, buko]
+      - type: translate
+        prompt_tl: May puno ng bayabas sa likod ng bahay.
+        answer_en: There is a guava tree behind the house.
+        accept:
+          - A guava tree is behind the house
+        extra_words: [quickly, morning, cheap]
+        audio: may_puno_ng_bayabas_sa_likod_ng_bahay
+
+  - id: fruit-4
+    title: Buying fruit
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "At a fruit stall, the first question is usually:"
+        answer: Magkano ang isang kilo?
+        distractors: [Anong pangalan mo?, Taga-saan ka?, Anong oras na?]
+        audio: magkano_ang_isang_kilo
+        audio_text: Magkano ang isang kilo?
+      - type: match
+        pairs:
+          - { tl: kilo, en: kilogram }
+          - { tl: piraso, en: piece }
+          - { tl: tumawad, en: to haggle }
+          - { tl: pumili, en: to choose }
+      - type: fill_blank
+        sentence: "Magkano ang isang ___?"
+        translation: "How much is one piece?"
+        answer: piraso
+        options: [piraso, bahay, lapis]
+      - type: translate
+        prompt_en: Two kilos of mangoes, please.
+        answer_tl: Dalawang kilong mangga po
+        accept:
+          - Dalawang kilo ng mangga po
+        extra_words: [saging, piraso, pinya]
+      - type: translate
+        prompt_tl: Pwede po bang tumawad?
+        answer_en: May I haggle?
+        accept:
+          - Can I ask for a discount
+        extra_words: [tomorrow, cheap, market]
+        audio: pwede_po_bang_tumawad
+      - type: listen
+        audio: dalawang_kilong_mangga_po
+        answer_tl: Dalawang kilong mangga po
+        extra_words: [piraso, saging]
+      - type: choice
+        prompt: "'Pumili ka' invites you to..."
+        answer: choose
+        distractors: [pay, leave, wait]
+      - type: fill_blank
+        sentence: "___ ka ng hinog na saging."
+        translation: "Choose a ripe banana."
+        answer: Pumili
+        options: [Pumili, Uminom, Matulog]
+      - type: translate
+        prompt_en: How much are five pieces?
+        answer_tl: Magkano ang limang piraso?
+        accept:
+          - Magkano ang lima
+        extra_words: [kilo, mangga, saging]

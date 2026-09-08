@@ -1,0 +1,228 @@
+id: wishes-regrets
+title: Wishes and Regrets
+tier: conversational
+description: Sana, dapat, kung — talking about what you hope for and what you missed.
+tip: >-
+  Sana is the wish word and it never changes — the verb does. "Sana makapunta
+  ka" (I hope you can come) versus "Sana nakapunta ka" (I wish you had come):
+  the completed form is what turns hope into regret. Regret over what should
+  have happened uses dapat plus the completed form: "Dapat sana akong nag-aral."
+lessons:
+  - id: wish-1
+    title: I hope
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sana, en: hopefully }
+          - { tl: umaasa, en: hoping }
+          - { tl: pangarap, en: dream }
+          - { tl: balak, en: plan or intention }
+      - type: choice
+        prompt: "'Sana umulan bukas' expresses..."
+        answer: a hope
+        distractors: [a certainty, a refusal, a command]
+        audio: sana_umulan_bukas
+        audio_text: Sana umulan bukas.
+      - type: fill_blank
+        sentence: "___ maganda ang panahon sa Sabado."
+        translation: "Hopefully the weather is good on Saturday."
+        answer: Sana
+        options: [Sana, Bawal, Ayaw]
+      - type: translate
+        prompt_tl: Pangarap kong magturo balang araw.
+        answer_en: It is my dream to teach someday.
+        accept:
+          - I dream of teaching someday
+        extra_words: [cheap, market, tomorrow]
+        audio: pangarap_kong_magturo_balang_araw
+      - type: translate
+        prompt_en: I hope you can come.
+        answer_tl: Sana makapunta ka
+        accept:
+          - Sana ay makapunta ka
+        extra_words: [balak, pangarap, umaasa]
+      - type: listen
+        audio: sana_makapunta_ka
+        answer_tl: Sana makapunta ka
+        extra_words: [balak, pangarap]
+      - type: arrange
+        prompt: "Hopefully the weather is good on Saturday."
+        answer_tl: Sana maganda ang panahon sa Sabado
+      - type: choice
+        prompt: "'Balak ko' is closer to..."
+        answer: an intention
+        distractors: [a wish, a regret, a doubt]
+      - type: arrange
+        prompt: "It is my dream to teach someday."
+        answer_tl: Pangarap kong magturo balang araw
+
+  - id: wish-2
+    title: I should have
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dapat sana, en: should have }
+          - { tl: sayang, en: what a waste }
+          - { tl: nakalimutan, en: forgot }
+          - { tl: hindi ko napansin, en: I did not notice }
+      - type: choice
+        prompt: "'Sayang!' reacts to..."
+        answer: a missed chance
+        distractors: [a good result, a question, a greeting]
+        audio: sayang
+        audio_text: Sayang!
+      - type: fill_blank
+        sentence: "___ sana akong nag-aral nang mabuti."
+        translation: "I should have studied well."
+        answer: Dapat
+        options: [Dapat, Bawal, Ayaw]
+        grading: { hyphens: true, ng_nang: true }
+      - type: translate
+        prompt_tl: Sayang, hindi ako nakapunta.
+        answer_en: What a waste, I was not able to go.
+        accept:
+          - Too bad I couldn't go
+        extra_words: [cheap, market, tomorrow]
+        audio: sayang_hindi_ako_nakapunta
+      - type: translate
+        prompt_en: I should have called you yesterday.
+        answer_tl: Dapat sana kitang tinawagan kahapon
+        accept:
+          - Dapat sanang tinawagan kita kahapon
+        extra_words: [sayang, nakalimutan, napansin]
+      - type: listen
+        audio: sayang_hindi_ako_nakapunta_2
+        answer_tl: Sayang hindi ako nakapunta
+        extra_words: [dapat, sana]
+      - type: arrange
+        prompt: "I should have studied well."
+        answer_tl: Dapat sana akong nag-aral nang mabuti
+        grading: { hyphens: true, ng_nang: true }
+      - type: choice
+        prompt: "Which sentence is a regret rather than a plan?"
+        answer: Dapat sana akong pumunta.
+        distractors: [Balak kong pumunta., Pupunta ako bukas., Sana makapunta ako.]
+      - type: fill_blank
+        sentence: "___ ko ang susi sa opisina."
+        translation: "I forgot the key at the office."
+        answer: Nakalimutan
+        options: [Nakalimutan, Nabili, Natulog]
+
+  - id: wish-3
+    title: If only
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kung sana, en: if only }
+          - { tl: kung hindi lang, en: if it were not for }
+          - { tl: baka nga, en: maybe indeed }
+          - { tl: siguro nga, en: probably so }
+      - type: choice
+        prompt: "'Kung sana may pera ako' introduces..."
+        answer: an unreal wish
+        distractors: [a fact, a promise, an order]
+        audio: kung_sana_may_pera_ako
+        audio_text: Kung sana may pera ako.
+      - type: fill_blank
+        sentence: "___ hindi lang umulan, nakarating sana kami."
+        translation: "If it had not rained, we would have arrived."
+        answer: Kung
+        options: [Kung, Kaya, Dahil]
+      - type: translate
+        prompt_tl: Kung sana mas maaga akong umalis.
+        answer_en: If only I had left earlier.
+        accept:
+          - If only I had gone earlier
+        extra_words: [cheap, market, tomorrow]
+        audio: kung_sana_mas_maaga_akong_umalis
+      - type: translate
+        prompt_en: If it were not for the traffic, we would be early.
+        answer_tl: Kung hindi lang sa trapiko, maaga sana tayo
+        accept:
+          - Kung hindi lang sa trapiko maaga sana tayo
+        extra_words: [sayang, dapat, pangarap]
+      - type: listen
+        audio: kung_sana_mas_maaga
+        answer_tl: Kung sana mas maaga
+        extra_words: [dapat, sayang]
+      - type: arrange
+        prompt: "If only I had left earlier."
+        answer_tl: Kung sana mas maaga akong umalis
+      - type: choice
+        prompt: "'Siguro nga' softens a statement into..."
+        answer: probably true
+        distractors: [definitely true, definitely false, a question]
+      - type: arrange
+        prompt: "If it were not for the traffic, we would be early."
+        answer_tl: Kung hindi lang sa trapiko maaga sana tayo
+        accept:
+          - Kung hindi lang sa trapiko, maaga sana tayo
+
+  - id: wish-4
+    title: Looking back
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: After missing a concert
+        lines:
+          - speaker: Jay
+            text: "___, hindi ako nakapunta sa konsyerto."
+            translation: "What a waste, I was not able to go to the concert."
+          - speaker: Mimi
+            text: "___ ka sanang bumili ng tiket nang maaga."
+            translation: "You should have bought a ticket early."
+          - speaker: Jay
+            text: "Alam ko. ___ sana may natira pang tiket."
+            translation: "I know. If only there had been a ticket left."
+          - speaker: Mimi
+            text: "Sa susunod na lang, may konsyerto ulit sa Marso."
+            translation: "Next time then, there is another concert in March."
+        blanks:
+          - answer: Sayang
+            options: [Sayang, Salamat, Paalam]
+          - answer: Dapat
+            options: [Dapat, Bawal, Ayaw]
+          - answer: Kung
+            options: [Kung, Kaya, Dahil]
+      - type: match
+        pairs:
+          - { tl: konsyerto, en: concert }
+          - { tl: natira, en: left over }
+          - { tl: nakalusot, en: managed to get through }
+          - { tl: sa susunod, en: next time }
+      - type: fill_blank
+        sentence: "Wala nang ___ tiket."
+        translation: "There are no tickets left."
+        answer: natirang
+        options: [natirang, nakalimutang, nabiling]
+      - type: translate
+        prompt_en: I hope there is another concert next year.
+        answer_tl: Sana may konsyerto ulit sa susunod na taon
+        accept:
+          - Sana may isa pang konsyerto sa susunod na taon
+        extra_words: [natira, sayang, dapat]
+      - type: translate
+        prompt_tl: Dapat sana kaming bumili nang mas maaga.
+        answer_en: We should have bought earlier.
+        accept:
+          - We should have bought tickets earlier
+        extra_words: [cheap, market, tomorrow]
+        audio: dapat_sana_kaming_bumili_nang_mas_maaga
+        grading: { ng_nang: true }
+      - type: listen
+        audio: sana_may_konsyerto_ulit
+        answer_tl: Sana may konsyerto ulit
+        extra_words: [natira, sayang]
+      - type: choice
+        prompt: "In the dialogue, what is Mimi's advice, in effect?"
+        answer: buy tickets early next time
+        distractors: [never go to concerts, go without a ticket, ask for a refund]
+      - type: arrange
+        prompt: "There are no tickets left."
+        answer_tl: Wala nang natirang tiket
+      - type: arrange
+        prompt: "I hope there is another concert in March."
+        answer_tl: Sana may konsyerto ulit sa Marso

@@ -1,0 +1,288 @@
+id: idioms
+title: Idioms and Sayings
+tier: mastery
+description: The sayings Filipinos actually use — body-part idioms, fatalism, temper, and modern slang.
+tip: >-
+  Most Tagalog idioms are built as "adjective + ang + body part": matigas ang
+  ulo (hard head = stubborn), mababaw ang luha (shallow tears = cries easily),
+  bukas ang palad (open palm = generous). Learn the pattern and you can guess
+  half of them — and never translate them word for word.
+lessons:
+  - id: idioms-1
+    title: Body-part idioms
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matigas ang ulo, en: stubborn }
+          - { tl: mababaw ang luha, en: cries easily }
+          - { tl: bukas ang palad, en: generous }
+          - { tl: makati ang dila, en: can't keep a secret }
+      - type: choice
+        prompt: "Your friend refuses every piece of advice. You'd say:"
+        answer: Matigas ang ulo mo.
+        distractors: [Mababaw ang luha mo., Bukas ang palad mo., Malikot ang kamay mo.]
+        audio: matigas_ang_ulo_mo
+        audio_text: Matigas ang ulo mo.
+      - type: fill_blank
+        sentence: "___ ang luha ni Ana — umiiyak siya sa bawat pelikula."
+        translation: "Ana cries easily — she cries at every movie."
+        answer: Mababaw
+        options: [Mababaw, Matigas, Bukas]
+        hint: Literally "shallow" — the tears don't have far to travel.
+      - type: arrange
+        prompt: "My grandmother is very generous."
+        answer_tl: Bukas na bukas ang palad ng lola ko
+        accept:
+          - Bukas na bukas ang palad ng aking lola
+        hint: '"bukas na bukas" doubles the adjective for emphasis — very open.'
+      - type: translate
+        prompt_tl: Huwag kang magkuwento kay Ben, makati ang dila niya.
+        answer_en: Don't tell Ben anything, he can't keep a secret.
+        accept:
+          - Don't tell Ben, he can't keep a secret
+        extra_words: [generous, stubborn, tomorrow]
+        audio: makati_ang_dila_niya
+      - type: dialogue
+        intro: Two coworkers at lunch
+        lines:
+          - speaker: Rina
+            text: "Sinabi ko lang kay Ben, tapos alam na ng buong opisina."
+            translation: "I only told Ben, and now the whole office knows."
+          - speaker: Toni
+            text: "Siyempre — ___ ang dila ng lalaking iyon."
+            translation: "Of course — that man can't keep a secret."
+          - speaker: Rina
+            text: "Hindi na ako magtitiwala. ___ na ang ulo ko sa susunod."
+            translation: "I won't trust him again. I'll be hard-headed next time."
+        blanks:
+          - answer: makati
+            options: [makati, mababaw, bukas]
+          - answer: matigas
+            options: [matigas, malikot, mahaba]
+      - type: choice
+        prompt: "'Malikot ang kamay' warns you that someone..."
+        answer: steals
+        distractors: [talks too much, cries easily, is generous]
+        audio: malikot_ang_kamay
+        audio_text: Malikot ang kamay.
+      - type: translate
+        prompt_en: My father is stubborn but generous.
+        answer_tl: Matigas ang ulo ng tatay ko pero bukas ang palad niya
+        accept:
+          - Matigas ang ulo ng tatay ko ngunit bukas ang palad niya
+        extra_words: [luha, dila, malikot]
+      - type: listen
+        audio: mababaw_ang_luha_ni_ana
+        answer_tl: Mababaw ang luha ni Ana
+        extra_words: [matigas, palad]
+
+  - id: idioms-2
+    title: Everyday sayings
+    xp: 20
+    exercises:
+      - type: choice
+        prompt: "'Bahala na' means roughly..."
+        answer: Come what may — we'll see
+        distractors: [Never mind him, It's very expensive, Please hurry up]
+        audio: bahala_na
+        audio_text: Bahala na.
+      - type: match
+        pairs:
+          - { tl: bahala na, en: come what may }
+          - { tl: utang na loob, en: debt of gratitude }
+          - { tl: isang kahig isang tuka, en: living hand to mouth }
+          - { tl: nangangapa sa dilim, en: clueless }
+      - type: fill_blank
+        sentence: "Wala akong plano — ___ na."
+        translation: "I have no plan — come what may."
+        answer: bahala
+        options: [bahala, dilim, tuka]
+      - type: translate
+        prompt_tl: Malaki ang utang na loob ko sa kanila.
+        answer_en: I owe them a great debt of gratitude.
+        accept:
+          - I owe them a big debt of gratitude
+        extra_words: [money, tomorrow, market]
+        audio: malaki_ang_utang_na_loob_ko
+        hint: '"utang na loob" is a debt of the heart, never of money.'
+      - type: arrange
+        prompt: "Their family lives hand to mouth."
+        answer_tl: Isang kahig isang tuka ang pamilya nila
+        hint: A chicken scratches once and pecks once — nothing is stored.
+      - type: dialogue
+        intro: A neighbor asks about a new job
+        lines:
+          - speaker: Ka Rudy
+            text: "Kumusta ang bagong trabaho?"
+            translation: "How is the new job?"
+          - speaker: Mila
+            text: "Bago pa lang ako, kaya ___ pa ako sa dilim."
+            translation: "I'm still new, so I'm still groping in the dark."
+          - speaker: Ka Rudy
+            text: "___ na. Matututo ka rin."
+            translation: "Come what may. You'll learn too."
+        blanks:
+          - answer: nangangapa
+            options: [nangangapa, kumakain, naglalakad]
+          - answer: Bahala
+            options: [Bahala, Salamat, Paalam]
+      - type: choice
+        prompt: "Someone helped you through a crisis. You owe them:"
+        answer: utang na loob
+        distractors: [utang na pera, isang kahig, balat-sibuyas]
+        audio: utang_na_loob
+        audio_text: Utang na loob.
+      - type: translate
+        prompt_en: I have no plan, come what may.
+        answer_tl: Wala akong plano, bahala na
+        accept:
+          - Wala akong plano bahala na
+        extra_words: [dilim, tuka, kahig]
+      - type: listen
+        audio: nangangapa_pa_ako_sa_dilim
+        answer_tl: Nangangapa pa ako sa dilim
+        extra_words: [bahala, utang]
+
+  - id: idioms-3
+    title: Temper and feelings
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumukulo ang dugo, en: furious }
+          - { tl: balat-sibuyas, en: overly sensitive }
+          - { tl: nagdadalawang-isip, en: having second thoughts }
+          - { tl: halang ang bituka, en: ruthless }
+      - type: choice
+        prompt: "'Kumukulo ang dugo ko' tells you the speaker is..."
+        answer: furious
+        distractors: [sleepy, hungry, embarrassed]
+        audio: kumukulo_ang_dugo_ko
+        audio_text: Kumukulo ang dugo ko.
+      - type: fill_blank
+        sentence: "Huwag mo siyang biruin, ___ iyan."
+        translation: "Don't tease him, he's overly sensitive."
+        answer: balat-sibuyas
+        options: [balat-sibuyas, bukas ang palad, mababaw ang luha]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I am having second thoughts about the trip."
+        answer_tl: Nagdadalawang-isip ako sa biyahe
+        grading: { hyphens: true }
+        hint: Literally "having two minds".
+      - type: translate
+        prompt_tl: Kumukulo ang dugo ko tuwing naaalala ko iyon.
+        answer_en: My blood boils every time I remember that.
+        accept:
+          - My blood boils whenever I remember that
+        extra_words: [sleeps, market, quietly]
+        audio: kumukulo_ang_dugo_ko_tuwing_naaalala_ko
+      - type: dialogue
+        intro: After a tense meeting
+        lines:
+          - speaker: Jun
+            text: "Ayos ka lang? Namumula ka."
+            translation: "Are you okay? You're red."
+          - speaker: Ella
+            text: "___ ang dugo ko sa sinabi niya."
+            translation: "My blood is boiling at what he said."
+          - speaker: Jun
+            text: "Huminga ka muna. ___ ka ba kung sasagot?"
+            translation: "Breathe first. Are you having second thoughts about replying?"
+          - speaker: Ella
+            text: "Oo. Baka mas mabuti nang tumahimik."
+            translation: "Yes. Maybe it's better to stay quiet."
+        blanks:
+          - answer: Kumukulo
+            options: [Kumukulo, Kumakain, Kumakanta]
+          - answer: nagdadalawang-isip
+            options: [nagdadalawang-isip, natutulog, naglalakad]
+            accept: [nagdadalawang isip]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "A boss who fires people without blinking is..."
+        answer: halang ang bituka
+        distractors: [bukas ang palad, mababaw ang luha, balat-sibuyas]
+        audio: halang_ang_bituka
+        audio_text: Halang ang bituka.
+      - type: translate
+        prompt_en: Don't tease her, she is overly sensitive.
+        answer_tl: Huwag mo siyang biruin, balat-sibuyas siya
+        accept:
+          - Huwag mo siyang biruin balat-sibuyas siya
+        extra_words: [dugo, bituka, isip]
+        grading: { hyphens: true }
+      - type: listen
+        audio: nagdadalawang_isip_pa_ako
+        answer_tl: Nagdadalawang-isip pa ako
+        extra_words: [kumukulo, dugo]
+        grading: { hyphens: true }
+
+  - id: idioms-4
+    title: Modern slang
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sana all, en: lucky them (wish that were me) }
+          - { tl: charot, en: just kidding }
+          - { tl: chika, en: gossip / news }
+          - { tl: jowa, en: boyfriend or girlfriend }
+      - type: choice
+        prompt: "A friend posts a photo from Palawan. The classic comment is:"
+        answer: Sana all!
+        distractors: [Charot!, Bahala na!, Paalam!]
+        audio: sana_all
+        audio_text: Sana all!
+      - type: fill_blank
+        sentence: "Biro lang, ___!"
+        translation: "Just joking, kidding!"
+        answer: charot
+        options: [charot, chika, jowa]
+        hint: Tacked onto a sentence to cancel it — the spoken wink.
+      - type: choice
+        prompt: "'Ano'ng chika?' is asking for..."
+        answer: the latest gossip
+        distractors: [the price, directions, the time]
+        audio: anong_chika
+        audio_text: Ano'ng chika?
+      - type: dialogue
+        intro: Two friends texting
+        lines:
+          - speaker: Kaye
+            text: "Ano'ng ___ mo? Ang tagal mong hindi nag-reply."
+            translation: "What's your news? You took ages to reply."
+          - speaker: Mika
+            text: "May bago akong ___ — ipapakilala ko sa iyo sa Sabado."
+            translation: "I have a new partner — I'll introduce them to you on Saturday."
+          - speaker: Kaye
+            text: "___ all! Ang swerte mo naman."
+            translation: "Lucky you! You're so fortunate."
+        blanks:
+          - answer: chika
+            options: [chika, jowa, charot]
+          - answer: jowa
+            options: [jowa, chika, barya]
+          - answer: Sana
+            options: [Sana, Bahala, Salamat]
+      - type: arrange
+        prompt: "I have no partner, just kidding."
+        answer_tl: Wala akong jowa charot
+        accept:
+          - Wala akong jowa, charot
+      - type: translate
+        prompt_tl: Ang ganda ng bahay nila, sana all!
+        answer_en: Their house is beautiful, lucky them!
+        accept:
+          - Their house is so beautiful, lucky them
+        extra_words: [expensive, tomorrow, sorry]
+      - type: choice
+        prompt: "Slang like 'lodi' and 'petmalu' is built by..."
+        answer: reversing the syllables of a word
+        distractors: [borrowing from Spanish, doubling the first syllable, adding "po"]
+        hint: lodi = idol, petmalu = malupit (savage/awesome).
+      - type: listen
+        audio: anong_chika_mo_ngayon
+        answer_tl: Ano'ng chika mo ngayon
+        extra_words: [jowa, charot]

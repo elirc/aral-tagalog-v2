@@ -1,6 +1,6 @@
 # Aral monorepo notes
 
-- pnpm workspaces + Turborepo. Node ≥20. `pnpm install` at root.
+- pnpm workspaces + Turborepo. Node 24 LTS. `pnpm install` at root.
 - Build order matters once: `pnpm content:build` must run before web/mobile
   bundling (they import `@aral/content/bundle` from `packages/content/dist`,
   which is gitignored). Same for `@aral/ui` — its build generates
@@ -10,12 +10,23 @@
   features there first, with vitest tests (`pnpm test`), then wire UI per app.
   `@aral/api` and `@aral/content` have vitest suites too; see
   `docs/TESTING.md` for what each test guards before changing one.
+- Daily quests and combo XP are **derived, not stored**, the same way
+  achievements are: `reduceEvents` keeps per-day counters (`dayStats`), checks
+  the day's quest targets after every completion, and credits the reward
+  itself. There is no claim endpoint and no claim event to forge — server and
+  clients run the same reducer. Quest targets read `dayStats.lessonXp` only,
+  never `questXp`, so a reward can never complete the quest that paid it.
 - Progress is event-sourced: clients append `ProgressEvent`s (UUID ids),
   `/sync` is the only write path, `reduceEvents` derives state on both sides.
   Don't add direct state-mutation endpoints.
 - Content: YAML in `packages/content/course/en-tl/`, schema in
   `src/schema.ts`. Bump `version` in `course.yaml` when editing published
-  content.
+  content. Most units are **generated** — `pnpm content:generate` adds new files matching `units/18t-g*|35r-g*|51q-g*|57g-g*.yaml` from `packages/content/
+  generator/` (lexicon + grammar focuses). Edit the generator, not those
+  files; hand-authored units are left alone. Units are grouped into ordered **difficulty tiers** declared in
+  `course.yaml`; each unit names one with `tier:` and a tier's units must stay
+  contiguous (the compiler enforces both). Unlocking is scoped to a tier, so a
+  learner can place into a later one instead of starting at unit 1.
 - Local Postgres: `docker compose up -d` → localhost:5433 (5432 is taken on
   this machine). Migrations: `pnpm db:migrate` (drizzle-kit).
 - Web dev expects the API on localhost:3001 (`NEXT_PUBLIC_API_URL` to change).
@@ -29,4 +40,5 @@
   parent, but a OneDrive reset can undo it.
 - End-to-end checks: `pnpm smoke` against a running stack
   (`docker compose up -d && pnpm db:migrate && pnpm api:dev`). Registers a
-  throwaway user; 29 checks over auth rotation, sync clamping, review queue.
+  throwaway user; 39 checks over readiness, auth rotation, sync clamping, review queue,
+  tier placement, and combo bounding.

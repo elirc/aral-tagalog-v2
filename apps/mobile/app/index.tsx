@@ -1,9 +1,13 @@
-import { useMemo } from "react";
+import { useDeferredValue, useMemo, useState } from "react";
 import { Link, useRouter } from "expo-router";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { Alert, FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   buildReviewLesson,
+  findNextLesson,
+  normalizeSearch,
+  playableLessonIds,
+  tierStatuses,
   displayStreak,
   levelForXp,
   localDayKey,
@@ -13,40 +17,58 @@ import {
   type Unit,
 } from "@aral/core";
 import { getBundle } from "@/lib/content";
-import { deviceTz, useProgress } from "@/lib/progress";
+import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 import { radii, spacing, useTheme } from "@/theme";
+
+/** Display name of a unit's difficulty tier, or null in a flat bundle. */
+function tierTitle(tierId: string | undefined): string | null {
+  if (!tierId) return null;
+  return getBundle().tiers?.find((t) => t.id === tierId)?.title ?? null;
+}
 
 export default function CourseMapScreen() {
   const router = useRouter();
   const { colors, styles, toggle } = useTheme();
-  const { progress, user, logout, pendingCount, needsRelogin } = useProgress();
+  const { progress, user, logout, pendingCount, needsRelogin, addEvents } = useProgress();
   const bundle = getBundle();
+  const [selectedTier, setSelectedTier] = useState("");
+  const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
   const done = useMemo(() => new Set(progress.completedLessonIds), [progress.completedLessonIds]);
+  const playable = useMemo(() => playableLessonIds(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }), [bundle, progress.completedLessonIds, progress.unlockedTierIds]);
   const now = Date.now();
   const hearts = regenerate(progress.hearts, now).hearts;
   const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
   const level = levelForXp(progress.xpTotal);
   // count only mistakes whose exercises still exist in this bundle version
-  const reviewable =
-    buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
-      .length ?? 0;
+  const reviewable = useMemo(() => buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises.length ?? 0, [bundle, progress.weakExerciseIds]);
 
-  // The first uncompleted lesson in course order. Computed up front rather
-  // than tracked with a flag while rendering: the list is virtualized, so
-  // unit cards do not render in order (or at all, until scrolled to).
-  const next = useMemo(() => {
-    for (let ui = 0; ui < bundle.units.length; ui++) {
-      const unit = bundle.units[ui]!;
-      const lesson = unit.lessons.find((l) => !done.has(l.id));
-      if (lesson) return { unit, lesson, unitIndex: ui };
-    }
-    return null;
-  }, [bundle.units, done]);
+  const next = useMemo(() => findNextLesson(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }, selectedTier || undefined), [bundle, progress.completedLessonIds, progress.unlockedTierIds, selectedTier]);
+  const tracks = useMemo(() => tierStatuses(bundle.units, progress.completedLessonIds, { tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds }), [bundle, progress.completedLessonIds, progress.unlockedTierIds]);
+  const activeTier = selectedTier || next?.unit.tier || tracks[0]?.tier.id;
+  const searchTerms = useMemo(() => normalizeSearch(deferredQuery).split(" ").filter(Boolean), [deferredQuery]);
+  const hasSearch = searchTerms.length > 0;
+  // Build the search index only when needed, then reuse it while typing.
+  const unitSearch = useMemo(() => hasSearch ? bundle.units.map((unit, index) =>
+    normalizeSearch([unit.title, unit.description, String(index + 1), ...unit.lessons.map((lesson) => lesson.title)].filter(Boolean).join(" ")),
+  ) : [], [bundle, hasSearch]);
+  const visibleUnits = useMemo(() => bundle.units.filter((unit, index) =>
+    (!activeTier || unit.tier === activeTier) && searchTerms.every((term) => unitSearch[index]?.includes(term))),
+  [bundle, unitSearch, activeTier, searchTerms]);
 
-  const renderUnit = ({ item: unit, index: ui }: { item: Unit; index: number }) => (
+  const renderUnit = ({ item: unit }: { item: Unit }) => (
     <View style={styles.card}>
+      {tierTitle(unit.tier) ? (
+        <Text style={[styles.muted, { fontWeight: "800", textTransform: "uppercase", fontSize: 12 }]}>
+          {tierTitle(unit.tier)}
+        </Text>
+      ) : null}
       <Text style={styles.subtitle}>
-        Unit {ui + 1}: {unit.title}
+        Unit {bundle.units.indexOf(unit) + 1}: {unit.title}
       </Text>
       {unit.description ? (
         <Text style={[styles.muted, { marginBottom: spacing.sm }]}>{unit.description}</Text>
@@ -69,7 +91,9 @@ export default function CourseMapScreen() {
       {unit.lessons.map((lesson) => {
         const isDone = done.has(lesson.id);
         const isNext = lesson.id === next?.lesson.id;
-        const locked = !isDone && !isNext;
+        // Derive access once per progress snapshot instead of scanning the
+        // full course for every visible lesson. The route checks access again.
+        const locked = !playable.has(lesson.id);
         return (
           <View
             key={lesson.id}
@@ -114,6 +138,7 @@ export default function CourseMapScreen() {
       <View
         style={{
           flexDirection: "row",
+          flexWrap: "wrap",
           alignItems: "center",
           paddingHorizontal: spacing.md,
           paddingVertical: spacing.sm,
@@ -154,7 +179,9 @@ export default function CourseMapScreen() {
       {/* virtualized: the course is 50+ units, far too many lesson rows to
           mount eagerly in a ScrollView on a mid-range phone */}
       <FlatList
-        data={bundle.units}
+        data={visibleUnits}
+        keyboardShouldPersistTaps="handled"
+        ListEmptyComponent={<Text style={[styles.muted, { padding: spacing.md }]}>No matching units. Try another topic or track.</Text>}
         keyExtractor={(u) => u.id}
         renderItem={renderUnit}
         contentContainerStyle={styles.container}
@@ -212,6 +239,23 @@ export default function CourseMapScreen() {
               </View>
             )}
 
+            <Text style={styles.subtitle}>Explore your course</Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm }}>
+              {tracks.map((track) => <Pressable key={track.tier.id} accessibilityRole="button" accessibilityState={{ selected: activeTier === track.tier.id }}
+                style={[styles.btnGhost, activeTier === track.tier.id && { backgroundColor: colors.accentSoft }]} onPress={() => setSelectedTier(track.tier.id)}>
+                <Text style={styles.btnGhostText}>{track.unlocked ? "" : "?? "}{track.tier.title}</Text>
+              </Pressable>)}
+            </ScrollView>
+            {tracks.find((track) => track.tier.id === activeTier)?.unlocked === false && <Pressable style={styles.btnPrimary} accessibilityRole="button"
+              onPress={() => Alert.alert("Start this track?", "Earlier lessons stay available. Your XP, streak and hearts stay the same.", [
+                { text: "Cancel", style: "cancel" },
+                { text: "Start here", onPress: () => { if (activeTier) addEvents([{ id: newEventId(), type: "tier_started", occurredAt: Date.now(), tierId: activeTier }]); } },
+              ])}><Text style={styles.btnPrimaryText}>Start this track</Text></Pressable>}
+            <TextInput accessibilityLabel="Search units" value={query} onChangeText={setQuery} autoCorrect={false}
+              placeholder="Search topics, lessons or unit number" placeholderTextColor={colors.textMuted}
+              style={{ backgroundColor: colors.bg, color: colors.text, borderWidth: 2, borderColor: colors.border, borderRadius: radii.md, padding: spacing.md }} />
+            <Text style={styles.muted}>{visibleUnits.length} units{query ? " matching your search" : " in this track"}</Text>
+            {query ? <Pressable accessibilityRole="button" onPress={() => setQuery("")} style={styles.btnGhost}><Text style={styles.btnGhostText}>Clear search</Text></Pressable> : null}
             {reviewable > 0 && (
               <Pressable
                 style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm }]}

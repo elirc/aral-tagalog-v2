@@ -1,0 +1,226 @@
+id: church-faith
+title: Church and Faith
+tier: conversational
+description: Sunday mass, blessings, and the religious phrases woven into daily speech.
+tip: >-
+  Faith vocabulary leaks into ordinary Tagalog. "Bahala na" is popularly traced
+  to Bathala (God), "salamat" from Arabic through Malay, and "Diyos ko" works as a mild
+  exclamation. Knowing magsimba (to attend mass), dasal (prayer) and biyaya
+  (blessing) makes a great deal of everyday speech clearer.
+lessons:
+  - id: faith-1
+    title: Sunday
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: simbahan, en: church }
+          - { tl: misa, en: mass }
+          - { tl: magsimba, en: to attend mass }
+          - { tl: pari, en: priest }
+      - type: choice
+        prompt: "'Magsisimba kami bukas' means we will..."
+        answer: attend mass
+        distractors: [build a church, visit a priest, travel far]
+        audio: magsisimba_kami_bukas
+        audio_text: Magsisimba kami bukas.
+      - type: fill_blank
+        sentence: "Alas-otso po ang ___ tuwing Linggo."
+        translation: "Mass is at eight every Sunday."
+        answer: misa
+        options: [misa, pari, dasal]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nagsisimba kami tuwing Linggo ng umaga.
+        answer_en: We attend mass every Sunday morning.
+        accept:
+          - We go to mass every Sunday morning
+        extra_words: [cheap, market, tomorrow]
+        audio: nagsisimba_kami_tuwing_linggo_ng_umaga
+      - type: translate
+        prompt_en: The church is beside the plaza.
+        answer_tl: Katabi ng plaza ang simbahan
+        accept:
+          - Nasa tabi ng plaza ang simbahan
+        extra_words: [misa, pari, dasal]
+      - type: listen
+        audio: anong_oras_ang_misa
+        answer_tl: Anong oras ang misa
+        extra_words: [simbahan, pari]
+      - type: arrange
+        prompt: "We attend mass every Sunday morning."
+        answer_tl: Nagsisimba kami tuwing Linggo ng umaga
+      - type: choice
+        prompt: "Which word names the person leading the mass?"
+        answer: pari
+        distractors: [guro, kapitan, kartero]
+      - type: arrange
+        prompt: "Mass is at eight every Sunday."
+        answer_tl: Alas-otso ang misa tuwing Linggo
+        grading: { hyphens: true }
+
+  - id: faith-2
+    title: Prayers and blessings
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dasal, en: prayer }
+          - { tl: magdasal, en: to pray }
+          - { tl: biyaya, en: blessing }
+          - { tl: pagpalain, en: to bless }
+      - type: choice
+        prompt: "'Ipagdasal mo ako' asks someone to..."
+        answer: pray for you
+        distractors: [pay for you, wait for you, wake you up]
+        audio: ipagdasal_mo_ako
+        audio_text: Ipagdasal mo ako.
+      - type: fill_blank
+        sentence: "Nagdarasal kami bago ___."
+        translation: "We pray before eating."
+        answer: kumain
+        options: [kumain, matulog, maglaba]
+      - type: translate
+        prompt_tl: Maraming biyaya ngayong taon.
+        answer_en: There are many blessings this year.
+        accept:
+          - Many blessings this year
+        extra_words: [cheap, market, tomorrow]
+        audio: maraming_biyaya_ngayong_taon
+      - type: translate
+        prompt_en: Please pray for my family.
+        answer_tl: Ipagdasal po ninyo ang pamilya ko
+        accept:
+          - Idalangin po ninyo ang pamilya ko
+        extra_words: [biyaya, misa, pari]
+      - type: listen
+        audio: ipagdasal_mo_kami
+        answer_tl: Ipagdasal mo kami
+        extra_words: [biyaya, dasal]
+      - type: arrange
+        prompt: "We pray before eating."
+        answer_tl: Nagdarasal kami bago kumain
+      - type: choice
+        prompt: "'Pagpalain ka nawa' is..."
+        answer: a blessing
+        distractors: [a warning, a question, a complaint]
+      - type: arrange
+        prompt: "There are many blessings this year."
+        answer_tl: Maraming biyaya ngayong taon
+
+  - id: faith-3
+    title: Faith in daily speech
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Diyos ko, en: my God (exclamation) }
+          - { tl: bahala na, en: come what may }
+          - { tl: salamat sa Diyos, en: thank God }
+          - { tl: sana nga, en: I hope so }
+      - type: choice
+        prompt: "'Bahala na' is popularly traced to the word..."
+        answer: Bathala
+        distractors: [bahay, bata, bayan]
+        audio: bahala_na_2
+        audio_text: Bahala na.
+      - type: fill_blank
+        sentence: "___ sa Diyos, ligtas ang lahat."
+        translation: "Thank God, everyone is safe."
+        answer: Salamat
+        options: [Salamat, Paalam, Sayang]
+      - type: translate
+        prompt_tl: Salamat sa Diyos at maayos ang biyahe.
+        answer_en: Thank God the trip went well.
+        accept:
+          - Thank God that the trip was fine
+        extra_words: [cheap, market, tomorrow]
+        audio: salamat_sa_diyos_at_maayos_ang_biyahe
+      - type: translate
+        prompt_en: Come what may, we will try.
+        answer_tl: Bahala na, susubukan natin
+        accept:
+          - Bahala na susubukan natin
+        extra_words: [biyaya, dasal, misa]
+      - type: listen
+        audio: salamat_sa_diyos
+        answer_tl: Salamat sa Diyos
+        extra_words: [bahala, biyaya]
+      - type: arrange
+        prompt: "Thank God the trip went well."
+        answer_tl: Salamat sa Diyos at maayos ang biyahe
+      - type: choice
+        prompt: "'Diyos ko!' in conversation usually expresses..."
+        answer: surprise
+        distractors: [anger only, a prayer, a greeting]
+      - type: arrange
+        prompt: "Come what may, we will try."
+        answer_tl: Bahala na susubukan natin
+        accept:
+          - Bahala na, susubukan natin
+
+  - id: faith-4
+    title: Fiesta and tradition
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: Talking about the town fiesta
+        lines:
+          - speaker: Tita
+            text: "Uuwi ka ba sa ___ sa susunod na buwan?"
+            translation: "Will you come home for the fiesta next month?"
+          - speaker: Pamangkin
+            text: "Opo. Anong oras po ang ___ sa umaga?"
+            translation: "Yes. What time is the mass in the morning?"
+          - speaker: Tita
+            text: "Alas-sais. Pagkatapos, may ___ sa bahay."
+            translation: "Six. Afterwards, there is a shared meal at home."
+          - speaker: Pamangkin
+            text: "Magdadala po ako ng pagkain."
+            translation: "I will bring food."
+        blanks:
+          - answer: pista
+            options: [pista, misa, dasal]
+          - answer: misa
+            options: [misa, pista, biyaya]
+          - answer: salu-salo
+            options: [salu-salo, dasal, bakod]
+        grading: { hyphens: true }
+      - type: match
+        pairs:
+          - { tl: pista, en: town fiesta }
+          - { tl: prusisyon, en: procession }
+          - { tl: patron, en: patron saint }
+          - { tl: handa, en: prepared food }
+      - type: fill_blank
+        sentence: "Si San Isidro ang ___ ng bayan namin."
+        translation: "San Isidro is the patron saint of our town."
+        answer: patron
+        options: [patron, pista, dasal]
+      - type: translate
+        prompt_en: There is a procession after the mass.
+        answer_tl: May prusisyon pagkatapos ng misa
+        accept:
+          - May prusisyon matapos ang misa
+        extra_words: [pista, patron, handa]
+      - type: translate
+        prompt_tl: Marami ang handa tuwing pista.
+        answer_en: There is a lot of prepared food during the fiesta.
+        accept:
+          - There's plenty of food at the fiesta
+        extra_words: [cheap, market, tomorrow]
+        audio: marami_ang_handa_tuwing_pista
+      - type: listen
+        audio: kailan_ang_pista_ninyo
+        answer_tl: Kailan ang pista ninyo
+        extra_words: [prusisyon, patron]
+      - type: choice
+        prompt: "In the dialogue, what happens after the morning mass?"
+        answer: a shared meal at home
+        distractors: [a procession only, a market trip, a long trip back]
+      - type: arrange
+        prompt: "There is a procession after the mass."
+        answer_tl: May prusisyon pagkatapos ng misa
+      - type: arrange
+        prompt: "Will you come home for the fiesta?"
+        answer_tl: Uuwi ka ba sa pista

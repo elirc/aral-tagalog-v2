@@ -1,0 +1,233 @@
+id: delivery
+title: Ordering Delivery
+tier: everyday
+description: Order food to the house, give directions, and pay the rider.
+tip: >-
+  Delivery Tagalog wraps English roots in Tagalog affixes: mag-order,
+  i-deliver, na-receive na ba? Payment is usually cash on delivery. The rider needs landmarks, not street
+  numbers — "katapat ng sari-sari store" (across from the sari-sari store) is a
+  better address than a house number.
+lessons:
+  - id: del-1
+    title: Placing an order
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mag-order, en: to order }
+          - { tl: ipadala, en: to have delivered }
+          - { tl: dami, en: quantity }
+          - { tl: kabuuan, en: total }
+      - type: choice
+        prompt: "'Pwede po bang mag-order?' opens..."
+        answer: an order
+        distractors: [a complaint, a refund, a booking for a room]
+        audio: pwede_po_bang_mag_order
+        audio_text: Pwede po bang mag-order?
+      - type: fill_blank
+        sentence: "Magkano po ang ___?"
+        translation: "How much is the total?"
+        answer: kabuuan
+        options: [kabuuan, bilang, sabon]
+      - type: translate
+        prompt_tl: Dalawang order po ng adobo.
+        answer_en: Two orders of adobo, please.
+        accept:
+          - Two adobo orders please
+        extra_words: [cheap, market, tomorrow]
+        audio: dalawang_order_po_ng_adobo
+      - type: translate
+        prompt_en: I would like to order rice and chicken.
+        answer_tl: Gusto ko po sanang mag-order ng kanin at manok
+        accept:
+          - Mag-oorder po ako ng kanin at manok
+        extra_words: [kabuuan, bilang, tubig]
+        grading: { hyphens: true }
+      - type: listen
+        audio: pwede_po_bang_mag_order_2
+        answer_tl: Pwede po bang mag-order
+        extra_words: [kabuuan, bilang]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Kabuuan' on a receipt is the..."
+        answer: total
+        distractors: [discount, tip, delivery fee]
+      - type: fill_blank
+        sentence: "Ilan pong ___ ang order ninyo?"
+        translation: "How many pieces is your order?"
+        answer: piraso
+        options: [piraso, sabon, sipit]
+      - type: arrange
+        prompt: "I would like to order two servings of adobo."
+        answer_tl: Gusto ko pong mag-order ng dalawang adobo
+        grading: { hyphens: true }
+
+  - id: del-2
+    title: Giving your address
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tirahan, en: address }
+          - { tl: katapat, en: across from }
+          - { tl: katabi ng, en: beside }
+          - { tl: kanto ng, en: at the corner of }
+      - type: choice
+        prompt: "The most useful address detail for a rider is..."
+        answer: a nearby landmark
+        distractors: [the postal code, the house color only, the barangay budget]
+        audio: tirahan
+        audio_text: Tirahan.
+      - type: fill_blank
+        sentence: "___ po ng sari-sari store ang bahay namin."
+        translation: "Our house is across from the sari-sari store."
+        answer: Katapat
+        options: [Katapat, Malayo, Mahal]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Ano po ang tirahan ninyo?
+        answer_en: What is your address?
+        accept:
+          - What's your address
+        extra_words: [cheap, market, tomorrow]
+        audio: ano_po_ang_tirahan_ninyo
+      - type: translate
+        prompt_en: The house is beside the church.
+        answer_tl: Katabi ng simbahan ang bahay
+        accept:
+          - Nasa tabi ng simbahan ang bahay
+        extra_words: [katapat, kanto, tirahan]
+      - type: listen
+        audio: katapat_ng_tindahan
+        answer_tl: Katapat ng tindahan
+        extra_words: [katabi, kanto]
+      - type: choice
+        prompt: "'Sa kanto ng Rizal at Mabini' names..."
+        answer: a street corner
+        distractors: [a building floor, a barangay hall, a phone number]
+      - type: fill_blank
+        sentence: "Asul po ang gate, ___ ng puting bahay."
+        translation: "The gate is blue, beside the white house."
+        answer: katabi
+        options: [katabi, malayo, mahal]
+      - type: arrange
+        prompt: "Our house is across from the school."
+        answer_tl: Katapat ng paaralan ang bahay namin
+
+  - id: del-3
+    title: Waiting and paying
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: rider, en: delivery rider }
+          - { tl: sukli, en: change }
+          - { tl: gaano katagal, en: how long }
+          - { tl: nandito na, en: already here }
+      - type: choice
+        prompt: "'Gaano katagal po?' asks..."
+        answer: how long it will take
+        distractors: [how much it costs, how far it is, how many pieces]
+        audio: gaano_katagal_po
+        audio_text: Gaano katagal po?
+      - type: fill_blank
+        sentence: "May ___ po ba kayo sa isang libo?"
+        translation: "Do you have change for a thousand?"
+        answer: sukli
+        options: [sukli, rider, tirahan]
+      - type: translate
+        prompt_tl: Nandito na po ang rider.
+        answer_en: The rider is already here.
+        accept:
+          - The delivery rider has arrived
+        extra_words: [cheap, market, tomorrow]
+        audio: nandito_na_po_ang_rider
+      - type: translate
+        prompt_en: How long will the delivery take?
+        answer_tl: Gaano katagal po ang delivery?
+        accept:
+          - Gaano po katagal ang delivery
+        extra_words: [sukli, rider, tirahan]
+      - type: listen
+        audio: nandito_na_ba_ang_rider
+        answer_tl: Nandito na ba ang rider
+        extra_words: [sukli, tirahan]
+      - type: choice
+        prompt: "'Cash on delivery' means you pay..."
+        answer: when the food arrives
+        distractors: [in advance, next week, at the restaurant]
+      - type: fill_blank
+        sentence: "Wala akong barya, ___ po ako ng isang libo."
+        translation: "I have no small change, I am paying with a thousand."
+        answer: magbabayad
+        options: [magbabayad, matutulog, maglalaba]
+      - type: arrange
+        prompt: "Do you have change for a thousand?"
+        answer_tl: May sukli po ba kayo sa isang libo
+
+  - id: del-4
+    title: A delivery call
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Ordering from a nearby eatery
+        lines:
+          - speaker: Tindahan
+            text: "Hello po, ano pong ___ ninyo?"
+            translation: "Hello, what would you like to order?"
+          - speaker: Kliyente
+            text: "Dalawang adobo po at tatlong ___."
+            translation: "Two adobo and three rice, please."
+          - speaker: Tindahan
+            text: "Saan po ang ___ ninyo?"
+            translation: "What is your address?"
+          - speaker: Kliyente
+            text: "Katapat po ng simbahan, asul ang gate."
+            translation: "Across from the church, the gate is blue."
+        blanks:
+          - answer: order
+            options: [order, sabon, sipit]
+          - answer: kanin
+            options: [kanin, sabon, plantsa]
+          - answer: tirahan
+            options: [tirahan, sukli, rider]
+      - type: match
+        pairs:
+          - { tl: sobre, en: envelope }
+          - { tl: bayad, en: payment }
+          - { tl: dagdag, en: extra }
+          - { tl: libre, en: free }
+      - type: fill_blank
+        sentence: "May ___ po bang bayad ang delivery?"
+        translation: "Is there an extra charge for delivery?"
+        answer: dagdag
+        options: [dagdag, libre, sukli]
+      - type: translate
+        prompt_en: The delivery is free for orders over five hundred.
+        answer_tl: Libre ang delivery kapag lampas limang daan ang order
+        accept:
+          - Libre ang delivery kung lampas limang daan ang order
+        extra_words: [dagdag, bayad, sukli]
+      - type: translate
+        prompt_tl: Ihanda mo na ang bayad.
+        answer_en: Get the payment ready.
+        accept:
+          - Prepare the payment
+        extra_words: [cheap, market, tomorrow]
+        audio: ihanda_mo_na_ang_bayad
+      - type: listen
+        audio: may_dagdag_bayad_po_ba
+        answer_tl: May dagdag bayad po ba
+        extra_words: [libre, sukli]
+      - type: choice
+        prompt: "In the dialogue, how does the customer describe the house?"
+        answer: across from the church with a blue gate
+        distractors: [beside the market with a red roof, at the corner of Rizal, behind the school]
+      - type: fill_blank
+        sentence: "___ ang delivery ngayong linggo."
+        translation: "Delivery is free this week."
+        answer: Libre
+        options: [Libre, Mahal, Dagdag]
+      - type: arrange
+        prompt: "Two adobo and three rice, please."
+        answer_tl: Dalawang adobo po at tatlong kanin

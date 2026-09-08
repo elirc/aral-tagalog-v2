@@ -1,0 +1,231 @@
+id: vegetables-basics
+title: Common Vegetables
+tier: foundation
+description: Kangkong, talong, kamatis — what goes into the pot every evening.
+tip: >-
+  Gulay covers every vegetable, and the classic dish that uses them all is
+  pinakbet. Two words do a lot of work at the market: sariwa (fresh) and lanta
+  (wilted). Garlic, onion and tomato — bawang, sibuyas, kamatis — start almost
+  every Filipino recipe.
+lessons:
+  - id: veg-1
+    title: The basics
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gulay, en: vegetable }
+          - { tl: kamatis, en: tomato }
+          - { tl: sibuyas, en: onion }
+          - { tl: bawang, en: garlic }
+      - type: choice
+        prompt: "Which three start most Filipino dishes?"
+        answer: bawang, sibuyas, kamatis
+        distractors:
+          - "saging, mangga, pinya"
+          - "asin, asukal, suka"
+          - "isda, hipon, pusit"
+        audio: bawang_sibuyas_kamatis
+        audio_text: Bawang, sibuyas, kamatis.
+      - type: fill_blank
+        sentence: "Maghiwa ka ng ___ para sa salad."
+        translation: "Slice a tomato for the salad."
+        answer: kamatis
+        options: [kamatis, saging, lapis]
+      - type: translate
+        prompt_tl: Kumakain kami ng gulay araw-araw.
+        answer_en: We eat vegetables every day.
+        accept:
+          - We eat vegetables daily
+        extra_words: [tomorrow, cheap, market]
+        audio: kumakain_kami_ng_gulay_araw_araw
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I need garlic and onion.
+        answer_tl: Kailangan ko ng bawang at sibuyas
+        accept:
+          - Kailangan ko ng sibuyas at bawang
+        extra_words: [kamatis, gulay, isda]
+      - type: listen
+        audio: sariwa_ang_gulay
+        answer_tl: Sariwa ang gulay
+        extra_words: [kamatis, bawang]
+      - type: choice
+        prompt: "'Sibuyas' makes you..."
+        answer: cry when slicing it
+        distractors: [sleepy, thirsty only, full]
+      - type: fill_blank
+        sentence: "Amoy ___ ang kusina."
+        translation: "The kitchen smells of garlic."
+        answer: bawang
+        options: [bawang, saging, papel]
+      - type: translate
+        prompt_tl: Mura ang gulay sa palengke.
+        answer_en: Vegetables are cheap at the market.
+        accept:
+          - The vegetables are cheap in the market
+        extra_words: [quickly, morning, tomorrow]
+        audio: mura_ang_gulay_sa_palengke
+
+  - id: veg-2
+    title: Leafy and long
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kangkong, en: water spinach }
+          - { tl: pechay, en: bok choy }
+          - { tl: sitaw, en: string beans }
+          - { tl: talong, en: eggplant }
+      - type: choice
+        prompt: "'Talong' is..."
+        answer: eggplant
+        distractors: [string beans, cabbage, corn]
+        audio: talong
+        audio_text: Talong.
+      - type: fill_blank
+        sentence: "Gusto ko ng adobong ___."
+        translation: "I want adobo of water spinach."
+        answer: kangkong
+        options: [kangkong, saging, bawang]
+      - type: translate
+        prompt_tl: Sariwa ang pechay ngayong umaga.
+        answer_en: The bok choy is fresh this morning.
+        accept:
+          - The pechay is fresh this morning
+        extra_words: [cheap, tomorrow, market]
+        audio: sariwa_ang_pechay_ngayong_umaga
+      - type: translate
+        prompt_en: We will cook eggplant and string beans.
+        answer_tl: Magluluto kami ng talong at sitaw
+        accept:
+          - Magluluto tayo ng talong at sitaw
+        extra_words: [kangkong, pechay, gulay]
+      - type: listen
+        audio: bumili_ka_ng_kangkong
+        answer_tl: Bumili ka ng kangkong
+        extra_words: [pechay, talong]
+      - type: choice
+        prompt: "Which vegetable grows in water?"
+        answer: kangkong
+        distractors: [talong, sitaw, bawang]
+      - type: fill_blank
+        sentence: "Mahaba ang ___, parang tali."
+        translation: "String beans are long, like a rope."
+        answer: sitaw
+        options: [sitaw, kamatis, bawang]
+      - type: translate
+        prompt_tl: Lanta na ang pechay, huwag mo nang bilhin.
+        answer_en: The bok choy is wilted, do not buy it.
+        accept:
+          - The pechay is wilted don't buy it
+        extra_words: [morning, cheap, quickly]
+        audio: lanta_na_ang_pechay
+
+  - id: veg-3
+    title: Roots and squash
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: patatas, en: potato }
+          - { tl: karot, en: carrot }
+          - { tl: kalabasa, en: squash }
+          - { tl: kamote, en: sweet potato }
+      - type: choice
+        prompt: "'Kamote' is..."
+        answer: sweet potato
+        distractors: [squash, carrot, cabbage]
+        audio: kamote
+        audio_text: Kamote.
+      - type: fill_blank
+        sentence: "Matamis ang ___, masarap na meryenda."
+        translation: "Sweet potato is sweet, a good snack."
+        answer: kamote
+        options: [kamote, bawang, sitaw]
+      - type: translate
+        prompt_en: Squash and string beans go into pinakbet.
+        answer_tl: Kalabasa at sitaw ang nilalagay sa pinakbet
+        accept:
+          - Kalabasa at sitaw ang inilalagay sa pinakbet
+        extra_words: [patatas, karot, kamote]
+      - type: translate
+        prompt_tl: Bumili ka ng patatas at karot.
+        answer_en: Buy potatoes and carrots.
+        accept:
+          - Buy potato and carrot
+        extra_words: [tomorrow, cheap, market]
+        audio: bumili_ka_ng_patatas_at_karot
+      - type: listen
+        audio: nilagang_kalabasa
+        answer_tl: Nilagang kalabasa
+        extra_words: [patatas, kamote]
+      - type: choice
+        prompt: "Which is orange and often boiled with squash?"
+        answer: karot
+        distractors: [kangkong, talong, bawang]
+      - type: fill_blank
+        sentence: "Binili ni Nanay ang malaking ___."
+        translation: "Mom bought a big squash."
+        answer: kalabasa
+        options: [kalabasa, kamatis, sibuyas]
+      - type: translate
+        prompt_en: I do not like carrots.
+        answer_tl: Ayaw ko ng karot
+        accept:
+          - Hindi ko gusto ang karot
+        extra_words: [patatas, kamote, gulay]
+
+  - id: veg-4
+    title: At the vegetable stall
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A vendor says 'Sariwa po, galing sa Baguio.' She means the vegetables are..."
+        answer: fresh and from Baguio
+        distractors: [cheap and old, cooked already, imported]
+        audio: sariwa_po_galing_sa_baguio
+        audio_text: Sariwa po, galing sa Baguio.
+      - type: match
+        pairs:
+          - { tl: tali, en: a bundle }
+          - { tl: sariwa, en: fresh }
+          - { tl: lanta, en: wilted }
+          - { tl: magluto, en: to cook }
+      - type: fill_blank
+        sentence: "Dalawang ___ ng kangkong po."
+        translation: "Two bundles of water spinach, please."
+        answer: tali
+        options: [tali, kilo, piraso]
+      - type: translate
+        prompt_en: What will you cook tonight?
+        answer_tl: Ano ang lulutuin mo mamayang gabi?
+        accept:
+          - Ano ang iluluto mo mamayang gabi
+        extra_words: [gulay, sariwa, tali]
+      - type: translate
+        prompt_tl: Magluluto ako ng gulay para sa hapunan.
+        answer_en: I will cook vegetables for dinner.
+        accept:
+          - I'll cook vegetables for dinner
+        extra_words: [cheap, market, tomorrow]
+        audio: magluluto_ako_ng_gulay_para_sa_hapunan
+      - type: listen
+        audio: sariwa_po_ba_ito
+        answer_tl: Sariwa po ba ito
+        extra_words: [lanta, tali]
+      - type: choice
+        prompt: "'Lanta' warns you that the leaves are..."
+        answer: wilted
+        distractors: [fresh, expensive, cooked]
+      - type: fill_blank
+        sentence: "Huwag mong bilhin, ___ na iyan."
+        translation: "Do not buy it, that is wilted already."
+        answer: lanta
+        options: [lanta, sariwa, matamis]
+      - type: translate
+        prompt_en: These vegetables are fresh and cheap.
+        answer_tl: Sariwa at mura ang mga gulay na ito
+        accept:
+          - Mura at sariwa ang mga gulay na ito
+        extra_words: [lanta, mahal, tali]

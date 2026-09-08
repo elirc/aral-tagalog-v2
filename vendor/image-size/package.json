@@ -1,0 +1,12 @@
+{
+  "name": "@aral/image-size",
+  "version": "1.2.1-aral.1",
+  "private": true,
+  "description": "Locally maintained image-size 1.2.1 with bounded container parsing for Metro",
+  "main": "code/index.js",
+  "types": "code/index.d.ts",
+  "files": ["code", "LICENSE", "README.md"],
+  "license": "MIT",
+  "dependencies": { "queue": "6.0.2" },
+  "engines": { "node": ">=16" }
+}

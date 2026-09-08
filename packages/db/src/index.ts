@@ -8,6 +8,14 @@ export { schema };
 export type Db = ReturnType<typeof createDb>;
 
 export function createDb(databaseUrl: string) {
-  const client = postgres(databaseUrl);
+  const client = postgres(databaseUrl, {
+    max: process.env.VERCEL === "1" ? 1 : 5,
+    // Compatible with managed PostgreSQL transaction poolers.
+    prepare: false,
+    connect_timeout: 5,
+    idle_timeout: process.env.VERCEL === "1" ? 5 : 20,
+    // Avoid startup statement_timeout: managed transaction poolers reject it,
+    // including when a developer connects to the preview database locally.
+  });
   return drizzle(client, { schema });
 }

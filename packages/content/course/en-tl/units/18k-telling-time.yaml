@@ -1,0 +1,235 @@
+id: telling-time
+title: Telling the Time
+tier: foundation
+description: Alas-singko, kalahati, umaga — reading a clock the way Filipinos say it.
+tip: >-
+  Clock time in Tagalog is almost entirely Spanish: alas-dos (2:00), alas-otso
+  (8:00). One o'clock is the odd one out — ala-una, not alas-una. Add y media
+  for half past and add ng umaga, ng hapon, or ng gabi to say which part of the
+  day you mean.
+lessons:
+  - id: clock-1
+    title: On the hour
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ala-una, en: one o'clock }
+          - { tl: alas-dos, en: two o'clock }
+          - { tl: alas-singko, en: five o'clock }
+          - { tl: alas-diyes, en: ten o'clock }
+      - type: choice
+        prompt: "'Alas-otso ng umaga' is..."
+        answer: eight in the morning
+        distractors: [eight in the evening, one in the morning, ten at night]
+        audio: alas_otso_ng_umaga
+        audio_text: Alas-otso ng umaga.
+      - type: fill_blank
+        sentence: "Anong ___ na?"
+        translation: "What time is it?"
+        answer: oras
+        options: [oras, bahay, pangalan]
+      - type: translate
+        prompt_tl: Alas-sais na ng umaga.
+        answer_en: It is six in the morning.
+        accept:
+          - It's six in the morning
+        extra_words: [tomorrow, cheap, market]
+        audio: alas_sais_na_ng_umaga
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: It is nine in the evening.
+        answer_tl: Alas-nuwebe na ng gabi
+        accept:
+          - Alas nuwebe na ng gabi
+        extra_words: [umaga, hapon, oras]
+        grading: { hyphens: true }
+      - type: listen
+        audio: anong_oras_na_po
+        answer_tl: Anong oras na po
+        extra_words: [alas-dos, umaga]
+      - type: choice
+        prompt: "Which hour breaks the 'alas-' pattern?"
+        answer: ala-una
+        distractors: [alas-dos, alas-tres, alas-kuwatro]
+      - type: fill_blank
+        sentence: "Alas-___ ng hapon ang klase namin."
+        translation: "Our class is at three in the afternoon."
+        answer: tres
+        options: [tres, umaga, oras]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Ala-una na ng hapon.
+        answer_en: It is one in the afternoon.
+        accept:
+          - It's one in the afternoon
+        extra_words: [quickly, morning, cheap]
+        audio: ala_una_na_ng_hapon
+        grading: { hyphens: true }
+
+  - id: clock-2
+    title: Halves and minutes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: y media, en: half past }
+          - { tl: kalahati, en: half }
+          - { tl: minuto, en: minute }
+          - { tl: segundo, en: second }
+      - type: choice
+        prompt: "'Alas-siyete y media' is..."
+        answer: seven thirty
+        distractors: [seven fifteen, six thirty, seven o'clock]
+        audio: alas_siyete_y_media
+        audio_text: Alas-siyete y media.
+      - type: fill_blank
+        sentence: "Alas-nuwebe ___ media na."
+        translation: "It is half past nine."
+        answer: "y"
+        options: ["y", ng, sa]
+      - type: translate
+        prompt_en: The bus leaves at half past five.
+        answer_tl: Aalis ang bus nang alas-singko y media
+        accept:
+          - Aalis ang bus ng alas-singko y media
+        extra_words: [umaga, gabi, minuto]
+        grading: { ng_nang: true, hyphens: true }
+      - type: translate
+        prompt_tl: Sampung minuto na lang.
+        answer_en: Only ten minutes left.
+        accept:
+          - Just ten more minutes
+        extra_words: [tomorrow, cheap, market]
+        audio: sampung_minuto_na_lang
+      - type: listen
+        audio: alas_dose_y_media
+        answer_tl: Alas-dose y media
+        extra_words: [minuto, umaga]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Kalahating oras' is..."
+        answer: half an hour
+        distractors: [a quarter hour, two hours, ten minutes]
+      - type: fill_blank
+        sentence: "Maghintay ka ng limang ___."
+        translation: "Wait five minutes."
+        answer: minuto
+        options: [minuto, oras, araw]
+      - type: translate
+        prompt_en: Half an hour from now.
+        answer_tl: Kalahating oras mula ngayon
+        accept:
+          - Kalahating oras mula ngayon po
+        extra_words: [minuto, alas-dos, gabi]
+
+  - id: clock-3
+    title: Parts of the day
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umaga, en: morning }
+          - { tl: tanghali, en: noon }
+          - { tl: hapon, en: afternoon }
+          - { tl: gabi, en: night }
+      - type: choice
+        prompt: "'Tanghali' is around..."
+        answer: twelve noon
+        distractors: [six in the morning, six in the evening, midnight]
+        audio: tanghali
+        audio_text: Tanghali.
+      - type: fill_blank
+        sentence: "Kumakain kami ng tanghalian tuwing ___."
+        translation: "We eat lunch at noon."
+        answer: tanghali
+        options: [tanghali, gabi, umaga]
+      - type: translate
+        prompt_tl: Uuwi ako mamayang gabi.
+        answer_en: I will go home tonight.
+        accept:
+          - I'll go home later tonight
+        extra_words: [cheap, market, quickly]
+        audio: uuwi_ako_mamayang_gabi
+      - type: translate
+        prompt_en: See you this afternoon.
+        answer_tl: Kita tayo mamayang hapon
+        accept:
+          - Magkita tayo mamayang hapon
+        extra_words: [umaga, gabi, tanghali]
+      - type: listen
+        audio: mamayang_gabi
+        answer_tl: Mamayang gabi
+        extra_words: [umaga, hapon]
+      - type: choice
+        prompt: "'Hatinggabi' means..."
+        answer: midnight
+        distractors: [noon, sunrise, sunset]
+      - type: fill_blank
+        sentence: "Natutulog ako bago ___."
+        translation: "I sleep before midnight."
+        answer: maghatinggabi
+        options: [maghatinggabi, magtanghali, mag-umaga]
+      - type: translate
+        prompt_tl: Mainit sa tanghali, malamig sa gabi.
+        answer_en: It is hot at noon, cold at night.
+        accept:
+          - It's hot at noon and cold at night
+        extra_words: [tomorrow, morning, cheap]
+        audio: mainit_sa_tanghali_malamig_sa_gabi
+
+  - id: clock-4
+    title: Making a time
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Someone asks 'Anong oras tayo magkikita?' They want..."
+        answer: a meeting time
+        distractors: [a place, a price, your name]
+        audio: anong_oras_tayo_magkikita
+        audio_text: Anong oras tayo magkikita?
+      - type: match
+        pairs:
+          - { tl: maaga, en: early }
+          - { tl: huli, en: late }
+          - { tl: ngayon, en: now }
+          - { tl: mamaya, en: later }
+      - type: fill_blank
+        sentence: "___ ka na, alas-otso na."
+        translation: "You are late, it is already eight."
+        answer: Huli
+        options: [Huli, Maaga, Ngayon]
+      - type: translate
+        prompt_en: Let us meet at two in the afternoon.
+        answer_tl: Magkita tayo nang alas-dos ng hapon
+        accept:
+          - Magkita tayo ng alas-dos ng hapon
+        extra_words: [umaga, gabi, maaga]
+        grading: { ng_nang: true, hyphens: true }
+      - type: translate
+        prompt_tl: Maaga akong dumating kaninang umaga.
+        answer_en: I arrived early this morning.
+        accept:
+          - I came early this morning
+        extra_words: [cheap, market, tomorrow]
+        audio: maaga_akong_dumating_kaninang_umaga
+      - type: listen
+        audio: anong_oras_ka_darating
+        answer_tl: Anong oras ka darating
+        extra_words: [maaga, mamaya]
+      - type: choice
+        prompt: "'Mamaya' points to..."
+        answer: later today
+        distractors: [yesterday, next year, right now]
+      - type: fill_blank
+        sentence: "Hindi ngayon, ___ na lang."
+        translation: "Not now, later instead."
+        answer: mamaya
+        options: [mamaya, kahapon, maaga]
+      - type: translate
+        prompt_en: I will be there at half past six.
+        answer_tl: Nandoon ako nang alas-sais y media
+        accept:
+          - Nandoon ako ng alas-sais y media
+        extra_words: [umaga, huli, ngayon]
+        grading: { ng_nang: true, hyphens: true }

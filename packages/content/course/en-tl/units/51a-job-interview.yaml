@@ -1,0 +1,230 @@
+id: job-interview
+title: The Job Interview
+tier: conversational
+description: Talk about experience, strengths and salary without switching to English.
+tip: >-
+  Interview Tagalog is formal Tagalog: kayo and ninyo, nais instead of gusto,
+  maaari instead of pwede. Experience takes karanasan, and the phrase that opens
+  almost every interview is "Ikuwento ninyo ang inyong sarili" — tell us about
+  yourself. Answer with completed-aspect verbs: nagtrabaho, natapos, natutunan.
+lessons:
+  - id: job-1
+    title: Tell us about yourself
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: karanasan, en: experience }
+          - { tl: kasanayan, en: skill }
+          - { tl: natapos, en: finished }
+          - { tl: nagtrabaho, en: worked }
+      - type: choice
+        prompt: "'Ikuwento ninyo ang inyong sarili' asks you to..."
+        answer: introduce yourself
+        distractors: [give a price, name a date, describe the office]
+        audio: ikuwento_ninyo_ang_inyong_sarili
+        audio_text: Ikuwento ninyo ang inyong sarili.
+      - type: fill_blank
+        sentence: "May limang taon po akong ___ sa larangang ito."
+        translation: "I have five years of experience in this field."
+        answer: karanasan
+        options: [karanasan, kasanayan, sahod]
+      - type: translate
+        prompt_tl: Natapos ko ang kolehiyo noong 2022.
+        answer_en: I finished college in 2022.
+        accept:
+          - I graduated from college in 2022
+        extra_words: [cheap, market, tomorrow]
+        audio: natapos_ko_ang_kolehiyo
+      - type: translate
+        prompt_en: I worked for three years in a bank.
+        answer_tl: Nagtrabaho po ako nang tatlong taon sa isang bangko
+        accept:
+          - Tatlong taon po akong nagtrabaho sa isang bangko
+        extra_words: [karanasan, kasanayan, natapos]
+      - type: listen
+        audio: ano_po_ang_karanasan_ninyo
+        answer_tl: Ano po ang karanasan ninyo
+        extra_words: [kasanayan, sahod]
+      - type: arrange
+        prompt: "I have five years of experience in this field."
+        answer_tl: May limang taon po akong karanasan sa larangang ito
+      - type: choice
+        prompt: "Which register belongs in an interview?"
+        answer: Nais ko pong mag-apply.
+        distractors: [Gusto kong mag-apply., Tara mag-apply., Pwede bang mag-apply?]
+      - type: arrange
+        prompt: "I finished college in the province."
+        answer_tl: Natapos ko po ang kolehiyo sa probinsya
+
+  - id: job-2
+    title: Strengths and weaknesses
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kalakasan, en: strength }
+          - { tl: kahinaan, en: weakness }
+          - { tl: masipag, en: hardworking }
+          - { tl: maaasahan, en: dependable }
+      - type: choice
+        prompt: "'Masipag ako' claims that you are..."
+        answer: hardworking
+        distractors: [lucky, patient only, well-connected]
+        audio: masipag_ako
+        audio_text: Masipag ako.
+      - type: fill_blank
+        sentence: "Ang ___ ko po ay ang pagiging maaasahan."
+        translation: "My strength is being dependable."
+        answer: kalakasan
+        options: [kalakasan, kahinaan, sahod]
+      - type: translate
+        prompt_tl: Ang kahinaan ko po ay masyado akong maingat.
+        answer_en: My weakness is that I am too careful.
+        accept:
+          - My weakness is being too careful
+        extra_words: [cheap, market, tomorrow]
+        audio: ang_kahinaan_ko_po
+      - type: translate
+        prompt_en: I learn quickly and I work well with others.
+        answer_tl: Mabilis po akong matuto at magaling makisama
+        accept:
+          - Mabilis akong matuto at magaling makisama
+        extra_words: [masipag, maaasahan, kalakasan]
+      - type: listen
+        audio: ano_po_ang_kalakasan_ninyo
+        answer_tl: Ano po ang kalakasan ninyo
+        extra_words: [kahinaan, masipag]
+      - type: arrange
+        prompt: "My strength is being dependable."
+        answer_tl: Ang kalakasan ko po ay ang pagiging maaasahan
+      - type: choice
+        prompt: "'Magaling makisama' describes someone who..."
+        answer: gets along with people
+        distractors: [works alone best, speaks many languages, arrives early]
+      - type: fill_blank
+        sentence: "___ po akong matuto ng bagong sistema."
+        translation: "I am quick to learn a new system."
+        answer: Mabilis
+        options: [Mabilis, Mabagal, Mahal]
+
+  - id: job-3
+    title: Salary and schedule
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: inaasahang sahod, en: expected salary }
+          - { tl: benepisyo, en: benefits }
+          - { tl: oras ng trabaho, en: working hours }
+          - { tl: lagpas sa oras, en: overtime }
+      - type: choice
+        prompt: "'Magkano po ang inaasahan ninyong sahod?' asks for..."
+        answer: your expected salary
+        distractors: [your last address, your school, your birthday]
+        audio: magkano_po_ang_inaasahan_ninyong_sahod
+        audio_text: Magkano po ang inaasahan ninyong sahod?
+      - type: fill_blank
+        sentence: "Ano po ang mga ___ sa kompanya?"
+        translation: "What are the benefits at the company?"
+        answer: benepisyo
+        options: [benepisyo, sahod, oras]
+      - type: translate
+        prompt_tl: Handa po akong mag-overtime kung kailangan.
+        answer_en: I am willing to work overtime if needed.
+        accept:
+          - I'm ready to do overtime if necessary
+        extra_words: [cheap, market, tomorrow]
+        audio: handa_po_akong_mag_overtime
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: What are the working hours?
+        answer_tl: Ano po ang oras ng trabaho?
+        accept:
+          - Anong oras po ang trabaho
+        extra_words: [sahod, benepisyo, overtime]
+      - type: listen
+        audio: handa_po_ako_mag_overtime
+        answer_tl: Handa po akong mag-overtime
+        extra_words: [sahod, benepisyo]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I am willing to work overtime if needed."
+        answer_tl: Handa po akong mag-overtime kung kailangan
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Naming a salary range instead of one number is..."
+        answer: a safer answer
+        distractors: [considered rude, never done, illegal]
+      - type: fill_blank
+        sentence: "Nakabatay po sa ___ ang inaasahan kong sahod."
+        translation: "My expected salary is based on my experience."
+        answer: karanasan
+        options: [karanasan, benepisyo, overtime]
+
+  - id: job-4
+    title: A full interview
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: An interview for an office job
+        lines:
+          - speaker: Tagapanayam
+            text: "Magandang umaga. ___ ninyo ang inyong sarili."
+            translation: "Good morning. Tell us about yourself."
+          - speaker: Aplikante
+            text: "Ako po si Elena. May limang taon po akong ___ sa accounting."
+            translation: "I am Elena. I have five years of experience in accounting."
+          - speaker: Tagapanayam
+            text: "Ano po ang inyong ___?"
+            translation: "What is your strength?"
+          - speaker: Aplikante
+            text: "___ po ako at maaasahan sa deadline."
+            translation: "I am hardworking and dependable with deadlines."
+        blanks:
+          - answer: Ikuwento
+            options: [Ikuwento, Kainin, Bilhin]
+          - answer: karanasan
+            options: [karanasan, sipit, kandila]
+          - answer: kalakasan
+            options: [kalakasan, kahinaan, sahod]
+          - answer: Masipag
+            options: [Masipag, Tamad, Pagod]
+      - type: match
+        pairs:
+          - { tl: aplikante, en: applicant }
+          - { tl: tagapanayam, en: interviewer }
+          - { tl: panayam, en: interview }
+          - { tl: tanggapin, en: to accept or hire }
+      - type: fill_blank
+        sentence: "Dala ko po ang aking ___."
+        translation: "I brought my resume."
+        answer: resume
+        options: [resume, sipit, kandila]
+      - type: translate
+        prompt_en: Thank you for your time, I look forward to your reply.
+        answer_tl: Salamat po sa inyong panahon, aabangan ko po ang inyong sagot
+        accept:
+          - Salamat po sa oras ninyo aabangan ko po ang sagot ninyo
+        extra_words: [aplikante, resume, benepisyo]
+      - type: translate
+        prompt_tl: Tatawagan po namin kayo sa susunod na linggo.
+        answer_en: We will call you next week.
+        accept:
+          - We'll contact you next week
+        extra_words: [cheap, market, tomorrow]
+        audio: tatawagan_po_namin_kayo_sa_susunod_na_linggo
+      - type: listen
+        audio: dala_ko_po_ang_aking_resume
+        answer_tl: Dala ko po ang aking resume
+        extra_words: [aplikante, benepisyo]
+      - type: choice
+        prompt: "In the dialogue, what field is Elena experienced in?"
+        answer: accounting
+        distractors: [teaching, nursing, engineering]
+      - type: arrange
+        prompt: "Thank you for your time."
+        answer_tl: Salamat po sa inyong panahon
+      - type: arrange
+        prompt: "I am hardworking and dependable with deadlines."
+        answer_tl: Masipag po ako at maaasahan sa deadline

@@ -1,5 +1,32 @@
 id: en-tl
 base_lang: en
 target_lang: tl
-version: 4
+version: 8
 title: "Tagalog for English speakers"
+
+# Difficulty tracks. Units name one via `tier:` and must stay contiguous —
+# the compiler enforces both. Order here is course order: a tier opens when
+# the previous one is finished, or when a learner places into it directly
+# (a `tier_started` progress event), which is what lets someone who already
+# speaks a little Tagalog skip ahead instead of restarting at "Kumusta".
+tiers:
+  - id: foundation
+    title: Foundations
+    description: Your first words — greetings, people, food, numbers, and getting around.
+    entry_hint: Start here if Tagalog is completely new to you.
+    color: "#4a8f00"
+  - id: everyday
+    title: Everyday Tagalog
+    description: Verbs, questions, particles and pronouns — enough to hold a simple exchange.
+    entry_hint: Start here if you can greet people, count, and name everyday things.
+    color: "#1cb0f6"
+  - id: conversational
+    title: Conversational
+    description: Aspect, linkers, descriptions and commands across real situations.
+    entry_hint: Start here if you can already ask questions and use mag-/-um- verbs.
+    color: "#ce82ff"
+  - id: mastery
+    title: Mastery
+    description: Idioms, formal register, storytelling, news and fast market Tagalog.
+    entry_hint: Start here if you follow everyday conversation and want polish.
+    color: "#ff9600"

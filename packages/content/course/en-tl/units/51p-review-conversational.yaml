@@ -1,0 +1,233 @@
+id: review-conversational
+title: "Review: Conversational"
+tier: conversational
+description: Interviews, hotels, complaints, advice and verb focus in one pass.
+tip: >-
+  This tier's real lesson is register. The same request is "Pahingi nga" with a
+  friend, "Pwede po bang humingi" with a stranger, and "Maaari po ba akong
+  humiling" in a letter. Choose the frame first, then fill in the verb — that
+  is how fluent speakers sound situationally right rather than merely correct.
+lessons:
+  - id: revconv-1
+    title: Formal situations
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: karanasan, en: experience }
+          - { tl: magpareserba, en: to reserve }
+          - { tl: tirahan, en: address }
+          - { tl: kontrata, en: contract }
+      - type: choice
+        prompt: "At an interview, the best opener is:"
+        answer: Magandang umaga po, ako po si Elena.
+        distractors: [Uy kumusta!, Magkano po ito?, Bahala na po.]
+        audio: magandang_umaga_po_ako_po_si_elena
+        audio_text: Magandang umaga po, ako po si Elena.
+      - type: fill_blank
+        sentence: "May limang taon po akong ___ sa trabahong ito."
+        translation: "I have five years of experience in this job."
+        answer: karanasan
+        options: [karanasan, tirahan, kontrata]
+      - type: translate
+        prompt_en: I would like to reserve a room for two nights.
+        answer_tl: Gusto ko po sanang magpareserba ng kuwarto para sa dalawang gabi
+        accept:
+          - Nais ko po sanang magpareserba ng kuwarto ng dalawang gabi
+        extra_words: [karanasan, kontrata, tirahan]
+      - type: translate
+        prompt_tl: Pipirmahan ko po ang kontrata bukas.
+        answer_en: I will sign the contract tomorrow.
+        accept:
+          - I'll sign the contract tomorrow
+        extra_words: [cheap, market, quickly]
+        audio: pipirmahan_ko_po_ang_kontrata_bukas
+      - type: listen
+        audio: ano_po_ang_karanasan_ninyo_2
+        answer_tl: Ano po ang karanasan ninyo
+        extra_words: [tirahan, kontrata]
+      - type: arrange
+        prompt: "I have five years of experience in this job."
+        answer_tl: May limang taon po akong karanasan sa trabahong ito
+      - type: choice
+        prompt: "Which word belongs to formal register?"
+        answer: maaari
+        distractors: [pwede, tara, sige]
+      - type: arrange
+        prompt: "I will sign the contract tomorrow."
+        answer_tl: Pipirmahan ko po ang kontrata bukas
+
+  - id: revconv-2
+    title: Problems and advice
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: A guest reports a problem, politely
+        lines:
+          - speaker: Bisita
+            text: "___ na po, pero sira po ang aircon sa kuwarto."
+            translation: "Sorry, but the air conditioner in the room is broken."
+          - speaker: Kawani
+            text: "Naku po, ___ po namin agad."
+            translation: "Oh no, we will fix it right away."
+          - speaker: Bisita
+            text: "Salamat po. ___ po bang lumipat sa ibang kuwarto?"
+            translation: "Thank you. Is it possible to move to another room?"
+          - speaker: Kawani
+            text: "Opo, may bakante po sa ikatlong palapag."
+            translation: "Yes, there is a vacancy on the third floor."
+        blanks:
+          - answer: Pasensya
+            options: [Pasensya, Salamat, Paalam]
+          - answer: aayusin
+            options: [aayusin, kakainin, ilalagay]
+          - answer: Pwede
+            options: [Pwede, Bawal, Ayaw]
+      - type: match
+        pairs:
+          - { tl: sira, en: broken }
+          - { tl: palitan, en: to replace }
+          - { tl: dapat, en: should }
+          - { tl: mag-ingat, en: be careful }
+      - type: fill_blank
+        sentence: "___ kang magpahinga, sobrang pagod ka na."
+        translation: "You should rest, you are extremely tired."
+        answer: Dapat
+        options: [Dapat, Bawal, Ayaw]
+      - type: translate
+        prompt_en: It would be better if you rested first.
+        answer_tl: Mas mabuti kung magpahinga ka muna
+        accept:
+          - Mas mabuti pa kung magpahinga ka muna
+        extra_words: [dapat, ingat, palitan]
+      - type: translate
+        prompt_tl: Mag-ingat ka, madulas ang sahig.
+        answer_en: Be careful, the floor is slippery.
+        accept:
+          - Be careful the floor is slippery
+        extra_words: [cheap, market, tomorrow]
+        audio: mag_ingat_ka_madulas_ang_sahig
+        grading: { hyphens: true }
+      - type: listen
+        audio: pwede_po_bang_palitan_ito
+        answer_tl: Pwede po bang palitan ito
+        extra_words: [sira, dapat]
+      - type: choice
+        prompt: "In the dialogue, what solution is offered?"
+        answer: a room on another floor
+        distractors: [a refund, a free breakfast, a later checkout]
+      - type: arrange
+        prompt: "Sorry, but the air conditioner is broken."
+        answer_tl: Pasensya na po pero sira ang aircon
+        accept:
+          - Pasensya na po, pero sira ang aircon
+
+  - id: revconv-3
+    title: Verb focus workout
+    xp: 20
+    exercises:
+      - type: arrange
+        prompt: "I already ate the rice."
+        answer_tl: Kinain ko na ang kanin
+      - type: arrange
+        prompt: "Put the key on the table."
+        answer_tl: Ilagay mo ang susi sa mesa
+      - type: arrange
+        prompt: "I had the car repaired at the mechanic."
+        answer_tl: Nagpaayos ako ng kotse sa mekaniko
+      - type: arrange
+        prompt: "We just arrived from the province."
+        answer_tl: Kakadating lang namin galing probinsya
+      - type: match
+        pairs:
+          - { tl: bumili ako, en: I bought (actor focus) }
+          - { tl: binili ko, en: I bought it (object focus) }
+          - { tl: nagpabili ako, en: I had it bought }
+          - { tl: kakabili lang, en: just bought }
+      - type: fill_blank
+        sentence: "___ mo ang liham bago ka pumirma."
+        translation: "Read the letter before you sign."
+        answer: Basahin
+        options: [Basahin, Bumasa, Magbabasa]
+      - type: choice
+        prompt: "Which sentence puts the object in the spotlight?"
+        answer: Binili ko ang tinapay.
+        distractors: [Bumili ako ng tinapay., Bibili ako ng tinapay., Bumibili siya ng tinapay.]
+      - type: translate
+        prompt_tl: Ipabili mo na rin ang gamot.
+        answer_en: Have the medicine bought as well.
+        accept:
+          - Have someone buy the medicine too
+        extra_words: [cheap, market, tomorrow]
+        audio: ipabili_mo_na_rin_ang_gamot
+      - type: listen
+        audio: kinain_ko_na_ang_kanin_2
+        answer_tl: Kinain ko na ang kanin
+        extra_words: [binili, ilagay]
+
+  - id: revconv-4
+    title: Everything together
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: Returning from a trip, catching up with a neighbor
+        lines:
+          - speaker: Aling Nena
+            text: "Uy, ___ lang kayo galing biyahe?"
+            translation: "Hey, did you just get back from the trip?"
+          - speaker: Rico
+            text: "Opo, ___ lang po kami kanina."
+            translation: "Yes, we just arrived earlier."
+          - speaker: Aling Nena
+            text: "___ ba ang panahon doon?"
+            translation: "Was the weather good there?"
+          - speaker: Rico
+            text: "Umuulan ___ hapon, pero maganda pa rin."
+            translation: "It rained every afternoon, but it was still nice."
+        blanks:
+          - answer: kakauwi
+            options: [kakauwi, kakakain, kakabili]
+          - answer: kakadating
+            options: [kakadating, kakaalis, kakainom]
+          - answer: Maganda
+            options: [Maganda, Sira, Mahal]
+          - answer: tuwing
+            options: [tuwing, kung, sana]
+      - type: match
+        pairs:
+          - { tl: biyahe, en: trip }
+          - { tl: panahon, en: weather }
+          - { tl: pinakamaganda, en: most beautiful }
+          - { tl: sana, en: hopefully }
+      - type: fill_blank
+        sentence: "___ ang Palawan sa lahat ng napuntahan namin."
+        translation: "Palawan is the most beautiful of all the places we visited."
+        answer: Pinakamaganda
+        options: [Pinakamaganda, Mas maganda, Kasingganda]
+      - type: translate
+        prompt_en: I hope we can go back next year.
+        answer_tl: Sana makabalik kami sa susunod na taon
+        accept:
+          - Sana ay makabalik kami sa susunod na taon
+        extra_words: [biyahe, panahon, kaysa]
+      - type: translate
+        prompt_tl: Mas mura ang bus kaysa eroplano.
+        answer_en: The bus is cheaper than the plane.
+        accept:
+          - The bus costs less than the plane
+        extra_words: [cheap, market, tomorrow]
+        audio: mas_mura_ang_bus_kaysa_eroplano
+      - type: listen
+        audio: sana_makabalik_kami
+        answer_tl: Sana makabalik kami
+        extra_words: [biyahe, panahon]
+      - type: choice
+        prompt: "In the dialogue, what was the weather like?"
+        answer: rainy every afternoon
+        distractors: [sunny all week, cold at night, stormy the whole time]
+      - type: arrange
+        prompt: "Palawan is the most beautiful island."
+        answer_tl: Ang Palawan ang pinakamagandang isla
+      - type: arrange
+        prompt: "I hope we can go back next year."
+        answer_tl: Sana makabalik kami sa susunod na taon

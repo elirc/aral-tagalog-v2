@@ -12,6 +12,13 @@ export interface CourseBundle {
   targetLang: LangCode;
   version: number;
   title: string;
+
+  /**
+   * Ordered difficulty tracks (Foundations → Mastery). Every unit names one
+   * via `Unit.tier`. Optional: a bundle without tiers is a flat course that
+   * unlocks linearly, exactly as it did before tiers existed.
+   */
+  tiers?: CourseTier[];
   units: Unit[];
   /** vocabId -> entry; exercises reference these for audio/translations */
   vocab: Record<string, VocabEntry>;
@@ -32,9 +39,27 @@ export interface VocabEntry {
   notes?: string;
 }
 
+/**
+ * A difficulty track. Tiers group units into skill levels so a learner who
+ * already speaks some Tagalog can be placed into a later track instead of
+ * grinding up from unit 1 (a `tier_started` progress event records the jump).
+ */
+export interface CourseTier {
+  id: string;
+  title: string;
+  /** one-line pitch shown on the course map and the placement screen */
+  description?: string;
+  /** what a learner entering here is assumed to know already */
+  entryHint?: string;
+  /** accent color for this tier's section of the course map */
+  color?: string;
+}
+
 export interface Unit {
   id: string;
   title: string;
+  /** id of the CourseTier this unit belongs to; undefined in a flat course */
+  tier?: string;
   description?: string;
   /** short grammar/culture note shown on the course map */
   tip?: string;
@@ -112,11 +137,91 @@ export interface GradingFlags {
   hyphens?: boolean;
 }
 
+/**
+ * Word-order drill: the tokens are exactly the answer’s words, shuffled, with
+ * no distractors. Unlike translate_taps (which tests vocabulary recall) the
+ * learner already has every word and only has to get Tagalog syntax right —
+ * an advanced-tier exercise.
+ */
+export interface ArrangeExercise extends ExerciseBase {
+  type: "arrange";
+  /** what the sentence should mean, shown above the tokens */
+  prompt: string;
+  answer: string;
+  accept?: string[];
+  tokens: string[];
+  grading?: GradingFlags;
+}
+
+export interface DialogueLine {
+  /** who is speaking, e.g. "Tindera" */
+  speaker?: string;
+  /** line text; each "___" is filled by the next entry in `blanks` */
+  text: string;
+  /** English gloss shown under the line */
+  translation?: string;
+}
+
+export interface DialogueBlank {
+  answer: string;
+  accept?: string[];
+  /** rendered as buttons for this blank; free text input when omitted */
+  options?: string[];
+}
+
+/**
+ * A short conversation (or passage) with several blanks — reading
+ * comprehension in context rather than one sentence at a time. Answered as a
+ * string[] parallel to `blanks`; every blank must be right for the exercise
+ * to count as correct.
+ */
+export interface DialogueExercise extends ExerciseBase {
+  type: "dialogue";
+  /** scene-setting line, e.g. "At the market" */
+  intro?: string;
+  lines: DialogueLine[];
+  blanks: DialogueBlank[];
+  grading?: GradingFlags;
+}
+
 export type Exercise =
   | ChoiceExercise
   | TranslateTapsExercise
   | ListenExercise
   | MatchPairsExercise
-  | FillBlankExercise;
+  | FillBlankExercise
+  | ArrangeExercise
+  | DialogueExercise;
 
 export type ExerciseType = Exercise["type"];
+
+/** Lightweight navigation data: exercise bodies are loaded only for play. */
+export type LessonOverview = Pick<Lesson, "id" | "title" | "xp">;
+export type UnitOverview = Omit<Unit, "lessons"> & { lessons: LessonOverview[] };
+
+export interface WebCourseIndex extends Omit<CourseBundle, "units" | "vocab" | "audio" | "audioTexts"> {
+  units: Array<UnitOverview & { file: string }>;
+  vocabFile: string;
+  /** Hashed, partitioned exercise-ID lookups, fetched only for mistake review. */
+  reviewFiles: string[];
+}
+
+export interface WebUnitContent {
+  courseId: string;
+  version: number;
+  unit: Unit;
+  audio: CourseBundle["audio"];
+  audioTexts: NonNullable<CourseBundle["audioTexts"]>;
+}
+export interface WebVocabContent {
+  courseId: string;
+  version: number;
+  vocab: CourseBundle["vocab"];
+  audio: CourseBundle["audio"];
+}
+export interface WebReviewIndex {
+  courseId: string;
+  version: number;
+  /** Exercise ID to the index of its unit in WebCourseIndex.units. */
+  unitsByExercise: Record<string, number>;
+}

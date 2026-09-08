@@ -1,0 +1,226 @@
+id: naming-things
+title: What Is This?
+tier: foundation
+description: Point at anything and ask for its name — the fastest way to grow vocabulary.
+tip: >-
+  Tagalog has three "this/that" words by distance: ito (near me), iyan (near
+  you), iyon (far from both). Spoken, they shrink to 'to, 'yan and 'yun. Pair
+  them with ano to ask names: "Ano ito?" — What is this?
+lessons:
+  - id: name-1
+    title: This and that
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ito, en: this (near me) }
+          - { tl: iyan, en: that (near you) }
+          - { tl: iyon, en: that (far away) }
+          - { tl: ano, en: what }
+      - type: choice
+        prompt: "You hold something and ask its name. You say:"
+        answer: Ano ito?
+        distractors: [Sino ito?, Saan ito?, Kailan ito?]
+        audio: ano_ito
+        audio_text: Ano ito?
+      - type: fill_blank
+        sentence: "___ ito?"
+        translation: "What is this?"
+        answer: Ano
+        options: [Ano, Sino, Saan]
+      - type: translate
+        prompt_tl: Aklat ito.
+        answer_en: This is a book.
+        accept:
+          - It is a book
+        extra_words: [tomorrow, cheap, market]
+        audio: aklat_ito
+      - type: translate
+        prompt_en: What is that?
+        answer_tl: Ano iyan?
+        accept:
+          - Ano 'yan
+        extra_words: [ito, iyon, sino]
+      - type: listen
+        audio: ano_iyon
+        answer_tl: Ano iyon
+        extra_words: [ito, iyan]
+      - type: choice
+        prompt: "Which word points at something far from both of you?"
+        answer: iyon
+        distractors: [ito, iyan, ako]
+      - type: fill_blank
+        sentence: "Bahay ___ sa dulo ng kalye."
+        translation: "That is a house at the end of the street."
+        answer: iyon
+        options: [iyon, ito, ako]
+      - type: translate
+        prompt_tl: Hindi ko alam kung ano iyan.
+        answer_en: I do not know what that is.
+        accept:
+          - I don't know what that is
+        extra_words: [quickly, morning, cheap]
+        audio: hindi_ko_alam_kung_ano_iyan
+
+  - id: name-2
+    title: Everyday objects
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: telepono, en: telephone }
+          - { tl: orasan, en: clock }
+          - { tl: pinggan, en: plate }
+          - { tl: kutsara, en: spoon }
+      - type: choice
+        prompt: "You eat rice with a..."
+        answer: kutsara
+        distractors: [orasan, telepono, tuwalya]
+        audio: kutsara
+        audio_text: Kutsara.
+      - type: fill_blank
+        sentence: "Nasa dingding ang ___."
+        translation: "The clock is on the wall."
+        answer: orasan
+        options: [orasan, pinggan, kutsara]
+      - type: translate
+        prompt_en: This is my phone.
+        answer_tl: Telepono ko ito
+        accept:
+          - Ito ang telepono ko
+        extra_words: [orasan, pinggan, kutsara]
+      - type: translate
+        prompt_tl: Malinis ang mga pinggan.
+        answer_en: The plates are clean.
+        accept:
+          - The dishes are clean
+        extra_words: [tomorrow, cheap, market]
+        audio: malinis_ang_mga_pinggan
+      - type: listen
+        audio: nasaan_ang_kutsara
+        answer_tl: Nasaan ang kutsara
+        extra_words: [pinggan, orasan]
+      - type: choice
+        prompt: "'Tinidor' is the partner of 'kutsara'. It means..."
+        answer: fork
+        distractors: [knife, plate, cup]
+      - type: fill_blank
+        sentence: "Pahingi po ng ___ at tinidor."
+        translation: "May I have a spoon and fork?"
+        answer: kutsara
+        options: [kutsara, orasan, telepono]
+      - type: translate
+        prompt_en: That is a clock, not a phone.
+        answer_tl: Orasan iyan, hindi telepono
+        accept:
+          - Orasan iyan hindi telepono
+        extra_words: [pinggan, kutsara, ito]
+
+  - id: name-3
+    title: Big, small, new, old
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malaki, en: big }
+          - { tl: maliit, en: small }
+          - { tl: bago, en: new }
+          - { tl: luma, en: old (of things) }
+      - type: choice
+        prompt: "'Luma' describes..."
+        answer: an old thing
+        distractors: [an old person, a big house, a new bag]
+        audio: luma
+        audio_text: Luma.
+      - type: fill_blank
+        sentence: "___ ang bahay nila, sampung silid."
+        translation: "Their house is big, ten rooms."
+        answer: Malaki
+        options: [Malaki, Maliit, Luma]
+      - type: translate
+        prompt_tl: Maliit ang telepono ko pero bago.
+        answer_en: My phone is small but new.
+        accept:
+          - My phone is small but it is new
+        extra_words: [cheap, tomorrow, market]
+        audio: maliit_ang_telepono_ko_pero_bago
+      - type: translate
+        prompt_en: This bag is old.
+        answer_tl: Luma na ang bag na ito
+        accept:
+          - Luma ang bag na ito
+        extra_words: [bago, malaki, maliit]
+      - type: listen
+        audio: malaki_ba_ito
+        answer_tl: Malaki ba ito
+        extra_words: [maliit, bago]
+      - type: choice
+        prompt: "For an old *person* Tagalog uses..."
+        answer: matanda
+        distractors: [luma, malaki, maliit]
+      - type: fill_blank
+        sentence: "___ na ang lolo ko, walumpu na siya."
+        translation: "My grandfather is old, he is eighty."
+        answer: Matanda
+        options: [Matanda, Luma, Bago]
+      - type: translate
+        prompt_tl: Bago ang sapatos pero luma ang bag.
+        answer_en: The shoes are new but the bag is old.
+        accept:
+          - The shoes are new but the bag is old already
+        extra_words: [quickly, morning, cheap]
+        audio: bago_ang_sapatos_pero_luma_ang_bag
+
+  - id: name-4
+    title: Asking about things
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You do not know a word. The most useful question is:"
+        answer: Ano ang tawag dito sa Tagalog?
+        distractors: [Magkano po ito?, Taga-saan ka?, Ilang taon ka na?]
+        audio: ano_ang_tawag_dito_sa_tagalog
+        audio_text: Ano ang tawag dito sa Tagalog?
+      - type: match
+        pairs:
+          - { tl: tawag, en: name or call }
+          - { tl: kanino, en: whose }
+          - { tl: alin, en: which }
+          - { tl: para kanino, en: for whom }
+      - type: fill_blank
+        sentence: "___ ang bag na ito?"
+        translation: "Whose bag is this?"
+        answer: Kanino
+        options: [Kanino, Magkano, Kailan]
+      - type: translate
+        prompt_en: Which one is yours?
+        answer_tl: Alin ang sa iyo?
+        accept:
+          - Alin ang iyo
+        extra_words: [kanino, ano, sino]
+      - type: translate
+        prompt_tl: Akin ang aklat na iyan.
+        answer_en: That book is mine.
+        accept:
+          - That book belongs to me
+        extra_words: [market, tomorrow, cheap]
+        audio: akin_ang_aklat_na_iyan
+      - type: listen
+        audio: kanino_ito
+        answer_tl: Kanino ito
+        extra_words: [alin, ano]
+      - type: choice
+        prompt: "'Alin' asks you to..."
+        answer: choose between options
+        distractors: [name an owner, give a price, tell a time]
+      - type: fill_blank
+        sentence: "Ano ang ___ nito sa Tagalog?"
+        translation: "What is this called in Tagalog?"
+        answer: tawag
+        options: [tawag, bahay, tubig]
+      - type: translate
+        prompt_en: Whose slippers are these?
+        answer_tl: Kanino ang tsinelas na ito?
+        accept:
+          - Kanino ang tsinelas na ito
+        extra_words: [alin, ano, sino]

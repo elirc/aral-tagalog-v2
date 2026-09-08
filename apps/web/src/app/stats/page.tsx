@@ -1,5 +1,7 @@
 "use client";
 
+import { useClock } from "@/lib/use-clock";
+
 import Link from "next/link";
 import {
   ACHIEVEMENTS,
@@ -11,6 +13,7 @@ import {
   type AchievementDef,
 } from "@aral/core";
 import { Header } from "@/components/Header";
+import { QuestPanel } from "@/components/QuestPanel";
 import { bundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
 
@@ -53,17 +56,18 @@ const GOAL_PRESETS = [
 
 export default function StatsPage() {
   const { progress, ready, user } = useProgress();
+  const clockNow = useClock();
 
   if (!ready) {
     return (
       <>
         <Header />
-        <main className="container" />
+        <main id="main-content" tabIndex={-1} className="container"><p role="status">Loading your progress…</p></main>
       </>
     );
   }
 
-  const now = Date.now();
+  const now = clockNow;
   const tz = deviceTz();
   const todayKey = localDayKey(now, tz);
 
@@ -80,7 +84,7 @@ export default function StatsPage() {
   return (
     <>
       <Header />
-      <main className="container">
+      <main id="main-content" tabIndex={-1} className="container">
         <h1 className="page-title">Your stats</h1>
         {!user ? (
           <p className="page-sub">
@@ -157,6 +161,9 @@ export default function StatsPage() {
           </div>
         </div>
 
+        {/* --- daily quests (the panel brings its own heading) --- */}
+        <QuestPanel progress={progress} />
+
         {/* --- last-14-days XP --- */}
         <h2 className="section-title">Last 14 days</h2>
         <div className="card">
@@ -224,13 +231,14 @@ function GoalRing({ todayXp, goal }: { todayXp: number; goal: number }) {
 function GoalEditor({ goal }: { goal: number }) {
   const { addEvents } = useProgress();
   const setGoal = (goalXp: number) => {
+    if (goalXp === goal) return;
     addEvents([{ id: newEventId(), type: "goal_set", occurredAt: Date.now(), goalXp }]);
   };
   return (
     <div className="goal-editor">
       <p style={{ margin: 0, fontWeight: 700 }}>Set your daily XP goal</p>
       <p style={{ margin: "2px 0 0", color: "var(--text-muted)", fontSize: 13 }}>
-        Pick a target that keeps your streak going.
+        Choose a target you can return to each day.
       </p>
       <div className="goal-presets">
         {GOAL_PRESETS.map((p) => (
@@ -245,6 +253,7 @@ function GoalEditor({ goal }: { goal: number }) {
           </button>
         ))}
       </div>
+      <p className="field-help" role="status">Daily goal: {goal} XP. Your choice is saved automatically.</p>
     </div>
   );
 }

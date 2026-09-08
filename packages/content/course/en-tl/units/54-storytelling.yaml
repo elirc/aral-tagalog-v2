@@ -1,0 +1,289 @@
+id: storytelling
+title: Telling a Story
+tier: mastery
+description: Narrate the past — set a scene, sequence events, and land a twist.
+tip: >-
+  Stories run on three joints. "Noong" opens the past (noong bata ako — when I
+  was a child), "pagkatapos" and "kinabukasan" push it forward (afterwards, the
+  next day), and "kaya" / "dahil" tie cause to effect. Keep the verb in the
+  completed aspect — nagpunta, bumili, nakita — and the sequence words do the
+  rest of the work.
+lessons:
+  - id: story-1
+    title: Setting the scene
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: noong bata ako, en: when I was a child }
+          - { tl: isang araw, en: one day }
+          - { tl: noong nakaraang taon, en: last year }
+          - { tl: matagal nang panahon, en: a long time ago }
+      - type: choice
+        prompt: "A Tagalog story usually opens with:"
+        answer: Noong unang panahon
+        distractors: [Sa wakas, Kinabukasan, Kaya pala]
+        audio: noong_unang_panahon
+        audio_text: Noong unang panahon.
+      - type: fill_blank
+        sentence: "___ bata ako, nakatira kami sa probinsya."
+        translation: "When I was a child, we lived in the province."
+        answer: Noong
+        options: [Noong, Bukas, Habang]
+      - type: arrange
+        prompt: "One day, my grandmother took me to the market."
+        answer_tl: Isang araw isinama ako ng lola ko sa palengke
+        accept:
+          - Isang araw, isinama ako ng lola ko sa palengke
+      - type: translate
+        prompt_tl: Noong nakaraang taon, unang beses akong nagpunta sa Baguio.
+        answer_en: Last year, I went to Baguio for the first time.
+        accept:
+          - Last year I went to Baguio for the first time
+        extra_words: [tomorrow, cheaper, quietly]
+        audio: noong_nakaraang_taon_nagpunta_ako_sa_baguio
+      - type: dialogue
+        intro: A grandmother begins a story
+        lines:
+          - speaker: Lola
+            text: "___ bata pa ako, walang kuryente sa amin."
+            translation: "When I was still a child, we had no electricity."
+          - speaker: Apo
+            text: "Talaga po? Paano po kayo nag-aaral sa gabi?"
+            translation: "Really? How did you study at night?"
+          - speaker: Lola
+            text: "___ araw, may bagyo, kaya gamit namin ang gasera."
+            translation: "One day, there was a storm, so we used an oil lamp."
+        blanks:
+          - answer: Noong
+            options: [Noong, Bukas, Mamaya]
+          - answer: Isang
+            options: [Isang, Walang, Marami]
+      - type: choice
+        prompt: "'Matagal nang panahon ang nakalipas' places the story..."
+        answer: far in the past
+        distractors: [tomorrow, this morning, next week]
+      - type: translate
+        prompt_en: When I was a child, we lived near the sea.
+        answer_tl: Noong bata ako, nakatira kami malapit sa dagat
+        accept:
+          - Noong bata pa ako nakatira kami malapit sa dagat
+        extra_words: [bukas, mamaya, mahal]
+      - type: listen
+        audio: noong_bata_pa_ako
+        answer_tl: Noong bata pa ako
+        extra_words: [isang, araw]
+
+  - id: story-2
+    title: What happened next
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pagkatapos, en: afterwards }
+          - { tl: kinabukasan, en: the next day }
+          - { tl: habang, en: while }
+          - { tl: sa wakas, en: at last }
+      - type: fill_blank
+        sentence: "Kumain kami, ___ nanood kami ng pelikula."
+        translation: "We ate, then we watched a movie."
+        answer: pagkatapos
+        options: [pagkatapos, kanina, bukas]
+      - type: arrange
+        prompt: "The next day, we went back to the mountain."
+        answer_tl: Kinabukasan bumalik kami sa bundok
+        accept:
+          - Kinabukasan, bumalik kami sa bundok
+      - type: choice
+        prompt: "'Habang naghihintay ako' means..."
+        answer: while I was waiting
+        distractors: [before I waited, after I waited, because I waited]
+        audio: habang_naghihintay_ako
+        audio_text: Habang naghihintay ako.
+      - type: dialogue
+        intro: Telling a friend about a long trip
+        lines:
+          - speaker: Ana
+            text: "Umalis kami ng alas-singko ng umaga."
+            translation: "We left at five in the morning."
+          - speaker: Ben
+            text: "Tapos po?"
+            translation: "And then?"
+          - speaker: Ana
+            text: "___ ng biyahe, natulog ang mga bata."
+            translation: "During the trip, the children slept."
+          - speaker: Ana
+            text: "___, nakarating kami ng alas-dose."
+            translation: "At last, we arrived at twelve."
+        blanks:
+          - answer: Habang
+            options: [Habang, Bago, Dahil]
+          - answer: Sa wakas
+            options: [Sa wakas, Kinabukasan, Isang araw]
+      - type: translate
+        prompt_tl: Pagkatapos kumain, naglakad kami sa tabing-dagat.
+        answer_en: After eating, we walked along the shore.
+        accept:
+          - After we ate we walked along the shore
+        extra_words: [market, expensive, tomorrow]
+        audio: pagkatapos_kumain_naglakad_kami
+      - type: translate
+        prompt_en: The next day, my father repaired the roof.
+        answer_tl: Kinabukasan, inayos ng tatay ko ang bubong
+        accept:
+          - Kinabukasan inayos ng tatay ko ang bubong
+        extra_words: [bukas, kanina, mamaya]
+      - type: choice
+        prompt: "Which word ends a story rather than continuing it?"
+        answer: sa wakas
+        distractors: [pagkatapos, habang, saka]
+      - type: listen
+        audio: kinabukasan_bumalik_kami
+        answer_tl: Kinabukasan bumalik kami
+        extra_words: [pagkatapos, wakas]
+
+  - id: story-3
+    title: Twists and reasons
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bigla, en: suddenly }
+          - { tl: kaya, en: so / therefore }
+          - { tl: dahil, en: because }
+          - { tl: pala, en: turns out }
+      - type: fill_blank
+        sentence: "Umuwi kami nang maaga ___ umuulan."
+        translation: "We went home early because it was raining."
+        answer: dahil
+        options: [dahil, kaya, pala]
+        hint: '"dahil" introduces the cause; "kaya" introduces the result.'
+      - type: choice
+        prompt: "'Kaya pala malungkot siya' means..."
+        answer: So that's why he's sad
+        distractors: [He is suddenly sad, He is not sad, Why is he sad?]
+        audio: kaya_pala_malungkot_siya
+        audio_text: Kaya pala malungkot siya.
+      - type: arrange
+        prompt: "Suddenly, the lights went out."
+        answer_tl: Biglang namatay ang mga ilaw
+      - type: translate
+        prompt_tl: Nawala ang susi ko, kaya hindi ako nakapasok.
+        answer_en: I lost my key, so I could not get in.
+        accept:
+          - I lost my key so I couldn't get in
+        extra_words: [tomorrow, cheaply, market]
+        audio: nawala_ang_susi_ko_kaya_hindi_ako_nakapasok
+      - type: dialogue
+        intro: Explaining a strange morning
+        lines:
+          - speaker: Toni
+            text: "Bakit ka huli kanina?"
+            translation: "Why were you late earlier?"
+          - speaker: Rex
+            text: "___ na-flat ang gulong ko sa daan."
+            translation: "Suddenly my tire went flat on the road."
+          - speaker: Toni
+            text: "Kaya ___ hindi ka sumagot sa tawag ko."
+            translation: "So that's why you didn't answer my call."
+          - speaker: Rex
+            text: "Oo, ___ lowbat na rin ang telepono ko."
+            translation: "Yes, because my phone was also low on battery."
+        blanks:
+          - answer: Biglang
+            options: [Biglang, Bukas, Palagi]
+          - answer: pala
+            options: [pala, daw, ba]
+          - answer: dahil
+            options: [dahil, kaya, habang]
+      - type: choice
+        prompt: "Which particle marks a fact you have only just realised?"
+        answer: pala
+        distractors: [daw, ba, naman]
+      - type: translate
+        prompt_en: It rained suddenly, so the game stopped.
+        answer_tl: Biglang umulan, kaya tumigil ang laro
+        accept:
+          - Biglang umulan kaya tumigil ang laro
+        extra_words: [dahil, pala, bukas]
+      - type: listen
+        audio: biglang_umulan_kaya_umuwi_kami
+        answer_tl: Biglang umulan kaya umuwi kami
+        extra_words: [dahil, pala]
+
+  - id: story-4
+    title: A whole story
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: "Reading: Ang Nawawalang Pusa (The Missing Cat) — part 1"
+        lines:
+          - speaker: Kuwento
+            text: "___ nakaraang buwan, nawala ang pusa naming si Muning."
+            translation: "Last month, our cat Muning went missing."
+          - speaker: Kuwento
+            text: "Hinanap namin siya sa buong kalye, ___ wala kaming nakita."
+            translation: "We looked for her along the whole street, but we saw nothing."
+          - speaker: Kuwento
+            text: "___, may kumatok sa pinto."
+            translation: "The next day, someone knocked at the door."
+        blanks:
+          - answer: Noong
+            options: [Noong, Bukas, Mamaya]
+          - answer: pero
+            options: [pero, kaya, dahil]
+          - answer: Kinabukasan
+            options: [Kinabukasan, Kahapon, Ngayon]
+      - type: dialogue
+        intro: "Ang Nawawalang Pusa — part 2"
+        lines:
+          - speaker: Kapitbahay
+            text: "May pusa po sa aming bubong. Kayo po ba ang may-ari?"
+            translation: "There's a cat on our roof. Are you the owner?"
+          - speaker: Ako
+            text: "Si Muning ___! Salamat po sa pagsabi."
+            translation: "That's Muning! Thank you for telling us."
+          - speaker: Kuwento
+            text: "___, nakauwi rin si Muning — gutom pero ligtas."
+            translation: "At last, Muning came home too — hungry but safe."
+        blanks:
+          - answer: pala
+            options: [pala, daw, ba]
+          - answer: Sa wakas
+            options: [Sa wakas, Isang araw, Habang]
+      - type: choice
+        prompt: "In the story, why did nobody find Muning on the street?"
+        answer: She was on a neighbor's roof.
+        distractors: [She had gone to the market., She was asleep at home., She had followed a dog.]
+      - type: arrange
+        prompt: "Last month, our cat went missing."
+        answer_tl: Noong nakaraang buwan nawala ang pusa namin
+        accept:
+          - Noong nakaraang buwan, nawala ang pusa namin
+      - type: translate
+        prompt_tl: Hinanap namin siya sa buong kalye pero wala kaming nakita.
+        answer_en: We looked for her along the whole street but we saw nothing.
+        accept:
+          - We searched for her along the whole street but saw nothing
+        extra_words: [tomorrow, expensive, again]
+        audio: hinanap_namin_siya_sa_buong_kalye
+      - type: fill_blank
+        sentence: "Sa ___, nakauwi rin ang pusa namin."
+        translation: "At last, our cat came home."
+        answer: wakas
+        options: [wakas, umaga, palengke]
+      - type: translate
+        prompt_en: The next day, someone knocked at the door.
+        answer_tl: Kinabukasan, may kumatok sa pinto
+        accept:
+          - Kinabukasan may kumatok sa pinto
+        extra_words: [bintana, bukas, kanina]
+      - type: arrange
+        prompt: "At last, Muning came home hungry but safe."
+        answer_tl: Sa wakas nakauwi si Muning na gutom pero ligtas
+        accept:
+          - Sa wakas, nakauwi si Muning na gutom pero ligtas
+      - type: listen
+        audio: nawala_ang_pusa_namin
+        answer_tl: Nawala ang pusa namin
+        extra_words: [kinabukasan, wakas]

@@ -1,0 +1,223 @@
+id: causative
+title: Having It Done
+tier: conversational
+description: The magpa- family — asking someone else to do the work.
+tip: >-
+  Magpa- means "to have something done": magpagupit (get a haircut), magpaluto
+  (have food cooked), magpaayos (have something repaired). The person who does
+  the work is marked with sa or ng: "Nagpagupit ako sa barbero." This is one of
+  the highest-value patterns in Tagalog — half of daily errands use it.
+lessons:
+  - id: caus-1
+    title: The magpa- pattern
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magpagupit, en: to get a haircut }
+          - { tl: magpaayos, en: to have repaired }
+          - { tl: magpaluto, en: to have cooked }
+          - { tl: magpalinis, en: to have cleaned }
+      - type: choice
+        prompt: "'Nagpagupit ako' means..."
+        answer: I got a haircut
+        distractors: [I cut hair, I bought scissors, I grew my hair]
+        audio: nagpagupit_ako
+        audio_text: Nagpagupit ako.
+      - type: fill_blank
+        sentence: "___ ako ng sapatos sa sapatero."
+        translation: "I had my shoes repaired at the cobbler."
+        answer: Nagpaayos
+        options: [Nagpaayos, Nagluto, Naglaba]
+      - type: translate
+        prompt_tl: Magpapaluto ako ng adobo para bukas.
+        answer_en: I will have adobo cooked for tomorrow.
+        accept:
+          - I'll have someone cook adobo for tomorrow
+        extra_words: [cheap, market, quickly]
+        audio: magpapaluto_ako_ng_adobo_para_bukas
+      - type: translate
+        prompt_en: I will get a haircut on Saturday.
+        answer_tl: Magpapagupit ako sa Sabado
+        accept:
+          - Magpapagupit ako ng Sabado
+        extra_words: [magpaayos, magpaluto, magpalinis]
+      - type: listen
+        audio: nagpagupit_ako_kahapon
+        answer_tl: Nagpagupit ako kahapon
+        extra_words: [magpaayos, magpaluto]
+      - type: arrange
+        prompt: "I had my shoes repaired at the cobbler."
+        answer_tl: Nagpaayos ako ng sapatos sa sapatero
+      - type: choice
+        prompt: "The difference between 'naglinis' and 'nagpalinis' is who..."
+        answer: did the work
+        distractors: [paid for it, owns the house, was watching]
+      - type: arrange
+        prompt: "I will get a haircut on Saturday."
+        answer_tl: Magpapagupit ako sa Sabado
+
+  - id: caus-2
+    title: Who does it
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: barbero, en: barber }
+          - { tl: sapatero, en: cobbler }
+          - { tl: mekaniko, en: mechanic }
+          - { tl: karpintero, en: carpenter }
+      - type: choice
+        prompt: "To fix a car you go to a..."
+        answer: mekaniko
+        distractors: [barbero, sapatero, kartero]
+        audio: mekaniko
+        audio_text: Mekaniko.
+      - type: fill_blank
+        sentence: "Nagpaayos ako ng kotse sa ___."
+        translation: "I had the car repaired at the mechanic."
+        answer: mekaniko
+        options: [mekaniko, barbero, kartero]
+      - type: translate
+        prompt_tl: Nagpagawa kami ng mesa sa karpintero.
+        answer_en: We had a table made by the carpenter.
+        accept:
+          - We had the carpenter make a table
+        extra_words: [cheap, market, tomorrow]
+        audio: nagpagawa_kami_ng_mesa_sa_karpintero
+      - type: translate
+        prompt_en: I will have my shoes repaired at the cobbler.
+        answer_tl: Magpapaayos ako ng sapatos sa sapatero
+        accept:
+          - Ipapaayos ko ang sapatos sa sapatero
+        extra_words: [mekaniko, barbero, karpintero]
+      - type: listen
+        audio: nagpaayos_ako_sa_mekaniko
+        answer_tl: Nagpaayos ako sa mekaniko
+        extra_words: [barbero, karpintero]
+      - type: arrange
+        prompt: "We had a table made by the carpenter."
+        answer_tl: Nagpagawa kami ng mesa sa karpintero
+      - type: choice
+        prompt: "Which marks the person doing the work?"
+        answer: sa
+        distractors: [ang, ay, at]
+      - type: fill_blank
+        sentence: "Magpapagupit ako sa ___ sa kanto."
+        translation: "I will get a haircut at the barber on the corner."
+        answer: barbero
+        options: [barbero, mekaniko, sapatero]
+
+  - id: caus-3
+    title: Asking someone to do it
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ipagawa, en: to have made }
+          - { tl: ipaluto, en: to have cooked }
+          - { tl: ipahatid, en: to have delivered }
+          - { tl: ipabili, en: to have bought }
+      - type: choice
+        prompt: "'Ipabili mo na rin ang tinapay' asks someone to..."
+        answer: buy bread for you
+        distractors: [sell bread, eat bread, bake bread]
+        audio: ipabili_mo_na_rin_ang_tinapay
+        audio_text: Ipabili mo na rin ang tinapay.
+      - type: fill_blank
+        sentence: "___ mo ang pakete sa opisina."
+        translation: "Have the parcel delivered to the office."
+        answer: Ipahatid
+        options: [Ipahatid, Ipaluto, Ipabili]
+      - type: translate
+        prompt_tl: Ipagawa mo ang bakod sa karpintero.
+        answer_en: Have the fence made by the carpenter.
+        accept:
+          - Have the carpenter make the fence
+        extra_words: [cheap, market, tomorrow]
+        audio: ipagawa_mo_ang_bakod_sa_karpintero
+      - type: translate
+        prompt_en: Please have the rice cooked before we arrive.
+        answer_tl: Pakipaluto po ang kanin bago kami dumating
+        accept:
+          - Ipaluto po ninyo ang kanin bago kami dumating
+        extra_words: [ipabili, ipahatid, ipagawa]
+      - type: listen
+        audio: ipabili_mo_na_rin_ito
+        answer_tl: Ipabili mo na rin ito
+        extra_words: [ipahatid, ipaluto]
+      - type: arrange
+        prompt: "Have the parcel delivered to the office."
+        answer_tl: Ipahatid mo ang pakete sa opisina
+      - type: choice
+        prompt: "The 'ipa-' forms focus on..."
+        answer: the thing being handled
+        distractors: [the person doing it, the time, the place]
+      - type: arrange
+        prompt: "Have the fence made by the carpenter."
+        answer_tl: Ipagawa mo ang bakod sa karpintero
+
+  - id: caus-4
+    title: A day of errands, delegated
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: A household divides tasks it will not do itself
+        lines:
+          - speaker: Nanay
+            text: "___ mo ang kotse sa mekaniko bukas."
+            translation: "Have the car repaired at the mechanic tomorrow."
+          - speaker: Ben
+            text: "Opo. ___ din po ba ako ng buhok?"
+            translation: "Yes. Should I also get a haircut?"
+          - speaker: Nanay
+            text: "Oo, at ___ mo na rin ang bigas sa tindahan."
+            translation: "Yes, and have the rice bought at the store too."
+          - speaker: Ben
+            text: "Sige po, isusulat ko sa listahan."
+            translation: "All right, I will write it on the list."
+        blanks:
+          - answer: Ipaayos
+            options: [Ipaayos, Ipaluto, Ipahatid]
+          - answer: magpapagupit
+            options: [magpapagupit, maglalaba, magluluto]
+          - answer: ipabili
+            options: [ipabili, ipaluto, ipagawa]
+      - type: match
+        pairs:
+          - { tl: talyer, en: repair shop }
+          - { tl: bayad sa serbisyo, en: service fee }
+          - { tl: kailan matatapos, en: when will it be done }
+          - { tl: susunduin, en: will pick up }
+      - type: fill_blank
+        sentence: "___ po matatapos ang pagkukumpuni?"
+        translation: "When will the repair be finished?"
+        answer: Kailan
+        options: [Kailan, Magkano, Sino]
+      - type: translate
+        prompt_en: How much is the service fee?
+        answer_tl: Magkano po ang bayad sa serbisyo?
+        accept:
+          - Magkano po ang serbisyo
+        extra_words: [talyer, susunduin, mekaniko]
+      - type: translate
+        prompt_tl: Susunduin ko ang kotse sa talyer bukas.
+        answer_en: I will pick up the car at the repair shop tomorrow.
+        accept:
+          - I'll fetch the car from the shop tomorrow
+        extra_words: [cheap, market, quickly]
+        audio: susunduin_ko_ang_kotse_sa_talyer_bukas
+      - type: listen
+        audio: kailan_po_matatapos
+        answer_tl: Kailan po matatapos
+        extra_words: [talyer, serbisyo]
+      - type: choice
+        prompt: "How many tasks are mentioned in the dialogue in total?"
+        answer: three
+        distractors: [one, two, four]
+      - type: arrange
+        prompt: "When will the repair be finished?"
+        answer_tl: Kailan po matatapos ang pagkukumpuni
+      - type: arrange
+        prompt: "Have the rice bought at the store."
+        answer_tl: Ipabili mo ang bigas sa tindahan

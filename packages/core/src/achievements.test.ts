@@ -13,8 +13,10 @@ function progress(overrides: Partial<UserProgress> = {}): UserProgress {
     perfectLessons: 0,
     practiceCount: 0,
     xpByDay: {},
+    dayStats: {},
     longestStreak: 0,
     dailyGoalXp: DEFAULT_DAILY_GOAL_XP,
+    unlockedTierIds: [],
     weakExerciseIds: [],
     mistakesCleared: 0,
     ...overrides,
@@ -104,6 +106,17 @@ describe("earnedAchievementIds", () => {
     expect(earnedAchievementIds(progress({ xpTotal: 2000 }))).toContain("xp_2000");
   });
 
+  it("keeps the end-game badges locked until the doubled-course thresholds", () => {
+    // sized for 453 lessons: the old ceiling (150 lessons / 2000 xp) is now
+    // about a third of the course, so these four extend the ladder
+    const nearly = progress({ lessonsCompleted: 299, perfectLessons: 49, xpTotal: 9999, longestStreak: 364 });
+    const there = progress({ lessonsCompleted: 300, perfectLessons: 50, xpTotal: 10000, longestStreak: 365 });
+    for (const id of ["lessons_300", "perfects_50", "xp_10000", "streak_365"]) {
+      expect(earnedAchievementIds(nearly)).not.toContain(id);
+      expect(earnedAchievementIds(there)).toContain(id);
+    }
+  });
+
   const units: AchievementCourseUnit[] = [
     { id: "u1", lessons: [{ id: "l1" }, { id: "l2" }] },
     { id: "u2", lessons: [{ id: "l3" }, { id: "l4" }] },
@@ -131,11 +144,11 @@ describe("earnedAchievementIds", () => {
 
   it("returns ids in ACHIEVEMENTS definition order", () => {
     const p = progress({
-      lessonsCompleted: 200,
-      perfectLessons: 12,
+      lessonsCompleted: 500,
+      perfectLessons: 60,
       practiceCount: 3,
-      longestStreak: 120,
-      xpTotal: 5000,
+      longestStreak: 400,
+      xpTotal: 12000,
       completedLessonIds: ["l1", "l2", "l3", "l4"],
       mistakesCleared: 12,
     });

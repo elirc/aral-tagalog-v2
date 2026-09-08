@@ -1,0 +1,230 @@
+id: shapes-sizes
+title: Shapes and Sizes
+tier: everyday
+description: Describe an object well enough that someone can find it for you.
+tip: >-
+  Size adjectives stack with intensifiers rather than new words: malaki (big),
+  napakalaki (very big), sobrang laki (extremely big). Most shape words are
+  native — bilog (round), parisukat, tatsulok (tatlo + sulok, three corners) —
+  while kuwadrado shows the Spanish loanword layer. Use "parang" (like) when
+  you cannot name a shape at all.
+lessons:
+  - id: shape-1
+    title: Shapes
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bilog, en: round }
+          - { tl: parisukat, en: square }
+          - { tl: tatsulok, en: triangle }
+          - { tl: mahaba, en: long }
+      - type: choice
+        prompt: "'Bilog ang mesa' means the table is..."
+        answer: round
+        distractors: [square, long, broken]
+        audio: bilog_ang_mesa
+        audio_text: Bilog ang mesa.
+      - type: fill_blank
+        sentence: "___ ang hugis ng kahon."
+        translation: "The shape of the box is square."
+        answer: Parisukat
+        options: [Parisukat, Bilog, Tatsulok]
+      - type: translate
+        prompt_tl: Mahaba at manipis ang lapis.
+        answer_en: The pencil is long and thin.
+        accept:
+          - A pencil is long and thin
+        extra_words: [cheap, market, tomorrow]
+        audio: mahaba_at_manipis_ang_lapis
+      - type: translate
+        prompt_en: The plate is round and white.
+        answer_tl: Bilog at puti ang pinggan
+        accept:
+          - Puti at bilog ang pinggan
+        extra_words: [parisukat, tatsulok, mahaba]
+      - type: listen
+        audio: ano_ang_hugis_nito
+        answer_tl: Ano ang hugis nito
+        extra_words: [bilog, parisukat]
+      - type: choice
+        prompt: "'Hugis' means..."
+        answer: shape
+        distractors: [color, price, weight]
+      - type: fill_blank
+        sentence: "Parang ___ ang bubong ng bahay."
+        translation: "The roof of the house is like a triangle."
+        answer: tatsulok
+        options: [tatsulok, bilog, mahaba]
+      - type: arrange
+        prompt: "The box is square and small."
+        answer_tl: Parisukat at maliit ang kahon
+
+  - id: shape-2
+    title: Sizes
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malaki, en: big }
+          - { tl: maliit, en: small }
+          - { tl: makapal, en: thick }
+          - { tl: manipis, en: thin }
+      - type: choice
+        prompt: "'Napakalaki' is stronger than 'malaki' because of the prefix..."
+        answer: napaka-
+        distractors: [taga-, mag-, paki-]
+        audio: napakalaki
+        audio_text: Napakalaki.
+      - type: fill_blank
+        sentence: "___ ang aklat, limang daang pahina."
+        translation: "The book is thick, five hundred pages."
+        answer: Makapal
+        options: [Makapal, Manipis, Maliit]
+      - type: translate
+        prompt_tl: Sobrang laki ng bag mo.
+        answer_en: Your bag is extremely big.
+        accept:
+          - Your bag is so big
+        extra_words: [cheap, market, tomorrow]
+        audio: sobrang_laki_ng_bag_mo
+      - type: translate
+        prompt_en: I want a smaller size.
+        answer_tl: Gusto ko ng mas maliit na sukat
+        accept:
+          - Gusto ko po ng mas maliit na sukat
+        extra_words: [malaki, makapal, manipis]
+      - type: listen
+        audio: masyadong_malaki_ito
+        answer_tl: Masyadong malaki ito
+        extra_words: [maliit, makapal]
+      - type: choice
+        prompt: "'Masyadong maliit' means it is..."
+        answer: too small
+        distractors: [slightly small, just right, very big]
+      - type: fill_blank
+        sentence: "Ano pong ___ ang kailangan ninyo?"
+        translation: "What size do you need?"
+        answer: sukat
+        options: [sukat, hugis, kulay]
+      - type: arrange
+        prompt: "This shirt is too big for me."
+        answer_tl: Masyadong malaki sa akin ang damit na ito
+
+  - id: shape-3
+    title: Weight and texture
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mabigat, en: heavy }
+          - { tl: magaan, en: light }
+          - { tl: malambot, en: soft }
+          - { tl: matigas, en: hard }
+      - type: choice
+        prompt: "'Magaan ang bag' means the bag is..."
+        answer: light
+        distractors: [heavy, soft, expensive]
+        audio: magaan_ang_bag
+        audio_text: Magaan ang bag.
+      - type: fill_blank
+        sentence: "___ ang unan, masarap matulog."
+        translation: "The pillow is soft, it is nice to sleep on."
+        answer: Malambot
+        options: [Malambot, Matigas, Mabigat]
+      - type: translate
+        prompt_tl: Mabigat ang kahon, tulungan mo ako.
+        answer_en: The box is heavy, help me.
+        accept:
+          - The box is heavy help me please
+        extra_words: [cheap, market, tomorrow]
+        audio: mabigat_ang_kahon_tulungan_mo_ako
+      - type: translate
+        prompt_en: The bread is hard already.
+        answer_tl: Matigas na ang tinapay
+        accept:
+          - Matigas na ang tinapay po
+        extra_words: [malambot, magaan, mabigat]
+      - type: listen
+        audio: mabigat_ba_ito
+        answer_tl: Mabigat ba ito
+        extra_words: [magaan, malambot]
+      - type: choice
+        prompt: "Which pair are opposites?"
+        answer: mabigat and magaan
+        distractors: [malambot and maliit, matigas and mahaba, bilog and makapal]
+      - type: fill_blank
+        sentence: "___ ang bato, mag-ingat ka."
+        translation: "The stone is hard, be careful."
+        answer: Matigas
+        options: [Matigas, Malambot, Magaan]
+      - type: arrange
+        prompt: "This box is very heavy."
+        answer_tl: Napakabigat ng kahon na ito
+
+  - id: shape-4
+    title: Describing to find
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Looking for a lost bag at a counter
+        lines:
+          - speaker: Kawani
+            text: "Ano po ang hitsura ng bag ninyo?"
+            translation: "What does your bag look like?"
+          - speaker: Bisita
+            text: "___ po, kulay itim at may sipper."
+            translation: "It is small, black, and has a zipper."
+          - speaker: Kawani
+            text: "___ po ba o magaan?"
+            translation: "Is it heavy or light?"
+          - speaker: Bisita
+            text: "___ po, may laptop kasi sa loob."
+            translation: "It is heavy, because there is a laptop inside."
+        blanks:
+          - answer: Maliit
+            options: [Maliit, Bilog, Manipis]
+          - answer: Mabigat
+            options: [Mabigat, Malambot, Bago]
+          - answer: Mabigat
+            options: [Mabigat, Magaan, Maliit]
+      - type: match
+        pairs:
+          - { tl: hitsura, en: appearance }
+          - { tl: kulay, en: color }
+          - { tl: marka, en: brand or mark }
+          - { tl: laman, en: contents }
+      - type: fill_blank
+        sentence: "Ano po ang ___ ng payong ninyo?"
+        translation: "What is the color of your umbrella?"
+        answer: kulay
+        options: [kulay, laman, marka]
+      - type: translate
+        prompt_en: It is a big black bag with two pockets.
+        answer_tl: Malaking itim na bag na may dalawang bulsa
+        accept:
+          - Malaki at itim na bag na may dalawang bulsa
+        extra_words: [kulay, marka, laman]
+      - type: translate
+        prompt_tl: Ano ang laman ng bag?
+        answer_en: What are the contents of the bag?
+        accept:
+          - What is inside the bag
+        extra_words: [cheap, market, tomorrow]
+        audio: ano_ang_laman_ng_bag
+      - type: listen
+        audio: ano_po_ang_hitsura_nito
+        answer_tl: Ano po ang hitsura nito
+        extra_words: [kulay, marka]
+      - type: choice
+        prompt: "In the dialogue, why is the bag heavy?"
+        answer: there is a laptop inside
+        distractors: [it is full of books, it is made of metal, it holds water]
+      - type: fill_blank
+        sentence: "Anong ___ ang sapatos ninyo?"
+        translation: "What brand are your shoes?"
+        answer: marka
+        options: [marka, laman, hugis]
+      - type: arrange
+        prompt: "It is a small black bag with a zipper."
+        answer_tl: Maliit na itim na bag na may sipper

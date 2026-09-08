@@ -1,0 +1,224 @@
+id: left-right
+title: Left, Right, Straight
+tier: foundation
+description: The four words that get you anywhere on foot or in a tricycle.
+tip: >-
+  Kaliwa is left, kanan is right, and diretso is straight ahead — those three
+  plus "dito" (here) cover most rides. To tell a driver where to stop, Filipinos
+  say "sa tabi lang po" (just at the side) rather than naming an exact address.
+lessons:
+  - id: lr-1
+    title: The three directions
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kaliwa, en: left }
+          - { tl: kanan, en: right }
+          - { tl: diretso, en: straight ahead }
+          - { tl: likod, en: behind }
+      - type: choice
+        prompt: "'Kumaliwa ka' tells you to..."
+        answer: turn left
+        distractors: [turn right, go straight, stop here]
+        audio: kumaliwa_ka
+        audio_text: Kumaliwa ka.
+      - type: fill_blank
+        sentence: "___ ka sa kanto."
+        translation: "Turn right at the corner."
+        answer: Kumanan
+        options: [Kumanan, Kumaliwa, Tumigil]
+      - type: translate
+        prompt_tl: Diretso lang po.
+        answer_en: Just go straight.
+        accept:
+          - Straight ahead please
+        extra_words: [tomorrow, cheap, market]
+        audio: diretso_lang_po
+      - type: translate
+        prompt_en: Turn left at the church.
+        answer_tl: Kumaliwa ka sa simbahan
+        accept:
+          - Kumaliwa po kayo sa simbahan
+        extra_words: [kanan, diretso, kanto]
+      - type: listen
+        audio: kumanan_ka_sa_kanto
+        answer_tl: Kumanan ka sa kanto
+        extra_words: [kaliwa, diretso]
+      - type: choice
+        prompt: "Which word means 'corner'?"
+        answer: kanto
+        distractors: [kanan, kaliwa, likod]
+      - type: fill_blank
+        sentence: "Nasa ___ ng simbahan ang tindahan."
+        translation: "The store is behind the church."
+        answer: likod
+        options: [likod, kanan, diretso]
+      - type: translate
+        prompt_tl: Nasa kaliwa mo ang banyo.
+        answer_en: The bathroom is on your left.
+        accept:
+          - The toilet is on your left
+        extra_words: [quickly, morning, cheap]
+        audio: nasa_kaliwa_mo_ang_banyo
+
+  - id: lr-2
+    title: Near and far
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malapit, en: near }
+          - { tl: malayo, en: far }
+          - { tl: harap, en: in front }
+          - { tl: tabi, en: beside }
+      - type: choice
+        prompt: "'Malayo pa ba?' asks..."
+        answer: Is it still far?
+        distractors: [Is it near?, Are we there?, How much is it?]
+        audio: malayo_pa_ba
+        audio_text: Malayo pa ba?
+      - type: fill_blank
+        sentence: "___ lang, limang minutong lakad."
+        translation: "It is near, a five-minute walk."
+        answer: Malapit
+        options: [Malapit, Malayo, Mahal]
+      - type: translate
+        prompt_en: The market is in front of the school.
+        answer_tl: Nasa harap ng paaralan ang palengke
+        extra_words: [likod, tabi, malayo]
+      - type: translate
+        prompt_tl: Katabi ng bahay namin ang tindahan.
+        answer_en: The store is next to our house.
+        accept:
+          - The shop is beside our house
+        extra_words: [tomorrow, cheap, market]
+        audio: katabi_ng_bahay_namin_ang_tindahan
+      - type: listen
+        audio: malapit_lang_po
+        answer_tl: Malapit lang po
+        extra_words: [malayo, harap]
+      - type: choice
+        prompt: "'Katabi' is built from 'tabi' and means..."
+        answer: next to
+        distractors: [far from, on top of, behind]
+      - type: fill_blank
+        sentence: "___ pa ang bahay nila, isang oras pa."
+        translation: "Their house is still far, one more hour."
+        answer: Malayo
+        options: [Malayo, Malapit, Mabilis]
+      - type: translate
+        prompt_en: Is the bank near here?
+        answer_tl: Malapit ba ang bangko dito?
+        accept:
+          - Malapit ba dito ang bangko
+        extra_words: [malayo, harap, tabi]
+
+  - id: lr-3
+    title: Riding and stopping
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "To stop a tricycle you say:"
+        answer: Sa tabi lang po.
+        distractors: [Diretso lang po., Magkano po?, Salamat po.]
+        audio: sa_tabi_lang_po
+        audio_text: Sa tabi lang po.
+      - type: match
+        pairs:
+          - { tl: sumakay, en: to ride }
+          - { tl: bumaba, en: to get off }
+          - { tl: tumigil, en: to stop }
+          - { tl: dumaan, en: to pass by }
+      - type: fill_blank
+        sentence: "___ po ako sa susunod na kanto."
+        translation: "I will get off at the next corner."
+        answer: Bababa
+        options: [Bababa, Sasakay, Kakain]
+      - type: translate
+        prompt_tl: Dumadaan ba ito sa palengke?
+        answer_en: Does this pass by the market?
+        accept:
+          - Does it pass the market
+        extra_words: [cheap, tomorrow, quickly]
+        audio: dumadaan_ba_ito_sa_palengke
+      - type: translate
+        prompt_en: Stop here, please.
+        answer_tl: Tumigil po kayo dito
+        accept:
+          - Para po dito
+        extra_words: [sumakay, bumaba, diretso]
+      - type: listen
+        audio: bababa_po_ako_dito
+        answer_tl: Bababa po ako dito
+        extra_words: [sumakay, tumigil]
+      - type: choice
+        prompt: "'Sumakay' and 'bumaba' are..."
+        answer: opposites
+        distractors: [the same word, both about eating, both questions]
+      - type: fill_blank
+        sentence: "Saan ka ___ ng jeep?"
+        translation: "Where will you ride the jeepney?"
+        answer: sasakay
+        options: [sasakay, bababa, kakain]
+      - type: translate
+        prompt_tl: Sa kanto lang po ako bababa.
+        answer_en: I will just get off at the corner.
+        accept:
+          - I'll get off at the corner
+        extra_words: [market, morning, cheap]
+        audio: sa_kanto_lang_po_ako_bababa
+
+  - id: lr-4
+    title: Giving simple directions
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dito, en: here }
+          - { tl: diyan, en: there (near you) }
+          - { tl: doon, en: over there }
+          - { tl: saan, en: where }
+      - type: choice
+        prompt: "Someone asks 'Saan ang palengke?' A good answer starts with:"
+        answer: Diretso lang po, tapos kumanan.
+        distractors: [Salamat po., Magkano po?, Opo.]
+        audio: diretso_lang_po_tapos_kumanan
+        audio_text: Diretso lang po, tapos kumanan.
+      - type: fill_blank
+        sentence: "Nandito lang ___, malapit."
+        translation: "It is just here, close by."
+        answer: iyon
+        options: [iyon, saan, kanan]
+      - type: translate
+        prompt_en: Go straight, then turn left.
+        answer_tl: Diretso ka, tapos kumaliwa
+        accept:
+          - Diretso ka tapos kumaliwa
+        extra_words: [kanan, doon, malayo]
+      - type: translate
+        prompt_tl: Doon po sa likod ng simbahan.
+        answer_en: Over there behind the church.
+        accept:
+          - There behind the church
+        extra_words: [tomorrow, cheap, market]
+        audio: doon_po_sa_likod_ng_simbahan
+      - type: listen
+        audio: saan_po_ang_palengke
+        answer_tl: Saan po ang palengke
+        extra_words: [dito, doon]
+      - type: choice
+        prompt: "'Diyan' points to something..."
+        answer: near the listener
+        distractors: [near the speaker, far from both, in the past]
+      - type: fill_blank
+        sentence: "___ ka na lang maghintay sa harap."
+        translation: "Just wait there in front."
+        answer: Diyan
+        options: [Diyan, Dito, Saan]
+      - type: translate
+        prompt_en: The school is over there, near the market.
+        answer_tl: Nandoon ang paaralan, malapit sa palengke
+        accept:
+          - Nandoon ang paaralan malapit sa palengke
+        extra_words: [dito, diyan, malayo]

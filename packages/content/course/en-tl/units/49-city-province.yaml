@@ -1,5 +1,6 @@
 id: city-province
 title: City & Province
+tier: conversational
 description: Compare city and province life — farms, carabaos, traffic, and going home.
 tip: >-
   "Lungsod" and "siyudad" both mean city: "lungsod" is the native word you see

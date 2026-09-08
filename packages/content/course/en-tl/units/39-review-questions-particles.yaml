@@ -1,5 +1,6 @@
 id: review-questions-particles
 title: "Review: Questions & Particles"
+tier: conversational
 description: Ask real questions and answer like a local — stack na, pa, and ba onto ano, saan, and kailan.
 tip: >-
   Question words and particles stack in a fixed order: question word, then the

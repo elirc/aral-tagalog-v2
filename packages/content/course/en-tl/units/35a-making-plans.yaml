@@ -1,0 +1,235 @@
+id: making-plans
+title: Making Plans
+tier: everyday
+description: Propose, agree, postpone — arranging to meet someone without switching to English.
+tip: >-
+  Plans hang on three little words. "Tara" is the casual let's-go, "sige" is the
+  all-purpose okay, and "baka" softens anything into a maybe. To propose, use
+  the tayo form of a verb: "Kumain tayo" — let's eat. Filipinos rarely refuse
+  flatly; "baka sa susunod" (maybe next time) is the polite no.
+lessons:
+  - id: plan-1
+    title: Let's go
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tara, en: let's go }
+          - { tl: sige, en: okay }
+          - { tl: baka, en: maybe }
+          - { tl: libre, en: free }
+      - type: choice
+        prompt: "A friend says 'Tara, kain tayo.' They are..."
+        answer: inviting you to eat
+        distractors: [saying goodbye, asking for money, refusing an offer]
+        audio: tara_kain_tayo
+        audio_text: Tara, kain tayo.
+      - type: fill_blank
+        sentence: "___ tayo sa sine bukas."
+        translation: "Let's go to the movies tomorrow."
+        answer: Manood
+        options: [Manood, Kumain, Matulog]
+      - type: translate
+        prompt_tl: Libre ka ba sa Sabado?
+        answer_en: Are you free on Saturday?
+        accept:
+          - Are you available on Saturday
+        extra_words: [tomorrow, cheap, market]
+        audio: libre_ka_ba_sa_sabado
+      - type: translate
+        prompt_en: Let us eat at the new restaurant.
+        answer_tl: Kumain tayo sa bagong restawran
+        accept:
+          - Kain tayo sa bagong restawran
+        extra_words: [tara, sige, baka]
+      - type: listen
+        audio: libre_ka_ba_bukas
+        answer_tl: Libre ka ba bukas
+        extra_words: [tara, sige]
+      - type: choice
+        prompt: "'Sige' as a one-word reply means..."
+        answer: okay
+        distractors: ["no", why, later]
+      - type: fill_blank
+        sentence: "___ ako sa Linggo, walang trabaho."
+        translation: "I am free on Sunday, there is no work."
+        answer: Libre
+        options: [Libre, Pagod, Huli]
+      - type: arrange
+        prompt: "Let us meet on Saturday afternoon."
+        answer_tl: Magkita tayo sa Sabado ng hapon
+
+  - id: plan-2
+    title: Setting a time and place
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: saan tayo magkikita, en: where shall we meet }
+          - { tl: anong oras, en: what time }
+          - { tl: susunduin, en: will pick up }
+          - { tl: maghihintay, en: will wait }
+      - type: choice
+        prompt: "'Susunduin kita' means..."
+        answer: I will pick you up
+        distractors: [I will wait for you, I will call you, I will pay for you]
+        audio: susunduin_kita
+        audio_text: Susunduin kita.
+      - type: fill_blank
+        sentence: "___ tayo magkikita, sa mall o sa bahay?"
+        translation: "Where shall we meet, at the mall or at home?"
+        answer: Saan
+        options: [Saan, Sino, Magkano]
+      - type: translate
+        prompt_tl: Susunduin kita nang alas-sais.
+        answer_en: I will pick you up at six.
+        accept:
+          - I'll fetch you at six
+        extra_words: [cheap, market, tomorrow]
+        audio: susunduin_kita_nang_alas_sais
+      - type: translate
+        prompt_en: I will wait for you at the corner.
+        answer_tl: Maghihintay ako sa iyo sa kanto
+        accept:
+          - Hihintayin kita sa kanto
+        extra_words: [susunduin, magkita, bahay]
+      - type: listen
+        audio: anong_oras_tayo_magkikita_2
+        answer_tl: Anong oras tayo magkikita
+        extra_words: [saan, susunduin]
+      - type: choice
+        prompt: "Which reply pins down a place?"
+        answer: Sa harap ng simbahan.
+        distractors: [Alas-sais., Baka., Sige.]
+      - type: fill_blank
+        sentence: "___ na lang kita sa bahay mo."
+        translation: "I will just pick you up at your house."
+        answer: Susunduin
+        options: [Susunduin, Kakainin, Bibilhin]
+      - type: arrange
+        prompt: "I will pick you up at your house at seven."
+        answer_tl: Susunduin kita sa bahay mo ng alas-siyete
+        grading: { hyphens: true }
+
+  - id: plan-3
+    title: Changing plans
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ipagpaliban, en: to postpone }
+          - { tl: kanselahin, en: to cancel }
+          - { tl: sa susunod, en: next time }
+          - { tl: abala, en: busy }
+      - type: choice
+        prompt: "'Baka sa susunod na lang' is usually..."
+        answer: a polite no
+        distractors: [an enthusiastic yes, a question, an apology for lateness]
+        audio: baka_sa_susunod_na_lang
+        audio_text: Baka sa susunod na lang.
+      - type: fill_blank
+        sentence: "Abala ako bukas, ___ na lang natin."
+        translation: "I am busy tomorrow, let us postpone it."
+        answer: ipagpaliban
+        options: [ipagpaliban, kainin, bilhin]
+      - type: translate
+        prompt_tl: Kanselado ang pulong bukas.
+        answer_en: The meeting tomorrow is cancelled.
+        accept:
+          - Tomorrow's meeting is cancelled
+        extra_words: [cheap, market, quickly]
+        audio: kanselado_ang_pulong_bukas
+      - type: translate
+        prompt_en: Sorry, I am busy this Saturday.
+        answer_tl: Pasensya na, abala ako ngayong Sabado
+        accept:
+          - Pasensya na abala ako ngayong Sabado
+        extra_words: [libre, susunod, tara]
+      - type: listen
+        audio: abala_ako_bukas
+        answer_tl: Abala ako bukas
+        extra_words: [libre, susunod]
+      - type: choice
+        prompt: "You must cancel. The kindest opener is:"
+        answer: Pasensya na po, hindi ako makakapunta.
+        distractors: [Ayaw ko na., Wala akong pakialam., Huwag ka nang umasa.]
+      - type: fill_blank
+        sentence: "___ na lang tayo sa susunod na linggo."
+        translation: "Let us just meet next week instead."
+        answer: Magkita
+        options: [Magkita, Kumain, Matulog]
+      - type: arrange
+        prompt: "I cannot come tomorrow, I am busy."
+        answer_tl: Hindi ako makakapunta bukas abala ako
+        accept:
+          - Hindi ako makakapunta bukas, abala ako
+
+  - id: plan-4
+    title: Confirming
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Two friends by text
+        lines:
+          - speaker: Jen
+            text: "___ ka ba mamayang gabi?"
+            translation: "Are you free tonight?"
+          - speaker: Mark
+            text: "Oo, walang pasok bukas."
+            translation: "Yes, no work tomorrow."
+          - speaker: Jen
+            text: "___, kain tayo sa may kanto."
+            translation: "Let's go, let's eat near the corner."
+          - speaker: Mark
+            text: "___. Anong oras?"
+            translation: "Okay. What time?"
+        blanks:
+          - answer: Libre
+            options: [Libre, Abala, Pagod]
+          - answer: Tara
+            options: [Tara, Paalam, Salamat]
+          - answer: Sige
+            options: [Sige, Ayaw, Hindi]
+      - type: match
+        pairs:
+          - { tl: sigurado, en: sure }
+          - { tl: pangako, en: promise }
+          - { tl: kumpirmado, en: confirmed }
+          - { tl: nakalimutan, en: forgot }
+      - type: fill_blank
+        sentence: "___ ka ba sa oras?"
+        translation: "Are you sure about the time?"
+        answer: Sigurado
+        options: [Sigurado, Abala, Libre]
+      - type: translate
+        prompt_en: See you tomorrow, do not forget.
+        answer_tl: Magkita tayo bukas, huwag mong kalimutan
+        accept:
+          - Kita tayo bukas huwag mong kalimutan
+        extra_words: [sigurado, pangako, abala]
+      - type: translate
+        prompt_tl: Kumpirmado na ang biyahe namin.
+        answer_en: Our trip is confirmed.
+        accept:
+          - Our trip is already confirmed
+        extra_words: [tomorrow, cheap, market]
+        audio: kumpirmado_na_ang_biyahe_namin
+      - type: listen
+        audio: sigurado_ka_ba
+        answer_tl: Sigurado ka ba
+        extra_words: [pangako, abala]
+      - type: choice
+        prompt: "'Pangako' raises the stakes because it is..."
+        answer: a promise
+        distractors: [a guess, a question, an excuse]
+      - type: fill_blank
+        sentence: "Nakalimutan ko ang ___ natin kahapon."
+        translation: "I forgot our appointment yesterday."
+        answer: usapan
+        options: [usapan, tubig, sapatos]
+      - type: arrange
+        prompt: "Do not forget, we will meet at six."
+        answer_tl: Huwag mong kalimutan magkikita tayo ng alas-sais
+        accept:
+          - Huwag mong kalimutan, magkikita tayo ng alas-sais
+        grading: { hyphens: true }

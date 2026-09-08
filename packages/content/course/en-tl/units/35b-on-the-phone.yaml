@@ -1,0 +1,233 @@
+id: on-the-phone
+title: On the Phone
+tier: everyday
+description: Answer, ask for someone, and survive a bad signal.
+tip: >-
+  Filipinos answer the phone with "Hello po?" and often check the line with
+  "Naririnig mo ba ako?" Signal problems have their own vocabulary: walang
+  signal (no signal), lowbat, and load — prepaid credit, which you pa-load at
+  any sari-sari store.
+lessons:
+  - id: fon-1
+    title: Answering
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tumawag, en: to call }
+          - { tl: sumagot, en: to answer }
+          - { tl: sandali lang, en: just a moment }
+          - { tl: mali ang numero, en: wrong number }
+      - type: choice
+        prompt: "You pick up an unknown call. You say:"
+        answer: Hello po, sino po sila?
+        distractors: [Paalam po., Magkano po?, Busog na po ako.]
+        audio: hello_po_sino_po_sila
+        audio_text: Hello po, sino po sila?
+      - type: fill_blank
+        sentence: "___ lang po, tatawagin ko siya."
+        translation: "Just a moment, I will call him."
+        answer: Sandali
+        options: [Sandali, Salamat, Paalam]
+      - type: translate
+        prompt_tl: Tumawag ka sa akin mamaya.
+        answer_en: Call me later.
+        accept:
+          - Give me a call later
+        extra_words: [cheap, market, tomorrow]
+        audio: tumawag_ka_sa_akin_mamaya
+      - type: translate
+        prompt_en: I think you have the wrong number.
+        answer_tl: Mali po yata ang numero
+        accept:
+          - Sa tingin ko po, mali ang numero
+        extra_words: [tumawag, sumagot, sandali]
+      - type: listen
+        audio: sandali_lang_po
+        answer_tl: Sandali lang po
+        extra_words: [tumawag, sumagot]
+      - type: choice
+        prompt: "'Sino po sila?' is asking..."
+        answer: who is calling
+        distractors: [where they are, what they want, how much it costs]
+      - type: fill_blank
+        sentence: "Hindi siya ___ sa tawag ko."
+        translation: "He did not answer my call."
+        answer: sumagot
+        options: [sumagot, kumain, natulog]
+      - type: arrange
+        prompt: "I will call you tonight."
+        answer_tl: Tatawagan kita mamayang gabi
+
+  - id: fon-2
+    title: Asking for someone
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nandiyan po ba, en: is he or she there }
+          - { tl: wala pa po, en: not here yet }
+          - { tl: iiwan ko ang mensahe, en: I'll leave a message }
+          - { tl: pakisabi, en: please tell }
+      - type: choice
+        prompt: "To ask for a person on the phone you say:"
+        answer: Nandiyan po ba si Ana?
+        distractors: [Magkano po si Ana?, Taga-saan po si Ana?, Ilang taon na si Ana?]
+        audio: nandiyan_po_ba_si_ana
+        audio_text: Nandiyan po ba si Ana?
+      - type: fill_blank
+        sentence: "___ po ninyo na tumawag ako."
+        translation: "Please tell her that I called."
+        answer: Pakisabi
+        options: [Pakisabi, Pakikain, Pakiinom]
+      - type: translate
+        prompt_tl: Wala pa po siya dito.
+        answer_en: She is not here yet.
+        accept:
+          - He is not here yet
+        extra_words: [tomorrow, cheap, market]
+        audio: wala_pa_po_siya_dito
+      - type: translate
+        prompt_en: May I leave a message?
+        answer_tl: Pwede po bang mag-iwan ng mensahe?
+        accept:
+          - Pwede po ba akong mag-iwan ng mensahe
+        extra_words: [pakisabi, sandali, tumawag]
+        grading: { hyphens: true }
+      - type: listen
+        audio: nandiyan_po_ba_siya
+        answer_tl: Nandiyan po ba siya
+        extra_words: [wala, sandali]
+      - type: choice
+        prompt: "'Wala pa po' tells the caller the person is..."
+        answer: not there yet
+        distractors: [already gone, sleeping, busy]
+      - type: fill_blank
+        sentence: "___ ko na lang ang mensahe sa kanya."
+        translation: "I will just leave the message for her."
+        answer: Iiwan
+        options: [Iiwan, Kakainin, Bibilhin]
+      - type: arrange
+        prompt: "Please tell him I called."
+        answer_tl: Pakisabi po ninyo na tumawag ako
+
+  - id: fon-3
+    title: Bad signal
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: walang signal, en: no signal }
+          - { tl: putol-putol, en: breaking up }
+          - { tl: lowbat, en: low battery }
+          - { tl: load, en: prepaid credit }
+      - type: choice
+        prompt: "'Putol-putol ang boses mo' means your voice is..."
+        answer: breaking up
+        distractors: [too loud, too slow, very clear]
+        audio: putol_putol_ang_boses_mo
+        audio_text: Putol-putol ang boses mo.
+      - type: fill_blank
+        sentence: "Walang ___ dito sa bundok."
+        translation: "There is no signal here in the mountains."
+        answer: signal
+        options: [signal, tubig, kanin]
+      - type: translate
+        prompt_tl: Naririnig mo ba ako?
+        answer_en: Can you hear me?
+        accept:
+          - Do you hear me
+        extra_words: [cheap, market, tomorrow]
+        audio: naririnig_mo_ba_ako
+      - type: translate
+        prompt_en: My phone is low on battery.
+        answer_tl: Lowbat na ang telepono ko
+        accept:
+          - Lowbat na ang cellphone ko
+        extra_words: [signal, load, putol]
+      - type: listen
+        audio: naririnig_mo_ba_ako_2
+        answer_tl: Naririnig mo ba ako
+        extra_words: [signal, lowbat]
+      - type: choice
+        prompt: "You are out of prepaid credit. You need to..."
+        answer: mag-load
+        distractors: [maglaba, magluto, matulog]
+      - type: fill_blank
+        sentence: "Mag-___ muna ako sa tindahan."
+        translation: "I will buy prepaid credit at the store first."
+        answer: load
+        options: [load, kain, tulog]
+      - type: arrange
+        prompt: "I cannot hear you, the signal is weak."
+        answer_tl: Hindi kita naririnig mahina ang signal
+        accept:
+          - Hindi kita naririnig, mahina ang signal
+
+  - id: fon-4
+    title: A full call
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Calling a clinic
+        lines:
+          - speaker: Resepsyonista
+            text: "Hello po, klinika ni Dr. Cruz."
+            translation: "Hello, Dr. Cruz's clinic."
+          - speaker: Tumatawag
+            text: "Magandang umaga po. ___ po ba si Doktor?"
+            translation: "Good morning. Is the doctor there?"
+          - speaker: Resepsyonista
+            text: "___ pa po siya. Anong oras po kayo tatawag ulit?"
+            translation: "He is not here yet. What time will you call again?"
+          - speaker: Tumatawag
+            text: "___ na lang po ako ng mensahe."
+            translation: "I will just leave a message."
+        blanks:
+          - answer: Nandiyan
+            options: [Nandiyan, Magkano, Taga-saan]
+          - answer: Wala
+            options: [Wala, Marami, Mahal]
+          - answer: Mag-iiwan
+            options: [Mag-iiwan, Kakain, Matutulog]
+      - type: match
+        pairs:
+          - { tl: tatawag ulit, en: will call again }
+          - { tl: mensahe, en: message }
+          - { tl: numero, en: number }
+          - { tl: tipanan, en: appointment }
+      - type: fill_blank
+        sentence: "Ano po ang ___ ninyo?"
+        translation: "What is your number?"
+        answer: numero
+        options: [numero, kanin, tubig]
+      - type: translate
+        prompt_en: I will call again this afternoon.
+        answer_tl: Tatawag ulit ako mamayang hapon
+        accept:
+          - Tatawag akong muli mamayang hapon
+        extra_words: [mensahe, numero, sandali]
+      - type: translate
+        prompt_tl: Gusto ko po sanang magpa-appointment.
+        answer_en: I would like to make an appointment.
+        accept:
+          - I'd like to set an appointment
+        extra_words: [tomorrow, cheap, market]
+        audio: gusto_ko_po_sanang_magpa_appointment
+      - type: listen
+        audio: ano_po_ang_numero_ninyo
+        answer_tl: Ano po ang numero ninyo
+        extra_words: [mensahe, sandali]
+      - type: choice
+        prompt: "In the dialogue, what does the caller decide to do?"
+        answer: leave a message
+        distractors: [come to the clinic, cancel the appointment, call the doctor's phone]
+      - type: fill_blank
+        sentence: "___ po ako ng mensahe kay Doktor."
+        translation: "I will leave a message for the doctor."
+        answer: Mag-iiwan
+        options: [Mag-iiwan, Kakain, Bibili]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I will call again tomorrow morning."
+        answer_tl: Tatawag ulit ako bukas ng umaga

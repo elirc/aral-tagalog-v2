@@ -21,7 +21,7 @@ export function meRoutes(app: FastifyInstance) {
     const body = z
       .object({ tz: tzSchema.optional(), displayName: z.string().max(80).nullable().optional() })
       .safeParse(req.body);
-    if (!body.success) return reply.code(400).send({ error: "invalid body" });
+    if (!body.success || Object.keys(body.data).length === 0) return reply.code(400).send({ error: "invalid body" });
     const [user] = await app.db.update(users).set(body.data).where(eq(users.id, req.userId)).returning();
     if (!user) return reply.code(404).send({ error: "user not found" });
     return { user: { id: user.id, email: user.email, tz: user.tz, displayName: user.displayName } };

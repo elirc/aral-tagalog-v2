@@ -1,0 +1,234 @@
+id: business
+title: Business and Negotiation
+tier: mastery
+description: Proposals, terms, and the art of saying no without closing the door.
+tip: >-
+  Business Tagalog is formal Tagalog with English nouns embedded: "Ipapadala po
+  namin ang proposal bukas." Negotiation is indirect — a flat "hindi" is rare.
+  Instead you will hear "pag-aaralan po namin" (we will study it) or
+  "medyo mataas po" (it is a bit high), which mean no and too expensive.
+lessons:
+  - id: biz-1
+    title: Proposals
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: alok, en: offer }
+          - { tl: panukala, en: proposal }
+          - { tl: kasunduan, en: agreement }
+          - { tl: kliyente, en: client }
+      - type: choice
+        prompt: "'Pag-aaralan po namin' most often means..."
+        answer: a polite no or a delay
+        distractors: [an enthusiastic yes, a demand for money, a cancellation]
+        audio: pag_aaralan_po_namin
+        audio_text: Pag-aaralan po namin.
+      - type: fill_blank
+        sentence: "Ipapadala po namin ang ___ bukas."
+        translation: "We will send the proposal tomorrow."
+        answer: panukala
+        options: [panukala, kandila, bakod]
+      - type: translate
+        prompt_tl: Nais po naming ialok ang aming serbisyo.
+        answer_en: We would like to offer our services.
+        accept:
+          - We wish to offer our service
+        extra_words: [cheap, market, tomorrow]
+        audio: nais_po_naming_ialok_ang_aming_serbisyo
+      - type: arrange
+        prompt: "We will send the proposal tomorrow."
+        answer_tl: Ipapadala po namin ang panukala bukas
+      - type: choice
+        prompt: "In Filipino business talk, a flat 'hindi' is..."
+        answer: unusually blunt
+        distractors: [standard practice, considered efficient, required by law]
+      - type: translate
+        prompt_en: We would like to discuss the agreement.
+        answer_tl: Nais po naming pag-usapan ang kasunduan
+        accept:
+          - Gusto po naming pag-usapan ang kasunduan
+        extra_words: [alok, panukala, kliyente]
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "Malaki po ang ___ namin sa inyong kompanya."
+        translation: "We have great interest in your company."
+        answer: interes
+        options: [interes, kandila, bakod]
+      - type: listen
+        audio: ipapadala_po_namin_ang_panukala
+        answer_tl: Ipapadala po namin ang panukala
+        extra_words: [alok, kasunduan]
+
+  - id: biz-2
+    title: Prices and terms
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: presyo, en: price }
+          - { tl: diskwento, en: discount }
+          - { tl: bayad, en: payment }
+          - { tl: hulugan, en: installment }
+      - type: choice
+        prompt: "'Medyo mataas po ang presyo' is a polite way to say..."
+        answer: it is too expensive
+        distractors: [it is a good price, we will pay now, we want more]
+        audio: medyo_mataas_po_ang_presyo
+        audio_text: Medyo mataas po ang presyo.
+      - type: fill_blank
+        sentence: "Pwede po bang ___ ang bayad?"
+        translation: "Can the payment be in installments?"
+        answer: hulugan
+        options: [hulugan, kainin, isara]
+      - type: translate
+        prompt_tl: May diskwento po ba kung malaki ang order?
+        answer_en: Is there a discount for a large order?
+        accept:
+          - Is there a discount if the order is big
+        extra_words: [cheap, market, tomorrow]
+        audio: may_diskwento_po_ba_kung_malaki_ang_order
+      - type: arrange
+        prompt: "Is there a discount for a large order?"
+        answer_tl: May diskwento po ba kung malaki ang order
+      - type: choice
+        prompt: "Which reply keeps a negotiation open?"
+        answer: Titingnan po namin kung ano ang magagawa.
+        distractors: [Hindi po talaga., Wala pong pag-asa., Tapos na ang usapan.]
+      - type: translate
+        prompt_en: The price is a bit high for our budget.
+        answer_tl: Medyo mataas po ang presyo para sa budget namin
+        accept:
+          - Mataas po nang kaunti ang presyo para sa budget namin
+        extra_words: [diskwento, hulugan, bayad]
+        grading: { ng_nang: true }
+      - type: fill_blank
+        sentence: "Tatlumpung araw po ang ___ ng bayad."
+        translation: "The payment term is thirty days."
+        answer: takdang
+        options: [takdang, kandila, bakod]
+      - type: listen
+        audio: medyo_mataas_po_ang_presyo_2
+        answer_tl: Medyo mataas po ang presyo
+        extra_words: [diskwento, hulugan]
+
+  - id: biz-3
+    title: Meetings
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pulong, en: meeting }
+          - { tl: agenda, en: agenda }
+          - { tl: desisyon, en: decision }
+          - { tl: susunod na hakbang, en: next step }
+      - type: choice
+        prompt: "'Ano po ang susunod na hakbang?' asks about..."
+        answer: what happens next
+        distractors: [the price, the address, the deadline only]
+        audio: ano_po_ang_susunod_na_hakbang
+        audio_text: Ano po ang susunod na hakbang?
+      - type: fill_blank
+        sentence: "Alas-dos po ang ___ bukas."
+        translation: "The meeting is at two tomorrow."
+        answer: pulong
+        options: [pulong, kandila, bakod]
+      - type: translate
+        prompt_tl: Ipapadala ko po ang minutes ng pulong.
+        answer_en: I will send the minutes of the meeting.
+        accept:
+          - I'll send the meeting minutes
+        extra_words: [cheap, market, tomorrow]
+        audio: ipapadala_ko_po_ang_minutes_ng_pulong
+      - type: arrange
+        prompt: "The meeting is at two tomorrow."
+        answer_tl: Alas-dos po ang pulong bukas
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "In a Filipino meeting, silence from a senior person often means..."
+        answer: they are not convinced
+        distractors: [they agree fully, they did not hear, the meeting is over]
+      - type: translate
+        prompt_en: What is the next step after the decision?
+        answer_tl: Ano po ang susunod na hakbang pagkatapos ng desisyon?
+        accept:
+          - Ano po ang susunod matapos ang desisyon
+        extra_words: [pulong, agenda, minutes]
+      - type: fill_blank
+        sentence: "Pag-uusapan po natin ang ___ sa pulong."
+        translation: "We will discuss the agenda at the meeting."
+        answer: agenda
+        options: [agenda, kandila, tuwalya]
+        grading: { hyphens: true }
+      - type: listen
+        audio: ano_po_ang_susunod_na_hakbang_2
+        answer_tl: Ano po ang susunod na hakbang
+        extra_words: [pulong, agenda]
+
+  - id: biz-4
+    title: A negotiation
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: A supplier meets a buyer
+        lines:
+          - speaker: Supplier
+            text: "Isang daang piso po kada piraso para sa isang libong order."
+            translation: "One hundred pesos per piece for an order of one thousand."
+          - speaker: Buyer
+            text: "___ mataas po iyan para sa budget namin."
+            translation: "That is a bit high for our budget."
+          - speaker: Supplier
+            text: "Pwede po tayong mag-usap. May ___ po kami sa malaking order."
+            translation: "We can talk. We have a discount for large orders."
+          - speaker: Buyer
+            text: "___ po namin, at babalikan ko kayo sa Biyernes."
+            translation: "We will study it, and I will get back to you on Friday."
+        blanks:
+          - answer: Medyo
+            options: [Medyo, Sobrang, Hindi]
+          - answer: diskwento
+            options: [diskwento, kandila, bakod]
+          - answer: Pag-aaralan
+            options: [Pag-aaralan, Kakainin, Itatapon]
+        grading: { hyphens: true }
+      - type: match
+        pairs:
+          - { tl: babalikan, en: will get back to }
+          - { tl: kada piraso, en: per piece }
+          - { tl: mag-usap, en: to talk it over }
+          - { tl: kasosyo, en: business partner }
+      - type: choice
+        prompt: "In the dialogue, has the buyer refused?"
+        answer: not exactly, they are deferring
+        distractors: [yes flatly, no they accepted, they walked out]
+      - type: fill_blank
+        sentence: "___ ko po kayo sa Biyernes."
+        translation: "I will get back to you on Friday."
+        answer: Babalikan
+        options: [Babalikan, Kakainin, Ilalagay]
+      - type: translate
+        prompt_tl: Magkano po kada piraso kung isang libo ang order?
+        answer_en: How much per piece for an order of one thousand?
+        accept:
+          - How much is each piece for a thousand order
+        extra_words: [cheap, market, tomorrow]
+        audio: magkano_po_kada_piraso
+      - type: translate
+        prompt_en: We can talk it over next week.
+        answer_tl: Pwede po tayong mag-usap sa susunod na linggo
+        accept:
+          - Maaari po tayong mag-usap sa susunod na linggo
+        extra_words: [diskwento, babalikan, kasosyo]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "That is a bit high for our budget."
+        answer_tl: Medyo mataas po iyan para sa budget namin
+      - type: arrange
+        prompt: "We will study it and get back to you."
+        answer_tl: Pag-aaralan po namin at babalikan kayo
+        grading: { hyphens: true }
+      - type: listen
+        audio: babalikan_ko_po_kayo_sa_biyernes
+        answer_tl: Babalikan ko po kayo sa Biyernes
+        extra_words: [diskwento, kasosyo]

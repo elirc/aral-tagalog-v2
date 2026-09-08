@@ -1,0 +1,241 @@
+id: politics-civics
+title: Politics and Civics
+tier: mastery
+description: Elections, government, and the words on every campaign poster.
+tip: >-
+  Civic Tagalog is deliberately formal and full of compounds built from native
+  roots: pamahalaan (government, from pamahala), mamamayan (citizen, from mamayan),
+  karapatan (right, from dapat). Campaign speech leans on serbisyo, pagbabago
+  and malasakit — service, change, and genuine concern.
+lessons:
+  - id: pol-1
+    title: Government
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pamahalaan, en: government }
+          - { tl: mamamayan, en: citizen }
+          - { tl: batas, en: law }
+          - { tl: karapatan, en: right }
+      - type: choice
+        prompt: "'Mamamayan' refers to..."
+        answer: citizens
+        distractors: [soldiers, officials, foreigners]
+        audio: mamamayan
+        audio_text: Mamamayan.
+      - type: fill_blank
+        sentence: "May ___ ang bawat mamamayan."
+        translation: "Every citizen has rights."
+        answer: karapatan
+        options: [karapatan, kandila, sipit]
+      - type: translate
+        prompt_tl: Ipinasa ng Kongreso ang bagong batas.
+        answer_en: Congress passed the new law.
+        accept:
+          - The Congress passed the new law
+        extra_words: [cheap, market, tomorrow]
+        audio: ipinasa_ng_kongreso_ang_bagong_batas
+      - type: arrange
+        prompt: "Every citizen has rights and duties."
+        answer_tl: May karapatan at tungkulin ang bawat mamamayan
+      - type: choice
+        prompt: "'Tungkulin' is the natural partner of 'karapatan'. It means..."
+        answer: duty
+        distractors: [salary, election, complaint]
+      - type: translate
+        prompt_en: The government must serve the people.
+        answer_tl: Dapat maglingkod ang pamahalaan sa mamamayan
+        accept:
+          - Dapat paglingkuran ng pamahalaan ang mamamayan
+        extra_words: [batas, karapatan, tungkulin]
+      - type: fill_blank
+        sentence: "Sumusunod tayo sa ___ ng bansa."
+        translation: "We follow the laws of the country."
+        answer: batas
+        options: [batas, bakod, biyaya]
+      - type: listen
+        audio: may_karapatan_ang_bawat_mamamayan
+        answer_tl: May karapatan ang bawat mamamayan
+        extra_words: [batas, tungkulin]
+
+  - id: pol-2
+    title: Elections
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: halalan, en: election }
+          - { tl: bumoto, en: to vote }
+          - { tl: kandidato, en: candidate }
+          - { tl: kampanya, en: campaign }
+      - type: choice
+        prompt: "'Bumoto ka na ba?' asks whether you have..."
+        answer: voted
+        distractors: [registered, campaigned, run for office]
+        audio: bumoto_ka_na_ba
+        audio_text: Bumoto ka na ba?
+      - type: fill_blank
+        sentence: "May ___ tuwing tatlong taon sa barangay."
+        translation: "There is an election every three years in the barangay."
+        answer: halalan
+        options: [halalan, handaan, kandila]
+      - type: translate
+        prompt_tl: Marami ang pumila para bumoto kaninang umaga.
+        answer_en: Many lined up to vote this morning.
+        accept:
+          - Many queued to vote this morning
+        extra_words: [cheap, market, tomorrow]
+        audio: marami_ang_pumila_para_bumoto
+      - type: arrange
+        prompt: "Many lined up to vote this morning."
+        answer_tl: Marami ang pumila para bumoto kaninang umaga
+      - type: dialogue
+        intro: Neighbors on election day
+        lines:
+          - speaker: Aling Mila
+            text: "___ ka na ba, iho?"
+            translation: "Have you voted already, son?"
+          - speaker: Jun
+            text: "Opo, kanina po. Mahaba po ang ___."
+            translation: "Yes, earlier. The line was long."
+          - speaker: Aling Mila
+            text: "Sino ang ___ mo sa kapitan?"
+            translation: "Who is your candidate for captain?"
+          - speaker: Jun
+            text: "Lihim po iyan, Aling Mila."
+            translation: "That is secret, Aling Mila."
+        blanks:
+          - answer: Bumoto
+            options: [Bumoto, Kumain, Natulog]
+          - answer: pila
+            options: [pila, bakod, kandila]
+          - answer: kandidato
+            options: [kandidato, kapitbahay, kartero]
+      - type: choice
+        prompt: "Why does Jun refuse to name his candidate?"
+        answer: the vote is secret
+        distractors: [he forgot the name, he did not vote, he is not registered]
+      - type: translate
+        prompt_en: The vote is secret.
+        answer_tl: Lihim ang boto
+        accept:
+          - Sikreto ang boto
+        extra_words: [halalan, kampanya, kandidato]
+      - type: listen
+        audio: bumoto_ka_na_ba_2
+        answer_tl: Bumoto ka na ba
+        extra_words: [halalan, kandidato]
+
+  - id: pol-3
+    title: Campaign language
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: serbisyo, en: service }
+          - { tl: pagbabago, en: change }
+          - { tl: malasakit, en: genuine concern }
+          - { tl: pangako, en: promise }
+      - type: choice
+        prompt: "Which word appears on almost every campaign poster?"
+        answer: serbisyo
+        distractors: [sapatos, kandila, tuwalya]
+        audio: serbisyo
+        audio_text: Serbisyo.
+      - type: fill_blank
+        sentence: "___ para sa lahat ang aming layunin."
+        translation: "Change for everyone is our goal."
+        answer: Pagbabago
+        options: [Pagbabago, Pagkain, Pagtulog]
+      - type: translate
+        prompt_tl: Marami silang pangako tuwing halalan.
+        answer_en: They make many promises every election.
+        accept:
+          - They have many promises every election
+        extra_words: [cheap, market, tomorrow]
+        audio: marami_silang_pangako_tuwing_halalan
+      - type: arrange
+        prompt: "They make many promises every election."
+        answer_tl: Marami silang pangako tuwing halalan
+      - type: choice
+        prompt: "'Malasakit' is stronger than plain concern because it implies..."
+        answer: shouldering another's burden
+        distractors: [giving money, winning votes, making laws]
+      - type: translate
+        prompt_en: Service with genuine concern for the people.
+        answer_tl: Serbisyong may malasakit sa mamamayan
+        accept:
+          - Serbisyo na may malasakit sa mamamayan
+        extra_words: [pagbabago, pangako, halalan]
+      - type: fill_blank
+        sentence: "Hindi natupad ang kanilang mga ___."
+        translation: "Their promises were not fulfilled."
+        answer: pangako
+        options: [pangako, pagkain, bakod]
+      - type: listen
+        audio: serbisyong_may_malasakit
+        answer_tl: Serbisyong may malasakit
+        extra_words: [pagbabago, pangako]
+
+  - id: pol-4
+    title: Reading a news item
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: "Balita: Bagong ordinansa sa barangay"
+        lines:
+          - speaker: Ulat
+            text: "___ ng barangay konseho ang bagong ordinansa kahapon."
+            translation: "The barangay council passed the new ordinance yesterday."
+          - speaker: Ulat
+            text: "___ sa kapitan, layunin nitong bawasan ang basura sa kalye."
+            translation: "According to the captain, it aims to reduce garbage in the streets."
+          - speaker: Ulat
+            text: "May multa ang lalabag simula sa susunod na ___."
+            translation: "Violators will be fined starting next month."
+        blanks:
+          - answer: Ipinasa
+            options: [Ipinasa, Kinain, Binili]
+          - answer: Ayon
+            options: [Ayon, Dahil, Habang]
+          - answer: buwan
+            options: [buwan, bakod, kandila]
+      - type: match
+        pairs:
+          - { tl: ordinansa, en: ordinance }
+          - { tl: konseho, en: council }
+          - { tl: multa, en: fine }
+          - { tl: lumabag, en: to violate }
+      - type: choice
+        prompt: "In the report, what happens to violators?"
+        answer: they are fined
+        distractors: [they are jailed, nothing happens, they are warned only]
+      - type: fill_blank
+        sentence: "May ___ ang sinumang magtatapon ng basura sa kalye."
+        translation: "Anyone who throws garbage on the street will be fined."
+        answer: multa
+        options: [multa, biyaya, regalo]
+      - type: translate
+        prompt_tl: Layunin nitong bawasan ang basura sa kalye.
+        answer_en: It aims to reduce the garbage in the streets.
+        accept:
+          - Its goal is to reduce street garbage
+        extra_words: [cheap, market, tomorrow]
+        audio: layunin_nitong_bawasan_ang_basura
+      - type: translate
+        prompt_en: The council passed the new ordinance yesterday.
+        answer_tl: Ipinasa ng konseho ang bagong ordinansa kahapon
+        accept:
+          - Ipinasa kahapon ng konseho ang bagong ordinansa
+        extra_words: [multa, lumabag, halalan]
+      - type: arrange
+        prompt: "The council passed the new ordinance yesterday."
+        answer_tl: Ipinasa ng konseho ang bagong ordinansa kahapon
+      - type: arrange
+        prompt: "Violators will be fined starting next month."
+        answer_tl: May multa ang lalabag simula sa susunod na buwan
+      - type: listen
+        audio: ipinasa_ng_konseho_ang_ordinansa
+        answer_tl: Ipinasa ng konseho ang ordinansa
+        extra_words: [multa, lumabag]

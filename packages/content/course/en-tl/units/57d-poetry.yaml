@@ -1,0 +1,229 @@
+id: poetry
+title: Poetry and Song
+tier: mastery
+description: Tula, awit, and the imagery Filipinos reach for when plain words fail.
+tip: >-
+  Tagalog verse counts syllables, not stresses, and rhymes on the final vowel
+  sound — which is why lines so often end in -an, -in or -og. The two great
+  forms are the tula (poem) and the awit (song); Balagtas wrote in dodecasyllabic
+  quatrains, and Filipino songwriters still lean on that rhythm.
+lessons:
+  - id: tula-1
+    title: Words for feeling
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tula, en: poem }
+          - { tl: awit, en: song }
+          - { tl: damdamin, en: feeling }
+          - { tl: alaala, en: memory }
+      - type: choice
+        prompt: "'Damdamin' refers to..."
+        answer: feelings
+        distractors: [rhythm, rhyme, a stanza]
+        audio: damdamin
+        audio_text: Damdamin.
+      - type: fill_blank
+        sentence: "Puno ng ___ ang tulang iyon."
+        translation: "That poem is full of feeling."
+        answer: damdamin
+        options: [damdamin, bakod, sipit]
+      - type: translate
+        prompt_tl: Ang awit na ito ay tungkol sa pag-alala.
+        answer_en: This song is about remembering.
+        accept:
+          - This song is about memory
+        extra_words: [cheap, market, tomorrow]
+        audio: ang_awit_na_ito_ay_tungkol_sa_pag_alala
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "That poem is full of feeling."
+        answer_tl: Puno ng damdamin ang tulang iyon
+      - type: choice
+        prompt: "Tagalog verse rhymes on..."
+        answer: the final vowel sound
+        distractors: [the first syllable, the stressed syllable only, nothing at all]
+      - type: translate
+        prompt_en: The memory of home is in every line.
+        answer_tl: Nasa bawat taludtod ang alaala ng tahanan
+        accept:
+          - Ang alaala ng tahanan ay nasa bawat taludtod
+        extra_words: [tula, awit, damdamin]
+      - type: fill_blank
+        sentence: "Apat na ___ ang bawat saknong."
+        translation: "Each stanza has four lines."
+        answer: taludtod
+        options: [taludtod, bakod, kandila]
+      - type: listen
+        audio: puno_ng_damdamin_ang_tula
+        answer_tl: Puno ng damdamin ang tula
+        extra_words: [awit, alaala]
+
+  - id: tula-2
+    title: Imagery
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: buwan, en: moon }
+          - { tl: bituin, en: star }
+          - { tl: dagat, en: sea }
+          - { tl: hangin, en: wind }
+      - type: choice
+        prompt: "In Filipino love songs, the moon usually stands for..."
+        answer: longing
+        distractors: [anger, wealth, hunger]
+        audio: buwan
+        audio_text: Buwan.
+      - type: fill_blank
+        sentence: "Parang ___ ang ngiti mo sa dilim."
+        translation: "Your smile is like a star in the dark."
+        answer: bituin
+        options: [bituin, bakod, sipit]
+      - type: translate
+        prompt_tl: Dala ng hangin ang alaala ng tahanan.
+        answer_en: The wind carries the memory of home.
+        accept:
+          - The wind brings the memory of home
+        extra_words: [cheap, market, tomorrow]
+        audio: dala_ng_hangin_ang_alaala_ng_tahanan
+      - type: arrange
+        prompt: "Your smile is like a star in the dark."
+        answer_tl: Parang bituin ang ngiti mo sa dilim
+      - type: choice
+        prompt: "'Parang' introduces..."
+        answer: a comparison
+        distractors: [a command, a question, a negation]
+      - type: translate
+        prompt_en: The sea is wide but my longing is wider.
+        answer_tl: Malawak ang dagat ngunit mas malawak ang aking pananabik
+        accept:
+          - Malawak ang dagat pero mas malawak ang aking pananabik
+        extra_words: [buwan, bituin, hangin]
+      - type: fill_blank
+        sentence: "Kasingtahimik ng ___ ang gabi."
+        translation: "The night is as quiet as the sea."
+        answer: dagat
+        options: [dagat, bakod, kandila]
+      - type: listen
+        audio: dala_ng_hangin_ang_alaala
+        answer_tl: Dala ng hangin ang alaala
+        extra_words: [dagat, bituin]
+
+  - id: tula-3
+    title: Reading a stanza
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: "Isang saknong tungkol sa pag-alis"
+        lines:
+          - speaker: Taludtod 1
+            text: "Sa dulo ng ___, nakatanaw ako"
+            translation: "At the end of the pier, I gaze out"
+          - speaker: Taludtod 2
+            text: "Habang ang ___ ay dahan-dahang lumalayo"
+            translation: "While the boat slowly moves away"
+          - speaker: Taludtod 3
+            text: "Ang ___ ko ay iniwan sa dalampasigan"
+            translation: "My heart was left on the shore"
+        blanks:
+          - answer: pantalan
+            options: [pantalan, palengke, paaralan]
+          - answer: bangka
+            options: [bangka, bakod, kandila]
+          - answer: puso
+            options: [puso, bahay, sapatos]
+        grading: { hyphens: true }
+      - type: match
+        pairs:
+          - { tl: pantalan, en: pier }
+          - { tl: bangka, en: boat }
+          - { tl: dalampasigan, en: shore }
+          - { tl: puso, en: heart }
+      - type: choice
+        prompt: "In the stanza, what is left behind?"
+        answer: the speaker's heart
+        distractors: [the boat, the pier, a letter]
+      - type: fill_blank
+        sentence: "Naglalayag ang ___ papalayo sa isla."
+        translation: "The boat sails away from the island."
+        answer: bangka
+        options: [bangka, bakod, tuwalya]
+      - type: translate
+        prompt_tl: Nakatanaw ako sa dulo ng pantalan.
+        answer_en: I gaze out at the end of the pier.
+        accept:
+          - I am looking out at the end of the pier
+        extra_words: [cheap, market, tomorrow]
+        audio: nakatanaw_ako_sa_dulo_ng_pantalan
+      - type: translate
+        prompt_en: My heart was left on the shore.
+        answer_tl: Ang puso ko ay iniwan sa dalampasigan
+        accept:
+          - Iniwan ang puso ko sa dalampasigan
+        extra_words: [bangka, pantalan, hangin]
+      - type: arrange
+        prompt: "The boat slowly moves away."
+        answer_tl: Dahan-dahang lumalayo ang bangka
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I gaze out at the end of the pier."
+        answer_tl: Nakatanaw ako sa dulo ng pantalan
+      - type: listen
+        audio: ang_puso_ko_ay_iniwan_sa_dalampasigan
+        answer_tl: Ang puso ko ay iniwan sa dalampasigan
+        extra_words: [bangka, pantalan]
+
+  - id: tula-4
+    title: Song and country
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bayan, en: nation or hometown }
+          - { tl: pag-ibig, en: love }
+          - { tl: kalayaan, en: freedom }
+          - { tl: pag-asa, en: hope }
+      - type: choice
+        prompt: "'Bayan' in a song can mean both..."
+        answer: hometown and nation
+        distractors: [river and sea, house and street, morning and night]
+        audio: bayan
+        audio_text: Bayan.
+      - type: fill_blank
+        sentence: "Ang ___ sa bayan ay hindi nauubos."
+        translation: "Love for the country does not run out."
+        answer: pag-ibig
+        options: [pag-ibig, pag-asa, kalayaan]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Ang kalayaan ay pinaglaban ng ating mga ninuno.
+        answer_en: Freedom was fought for by our ancestors.
+        accept:
+          - Our ancestors fought for freedom
+        extra_words: [cheap, market, tomorrow]
+        audio: ang_kalayaan_ay_pinaglaban_ng_ating_mga_ninuno
+      - type: arrange
+        prompt: "Love for the country does not run out."
+        answer_tl: Ang pag-ibig sa bayan ay hindi nauubos
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Which pair often appears together in patriotic songs?"
+        answer: kalayaan and pag-asa
+        distractors: [bakod and sipit, tuwalya and sabon, pila and resibo]
+      - type: translate
+        prompt_en: There is still hope for our nation.
+        answer_tl: May pag-asa pa ang ating bayan
+        accept:
+          - Mayroon pang pag-asa ang ating bayan
+        extra_words: [kalayaan, pag-ibig, tula]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Freedom was fought for by our ancestors."
+        answer_tl: Ang kalayaan ay pinaglaban ng ating mga ninuno
+      - type: listen
+        audio: may_pag_asa_pa_ang_ating_bayan
+        answer_tl: May pag-asa pa ang ating bayan
+        extra_words: [kalayaan, pag-ibig]
+        grading: { hyphens: true }

@@ -1,0 +1,223 @@
+id: hotel
+title: At the Hotel
+tier: conversational
+description: Book a room, check in, ask for help, and check out.
+tip: >-
+  Hotel Tagalog mixes borrowed nouns with formal verbs: mag-check in, magpareserba,
+  magpalinis. The key verb pattern is magpa-, which means "to have something
+  done": magpalinis ng kuwarto (have the room cleaned), magpagising (have
+  yourself woken). It is the polite way to ask staff for anything.
+lessons:
+  - id: hotel-1
+    title: Booking
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magpareserba, en: to reserve }
+          - { tl: kuwarto, en: room }
+          - { tl: bakante, en: vacant }
+          - { tl: gabi, en: night }
+      - type: choice
+        prompt: "'May bakante po ba kayong kuwarto?' asks whether..."
+        answer: a room is available
+        distractors: [the room is clean, the price is fixed, the hotel is new]
+        audio: may_bakante_po_ba_kayong_kuwarto
+        audio_text: May bakante po ba kayong kuwarto?
+      - type: fill_blank
+        sentence: "Gusto ko pong ___ ng kuwarto para sa Sabado."
+        translation: "I would like to reserve a room for Saturday."
+        answer: magpareserba
+        options: [magpareserba, maglaba, magluto]
+      - type: translate
+        prompt_tl: Para po sa dalawang gabi.
+        answer_en: For two nights.
+        accept:
+          - It is for two nights
+        extra_words: [cheap, market, tomorrow]
+        audio: para_po_sa_dalawang_gabi
+      - type: translate
+        prompt_en: How much is a room for one night?
+        answer_tl: Magkano po ang kuwarto sa isang gabi?
+        accept:
+          - Magkano po ang isang gabi sa kuwarto
+        extra_words: [bakante, reserba, umaga]
+      - type: listen
+        audio: may_bakante_po_ba_kayo
+        answer_tl: May bakante po ba kayo
+        extra_words: [kuwarto, gabi]
+      - type: arrange
+        prompt: "I would like to reserve a room for two nights."
+        answer_tl: Gusto ko pong magpareserba ng kuwarto para sa dalawang gabi
+      - type: choice
+        prompt: "Which asks for a room with two beds?"
+        answer: May kuwarto po ba na may dalawang kama?
+        distractors: [Magkano po ang almusal?, Anong oras po ang check out?, Nasaan po ang banyo?]
+      - type: arrange
+        prompt: "Is a room available for tonight?"
+        answer_tl: May bakante po ba kayong kuwarto ngayong gabi
+
+  - id: hotel-2
+    title: Checking in
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mag-check in, en: to check in }
+          - { tl: susi ng kuwarto, en: room key }
+          - { tl: palapag, en: floor }
+          - { tl: hagdanan, en: staircase }
+      - type: choice
+        prompt: "'Ikatlong palapag po' tells you the room is on the..."
+        answer: third floor
+        distractors: [third street, third night, third building]
+        audio: ikatlong_palapag_po
+        audio_text: Ikatlong palapag po.
+      - type: fill_blank
+        sentence: "Anong oras po ang ___ in?"
+        translation: "What time is check in?"
+        answer: check
+        options: [check, banyo, kama]
+      - type: translate
+        prompt_tl: Nasa ikaapat na palapag po ang kuwarto ninyo.
+        answer_en: Your room is on the fourth floor.
+        accept:
+          - Your room is on the 4th floor
+        extra_words: [cheap, market, tomorrow]
+        audio: nasa_ikaapat_na_palapag_po_ang_kuwarto_ninyo
+      - type: translate
+        prompt_en: Here is my reservation and my ID.
+        answer_tl: Narito po ang reserbasyon ko at ang ID ko
+        accept:
+          - Eto po ang reserbasyon at ID ko
+        extra_words: [susi, palapag, elevator]
+      - type: listen
+        audio: anong_oras_po_ang_check_in
+        answer_tl: Anong oras po ang check in
+        extra_words: [susi, palapag]
+      - type: arrange
+        prompt: "Your room is on the fourth floor."
+        answer_tl: Nasa ikaapat na palapag po ang kuwarto ninyo
+      - type: choice
+        prompt: "The staff hands you a 'susi'. You use it to..."
+        answer: open your room
+        distractors: [pay the bill, call reception, open the safe only]
+      - type: fill_blank
+        sentence: "Nasaan po ang ___ papuntang ikalimang palapag?"
+        translation: "Where is the elevator to the fifth floor?"
+        answer: elevator
+        options: [elevator, banyo, kama]
+
+  - id: hotel-3
+    title: Asking for help
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magpalinis, en: to have cleaned }
+          - { tl: magpagising, en: to have oneself woken }
+          - { tl: tuwalya, en: towel }
+          - { tl: sira, en: broken }
+      - type: choice
+        prompt: "The prefix 'magpa-' means..."
+        answer: to have something done for you
+        distractors: [to do it yourself, to refuse it, to have done it already]
+        audio: magpalinis
+        audio_text: Magpalinis.
+      - type: fill_blank
+        sentence: "Pwede po bang ___ ng kuwarto mamaya?"
+        translation: "May I have the room cleaned later?"
+        answer: magpalinis
+        options: [magpalinis, magluto, maglaba]
+      - type: translate
+        prompt_tl: Sira po ang aircon sa kuwarto ko.
+        answer_en: The air conditioner in my room is broken.
+        accept:
+          - My room's aircon is broken
+        extra_words: [cheap, market, tomorrow]
+        audio: sira_po_ang_aircon_sa_kuwarto_ko
+      - type: translate
+        prompt_en: May I have two more towels, please?
+        answer_tl: Pahingi po ng dalawa pang tuwalya
+        accept:
+          - Pwede po bang humingi ng dalawa pang tuwalya
+        extra_words: [magpalinis, sira, kuwarto]
+      - type: listen
+        audio: sira_po_ang_aircon
+        answer_tl: Sira po ang aircon
+        extra_words: [tuwalya, kuwarto]
+      - type: arrange
+        prompt: "May I have the room cleaned later?"
+        answer_tl: Pwede po bang magpalinis ng kuwarto mamaya
+      - type: choice
+        prompt: "'Pakigising po ninyo ako nang alas-singko' asks staff to..."
+        answer: wake you at five
+        distractors: [clean at five, serve breakfast at five, check out at five]
+      - type: arrange
+        prompt: "The air conditioner in my room is broken."
+        answer_tl: Sira po ang aircon sa kuwarto ko
+
+  - id: hotel-4
+    title: Checking out
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: At the front desk on the last morning
+        lines:
+          - speaker: Bisita
+            text: "Magandang umaga po. ___ out na po ako."
+            translation: "Good morning. I am checking out."
+          - speaker: Resepsyon
+            text: "Opo. Kumusta po ang inyong ___?"
+            translation: "Yes. How was your stay?"
+          - speaker: Bisita
+            text: "Maayos po, salamat. Sira lang po ang ___ sa kuwarto."
+            translation: "It was fine, thank you. Only the air conditioner in the room was broken."
+          - speaker: Resepsyon
+            text: "Pasensya na po, iaayos namin agad."
+            translation: "We are sorry, we will fix it right away."
+        blanks:
+          - answer: Check
+            options: [Check, Kain, Tulog]
+          - answer: pamamalagi
+            options: [pamamalagi, sipit, kandila]
+          - answer: aircon
+            options: [aircon, tuwalya, susi]
+      - type: match
+        pairs:
+          - { tl: pamamalagi, en: stay }
+          - { tl: bayarin, en: bill }
+          - { tl: bagahe, en: luggage }
+          - { tl: taksi, en: taxi }
+      - type: fill_blank
+        sentence: "Pwede po bang iwan ang ___ hanggang hapon?"
+        translation: "May I leave my luggage until the afternoon?"
+        answer: bagahe
+        options: [bagahe, tuwalya, susi]
+      - type: translate
+        prompt_en: May I have the bill, please?
+        answer_tl: Pahingi po ng bayarin
+        accept:
+          - Pwede po bang makuha ang bayarin
+        extra_words: [bagahe, taksi, pamamalagi]
+      - type: translate
+        prompt_tl: Pwede po ba kayong tumawag ng taksi?
+        answer_en: Could you call a taxi?
+        accept:
+          - Can you call a taxi for me
+        extra_words: [cheap, market, tomorrow]
+        audio: pwede_po_ba_kayong_tumawag_ng_taksi
+      - type: listen
+        audio: pahingi_po_ng_bayarin
+        answer_tl: Pahingi po ng bayarin
+        extra_words: [bagahe, taksi]
+      - type: choice
+        prompt: "In the dialogue, what problem did the guest report?"
+        answer: a broken air conditioner
+        distractors: [a missing towel, a noisy neighbor, a late breakfast]
+      - type: arrange
+        prompt: "May I leave my luggage until the afternoon?"
+        answer_tl: Pwede po bang iwan ang bagahe hanggang hapon
+      - type: arrange
+        prompt: "Could you call a taxi for me?"
+        answer_tl: Pwede po ba kayong tumawag ng taksi para sa akin

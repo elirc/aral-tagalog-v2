@@ -1,0 +1,229 @@
+id: positions
+title: Where Exactly
+tier: everyday
+description: In, on, under, between — pinning a thing down precisely.
+tip: >-
+  Position words are nouns in disguise, so they take sa and ng: "sa ilalim ng
+  mesa" (under the table), "sa pagitan ng dalawang bahay" (between the two
+  houses). The frame never changes: sa + position + ng + the thing. Learn the
+  frame once and swap the middle word.
+lessons:
+  - id: pos-1
+    title: Above and below
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sa ibabaw ng, en: on top of }
+          - { tl: sa ilalim ng, en: under }
+          - { tl: sa itaas ng, en: above }
+          - { tl: sa ibaba ng, en: below }
+      - type: choice
+        prompt: "The frame for position phrases is..."
+        answer: sa + position + ng + thing
+        distractors: [ang + position + thing, ng + thing + sa, position + ang + thing]
+        audio: sa_ilalim_ng_mesa
+        audio_text: Sa ilalim ng mesa.
+      - type: fill_blank
+        sentence: "Nasa ___ ng kama ang bag."
+        translation: "The bag is under the bed."
+        answer: ilalim
+        options: [ilalim, ibabaw, tabi]
+      - type: translate
+        prompt_tl: Nasa itaas ng aparador ang kahon.
+        answer_en: The box is above the cabinet.
+        accept:
+          - The box is on top of the cabinet
+        extra_words: [cheap, market, tomorrow]
+        audio: nasa_itaas_ng_aparador_ang_kahon
+      - type: translate
+        prompt_en: The cat is on top of the table.
+        answer_tl: Nasa ibabaw ng mesa ang pusa
+        accept:
+          - Nasa mesa ang pusa
+        extra_words: [ilalim, itaas, tabi]
+      - type: listen
+        audio: nasa_ilalim_ng_mesa_ito
+        answer_tl: Nasa ilalim ng mesa ito
+        extra_words: [ibabaw, itaas]
+      - type: choice
+        prompt: "'Sa ibaba' points..."
+        answer: downward
+        distractors: [upward, sideways, backward]
+      - type: fill_blank
+        sentence: "Nasa ___ ng hagdan ang sapatos."
+        translation: "The shoes are at the bottom of the stairs."
+        answer: ibaba
+        options: [ibaba, itaas, harap]
+      - type: arrange
+        prompt: "The bag is under the bed."
+        answer_tl: Nasa ilalim ng kama ang bag
+
+  - id: pos-2
+    title: In front and behind
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sa harap ng, en: in front of }
+          - { tl: sa likod ng, en: behind }
+          - { tl: sa tabi ng, en: beside }
+          - { tl: sa pagitan ng, en: between }
+      - type: choice
+        prompt: "'Sa pagitan ng bangko at simbahan' means..."
+        answer: between the bank and the church
+        distractors: [behind the bank, in front of the church, beside the bank only]
+        audio: sa_pagitan_ng_bangko_at_simbahan
+        audio_text: Sa pagitan ng bangko at simbahan.
+      - type: fill_blank
+        sentence: "Nasa ___ ng paaralan ang palengke."
+        translation: "The market is in front of the school."
+        answer: harap
+        options: [harap, likod, pagitan]
+      - type: translate
+        prompt_tl: Nasa likod ng bahay ang hardin.
+        answer_en: The garden is behind the house.
+        accept:
+          - Behind the house is the garden
+        extra_words: [cheap, market, tomorrow]
+        audio: nasa_likod_ng_bahay_ang_hardin
+      - type: translate
+        prompt_en: Sit beside me.
+        answer_tl: Maupo ka sa tabi ko
+        accept:
+          - Umupo ka sa tabi ko
+        extra_words: [harap, likod, pagitan]
+      - type: listen
+        audio: nasa_harap_ng_simbahan
+        answer_tl: Nasa harap ng simbahan
+        extra_words: [likod, tabi]
+      - type: choice
+        prompt: "Which needs two reference points?"
+        answer: sa pagitan ng
+        distractors: [sa harap ng, sa likod ng, sa tabi ng]
+      - type: fill_blank
+        sentence: "Nasa ___ ng dalawang puno ang bangko."
+        translation: "The bench is between the two trees."
+        answer: pagitan
+        options: [pagitan, harap, ibabaw]
+      - type: arrange
+        prompt: "The store is between the school and the church."
+        answer_tl: Nasa pagitan ng paaralan at simbahan ang tindahan
+
+  - id: pos-3
+    title: Inside and outside
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sa loob ng, en: inside }
+          - { tl: sa labas ng, en: outside }
+          - { tl: sa gitna ng, en: in the middle of }
+          - { tl: sa dulo ng, en: at the end of }
+      - type: choice
+        prompt: "'Sa gitna ng kalye' means..."
+        answer: in the middle of the street
+        distractors: [at the end of the street, outside the street, under the street]
+        audio: sa_gitna_ng_kalye
+        audio_text: Sa gitna ng kalye.
+      - type: fill_blank
+        sentence: "Nasa ___ ng bag ang pitaka ko."
+        translation: "My wallet is inside the bag."
+        answer: loob
+        options: [loob, labas, dulo]
+      - type: translate
+        prompt_tl: Naghihintay siya sa labas ng gate.
+        answer_en: He is waiting outside the gate.
+        accept:
+          - She is waiting outside the gate
+        extra_words: [cheap, market, tomorrow]
+        audio: naghihintay_siya_sa_labas_ng_gate
+      - type: translate
+        prompt_en: The house is at the end of the street.
+        answer_tl: Nasa dulo ng kalye ang bahay
+        accept:
+          - Ang bahay ay nasa dulo ng kalye
+        extra_words: [gitna, loob, labas]
+      - type: listen
+        audio: nasa_loob_ng_bag
+        answer_tl: Nasa loob ng bag
+        extra_words: [labas, dulo]
+      - type: choice
+        prompt: "Which pair are opposites?"
+        answer: loob and labas
+        distractors: [loob and gitna, harap and ibabaw, tabi and pagitan]
+      - type: fill_blank
+        sentence: "May puno sa ___ ng plaza."
+        translation: "There is a tree in the middle of the plaza."
+        answer: gitna
+        options: [gitna, dulo, ilalim]
+      - type: arrange
+        prompt: "My wallet is inside my bag."
+        answer_tl: Nasa loob ng bag ko ang pitaka ko
+
+  - id: pos-4
+    title: Finding things
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Looking for the keys
+        lines:
+          - speaker: Ben
+            text: "Nasaan ang susi? Wala sa mesa."
+            translation: "Where is the key? It is not on the table."
+          - speaker: Ana
+            text: "Tingnan mo sa ___ ng aparador."
+            translation: "Look on top of the cabinet."
+          - speaker: Ben
+            text: "Wala rin. Baka nasa ___ ng bag."
+            translation: "Not there either. Maybe it is inside the bag."
+          - speaker: Ana
+            text: "Nandiyan nga, sa ___ ng pitaka at telepono."
+            translation: "There it is, between the wallet and the phone."
+        blanks:
+          - answer: ibabaw
+            options: [ibabaw, ilalim, labas]
+          - answer: loob
+            options: [loob, labas, dulo]
+          - answer: pagitan
+            options: [pagitan, harap, likod]
+      - type: match
+        pairs:
+          - { tl: tingnan, en: to look at }
+          - { tl: hanapin, en: to look for }
+          - { tl: makita, en: to see or find }
+          - { tl: nandiyan, en: it is there }
+      - type: fill_blank
+        sentence: "___ mo sa ilalim ng kama."
+        translation: "Look under the bed."
+        answer: Tingnan
+        options: [Tingnan, Kainin, Inumin]
+      - type: translate
+        prompt_en: I cannot find my phone.
+        answer_tl: Hindi ko makita ang telepono ko
+        accept:
+          - Hindi ko mahanap ang telepono ko
+        extra_words: [tingnan, hanapin, nandiyan]
+      - type: translate
+        prompt_tl: Hanapin mo sa loob ng aparador.
+        answer_en: Look for it inside the cabinet.
+        accept:
+          - Search inside the cabinet
+        extra_words: [cheap, market, tomorrow]
+        audio: hanapin_mo_sa_loob_ng_aparador
+      - type: listen
+        audio: hindi_ko_makita_ang_susi
+        answer_tl: Hindi ko makita ang susi
+        extra_words: [hanapin, tingnan]
+      - type: choice
+        prompt: "In the dialogue, where was the key finally found?"
+        answer: between the wallet and the phone
+        distractors: [on top of the cabinet, under the bed, outside the gate]
+      - type: fill_blank
+        sentence: "___ na ang susi, nasa bag pala."
+        translation: "The key is found, it was in the bag after all."
+        answer: Nakita
+        options: [Nakita, Nawala, Natapon]
+      - type: arrange
+        prompt: "Look on top of the cabinet."
+        answer_tl: Tingnan mo sa ibabaw ng aparador

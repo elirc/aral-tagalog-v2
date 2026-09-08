@@ -1,0 +1,230 @@
+id: breakfast
+title: Breakfast
+tier: foundation
+description: Almusal — rice, eggs, dried fish, and the words for a Filipino morning.
+tip: >-
+  Filipino breakfast is built on garlic fried rice (sinangag) plus one salty
+  partner, and the names are portmanteaus: tapa + sinangag + itlog = tapsilog,
+  longganisa + silog = longsilog. Once you spot the -silog ending you can read
+  any carinderia sign.
+lessons:
+  - id: bfast-1
+    title: On the table
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: almusal, en: breakfast }
+          - { tl: kanin, en: cooked rice }
+          - { tl: itlog, en: egg }
+          - { tl: tinapay, en: bread }
+      - type: choice
+        prompt: "'Almusal' is..."
+        answer: breakfast
+        distractors: [lunch, dinner, a snack]
+        audio: almusal
+        audio_text: Almusal.
+      - type: fill_blank
+        sentence: "Kumakain ako ng ___ tuwing umaga."
+        translation: "I eat rice every morning."
+        answer: kanin
+        options: [kanin, tubig, bahay]
+      - type: translate
+        prompt_tl: Masarap ang itlog at kanin.
+        answer_en: The egg and rice are delicious.
+        accept:
+          - Egg and rice are delicious
+        extra_words: [tomorrow, cheap, market]
+        audio: masarap_ang_itlog_at_kanin
+      - type: translate
+        prompt_en: I want bread and coffee.
+        answer_tl: Gusto ko ng tinapay at kape
+        accept:
+          - Gusto ko ng tinapay at kape po
+        extra_words: [itlog, kanin, gatas]
+      - type: listen
+        audio: ano_ang_almusal_mo
+        answer_tl: Ano ang almusal mo
+        extra_words: [kanin, itlog]
+      - type: choice
+        prompt: "Which one is bread?"
+        answer: tinapay
+        distractors: [itlog, kanin, tubig]
+      - type: fill_blank
+        sentence: "Dalawang ___ po ang gusto ko."
+        translation: "I want two eggs."
+        answer: itlog
+        options: [itlog, tubig, mesa]
+      - type: translate
+        prompt_tl: Walang kanin sa mesa.
+        answer_en: There is no rice on the table.
+        accept:
+          - There's no rice on the table
+        extra_words: [cheap, tomorrow, quickly]
+        audio: walang_kanin_sa_mesa
+
+  - id: bfast-2
+    title: The silog family
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sinangag, en: garlic fried rice }
+          - { tl: tapa, en: cured beef }
+          - { tl: longganisa, en: sausage }
+          - { tl: tuyo, en: dried fish }
+      - type: choice
+        prompt: "'Tapsilog' is made of..."
+        answer: tapa, sinangag, and itlog
+        distractors: [tinapay and gatas, tubig and yelo, gulay and sabaw]
+        audio: tapsilog
+        audio_text: Tapsilog.
+      - type: fill_blank
+        sentence: "Longsilog: longganisa, ___, at itlog."
+        translation: "Longsilog: sausage, fried rice, and egg."
+        answer: sinangag
+        options: [sinangag, tinapay, gatas]
+      - type: translate
+        prompt_en: I will order tapsilog.
+        answer_tl: Oorder ako ng tapsilog
+        accept:
+          - Mag-oorder ako ng tapsilog
+        extra_words: [longsilog, tinapay, kape]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Masarap ang tuyo at sinangag.
+        answer_en: Dried fish and fried rice are delicious.
+        accept:
+          - The dried fish and fried rice are delicious
+        extra_words: [tomorrow, cheap, market]
+        audio: masarap_ang_tuyo_at_sinangag
+      - type: listen
+        audio: isang_tapsilog_po
+        answer_tl: Isang tapsilog po
+        extra_words: [longsilog, kape]
+      - type: choice
+        prompt: "The '-silog' ending always includes..."
+        answer: sinangag and itlog
+        distractors: [tinapay and gatas, gulay and sabaw, prutas and yelo]
+      - type: fill_blank
+        sentence: "Amoy bawang ang ___."
+        translation: "The fried rice smells of garlic."
+        answer: sinangag
+        options: [sinangag, tubig, itlog]
+      - type: translate
+        prompt_en: Sausage, fried rice, and egg, please.
+        answer_tl: Longganisa, sinangag, at itlog po
+        accept:
+          - Longganisa sinangag at itlog po
+        extra_words: [tuyo, tapa, kape]
+
+  - id: bfast-3
+    title: How do you like your egg?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pritong itlog, en: fried egg }
+          - { tl: nilagang itlog, en: boiled egg }
+          - { tl: asin, en: salt }
+          - { tl: paminta, en: pepper }
+      - type: choice
+        prompt: "'Nilagang itlog' is an egg that is..."
+        answer: boiled
+        distractors: [fried, raw, scrambled]
+        audio: nilagang_itlog
+        audio_text: Nilagang itlog.
+      - type: fill_blank
+        sentence: "Pakidagdagan po ng ___ ang itlog."
+        translation: "Please add salt to the egg."
+        answer: asin
+        options: [asin, tubig, gatas]
+      - type: translate
+        prompt_tl: Gusto ko ng pritong itlog.
+        answer_en: I want a fried egg.
+        accept:
+          - I would like a fried egg
+        extra_words: [tomorrow, cheap, quickly]
+        audio: gusto_ko_ng_pritong_itlog
+      - type: translate
+        prompt_en: Two boiled eggs, please.
+        answer_tl: Dalawang nilagang itlog po
+        accept:
+          - Dalawang nilagang itlog nga po
+        extra_words: [pritong, asin, kanin]
+      - type: listen
+        audio: pritong_itlog_po
+        answer_tl: Pritong itlog po
+        extra_words: [nilagang, asin]
+      - type: choice
+        prompt: "Which is a seasoning?"
+        answer: paminta
+        distractors: [tinapay, kanin, baso]
+      - type: fill_blank
+        sentence: "Maalat ang tuyo, huwag nang lagyan ng ___."
+        translation: "The dried fish is salty, don't add salt anymore."
+        answer: asin
+        options: [asin, gatas, yelo]
+      - type: translate
+        prompt_tl: Masarap ang itlog na maalat at kamatis.
+        answer_en: Salted egg and tomato are delicious.
+        accept:
+          - Salted egg with tomato is delicious
+        extra_words: [market, tomorrow, morning]
+        audio: masarap_ang_itlog_na_maalat_at_kamatis
+
+  - id: bfast-4
+    title: Breakfast talk
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A host asks 'Nag-almusal ka na ba?' — they want to know if you..."
+        answer: have eaten breakfast
+        distractors: [are going out, want to sleep, live nearby]
+        audio: nag_almusal_ka_na_ba
+        audio_text: Nag-almusal ka na ba?
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: busog, en: full }
+          - { tl: kumain, en: to eat }
+          - { tl: masarap, en: delicious }
+      - type: fill_blank
+        sentence: "___ na ako, salamat po."
+        translation: "I am full already, thank you."
+        answer: Busog
+        options: [Busog, Gutom, Pagod]
+      - type: translate
+        prompt_en: I have not eaten breakfast yet.
+        answer_tl: Hindi pa ako nag-aalmusal
+        accept:
+          - Hindi pa ako nag aalmusal
+        extra_words: [busog, gutom, kanin]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Gutom na gutom ako ngayong umaga.
+        answer_en: I am very hungry this morning.
+        accept:
+          - I'm very hungry this morning
+        extra_words: [cheap, tomorrow, market]
+        audio: gutom_na_gutom_ako_ngayong_umaga
+      - type: listen
+        audio: nag_almusal_ka_na_ba_2
+        answer_tl: Nag-almusal ka na ba
+        extra_words: [busog, gutom]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Doubling an adjective, as in 'gutom na gutom', makes it..."
+        answer: stronger
+        distractors: [weaker, a question, past tense]
+      - type: fill_blank
+        sentence: "___ ang almusal, salamat po."
+        translation: "The breakfast is delicious, thank you."
+        answer: Masarap
+        options: [Masarap, Mahal, Malamig]
+      - type: translate
+        prompt_en: Have you eaten yet?
+        answer_tl: Kumain ka na ba?
+        accept:
+          - Kumain ka na ba po
+        extra_words: [busog, gutom, almusal]

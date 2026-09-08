@@ -1,0 +1,287 @@
+id: mastery-review
+title: "Review: Mastery"
+tier: mastery
+description: Idioms, formal register, narration, news and street Tagalog in one pass — mostly word order and full conversations.
+tip: >-
+  This unit mixes every register you have met. The same idea changes shape
+  depending on who you are talking to: "Pwede ba?" with a friend, "Maaari po
+  ba?" at an office, "Pwede po ba 'yan?" in a market. Register is not politeness
+  alone — it is the whole set of words you reach for.
+lessons:
+  - id: mastery-1
+    title: Registers side by side
+    xp: 25
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pwede ba, en: can I? (casual) }
+          - { tl: maaari po ba, en: may I? (formal) }
+          - { tl: gusto ko, en: I want (casual) }
+          - { tl: nais ko po, en: I wish (formal) }
+      - type: choice
+        prompt: "Writing to a government office, you should use:"
+        answer: Nais ko po sanang humiling...
+        distractors:
+          - "Gusto ko sana..."
+          - "Pwede ba akong..."
+          - "Bahala na, humiling ako..."
+      - type: arrange
+        prompt: "May I ask a question, sir?"
+        answer_tl: Maaari po ba akong magtanong ginoo
+        accept:
+          - Maaari po ba akong magtanong, ginoo?
+      - type: dialogue
+        intro: The same request, twice
+        lines:
+          - speaker: Sa kaibigan
+            text: "Uy, ___ ba akong humiram ng lapis?"
+            translation: "Hey, can I borrow a pencil?"
+          - speaker: Sa opisina
+            text: "___ po ba akong humiram ng panulat?"
+            translation: "May I borrow a pen?"
+          - speaker: Sa palengke
+            text: "Ate, ___ po bang tumawad?"
+            translation: "Ma'am, is it possible to haggle?"
+        blanks:
+          - answer: pwede
+            options: [pwede, maaari, nais]
+          - answer: Maaari
+            options: [Maaari, Pwede, Gusto]
+          - answer: pwede
+            options: [pwede, bawal, ayaw]
+      - type: fill_blank
+        sentence: "___ po ninyo, mali ang naibigay kong numero."
+        translation: "Please forgive me, I gave the wrong number."
+        answer: Ipagpaumanhin
+        options: [Ipagpaumanhin, Magandang, Maraming]
+      - type: translate
+        prompt_en: I would like to speak with the manager, please.
+        answer_tl: Nais ko po sanang makausap ang manedyer
+        accept:
+          - Nais ko pong makausap ang manedyer
+        extra_words: [tindera, palengke, bukas]
+      - type: choice
+        prompt: "Which greeting opens a public announcement?"
+        answer: Magandang araw po sa inyong lahat.
+        distractors:
+          - "Uy, kumusta!"
+          - "Ano'ng chika?"
+          - "Sana all!"
+      - type: translate
+        prompt_tl: Pakisuyo po na ipadala ninyo ang liham bukas.
+        answer_en: Kindly send the letter tomorrow.
+        accept:
+          - Please send the letter tomorrow
+        extra_words: [cheaply, market, suddenly]
+        audio: pakisuyo_po_na_ipadala_ang_liham
+      - type: listen
+        audio: maaari_po_ba_akong_magtanong
+        answer_tl: Maaari po ba akong magtanong
+        extra_words: [pwede, ginoo]
+
+  - id: mastery-2
+    title: Word order workout
+    xp: 25
+    exercises:
+      - type: arrange
+        prompt: "When I was a child, we lived in the province."
+        answer_tl: Noong bata ako nakatira kami sa probinsya
+        accept:
+          - Noong bata ako, nakatira kami sa probinsya
+      - type: arrange
+        prompt: "Suddenly it rained, so we went home early."
+        answer_tl: Biglang umulan kaya umuwi kami nang maaga
+        accept:
+          - Biglang umulan, kaya umuwi kami nang maaga
+        grading: { ng_nang: true }
+      - type: arrange
+        prompt: "According to the report, classes are suspended."
+        answer_tl: Ayon sa ulat suspendido ang mga klase
+        accept:
+          - Ayon sa ulat, suspendido ang mga klase
+      - type: arrange
+        prompt: "My grandmother is very generous."
+        answer_tl: Napakabukas ng palad ng lola ko
+      - type: arrange
+        prompt: "Please give me a discount, I'll take three kilos."
+        answer_tl: Tawad naman po kukuha ako ng tatlong kilo
+        accept:
+          - Tawad naman po, kukuha ako ng tatlong kilo
+      - type: arrange
+        prompt: "The next day, the cat came home."
+        answer_tl: Kinabukasan nakauwi ang pusa
+        accept:
+          - Kinabukasan, nakauwi ang pusa
+      - type: choice
+        prompt: "Tagalog's default word order puts the verb..."
+        answer: first
+        distractors: [last, after the topic, before the question word]
+        hint: '"Kumain ang bata" — verb, then actor. English does the opposite.'
+      - type: fill_blank
+        sentence: "Kumakain siya ___ mabilis."
+        translation: "He eats quickly."
+        answer: nang
+        options: [nang, ng, sa]
+        hint: '"nang" links a verb to how it was done; "ng" marks an object.'
+        grading: { ng_nang: false }
+      - type: listen
+        audio: biglang_umulan_kaya_umuwi_kami_nang_maaga
+        answer_tl: Biglang umulan kaya umuwi kami nang maaga
+        extra_words: [kinabukasan, wakas]
+        grading: { ng_nang: true }
+
+  - id: mastery-3
+    title: Long conversations
+    xp: 25
+    exercises:
+      - type: dialogue
+        intro: Reporting a lost bag at a barangay hall
+        lines:
+          - speaker: Residente
+            text: "Magandang umaga po. ___ ko po sanang mag-report ng nawawalang bag."
+            translation: "Good morning. I would like to report a missing bag."
+          - speaker: Klerk
+            text: "___ po ninyo nawala ang bag?"
+            translation: "When did the bag go missing?"
+          - speaker: Residente
+            text: "Kahapon po. ___ akong bumaba ng jeep, wala na ito."
+            translation: "Yesterday. When I got off the jeepney, it was already gone."
+          - speaker: Klerk
+            text: "___ po ninyo ang inyong pangalan dito."
+            translation: "Please write your name here."
+        blanks:
+          - answer: Nais
+            options: [Nais, Ayaw, Bawal]
+          - answer: Kailan
+            options: [Kailan, Saan, Bakit]
+          - answer: Noong
+            options: [Noong, Bukas, Mamaya]
+          - answer: Pakisulat
+            options: [Pakisulat, Pakikain, Pakiinom]
+      - type: dialogue
+        intro: Explaining a bad morning to a friend
+        lines:
+          - speaker: Ana
+            text: "Bakit ang lungkot mo?"
+            translation: "Why do you look so sad?"
+          - speaker: Bea
+            text: "___ ang dugo ko kanina sa opisina."
+            translation: "My blood was boiling earlier at the office."
+          - speaker: Ana
+            text: "Ano'ng nangyari? ___ mo naman sa akin."
+            translation: "What happened? Do tell me."
+          - speaker: Bea
+            text: "___ na lang, baka may makarinig."
+            translation: "Later on, someone might hear."
+        blanks:
+          - answer: Kumukulo
+            options: [Kumukulo, Kumakain, Kumakanta]
+          - answer: Ikuwento
+            options: [Ikuwento, Ibigay, Isara]
+          - answer: Mamaya
+            options: [Mamaya, Kahapon, Noong]
+      - type: choice
+        prompt: "In the barangay dialogue, when did the bag go missing?"
+        answer: yesterday, getting off a jeepney
+        distractors: [this morning at the market, last week at the office, it does not say]
+      - type: translate
+        prompt_tl: Noong bumaba ako ng jeep, wala na ang bag ko.
+        answer_en: When I got off the jeepney, my bag was already gone.
+        accept:
+          - When I got off the jeep my bag was gone
+        extra_words: [tomorrow, cheaply, suddenly]
+        audio: noong_bumaba_ako_ng_jeep
+      - type: arrange
+        prompt: "I would like to report a missing bag."
+        answer_tl: Nais ko pong mag-report ng nawawalang bag
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "___ po ninyo ang inyong pangalan dito."
+        translation: "Please write your name here."
+        answer: Pakisulat
+        options: [Pakisulat, Pakikain, Pakiinom]
+      - type: translate
+        prompt_en: Tell me the story later, someone might hear.
+        answer_tl: Ikuwento mo sa akin mamaya, baka may makarinig
+        accept:
+          - Ikuwento mo sa akin mamaya baka may makarinig
+        extra_words: [kahapon, palengke, mura]
+      - type: choice
+        prompt: "'Pakisulat po ninyo' is polite because it uses:"
+        answer: paki- plus the formal ninyo
+        distractors: [the past tense, a question marker, an English loanword]
+      - type: listen
+        audio: kumukulo_ang_dugo_ko_kanina
+        answer_tl: Kumukulo ang dugo ko kanina
+        extra_words: [mamaya, opisina]
+
+  - id: mastery-4
+    title: Everything at once
+    xp: 30
+    exercises:
+      - type: dialogue
+        intro: "Balita sa radyo, tapos usapan sa kalye"
+        lines:
+          - speaker: Radyo
+            text: "___ sa PAGASA, papasok ang bagyo bukas ng hapon."
+            translation: "According to PAGASA, the typhoon will enter tomorrow afternoon."
+          - speaker: Radyo
+            text: "___ na po ang mga klase sa Metro Manila."
+            translation: "Classes in Metro Manila are already suspended."
+          - speaker: Aling Bebang
+            text: "Naku, ___ na ako ng bigas at delata."
+            translation: "Oh my, I'll buy rice and canned goods now."
+          - speaker: Tindera
+            text: "Ubos na po ang delata. ___ na lang po ba?"
+            translation: "The canned goods are finished. Just noodles instead?"
+        blanks:
+          - answer: Ayon
+            options: [Ayon, Dahil, Habang]
+          - answer: Suspendido
+            options: [Suspendido, Masaya, Mahal]
+          - answer: bibili
+            options: [bibili, natulog, umiyak]
+          - answer: Pansit
+            options: [Pansit, Sapatos, Sasakyan]
+      - type: choice
+        prompt: "In the exchange, why is Aling Bebang buying supplies?"
+        answer: a typhoon is coming tomorrow
+        distractors: [prices went down, there is a fiesta, the store is closing]
+      - type: arrange
+        prompt: "According to the report, the typhoon will enter tomorrow."
+        answer_tl: Ayon sa ulat papasok ang bagyo bukas
+        accept:
+          - Ayon sa ulat, papasok ang bagyo bukas
+      - type: translate
+        prompt_tl: Ubos na po ang delata, pansit na lang po ba?
+        answer_en: The canned goods are finished, just noodles instead?
+        accept:
+          - The canned goods are sold out just noodles instead
+        extra_words: [cheaper, suddenly, yesterday]
+        audio: ubos_na_po_ang_delata
+      - type: arrange
+        prompt: "Please forgive me, I got caught in traffic."
+        answer_tl: Ipagpaumanhin po ninyo naabutan ako ng trapiko
+        accept:
+          - Ipagpaumanhin po ninyo, naabutan ako ng trapiko
+      - type: fill_blank
+        sentence: "Isang kahig, isang ___."
+        translation: "Living hand to mouth."
+        answer: tuka
+        options: [tuka, luha, palad]
+      - type: translate
+        prompt_en: They say the bridge is closed, so we went home early.
+        answer_tl: Sarado raw ang tulay, kaya umuwi kami nang maaga
+        accept:
+          - Sarado daw ang tulay kaya umuwi kami nang maaga
+        extra_words: [bukas, mura, bigla]
+        grading: { ng_nang: true }
+      - type: arrange
+        prompt: "At last, the cat came home hungry but safe."
+        answer_tl: Sa wakas nakauwi ang pusa na gutom pero ligtas
+        accept:
+          - Sa wakas, nakauwi ang pusa na gutom pero ligtas
+      - type: listen
+        audio: ayon_sa_ulat_papasok_ang_bagyo_bukas
+        answer_tl: Ayon sa ulat papasok ang bagyo bukas
+        extra_words: [suspendido, klase]

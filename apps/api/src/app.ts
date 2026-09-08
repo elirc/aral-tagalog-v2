@@ -2,6 +2,8 @@ import Fastify, { type FastifyError } from "fastify";
 import cors from "@fastify/cors";
 import rateLimit from "@fastify/rate-limit";
 import { createDb, type Db } from "@aral/db";
+import { sql } from "drizzle-orm";
+import { catalog } from "./catalog";
 import { env } from "./env";
 import { authRoutes } from "./routes/auth";
 import { contentRoutes } from "./routes/content";
@@ -17,7 +19,9 @@ declare module "fastify" {
 export function buildApp(opts: { databaseUrl?: string; logger?: boolean } = {}) {
   // silence request logs under vitest; every injected request would print pino JSON
   const app = Fastify({
-    logger: opts.logger ?? !process.env.VITEST,
+    logger: (opts.logger ?? !process.env.VITEST)
+      ? { redact: ["req.headers.authorization", "req.headers.cookie", "res.headers.set-cookie"] }
+      : false,
     // makes req.ip the client address rather than the proxy's, so the rate
     // limiter buckets per user instead of per deployment (see env.trustProxy)
     trustProxy: env.trustProxy,
@@ -47,10 +51,29 @@ export function buildApp(opts: { databaseUrl?: string; logger?: boolean } = {}) 
   });
 
   app.get("/health", async () => ({ ok: true }));
+  app.get("/ready", async (req, reply) => {
+    reply.header("cache-control", "no-store");
+    if (!catalog) return reply.code(503).send({ ok: false });
+    try {
+      // LIMIT 0 checks connectivity and the required migrations without
+      // reading personal data, even when these tables are empty.
+      await app.db.execute(sql`select users.id, refresh_tokens.family_id,
+        refresh_tokens.rotated_at, progress_events.id
+        from users, refresh_tokens, progress_events limit 0`);
+      return { ok: true };
+    } catch (error) {
+      req.log.error(error, "readiness database check failed");
+      return reply.code(503).send({ ok: false });
+    }
+  });
   // routes live in a child context that loads *after* the plugins above —
   // registered directly on the root they'd be added before @fastify/rate-limit
   // loads, and its route hooks (incl. per-route auth limits) would never attach
   app.register(async (instance) => {
+    instance.addHook("onSend", async (req, reply) => {
+      reply.header("x-content-type-options", "nosniff");
+      if (!req.url.startsWith("/content/")) reply.header("cache-control", "no-store");
+    });
     authRoutes(instance);
     contentRoutes(instance);
     syncRoutes(instance);

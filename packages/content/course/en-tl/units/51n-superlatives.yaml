@@ -1,0 +1,221 @@
+id: superlatives
+title: The Most and the Least
+tier: conversational
+description: Pinaka-, mas, kaysa — ranking things against each other.
+tip: >-
+  Comparison uses mas plus kaysa: "Mas mahal ito kaysa doon." The superlative
+  prefix is pinaka-: pinakamalaki (biggest), pinakamura (cheapest). For "as … as"
+  Tagalog doubles the root with ka-: kasingganda (as beautiful as), kasingtaas
+  (as tall as).
+lessons:
+  - id: sup-1
+    title: More than
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mas, en: more }
+          - { tl: kaysa, en: than }
+          - { tl: mas mabuti, en: better }
+          - { tl: mas malala, en: worse }
+      - type: choice
+        prompt: "'Mas mahal ito kaysa doon' says this one is..."
+        answer: more expensive than that one
+        distractors: [cheaper than that one, the same price, the cheapest]
+        audio: mas_mahal_ito_kaysa_doon
+        audio_text: Mas mahal ito kaysa doon.
+      - type: fill_blank
+        sentence: "___ malaki ang bahay nila kaysa sa amin."
+        translation: "Their house is bigger than ours."
+        answer: Mas
+        options: [Mas, Pinakamalaki, Kasinglaki]
+      - type: translate
+        prompt_tl: Mas gusto ko ang kape kaysa tsaa.
+        answer_en: I prefer coffee to tea.
+        accept:
+          - I like coffee more than tea
+        extra_words: [cheap, market, tomorrow]
+        audio: mas_gusto_ko_ang_kape_kaysa_tsaa
+      - type: translate
+        prompt_en: The bus is cheaper than the taxi.
+        answer_tl: Mas mura ang bus kaysa taksi
+        accept:
+          - Mas mura ang bus kaysa sa taksi
+        extra_words: [pinakamura, kasingmura, mahal]
+      - type: listen
+        audio: mas_mura_ang_bus
+        answer_tl: Mas mura ang bus
+        extra_words: [mahal, kaysa]
+      - type: arrange
+        prompt: "Their house is bigger than ours."
+        answer_tl: Mas malaki ang bahay nila kaysa sa amin
+      - type: choice
+        prompt: "'Mas' always needs a partner word for the comparison, which is..."
+        answer: kaysa
+        distractors: [pinaka, kasing, napaka]
+      - type: arrange
+        prompt: "I prefer coffee to tea."
+        answer_tl: Mas gusto ko ang kape kaysa tsaa
+
+  - id: sup-2
+    title: The most
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pinakamalaki, en: biggest }
+          - { tl: pinakamura, en: cheapest }
+          - { tl: pinakamaganda, en: most beautiful }
+          - { tl: pinakamalapit, en: nearest }
+      - type: choice
+        prompt: "The superlative prefix is..."
+        answer: pinaka-
+        distractors: [mas-, kasing-, taga-]
+        audio: pinakamalaki
+        audio_text: Pinakamalaki.
+      - type: fill_blank
+        sentence: "Alin ang ___ na tindahan dito?"
+        translation: "Which is the nearest store here?"
+        answer: pinakamalapit
+        options: [pinakamalapit, mas malapit, kasinglapit]
+      - type: translate
+        prompt_tl: Ito ang pinakamura sa lahat.
+        answer_en: This is the cheapest of all.
+        accept:
+          - This one is the cheapest of them all
+        extra_words: [cheap, market, tomorrow]
+        audio: ito_ang_pinakamura_sa_lahat
+      - type: translate
+        prompt_en: Palawan is the most beautiful island for me.
+        answer_tl: Ang Palawan ang pinakamagandang isla para sa akin
+        accept:
+          - Pinakamagandang isla ang Palawan para sa akin
+        extra_words: [pinakamura, mas mura, kaysa]
+      - type: listen
+        audio: alin_ang_pinakamalapit
+        answer_tl: Alin ang pinakamalapit
+        extra_words: [pinakamura, mas]
+      - type: arrange
+        prompt: "This is the cheapest of all."
+        answer_tl: Ito ang pinakamura sa lahat
+      - type: choice
+        prompt: "Which sentence is a superlative?"
+        answer: Siya ang pinakamatangkad sa klase.
+        distractors: [Mas matangkad siya sa akin., Kasingtaas ko siya., Matangkad siya.]
+      - type: arrange
+        prompt: "Which is the nearest store here?"
+        answer_tl: Alin ang pinakamalapit na tindahan dito
+
+  - id: sup-3
+    title: As much as
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kasingganda, en: as beautiful as }
+          - { tl: kasingtaas, en: as tall as }
+          - { tl: kasinglaki, en: as big as }
+          - { tl: pareho, en: the same }
+      - type: choice
+        prompt: "'Kasingtaas ko siya' means he is..."
+        answer: as tall as me
+        distractors: [taller than me, shorter than me, the tallest]
+        audio: kasingtaas_ko_siya
+        audio_text: Kasingtaas ko siya.
+      - type: fill_blank
+        sentence: "___ ng bag ko ang bag mo."
+        translation: "Your bag is as big as mine."
+        answer: Kasinglaki
+        options: [Kasinglaki, Pinakamalaki, Mas malaki]
+      - type: translate
+        prompt_tl: Pareho lang ang presyo nila.
+        answer_en: Their prices are the same.
+        accept:
+          - They cost the same
+        extra_words: [cheap, market, tomorrow]
+        audio: pareho_lang_ang_presyo_nila
+      - type: translate
+        prompt_en: This one is as good as that one.
+        answer_tl: Kasinggaling niyan ito
+        accept:
+          - Pareho lang ang galing nito at niyon
+        extra_words: [pinakamura, mas mura, kaysa]
+      - type: listen
+        audio: pareho_lang_sila
+        answer_tl: Pareho lang sila
+        extra_words: [kasingmura, mas]
+      - type: arrange
+        prompt: "Their prices are the same."
+        answer_tl: Pareho lang ang presyo nila
+      - type: choice
+        prompt: "'Kasing-' expresses..."
+        answer: equality
+        distractors: [superiority, inferiority, negation]
+      - type: arrange
+        prompt: "Your bag is as big as mine."
+        answer_tl: Kasinglaki ng bag ko ang bag mo
+
+  - id: sup-4
+    title: Comparing at the market
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: Choosing between two stalls
+        lines:
+          - speaker: Bumibili
+            text: "___ mura ba ito kaysa sa kabila?"
+            translation: "Is this cheaper than the other stall?"
+          - speaker: Tindera
+            text: "Opo, ___ po ang akin sa buong palengke."
+            translation: "Yes, mine is the cheapest in the whole market."
+          - speaker: Bumibili
+            text: "Pero ___ lang ng mangga nila ang mangga ninyo."
+            translation: "But your mangoes are only as big as theirs."
+          - speaker: Tindera
+            text: "Mas matamis po ang akin, tikman ninyo."
+            translation: "Mine are sweeter, taste them."
+        blanks:
+          - answer: Mas
+            options: [Mas, Pinakamura, Kasingmura]
+          - answer: pinakamura
+            options: [pinakamura, mas mura, kasingmura]
+          - answer: kasinglaki
+            options: [kasinglaki, pinakamalaki, napakalaki]
+      - type: match
+        pairs:
+          - { tl: kabila, en: the other side }
+          - { tl: tikman, en: to taste }
+          - { tl: matamis, en: sweet }
+          - { tl: presyo, en: price }
+      - type: fill_blank
+        sentence: "___ ninyo po muna bago bumili."
+        translation: "Taste it first before buying."
+        answer: Tikman
+        options: [Tikman, Itapon, Basahin]
+      - type: translate
+        prompt_en: This is sweeter but that one is cheaper.
+        answer_tl: Mas matamis ito pero mas mura iyon
+        accept:
+          - Mas matamis ito ngunit mas mura iyon
+        extra_words: [pinakamura, kasingmura, tikman]
+      - type: translate
+        prompt_tl: Ito ang pinakamatamis na mangga dito.
+        answer_en: This is the sweetest mango here.
+        accept:
+          - These are the sweetest mangoes here
+        extra_words: [cheap, market, tomorrow]
+        audio: ito_ang_pinakamatamis_na_mangga_dito
+      - type: listen
+        audio: mas_matamis_po_ang_akin
+        answer_tl: Mas matamis po ang akin
+        extra_words: [pinakamura, kasing]
+      - type: choice
+        prompt: "In the dialogue, what is the vendor's final argument?"
+        answer: sweetness
+        distractors: [size, price, freshness]
+      - type: arrange
+        prompt: "This is the sweetest mango here."
+        answer_tl: Ito ang pinakamatamis na mangga dito
+      - type: arrange
+        prompt: "This is sweeter but that one is cheaper."
+        answer_tl: Mas matamis ito pero mas mura iyon

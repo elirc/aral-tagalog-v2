@@ -6,22 +6,31 @@
   "main": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./bundle": "./dist/course_en_tl.json"
+    "./bundle": {
+      "types": "./src/bundle.d.ts",
+      "default": "./dist/course_en_tl.json"
+    },
+    "./web-index": {
+      "types": "./src/web-index.d.ts",
+      "default": "./dist/web/index.json"
+    }
   },
   "scripts": {
     "build": "tsx src/compile.ts",
+    "generate": "node generator/generate.mjs",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "review": "node generator/review.mjs"
   },
   "dependencies": {
     "@aral/core": "workspace:*",
-    "yaml": "^2.5.0",
-    "zod": "^3.23.0"
+    "yaml": "^2.9.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1",
-    "tsx": "^4.19.0",
-    "typescript": "^5.6.0",
-    "vitest": "^2.1.0"
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
   }
 }

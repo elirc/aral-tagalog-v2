@@ -12,7 +12,7 @@
  * Exits 0 when every check passes, 1 with a failure list otherwise.
  */
 
-const API = process.env.SMOKE_API_URL ?? "http://localhost:3001";
+const API = (process.env.SMOKE_API_URL ?? "http://localhost:3001").replace(/\/$/, "");
 
 const failures = [];
 let checks = 0;
@@ -28,6 +28,7 @@ function ok(name, cond, detail = "") {
 
 async function req(path, { method = "GET", token, body } = {}) {
   const res = await fetch(`${API}${path}`, {
+    signal: AbortSignal.timeout(15_000),
     method,
     headers: {
       "Content-Type": "application/json",
@@ -44,11 +45,20 @@ async function req(path, { method = "GET", token, body } = {}) {
   return { status: res.status, json };
 }
 
+// Mirrors MAX_COMBO_BONUS_XP in @aral/core: /sync lets a first-time
+// completion claim the authored xp plus this much combo bonus.
+const MAX_COMBO_BONUS_XP = 10;
+
+/** XP the daily quests have paid out in a progress snapshot. */
+const questXp = (p) =>
+  Object.values(p?.dayStats ?? {}).reduce((sum, d) => sum + (d.questXp ?? 0), 0);
+
 const uuid = () => crypto.randomUUID();
 const email = `smoke-${Date.now()}-${Math.floor(Math.random() * 1e6)}@example.test`;
 const password = "smoke-test-password";
 
 console.log(`smoke: ${API}`);
+ok("API and database ready", (await req("/ready")).status === 200);
 
 // --- content ---------------------------------------------------------------
 console.log("content");
@@ -108,7 +118,10 @@ const s1 = await req("/sync", {
 ok("sync 200", s1.status === 200, `got ${s1.status} ${JSON.stringify(s1.json)}`);
 ok("valid event accepted", s1.json?.accepted === 1);
 ok("invalid event rejected by id", s1.json?.rejected?.[0] === "not-a-uuid");
-ok("xp clamped to authored value", s1.json?.progress?.xpTotal === authoredXp, `xpTotal=${s1.json?.progress?.xpTotal}, authored=${authoredXp}`);
+ok("xp clamped to authored value + combo ceiling",
+  s1.json?.progress?.xpTotal === authoredXp + MAX_COMBO_BONUS_XP + questXp(s1.json?.progress),
+  `xpTotal=${s1.json?.progress?.xpTotal}, authored=${authoredXp}, quests=${questXp(s1.json?.progress)}`);
+ok("per-day quest counters are derived", s1.json?.progress?.dayStats !== undefined);
 ok("missed exercise entered review queue", s1.json?.progress?.weakExerciseIds?.includes(exId));
 ok("lesson marked completed", s1.json?.progress?.completedLessonIds?.includes(lesson.id));
 
@@ -131,7 +144,9 @@ const s2 = await req("/sync", {
     ],
   },
 });
-ok("practice xp clamped to 5", s2.json?.progress?.xpTotal === authoredXp + 5, `xpTotal=${s2.json?.progress?.xpTotal}`);
+ok("practice xp clamped to 5",
+  s2.json?.progress?.xpTotal === authoredXp + MAX_COMBO_BONUS_XP + 5 + questXp(s2.json?.progress),
+  `xpTotal=${s2.json?.progress?.xpTotal}`);
 ok("mastering cleared the review queue", s2.json?.progress?.weakExerciseIds?.length === 0);
 ok("mistakesCleared counted", s2.json?.progress?.mistakesCleared === 1);
 ok("perfect practice not counted as perfect lesson", s2.json?.progress?.perfectLessons === 0);
@@ -156,9 +171,10 @@ const farm = await req("/sync", {
     })),
   },
 });
+const farmQuestXp = questXp(farm.json?.progress) - questXp(s2.json?.progress);
 ok("replays without the practice flag are clamped to practice xp",
-  farm.json?.progress?.xpTotal === beforeFarm + 3 * 5,
-  `xpTotal ${beforeFarm} -> ${farm.json?.progress?.xpTotal}, expected +15`);
+  farm.json?.progress?.xpTotal === beforeFarm + 3 * 5 + farmQuestXp,
+  `xpTotal ${beforeFarm} -> ${farm.json?.progress?.xpTotal}, expected +${15 + farmQuestXp}`);
 ok("farmed replays earn no perfect-lesson credit", farm.json?.progress?.perfectLessons === 0);
 
 // A malformed timestamp must be rejected on its own, not 500 the batch: the
@@ -189,8 +205,41 @@ const r1 = await req("/sync", { method: "POST", token: accessToken, body: mkRepl
 const r2 = await req("/sync", { method: "POST", token: accessToken, body: mkReplay() });
 ok("duplicate event id counts once", r1.json?.progress?.xpTotal === r2.json?.progress?.xpTotal, `${r1.json?.progress?.xpTotal} vs ${r2.json?.progress?.xpTotal}`);
 
+
+// --- tiers + combo -------------------------------------------------------
+console.log("tiers");
+const tierId = bundle?.tiers?.[bundle.tiers.length - 1]?.id;
+ok("bundle declares difficulty tiers", Boolean(tierId), `tiers=${JSON.stringify(bundle?.tiers?.map((t) => t.id))}`);
+const placed = await req("/sync", {
+  method: "POST",
+  token: accessToken,
+  body: {
+    events: [
+      { id: uuid(), type: "tier_started", occurredAt: Date.now(), tierId: tierId ?? "mastery" },
+      // a combo far larger than the lesson has exercises: combo quests pay XP
+      // off this number, so the server bounds it by the authored lesson
+      {
+        id: uuid(),
+        type: "lesson_completed",
+        lessonId: lesson.id,
+        occurredAt: Date.now(),
+        perfect: false,
+        xp: 5,
+        practice: true,
+        maxCombo: 500,
+      },
+    ],
+  },
+});
+ok("tier placement accepted", placed.status === 200 && placed.json?.accepted === 2, `got ${placed.status} accepted=${placed.json?.accepted}`);
+ok("placement recorded in progress", placed.json?.progress?.unlockedTierIds?.includes(tierId ?? "mastery"));
+const todayStats = Object.values(placed.json?.progress?.dayStats ?? {}).at(-1);
+ok("claimed combo clamped to the lesson's exercise count",
+  (todayStats?.maxCombo ?? 0) <= lesson.exercises.length,
+  `maxCombo=${todayStats?.maxCombo}, exercises=${lesson.exercises.length}`);
 const me = await req("/me", { token: accessToken });
-ok("/me matches sync-derived progress", me.json?.progress?.xpTotal === r2.json?.progress?.xpTotal);
+ok("/me matches sync-derived progress", me.json?.progress?.xpTotal === placed.json?.progress?.xpTotal,
+  `/me=${me.json?.progress?.xpTotal} vs /sync=${placed.json?.progress?.xpTotal}`);
 
 // --- refresh rotation + benign-race handling (auth hits 3-5) ---------------
 // Reuse detection must not punish honest clients: two tabs, or a mobile

@@ -1,0 +1,234 @@
+id: introductions
+title: Introducing Yourself
+tier: foundation
+description: Say your name, where you're from, and ask the same back.
+tip: >-
+  Tagalog puts the new information first. "Maria ang pangalan ko" literally
+  reads "Maria is my name" — the name leads because that is the point of the
+  sentence. "Ako si Maria" is the other common pattern: si marks a person's
+  name, the way ang marks an ordinary noun.
+lessons:
+  - id: intro-1
+    title: My name is
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pangalan, en: name }
+          - { tl: ako, en: I / me }
+          - { tl: ikaw, en: you }
+          - { tl: siya, en: he or she }
+      - type: choice
+        prompt: "How do you say 'My name is Maria'?"
+        answer: Maria ang pangalan ko.
+        distractors: [Maria ang bahay ko., Maria ang kaibigan ko., Maria ang guro ko.]
+        audio: maria_ang_pangalan_ko
+        audio_text: Maria ang pangalan ko.
+      - type: fill_blank
+        sentence: "Ano ang ___ mo?"
+        translation: "What is your name?"
+        answer: pangalan
+        options: [pangalan, bahay, trabaho]
+      - type: translate
+        prompt_tl: Ako si Ben.
+        answer_en: I am Ben.
+        accept:
+          - I'm Ben
+        extra_words: [you, she, tomorrow]
+        audio: ako_si_ben
+      - type: translate
+        prompt_en: What is your name?
+        answer_tl: Ano ang pangalan mo?
+        accept:
+          - Ano ang pangalan mo
+        extra_words: [bahay, trabaho, siya]
+      - type: listen
+        audio: ano_ang_pangalan_mo
+        answer_tl: Ano ang pangalan mo
+        extra_words: [ako, siya]
+      - type: choice
+        prompt: "'Si' before a word tells you it is..."
+        answer: a person's name
+        distractors: [a place, a number, a question]
+      - type: fill_blank
+        sentence: "___ si Ana."
+        translation: "I am Ana."
+        answer: Ako
+        options: [Ako, Ikaw, Siya]
+      - type: translate
+        prompt_tl: Siya si Ana.
+        answer_en: She is Ana.
+        accept:
+          - He is Ana
+        extra_words: [tomorrow, market, cheap]
+        audio: siya_si_ana
+
+  - id: intro-2
+    title: Where are you from?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: taga-saan, en: from where }
+          - { tl: probinsya, en: province }
+          - { tl: lungsod, en: city }
+          - { tl: bayan, en: town }
+      - type: choice
+        prompt: "'Taga-saan ka?' asks..."
+        answer: Where are you from?
+        distractors: [Where are you going?, What is your name?, How old are you?]
+        audio: taga_saan_ka
+        audio_text: Taga-saan ka?
+      - type: fill_blank
+        sentence: "Taga-___ ako."
+        translation: "I am from Manila."
+        answer: Maynila
+        options: [Maynila, bahay, umaga]
+      - type: translate
+        prompt_en: I am from the province.
+        answer_tl: Taga-probinsya ako
+        accept:
+          - Taga probinsya ako
+        extra_words: [lungsod, bayan, bahay]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Taga-lungsod siya.
+        answer_en: He is from the city.
+        accept:
+          - She is from the city
+        extra_words: [market, tomorrow, cheap]
+        audio: taga_lungsod_siya
+        grading: { hyphens: true }
+      - type: listen
+        audio: taga_saan_ka_po
+        answer_tl: Taga-saan ka po
+        extra_words: [ako, siya]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Which word means 'town'?"
+        answer: bayan
+        distractors: [bahay, buwan, bata]
+      - type: fill_blank
+        sentence: "Nakatira ako sa ___."
+        translation: "I live in the city."
+        answer: lungsod
+        options: [lungsod, umaga, pangalan]
+      - type: translate
+        prompt_en: Where are you from?
+        answer_tl: Taga-saan ka?
+        accept:
+          - Taga saan ka
+        extra_words: [bayan, lungsod, bahay]
+        grading: { hyphens: true }
+
+  - id: intro-3
+    title: Nice to meet you
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ikinagagalak kong makilala ka, en: nice to meet you }
+          - { tl: kaibigan, en: friend }
+          - { tl: kasama, en: companion }
+          - { tl: bago, en: new }
+      - type: choice
+        prompt: "Meeting someone for the first time, you say:"
+        answer: Ikinagagalak kong makilala ka.
+        distractors: [Paalam na po., Magkano po ito?, Nasaan ang banyo?]
+        audio: ikinagagalak_kong_makilala_ka
+        audio_text: Ikinagagalak kong makilala ka.
+      - type: fill_blank
+        sentence: "Siya ang ___ ko."
+        translation: "She is my friend."
+        answer: kaibigan
+        options: [kaibigan, pangalan, lungsod]
+      - type: translate
+        prompt_tl: Kaibigan ko si Ben.
+        answer_en: Ben is my friend.
+        accept:
+          - Ben is a friend of mine
+        extra_words: [teacher, tomorrow, market]
+        audio: kaibigan_ko_si_ben
+      - type: translate
+        prompt_en: She is my new friend.
+        answer_tl: Siya ang bago kong kaibigan
+        accept:
+          - Bago kong kaibigan siya
+        extra_words: [kasama, bahay, umaga]
+      - type: listen
+        audio: kaibigan_kita
+        answer_tl: Kaibigan kita
+        extra_words: [siya, bago]
+      - type: choice
+        prompt: "'Kasama' means..."
+        answer: companion
+        distractors: [name, city, morning]
+      - type: fill_blank
+        sentence: "___ ko siya sa trabaho."
+        translation: "He is my companion at work."
+        answer: Kasama
+        options: [Kasama, Pangalan, Lungsod]
+      - type: translate
+        prompt_tl: Bago siyang kasama namin.
+        answer_en: He is our new companion.
+        accept:
+          - She is our new companion
+        extra_words: [cheap, yesterday, market]
+        audio: bago_siyang_kasama_namin
+
+  - id: intro-4
+    title: Putting it together
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Someone says 'Kumusta! Ako si Rosa.' A natural reply is:"
+        answer: Ako naman si Ben.
+        distractors: [Magkano po ito?, Sarado na po., Wala akong barya.]
+        audio: ako_naman_si_ben
+        audio_text: Ako naman si Ben.
+      - type: match
+        pairs:
+          - { tl: ako si, en: I am }
+          - { tl: ang pangalan ko, en: my name }
+          - { tl: taga-saan ka, en: where are you from }
+          - { tl: nakatira ako sa, en: I live in }
+      - type: fill_blank
+        sentence: "Ben ang pangalan ko at taga-Cebu ___."
+        translation: "My name is Ben and I am from Cebu."
+        answer: ako
+        options: [ako, ikaw, siya]
+      - type: translate
+        prompt_en: My name is Rosa and I live in Manila.
+        answer_tl: Rosa ang pangalan ko at nakatira ako sa Maynila
+        accept:
+          - Ang pangalan ko ay Rosa at nakatira ako sa Maynila
+        extra_words: [kaibigan, bayan, bago]
+      - type: translate
+        prompt_tl: Ano ang pangalan mo at taga-saan ka?
+        answer_en: What is your name and where are you from?
+        accept:
+          - What's your name and where are you from
+        extra_words: [tomorrow, cheap, market]
+        audio: ano_ang_pangalan_mo_at_taga_saan_ka
+        grading: { hyphens: true }
+      - type: listen
+        audio: ako_si_rosa_taga_maynila
+        answer_tl: Ako si Rosa taga-Maynila
+        extra_words: [pangalan, kaibigan]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Which sentence introduces a friend?"
+        answer: Siya si Ana, kaibigan ko.
+        distractors: [Magkano ang mangga?, Sarado na ang tindahan., Umuulan ngayon.]
+      - type: fill_blank
+        sentence: "Ikinagagalak kong ___ ka."
+        translation: "Nice to meet you."
+        answer: makilala
+        options: [makilala, kumain, matulog]
+      - type: translate
+        prompt_en: He is my friend and he is from the province.
+        answer_tl: Kaibigan ko siya at taga-probinsya siya
+        accept:
+          - Kaibigan ko siya at taga probinsya siya
+        extra_words: [lungsod, bago, bahay]
+        grading: { hyphens: true }

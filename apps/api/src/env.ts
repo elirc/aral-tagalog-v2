@@ -5,37 +5,55 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const contentPkg = resolve(here, "..", "..", "..", "packages", "content");
 
-const nodeEnv = process.env.NODE_ENV ?? "";
-const isDevelopment = nodeEnv === "development";
+export function readEnv(source: NodeJS.ProcessEnv) {
+  const isDevelopment = source.NODE_ENV === "development";
+  const jwtSecret = source.JWT_SECRET ?? (isDevelopment ? "dev-secret-change-me" : "");
+  if (!jwtSecret || (!isDevelopment && (jwtSecret === "dev-secret-change-me" || jwtSecret.startsWith("replace-") || Buffer.byteLength(jwtSecret) < 32))) {
+    throw new Error("JWT_SECRET must contain at least 32 bytes outside development; generate a random secret");
+  }
 
-export const env = {
-  isDevelopment,
-  databaseUrl: process.env.DATABASE_URL ?? "postgres://aral:aral@localhost:5433/aral",
-  // fail closed: the well-known dev secret is usable only when the process
-  // explicitly opts into development — a deploy that forgets NODE_ENV must
-  // not silently sign tokens with a publicly-committed secret
-  jwtSecret: process.env.JWT_SECRET ?? (isDevelopment ? "dev-secret-change-me" : ""),
-  port: Number(process.env.PORT ?? 3001),
-  host: process.env.HOST ?? "0.0.0.0",
-  /**
-   * Behind a reverse proxy (Fly, Railway, any CDN) every request arrives from
-   * the proxy's IP, so rate limiting keyed on the socket address puts the
-   * whole user base in one bucket — 10 auth requests/minute globally. Enable
-   * this ONLY when a trusted proxy sets X-Forwarded-For; leaving it on with a
-   * directly-exposed server would let clients spoof their own rate-limit key.
-   */
-  trustProxy: process.env.TRUST_PROXY === "true",
-  contentDir: process.env.CONTENT_DIR ?? join(contentPkg, "dist"),
-  audioDir: process.env.AUDIO_DIR ?? join(contentPkg, "audio", "en-tl"),
-  /** comma-separated browser origins allowed by CORS; unset = dev-only wildcard */
-  corsOrigins: process.env.CORS_ORIGIN?.split(",").map((s) => s.trim()).filter(Boolean),
-  accessTokenTtl: "15m",
-  refreshTokenTtlMs: 30 * 24 * 60 * 60 * 1000,
-};
+  const databaseUrl = source.DATABASE_URL ?? (isDevelopment ? "postgres://aral:aral@localhost:5433/aral" : "");
+  try {
+    const parsed = new URL(databaseUrl);
+    if (!["postgres:", "postgresql:"].includes(parsed.protocol) || !parsed.hostname) throw new Error();
+  } catch {
+    throw new Error("DATABASE_URL must be an explicit PostgreSQL connection URL outside development");
+  }
 
-if (!env.jwtSecret) {
-  throw new Error("JWT_SECRET must be set (or run with NODE_ENV=development to use the dev fallback)");
+  const port = Number(source.PORT ?? 3001);
+  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("PORT must be an integer between 1 and 65535");
+  if (source.TRUST_PROXY !== undefined && !["true", "false"].includes(source.TRUST_PROXY)) {
+    throw new Error("TRUST_PROXY must be true or false");
+  }
+  const refreshReuseGraceMs = Number(source.REFRESH_REUSE_GRACE_MS ?? 60_000);
+  if (!Number.isInteger(refreshReuseGraceMs) || refreshReuseGraceMs < 0 || refreshReuseGraceMs > 300_000) {
+    throw new Error("REFRESH_REUSE_GRACE_MS must be an integer between 0 and 300000");
+  }
+  const corsOrigins = source.CORS_ORIGIN?.split(",").map((value) => value.trim()).filter(Boolean);
+  for (const origin of corsOrigins ?? []) {
+    try {
+      const parsed = new URL(origin);
+      if (!["https:", "http:"].includes(parsed.protocol) || parsed.origin !== origin) throw new Error();
+    } catch {
+      throw new Error("CORS_ORIGIN must contain comma-separated HTTP(S) origins without paths or trailing slashes");
+    }
+  }
+
+  return {
+    isDevelopment,
+    databaseUrl,
+    jwtSecret,
+    port,
+    host: source.HOST ?? "0.0.0.0",
+    // Enable only behind a reverse proxy that overwrites forwarded headers.
+    trustProxy: source.TRUST_PROXY === "true",
+    contentDir: source.CONTENT_DIR ?? join(contentPkg, "dist"),
+    audioDir: source.AUDIO_DIR ?? join(contentPkg, "audio", "en-tl"),
+    corsOrigins,
+    refreshReuseGraceMs,
+    accessTokenTtl: "15m",
+    refreshTokenTtlMs: 30 * 24 * 60 * 60 * 1000,
+  };
 }
-if (!isDevelopment && env.jwtSecret === "dev-secret-change-me") {
-  throw new Error("JWT_SECRET must not be the dev placeholder outside development");
-}
+
+export const env = readEnv(process.env);

@@ -1,0 +1,228 @@
+id: furniture
+title: Furniture and Rooms
+tier: foundation
+description: Name the rooms of a house and the things standing in them.
+tip: >-
+  Location sentences start with nasa: "Nasa kusina ang mesa" — the table is in
+  the kitchen. For a person or a name use nasa plus si → nasa is followed by
+  kay: "Nasa kay Ana ang susi." Room names pair silid (room) with an -an
+  place-noun built from a verb: tulog → silid-tulugan (bedroom), kain →
+  silid-kainan (dining room).
+lessons:
+  - id: furn-1
+    title: Rooms
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kusina, en: kitchen }
+          - { tl: sala, en: living room }
+          - { tl: silid-tulugan, en: bedroom }
+          - { tl: banyo, en: bathroom }
+      - type: choice
+        prompt: "You cook in the..."
+        answer: kusina
+        distractors: [banyo, sala, hardin]
+        audio: kusina
+        audio_text: Kusina.
+      - type: fill_blank
+        sentence: "Natutulog ako sa ___."
+        translation: "I sleep in the bedroom."
+        answer: silid-tulugan
+        options: [silid-tulugan, kusina, banyo]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nasa sala ang bisita.
+        answer_en: The guest is in the living room.
+        accept:
+          - The visitor is in the living room
+        extra_words: [tomorrow, cheap, market]
+        audio: nasa_sala_ang_bisita
+      - type: translate
+        prompt_en: Where is the bathroom?
+        answer_tl: Nasaan ang banyo?
+        accept:
+          - Nasaan po ang banyo
+        extra_words: [kusina, sala, hardin]
+      - type: listen
+        audio: nasaan_ang_banyo
+        answer_tl: Nasaan ang banyo
+        extra_words: [kusina, sala]
+      - type: choice
+        prompt: "'Hardin' is..."
+        answer: a garden
+        distractors: [a kitchen, a bedroom, a roof]
+      - type: fill_blank
+        sentence: "Maliit ang ___ pero malinis."
+        translation: "The kitchen is small but clean."
+        answer: kusina
+        options: [kusina, lapis, tubig]
+      - type: translate
+        prompt_tl: Apat ang silid sa bahay namin.
+        answer_en: There are four rooms in our house.
+        accept:
+          - Our house has four rooms
+        extra_words: [quickly, market, cheap]
+        audio: apat_ang_silid_sa_bahay_namin
+
+  - id: furn-2
+    title: Things in the room
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kama, en: bed }
+          - { tl: aparador, en: cabinet }
+          - { tl: sopa, en: sofa }
+          - { tl: ilaw, en: light }
+      - type: choice
+        prompt: "'Aparador' is where you keep..."
+        answer: clothes
+        distractors: [rice, water, shoes only]
+        audio: aparador
+        audio_text: Aparador.
+      - type: fill_blank
+        sentence: "Buksan mo ang ___, madilim dito."
+        translation: "Turn on the light, it is dark here."
+        answer: ilaw
+        options: [ilaw, kama, sopa]
+      - type: translate
+        prompt_en: The bed is in the bedroom.
+        answer_tl: Nasa silid-tulugan ang kama
+        accept:
+          - Nasa silid tulugan ang kama
+        extra_words: [sopa, aparador, kusina]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Bago ang sopa sa sala.
+        answer_en: The sofa in the living room is new.
+        accept:
+          - The couch in the living room is new
+        extra_words: [tomorrow, cheap, market]
+        audio: bago_ang_sopa_sa_sala
+      - type: listen
+        audio: nasa_aparador_ang_damit
+        answer_tl: Nasa aparador ang damit
+        extra_words: [kama, ilaw]
+      - type: choice
+        prompt: "Which is NOT furniture?"
+        answer: tubig
+        distractors: [kama, silya, mesa]
+      - type: fill_blank
+        sentence: "Malambot ang ___ ko."
+        translation: "My bed is soft."
+        answer: kama
+        options: [kama, ilaw, banyo]
+      - type: translate
+        prompt_en: Please close the cabinet.
+        answer_tl: Pakisara po ang aparador
+        accept:
+          - Pakisara ang aparador po
+        extra_words: [ilaw, kama, sopa]
+
+  - id: furn-3
+    title: Where is it?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nasa ibabaw, en: on top of }
+          - { tl: nasa ilalim, en: underneath }
+          - { tl: nasa loob, en: inside }
+          - { tl: nasa labas, en: outside }
+      - type: choice
+        prompt: "'Nasa ilalim ng mesa ang pusa' means the cat is..."
+        answer: under the table
+        distractors: [on the table, beside the table, outside the house]
+        audio: nasa_ilalim_ng_mesa_ang_pusa
+        audio_text: Nasa ilalim ng mesa ang pusa.
+      - type: fill_blank
+        sentence: "Nasa ___ ng aparador ang damit."
+        translation: "The clothes are inside the cabinet."
+        answer: loob
+        options: [loob, labas, ibabaw]
+      - type: translate
+        prompt_tl: Nasa ibabaw ng mesa ang aklat.
+        answer_en: The book is on top of the table.
+        accept:
+          - The book is on the table
+        extra_words: [cheap, tomorrow, quickly]
+        audio: nasa_ibabaw_ng_mesa_ang_aklat
+      - type: translate
+        prompt_en: The children are outside the house.
+        answer_tl: Nasa labas ng bahay ang mga bata
+        extra_words: [loob, ilalim, kusina]
+      - type: listen
+        audio: nasa_loob_ng_bahay_ako
+        answer_tl: Nasa loob ng bahay ako
+        extra_words: [labas, ilalim]
+      - type: choice
+        prompt: "Which word begins almost every location sentence?"
+        answer: nasa
+        distractors: [salamat, paalam, magkano]
+      - type: fill_blank
+        sentence: "___ ang susi? Hindi ko makita."
+        translation: "Where is the key? I cannot find it."
+        answer: Nasaan
+        options: [Nasaan, Magkano, Sino]
+      - type: translate
+        prompt_tl: Nasa ilalim ng kama ang sapatos.
+        answer_en: The shoes are under the bed.
+        accept:
+          - The shoes are underneath the bed
+        extra_words: [market, morning, cheap]
+        audio: nasa_ilalim_ng_kama_ang_sapatos
+
+  - id: furn-4
+    title: Around the house
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A guest arrives. The host says:"
+        answer: Tuloy po kayo sa sala.
+        distractors: [Magkano po ito?, Wala akong barya., Sarado na po.]
+        audio: tuloy_po_kayo_sa_sala
+        audio_text: Tuloy po kayo sa sala.
+      - type: match
+        pairs:
+          - { tl: pinto, en: door }
+          - { tl: bintana, en: window }
+          - { tl: bubong, en: roof }
+          - { tl: hagdan, en: stairs }
+      - type: fill_blank
+        sentence: "Umakyat ka sa ___."
+        translation: "Go up the stairs."
+        answer: hagdan
+        options: [hagdan, bintana, bubong]
+      - type: translate
+        prompt_en: Please close the door.
+        answer_tl: Pakisara po ang pinto
+        accept:
+          - Pakisara ang pinto po
+        extra_words: [bintana, hagdan, ilaw]
+      - type: translate
+        prompt_tl: May butas ang bubong namin.
+        answer_en: Our roof has a hole.
+        accept:
+          - There is a hole in our roof
+        extra_words: [tomorrow, cheap, market]
+        audio: may_butas_ang_bubong_namin
+      - type: listen
+        audio: pakibuksan_po_ang_bintana
+        answer_tl: Pakibuksan po ang bintana
+        extra_words: [pinto, hagdan]
+      - type: choice
+        prompt: "Which part of the house keeps the rain out?"
+        answer: bubong
+        distractors: [hagdan, silya, aparador]
+      - type: fill_blank
+        sentence: "Malinis ang buong ___ namin."
+        translation: "Our whole house is clean."
+        answer: bahay
+        options: [bahay, lapis, tubig]
+      - type: translate
+        prompt_en: The window is beside the door.
+        answer_tl: Katabi ng pinto ang bintana
+        accept:
+          - Nasa tabi ng pinto ang bintana
+        extra_words: [bubong, hagdan, kama]

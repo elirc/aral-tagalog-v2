@@ -1,0 +1,21 @@
+{
+  skip_install_trust
+}
+
+{$DOMAIN} {
+  encode zstd gzip
+  header Strict-Transport-Security "max-age=31536000"
+  request_body {
+    max_size 1MB
+  }
+  @oversized expression `{http.request.header.Content-Length} != "" && int({http.request.header.Content-Length}) > 1000000`
+  handle_path /api/* {
+    # Reject declared sizes before Fastify closes the upload connection; the
+    # request_body limit above also counts bytes in chunked uploads.
+    respond @oversized "Request body too large" 413
+    reverse_proxy api:3001
+  }
+  handle {
+    reverse_proxy web:3000
+  }
+}

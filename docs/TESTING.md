@@ -14,10 +14,23 @@ pnpm --filter @aral/api test
 pnpm --filter @aral/content test
 ```
 
-All suites are Vitest. `@aral/web` and `@aral/mobile` have no unit suites —
-their logic lives in `@aral/core` by design (ARCH: game logic is pure TS in
-core, UI apps are thin shells), so the highest-value tests sit below the UI.
-The apps are gated by `pnpm typecheck` and `pnpm build`.
+All suites are Vitest. Game logic lives in `@aral/core`; web and mobile also test
+their own persistence and sync workers because account-switch and network races
+can lose progress without changing any game rules. `pnpm release:check` runs the
+production dependency audit, suites, typechecks, content compilation, and web build. Database integration tests
+need an isolated database in `TEST_DATABASE_URL` and are skipped when it is unset.
+The GitHub release workflow supplies a fresh database and exercises the production
+Docker images, migrations, and proxy over verified HTTPS. It also exports both
+Android and iOS production bundles. `scripts/proxy-smoke.mjs` checks HTTP redirects,
+TLS, security headers, static assets, API routing, and request body limits; use
+`SMOKE_WEB_URL=https://YOUR_DOMAIN` and `SMOKE_HTTP_URL=http://YOUR_DOMAIN`.
+For a local Caddy CA, supply its root certificate through `NODE_EXTRA_CA_CERTS`.
+
+Mobile security tests resolve the actual Metro, React Navigation and Xcode
+dependency chains. They check the patched image parser against malicious files
+in killable subprocesses, the fixed URI decoder against upstream fixtures and
+malformed input, and Xcode UUID compatibility. The private compatibility packages
+under `vendor/` include their source provenance and licenses.
 
 ---
 
@@ -79,6 +92,23 @@ stream.
 | **perfect practice doesn't count toward `perfectLessons`** | **Regression for a real farming hole:** replaying an easy lesson perfectly used to increment the perfect-lesson counters feeding achievements. |
 | **a replay is clamped to practice XP even when the event denies it** | **Regression for an exploit:** the server clamps XP *per event* but nothing capped repetition, so re-sending completions of one lesson with fresh UUIDs and `practice` omitted farmed unlimited XP. Deriving "already completed ⇒ replay" in the reducer closes it for clients and server at once. The companion test uses a *baseline* completion, because the overlay path must see prior completions too. |
 
+### `events.test.ts` — day stats, quests, and placement
+
+| Test | What / why |
+| --- | --- |
+| per-day counters for every quest metric | `dayStats` is what quests are scored against; one test pins all six counters off one mixed day. |
+| highest combo of the day wins; absurd combos clamped | Combo quests pay XP off this number, so a hostile client must not be able to inflate it. |
+| **a quest's XP is credited once, however many lessons follow** | The idempotency that replaces a claim event. |
+| **outbox-over-baseline == one full fold** | The property the whole derived-reward design rests on: the server folds everything from scratch, the client overlays its outbox, and both must land on the same `xpTotal` *and* the same `dayStats`. If this breaks, quest XP silently differs between devices. |
+| quest rewards never feed the XP quest that paid them | Same loop guard as in `quests.test.ts`, but through the real reducer. |
+| `dayStats` trimmed to `DAY_STATS_KEPT` days, `xpByDay` kept whole | Quests only read today, so the baseline shouldn't grow forever — but the XP history the stats page draws must survive the trim. |
+| `tier_started`: additive, idempotent, grants nothing | Placement is a permission, not a reward: no XP, no streak, no completions, and a duplicated event changes nothing. |
+| empty tier id ignored; old baselines default to no placements | Fail closed on junk, and a server baseline predating the field must not crash the overlay. |
+
+Note: assertions on `xpTotal` now read `+ questXpTotal(p)` rather than a bare
+number. Quest rewards land in the same fold, so pinning a literal total would
+make these tests depend on which quests happen to fall on the fixture's dates.
+
 ### `streak.test.ts`
 
 | Test | What / why |
@@ -129,6 +159,49 @@ The review feature's course-side logic (closes SPEC open question OQ-02).
 | caps session size | A 200-mistake backlog must still produce a short, winnable session. |
 | `isLessonUnlocked`: first lesson, gap blocking, cross-unit, unknown id | This function was duplicated (and could drift) in both clients; it moved to core precisely so one test suite covers both apps. Unknown ids return `false` — fail closed. |
 
+### `tiers.test.ts`
+
+Difficulty tracks. Tiers exist so a learner who already speaks some Tagalog
+can be *placed* into a later track instead of grinding up from unit 1, which
+means unlock order is no longer a single line through the course.
+
+| Test | What / why |
+| --- | --- |
+| tier lessons collected in course order | `tierLessonIds` spans several units; a tier is a run of units, not one unit. |
+| first tier always open, later ones gated on the previous | The default ladder, unchanged for anyone who just plays through. |
+| **placement opens a tier with nothing completed** | The whole point of the feature. Also pinned: placing into tier 3 does **not** open tier 2 — placement is per-tier, not "everything up to here". |
+| unknown tier id is locked, not thrown | Content skew: a bundle rolled back below a tier the user already started must fail closed, not crash the map. |
+| order still applies *inside* the tier you jumped into | Placement skips a prefix of the course, not the tier's own sequence. |
+| flat bundle falls back to whole-course order | Bundles without `tiers` behave exactly as before the feature; the pre-tiers 3-argument call signature still compiles and still passes. |
+| tiers ignored when the bundle declares none | A client on a newer bundle and a server on an older one must not disagree about what is unlocked. |
+
+### `quests.test.ts`
+
+Daily quests are **derived, not stored**: the reducer credits their XP while
+folding the stream, so there is no claim event a client could forge. That only
+works if the quest *set* is a pure function of the local day.
+
+| Test | What / why |
+| --- | --- |
+| deterministic in the day key | Every client and the server must draw the same three quests for a day, or they disagree about earned XP. |
+| different days differ; never two quests on one metric | Variety, and the panel never shows "earn 20 XP" beside "earn 50 XP". |
+| full count, ordered easiest first, drawn only from the pool | The panel reads as a ladder; the meta-checks catch a pool edit that breaks selection. |
+| **`questValue("xp")` reads `lessonXp`, never `questXp`** | The reward must not be able to complete the quest that paid it — that would be an XP loop. |
+| a finished quest is owed exactly once | `pendingQuestRewards` is called after *every* completion; without the credited-ids check it would re-pay on each one. |
+| nothing owed below target; everything owed at once | Boundary + the multi-quest day. |
+| fraction caps at 1; `claimed` distinct from `complete` | The UI shows "done" the moment the counter lands, but `claimed` only flips once the reducer has actually paid. |
+
+### `combo.test.ts`
+
+| Test | What / why |
+| --- | --- |
+| counts consecutive correct answers, pays from `COMBO_MIN` | The reward curve; nothing is paid for the first two. |
+| a miss resets the run but banks the XP already earned | Clawing it back would make the footer XP line lie. |
+| **caps at `MAX_COMBO_BONUS_XP`** | The cap is what makes the bonus server-checkable — `/sync` clamps a completion to `lessonXp + MAX_COMBO_BONUS_XP`, and this test pins that a 60-answer run can't exceed it. |
+| clean `match_pairs` continues the run, a dirty one breaks it | Match exercises always advance, so combo has to read `matchMistakes`, not `done`. |
+| **`sessionXp` ignores combo on practice replays** | Otherwise a finished lesson becomes an XP faucet: replay it forever, perfect every time. |
+| a maxed session stays within what `/sync` accepts | Pins the client and the server cap to each other. |
+
 ### `achievements.test.ts`
 
 | Test | What / why |
@@ -157,11 +230,13 @@ exist — it is the anti-cheat boundary between clients and the progress store.
 
 | Group | What / why |
 | --- | --- |
-| batch handling | Valid events of all four types pass; an invalid event rejects *individually* (a poison event must not wedge a client's whole outbox — the route's documented contract); invalid events without a string id are dropped silently; non-UUID ids rejected (they'd break idempotency). |
-| xp clamping | Client-asserted XP is clamped to the *authored* value (perfect and non-perfect caps differ); unknown lesson ids clamp to the catalog max instead of rejecting (bundle version skew must not lose a newer client's progress); **practice completions clamp to `PRACTICE_XP` even with no catalog** — the practice cap is policy, not content. |
+| batch handling | Valid events of all five types pass (including `tier_started`); an invalid event rejects *individually* (a poison event must not wedge a client's whole outbox — the route's documented contract); invalid events without a string id are dropped silently; non-UUID ids rejected (they'd break idempotency). |
+| xp clamping | Client-asserted XP is clamped to the *authored* value **plus `MAX_COMBO_BONUS_XP`** — the cap has to leave room for the combo bonus a real session earns, and no more (perfect and non-perfect caps differ); unknown lesson ids clamp to the catalog max instead of rejecting (bundle version skew must not lose a newer client's progress); **practice completions clamp to `PRACTICE_XP` even with no catalog** — the practice cap is policy, not content. |
 | timestamps | Future `occurredAt` clamps to now (OFF-05); past timestamps untouched. |
 | field bounds | missed/mastered arrays capped at 50 ids; `hearts_lost` count 1–20; `goal_set` 10–200 — every numeric bound tested at both edges because these are the DoS/garbage limits. |
 | **timestamp poison-pill** | `occurredAt` was a bare `z.number()`, which accepts `1.5` and `1e30` — values the `bigint` column rejects on INSERT. Since `/sync` inserts the batch in one statement, one bad event 500'd the whole request, and clients only clear their outbox on a 200, so it retried forever. The test sweeps fractional/negative/oversized/`Infinity`/`NaN` and asserts a healthy sibling event still lands. |
+| **maxCombo** | Clamped to the lesson's own exercise count — a session cannot answer more questions than it contains, and combo quests pay XP off this number. Unknown lessons keep the schema bound (0–500); the field is optional, so older clients still sync. |
+| **tier_started** | Accepted end to end, tier id bounded to 1–60 chars, future timestamps clamped like every other event. Placement is the one event that unlocks content, so a malformed one must be rejected rather than stored. |
 
 ### `app.test.ts`
 
@@ -195,20 +270,23 @@ tests the rules directly.
 | word-bank solvability | **The big one: an exercise whose bank cannot spell any accepted answer is unwinnable** — the learner loses hearts with no way through. Covers: missing word, word needed twice with one chip, rescue via an `accept` alternative, punctuation/case immunity, and the **multi-token chip regression** (`hyphens` flag makes the chip "Araw-araw" normalize to two tokens; the first validator version flagged a real, solvable course exercise as broken — the backtracking matcher and this test came out of that false positive). |
 | match_pairs | Duplicate left or right values make two buttons visually identical while only one pairing grades correct — an authoring error the learner experiences as a random wrong answer. |
 | fill_blank | With options, at least one must match an accepted answer (normalized); free-text mode is exempt. |
+| arrange | Tokens must be able to spell the answer (shared backtracking matcher with the word-bank check, so hyphenated chips work the same); **tokens already in answer order are rejected** — that ships an exercise solved by tapping left to right; spare tokens are rejected because `arrange` is a word-order drill, not a translation with distractors; an all-identical answer (`araw araw`) is exempt, since it has no other order. |
+| dialogue | **Blank count must match the `___` in the lines** — a mismatch silently shifts every later blank onto the wrong answer, which the author would never see in review; per-blank options must contain the answer and must not repeat; free-text blanks (no options) are allowed. |
+| validateTiers | Every unit names a declared tier; tiers with no units and duplicate tier ids are reported; **each tier's units must be contiguous** — unlocking is scoped to a tier, so a unit stranded inside another tier would be reachable in an order the course map never shows. A course with no tiers at all is valid (flat mode); units naming tiers the course never declares are not. |
 | validateCourse | Duplicate lesson/exercise/vocab ids each reported (vocab collisions used to be *silently last-wins* in the bundle build); exercise-level problems are prefixed with the exercise id so authors can find them. |
 
 ---
 
 ## `pnpm smoke` — end-to-end against a running stack
 
-33 checks over real HTTP and real Postgres (`scripts/smoke.mjs`). This is the
-only layer that exercises the DB-backed flows, so it carries the checks that
-unit tests structurally cannot:
+39 checks over real HTTP and real Postgres (`scripts/smoke.mjs`), including
+database readiness. Together with the optional API integration suite, this
+exercises the database-backed flows that unit tests structurally cannot:
 
 - **Registration → login → `/me` → `/sync`** round trip, and that `/me` and
   `/sync` derive identical progress.
-- **XP clamping end to end**: authored value for a first completion, flat
-  practice XP for a replay — including the exploit case where the client omits
+- **XP clamping end to end**: authored value plus the combo ceiling for a first
+  completion, flat practice XP for a replay — including the exploit case where the client omits
   the `practice` flag entirely.
 - **Poison batch**: a fractional `occurredAt` is rejected on its own while its
   healthy sibling in the same batch still lands (200, `accepted: 1`).
@@ -219,10 +297,14 @@ unit tests structurally cannot:
   the family **survives** (the new token still works). This guards a real
   regression — reuse detection originally revoked the family here, silently
   logging out anyone with two tabs open.
+- **Tier placement**: a `tier_started` event round-trips into
+  `progress.unlockedTierIds`, and a completion claiming a 500 combo comes back
+  clamped to the lesson's exercise count.
 - **Logout** revokes the family; the token then 401s.
 
-Not covered: revocation *after* the reuse grace window elapses, which needs a
-60s wait or a `REFRESH_REUSE_GRACE_MS=0` run.
+The API integration suite also tests post-grace revocation, concurrent refresh,
+logout racing refresh, and transaction rollback after a failed replacement-token
+insert. It adjusts the test token timestamp rather than waiting a minute.
 
 ## What is deliberately not unit-tested
 

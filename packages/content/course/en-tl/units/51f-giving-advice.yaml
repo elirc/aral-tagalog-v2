@@ -1,0 +1,237 @@
+id: giving-advice
+title: Giving Advice
+tier: conversational
+description: Suggest, warn, and reassure — the language of helping someone decide.
+tip: >-
+  Advice runs on three markers. Dapat is a firm should; mas mabuti kung is a
+  gentler "it would be better if"; and baka is the warning — "baka mahulog ka"
+  (you might fall). Ending with "ha?" softens an instruction into concern:
+  "Mag-ingat ka, ha?"
+lessons:
+  - id: adv-1
+    title: You should
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dapat, en: should }
+          - { tl: mas mabuti, en: better }
+          - { tl: subukan, en: to try }
+          - { tl: iwasan, en: to avoid }
+      - type: choice
+        prompt: "'Mas mabuti kung magpahinga ka' is..."
+        answer: gentle advice
+        distractors: [a command, a question, a refusal]
+        audio: mas_mabuti_kung_magpahinga_ka
+        audio_text: Mas mabuti kung magpahinga ka.
+      - type: fill_blank
+        sentence: "___ mong iwasan ang maalat na pagkain."
+        translation: "You should avoid salty food."
+        answer: Dapat
+        options: [Dapat, Bawal, Ayaw]
+      - type: translate
+        prompt_tl: Subukan mong matulog nang maaga.
+        answer_en: Try to sleep early.
+        accept:
+          - Try sleeping early
+        extra_words: [cheap, market, tomorrow]
+        audio: subukan_mong_matulog_nang_maaga
+        grading: { ng_nang: true }
+      - type: translate
+        prompt_en: It would be better if you rested first.
+        answer_tl: Mas mabuti kung magpahinga ka muna
+        accept:
+          - Mas mabuti pa kung magpahinga ka muna
+        extra_words: [dapat, subukan, iwasan]
+      - type: listen
+        audio: dapat_kang_magpahinga
+        answer_tl: Dapat kang magpahinga
+        extra_words: [subukan, iwasan]
+      - type: arrange
+        prompt: "You should avoid salty food."
+        answer_tl: Dapat mong iwasan ang maalat na pagkain
+      - type: choice
+        prompt: "Which is softest?"
+        answer: Baka mas mabuti kung...
+        distractors: [Dapat kang..., Kailangan mong..., Bawal kang...]
+      - type: arrange
+        prompt: "It would be better if you rested first."
+        answer_tl: Mas mabuti kung magpahinga ka muna
+
+  - id: adv-2
+    title: Warnings
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mag-ingat, en: be careful }
+          - { tl: baka, en: might }
+          - { tl: delikado, en: dangerous }
+          - { tl: huwag, en: do not }
+      - type: choice
+        prompt: "'Baka mahulog ka' warns that you..."
+        answer: might fall
+        distractors: [already fell, will not fall, must fall]
+        audio: baka_mahulog_ka
+        audio_text: Baka mahulog ka.
+      - type: fill_blank
+        sentence: "___ ka, madulas ang sahig."
+        translation: "Be careful, the floor is slippery."
+        answer: Mag-ingat
+        options: [Mag-ingat, Kumain, Matulog]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Delikado po dito sa gabi.
+        answer_en: It is dangerous here at night.
+        accept:
+          - This place is dangerous at night
+        extra_words: [cheap, market, tomorrow]
+        audio: delikado_po_dito_sa_gabi
+      - type: translate
+        prompt_en: Do not go out alone at night.
+        answer_tl: Huwag kang lumabas mag-isa sa gabi
+        accept:
+          - Huwag kang lumabas nang mag-isa sa gabi
+        extra_words: [ingat, baka, delikado]
+        grading: { hyphens: true, ng_nang: true }
+      - type: listen
+        audio: mag_ingat_ka_ha
+        answer_tl: Mag-ingat ka ha
+        extra_words: [baka, delikado]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Be careful, the floor is slippery."
+        answer_tl: Mag-ingat ka madulas ang sahig
+        accept:
+          - Mag-ingat ka, madulas ang sahig
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Adding 'ha?' to a warning makes it sound..."
+        answer: caring
+        distractors: [angry, uncertain, formal]
+      - type: arrange
+        prompt: "Do not go out alone at night."
+        answer_tl: Huwag kang lumabas mag-isa sa gabi
+        grading: { hyphens: true }
+
+  - id: adv-3
+    title: Reassuring
+    xp: 20
+    exercises:
+      - type: match
+        pairs:
+          - { tl: huwag kang mag-alala, en: do not worry }
+          - { tl: kakayanin mo, en: you can handle it }
+          - { tl: nandito lang ako, en: I am right here }
+          - { tl: magiging maayos, en: will be fine }
+      - type: choice
+        prompt: "'Kakayanin mo iyan' tells someone..."
+        answer: you can handle that
+        distractors: [you failed that, do not try that, that is forbidden]
+        audio: kakayanin_mo_iyan
+        audio_text: Kakayanin mo iyan.
+      - type: fill_blank
+        sentence: "Huwag kang ___, nandito lang ako."
+        translation: "Do not worry, I am right here."
+        answer: mag-alala
+        options: [mag-alala, matulog, kumain]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Magiging maayos din ang lahat.
+        answer_en: Everything will be fine too.
+        accept:
+          - Everything will turn out fine
+        extra_words: [cheap, market, tomorrow]
+        audio: magiging_maayos_din_ang_lahat
+      - type: translate
+        prompt_en: Do not worry, you can handle it.
+        answer_tl: Huwag kang mag-alala, kakayanin mo
+        accept:
+          - Huwag kang mag-alala kakayanin mo iyan
+        extra_words: [maayos, nandito, ingat]
+        grading: { hyphens: true }
+      - type: listen
+        audio: huwag_kang_mag_alala
+        answer_tl: Huwag kang mag-alala
+        extra_words: [maayos, kakayanin]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "Everything will be fine too."
+        answer_tl: Magiging maayos din ang lahat
+      - type: choice
+        prompt: "Which sentence offers presence rather than a solution?"
+        answer: Nandito lang ako.
+        distractors: [Dapat kang magpahinga., Baka mahulog ka., Bawal iyan.]
+      - type: arrange
+        prompt: "Do not worry, I am right here."
+        answer_tl: Huwag kang mag-alala nandito lang ako
+        accept:
+          - Huwag kang mag-alala, nandito lang ako
+        grading: { hyphens: true }
+
+  - id: adv-4
+    title: A friend needs advice
+    xp: 20
+    exercises:
+      - type: dialogue
+        intro: A friend is exhausted from work
+        lines:
+          - speaker: Nina
+            text: "Sobrang pagod na ako, gabi-gabi akong nag-o-overtime."
+            translation: "I am so tired, I do overtime every night."
+          - speaker: Paolo
+            text: "___ mas mabuti kung magpahinga ka ngayong Linggo."
+            translation: "Maybe it would be better if you rested this Sunday."
+          - speaker: Nina
+            text: "Pero ___ ko ang pera."
+            translation: "But I need the money."
+          - speaker: Paolo
+            text: "___ mo rin ang kalusugan mo, ha?"
+            translation: "Take care of your health too, okay?"
+        blanks:
+          - answer: Baka
+            options: [Baka, Bawal, Ayaw]
+          - answer: kailangan
+            options: [kailangan, ayaw, bawal]
+          - answer: Alagaan
+            options: [Alagaan, Matulog, Kumain]
+      - type: match
+        pairs:
+          - { tl: pagod, en: tired }
+          - { tl: alagaan, en: to take care of }
+          - { tl: payo, en: advice }
+          - { tl: makinig, en: to listen }
+      - type: fill_blank
+        sentence: "Salamat sa ___ mo, susubukan ko."
+        translation: "Thank you for your advice, I will try."
+        answer: payo
+        options: [payo, pagod, sipit]
+      - type: translate
+        prompt_en: Take care of your health, that is more important.
+        answer_tl: Alagaan mo ang kalusugan mo, mas mahalaga iyan
+        accept:
+          - Alagaan mo ang kalusugan mo mas mahalaga iyan
+        extra_words: [payo, pagod, makinig]
+      - type: translate
+        prompt_tl: Makinig ka sa payo ng doktor.
+        answer_en: Listen to the doctor's advice.
+        accept:
+          - Listen to the advice of the doctor
+        extra_words: [cheap, market, tomorrow]
+        audio: makinig_ka_sa_payo_ng_doktor
+      - type: listen
+        audio: salamat_sa_payo_mo
+        answer_tl: Salamat sa payo mo
+        extra_words: [pagod, alagaan]
+      - type: choice
+        prompt: "In the dialogue, what does Paolo finally emphasise?"
+        answer: her health
+        distractors: [her salary, her schedule, her family]
+      - type: arrange
+        prompt: "Thank you for your advice, I will try."
+        answer_tl: Salamat sa payo mo susubukan ko
+        accept:
+          - Salamat sa payo mo, susubukan ko
+      - type: arrange
+        prompt: "Take care of your health."
+        answer_tl: Alagaan mo ang kalusugan mo

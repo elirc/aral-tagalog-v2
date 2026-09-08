@@ -1,4 +1,5 @@
 import { addHearts, fullHearts, loseHeart, MAX_HEARTS, regenerate, type HeartsState } from "./hearts";
+import { emptyDayStats, pendingQuestRewards, type DayStats } from "./quests";
 import { applyCompletionDay, emptyStreak, localDayKey, type StreakState } from "./streak";
 import { PRACTICE_XP } from "./xp";
 
@@ -25,6 +26,8 @@ export type ProgressEvent =
       missedExerciseIds?: string[];
       /** exercises solved without a miss — clears them from the review queue */
       masteredExerciseIds?: string[];
+      /** longest consecutive-correct run in the session, for combo quests (GAM) */
+      maxCombo?: number;
     }
   | { id: string; type: "hearts_lost"; occurredAt: number; count: number }
   | {
@@ -40,10 +43,31 @@ export type ProgressEvent =
       type: "goal_set";
       occurredAt: number;
       goalXp: number;
+    }
+  | {
+      id: string;
+      /**
+       * The learner placed into a difficulty tier instead of working up to it.
+       * Unlocks that tier's first lesson; grants no XP and completes nothing,
+       * so a replayed or duplicated event is harmless.
+       */
+      type: "tier_started";
+      occurredAt: number;
+      tierId: string;
     };
 
 /** Default daily XP goal until the user sets one via a goal_set event. */
 export const DEFAULT_DAILY_GOAL_XP = 30;
+
+/**
+ * How many days of per-day quest counters to keep. Quests only ever read
+ * today, so older entries are dead weight in the /sync baseline; the
+ * long-term XP history lives in xpByDay, which stays complete.
+ */
+export const DAY_STATS_KEPT = 90;
+
+/** Hostile clients can inflate a session's combo; bound what one can claim. */
+const MAX_CLAIMABLE_COMBO = 500;
 
 export interface UserProgress {
   xpTotal: number;
@@ -57,12 +81,20 @@ export interface UserProgress {
   perfectLessons: number;
   /** count of practice-replay completions */
   practiceCount: number;
-  /** localDayKey → XP earned that day (clamped ts + timeZone, like streaks) */
+  /** localDayKey → XP earned that day including quest rewards (clamped ts + timeZone, like streaks) */
   xpByDay: Record<string, number>;
+  /**
+   * localDayKey → the counters daily quests are scored against, most recent
+   * DAY_STATS_KEPT days. Quest rewards are recorded here as they are earned,
+   * which is also what makes crediting them idempotent across re-folds.
+   */
+  dayStats: Record<string, DayStats>;
   /** highest streak.count ever reached while folding the stream */
   longestStreak: number;
   /** current daily XP goal (DEFAULT_DAILY_GOAL_XP until a goal_set event) */
   dailyGoalXp: number;
+  /** difficulty tiers the learner placed into directly (tier_started events) */
+  unlockedTierIds: string[];
   /**
    * Exercises whose most recent attempt included a miss, oldest first — the
    * review queue (REV-01). An exercise leaves when a later session masters it.
@@ -70,6 +102,14 @@ export interface UserProgress {
   weakExerciseIds: string[];
   /** how many weak exercises the user has cleared by mastering them later */
   mistakesCleared: number;
+}
+
+/** Drop all but the most recent DAY_STATS_KEPT days (keys sort chronologically). */
+function trimDayStats(stats: Record<string, DayStats>): Record<string, DayStats> {
+  const keys = Object.keys(stats);
+  if (keys.length <= DAY_STATS_KEPT) return stats;
+  const kept = keys.sort().slice(-DAY_STATS_KEPT);
+  return Object.fromEntries(kept.map((k) => [k, stats[k]!]));
 }
 
 /**
@@ -101,8 +141,10 @@ export function reduceEvents(
   let perfectLessons = initial?.perfectLessons ?? 0;
   let practiceCount = initial?.practiceCount ?? 0;
   const xpByDay: Record<string, number> = { ...(initial?.xpByDay ?? {}) };
+  const dayStats: Record<string, DayStats> = { ...(initial?.dayStats ?? {}) };
   let longestStreak = initial?.longestStreak ?? initial?.streak?.count ?? streak.count;
   let dailyGoalXp = initial?.dailyGoalXp ?? DEFAULT_DAILY_GOAL_XP;
+  const unlockedTiers = new Set<string>(initial?.unlockedTierIds ?? []);
   // insertion-ordered: oldest weak exercise first, deterministic given the
   // sorted fold (review sessions serve the longest-standing mistakes first)
   const weak = new Set<string>(initial?.weakExerciseIds ?? []);
@@ -130,23 +172,47 @@ export function reduceEvents(
         xpTotal += xp;
         const day = localDayKey(t, timeZone);
         xpByDay[day] = (xpByDay[day] ?? 0) + xp;
+        const stats: DayStats = { ...(dayStats[day] ?? emptyDayStats) };
+        stats.lessonXp += xp;
+        stats.lessons += 1;
         streak = applyCompletionDay(streak, day);
         if (streak.count > longestStreak) longestStreak = streak.count;
         lessonsCompleted++;
         // perfect practice runs of an already-learned lesson would farm the
         // perfect-lesson achievements; only first-time perfection counts
-        if (ev.perfect && !replay) perfectLessons++;
+        if (ev.perfect && !replay) {
+          perfectLessons++;
+          stats.perfect += 1;
+        }
         if (!replay) completed.add(ev.lessonId);
         else {
           practiceCount++;
+          stats.practice += 1;
           hearts = addHearts(hearts, 1, t);
         }
         // mastered first, then missed: if a hostile event lists an id in both,
         // "still weak" is the safe reading
         for (const exId of ev.masteredExerciseIds ?? []) {
-          if (weak.delete(exId)) mistakesCleared++;
+          if (weak.delete(exId)) {
+            mistakesCleared++;
+            stats.mistakesCleared += 1;
+          }
         }
         for (const exId of ev.missedExerciseIds ?? []) weak.add(exId);
+        if (typeof ev.maxCombo === "number" && Number.isFinite(ev.maxCombo))
+          stats.maxCombo = Math.max(stats.maxCombo, Math.min(ev.maxCombo, MAX_CLAIMABLE_COMBO));
+        // Quest rewards are credited here rather than claimed by their own
+        // event, so there is nothing for a client to forge: the server's fold
+        // reaches the same conclusion. Targets read stats.lessonXp only, never
+        // the reward XP below, so a reward can't complete the quest that paid it.
+        const reward = pendingQuestRewards(day, stats);
+        if (reward.ids.length > 0) {
+          stats.questIds = [...stats.questIds, ...reward.ids];
+          stats.questXp += reward.xp;
+          xpTotal += reward.xp;
+          xpByDay[day] = (xpByDay[day] ?? 0) + reward.xp;
+        }
+        dayStats[day] = stats;
         break;
       }
       case "hearts_lost": {
@@ -163,6 +229,10 @@ export function reduceEvents(
         // junk goals (NaN / zero / negative) would make goalMet trivially true
         if (Number.isFinite(ev.goalXp) && ev.goalXp > 0) dailyGoalXp = ev.goalXp;
         break;
+      case "tier_started":
+        // placement is additive and idempotent — a tier never re-locks
+        if (typeof ev.tierId === "string" && ev.tierId !== "") unlockedTiers.add(ev.tierId);
+        break;
     }
   }
 
@@ -175,9 +245,16 @@ export function reduceEvents(
     perfectLessons,
     practiceCount,
     xpByDay,
+    dayStats: trimDayStats(dayStats),
     longestStreak,
     dailyGoalXp,
+    unlockedTierIds: [...unlockedTiers],
     weakExerciseIds: [...weak],
     mistakesCleared,
   };
+}
+
+/** Today's quest counters, with an empty day when nothing has happened yet. */
+export function todayStats(progress: UserProgress, timeZone: string, now: number): DayStats {
+  return progress.dayStats?.[localDayKey(now, timeZone)] ?? emptyDayStats;
 }

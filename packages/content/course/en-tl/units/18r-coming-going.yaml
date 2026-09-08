@@ -1,0 +1,231 @@
+id: coming-going
+title: Coming and Going
+tier: foundation
+description: Punta, alis, dating, uwi — the movement verbs that anchor every plan.
+tip: >-
+  Four verbs carry most movement: pumunta (go to), umalis (leave), dumating
+  (arrive), umuwi (go home). Tagalog marks *when* by reshaping the verb, not by
+  adding a helper: pupunta (will go), pumupunta (goes), pumunta (went). Learn
+  one verb's three shapes and the pattern repeats.
+lessons:
+  - id: go-1
+    title: Going somewhere
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pumunta, en: to go to }
+          - { tl: umalis, en: to leave }
+          - { tl: dumating, en: to arrive }
+          - { tl: umuwi, en: to go home }
+      - type: choice
+        prompt: "'Pupunta ako sa palengke' means..."
+        answer: I will go to the market
+        distractors: [I went to the market, I am at the market, I left the market]
+        audio: pupunta_ako_sa_palengke
+        audio_text: Pupunta ako sa palengke.
+      - type: fill_blank
+        sentence: "___ ako sa paaralan bukas."
+        translation: "I will go to school tomorrow."
+        answer: Pupunta
+        options: [Pupunta, Umuwi, Dumating]
+      - type: translate
+        prompt_tl: Saan ka pupunta?
+        answer_en: Where will you go?
+        accept:
+          - Where are you going
+        extra_words: [tomorrow, cheap, market]
+        audio: saan_ka_pupunta
+      - type: translate
+        prompt_en: I will go home now.
+        answer_tl: Uuwi na ako
+        accept:
+          - Uuwi na ako ngayon
+        extra_words: [pupunta, aalis, darating]
+      - type: listen
+        audio: saan_ka_pupunta_2
+        answer_tl: Saan ka pupunta
+        extra_words: [umuwi, dumating]
+      - type: choice
+        prompt: "Which verb means 'to go home'?"
+        answer: umuwi
+        distractors: [umalis, dumating, pumunta]
+      - type: fill_blank
+        sentence: "Anong oras ka ___ sa opisina?"
+        translation: "What time will you leave the office?"
+        answer: aalis
+        options: [aalis, darating, kakain]
+      - type: translate
+        prompt_tl: Dumating siya kahapon ng gabi.
+        answer_en: He arrived last night.
+        accept:
+          - She arrived last night
+        extra_words: [quickly, morning, cheap]
+        audio: dumating_siya_kahapon_ng_gabi
+
+  - id: go-2
+    title: When it happened
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pupunta, en: will go }
+          - { tl: pumupunta, en: goes or is going }
+          - { tl: pumunta, en: went }
+          - { tl: hindi pa, en: not yet }
+      - type: choice
+        prompt: "'Pumunta ako sa Baguio' happened..."
+        answer: in the past
+        distractors: [tomorrow, right now, never]
+        audio: pumunta_ako_sa_baguio
+        audio_text: Pumunta ako sa Baguio.
+      - type: fill_blank
+        sentence: "___ ako sa simbahan tuwing Linggo."
+        translation: "I go to church every Sunday."
+        answer: Pumupunta
+        options: [Pumupunta, Pupunta, Pumunta]
+      - type: translate
+        prompt_en: I went to the market yesterday.
+        answer_tl: Pumunta ako sa palengke kahapon
+        accept:
+          - Nagpunta ako sa palengke kahapon
+        extra_words: [bukas, pupunta, uuwi]
+      - type: translate
+        prompt_tl: Hindi pa siya dumarating.
+        answer_en: He has not arrived yet.
+        accept:
+          - She hasn't arrived yet
+        extra_words: [tomorrow, cheap, market]
+        audio: hindi_pa_siya_dumarating
+      - type: listen
+        audio: pumunta_ka_na_ba_doon
+        answer_tl: Pumunta ka na ba doon
+        extra_words: [pupunta, umuwi]
+      - type: choice
+        prompt: "Doubling the first syllable, as in 'pumupunta', marks..."
+        answer: an ongoing or habitual action
+        distractors: [the past, a command, a question]
+      - type: fill_blank
+        sentence: "___ kami sa dagat sa susunod na linggo."
+        translation: "We will go to the beach next week."
+        answer: Pupunta
+        options: [Pupunta, Pumunta, Pumupunta]
+      - type: translate
+        prompt_en: She goes to work every day.
+        answer_tl: Pumupunta siya sa trabaho araw-araw
+        accept:
+          - Pumupunta siya sa trabaho araw araw
+        extra_words: [bukas, kahapon, uuwi]
+        grading: { hyphens: true }
+
+  - id: go-3
+    title: With whom and how
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kasama, en: together with }
+          - { tl: mag-isa, en: alone }
+          - { tl: naglalakad, en: walking }
+          - { tl: sumasakay, en: riding }
+      - type: choice
+        prompt: "'Mag-isa akong pumunta' means you went..."
+        answer: alone
+        distractors: [with friends, by car, in a hurry]
+        audio: mag_isa_akong_pumunta
+        audio_text: Mag-isa akong pumunta.
+      - type: fill_blank
+        sentence: "___ ko si Ana sa palengke."
+        translation: "Ana is with me at the market."
+        answer: Kasama
+        options: [Kasama, Mag-isa, Malayo]
+      - type: translate
+        prompt_tl: Naglalakad ako papuntang paaralan.
+        answer_en: I walk to school.
+        accept:
+          - I am walking to school
+        extra_words: [cheap, tomorrow, market]
+        audio: naglalakad_ako_papuntang_paaralan
+      - type: translate
+        prompt_en: I go to work by jeepney.
+        answer_tl: Sumasakay ako ng jeep papuntang trabaho
+        accept:
+          - Nagje-jeep ako papuntang trabaho
+        extra_words: [naglalakad, mag-isa, kasama]
+        grading: { hyphens: true }
+      - type: listen
+        audio: kasama_mo_ba_siya
+        answer_tl: Kasama mo ba siya
+        extra_words: [mag-isa, naglalakad]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Papuntang' before a place means..."
+        answer: heading toward
+        distractors: [coming from, staying at, far from]
+      - type: fill_blank
+        sentence: "___ ako, walang kasama."
+        translation: "I am alone, with no companion."
+        answer: Mag-isa
+        options: [Mag-isa, Kasama, Malapit]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Kasama ko ang pamilya ko sa biyahe.
+        answer_en: My family is with me on the trip.
+        accept:
+          - I am with my family on the trip
+        extra_words: [quickly, morning, cheap]
+        audio: kasama_ko_ang_pamilya_ko_sa_biyahe
+
+  - id: go-4
+    title: Making a plan
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "To invite someone along you say:"
+        answer: Sumama ka sa akin.
+        distractors: [Alis ka na., Uwi ka na., Wala akong barya.]
+        audio: sumama_ka_sa_akin
+        audio_text: Sumama ka sa akin.
+      - type: match
+        pairs:
+          - { tl: sumama, en: to come along }
+          - { tl: maghintay, en: to wait }
+          - { tl: magkita, en: to meet }
+          - { tl: bumalik, en: to come back }
+      - type: fill_blank
+        sentence: "___ tayo bukas sa kanto."
+        translation: "Let us meet tomorrow at the corner."
+        answer: Magkita
+        options: [Magkita, Umuwi, Kumain]
+      - type: translate
+        prompt_en: Wait for me at the door.
+        answer_tl: Hintayin mo ako sa pinto
+        accept:
+          - Maghintay ka sa akin sa pinto
+        extra_words: [magkita, bumalik, sumama]
+      - type: translate
+        prompt_tl: Babalik ako mamayang hapon.
+        answer_en: I will come back this afternoon.
+        accept:
+          - I'll be back this afternoon
+        extra_words: [tomorrow, cheap, market]
+        audio: babalik_ako_mamayang_hapon
+      - type: listen
+        audio: magkita_tayo_bukas
+        answer_tl: Magkita tayo bukas
+        extra_words: [bumalik, sumama]
+      - type: choice
+        prompt: "'Sumama ka' is an invitation to..."
+        answer: come with
+        distractors: [stay behind, go home, hurry up]
+      - type: fill_blank
+        sentence: "___ ka lang dito, babalik ako agad."
+        translation: "Just wait here, I will be right back."
+        answer: Maghintay
+        options: [Maghintay, Umalis, Matulog]
+      - type: translate
+        prompt_en: Come with us to the beach tomorrow.
+        answer_tl: Sumama ka sa amin sa dagat bukas
+        accept:
+          - Sumama ka sa amin bukas sa dagat
+        extra_words: [magkita, bumalik, umuwi]

@@ -1,0 +1,242 @@
+id: frequency
+title: How Often
+tier: everyday
+description: Always, sometimes, never — putting a rhythm on what you do.
+tip: >-
+  Frequency words sit at the front — taking the linker, "Palagi akong late" —
+  or at the very end: "Late ako palagi." For "every X", Tagalog doubles the
+  noun — araw-araw (daily), gabi-gabi (nightly), taon-taon (yearly). The
+  strongest negative is "hindi kailanman", but everyday speech just uses "hindi
+  ako kumakain ng…".
+lessons:
+  - id: freq-1
+    title: Always and never
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: palagi, en: always }
+          - { tl: madalas, en: often }
+          - { tl: minsan, en: sometimes }
+          - { tl: hindi kailanman, en: never }
+      - type: choice
+        prompt: "'Palagi akong late' means I am..."
+        answer: always late
+        distractors: [never late, sometimes late, early]
+        audio: palagi_akong_late
+        audio_text: Palagi akong late.
+      - type: fill_blank
+        sentence: "___ akong kumakain ng gulay."
+        translation: "I often eat vegetables."
+        answer: Madalas
+        options: [Madalas, Palagi, Minsan]
+      - type: translate
+        prompt_tl: Minsan lang akong pumupunta doon.
+        answer_en: I only go there sometimes.
+        accept:
+          - I go there only sometimes
+        extra_words: [cheap, market, tomorrow]
+        audio: minsan_lang_akong_pumupunta_doon
+      - type: translate
+        prompt_en: She always drinks coffee in the morning.
+        answer_tl: Palagi siyang umiinom ng kape sa umaga
+        accept:
+          - Umiinom siya palagi ng kape sa umaga
+        extra_words: [minsan, madalas, gabi]
+      - type: listen
+        audio: madalas_ka_bang_pumunta_doon
+        answer_tl: Madalas ka bang pumunta doon
+        extra_words: [palagi, minsan]
+      - type: choice
+        prompt: "Which is the least frequent?"
+        answer: bihira
+        distractors: [palagi, madalas, minsan]
+      - type: fill_blank
+        sentence: "___ akong nanonood ng TV, wala akong oras."
+        translation: "I rarely watch TV, I have no time."
+        answer: Bihira
+        options: [Bihira, Palagi, Madalas]
+      - type: arrange
+        prompt: "I always eat breakfast at home."
+        answer_tl: Palagi akong nag-aalmusal sa bahay
+        grading: { hyphens: true }
+
+  - id: freq-2
+    title: Every day, every week
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: araw-araw, en: every day }
+          - { tl: gabi-gabi, en: every night }
+          - { tl: linggo-linggo, en: every week }
+          - { tl: taon-taon, en: every year }
+      - type: choice
+        prompt: "Doubling a time word, like 'araw-araw', means..."
+        answer: every one of them
+        distractors: [two of them, none of them, a long one]
+        audio: araw_araw
+        audio_text: Araw-araw.
+      - type: fill_blank
+        sentence: "Naglilinis kami ng bahay ___."
+        translation: "We clean the house every week."
+        answer: linggo-linggo
+        options: [linggo-linggo, araw-araw, taon-taon]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nagbabasa siya ng libro gabi-gabi.
+        answer_en: He reads a book every night.
+        accept:
+          - She reads a book every night
+        extra_words: [cheap, market, tomorrow]
+        audio: nagbabasa_siya_ng_libro_gabi_gabi
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: We go to the province every year.
+        answer_tl: Pumupunta kami sa probinsya taon-taon
+        accept:
+          - Pumupunta kami sa probinsya taon taon
+        extra_words: [araw-araw, gabi-gabi, minsan]
+        grading: { hyphens: true }
+      - type: listen
+        audio: araw_araw_akong_naglalakad
+        answer_tl: Araw-araw akong naglalakad
+        extra_words: [gabi-gabi, minsan]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Tuwing Linggo' means..."
+        answer: every Sunday
+        distractors: [every month, one Sunday, last Sunday]
+      - type: fill_blank
+        sentence: "___ Sabado kami namimili."
+        translation: "We shop every Saturday."
+        answer: Tuwing
+        options: [Tuwing, Minsan, Bihira]
+      - type: arrange
+        prompt: "We go to church every Sunday."
+        answer_tl: Pumupunta kami sa simbahan tuwing Linggo
+
+  - id: freq-3
+    title: How many times
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isang beses, en: once }
+          - { tl: dalawang beses, en: twice }
+          - { tl: ilang beses, en: how many times }
+          - { tl: paminsan-minsan, en: once in a while }
+      - type: choice
+        prompt: "'Ilang beses ka nang pumunta doon?' asks..."
+        answer: how many times you have gone
+        distractors: [when you will go, who went with you, how far it is]
+        audio: ilang_beses_ka_nang_pumunta_doon
+        audio_text: Ilang beses ka nang pumunta doon?
+      - type: fill_blank
+        sentence: "Dalawang ___ sa isang linggo ako nag-eehersisyo."
+        translation: "I exercise twice a week."
+        answer: beses
+        options: [beses, taon, bahay]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Isang beses pa lang ako nakapunta sa Baguio.
+        answer_en: I have only been to Baguio once.
+        accept:
+          - I've only gone to Baguio once
+        extra_words: [cheap, market, tomorrow]
+        audio: isang_beses_pa_lang_ako_nakapunta_sa_baguio
+      - type: translate
+        prompt_en: I take the medicine three times a day.
+        answer_tl: Umiinom ako ng gamot tatlong beses sa isang araw
+        accept:
+          - Tatlong beses sa isang araw ako umiinom ng gamot
+        extra_words: [minsan, palagi, bihira]
+      - type: listen
+        audio: ilang_beses_sa_isang_linggo
+        answer_tl: Ilang beses sa isang linggo
+        extra_words: [oras, taon]
+      - type: choice
+        prompt: "'Paminsan-minsan' is closest to..."
+        answer: once in a while
+        distractors: [every hour, never at all, twice a day]
+      - type: fill_blank
+        sentence: "___ lang kami nagkikita, tuwing Pasko."
+        translation: "We only meet once in a while, every Christmas."
+        answer: Paminsan-minsan
+        options: [Paminsan-minsan, Araw-araw, Gabi-gabi]
+        grading: { hyphens: true }
+      - type: arrange
+        prompt: "I exercise twice a week."
+        answer_tl: Dalawang beses sa isang linggo ako nag-eehersisyo
+        grading: { hyphens: true }
+
+  - id: freq-4
+    title: Habits
+    xp: 15
+    exercises:
+      - type: dialogue
+        intro: Comparing routines
+        lines:
+          - speaker: Lia
+            text: "___ ka bang mag-ehersisyo?"
+            translation: "Do you often exercise?"
+          - speaker: Tom
+            text: "___ lang, dalawang beses sa isang linggo."
+            translation: "Sometimes only, twice a week."
+          - speaker: Lia
+            text: "Ako naman, ___ akong naglalakad."
+            translation: "As for me, I walk every day."
+          - speaker: Tom
+            text: "Mabuti iyan para sa kalusugan."
+            translation: "That is good for your health."
+        blanks:
+          - answer: Madalas
+            options: [Madalas, Bihira, Hindi]
+          - answer: Minsan
+            options: [Minsan, Palagi, Bihira]
+          - answer: araw-araw
+            options: [araw-araw, taon-taon, minsan]
+        grading: { hyphens: true }
+      - type: match
+        pairs:
+          - { tl: ugali, en: habit }
+          - { tl: kalusugan, en: health }
+          - { tl: ehersisyo, en: exercise }
+          - { tl: rutina, en: routine }
+      - type: fill_blank
+        sentence: "Mabuting ___ ang maglakad araw-araw."
+        translation: "Walking every day is a good habit."
+        answer: ugali
+        options: [ugali, kalusugan, rutina]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: What is your daily routine?
+        answer_tl: Ano ang pang-araw-araw mong rutina?
+        accept:
+          - Ano ang rutina mo araw-araw
+        extra_words: [ugali, kalusugan, minsan]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Mabuti sa kalusugan ang maglakad.
+        answer_en: Walking is good for the health.
+        accept:
+          - Walking is good for your health
+        extra_words: [cheap, market, tomorrow]
+        audio: mabuti_sa_kalusugan_ang_maglakad
+      - type: listen
+        audio: ano_ang_rutina_mo
+        answer_tl: Ano ang rutina mo
+        extra_words: [ugali, kalusugan]
+      - type: choice
+        prompt: "In the dialogue, how often does Lia walk?"
+        answer: every day
+        distractors: [twice a week, once a month, never]
+      - type: fill_blank
+        sentence: "Masamang ___ ang manigarilyo."
+        translation: "Smoking is a bad habit."
+        answer: ugali
+        options: [ugali, rutina, beses]
+      - type: arrange
+        prompt: "Walking every day is good for the health."
+        answer_tl: Mabuti sa kalusugan ang paglalakad araw-araw
+        grading: { hyphens: true }
