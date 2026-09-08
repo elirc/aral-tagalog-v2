@@ -70,7 +70,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     // Rebuild only lessons whose semantic pairings require coordinated changes
     // to prompts, answers, word banks and distractors. Keep all progress IDs.
     const semanticReview = !original.includes(reviewMark) &&
-      (/-(comparison|figurative)\.yaml$/.test(file) || /\b(hinog|magulang|sumundo|sumusundo|susundo|maglagay|naglagay|naglalagay|maglalagay|tugtog|himig)\b/.test(original) || containsTemporalRepeat(unit));
+      (/-comparison\.yaml$/.test(file) || /\b(hinog|magulang|sumundo|sumusundo|susundo|maglagay|naglagay|naglalagay|maglalagay|tugtog|himig)\b/.test(original) || containsTemporalRepeat(unit));
     if (semanticReview) {
       const pair = THEMES.flatMap((theme) => focuses.map((focus) => ({ theme, focus })))
         .find(({theme, focus}) => focus.tier === unit.tier && file.endsWith("-" + theme.id + "-" + focus.id + ".yaml"));

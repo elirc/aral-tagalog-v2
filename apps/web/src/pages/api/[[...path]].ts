@@ -9,7 +9,7 @@ export const config = {
   maxDuration: 30,
 };
 
-let appPromise: Promise<ReturnType<typeof buildApp>> | undefined;
+let appPromise: Promise<Awaited<ReturnType<typeof buildApp>>> | undefined;
 
 function contentDirectory() {
   const candidates = [resolve(process.cwd(), "public/_course"), resolve(process.cwd(), "apps/web/public/_course")];

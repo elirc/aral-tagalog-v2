@@ -34,7 +34,7 @@ explicit; preview builds never migrate or overwrite a production database.
 
 ## 2. Import the repository
 
-In Vercel, import the release branch and choose:
+In Vercel, import `elirc/aral-tagalog-v2` and choose:
 
 | Setting | Value |
 | --- | --- |
@@ -66,6 +66,12 @@ node -e "console.log(require('node:crypto').randomBytes(48).toString('base64url'
 Keep database URLs and `JWT_SECRET` server-only. Do not prefix them with
 `NEXT_PUBLIC_`. The web/API share an origin, so no `CORS_ORIGIN` is needed. Keep
 the same production JWT secret between deployments to preserve sessions.
+
+After linking the project, open **Deployments ? Create Deployment** and enter
+`release/small-production-20260907` as the Git reference. Keep `main` as the
+production branch so this release branch uses the Preview environment. The
+initial repository import may build `main`; select the release branch preview
+for the checks below. See [deployments from Git references](https://vercel.com/docs/git#creating-a-deployment-from-a-git-reference).
 
 ## 3. Test the preview
 
