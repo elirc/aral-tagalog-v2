@@ -13,6 +13,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,9 +38,9 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   };
 
   return (
-    <main className="container">
+    <main id="main-content" tabIndex={-1} className="container">
       <div className="center-card">
-        <h2>{mode === "register" ? "Create your account" : "Welcome back"}</h2>
+        <h1 className="page-title">{mode === "register" ? "Create your account" : "Welcome back"}</h1>
         {mode === "register" && (
           <p style={{ color: "var(--text-muted)" }}>Your guest progress carries over automatically.</p>
         )}
@@ -59,12 +60,12 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
             onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="auth-password">Password</label>
-          <input
+          <div className="password-field"><input
             id="auth-password"
             name="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             autoComplete={mode === "register" ? "new-password" : "current-password"}
-            aria-describedby={error ? "auth-error" : undefined}
+            aria-describedby={[mode === "register" ? "password-help" : "", error ? "auth-error" : ""].filter(Boolean).join(" ") || undefined}
             placeholder={mode === "register" ? "Password (8+ characters)" : "Password"}
             value={password}
             required
@@ -72,7 +73,8 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
             minLength={8}
             maxLength={200}
             onChange={(e) => setPassword(e.target.value)}
-          />
+          /><button type="button" className="text-button" disabled={busy} aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword} onClick={() => setShowPassword((value) => !value)}>{showPassword ? "Hide" : "Show"}</button></div>
+          {mode === "register" && <p id="password-help" className="field-help">Use at least 8 characters. A unique passphrase is easy to remember.</p>}
           {error && <p id="auth-error" className="form-error" role="alert">{error}</p>}
           <button className="btn btn-primary btn-block" disabled={busy || !ready}>
             {busy ? "Please wait…" : mode === "register" ? "Sign up" : "Log in"}

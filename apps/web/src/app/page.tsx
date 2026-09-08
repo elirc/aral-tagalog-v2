@@ -1,16 +1,19 @@
 "use client";
 
+import { useClock } from "@/lib/use-clock";
+
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   buildReviewLesson,
+  findNextLesson,
+  matchesSearch,
   DEFAULT_DAILY_GOAL_XP,
   displayStreak,
   isLessonUnlocked,
   localDayKey,
   PRACTICE_XP,
   tierStatuses,
-  type Lesson,
   type TierStatus,
   type Unit,
 } from "@aral/core";
@@ -22,38 +25,17 @@ import { deviceTz, useProgress } from "@/lib/progress";
 
 const UNIT_COLORS = ["#4a8f00", "#1cb0f6", "#ce82ff", "#ff9600", "#ff4b4b", "#2bb6a3"];
 
-interface NextUp {
-  unit: Unit;
-  lesson: Lesson;
-  unitIndex: number;
-}
-
-/**
- * The next playable lesson. With tiers this is no longer "the first
- * uncompleted lesson in the course" — a learner placed into Conversational
- * has hundreds of uncompleted Foundation lessons they deliberately skipped,
- * so the hero must point at the first uncompleted lesson that is *unlocked*.
- */
-function findNext(done: Set<string>, unlockedTierIds: string[]): NextUp | null {
-  const completed = [...done];
-  for (let ui = 0; ui < bundle.units.length; ui++) {
-    const unit = bundle.units[ui]!;
-    for (const lesson of unit.lessons) {
-      if (done.has(lesson.id)) continue;
-      if (isLessonUnlocked(bundle.units, lesson.id, completed, { tiers: bundle.tiers, unlockedTierIds }))
-        return { unit, lesson, unitIndex: ui };
-    }
-  }
-  return null;
-}
-
 export default function CourseMapPage() {
   const { progress, ready, user } = useProgress();
-  const done = new Set(progress.completedLessonIds);
-  const next = findNext(done, progress.unlockedTierIds);
+  const clockNow = useClock();
+  const [selectedTier, setSelectedTier] = useState("");
+  const done = useMemo(() => new Set(progress.completedLessonIds), [progress.completedLessonIds]);
+  const next = useMemo(() => findNextLesson(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }, selectedTier || undefined), [progress.completedLessonIds, progress.unlockedTierIds, selectedTier]);
 
   const tz = deviceTz();
-  const now = Date.now();
+  const now = clockNow;
   const todayXp = progress.xpByDay[localDayKey(now, tz)] ?? 0;
   const goal = progress.dailyGoalXp || DEFAULT_DAILY_GOAL_XP;
   const streak = displayStreak(progress.streak, localDayKey(now, tz));
@@ -71,9 +53,11 @@ export default function CourseMapPage() {
   return (
     <>
       <Header />
-      <main className="container">
-        {!ready ? null : (
+      <main id="main-content" tabIndex={-1} className="container">
+        {!ready ? <p role="status">Loading your course…</p> : (
           <>
+            <h1 className="page-title">Learn Tagalog</h1>
+            <p className="page-sub">Small lessons. A little progress every day.</p>
             {!user && (
               <p style={{ color: "var(--text-muted)", fontSize: 15 }}>
                 Playing as guest — <Link href="/register">create a free account</Link> to save progress across
@@ -128,8 +112,19 @@ export default function CourseMapPage() {
 
             <TierPlacement progress={progress} />
 
+            {tiers.length > 0 && (
+              <div className="course-toolbar">
+                <label htmlFor="course-track">Explore a track</label>
+                <select id="course-track" value={selectedTier || next?.unit.tier || tiers[0]!.tier.id}
+                  onChange={(event) => setSelectedTier(event.target.value)}>
+                  {tiers.map((status) => <option key={status.tier.id} value={status.tier.id}>
+                    {status.tier.title}{status.unlocked ? "" : " · Locked"}
+                  </option>)}
+                </select>
+              </div>
+            )}
             {tiers.length > 0 ? (
-              tiers.map((status) => (
+              tiers.filter((status) => status.tier.id === (selectedTier || next?.unit.tier || tiers[0]!.tier.id)).map((status) => (
                 <TierSection
                   key={status.tier.id}
                   status={status}
@@ -243,28 +238,48 @@ function UnitList({
   const pageSize = 12;
   const currentIndex = units.findIndex((unit) => unit.id === currentUnitId);
   const [page, setPage] = useState(() => Math.max(0, Math.floor(currentIndex / pageSize)));
-  const start = page * pageSize;
-  const visibleUnits = units.slice(start, start + pageSize);
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState("all");
+  const filtered = useMemo(() => units.map((unit, index) => ({ unit, index })).filter(({ unit, index }) => {
+    const completed = unit.lessons.every((lesson) => done.has(lesson.id));
+    return (filter === "all" || (filter === "completed" ? completed : !completed)) &&
+      matchesSearch(query, unit.title, unit.description, String(offset + index + 1), ...unit.lessons.map((lesson) => lesson.title));
+  }), [units, query, filter, done, offset]);
+  const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const activePage = Math.min(page, pageCount - 1);
+  const start = activePage * pageSize;
+  const visibleUnits = filtered.slice(start, start + pageSize);
   return (
     <>
-      {units.length > pageSize && (
+      <div className="course-search">
+        <input className="search-input" type="search" aria-label="Search units" placeholder="Search topics, lessons or unit number"
+          value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} />
+        <select aria-label="Filter units" value={filter} onChange={(event) => { setFilter(event.target.value); setPage(0); }}>
+          <option value="all">All units</option><option value="unfinished">Unfinished</option><option value="completed">Completed</option>
+        </select>
+      </div>
+      {(query || filter !== "all") && <p className="page-sub" role="status">{filtered.length} matching units · <button className="text-button" onClick={() => { setQuery(""); setFilter("all"); setPage(Math.max(0, Math.floor(currentIndex / pageSize))); }}>Clear filters</button></p>}
+      {filtered.length === 0 && <p className="word-empty">No units found. Try another topic or clear the filters.</p>}
+      {filtered.length > pageSize && (
         <nav className="unit-pages" aria-label="Course units">
-          <button className="btn btn-ghost" disabled={page === 0} onClick={() => setPage((value) => value - 1)}>
+          <button className="btn btn-ghost" disabled={activePage === 0} onClick={() => setPage(activePage - 1)}>
             Previous units
           </button>
-          <span role="status">{start + 1}–{Math.min(start + pageSize, units.length)} of {units.length} units</span>
-          <button className="btn btn-ghost" disabled={start + pageSize >= units.length} onClick={() => setPage((value) => value + 1)}>
+          <label className="page-picker">Page <select aria-label="Unit page" value={activePage} onChange={(event) => setPage(Number(event.target.value))}>
+            {Array.from({ length: pageCount }, (_, index) => <option key={index} value={index}>{index + 1} of {pageCount}</option>)}
+          </select></label>
+          <button className="btn btn-ghost" disabled={activePage + 1 >= pageCount} onClick={() => setPage(activePage + 1)}>
             Next units
           </button>
         </nav>
       )}
-      {visibleUnits.map((unit, i) => {
+      {visibleUnits.map(({ unit, index }) => {
         const total = unit.lessons.length;
         const doneCount = unit.lessons.filter((l) => done.has(l.id)).length;
         const pct = total > 0 ? (doneCount / total) * 100 : 0;
         const isCurrent = currentUnitId === unit.id;
-        const number = offset + start + i + 1;
-        const color = UNIT_COLORS[(offset + start + i) % UNIT_COLORS.length];
+        const number = offset + index + 1;
+        const color = UNIT_COLORS[(offset + index) % UNIT_COLORS.length];
         return (
           <details className="unit-card" key={unit.id} open={isCurrent}>
             <summary>

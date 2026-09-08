@@ -11,3 +11,4 @@ export * from "./review";
 export * from "./tiers";
 export * from "./quests";
 export * from "./ads";
+export * from "./discovery";

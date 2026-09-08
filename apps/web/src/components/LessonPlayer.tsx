@@ -1,5 +1,7 @@
 "use client";
 
+import { useClock } from "@/lib/use-clock";
+
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -7,6 +9,7 @@ import {
   COMBO_MIN,
   currentExercise,
   earnedAchievementIds,
+  findNextLesson,
   isPerfect,
   lessonXp,
   levelForXp,
@@ -74,7 +77,8 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   const continueRef = useRef<HTMLButtonElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const hearts = regenerate(progress.hearts, Date.now()).hearts;
+  const clockNow = useClock();
+  const hearts = regenerate(progress.hearts, clockNow).hearts;
   const exercise = currentExercise(session);
 
   // keyboard flow: swapping Check → Continue (and remounting the exercise on
@@ -190,6 +194,9 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
 
   if (session.done) {
     const perfect = isPerfect(session);
+    const next = findNextLesson(bundle.units, [...progress.completedLessonIds, lesson.id], {
+      tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+    }, bundle.units.find((unit) => unit.lessons.some((entry) => entry.id === lesson.id))?.tier);
     return (
       <div className="center-card">
         <p className="big-emoji">{perfect ? "🏆" : "🎉"}</p>
@@ -262,9 +269,10 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
             </div>
           </div>
         )}
-        <Link href="/" className="btn btn-primary" style={{ marginTop: 16 }}>
-          Continue
-        </Link>
+        <div className="completion-actions">
+          {next && <Link href={`/lesson/${next.lesson.id}`} className="btn btn-primary">Next lesson: {next.lesson.title}</Link>}
+          <Link href="/" className="btn btn-ghost">Back to course</Link>
+        </div>
       </div>
     );
   }
@@ -272,7 +280,7 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   // gate only between exercises: when the last heart is lost, the user must
   // still see the feedback for the mistake that cost it before this screen
   if (!practice && hearts <= 0 && phase.kind === "answering") {
-    const ms = msUntilNextHeart(progress.hearts, Date.now());
+    const ms = msUntilNextHeart(progress.hearts, clockNow);
     return (
       <div className="center-card">
         <p className="big-emoji">💔</p>
@@ -321,6 +329,7 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
           {practice ? "practice" : `❤️ ${hearts}/${MAX_HEARTS}`}
         </span>
       </div>
+      <p className="lesson-context">{lesson.title} <span>· {Math.round(sessionProgress(session) * 100)}% complete</span></p>
 
       {/* the combo only appears once it is actually paying XP, so it reads as a
           reward rather than a counter that has always been there */}

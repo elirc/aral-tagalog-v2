@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Aral — Learn Tagalog",
-  description: "A free Duolingo-style course teaching Tagalog to English speakers.",
+  description: "Learn Tagalog with short lessons, everyday conversations, a searchable phrasebook, and practice that follows your progress.",
 };
 
 // Runs before first paint so a saved dark preference never flashes light.
@@ -19,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <ProgressProvider>{children}</ProgressProvider>
       </body>
     </html>

@@ -1,97 +1,65 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { VocabEntry } from "@aral/core";
+import { normalizeSearch, searchVocab, type VocabEntry } from "@aral/core";
 import { Header } from "@/components/Header";
 import { playAudio } from "@/lib/audio";
 import { bundle } from "@/lib/content";
 
-/**
- * Phrasebook: every vocab entry in the course, searchable, with audio.
- * Pure content view — no progress writes, works logged out.
- */
+const PAGE_SIZE = 40;
 export default function WordsPage() {
   const [query, setQuery] = useState("");
-
-  const all = useMemo(
-    () =>
-      Object.values(bundle.vocab).sort((a, b) =>
-        a.lemma.localeCompare(b.lemma, "fil", { sensitivity: "base" }),
-      ),
-    [],
-  );
-
-  const q = query.trim().toLowerCase();
-  const shown = q
-    ? all.filter(
-        (v) =>
-          v.lemma.toLowerCase().includes(q) ||
-          v.translation.toLowerCase().includes(q) ||
-          (v.notes ?? "").toLowerCase().includes(q),
-      )
-    : all;
-
-  // group by first letter for scannability (search results stay flat)
-  const groups = useMemo(() => {
-    if (q) return null;
-    const by = new Map<string, VocabEntry[]>();
-    for (const v of shown) {
-      const letter = (v.lemma[0] ?? "#").toUpperCase();
-      if (!by.has(letter)) by.set(letter, []);
-      by.get(letter)!.push(v);
-    }
-    return [...by.entries()];
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, all]);
-
-  return (
-    <>
-      <Header />
-      <main className="container">
-        <h1 className="page-title">Phrasebook</h1>
-        <p className="page-sub">
-          All {all.length} words &amp; phrases from the course. Tap 🔊 to hear them.
-        </p>
-        <input
-          className="search-input"
-          type="search"
-          placeholder="Search Tagalog or English…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="Search words"
-        />
-        {shown.length === 0 && <p className="word-empty">No matches for “{query}”.</p>}
-        {groups
-          ? groups.map(([letter, entries]) => (
-              <section key={letter}>
-                <h2 className="word-letter">{letter}</h2>
-                {entries.map((v) => (
-                  <WordRow key={v.id} entry={v} />
-                ))}
-              </section>
-            ))
-          : shown.map((v) => <WordRow key={v.id} entry={v} />)}
-      </main>
-    </>
-  );
+  const [letter, setLetter] = useState("");
+  const [page, setPage] = useState(0);
+  const all = useMemo(() => Object.values(bundle.vocab).sort((a, b) =>
+    a.lemma.localeCompare(b.lemma, "fil", { sensitivity: "base" })), []);
+  const letters = useMemo(() => [...new Set(all.map((entry) => normalizeSearch(entry.lemma)[0]?.toUpperCase()).filter(Boolean))], [all]);
+  const shown = useMemo(() => searchVocab(all, query).filter((entry) => !letter || normalizeSearch(entry.lemma).startsWith(letter.toLowerCase())), [all, query, letter]);
+  const pages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
+  const activePage = Math.min(page, pages - 1);
+  const start = activePage * PAGE_SIZE;
+  const clear = () => { setQuery(""); setLetter(""); setPage(0); };
+  return <>
+    <Header />
+    <main id="main-content" tabIndex={-1} className="container">
+      <h1 className="page-title">Phrasebook</h1>
+      <p className="page-sub">{all.length.toLocaleString()} words and phrases for everyday Tagalog. Listen, look up a meaning, and try saying it aloud.</p>
+      <label className="field-label" htmlFor="word-search">Find a word or phrase</label>
+      <input id="word-search" className="search-input" type="search" placeholder="Search Tagalog or English?" value={query}
+        onChange={(event) => { setQuery(event.target.value); setPage(0); }} aria-label="Search words" />
+      <div className="letter-filters" role="group" aria-label="Filter by first letter">
+        {["", ...letters].map((value) => <button key={value} aria-pressed={letter === value} onClick={() => { setLetter(value!); setPage(0); }}>{value || "All"}</button>)}
+      </div>
+      <p className="search-summary" role="status">{shown.length.toLocaleString()} results{shown.length > 0 && <> ? Showing {start + 1}?{Math.min(start + PAGE_SIZE, shown.length)}</>}
+        {(query || letter) && <> ? <button className="text-button" onClick={clear}>Clear filters</button></>}
+      </p>
+      {shown.length === 0 && <div className="card word-empty"><h2>No matching words</h2><p>Try a shorter word, an English meaning, or another letter.</p><button className="btn btn-ghost" onClick={clear}>Show all words</button></div>}
+      {pages > 1 && <nav className="unit-pages" aria-label="Phrasebook pages">
+        <button className="btn btn-ghost" disabled={activePage === 0} onClick={() => setPage(activePage - 1)}>Previous words</button>
+        <label className="page-picker">Page <select aria-label="Phrasebook page" value={activePage} onChange={(event) => setPage(Number(event.target.value))}>
+          {Array.from({ length: pages }, (_, index) => <option value={index} key={index}>{index + 1} of {pages}</option>)}
+        </select></label>
+        <button className="btn btn-ghost" disabled={activePage + 1 >= pages} onClick={() => setPage(activePage + 1)}>Next words</button>
+      </nav>}
+      {shown.slice(start, start + PAGE_SIZE).map((entry) => <WordRow key={entry.id} entry={entry} />)}
+    </main>
+  </>;
 }
 
 function WordRow({ entry }: { entry: VocabEntry }) {
-  return (
-    <div className="word-row">
-      <button
-        className="word-audio"
-        onClick={() => playAudio(entry.audio, entry.lemma)}
-        aria-label={`play audio for ${entry.lemma}`}
-        title="play audio"
-      >
-        🔊
-      </button>
-      <div className="word-main">
-        <p className="word-lemma">{entry.lemma}</p>
-        <p className="word-translation">{entry.translation}</p>
-        {entry.notes && <p className="word-notes">{entry.notes}</p>}
-      </div>
+  const [unavailable, setUnavailable] = useState(false);
+  const listen = async () => {
+    setUnavailable(false);
+    try { setUnavailable(!await playAudio(entry.audio, entry.lemma)); }
+    catch { setUnavailable(true); }
+  };
+  return <div className="word-row">
+    <button className="word-audio" onClick={() => void listen()} aria-label={"play audio for " + entry.lemma} title="Play pronunciation">??</button>
+    <div className="word-main">
+      <p className="word-lemma" lang="fil">{entry.lemma}</p>
+      <p className="word-translation">{entry.translation}</p>
+      {entry.notes && <p className="word-notes">{entry.notes}</p>}
+      {unavailable && <p className="word-notes" role="status">Audio is unavailable on this device. You can still practice with the written phrase.</p>}
     </div>
-  );
+  </div>;
 }

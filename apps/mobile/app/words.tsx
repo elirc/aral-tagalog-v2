@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useRouter } from "expo-router";
 import { Pressable, SectionList, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import type { VocabEntry } from "@aral/core";
+import { searchVocab, type VocabEntry } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 import { getBundle } from "@/lib/content";
 import { font, radii, spacing, useTheme } from "@/theme";
@@ -28,12 +28,7 @@ export default function WordsScreen() {
   const q = query.trim().toLowerCase();
   const sections = useMemo(() => {
     if (q) {
-      const hits = all.filter(
-        (v) =>
-          v.lemma.toLowerCase().includes(q) ||
-          v.translation.toLowerCase().includes(q) ||
-          (v.notes ?? "").toLowerCase().includes(q),
-      );
+      const hits = searchVocab(all, query);
       // no sections at all when nothing matches, so ListEmptyComponent shows
       return hits.length > 0 ? [{ title: "", data: hits }] : [];
     }
@@ -66,11 +61,13 @@ export default function WordsScreen() {
         </Pressable>
         <Text style={styles.subtitle}>Phrasebook</Text>
         <View style={{ flex: 1 }} />
-        <Text style={styles.muted}>{all.length} words</Text>
+        <Text style={styles.muted}>{sections.reduce((count, section) => count + section.data.length, 0)} words</Text>
       </View>
 
       <SectionList
         sections={sections}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
         keyExtractor={(v) => v.id}
         stickySectionHeadersEnabled
         contentContainerStyle={{ padding: spacing.md, paddingBottom: spacing.xl }}
@@ -122,6 +119,8 @@ export default function WordsScreen() {
 }
 
 function WordRow({ entry }: { entry: VocabEntry }) {
+  const [unavailable, setUnavailable] = useState(false);
+  const listen = async () => { setUnavailable(false); try { setUnavailable(!await playAudio(entry.audio, entry.lemma)); } catch { setUnavailable(true); } };
   const { styles } = useTheme();
   return (
     <View
@@ -137,15 +136,17 @@ function WordRow({ entry }: { entry: VocabEntry }) {
       ]}
     >
       <Pressable
-        onPress={() => void playAudio(entry.audio, entry.lemma)}
+        onPress={() => void listen()}
         accessibilityLabel={`play audio for ${entry.lemma}`}
-        style={{ padding: spacing.xs }}
+        accessibilityRole="button"
+        style={{ padding: spacing.sm, minWidth: 44, minHeight: 44 }}
       >
         <Text style={{ fontSize: 20 }}>🔊</Text>
       </Pressable>
       <View style={{ flex: 1 }}>
         <Text style={[styles.body, { fontWeight: "700" }]}>{entry.lemma}</Text>
         <Text style={styles.muted}>{entry.translation}</Text>
+        {unavailable && <Text accessibilityLiveRegion="polite" style={styles.muted}>Audio is unavailable on this device.</Text>}
         {entry.notes ? (
           <Text style={[styles.muted, { fontSize: font.sizeSm - 1, marginTop: 2 }]}>{entry.notes}</Text>
         ) : null}

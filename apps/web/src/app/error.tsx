@@ -2,7 +2,7 @@
 
 export default function ErrorPage({ reset }: { error: Error; reset: () => void }) {
   return (
-    <main className="container">
+    <main id="main-content" tabIndex={-1} className="container">
       <div className="center-card">
         <p className="big-emoji">😵</p>
         <h2>Something went wrong</h2>

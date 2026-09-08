@@ -11,7 +11,7 @@ import { useProgress } from "@/lib/progress";
 export default function LessonPage() {
   const lessonId = useParams<{ lessonId: string }>()?.lessonId;
   const { user } = useProgress();
-  if (!lessonId) return <main className="container" role="status">Loading lesson...</main>;
+  if (!lessonId) return <main id="main-content" tabIndex={-1} className="container" role="status">Loading lesson...</main>;
   return <LessonContent key={`${user?.id ?? "guest"}:${lessonId}`} lessonId={lessonId} />;
 }
 
@@ -38,11 +38,11 @@ function LessonContent({ lessonId }: { lessonId: string }) {
       : `${lesson.title} · ${found?.unitTitle} — Aral`;
   }, [lesson, isReview, found?.unitTitle]);
 
-  if (!ready) return null;
+  if (!ready) return <main id="main-content" tabIndex={-1} className="container"><p role="status">Loading your lesson?</p></main>;
 
   if (isReview && !reviewLesson) {
     return (
-      <main className="container">
+      <main id="main-content" tabIndex={-1} className="container">
         <div className="center-card">
           <p className="big-emoji">🧹</p>
           <h2>Nothing to review</h2>
@@ -55,7 +55,7 @@ function LessonContent({ lessonId }: { lessonId: string }) {
 
   if (!lesson) {
     return (
-      <main className="container">
+      <main id="main-content" tabIndex={-1} className="container">
         <div className="center-card">
           <h2>Lesson not found</h2>
           <Link href="/" className="btn btn-primary">Back to course</Link>
@@ -66,7 +66,7 @@ function LessonContent({ lessonId }: { lessonId: string }) {
 
   if (!isReview && !isLessonUnlocked(lessonId, progress.completedLessonIds, progress.unlockedTierIds)) {
     return (
-      <main className="container">
+      <main id="main-content" tabIndex={-1} className="container">
         <div className="center-card">
           <p className="big-emoji">🔒</p>
           <h2>Finish earlier lessons first</h2>
@@ -85,7 +85,7 @@ function LessonContent({ lessonId }: { lessonId: string }) {
   }
   const practice = practiceRef.current;
   return (
-    <main className="container">
+    <main id="main-content" tabIndex={-1} className="container">
       <LessonPlayer key={lessonId} lesson={lesson} practice={practice} />
     </main>
   );

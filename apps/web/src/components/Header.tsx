@@ -1,15 +1,25 @@
 "use client";
 
+import { useClock } from "@/lib/use-clock";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { displayStreak, levelForXp, localDayKey, MAX_HEARTS, regenerate } from "@aral/core";
 import { deviceTz, useProgress } from "@/lib/progress";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
+  const pathname = usePathname();
+  const clockNow = useClock();
+  useEffect(() => {
+    const title = pathname === "/words" ? "Phrasebook" : pathname === "/stats" ? "Your stats" : pathname === "/login" ? "Log in" : pathname === "/register" ? "Create an account" : "Learn Tagalog";
+    document.title = `${title} — Aral`;
+  }, [pathname]);
   const { progress, user, logout, ready, pendingCount, needsRelogin, syncStatus, syncNow, storageError, rejectedCount } = useProgress();
   if (!ready) return <header className="header"><div className="header-inner"><span className="logo">Aral</span></div></header>;
 
-  const now = Date.now();
+  const now = clockNow;
   const hearts = regenerate(progress.hearts, now).hearts;
   const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
   const level = levelForXp(progress.xpTotal);
@@ -18,9 +28,6 @@ export function Header() {
     <header className="header">
       <div className="header-inner">
         <Link href="/" className="logo">Aral</Link>
-        <Link href="/words" className="nav-link" title="Phrasebook" aria-label="Phrasebook">
-          📖
-        </Link>
         <div className="stats">
           <Link href="/stats" className="level-chip" title="view your stats">Lv {level}</Link>
           <Link href="/stats" className="stats-link" title="view your stats">
@@ -52,6 +59,13 @@ export function Header() {
           <Link href="/login" className="btn btn-ghost">Log in</Link>
         )}
       </div>
+      <nav className="primary-nav" aria-label="Main navigation">
+        {[{ href: "/", label: "Learn", icon: "◉" }, { href: "/words", label: "Phrasebook", icon: "☷" }, { href: "/stats", label: "Your stats", icon: "↗" }].map((item) => (
+          <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>
+            <span aria-hidden="true">{item.icon}</span> {item.label}
+          </Link>
+        ))}
+      </nav>
       {storageError && (
         <p className="save-notice" role="alert">
           Browser storage is unavailable. Keep this tab open until your progress syncs to your account.

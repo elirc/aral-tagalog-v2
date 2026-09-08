@@ -14,12 +14,12 @@ function localPath(file: string): string {
 }
 
 /**
- * Play a clip by audio ref: local cache first, then network. Silent on failure.
+ * Play a clip by audio ref: local cache first, then network. Reports unavailable playback.
  *
  * While a recording is missing, falls back to device TTS speaking the bundle's
  * audioTexts entry (or `fallbackText`). Recorded clips always win (AUD-01).
  */
-export async function playAudio(ref: string | undefined, fallbackText?: string): Promise<void> {
+export async function playAudio(ref: string | undefined, fallbackText?: string): Promise<boolean> {
   const bundle = getBundle();
   const text = (ref && bundle.audioTexts?.[ref]) || fallbackText;
   const file = ref ? bundle.audio[ref] : undefined;
@@ -32,17 +32,27 @@ export async function playAudio(ref: string | undefined, fallbackText?: string):
     sound.setOnPlaybackStatusUpdate((status) => {
       if (status.isLoaded && status.didJustFinish) void sound.unloadAsync();
     });
+    return true;
   } catch {
     // clip not recorded yet or no network — non-fatal (AUD-02)
-    speak(text);
+    return speak(text);
   }
 }
 
-/** Speak Tagalog text with the device voice; no-op when we have no text. */
-function speak(text: string | null | undefined): void {
-  if (!text) return;
-  Speech.stop(); // don't stack utterances from rapid taps
-  Speech.speak(text, { language: "fil-PH", rate: 0.85 }); // learners need slower speech
+/** Resolve false when speech is missing or the device rejects playback. */
+async function speak(text: string | null | undefined): Promise<boolean> {
+  if (!text) return false;
+  try {
+    await Speech.stop();
+    return await new Promise<boolean>((resolve) => {
+      Speech.speak(text, {
+        language: "fil-PH", rate: 0.85,
+        onDone: () => resolve(true),
+        onStopped: () => resolve(true),
+        onError: () => resolve(false),
+      });
+    });
+  } catch { return false; }
 }
 
 /** OFF-01: pull every audio clip to device storage for offline lessons. */

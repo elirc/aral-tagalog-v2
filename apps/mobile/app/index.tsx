@@ -1,9 +1,12 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link, useRouter } from "expo-router";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   buildReviewLesson,
+  findNextLesson,
+  matchesSearch,
+  tierStatuses,
   displayStreak,
   levelForXp,
   localDayKey,
@@ -27,34 +30,23 @@ export default function CourseMapScreen() {
   const { colors, styles, toggle } = useTheme();
   const { progress, user, logout, pendingCount, needsRelogin } = useProgress();
   const bundle = getBundle();
+  const [selectedTier, setSelectedTier] = useState("");
+  const [query, setQuery] = useState("");
   const done = useMemo(() => new Set(progress.completedLessonIds), [progress.completedLessonIds]);
   const now = Date.now();
   const hearts = regenerate(progress.hearts, now).hearts;
   const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
   const level = levelForXp(progress.xpTotal);
   // count only mistakes whose exercises still exist in this bundle version
-  const reviewable =
-    buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
-      .length ?? 0;
+  const reviewable = useMemo(() => buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises.length ?? 0, [bundle, progress.weakExerciseIds]);
 
-  // The first uncompleted lesson that is actually *playable*. Computed up
-  // front rather than tracked with a flag while rendering: the list is
-  // virtualized, so unit cards do not render in order (or at all, until
-  // scrolled to). With difficulty tiers "first uncompleted" is no longer
-  // enough — a learner who placed into a later tier has deliberately skipped
-  // hundreds of uncompleted lessons behind it.
-  const next = useMemo(() => {
-    const completed = [...done];
-    for (let ui = 0; ui < bundle.units.length; ui++) {
-      const unit = bundle.units[ui]!;
-      for (const lesson of unit.lessons) {
-        if (done.has(lesson.id)) continue;
-        if (isLessonUnlocked(lesson.id, completed, progress.unlockedTierIds))
-          return { unit, lesson, unitIndex: ui };
-      }
-    }
-    return null;
-  }, [bundle.units, done, progress.unlockedTierIds]);
+  const next = useMemo(() => findNextLesson(bundle.units, progress.completedLessonIds, {
+    tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds,
+  }, selectedTier || undefined), [bundle, progress.completedLessonIds, progress.unlockedTierIds, selectedTier]);
+  const tracks = useMemo(() => tierStatuses(bundle.units, progress.completedLessonIds, { tiers: bundle.tiers, unlockedTierIds: progress.unlockedTierIds }), [bundle, progress.completedLessonIds, progress.unlockedTierIds]);
+  const activeTier = selectedTier || next?.unit.tier || tracks[0]?.tier.id;
+  const visibleUnits = useMemo(() => bundle.units.filter((unit, index) => (!activeTier || unit.tier === activeTier) &&
+    matchesSearch(query, unit.title, unit.description, String(index + 1), ...unit.lessons.map((lesson) => lesson.title))), [bundle, activeTier, query]);
 
   const renderUnit = ({ item: unit, index: ui }: { item: Unit; index: number }) => (
     <View style={styles.card}>
@@ -64,7 +56,7 @@ export default function CourseMapScreen() {
         </Text>
       ) : null}
       <Text style={styles.subtitle}>
-        Unit {ui + 1}: {unit.title}
+        Unit {bundle.units.indexOf(unit) + 1}: {unit.title}
       </Text>
       {unit.description ? (
         <Text style={[styles.muted, { marginBottom: spacing.sm }]}>{unit.description}</Text>
@@ -135,6 +127,7 @@ export default function CourseMapScreen() {
       <View
         style={{
           flexDirection: "row",
+          flexWrap: "wrap",
           alignItems: "center",
           paddingHorizontal: spacing.md,
           paddingVertical: spacing.sm,
@@ -175,7 +168,9 @@ export default function CourseMapScreen() {
       {/* virtualized: the course is 50+ units, far too many lesson rows to
           mount eagerly in a ScrollView on a mid-range phone */}
       <FlatList
-        data={bundle.units}
+        data={visibleUnits}
+        keyboardShouldPersistTaps="handled"
+        ListEmptyComponent={<Text style={[styles.muted, { padding: spacing.md }]}>No matching units. Try another topic or track.</Text>}
         keyExtractor={(u) => u.id}
         renderItem={renderUnit}
         contentContainerStyle={styles.container}
@@ -233,6 +228,18 @@ export default function CourseMapScreen() {
               </View>
             )}
 
+            <Text style={styles.subtitle}>Explore your course</Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm }}>
+              {tracks.map((track) => <Pressable key={track.tier.id} accessibilityRole="button" accessibilityState={{ selected: activeTier === track.tier.id }}
+                style={[styles.btnGhost, activeTier === track.tier.id && { backgroundColor: colors.accentSoft }]} onPress={() => setSelectedTier(track.tier.id)}>
+                <Text style={styles.btnGhostText}>{track.unlocked ? "" : "?? "}{track.tier.title}</Text>
+              </Pressable>)}
+            </ScrollView>
+            <TextInput accessibilityLabel="Search units" value={query} onChangeText={setQuery} autoCorrect={false}
+              placeholder="Search topics, lessons or unit number" placeholderTextColor={colors.textMuted}
+              style={{ backgroundColor: colors.bg, color: colors.text, borderWidth: 2, borderColor: colors.border, borderRadius: radii.md, padding: spacing.md }} />
+            <Text style={styles.muted}>{visibleUnits.length} units{query ? " matching your search" : " in this track"}</Text>
+            {query ? <Pressable accessibilityRole="button" onPress={() => setQuery("")} style={styles.btnGhost}><Text style={styles.btnGhostText}>Clear search</Text></Pressable> : null}
             {reviewable > 0 && (
               <Pressable
                 style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm }]}

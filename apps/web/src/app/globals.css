@@ -951,3 +951,57 @@ details[open] > summary .unit-chevron { transform: rotate(180deg); }
   width: fit-content;
 }
 .combo-summary { color: var(--text-muted); font-size: 14px; margin: 6px 0; }
+
+/* Navigation and discovery */
+html { scroll-padding-top: 160px; }
+body { line-height: 1.5; }
+button, input, select { color: inherit; }
+select { font: inherit; max-width: 100%; background: var(--bg); color: var(--text); border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+:where(a, button, input, select, summary):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+main:focus { outline: none; }
+.skip-link { position: fixed; top: 8px; left: 16px; z-index: 100; padding: 12px 20px; background: var(--bg); border: 2px solid var(--accent); border-radius: 10px; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.primary-nav { max-width: 640px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.primary-nav a { min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--text-muted); border-bottom: 3px solid transparent; }
+.primary-nav a[aria-current="page"] { color: var(--primary-dark); border-color: var(--primary); background: var(--primary-soft); border-radius: 10px 10px 0 0; }
+.course-toolbar { margin: 24px 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 700; }
+.course-toolbar select { max-width: 65%; }
+.course-search { display: flex; align-items: flex-start; gap: 8px; }
+.course-search .search-input { flex: 1; min-width: 0; }
+.course-search select { max-width: 35%; padding-block: 12px; }
+.page-picker { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.unit-pages .btn { padding: 10px 12px; font-size: 13px; min-height: 44px; }
+.text-button { border: 0; padding: 4px 0; background: transparent; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.field-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 700; }
+.field-help { font-size: 13px; color: var(--text-muted); margin: 0; }
+.letter-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.letter-filters button { min-width: 40px; min-height: 44px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); font-weight: 700; }
+.letter-filters button[aria-pressed="true"] { background: var(--primary-fill); color: #fff; border-color: var(--primary-deep); }
+.search-summary { font-size: 14px; color: var(--text-muted); margin: 14px 0; }
+.password-field { position: relative; display: flex; align-items: center; }
+.password-field input { width: 100%; min-width: 0; padding-right: 76px; }
+.password-field button { position: absolute; right: 14px; min-height: 44px; }
+.form { text-align: left; }
+.form input, .blank-input { background: var(--bg); color: var(--text); }
+.form label { font-size: 14px; font-weight: 700; }
+.completion-actions { display: grid; gap: 10px; margin-top: 20px; }
+.lesson-context { margin: 0 0 14px; font-size: 14px; font-weight: 700; }
+.lesson-context span { font-weight: 400; color: var(--text-muted); }
+.lesson-row .lesson-name { min-width: 0; overflow-wrap: anywhere; }
+.lesson-row .btn { flex-shrink: 0; padding: 10px 16px; }
+.word-audio, .theme-toggle { min-height: 44px; min-width: 44px; }
+.word-main { overflow-wrap: anywhere; }
+@media (max-width: 380px) {
+  .hero { gap: 10px; padding: 14px; }
+  .hero-ring svg { width: 70px; height: 70px; }
+  .hero .btn { padding: 12px 16px; }
+  .unit-pages { gap: 5px; }
+  .unit-pages .btn { padding: 8px; font-size: 12px; }
+  .page-picker { gap: 3px; }
+  .page-picker select { padding: 8px 5px; }
+  .course-search { flex-direction: column; margin-bottom: 12px; }
+  .course-search .search-input { margin-bottom: 0; }
+  .course-search select { max-width: 100%; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
