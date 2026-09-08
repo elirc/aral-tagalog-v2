@@ -15,7 +15,8 @@
     "build": "tsx src/compile.ts",
     "generate": "node generator/generate.mjs",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "review": "node generator/review.mjs"
   },
   "dependencies": {
     "@aral/core": "workspace:*",

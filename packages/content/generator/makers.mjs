@@ -9,6 +9,8 @@
  * worth drilling in match/choice exercises.
  */
 
+import { proofreadEnglish } from "./proofread.mjs";
+
 import {
   bare,
   enNP,
@@ -25,6 +27,8 @@ import {
 
 /** build a sentence record, filling in the gender alternates automatically */
 export function S({ tl, en, key = null, gloss = [], q = false, accept = [], acceptTl = [] }) {
+  en = proofreadEnglish(en);
+  accept = accept.map(proofreadEnglish);
   return {
     tl,
     en,
@@ -329,6 +333,11 @@ export function command(rng, ctx, { verb, obj = null, place = null, negate = fal
 }
 
 /** "Mas malaki ang bahay kaysa sa kotse." */
+export function equalityAdjective(tl) {
+  const root = tl.startsWith("ma") && tl !== "mahal" ? tl.slice(2) : tl;
+  return `kasing${/^[aeiou]/.test(root) ? "-" : ""}${root}`;
+}
+
 export function comparison(rng, ctx, { adj, a: nounA, b: nounB, mode = "mas" }) {
   if (mode === "pinaka") {
     return S({
@@ -340,26 +349,30 @@ export function comparison(rng, ctx, { adj, a: nounA, b: nounB, mode = "mas" }) 
   }
   if (mode === "kasing") {
     return S({
-      tl: tlSentence([`kasing${adj.tl}`, "ng", nounB.tl, "ang", nounA.tl]),
+      tl: tlSentence([equalityAdjective(adj.tl), "ng", nounB.tl, "ang", nounA.tl]),
       en: enSentence(["the", nounA.en, "is as", adj.en, "as the", nounB.en]),
-      key: { word: `kasing${adj.tl}`, options: options(`kasing${adj.tl}`, ctx.adjPool(nounA.cat).map((x) => `kasing${x.tl}`)) },
-      gloss: [{ tl: `kasing${adj.tl}`, en: `as ${adj.en} as` }],
+      key: { word: equalityAdjective(adj.tl), options: options(equalityAdjective(adj.tl), ctx.adjPool(nounA.cat).map((x) => equalityAdjective(x.tl))) },
+      gloss: [{ tl: equalityAdjective(adj.tl), en: `as ${adj.en} as` }],
     });
   }
   return S({
     tl: tlSentence(["mas", adj.tl, "ang", nounA.tl, "kaysa", "sa", nounB.tl]),
-    en: enSentence(["the", nounA.en, "is more", adj.en, "than the", nounB.en]),
+    en: enSentence(["the", nounA.en, "is", comparative(adj.en), "than the", nounB.en]),
     accept: [enSentence(["the", nounA.en, "is", comparative(adj.en), "than the", nounB.en])],
     key: { word: "mas", options: ["mas", "kaysa", "pinaka"] },
     gloss: [
-      { tl: `mas ${adj.tl}`, en: `more ${adj.en}` },
+      { tl: `mas ${adj.tl}`, en: comparative(adj.en) },
       { tl: nounA.tl, en: nounA.en },
     ],
   });
 }
 
 /** English comparative/superlative for the short adjectives the lexicon uses */
+const PERIPHRASTIC = new Set(["bitter", "famous", "careful", "colorful", "broken", "grown", "mature", "orderly"]);
 export function comparative(en) {
+  const irregular = { good: "better", bad: "worse", far: "farther" };
+  if (irregular[en]) return irregular[en];
+  if (PERIPHRASTIC.has(en)) return `more ${en}`;
   if (/[^aeiou]y$/.test(en)) return `${en.slice(0, -1)}ier`;
   if (/^(big|hot|thin|sad|wet|fat)$/.test(en)) return `${en}${en.slice(-1)}er`;
   if (en.split(" ").length > 1 || en.length > 7) return `more ${en}`;
@@ -367,6 +380,9 @@ export function comparative(en) {
   return `${en}er`;
 }
 export function superlative(en) {
+  const irregular = { good: "best", bad: "worst", far: "farthest" };
+  if (irregular[en]) return irregular[en];
+  if (PERIPHRASTIC.has(en)) return `most ${en}`;
   if (/[^aeiou]y$/.test(en)) return `${en.slice(0, -1)}iest`;
   if (/^(big|hot|thin|sad|wet|fat)$/.test(en)) return `${en}${en.slice(-1)}est`;
   if (en.split(" ").length > 1 || en.length > 7) return `most ${en}`;

@@ -8,6 +8,7 @@
  * failed check drops the exercise here instead of failing the build.
  */
 
+import { repeatedTemporalClause } from "./proofread.mjs";
 import { bare, slug, wordCount } from "./grammar.mjs";
 import { makeContext, themeSupports } from "./context.mjs";
 
@@ -50,7 +51,7 @@ export function sentencePool(focus, ctx, rng, seen, target) {
     } catch {
       s = null;
     }
-    if (!s || !s.tl || !s.en) continue;
+    if (!s || !s.tl || !s.en || repeatedTemporalClause(s.en)) continue;
     const key = norm(s.tl);
     if (key.length < 6 || local.has(key) || seen.has(key)) continue;
     // a sentence that lost its blank target is still usable, just less flexible

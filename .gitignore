@@ -18,3 +18,7 @@ playwright-report/
 test-results/
 # compiled content bundles are build artifacts
 packages/content/dist/
+
+apps/web/public/_course/
+
+.vercel/

@@ -9,8 +9,9 @@ import { bundle, findLesson, isLessonUnlocked } from "@/lib/content";
 import { useProgress } from "@/lib/progress";
 
 export default function LessonPage() {
-  const { lessonId } = useParams<{ lessonId: string }>();
+  const lessonId = useParams<{ lessonId: string }>()?.lessonId;
   const { user } = useProgress();
+  if (!lessonId) return <main className="container" role="status">Loading lesson...</main>;
   return <LessonContent key={`${user?.id ?? "guest"}:${lessonId}`} lessonId={lessonId} />;
 }
 

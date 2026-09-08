@@ -54,10 +54,12 @@ export function isTierUnlocked(
   const index = tiers.findIndex((t) => t.id === tierId);
   if (index <= 0) return index === 0; // first tier is always open; unknown = locked
   if ((ctx.unlockedTierIds ?? []).includes(tierId)) return true;
+  // Course expansion must not revoke access a learner has already earned.
+  const done = new Set(completedLessonIds);
+  if (tierLessonIds(units, tierId).some((id) => done.has(id))) return true;
   const prev = tiers[index - 1]!;
   const prevLessons = tierLessonIds(units, prev.id);
   if (prevLessons.length === 0) return true; // an empty tier can't gate the next one
-  const done = new Set(completedLessonIds);
   return prevLessons.every((id) => done.has(id));
 }
 

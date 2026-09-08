@@ -23,6 +23,12 @@ const ctx = (unlockedTierIds: string[] = []) => ({ tiers, unlockedTierIds });
 const ALL_T1 = ["a1", "a2", "a3"];
 
 describe("tier helpers", () => {
+  it("preserves earned tier access when earlier tiers gain lessons", () => {
+    const expanded = [...units, { id: "extra", title: "More", tier: "t1", lessons: [lesson("a4")] }];
+    expect(isTierUnlocked(expanded, "t2", [...ALL_T1, "b1"], ctx())).toBe(true);
+    expect(isLessonUnlocked(expanded, "b2", [...ALL_T1, "b1"], ctx())).toBe(true);
+    expect(isTierUnlocked(expanded, "t2", [...ALL_T1, "unknown"], ctx())).toBe(false);
+  });
   it("collects a tier's lessons in course order across units", () => {
     expect(tierLessonIds(units, "t1")).toEqual(ALL_T1);
     expect(tierOfLesson(units, "b2")).toBe("t2");

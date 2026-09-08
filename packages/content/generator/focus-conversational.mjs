@@ -201,9 +201,9 @@ export const CONVERSATIONAL_FOCUSES = [
       {
         needs: [],
         make: (rng, ctx) => {
-          const [a, b] = ctx.sample(["thing", "food", "drink", "animal", "place", "person"], 2);
+          const [a, b] = ctx.comparisonPair();
           if (!a || !b) return null;
-          const adj = ctx.adj(a.cat);
+          const adj = ctx.adj(a, b);
           return adj && comparison(rng, ctx, { adj, a, b });
         },
       },
@@ -212,25 +212,25 @@ export const CONVERSATIONAL_FOCUSES = [
         make: (rng, ctx) => {
           const a = ctx.pick(["thing", "food", "drink", "animal", "place", "person"]);
           if (!a) return null;
-          const adj = ctx.adj(a.cat);
+          const adj = ctx.adj(a);
           return adj && comparison(rng, ctx, { adj, a, b: a, mode: "pinaka" });
         },
       },
       {
         needs: [],
         make: (rng, ctx) => {
-          const [a, b] = ctx.sample(["thing", "food", "drink", "animal", "place", "person"], 2);
+          const [a, b] = ctx.comparisonPair();
           if (!a || !b) return null;
-          const adj = ctx.adj(a.cat);
+          const adj = ctx.adj(a, b);
           return adj && comparison(rng, ctx, { adj, a, b, mode: "kasing" });
         },
       },
       {
         needs: [],
         make: (rng, ctx) => {
-          const [a, b] = ctx.sample(["thing", "food", "drink", "animal", "place", "person"], 2);
+          const [a, b] = ctx.comparisonPair();
           if (!a || !b) return null;
-          const adj = ctx.adj(a.cat);
+          const adj = ctx.adj(a, b);
           if (!adj) return null;
           return S({
             tl: tlSentence(["mas", adj.tl, "ang", a.tl, "kaysa", "sa", b.tl, ",", "sa", "tingin", "ko"]),
@@ -242,9 +242,9 @@ export const CONVERSATIONAL_FOCUSES = [
       },
     ],
     qa: (rng, ctx) => {
-      const [a, b] = ctx.sample(["thing", "food", "drink", "animal", "place", "person"], 2);
+      const [a, b] = ctx.comparisonPair();
       if (!a || !b) return null;
-      const adj = ctx.adj(a.cat);
+      const adj = ctx.adj(a, b);
       if (!adj) return null;
       return {
         q: S({
@@ -587,7 +587,7 @@ export const CONVERSATIONAL_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "place", "animal", "person"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence(["sobrang", adj.tl, "ng", noun.tl]),
@@ -602,7 +602,7 @@ export const CONVERSATIONAL_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "place", "animal", "person"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           const root = adj.tl.replace(/^ma/, "");
           return S({
@@ -618,7 +618,7 @@ export const CONVERSATIONAL_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "place", "animal", "person"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence(["medyo", adj.tl, "ang", noun.tl]),
@@ -632,7 +632,7 @@ export const CONVERSATIONAL_FOCUSES = [
     qa: (rng, ctx) => {
       const noun = ctx.pick(["thing", "food", "drink", "place", "animal", "person"]);
       if (!noun) return null;
-      const adj = ctx.adj(noun.cat);
+      const adj = ctx.adj(noun);
       if (!adj) return null;
       return {
         q: S({

@@ -122,7 +122,7 @@ export function tlNP(noun, { marker = null, plural: isPlural = false } = {}) {
 
 /** English location phrase honouring the place's own preposition */
 export function atThe(place) {
-  return `${place && place.prep ? place.prep : "at"} the ${place.en}`;
+  return `${place.prep ?? ({ kitchen: "in", room: "in", bedroom: "in", street: "on", road: "on", garden: "in", forest: "in" }[place.en] ?? "at")} the ${place.en}`;
 }
 
 // ----------------------------------------------------------------- pronouns

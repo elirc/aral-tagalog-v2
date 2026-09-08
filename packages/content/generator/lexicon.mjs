@@ -450,7 +450,7 @@ export const NOUNS = [
 
   // ---- music ----
   n("musika", "music", "music", "abstract", { mass: true }),
-  n("tugtog", "tune", "music", "thing"),
+  n("tugtog", "tune", "music", "thing", { noObj: true }),
   n("banda", "band", "music", "person"),
   n("mikropono", "microphone", "music", "thing"),
   n("tambol", "drum", "music", "thing"),
@@ -459,7 +459,7 @@ export const NOUNS = [
   n("mang-aawit", "singer", "music", "person"),
   n("piyano", "piano", "music", "thing"),
   n("plawta", "flute", "music", "thing"),
-  n("himig", "melody", "music", "thing", { pl: "melodies" }),
+  n("himig", "melody", "music", "thing", { pl: "melodies", noObj: true }),
   n("koro", "choir", "music", "person"),
 
   // ---- money ----
@@ -866,8 +866,8 @@ export const ADJECTIVES = [
   a("manipis", "thin", { fits: ["thing"] }),
   a("malusog", "healthy", { fits: ["person", "food", "animal"] }),
   a("masustansiya", "nutritious", { fits: ["food"] }),
-  a("magulang", "grown", { fits: ["food"] }),
-  a("hinog", "ripe", { fits: ["food"] }),
+  a("magulang", "mature", { fits: ["food"], nounIds: ["niyog", "mais"] }),
+  a("hinog", "ripe", { fits: ["food"], nounIds: ["mangga", "saging", "papaya", "pakwan", "bayabas", "pinya", "lansones", "atis", "abokado", "kamatis"] }),
 ];
 
 /** feelings that describe a person and take no ma- prefix rules */

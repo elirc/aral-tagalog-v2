@@ -593,7 +593,7 @@ export const MASTERY_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "place", "person", "animal"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence(["mukhang", adj.tl, "ang", noun.tl]),
@@ -654,7 +654,7 @@ export const MASTERY_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "place", "person", "animal"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence([adj.tl, "talaga", "ang", noun.tl]),
@@ -696,7 +696,7 @@ export const MASTERY_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "place", "person", "animal"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence([adj.tl, "na", adj.tl, "ang", noun.tl]),
@@ -710,7 +710,7 @@ export const MASTERY_FOCUSES = [
     qa: (rng, ctx) => {
       const noun = ctx.pick(["thing", "food", "drink", "place", "person", "animal"]);
       if (!noun) return null;
-      const adj = ctx.adj(noun.cat);
+      const adj = ctx.adj(noun);
       if (!adj) return null;
       return {
         q: S({
@@ -881,10 +881,10 @@ export const MASTERY_FOCUSES = [
       const name = ctx.name();
       return {
         q: S({
-          tl: `Bakit ayaw makinig ni ${name}?`,
-          en: `Why will ${name} not listen?`,
+          tl: `Ano ang ugali ni ${name}?`,
+          en: `What is ${name} like?`,
           q: true,
-          key: { word: "Bakit", options: ["Bakit", "Kailan", "Saan"] },
+          key: { word: "Ano", options: ["Ano", "Kailan", "Saan"] },
         }),
         a: S({
           tl: tlSentence([idiom.tl, "niya"]),

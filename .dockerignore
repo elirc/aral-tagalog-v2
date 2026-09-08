@@ -15,3 +15,7 @@ backups
 test-results
 playwright-report
 docs
+
+apps/web/public/_course
+
+.vercel

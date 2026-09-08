@@ -21,7 +21,7 @@
   Don't add direct state-mutation endpoints.
 - Content: YAML in `packages/content/course/en-tl/`, schema in
   `src/schema.ts`. Bump `version` in `course.yaml` when editing published
-  content. Most units are **generated** — `pnpm content:generate` rewrites
+  content. Most units are **generated** — `pnpm content:generate` appends to
   every `units/18t-g*|35r-g*|51q-g*|57g-g*.yaml` from `packages/content/
   generator/` (lexicon + grammar focuses). Edit the generator, not those
   files; hand-authored units are left alone. Units are grouped into ordered **difficulty tiers** declared in

@@ -8,7 +8,7 @@ const contentPkg = resolve(here, "..", "..", "..", "packages", "content");
 export function readEnv(source: NodeJS.ProcessEnv) {
   const isDevelopment = source.NODE_ENV === "development";
   const jwtSecret = source.JWT_SECRET ?? (isDevelopment ? "dev-secret-change-me" : "");
-  if (!jwtSecret || (!isDevelopment && (jwtSecret === "dev-secret-change-me" || Buffer.byteLength(jwtSecret) < 32))) {
+  if (!jwtSecret || (!isDevelopment && (jwtSecret === "dev-secret-change-me" || jwtSecret.startsWith("replace-") || Buffer.byteLength(jwtSecret) < 32))) {
     throw new Error("JWT_SECRET must contain at least 32 bytes outside development; generate a random secret");
   }
 

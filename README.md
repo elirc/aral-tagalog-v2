@@ -5,6 +5,8 @@ mobile (Expo) clients share all game logic through a pnpm/Turborepo monorepo;
 the backend is Fastify + PostgreSQL. Built to the spec in `SPEC.md` with a few
 documented simplifications (see below).
 
+For Vercel preview testing and deployment, follow [the Vercel guide](docs/VERCEL.md).
+
 ## Layout
 
 ```
@@ -70,7 +72,7 @@ pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
   offline), refill by practicing a completed lesson (practice runs are
   heart-free). Ads hooks exist behind `AdsProvider` in core; v1 ships a no-op.
 - **Streaks:** local-midnight rollover using the device IANA timezone.
-- **Tiers:** the 1,140 units form four ordered tracks — Foundations,
+- **Tiers:** the 2,850 units form four ordered tracks — Foundations,
   Everyday, Conversational, and Mastery. A tier opens when the
   previous one is finished — or immediately, if the learner *places* into it
   from the course map. Placement writes a `tier_started` event; unlocking is
@@ -105,7 +107,7 @@ pnpm smoke       # end-to-end checks against the RUNNING stack (db + api:dev)
 
 ## Course content status
 
-**4 difficulty tiers, 1,140 units, 4,557 lessons, 40,990 exercises** (first words
+**4 difficulty tiers, 2,850 units, 11,397 lessons, 102,550 exercises** (first words
 through idioms, formal register, storytelling, politics, business and poetry).
 All seven exercise types are exercised — including the advanced-tier `arrange`
 (word order) and `dialogue` (multi-turn cloze) — as are `ng`/`nang` and

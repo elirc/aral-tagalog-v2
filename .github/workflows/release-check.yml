@@ -29,6 +29,14 @@ jobs:
           node-version: "24"
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
+      - name: Apply repeatable content review
+        run: pnpm --filter @aral/content review
+      - name: Save reviewed course sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-course
+          path: packages/content/course/en-tl/units/*.yaml
+          retention-days: 7
       - name: Build and start production containers
         run: docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml up --build -d --wait --wait-timeout 180
       - name: Obtain the local HTTPS test certificate
@@ -59,6 +67,10 @@ jobs:
         env:
           NODE_EXTRA_CA_CERTS: ${{ github.workspace }}/.tools/ci-root.crt
         run: node scripts/proxy-smoke.mjs
+      - name: Verify embedded Vercel API and large static course download
+        run: |
+          docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml exec -T -e SMOKE_API_URL=http://127.0.0.1:3000/api web node /app/scripts/smoke.mjs
+          docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml exec -T -e SMOKE_WEB_URL=http://127.0.0.1:3000 web node /app/scripts/vercel-smoke.mjs
       - name: Container logs
         if: failure()
         run: docker compose -f docker-compose.prod.yml -f docker-compose.ci.yml logs --tail=100

@@ -26,7 +26,7 @@ import { PRONOUN, PRONOUNS } from "./grammar.mjs";
 /** verbs that read fine with no object at all */
 /** intransitives safe to combine with any theme place ("tira" is not: you do
  *  not live at a restaurant), reachable by id when a focus wants them */
-const NARROW = new Set(["tira"]);
+const NARROW = new Set(["tira", "sundo", "lagay"]);
 const INTRANSITIVE = VERBS.filter((v) => !v.obj && !NARROW.has(v.id));
 /** things people ride, for the transport frames */
 const RIDES = nounsFor("transport").filter((n) => n.cat === "thing");
@@ -52,7 +52,7 @@ export function makeContext(theme, rng) {
    */
   const objects = byCat(["food", "drink", "thing"]).filter((n) => !n.proper && !n.noObj);
   const pairs = [];
-  for (const verb of TRANSITIVE)
+  for (const verb of TRANSITIVE.filter((verb) => !NARROW.has(verb.id)))
     for (const obj of objects)
       if (verb.objIds ? verb.objIds.includes(obj.tl) : verb.obj.includes(obj.cat))
         pairs.push({ verb, obj });
@@ -71,6 +71,13 @@ export function makeContext(theme, rng) {
       return pool.length ? rng.pick(pool) : null;
     },
 
+    comparisonPair: () => {
+      const groups = ["thing", "food", "drink", "animal", "place", "person"]
+        .map((cat) => byCat([cat]).filter((noun) => !noun.noObj && !noun.proper))
+        .filter((pool) => pool.length >= 2);
+      return groups.length ? rng.sample(rng.pick(groups), 2) : [];
+    },
+
     /** n distinct theme nouns of the given categories */
     sample: (cats, n) => rng.sample(byCat(cats), n),
 
@@ -84,8 +91,8 @@ export function makeContext(theme, rng) {
 
     person: () => (themePeople.length ? rng.pick(themePeople) : rng.pick(PEOPLE)),
 
-    adj: (cat) => {
-      const pool = adjectivesFor(cat);
+    adj: (noun, other = noun) => {
+      const pool = adjectivesFor(noun.cat ?? noun).filter((adj) => !adj.nounIds || (adj.nounIds.includes(noun.tl) && adj.nounIds.includes(other.tl)));
       return pool.length ? rng.pick(pool) : rng.pick(ADJECTIVES);
     },
     adjPool: (cat) => {

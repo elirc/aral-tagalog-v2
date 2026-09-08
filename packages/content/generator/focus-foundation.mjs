@@ -174,7 +174,7 @@ export const FOUNDATION_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(THING_CATS);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return adjPredicate(rng, ctx, { adj, noun });
         },
@@ -184,7 +184,7 @@ export const FOUNDATION_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(THING_CATS);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return adjPredicate(rng, ctx, { adj, noun, negate: true });
         },
@@ -194,7 +194,7 @@ export const FOUNDATION_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "drink", "animal", "place"]);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           const pron = ctx.pron();
           if (!adj) return null;
           return S({
@@ -210,7 +210,7 @@ export const FOUNDATION_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(THING_CATS);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           const pron = ctx.pron();
           if (!adj) return null;
           return S({
@@ -225,7 +225,7 @@ export const FOUNDATION_FOCUSES = [
     qa: (rng, ctx) => {
       const noun = ctx.pick(THING_CATS);
       if (!noun) return null;
-      const adj = ctx.adj(noun.cat);
+      const adj = ctx.adj(noun);
       if (!adj) return null;
       return {
         q: S({
@@ -461,7 +461,7 @@ export const FOUNDATION_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(["thing", "food", "animal", "person"], { countable: true });
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence([adj.tl, "ang", "mga", noun.tl]),
@@ -576,7 +576,7 @@ export const FOUNDATION_FOCUSES = [
         make: (rng, ctx) => {
           const noun = ctx.pick(THING_CATS);
           if (!noun) return null;
-          const adj = ctx.adj(noun.cat);
+          const adj = ctx.adj(noun);
           if (!adj) return null;
           return S({
             tl: tlSentence([adj.tl, "ang", noun.tl, "namin"]),
