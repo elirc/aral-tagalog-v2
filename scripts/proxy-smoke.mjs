@@ -67,5 +67,20 @@ const oversized = await request("/api/auth/login", {
   method: "POST", headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ padding: "x".repeat(1_048_577) }),
 });
-check("oversized request bodies return 413", oversized.status === 413);
+check(`oversized request bodies return 413 (received ${oversized.status})`, oversized.status === 413);
+
+// A client can omit Content-Length. The actual streamed byte count must still
+// be limited, and a rejected upload must not break the next ordinary request.
+const streamed = await request("/api/auth/login", {
+  method: "POST", headers: { "Content-Type": "application/json" },
+  body: (async function* () {
+    yield '{"padding":"';
+    for (let chunk = 0; chunk < 17; chunk++) yield "x".repeat(65_536);
+    yield '"}';
+  })(),
+  duplex: "half",
+});
+check(`oversized chunked bodies return 413 (received ${streamed.status})`, streamed.status === 413);
+const afterUpload = await request("/api/ready");
+check("the API remains ready after rejected uploads", afterUpload.status === 200);
 console.log(`${checks}/${checks} proxy checks passed`);
