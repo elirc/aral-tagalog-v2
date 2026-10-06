@@ -15,13 +15,13 @@
 ## Good boundary examples (study these)
 
 1. **Grading knows exercises, not DOM events.** UI converts taps → `string[]`; `grade()` sees only data ([grading.ts#L35-L45](../../../packages/core/src/grading.ts#L35-L45)). You could pipe answers from a CLI or a test with zero changes.
-2. **The server treats events as opaque-ish payloads.** `/sync` validates shape, stamps `userId`, stores, derives ([sync.ts#L47-L64](../../../apps/api/src/routes/sync.ts#L47-L64)). It never contains "if lesson completed then add XP" logic — that's the reducer's job, shared with clients. One implementation of the rules, three consumers.
+2. **The server treats events as opaque-ish payloads.** `/sync` validates shape, stamps `userId`, stores, derives ([sync.ts#L53-L70](../../../apps/api/src/routes/sync.ts#L53-L70)). It never contains "if lesson completed then add XP" logic — that's the reducer's job, shared with clients. One implementation of the rules, three consumers.
 3. **Ads seam** — an interface in core ([ads.ts#L5-L17](../../../packages/core/src/ads.ts#L5-L17)) with a no-op default, so the AdMob SDK will only ever be imported by mobile. Dependency direction protected *in advance*; this is how you keep vendor SDKs from metastasizing.
 
 ## Boundary leaks and soft spots (real, verified)
 
-1. **Duplicated store logic across clients.** Web ([progress.tsx](../../../apps/web/src/lib/progress.tsx)) and mobile ([progress.tsx](../../../apps/mobile/src/lib/progress.tsx)) implement the same outbox/baseline/refresh-retry choreography twice (~150 lines each, structurally parallel). Not a layering *violation* — but duplicated *policy*, which will drift. A `createProgressStore(storageAdapter)` in core is the classic extraction; see [refactor katas](../../06-contribution-practice/04-refactor-and-design-katas.md).
-2. **Event zod schemas live in the API, types in core** ([sync.ts#L8-L32](../../../apps/api/src/routes/sync.ts#L8-L32) vs [events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31)). The contract's *checker* and *definition* are owned by different layers.
+1. **Duplicated store logic across clients.** Web ([progress.tsx](../../../apps/web/src/lib/progress.tsx)) and mobile ([progress.tsx](../../../apps/mobile/src/lib/progress.tsx)) implement the same outbox/baseline/refresh-retry choreography twice (~150 lines each, structurally parallel). Not a layering *violation* — but duplicated *policy*, which will drift. A `createProgressStore(storageAdapter)` in core is the classic extraction; see [refactor katas](../06-contribution-practice/04-refactor-and-design-katas.md).
+2. **Event zod schemas live in the API, types in core** ([sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50) vs [events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31)). The contract's *checker* and *definition* are owned by different layers.
 3. **UI→content naming coupling:** [MatchView.tsx#L39](../../../apps/web/src/components/exercises/MatchView.tsx#L39) derives an audio ref from displayed text by convention. The bundle's `audio` map is the contract; this bypasses it.
 4. **Web CSS duplicates `packages/ui` tokens by hand** — comment admits it ([globals.css#L1](../../../apps/web/src/app/globals.css#L1)). Cheap now; drifts silently.
 

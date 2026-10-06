@@ -38,3 +38,10 @@ All file/line anchors in these docs were harvested with `grep -n` against the wo
 ## Additions during doc authoring
 
 - 2026-07-09: created `docs/upskill/**` (docs only; no product code touched). Verified `git status` shows only additions under `docs/`.
+
+## 2026-10-06 — doc verification pass
+
+- Fixed 31 cross-section links that pointed one directory too high (`../../` → `../`).
+- Updated stale /sync claims to match this tree: per-event rejection and the authored-XP clamp are shipped (risk register R3/R6, architecture critique #2, ticket 7 and debugging scenario 2 updated). Backdating (R4) and the core-vs-zod schema duplication (R13) remain real.
+- Re-anchored `sync.ts`, `auth.ts` and `web content.ts` citations to current line numbers. Elsewhere the 2026-07-09 convention stands: trust the symbol over the line number.
+- The "no API integration test suite" uncertainty above is outdated for this tree: `@aral/api` now has vitest suites — see [docs/TESTING.md](../../TESTING.md) for what each test guards.

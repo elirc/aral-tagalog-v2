@@ -28,7 +28,7 @@ app.post("/sync", async (req) => {
   await db.insert(progressEvents).values(events.map(e => ({ ...e, userId })));
 });
 ```
-Better = the real code: `userId: req.userId` from the verified token, id never read from the body ([sync.ts#L52](../../../apps/api/src/routes/sync.ts#L52)). Rule: identity comes from credentials, never from payloads.
+Better = the real code: `userId: req.userId` from the verified token, id never read from the body ([sync.ts#L59](../../../apps/api/src/routes/sync.ts#L59)). Rule: identity comes from credentials, never from payloads.
 
 ## 3. N+1 derive
 

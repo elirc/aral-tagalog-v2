@@ -11,7 +11,7 @@ Key: I: state, answer, matchMistakes. O: `{state', correct, correctAnswer}`. D: 
 ## Drill 3 — [`reduceEvents`](../../../packages/core/src/events.ts#L49-L86)
 Key: INV: output independent of input order (sort by `occurredAt`); timestamps clamped ≤ now; practice completions don't enter `completedLessonIds` but *do* extend streak and refill a heart. F: two events with identical `occurredAt` → sort is stable-by-insertion, not deterministic across arrays with different original order. **Possible risk** (unproven consequence — hearts arithmetic is commutative for same-ms events in practice). This is drill-worthy precision: you found a theoretical hole *and* bounded its impact.
 
-## Drill 4 — [`requireAuth`](../../../apps/api/src/auth.ts#L36-L50)
+## Drill 4 — [`requireAuth`](../../../apps/api/src/auth.ts#L36-L47)
 Key: I: request headers. O: sets `req.userId` or replies 401 (reply-as-return is Fastify's short-circuit idiom — the handler never runs). D: jose, shared secret. INV: after it passes, `userId` is a verified subject. F: expired token, malformed header, empty sub — all one generic 401 (no oracle for attackers; also no distinction for clients to trigger refresh vs re-login… they treat all 401s as refresh triggers, [web api/progress](../../../apps/web/src/lib/progress.tsx#L97-L106)).
 
 ## Drill 5 — [`issueTokens`](../../../apps/api/src/routes/auth.ts#L62-L74)
@@ -26,7 +26,7 @@ Key: SE: SQLite in transaction. INV: at-most-once insertion per event id (`INSER
 ## Drill 8 — [`compileExercise` translate branch](../../../packages/content/src/compile.ts#L68-L88)
 Key: I: authored exercise + id. INV: exactly one direction present (asserted at [L69](../../../packages/content/src/compile.ts#L69)); word bank always contains every answer word (auto-built from answer) — *the grader depends on this invariant living in a different package*. Cross-package invariant with no test asserting it: prime ticket material.
 
-## Drill 9 — [`isLessonUnlocked`](../../../apps/web/src/lib/content.ts#L20-L33)
+## Drill 9 — [`isLessonUnlocked`](../../../apps/web/src/lib/content.ts#L20-L22)
 Key: O: boolean; walks course order; unlocked ⇔ every earlier lesson completed. F: completed lesson later *removed from content* → `done.has` never true → everything after it locks. Content changes can brick progression — a real cross-system failure mode found by pure reading.
 
 ## Rubric (per drill)

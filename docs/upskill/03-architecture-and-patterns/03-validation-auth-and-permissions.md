@@ -5,8 +5,8 @@
 | # | Layer | What's checked | Anchor |
 | --- | --- | --- | --- |
 | 1 | Content build | authored YAML shape, strict keys, translate direction | [content schema.ts](../../../packages/content/src/schema.ts), [compile.ts#L69](../../../packages/content/src/compile.ts#L69) |
-| 2 | API edge | body shapes: email format, password ≥8, event union, batch ≤500, xp ≤100, hearts count ≤20 | [auth routes#L7-L12](../../../apps/api/src/routes/auth.ts#L7-L12), [sync.ts#L8-L33](../../../apps/api/src/routes/sync.ts#L8-L33) |
-| 3 | API semantic | timestamp clamp to now; email lowercased before compare | [sync.ts#L56-L57](../../../apps/api/src/routes/sync.ts#L56-L57), [auth routes#L20-L26](../../../apps/api/src/routes/auth.ts#L20-L26) |
+| 2 | API edge | body shapes: email format, password ≥8, event union, batch ≤500, xp ≤100, hearts count ≤20 | [auth routes#L7-L12](../../../apps/api/src/routes/auth.ts#L7-L12), [sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50) |
+| 3 | API semantic | timestamp clamp to now; email lowercased before compare | [sync-validation.ts#L96](../../../apps/api/src/sync-validation.ts#L96), [auth routes#L20-L26](../../../apps/api/src/routes/auth.ts#L20-L26) |
 | 4 | DB constraints | unique email, unique token hash, composite event PK | [db schema.ts#L16](../../../packages/db/src/schema.ts#L16), [L30](../../../packages/db/src/schema.ts#L30), [L57](../../../packages/db/src/schema.ts#L57) |
 | 5 | File serving | filename allowlist regexes (path traversal defense) | [content routes#L20-L31](../../../apps/api/src/routes/content.ts#L20-L31) |
 | 6 | Client (UX only) | HTML `required`/`minLength` on auth forms | [AuthForm.tsx](../../../apps/web/src/components/AuthForm.tsx) — *convenience, not security*; the API re-checks |
@@ -15,8 +15,8 @@ Teachable structure: **UX validation (client) prevents annoyance; boundary valid
 
 ## Authentication vs authorization
 
-- **Authn** (who are you): argon2 password hashes ([auth.ts#L9-L11](../../../apps/api/src/auth.ts#L9-L11)); 15-minute HS256 access JWTs ([L13-L20](../../../apps/api/src/auth.ts#L13-L20)); rotating 30-day refresh tokens stored as sha256 hashes ([L22-L27](../../../apps/api/src/auth.ts#L22-L27)); enforced by the `requireAuth` preHandler ([L36-L50](../../../apps/api/src/auth.ts#L36-L50)).
-- **Authz** (what may you touch): this app has exactly one rule — *you may only touch your own data* — and it's enforced structurally: every query filters by `req.userId` taken from the verified token, never from the request body. Check all four sites: [sync insert #L52](../../../apps/api/src/routes/sync.ts#L52), [progress read #L6-L12](../../../apps/api/src/progress.ts#L6-L12), [me read #L9-L16](../../../apps/api/src/routes/me.ts#L9-L16), [me update #L19-L26](../../../apps/api/src/routes/me.ts#L19-L26).
+- **Authn** (who are you): argon2 password hashes ([auth.ts#L9-L11](../../../apps/api/src/auth.ts#L9-L11)); 15-minute HS256 access JWTs ([L13-L20](../../../apps/api/src/auth.ts#L13-L20)); rotating 30-day refresh tokens stored as sha256 hashes ([L22-L27](../../../apps/api/src/auth.ts#L22-L27)); enforced by the `requireAuth` preHandler ([L36-L50](../../../apps/api/src/auth.ts#L36-L47)).
+- **Authz** (what may you touch): this app has exactly one rule — *you may only touch your own data* — and it's enforced structurally: every query filters by `req.userId` taken from the verified token, never from the request body. Check all four sites: [sync insert #L59](../../../apps/api/src/routes/sync.ts#L59), [progress read #L6-L12](../../../apps/api/src/progress.ts#L6-L12), [me read #L9-L16](../../../apps/api/src/routes/me.ts#L9-L16), [me update #L19-L26](../../../apps/api/src/routes/me.ts#L19-L26).
 
 **IDOR** (Insecure Direct Object Reference) — the classic bug where `/api/orders/123` trusts the URL id. This API is structurally IDOR-resistant *because no endpoint accepts a resource id belonging to a user at all*. That's a design-level defense: you can't forget a check that doesn't need to exist. Contrast with the fake-code pair in [fake-code contrasts #5](../04-code-reading-gym/03-fake-code-contrasts.md).
 

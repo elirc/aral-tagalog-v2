@@ -25,7 +25,7 @@ This is *not* full event sourcing (no versioned aggregates, no projections infra
 
 ## Transactions and consistency expectations
 
-- `/sync`'s multi-row insert is a single statement → atomic per batch ([sync.ts#L47-L60](../../../apps/api/src/routes/sync.ts#L47-L60)). No explicit `db.transaction` anywhere in the API — verified by `rg "transaction" apps/api` (no hits). Acceptable because every write path is single-statement; the moment refresh rotation (delete + insert, [routes/auth.ts#L54-L58](../../../apps/api/src/routes/auth.ts#L54-L58)) or multi-step writes appear, that assumption should be revisited. It's fail-closed today (crash = user re-logs-in).
+- `/sync`'s multi-row insert is a single statement → atomic per batch ([sync.ts#L53-L66](../../../apps/api/src/routes/sync.ts#L53-L66)). No explicit `db.transaction` anywhere in the API — verified by `rg "transaction" apps/api` (no hits). Acceptable because every write path is single-statement; the moment refresh rotation (delete + insert, [routes/auth.ts#L54-L58](../../../apps/api/src/routes/auth.ts#L54-L58)) or multi-step writes appear, that assumption should be revisited. It's fail-closed today (crash = user re-logs-in).
 - Client↔server consistency is **eventual**: local outbox now, server later; convergence is guaranteed by idempotent replay + order-independent reduction (tested: [events.test.ts#L23-L29](../../../packages/core/src/events.test.ts#L23-L29)).
 
 ## How to change the schema safely here

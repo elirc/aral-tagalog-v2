@@ -5,14 +5,14 @@
 ## Story 1: Learning a complex codebase fast
 Prompts: "Tell me about ramping up on unfamiliar code" / "How do you approach a new codebase?"
 Source: this curriculum's cartography track.
-S: Joined/studied an offline-first learning-app monorepo (6 workspaces, 3 runtimes). T: become productive in days. A: mapped entry points → contracts → state → side effects; traced six end-to-end flows; wrote anchors instead of notes ([key flows](../../01-codebase-cartography/05-key-flows.md) method). R: e.g., "found two latent defects (batch-size mismatch, register race) before writing a line of feature code."
+S: Joined/studied an offline-first learning-app monorepo (6 workspaces, 3 runtimes). T: become productive in days. A: mapped entry points → contracts → state → side effects; traced six end-to-end flows; wrote anchors instead of notes ([key flows](../01-codebase-cartography/05-key-flows.md) method). R: e.g., "found two latent defects (batch-size mismatch, register race) before writing a line of feature code."
 Evidence: your annotated flow docs.
 Senior signals: a *method*, not heroics; found risks while reading.
 Resume bullet: "Mapped and documented a 3-runtime monorepo's core flows; surfaced 2 latent defects via systematic code reading."
 
 ## Story 2: The tooling bug that blocked everything (duplicate @types/react)
 Prompts: "Hardest debugging" / "A time you were blocked."
-Source: real incident, [tooling doc](../../02-stack-and-language-mastery/04-tooling-and-build-system.md).
+Source: real incident, [tooling doc](../02-stack-and-language-mastery/04-tooling-and-build-system.md).
 S: web typecheck broke with unintelligible type errors after adding the mobile app. T: unblock the monorepo. A: recognized the two-copies signature, proved with `pnpm why`, fixed with a root override, documented the diagnostic. R: green typechecks; a written playbook for the failure class.
 Senior signals: pattern recognition + prevention artifact.
 Resume bullet: "Diagnosed cross-workspace type-identity conflicts in a pnpm monorepo; instituted version-override policy."
@@ -47,7 +47,7 @@ Senior signals: surfaced the decision instead of silently picking; tests as the 
 
 ## Story 8: Performance judgment — the benchmark that said "don't optimize"
 Prompts: "Improved performance" (subverted).
-Source: [perf drill](../../05-quality-engineering/04-performance-thinking.md) — you measured reduceEvents at 100k events and *declined* to add caching, documenting the trigger metric.
+Source: [perf drill](../05-quality-engineering/04-performance-thinking.md) — you measured reduceEvents at 100k events and *declined* to add caching, documenting the trigger metric.
 Senior signals: measurement over instinct; knowing when not to build. Interviewers remember this story because it's rare.
 
 ## Story 9: Teaching/mentoring — the teach-back

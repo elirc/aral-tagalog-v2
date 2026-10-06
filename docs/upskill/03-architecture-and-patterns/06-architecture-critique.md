@@ -15,14 +15,14 @@ An honest review, written the way you'd deliver it after three months owning thi
 | # | Issue | Status | Evidence |
 | --- | --- | --- | --- |
 | 1 | Zero automated tests outside core (API, web, mobile untested) | **Confirmed** | only `packages/core/src/*.test.ts` exist |
-| 2 | Gamification values are client-asserted (xp per event ≤100 but unverified against lesson) | **Confirmed** | [sync.ts#L14](../../../apps/api/src/routes/sync.ts#L14) |
-| 3 | Backdated `occurredAt` accepted (only future is clamped) → streak forgery | **Confirmed** | [sync.ts#L56-L57](../../../apps/api/src/routes/sync.ts#L56-L57) |
+| 2 | Gamification values were client-asserted (xp unverified against the lesson) | **Resolved since authoring** — XP is now clamped to the authored lesson value | [sync-validation.ts#L74-L96](../../../apps/api/src/sync-validation.ts#L74-L96) |
+| 3 | Backdated `occurredAt` accepted (only future is clamped) → streak forgery | **Confirmed** | [sync-validation.ts#L96](../../../apps/api/src/sync-validation.ts#L96) |
 | 4 | Tokens in localStorage (web) — XSS-readable | Confirmed by design | [progress.tsx#L21](../../../apps/web/src/lib/progress.tsx#L21) |
 | 5 | No rate limiting anywhere | **Confirmed** | no limiter registered in [app.ts](../../../apps/api/src/app.ts#L16-L28) |
 | 6 | Duplicated store policy web/mobile will drift | Hypothesis (structural) | parallel files compared in [boundaries](01-boundaries-and-layers.md) |
-| 7 | Event zod schema duplicated from core types | Confirmed | [sync.ts#L8-L32](../../../apps/api/src/routes/sync.ts#L8-L32) |
+| 7 | Event zod schema duplicated from core types | Confirmed | [sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50) |
 | 8 | Per-request full-history reduce | Confirmed, currently cheap | [progress.ts#L6-L13](../../../apps/api/src/progress.ts#L6-L13) |
-| 9 | Unchunked client push vs 500-event server cap | Hypothesis — needs a long-offline test | [sync.ts#L33](../../../apps/api/src/routes/sync.ts#L33) vs [mobile progress.tsx#L62-L66](../../../apps/mobile/src/lib/progress.tsx#L62-L66) |
+| 9 | Unchunked client push vs 500-event server cap | Hypothesis — needs a long-offline test | [sync.ts#L34](../../../apps/api/src/routes/sync.ts#L34) vs [mobile progress.tsx#L62-L66](../../../apps/mobile/src/lib/progress.tsx#L62-L66) |
 | 10 | Register race returns 500 not 409 under concurrent duplicate emails | Hypothesis (code-read) | [routes/auth.ts#L20-L23](../../../apps/api/src/routes/auth.ts#L20-L23) |
 
 ## Prioritized improvements — "owning it for 3 months"

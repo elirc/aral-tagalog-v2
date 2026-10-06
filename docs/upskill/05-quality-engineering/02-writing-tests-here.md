@@ -69,7 +69,7 @@ it("rejects short passwords", async () => { /* expect 400, assert error mentions
 
 ## Recipe 6: Permission failure — the missing-auth test
 
-Every protected route must 401 without a token. One table-driven test over `["/sync","/me"]` hitting [requireAuth](../../../apps/api/src/auth.ts#L36-L50). Cheap, catches "forgot the preHandler on a new route" forever — the class of bug that ships silently otherwise. (This repo's version of a cross-tenant test: single-owner scoping means the check is "no token, no data.")
+Every protected route must 401 without a token. One table-driven test over `["/sync","/me"]` hitting [requireAuth](../../../apps/api/src/auth.ts#L36-L47). Cheap, catches "forgot the preHandler on a new route" forever — the class of bug that ships silently otherwise. (This repo's version of a cross-tenant test: single-owner scoping means the check is "no token, no data.")
 
 ## Recipe 7: Idempotency golden test (the most valuable test this repo doesn't have)
 
@@ -84,11 +84,11 @@ it("replayed sync batches change nothing", async () => {
 });
 ```
 
-This pins the composite-PK + `onConflictDoNothing` behavior ([sync.ts#L60](../../../apps/api/src/routes/sync.ts#L60), [schema.ts#L57](../../../packages/db/src/schema.ts#L57)) — the system's central promise, currently guarded by nothing but a curl transcript.
+This pins the composite-PK + `onConflictDoNothing` behavior ([sync.ts#L65](../../../apps/api/src/routes/sync.ts#L65), [schema.ts#L57](../../../packages/db/src/schema.ts#L57)) — the system's central promise, currently guarded by nothing but a curl transcript.
 
 ## Recipe 8: Web store test without a browser
 
-The web store is React-coupled, but its policy is testable via `@testing-library/react`'s `renderHook` + a localStorage stub — *or*, better, do the [refactor kata](../../06-contribution-practice/04-refactor-and-design-katas.md) first (extract `createProgressStore`) and test it as a pure module with a fake transport: assert "outbox survives failed sync," "baseline adoption clears outbox," "401 triggers exactly one refresh." Lesson: when a test is hard to write, consider whether the *code* is mislocated before reaching for heavier tooling.
+The web store is React-coupled, but its policy is testable via `@testing-library/react`'s `renderHook` + a localStorage stub — *or*, better, do the [refactor kata](../06-contribution-practice/04-refactor-and-design-katas.md) first (extract `createProgressStore`) and test it as a pure module with a fake transport: assert "outbox survives failed sync," "baseline adoption clears outbox," "401 triggers exactly one refresh." Lesson: when a test is hard to write, consider whether the *code* is mislocated before reaching for heavier tooling.
 
 ## Command reference
 

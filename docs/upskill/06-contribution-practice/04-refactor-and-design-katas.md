@@ -3,7 +3,7 @@
 Judgment reps. Do them on branches you throw away; the artifact is your written reasoning. Self-grading criteria per kata.
 
 ## Kata A: Heal the boundary leak (schema ownership)
-Move the event zod schemas from [sync.ts#L8-L32](../../../apps/api/src/routes/sync.ts#L8-L32) into `packages/core`, infer the TS types, and make the API import them. Constraint: zero behavior change, proven by… what? (You have no API tests — so first write the two zod snapshot tests that pin current accept/reject behavior, *then* move.)
+Move the event zod schemas from [sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50) into `packages/core`, infer the TS types, and make the API import them. Constraint: zero behavior change, proven by… what? (You have no API tests — so first write the two zod snapshot tests that pin current accept/reject behavior, *then* move.)
 Self-grade — Strong: you sequenced test-then-move without being told twice, and your PR note mentions zod entering core's dependency tree as a decision, not a footnote.
 
 ## Kata B: Outbox eventing change — add `synced_at` acknowledgment info client-side

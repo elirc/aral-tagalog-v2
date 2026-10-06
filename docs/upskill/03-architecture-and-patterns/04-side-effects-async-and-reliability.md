@@ -6,7 +6,7 @@ This app is deliberately side-effect-poor — that's a design feature, and being
 
 | Side effect | Trigger | Where | Reliability mechanism |
 | --- | --- | --- | --- |
-| DB insert (events) | `/sync` | [sync.ts#L47-L60](../../../apps/api/src/routes/sync.ts#L47-L60) | idempotent via PK conflict-ignore |
+| DB insert (events) | `/sync` | [sync.ts#L53-L66](../../../apps/api/src/routes/sync.ts#L53-L66) | idempotent via PK conflict-ignore |
 | DB writes (users/tokens) | auth routes | [routes/auth.ts](../../../apps/api/src/routes/auth.ts) | unique constraints; rotation fail-closed |
 | localStorage writes | every event/baseline change | [web progress.tsx#L33-L36](../../../apps/web/src/lib/progress.tsx#L33-L36) | none (quota errors would throw to caller — investigate) |
 | SQLite writes | same, mobile | [storage.ts#L42-L53](../../../apps/mobile/src/lib/storage.ts#L42-L53) | transaction per batch |
@@ -18,7 +18,7 @@ No email, no webhooks, no queues, no cron. When an interviewer asks "how would y
 
 ## The reliability concepts, taught from the outbox
 
-- **At-least-once + idempotent receiver = effectively exactly-once.** The client may push the same batch repeatedly (crash before ack, [mobile progress.tsx#L62-L75](../../../apps/mobile/src/lib/progress.tsx#L62-L75)); the server ignores duplicates ([sync.ts#L60](../../../apps/api/src/routes/sync.ts#L60)). Neither side needs exactly-once *delivery* — a thing that basically doesn't exist. This is the transferable sentence.
+- **At-least-once + idempotent receiver = effectively exactly-once.** The client may push the same batch repeatedly (crash before ack, [mobile progress.tsx#L62-L75](../../../apps/mobile/src/lib/progress.tsx#L62-L75)); the server ignores duplicates ([sync.ts#L65](../../../apps/api/src/routes/sync.ts#L65)). Neither side needs exactly-once *delivery* — a thing that basically doesn't exist. This is the transferable sentence.
 - **Outbox pattern, client-side edition.** The canonical outbox lives server-side (DB row + relay to a queue); here the *client* is the unreliable producer, so the outbox lives on-device. Same invariant: the effect (server insert) and its trigger record (outbox row) never diverge, because rows are cleared only after ack ([web #L91-L96](../../../apps/web/src/lib/progress.tsx#L91-L96), [mobile #L63-L69](../../../apps/mobile/src/lib/progress.tsx#L63-L69)).
 - **Retries & backoff:** retries piggyback on natural triggers (new events, app foreground, login) instead of a timer loop. Simple and battery-friendly; the missing piece is exponential backoff for a hard-down server — every trigger fires a doomed request. Cheap to add; low harm today. Classify, don't panic: *failure visibility* is the real gap (nothing tells the user "unsynced for 3 days") — see [observability](../05-quality-engineering/06-observability-and-operations.md).
 - **Compensation:** not needed — no multi-system writes. Know the word for interviews: when two systems must both change and you can't have a transaction, you write the undo (compensating action) for step one in case step two fails.

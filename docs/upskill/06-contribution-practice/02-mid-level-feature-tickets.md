@@ -12,7 +12,7 @@ Interview story potential: "I introduced the first integration suite; the idempo
 
 ## M2: Single-source event schemas (zod in core)
 Difficulty: Medium — 1 day + M1 recommended first. Skills: contract ownership, type inference.
-Story: As a maintainer, event shape must be defined once. Today: TS in [events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31), zod duplicated in [sync.ts#L8-L32](../../../apps/api/src/routes/sync.ts#L8-L32).
+Story: As a maintainer, event shape must be defined once. Today: TS in [events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31), zod duplicated in [sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50).
 Design note must cover: zod becomes a core dependency (bundle-size impact on clients — measure; zod is ~13kb gzip — acceptable? state it), types via `z.infer`, API imports schemas.
 Risk: subtle validation drift during swap. Rollback: revert; no data shape changes.
 Test: existing zod bounds re-asserted via M1 suite; typecheck proves inference parity.

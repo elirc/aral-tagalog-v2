@@ -41,7 +41,7 @@ Expected — Blocking: unbounded cache keyed by *client-supplied names* (bounded
 ## Kata 7: "Type-safe API client"
 Fake diff: replaces `request<T>` with generated types from a new OpenAPI spec, adds 800 lines of codegen output, hand-written spec file.
 Resembles: [web api.ts#L18-L27](../../../apps/web/src/lib/api.ts#L18-L27).
-Expected — Important: right instinct (the `T`-is-a-claim problem, see [type contracts](../../02-stack-and-language-mastery/03-type-system-and-contracts.md)), wrong source of truth — a hand-written spec is a *third* copy of the contract (TS types, zod, now OpenAPI). Prefer zod-in-core as the single source; infer both. Blocking: generated code committed without generation script in CI (will drift). Kind framing matters here: the author did real work; redirect, don't reject.
+Expected — Important: right instinct (the `T`-is-a-claim problem, see [type contracts](../02-stack-and-language-mastery/03-type-system-and-contracts.md)), wrong source of truth — a hand-written spec is a *third* copy of the contract (TS types, zod, now OpenAPI). Prefer zod-in-core as the single source; infer both. Blocking: generated code committed without generation script in CI (will drift). Kind framing matters here: the author did real work; redirect, don't reject.
 
 ## Kata 8: "Fix streak for travelers"
 Fake diff: `applyCompletionDay` takes a tz param and recomputes `lastDay` under the *new* tz on every event.

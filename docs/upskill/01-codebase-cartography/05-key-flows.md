@@ -39,27 +39,27 @@ Self-grade — Basic: name files in order. Solid: explain the immutable-state ha
 Why this flow matters: it's the only write path for progress (one endpoint to secure, make idempotent, and reason about) and the repo's best interview story about **idempotency** — the property that repeating an operation leaves the same result as doing it once.
 
 Open these files first:
-- [sync.ts#L8-L67](../../../apps/api/src/routes/sync.ts#L8-L67) — the whole route
+- [sync.ts#L12-L72](../../../apps/api/src/routes/sync.ts#L12-L72) — the whole route
 - [schema.ts#L41-L59](../../../packages/db/src/schema.ts#L41-L59) — composite PK
 - [progress.ts#L6-L13](../../../apps/api/src/progress.ts#L6-L13) — derive-on-read
 
 Trace:
 | Step | Owner | File | What happens | Data shape | Risk |
 | --- | --- | --- | --- | --- | --- |
-| 1 | auth | [auth.ts#L36-L50](../../../apps/api/src/auth.ts#L36-L50) | Bearer JWT verified; `req.userId` set | JWT sub | 401 on anything invalid |
-| 2 | validation | [sync.ts#L8-L33](../../../apps/api/src/routes/sync.ts#L8-L33) | zod discriminated union; ≤500 events; xp ≤100 | `ProgressEvent[]` | schema duplicated from core TS types — drift risk |
-| 3 | write | [sync.ts#L47-L60](../../../apps/api/src/routes/sync.ts#L47-L60) | batch insert, timestamps clamped to `now`, `onConflictDoNothing` | rows keyed `(userId, id)` | not wrapped in an explicit transaction (single statement, so atomic anyway) |
+| 1 | auth | [auth.ts#L36-L47](../../../apps/api/src/auth.ts#L36-L47) | Bearer JWT verified; `req.userId` set | JWT sub | 401 on anything invalid |
+| 2 | validation | [sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50) | zod per event; batch ≤500; XP clamped to the authored lesson value; invalid events land in `rejected` instead of failing the batch | `ProgressEvent[]` | schema duplicated from core TS types — drift risk |
+| 3 | write | [sync.ts#L53-L66](../../../apps/api/src/routes/sync.ts#L53-L66) | batch insert, timestamps clamped to `now`, `onConflictDoNothing` | rows keyed `(userId, id)` | not wrapped in an explicit transaction (single statement, so atomic anyway) |
 | 4 | derive | [progress.ts#L6-L13](../../../apps/api/src/progress.ts#L6-L13) | load *all* user events, fold with shared `reduceEvents` | `UserProgress` | O(events) per request — fine now, needs a snapshot table at scale |
-| 5 | respond | [sync.ts#L62-L64](../../../apps/api/src/routes/sync.ts#L62-L64) | `{accepted, progress}` — client adopts as new baseline | JSON | — |
+| 5 | respond | [sync.ts#L70](../../../apps/api/src/routes/sync.ts#L70) | `{accepted, rejected, progress}` — client adopts progress as new baseline | JSON | — |
 
-Validation and authorization: steps 1–2; note authz here is only "you are you" — events can't reference another user because `userId` comes from the token, never the body ([sync.ts#L52](../../../apps/api/src/routes/sync.ts#L52)). That's the IDOR defense.
+Validation and authorization: steps 1–2; note authz here is only "you are you" — events can't reference another user because `userId` comes from the token, never the body ([sync.ts#L59](../../../apps/api/src/routes/sync.ts#L59)). That's the IDOR defense.
 Persistence and side effects: one insert; no queues, no email — deliberately boring.
 Tests that cover it: **No automated coverage.** Verified only by a manual curl smoke test (see [verification log](../09-reference/verification-log.md)). This is the repo's biggest testing gap and ticket #1 material.
 What juniors usually miss: `accepted` counts *attempted* inserts; replayed duplicates are silently skipped by the PK conflict — idempotency lives in the schema, not in `if` statements.
 What seniors notice: the clamp `Math.min(ev.occurredAt, now)` ([L56-L57](../../../apps/api/src/routes/sync.ts#L56-L57)) defends against future timestamps but *past* timestamps are trusted — a user can backdate completions to repair a streak. Documented as accepted risk? No — see [risk register](../09-reference/risk-register.md).
 Interview angle: "Design an idempotent API for offline clients" — this endpoint *is* the model answer: client-generated IDs + unique constraint + conflict-ignore + derived response.
 Drill: send the same batch twice with curl and diff the two responses.
-Self-grade — Basic: both return 200. Solid: explain why xpTotal is identical. Strong: name two attacks the zod bounds (`xp ≤ 100`, `count ≤ 20`, 500 events) do and don't stop.
+Self-grade — Basic: both return 200. Solid: explain why xpTotal is identical. Strong: name two attacks the validation layer (authored-XP clamp, `count ≤ 20`, the 500-event cap) does and doesn't stop.
 
 ---
 
@@ -78,7 +78,7 @@ Trace:
 | 2 | mint | [routes/auth.ts#L62-L74](../../../apps/api/src/routes/auth.ts#L62-L74) | access JWT (15m) + random refresh token; only its **sha256 hash** stored | `{accessToken, refreshToken}` | refresh token appears once in plaintext, in the response |
 | 3 | login | [routes/auth.ts#L35-L43](../../../apps/api/src/routes/auth.ts#L35-L43) | constant lookup + argon2 verify; identical error for bad email vs bad password | — | good: no user enumeration via error text (timing still differs — argon2 only runs when the user exists) |
 | 4 | refresh | [routes/auth.ts#L45-L58](../../../apps/api/src/routes/auth.ts#L45-L58) | hash lookup → expiry check → **delete old row** → issue new pair | rotation | delete+insert not in one transaction: crash between them logs the user out (fail-closed — acceptable) |
-| 5 | use | [auth.ts#L36-L50](../../../apps/api/src/auth.ts#L36-L50) | `requireAuth` preHandler on `/sync`, `/me` | `req.userId` | — |
+| 5 | use | [auth.ts#L36-L47](../../../apps/api/src/auth.ts#L36-L47) | `requireAuth` preHandler on `/sync`, `/me` | `req.userId` | — |
 
 Validation and authorization: zod at the edge; argon2 for storage; JWT HS256 with a secret that hard-fails default-value-in-prod ([env.ts#L18-L20](../../../apps/api/src/env.ts#L18-L20)).
 Persistence and side effects: `users`, `refresh_tokens` tables. No email verification, no rate limiting (risk register).

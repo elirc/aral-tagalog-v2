@@ -11,7 +11,7 @@ Start state: guest with 3 events in localStorage outbox.
 | 1 | [AuthForm.tsx#L20-L31](../../../apps/web/src/components/AuthForm.tsx#L20-L31) | `{email, password, tz}` | UI | form → `api.register` | client-only validation is UX |
 | 2 | [routes/auth.ts#L15-L33](../../../apps/api/src/routes/auth.ts#L15-L33) | user row + token pair | API | zod → argon2 → insert | duplicate-email race → 500 |
 | 3 | [progress.tsx#L117-L124](../../../apps/web/src/lib/progress.tsx#L117-L124) | tokens persisted; `syncWith(tokens, outbox)` | store | guest events pushed under new identity | outbox held if network dies (safe) |
-| 4 | [sync.ts#L47-L60](../../../apps/api/src/routes/sync.ts#L47-L60) | 3 rows keyed (newUserId, eventId) | DB | insert-ignore | — |
+| 4 | [sync.ts#L53-L66](../../../apps/api/src/routes/sync.ts#L53-L66) | 3 rows keyed (newUserId, eventId) | DB | insert-ignore | — |
 | 5 | [progress.tsx#L91-L96](../../../apps/web/src/lib/progress.tsx#L91-L96) | baseline=server progress; outbox=[] | store | adoption | double-count if ordering flipped |
 
 Pause-and-predict before step 4: the guest events carry `occurredAt` from *before* the account existed. Does anything reject them? (No — and that's correct product behavior: pre-signup streak survives. Notice you just derived a product requirement from code.)
@@ -22,7 +22,7 @@ Pause-and-predict before step 4: the guest events carry `occurredAt` from *befor
 | --- | --- | --- | --- |
 | 1 | [LessonPlayer.tsx#L48-L58](../../../apps/web/src/components/LessonPlayer.tsx#L48-L58) | `{id, type:"lesson_completed", lessonId, occurredAt, perfect:true, xp:15}` | core `lessonXp(lesson,true)` = 10+5 |
 | 2 | [api.ts#L46-L51](../../../apps/web/src/lib/api.ts#L46-L51) | `{events:[...]}` JSON | serialize |
-| 3 | [sync.ts#L42-L60](../../../apps/api/src/routes/sync.ts#L42-L60) | row: payload jsonb, occurred_at bigint | zod parse + clamp |
+| 3 | [sync.ts#L49-L66](../../../apps/api/src/routes/sync.ts#L49-L66) | row: payload jsonb, occurred_at bigint | zod parse + clamp |
 | 4 | [progress.ts#L6-L13](../../../apps/api/src/progress.ts#L6-L13) | `UserProgress{xpTotal:15,...}` | reduce |
 | 5 | [me.ts#L9-L16](../../../apps/api/src/routes/me.ts#L9-L16) | same, JSON | serve |
 

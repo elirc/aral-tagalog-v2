@@ -69,7 +69,7 @@ Drill: describe the bug if the outbox clear at [web #L94-L95](../../../apps/web/
 ## Pattern 7: Discriminated Union Contract
 Problem: many message/exercise kinds flowing through one channel, each with different fields.
 Shape: `{ type: "a", ... } | { type: "b", ... }` + exhaustive switch.
-Real: exercises ([types.ts#L108-L114](../../../packages/core/src/types.ts#L108-L114)); events ([events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31)); mirrored in zod `discriminatedUnion` ([sync.ts#L8](../../../apps/api/src/routes/sync.ts#L8), [content schema.ts](../../../packages/content/src/schema.ts)).
+Real: exercises ([types.ts#L108-L114](../../../packages/core/src/types.ts#L108-L114)); events ([events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31)); mirrored in zod `discriminatedUnion` ([sync-validation.ts#L19](../../../apps/api/src/sync-validation.ts#L19), [content schema.ts](../../../packages/content/src/schema.ts)).
 Failure modes: forgetting the runtime mirror (types erase!); non-exhaustive default cases that swallow new variants silently.
 Interview angle: "model a webhook payload with several event types."
 Drill: from [fake-code contrasts #8](../04-code-reading-gym/03-fake-code-contrasts.md), refactor the class-hierarchy version into a union.

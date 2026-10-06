@@ -16,7 +16,7 @@ The event union works the same way ([events.ts#L13-L31](../../../packages/core/s
 
 | Boundary | Validator | Anchor |
 | --- | --- | --- |
-| HTTP request bodies | zod per route | [sync.ts#L8-L33](../../../apps/api/src/routes/sync.ts#L8-L33), [auth routes#L7-L12](../../../apps/api/src/routes/auth.ts#L7-L12) |
+| HTTP request bodies | zod per route | [sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50), [auth routes#L7-L12](../../../apps/api/src/routes/auth.ts#L7-L12) |
 | Authored YAML | zod strict schemas | [content schema.ts](../../../packages/content/src/schema.ts) — `.strict()` rejects typo'd keys |
 | localStorage | `try { JSON.parse }` + trust | [web progress.tsx#L23-L31](../../../apps/web/src/lib/progress.tsx#L23-L31) — parsed but **not schema-validated**; a hand-edited outbox entry reaches the reducer typed as `ProgressEvent` while being garbage. Possible risk: client-side only, self-inflicted — but worth knowing it's a hole. |
 | SQLite payloads (mobile) | same pattern | [storage.ts#L55-L59](../../../apps/mobile/src/lib/storage.ts#L55-L59) |
@@ -26,7 +26,7 @@ That last row is the interview gold: `request<T>(...): Promise<T>` looks safe an
 
 ## Type/validator duplication — a real drift risk here
 
-`ProgressEvent` is defined twice: as TS types in core ([events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31)) and as zod schemas in the API ([sync.ts#L8-L32](../../../apps/api/src/routes/sync.ts#L8-L32)). They agree today by discipline only. Alternatives: define zod in core and `z.infer` the types (single source), or codegen. Ticket material — and a great "what would you improve" interview answer because the fix is concrete and cheap.
+`ProgressEvent` is defined twice: as TS types in core ([events.ts#L13-L31](../../../packages/core/src/events.ts#L13-L31)) and as zod schemas in the API ([sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50)). They agree today by discipline only. Alternatives: define zod in core and `z.infer` the types (single source), or codegen. Ticket material — and a great "what would you improve" interview answer because the fix is concrete and cheap.
 
 ## Idioms used here worth owning
 

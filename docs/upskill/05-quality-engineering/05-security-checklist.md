@@ -6,8 +6,8 @@ Map of the standard web-security surface onto this repo. Status: ✅ handled · 
 | --- | --- | --- |
 | Password storage | ✅ | argon2 ([auth.ts#L9-L11](../../../apps/api/src/auth.ts#L9-L11)); never logged or returned |
 | Session tokens | ✅/⚠️ | short JWT + rotating hashed refresh ([auth.ts#L13-L33](../../../apps/api/src/auth.ts#L13-L33)); ⚠️ stored in localStorage on web → XSS-readable ([progress.tsx#L21](../../../apps/web/src/lib/progress.tsx#L21)) |
-| Authorization / IDOR | ✅ | structural: `userId` only ever from verified token ([sync.ts#L52](../../../apps/api/src/routes/sync.ts#L52), [me.ts#L9-L26](../../../apps/api/src/routes/me.ts#L9-L26)); no cross-resource ids exist |
-| Input validation | ✅ | zod on every body ([sync.ts#L8-L33](../../../apps/api/src/routes/sync.ts#L8-L33), [auth routes#L7-L12](../../../apps/api/src/routes/auth.ts#L7-L12)); bounds on xp/count/batch |
+| Authorization / IDOR | ✅ | structural: `userId` only ever from verified token ([sync.ts#L59](../../../apps/api/src/routes/sync.ts#L59), [me.ts#L9-L26](../../../apps/api/src/routes/me.ts#L9-L26)); no cross-resource ids exist |
+| Input validation | ✅ | zod on every body ([sync-validation.ts#L19-L50](../../../apps/api/src/sync-validation.ts#L19-L50), [auth routes#L7-L12](../../../apps/api/src/routes/auth.ts#L7-L12)); bounds on xp/count/batch |
 | SQL injection | ✅ | Drizzle parameterized everywhere; no raw SQL in `apps/api` (verified: `rg "sql\`" apps/api` → no hits; the one `sql\`` template is `gen_random_uuid()` in [schema defaults](../../../packages/db/src/schema.ts#L15)) |
 | XSS | ✅ (default) | React escapes; no `dangerouslySetInnerHTML` (verified by grep). Content strings from YAML render as text — malicious content YAML would still be inert |
 | CSRF | ➖/✅ | no cookie auth ⇒ classic CSRF doesn't apply; Bearer headers require JS. Becomes ⚠️ the day tokens move to cookies — paired decisions, note it |
@@ -19,7 +19,7 @@ Map of the standard web-security surface onto this repo. Status: ✅ handled · 
 | Enumeration | ✅/⚠️ | login error is uniform ([routes/auth.ts#L40-L41](../../../apps/api/src/routes/auth.ts#L40-L41)); register reveals "email already registered" — standard tradeoff, know it |
 | Dependency risk | ⚠️ | no lockfile audit in CI (no CI at all); `pnpm audit` manual |
 | Uploads / webhooks | ➖ | none exist |
-| Gamification integrity | ⚠️ | client-asserted xp/timestamps — harmless solo, fatal with leaderboards ([full analysis](../../03-architecture-and-patterns/03-validation-auth-and-permissions.md)) |
+| Gamification integrity | ⚠️ | client-asserted xp/timestamps — harmless solo, fatal with leaderboards ([full analysis](../03-architecture-and-patterns/03-validation-auth-and-permissions.md)) |
 
 ## Pre-merge security checklist (use on every PR here)
 

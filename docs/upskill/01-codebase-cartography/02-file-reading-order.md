@@ -15,7 +15,7 @@
 | 7 | [packages/core/src/streak.ts](../../../packages/core/src/streak.ts#L14-L47) | day-key strings via `Intl`; why not `Date.getDate()` | — |
 | 8 | [packages/core/src/events.ts](../../../packages/core/src/events.ts#L13-L86) | event union; reducer; the `initial` baseline param | — |
 | 9 | [packages/core/src/session.test.ts](../../../packages/core/src/session.test.ts) | how pure logic is tested without React | — |
-| 10 | [apps/web/src/lib/content.ts](../../../apps/web/src/lib/content.ts#L2-L33) | build-time bundle import; unlock rule | — |
+| 10 | [apps/web/src/lib/content.ts](../../../apps/web/src/lib/content.ts#L2-L22) | build-time bundle import; unlock rule | — |
 | 11 | [apps/web/src/lib/progress.tsx](../../../apps/web/src/lib/progress.tsx#L21-L161) | outbox/baseline/auth keys; the 3 `useEffect`s | render details |
 | 12 | [apps/web/src/components/LessonPlayer.tsx](../../../apps/web/src/components/LessonPlayer.tsx#L33-L172) | phase state; `completionSent` ref; practice rules | CSS classes |
 | 13 | [apps/web/src/app/page.tsx](../../../apps/web/src/app/page.tsx#L13-L40) | `nextFound` unlock walk | markup |
@@ -27,7 +27,7 @@
 | --- | --- | --- |
 | 15 | [packages/db/src/schema.ts](../../../packages/db/src/schema.ts#L14-L59) | composite PK `(userId, id)` on events — the idempotency key |
 | 16 | [apps/api/src/app.ts](../../../apps/api/src/app.ts#L16-L28) | how routes/db are wired; `origin: true` CORS |
-| 17 | [apps/api/src/auth.ts](../../../apps/api/src/auth.ts#L9-L50) | JWT vs hashed refresh token split; `requireAuth` preHandler |
+| 17 | [apps/api/src/auth.ts](../../../apps/api/src/auth.ts#L9-L47) | JWT vs hashed refresh token split; `requireAuth` preHandler |
 | 18 | [apps/api/src/routes/auth.ts](../../../apps/api/src/routes/auth.ts#L14-L74) | rotation (delete-then-issue); email lowercasing |
 | 19 | [apps/api/src/routes/sync.ts](../../../apps/api/src/routes/sync.ts#L8-L67) | zod event schema duplicated from core types; clamp; `onConflictDoNothing` |
 | 20 | [apps/api/src/progress.ts](../../../apps/api/src/progress.ts#L6-L13) | server reuses the client's reducer — the payoff of shared core |

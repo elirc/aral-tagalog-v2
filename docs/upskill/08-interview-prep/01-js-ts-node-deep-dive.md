@@ -4,7 +4,7 @@
 
 ## Q1: Walk me through what the event loop does when a request hits your server.
 Round: JS deep-dive. Testing: real model vs memorized diagram.
-Repo anchor: [sync.ts#L41-L66](../../../apps/api/src/routes/sync.ts#L41-L66) — an async handler with awaited DB calls.
+Repo anchor: [sync.ts#L48-L71](../../../apps/api/src/routes/sync.ts#L48-L71) — an async handler with awaited DB calls.
 Junior: "Node is single-threaded with callbacks."
 Mid adds: handler runs on the stack until the first `await` (the insert); Node services other requests while Postgres works; continuation resumes as a microtask. Concurrency without threads — and why one CPU-heavy handler starves everyone.
 Senior includes: where that model breaks — CPU-bound crypto (argon2 here is native+async precisely for that, [auth.ts#L9-L11](../../../apps/api/src/auth.ts#L9-L11)); microtask starvation; when you'd reach for worker threads.
@@ -13,7 +13,7 @@ Drill: trace one `/sync` request naming each suspension point.
 
 ## Q2: `unknown` vs `any` — when have you actually used each?
 Round: TS. Testing: whether strictness is practiced or preached.
-Repo anchor: zod `safeParse(req.body)` treats bodies as untyped input ([sync.ts#L42](../../../apps/api/src/routes/sync.ts#L42)); the deliberate double-cast at [web content.ts#L9](../../../apps/web/src/lib/content.ts#L9).
+Repo anchor: zod `safeParse(req.body)` treats bodies as untyped input ([sync.ts#L49](../../../apps/api/src/routes/sync.ts#L49)); the deliberate double-cast at [web content.ts#L9](../../../apps/web/src/lib/content.ts#L9).
 Junior: "`any` disables checking, `unknown` is safer."
 Mid adds: `unknown` forces narrowing before use — the correct type for every wire/storage input; shows the zod-at-boundary pattern.
 Senior includes: the honest exception — a build-time-validated artifact cast once with a comment (content.ts) — and why a *localized, justified* cast beats `any` contagion.
@@ -23,7 +23,7 @@ Follow-ups: "How do you keep casts from spreading?" (one cast at the boundary, t
 Round: TS. Repo anchor: [types.ts#L108-L114](../../../packages/core/src/types.ts#L108-L114), consumed exhaustively in [grading.ts#L35-L61](../../../packages/core/src/grading.ts#L35-L61).
 Junior: "You switch on a type field."
 Mid adds: exhaustiveness — adding an `Exercise` variant makes every unhandled switch a compile error; and unions serialize (JSON) where classes don't.
-Senior includes: when classes win (behavior-heavy, no serialization) and the runtime mirror problem — unions erase, so the wire needs zod's `discriminatedUnion` ([sync.ts#L8](../../../apps/api/src/routes/sync.ts#L8)).
+Senior includes: when classes win (behavior-heavy, no serialization) and the runtime mirror problem — unions erase, so the wire needs zod's `discriminatedUnion` ([sync-validation.ts#L19](../../../apps/api/src/sync-validation.ts#L19)).
 Drill: whiteboard the union for a payment-webhook payload.
 
 ## Q4: How do you make time-dependent logic testable?
@@ -45,7 +45,7 @@ Mid adds: the policy split — user actions must resolve to visible outcomes; ba
 Senior includes: swallowing without a counter is an observability hole (this repo's, named); unhandled rejections crash Node — every floating promise needs an owner.
 
 ## Q7: What's an idempotent operation and why do you care?
-Round: JS/systems. Repo anchor: [sync.ts#L60](../../../apps/api/src/routes/sync.ts#L60) + composite PK ([schema.ts#L57](../../../packages/db/src/schema.ts#L57)).
+Round: JS/systems. Repo anchor: [sync.ts#L65](../../../apps/api/src/routes/sync.ts#L65) + composite PK ([schema.ts#L57](../../../packages/db/src/schema.ts#L57)).
 Junior: "Same call twice = same result."
 Mid adds: retries make at-least-once delivery the norm; client-generated UUID + conflict-ignore = safe replays; the curl-twice demo.
 Senior includes: idempotency *scope* (per-user keys to prevent cross-user denial) and the difference between idempotent-by-storage vs idempotent-by-check (TOCTOU).
@@ -54,7 +54,7 @@ Senior includes: idempotency *scope* (per-user keys to prevent cross-user denial
 Round: Node. Repo anchor: raw-TS workspace exports ([core package.json#L6](../../../packages/core/package.json#L6)) + `transpilePackages` ([next.config.mjs](../../../apps/web/next.config.mjs)).
 Junior: "ESM vs CJS syntax."
 Mid adds: packages that ship TS/ESM need consumer-side handling; the "Unexpected token 'export'" failure and where it comes from.
-Senior includes: dual-package hazards, and the types-duplication war story ([tooling incident #1](../../02-stack-and-language-mastery/04-tooling-and-build-system.md)).
+Senior includes: dual-package hazards, and the types-duplication war story ([tooling incident #1](../02-stack-and-language-mastery/04-tooling-and-build-system.md)).
 
 ## Q9: How would you hash passwords, and why not SHA-256?
 Round: Node/security. Repo anchor: [auth.ts#L9-L11](../../../apps/api/src/auth.ts#L9-L11) (argon2); contrast: sha256 *is* used for refresh tokens ([L27](../../../apps/api/src/auth.ts#L27)) — do you know why that's OK?
@@ -84,7 +84,7 @@ Senior includes: old *writers* exist too (mobile binaries) — the server must a
 Round: Node. Repo anchor: [web load()](../../../apps/web/src/lib/progress.tsx#L23-L31) catches; [mobile outboxAll](../../../apps/mobile/src/lib/storage.ts#L55-L59) doesn't — a real asymmetry you found.
 Junior: "wrap in try/catch."
 Mid adds: catch is layer 1; shape validation is layer 2 (missing here — [ticket 5](../06-contribution-practice/01-good-first-tickets.md)); quarantine-don't-crash for persistent queues.
-Senior includes: poison-message policy as a *system* concern (same logic as [sync batch rejection](../../05-quality-engineering/03-systematic-debugging.md), scenario 2).
+Senior includes: poison-message policy as a *system* concern (same logic as [sync batch rejection](../05-quality-engineering/03-systematic-debugging.md), scenario 2).
 
 ## Q14: What actually happens when two async functions "run at the same time" in Node?
 Round: JS. Testing: interleaving model.

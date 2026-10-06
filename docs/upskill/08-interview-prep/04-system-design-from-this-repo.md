@@ -43,16 +43,16 @@ Repo evidence: [packages/core](../../../packages/core/src), outboxes ([web](../.
 | Poke | The answer this repo embodies |
 | --- | --- |
 | "Streaks across timezones?" | store IANA tz per user; day = local day of *event time*; device timestamps, not server receipt ([streak.ts#L14-L21](../../../packages/core/src/streak.ts#L14-L21), GAM-02) |
-| "Clock tampering?" | server clamps future timestamps ([sync.ts#L56-L57](../../../apps/api/src/routes/sync.ts#L56-L57)); backdating remains — acknowledge honestly, gate on social features |
+| "Clock tampering?" | server clamps future timestamps ([sync-validation.ts#L96](../../../apps/api/src/sync-validation.ts#L96)); backdating remains — acknowledge honestly, gate on social features |
 | "Lives regen without cron?" | lazy derivation from timestamps ([hearts.ts#L18-L27](../../../packages/core/src/hearts.ts#L18-L27)) |
 | "Two devices, same user, both offline?" | both logs merge; dedupe by event id; fold converges — demo with the [order-independence test](../../../packages/core/src/events.test.ts#L23-L29) |
-| "Cheating?" | client-trusted today (bounded by zod); server-derived XP plan staged log-only→enforce ([critique #3](../../03-architecture-and-patterns/06-architecture-critique.md)) |
+| "Cheating?" | client-trusted today (bounded by zod); server-derived XP plan staged log-only→enforce ([critique #3](../03-architecture-and-patterns/06-architecture-critique.md)) |
 
 ## Variation prompts (practice each for 10 minutes)
 
-1. **"Add multi-tenancy (classrooms)."** Tenant column everywhere + membership/roles; structural single-owner scoping ([validation doc](../../03-architecture-and-patterns/03-validation-auth-and-permissions.md)) gets replaced by explicit authz; cross-tenant tests become CI-critical. Senior extra: teacher-reads-student is the first *cross-user* read — design the permission model before the endpoint.
+1. **"Add multi-tenancy (classrooms)."** Tenant column everywhere + membership/roles; structural single-owner scoping ([validation doc](../03-architecture-and-patterns/03-validation-auth-and-permissions.md)) gets replaced by explicit authz; cross-tenant tests become CI-critical. Senior extra: teacher-reads-student is the first *cross-user* read — design the permission model before the endpoint.
 2. **"Add real-time (live leaderboard during group practice)."** Don't reach for WebSockets first: define staleness budget; polling on focus may pass. If truly live: server aggregates events (needs server-derived XP first — dependency you can *name*), pushes deltas via SSE; the event log is already the pub source.
-3. **"10x users."** Read path: snapshot table ([project P1](../../06-contribution-practice/03-senior-build-projects.md)); content is CDN-shaped already (immutable). Write path: `/sync` is append-only inserts — Postgres handles enormous append volume; partition `progress_events` by user hash when needed. Name the *first* bottleneck honestly: derive-on-read, with its trigger metric.
+3. **"10x users."** Read path: snapshot table ([project P1](../06-contribution-practice/03-senior-build-projects.md)); content is CDN-shaped already (immutable). Write path: `/sync` is append-only inserts — Postgres handles enormous append volume; partition `progress_events` by user hash when needed. Name the *first* bottleneck honestly: derive-on-read, with its trigger metric.
 4. **"Add speech grading."** On-device model (privacy, offline, cost per spec NG-01); new exercise type = union member + new event fields (additive!); grading confidence thresholds are product decisions — show the [exercise union](../../../packages/core/src/types.ts#L108-L114) as the extension seam.
 
 ## Self-grade rubric

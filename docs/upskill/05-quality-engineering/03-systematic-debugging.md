@@ -22,8 +22,8 @@ Interview version: narrate the binary split — "data or derivation" — then th
 Reproduction: same account, both online.
 First question: which one agrees with the server (`GET /me`)?
 Narrowing: 1. curl `/me` → say it returns 30. 2. Phone shows 45 ⇒ phone has 15 xp of *unsynced local events* (baseline 30 + outbox overlay — by design! [mobile progress.tsx#L52-L55](../../../apps/mobile/src/lib/progress.tsx#L52-L55)) or a stuck outbox. 3. Inspect outbox: unsynced rows present? → why didn't sync fire: offline? 401 loop? server rejecting the batch (zod)? 4. Check API logs for the POST — pino logs every request.
-Likely root causes: (a) legitimately pending sync — not a bug, a *product-communication* gap; (b) a poisoned outbox event failing zod forever → the whole batch 400s eternally ([sync.ts#L42-L44](../../../apps/api/src/routes/sync.ts#L42-L44) rejects the entire batch — **real design weakness found via debugging**: one bad event blocks all).
-Fix root cause for (b): server accepts valid events and reports rejects per-event, or client quarantines poison events.
+Likely root causes: (a) legitimately pending sync — not a bug, a *product-communication* gap; (b) a poisoned outbox event — historically this 400'd the whole batch forever, but the server now rejects per event with a 200 ([sync.ts#L52](../../../apps/api/src/routes/sync.ts#L52) rejects the entire batch — **real design weakness found via debugging**: one bad event blocks all).
+The server half of (b) is already fixed (per-event `rejected`); the remaining half is the client surfacing or quarantining rejected ids instead of dropping them silently.
 Regression: integration test posting a batch with one invalid event, asserting partial acceptance (after the fix defines semantics).
 Senior lesson: "displays disagree" in an eventually-consistent system is *expected state or stuck pipe* — instrument the pipe (outbox depth) before touching math.
 Interview version: this is a distributed-systems question wearing a UI costume; name "eventual consistency" and "poison message" out loud.
@@ -44,14 +44,14 @@ Reproduction: any exercise's speaker button; silence; console clean.
 First question: is a request even made?
 Narrowing: 1. Network tab → request to `/content/audio/kumusta_ka.mp3` → 404. 2. Is that a server bug or missing file? Hit it with curl; check `packages/content/audio/en-tl/` — empty (no recordings exist yet; compiler warned: "83 audio refs have no recording"). 3. Silence is *designed*: [`playAudio` swallows](../../../apps/web/src/lib/audio.ts#L8-L14).
 Root cause: not a bug — a product state with zero observability. The fix is a decision: keep silent + add a dev-mode console.warn + a metric, or show a muted icon.
-Regression: none (no defect), but add the drill from [pattern 13](../../03-architecture-and-patterns/05-pattern-catalog.md).
+Regression: none (no defect), but add the drill from [pattern 13](../03-architecture-and-patterns/05-pattern-catalog.md).
 Senior lesson: "no error" plus "no effect" = intentional swallow somewhere; grep for empty `catch` before suspecting the stack. `rg "catch \{" apps/web` finds them in seconds.
 
 ## Scenario 5: "After deploying new content, some users' next lesson is locked"
 
 Reproduction: v2 bundle removed lesson `greetings-3` (merged into `greetings-2`); users who had completed through `greetings-2` now see everything locked after it.
 First question: data loss or derivation change?
-Narrowing: 1. `/me` still lists `greetings-3`?? No — users completed only up to `greetings-2`; the *removed* id isn't the issue for them. Reproduce precisely: the broken users completed `greetings-1..2` and old `greetings-3`. 2. Read [`isLessonUnlocked`](../../../apps/web/src/lib/content.ts#L20-L33): it walks *current* content; completion of a deleted lesson is ignored harmlessly, BUT a user who had completed only up to old `greetings-3` now lacks completion of new `greetings-3` (different exercises, same slot) — wait, ids… 3. The precise repro determines everything: the bug family is "unlock logic couples progression to content identity."
+Narrowing: 1. `/me` still lists `greetings-3`?? No — users completed only up to `greetings-2`; the *removed* id isn't the issue for them. Reproduce precisely: the broken users completed `greetings-1..2` and old `greetings-3`. 2. Read [`isLessonUnlocked`](../../../apps/web/src/lib/content.ts#L20-L22): it walks *current* content; completion of a deleted lesson is ignored harmlessly, BUT a user who had completed only up to old `greetings-3` now lacks completion of new `greetings-3` (different exercises, same slot) — wait, ids… 3. The precise repro determines everything: the bug family is "unlock logic couples progression to content identity."
 Likely root cause: content ids are load-bearing progression state; deleting/renaming ids strands users.
 Fix root cause: content migration policy — never delete a lesson id within a course version family; or unlock by *count* completed in unit rather than exact chain.
 Regression: a unit test over `isLessonUnlocked` with a completions list containing unknown ids.

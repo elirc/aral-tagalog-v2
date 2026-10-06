@@ -7,7 +7,7 @@ Round: frontend. Testing: StrictMode understanding.
 Repo anchor: [completionSent ref](../../../apps/web/src/components/LessonPlayer.tsx#L39-L59).
 Junior: "StrictMode bug, I turned it off."  ← instant red flag
 Mid: StrictMode double-invokes on purpose to expose unsafe effects; guard non-idempotent actions with a ref, or make the downstream idempotent.
-Senior: both belt and suspenders here — ref latch *and* server-side event dedupe; and why the latch is still load-bearing (each invocation would mint a fresh UUID, [pattern 14](../../03-architecture-and-patterns/05-pattern-catalog.md)).
+Senior: both belt and suspenders here — ref latch *and* server-side event dedupe; and why the latch is still load-bearing (each invocation would mint a fresh UUID, [pattern 14](../03-architecture-and-patterns/05-pattern-catalog.md)).
 Follow-up: "Why a ref and not state?" (state update re-renders and races; refs are render-invisible).
 
 ## Q2: Where do you put state? Walk me through a real decision.
@@ -37,7 +37,7 @@ Senior: the explicit rejection of RN-Web in this repo's design (ARCH-02, [README
 ## Q6: A user says the UI shows stale hearts. Debug it.
 Round: frontend/debugging. Repo anchor: derived hearts need `regenerate(state, now)` at read ([Header.tsx](../../../apps/web/src/components/Header.tsx), [hearts.ts#L18-L27](../../../packages/core/src/hearts.ts#L18-L27)); re-render driven by the 30s tick.
 Mid path: is it a *computation* miss (forgot regenerate) or a *render* miss (nothing re-rendered)? Two different fixes; the tick handles the latter.
-Senior: the API-shape fix that removes the bug class (expose only `currentHearts(state, now)`), from [flow 6](../../01-codebase-cartography/05-key-flows.md).
+Senior: the API-shape fix that removes the bug class (expose only `currentHearts(state, now)`), from [flow 6](../01-codebase-cartography/05-key-flows.md).
 
 ## Q7: Controlled vs uncontrolled inputs — where did you choose which?
 Round: frontend. Repo anchor: controlled auth form ([AuthForm.tsx#L38-L56](../../../apps/web/src/components/AuthForm.tsx#L38-L56)); FillBlank's chip-select is state-controlled; free-text variant is controlled input ([FillBlankView.tsx](../../../apps/web/src/components/exercises/FillBlankView.tsx)).
