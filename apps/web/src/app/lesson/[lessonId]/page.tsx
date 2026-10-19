@@ -7,6 +7,7 @@ import { buildReviewLesson, REVIEW_LESSON_ID, type Lesson } from "@aral/core";
 import { LessonPlayer } from "@/components/LessonPlayer";
 import { bundle, findLesson, isLessonUnlocked } from "@/lib/content";
 import { useProgress } from "@/lib/progress";
+import "../../pages-mobile.css";
 
 export default function LessonPage() {
   const { lessonId } = useParams<{ lessonId: string }>();
@@ -41,7 +42,9 @@ export default function LessonPage() {
           <p className="big-emoji">🧹</p>
           <h2>Nothing to review</h2>
           <p>Mistakes you make in lessons collect here so you can practice them again.</p>
-          <Link href="/" className="btn btn-primary">Back to course</Link>
+          <div className="page-actions">
+            <Link href="/" className="btn btn-primary">Back to course</Link>
+          </div>
         </div>
       </main>
     );
@@ -52,7 +55,9 @@ export default function LessonPage() {
       <main className="container">
         <div className="center-card">
           <h2>Lesson not found</h2>
-          <Link href="/" className="btn btn-primary">Back to course</Link>
+          <div className="page-actions">
+            <Link href="/" className="btn btn-primary">Back to course</Link>
+          </div>
         </div>
       </main>
     );
@@ -64,7 +69,9 @@ export default function LessonPage() {
         <div className="center-card">
           <p className="big-emoji">🔒</p>
           <h2>Finish earlier lessons first</h2>
-          <Link href="/" className="btn btn-primary">Back to course</Link>
+          <div className="page-actions">
+            <Link href="/" className="btn btn-primary">Back to course</Link>
+          </div>
         </div>
       </main>
     );

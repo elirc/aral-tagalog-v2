@@ -36,7 +36,11 @@ export default function LessonScreen() {
           <Text style={[styles.body, { textAlign: "center" }]}>
             Mistakes you make in lessons collect here so you can practice them again.
           </Text>
-          <Pressable style={[styles.btnPrimary, { alignSelf: "stretch" }]} onPress={() => router.dismissTo("/")}>
+          <Pressable
+            accessibilityRole="button"
+            style={({ pressed }) => [styles.btnPrimary, { alignSelf: "stretch" }, pressed && { opacity: 0.85 }]}
+            onPress={() => router.dismissTo("/")}
+          >
             <Text style={styles.btnPrimaryText}>Back to course</Text>
           </Pressable>
         </View>
@@ -50,7 +54,11 @@ export default function LessonScreen() {
       <SafeAreaView style={styles.screen}>
         <View style={[styles.card, { alignItems: "center", gap: spacing.sm, margin: spacing.md }]}>
           <Text style={styles.subtitle}>{lesson ? "Finish earlier lessons first" : "Lesson not found"}</Text>
-          <Pressable style={[styles.btnPrimary, { alignSelf: "stretch" }]} onPress={() => router.dismissTo("/")}>
+          <Pressable
+            accessibilityRole="button"
+            style={({ pressed }) => [styles.btnPrimary, { alignSelf: "stretch" }, pressed && { opacity: 0.85 }]}
+            onPress={() => router.dismissTo("/")}
+          >
             <Text style={styles.btnPrimaryText}>Back to course</Text>
           </Pressable>
         </View>
@@ -66,8 +74,11 @@ export default function LessonScreen() {
     practiceRef.current = isReview || progress.completedLessonIds.includes(lesson.id);
   }
   const practice = practiceRef.current;
+  // bottom edge deliberately excluded: LessonPlayer pins its action footer to
+  // the screen edge and pads it by the inset itself, so the footer's tint runs
+  // under the home indicator and the pad can drop while the keyboard is up
   return (
-    <SafeAreaView style={styles.screen} edges={["top", "bottom"]}>
+    <SafeAreaView style={styles.screen} edges={["top", "left", "right"]}>
       <LessonPlayer key={lesson.id} lesson={lesson} practice={practice} />
     </SafeAreaView>
   );

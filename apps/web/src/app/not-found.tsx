@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./pages-mobile.css";
 
 export default function NotFound() {
   return (
@@ -7,9 +8,11 @@ export default function NotFound() {
         <p className="big-emoji">🧭</p>
         <h2>Page not found</h2>
         <p>That page doesn&apos;t exist — but the course does.</p>
-        <Link href="/" className="btn btn-primary">
-          Back to course
-        </Link>
+        <div className="page-actions">
+          <Link href="/" className="btn btn-primary">
+            Back to course
+          </Link>
+        </div>
       </div>
     </main>
   );

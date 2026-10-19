@@ -1,7 +1,8 @@
 "use client";
 
+import "./lesson-mobile.css";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ACHIEVEMENTS,
   currentExercise,
@@ -62,6 +63,21 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   const completionSent = useRef(false);
   const continueRef = useRef<HTMLButtonElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  // On phones the footer is pinned to the viewport bottom (lesson-mobile.css).
+  // Mirror its live height into --dock-h on the player so the exercise can
+  // always scroll clear of it — the feedback banner is taller than the bare
+  // Check bar. (React 19 ref callback: the returned cleanup runs on unmount.)
+  const dockRef = useCallback((el: HTMLDivElement | null) => {
+    const host = el?.parentElement;
+    if (!el || !host || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(() => host.style.setProperty("--dock-h", `${el.offsetHeight}px`));
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      host.style.removeProperty("--dock-h");
+    };
+  }, []);
 
   const hearts = regenerate(progress.hearts, Date.now()).hearts;
   const exercise = currentExercise(session);
@@ -242,9 +258,9 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   const key = `${exercise.id}-${attempt}`;
 
   return (
-    <div>
+    <div className="lesson-player">
       <div className="player-top">
-        <Link href="/" aria-label="quit lesson" style={{ fontSize: 22, color: "var(--text-muted)" }}>
+        <Link href="/" aria-label="quit lesson" className="player-quit" style={{ fontSize: 22, color: "var(--text-muted)" }}>
           ✕
         </Link>
         <div
@@ -277,6 +293,7 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
 
       {exercise.type !== "match_pairs" && (
         <div
+          ref={dockRef}
           aria-live="polite"
           className={`player-footer ${phase.kind === "feedback" ? (phase.correct ? "correct" : "wrong") : "neutral"}`}
         >

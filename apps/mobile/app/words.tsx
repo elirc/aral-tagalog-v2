@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "expo-router";
 import { Pressable, SectionList, Text, TextInput, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { VocabEntry } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 import { getBundle } from "@/lib/content";
@@ -14,8 +14,11 @@ import { font, radii, spacing, useTheme } from "@/theme";
  */
 export default function WordsScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { colors, styles } = useTheme();
   const [query, setQuery] = useState("");
+  // deep link / cold start lands here with nothing to pop back to
+  const goBack = () => (router.canGoBack() ? router.back() : router.replace("/"));
 
   const all = useMemo(
     () =>
@@ -48,53 +51,50 @@ export default function WordsScreen() {
   }, [q, all]);
 
   return (
-    <SafeAreaView style={styles.screen} edges={["top"]}>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          paddingHorizontal: spacing.md,
-          paddingVertical: spacing.sm,
-          backgroundColor: colors.bg,
-          borderBottomWidth: 2,
-          borderBottomColor: colors.border,
-          gap: spacing.md,
-        }}
-      >
-        <Pressable onPress={() => router.back()} accessibilityLabel="back">
-          <Text style={{ fontSize: 20, color: colors.text }}>←</Text>
-        </Pressable>
-        <Text style={styles.subtitle}>Phrasebook</Text>
-        <View style={{ flex: 1 }} />
-        <Text style={styles.muted}>{all.length} words</Text>
+    <View style={styles.screen}>
+      <View style={[styles.header, { paddingTop: insets.top + spacing.xs, flexDirection: "column", alignItems: "stretch" }]}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+          <Pressable
+            onPress={goBack}
+            accessibilityRole="button"
+            accessibilityLabel="Back"
+            hitSlop={8}
+            style={({ pressed }) => [styles.iconBtn, { marginLeft: -spacing.sm }, pressed && styles.pressed]}
+          >
+            <Text style={{ fontSize: 22, color: colors.text }}>←</Text>
+          </Pressable>
+          <Text style={styles.subtitle} accessibilityRole="header">
+            Phrasebook
+          </Text>
+          <View style={{ flex: 1 }} />
+          <Text style={styles.muted}>{all.length} words</Text>
+        </View>
+        {/* pinned under the header (not a list header) so search stays
+            reachable after scrolling deep into the alphabet */}
+        <TextInput
+          value={query}
+          onChangeText={setQuery}
+          placeholder="Search Tagalog or English…"
+          placeholderTextColor={colors.textMuted}
+          accessibilityLabel="Search words"
+          autoCorrect={false}
+          autoCapitalize="none"
+          autoComplete="off"
+          returnKeyType="search"
+          clearButtonMode="while-editing"
+          style={[styles.input, { paddingVertical: 10, minHeight: 44 }]}
+        />
       </View>
 
       <SectionList
         sections={sections}
         keyExtractor={(v) => v.id}
         stickySectionHeadersEnabled
-        contentContainerStyle={{ padding: spacing.md, paddingBottom: spacing.xl }}
-        ListHeaderComponent={
-          <TextInput
-            value={query}
-            onChangeText={setQuery}
-            placeholder="Search Tagalog or English…"
-            placeholderTextColor={colors.textMuted}
-            accessibilityLabel="Search words"
-            autoCorrect={false}
-            style={{
-              backgroundColor: colors.bg,
-              borderWidth: 2,
-              borderColor: colors.border,
-              borderRadius: radii.md,
-              paddingHorizontal: spacing.md,
-              paddingVertical: 10,
-              fontSize: font.sizeMd,
-              color: colors.text,
-              marginBottom: spacing.sm,
-            }}
-          />
-        }
+        // tap a row (play audio) without first dismissing the keyboard;
+        // dragging the list puts the keyboard away
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+        contentContainerStyle={{ padding: spacing.md, paddingBottom: spacing.xl + insets.bottom }}
         ListEmptyComponent={
           <Text style={[styles.muted, { textAlign: "center", marginTop: spacing.lg }]}>
             No matches for “{query}”.
@@ -103,6 +103,7 @@ export default function WordsScreen() {
         renderSectionHeader={({ section }) =>
           section.title ? (
             <Text
+              accessibilityRole="header"
               style={{
                 fontSize: font.sizeSm,
                 fontWeight: "800",
@@ -117,15 +118,21 @@ export default function WordsScreen() {
         }
         renderItem={({ item }) => <WordRow entry={item} />}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 
 function WordRow({ entry }: { entry: VocabEntry }) {
-  const { styles } = useTheme();
+  const { colors, styles } = useTheme();
+  // the whole card plays the word: a 30pt speaker glyph alone was too small
+  // a target, and "tap the word to hear it" is what a phrasebook invites
   return (
-    <View
-      style={[
+    <Pressable
+      onPress={() => void playAudio(entry.audio, entry.lemma)}
+      accessibilityRole="button"
+      accessibilityLabel={`${entry.lemma}, ${entry.translation}`}
+      accessibilityHint="Plays the pronunciation"
+      style={({ pressed }) => [
         styles.card,
         {
           flexDirection: "row",
@@ -134,15 +141,12 @@ function WordRow({ entry }: { entry: VocabEntry }) {
           padding: spacing.sm,
           marginBottom: spacing.sm,
         },
+        pressed && { backgroundColor: colors.accentSoft, borderColor: colors.accent },
       ]}
     >
-      <Pressable
-        onPress={() => void playAudio(entry.audio, entry.lemma)}
-        accessibilityLabel={`play audio for ${entry.lemma}`}
-        style={{ padding: spacing.xs }}
-      >
+      <View style={[styles.iconBtn, { backgroundColor: colors.accentSoft, borderRadius: radii.pill }]}>
         <Text style={{ fontSize: 20 }}>🔊</Text>
-      </Pressable>
+      </View>
       <View style={{ flex: 1 }}>
         <Text style={[styles.body, { fontWeight: "700" }]}>{entry.lemma}</Text>
         <Text style={styles.muted}>{entry.translation}</Text>
@@ -150,6 +154,6 @@ function WordRow({ entry }: { entry: VocabEntry }) {
           <Text style={[styles.muted, { fontSize: font.sizeSm - 1, marginTop: 2 }]}>{entry.notes}</Text>
         ) : null}
       </View>
-    </View>
+    </Pressable>
   );
 }

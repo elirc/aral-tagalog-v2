@@ -5,6 +5,10 @@ import { playAudio } from "@/lib/audio";
 import { spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
 
+/** pressed: the 4pt bottom edge sinks to 2pt; margin + translate keep the
+ *  layout box fixed so neighbours don't jump */
+const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ translateY: 2 }] } as const;
+
 export function TapsView({
   exercise,
   onAnswerChange,
@@ -28,7 +32,9 @@ export function TapsView({
     <View>
       {isListen ? (
         <>
-          <Text style={styles.prompt}>Tap what you hear</Text>
+          <Text accessibilityRole="header" style={styles.prompt}>
+            Tap what you hear
+          </Text>
           <AudioButton large onPress={() => void playAudio(exercise.audio)} />
         </>
       ) : (
@@ -38,7 +44,9 @@ export function TapsView({
           </Text>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
             {exercise.audio && <AudioButton onPress={() => void playAudio(exercise.audio)} />}
-            <Text style={[styles.prompt, { flex: 1, marginBottom: 0 }]}>{exercise.prompt}</Text>
+            <Text accessibilityRole="header" style={[styles.prompt, { flex: 1, marginBottom: 0 }]}>
+              {exercise.prompt}
+            </Text>
           </View>
         </>
       )}
@@ -59,7 +67,11 @@ export function TapsView({
         {picked.map((wordIdx, pos) => (
           <Pressable
             key={`${wordIdx}-${pos}`}
-            style={styles.optionBtn}
+            accessibilityRole="button"
+            accessibilityLabel={`${exercise.wordBank[wordIdx]}, in answer`}
+            accessibilityHint="removes the word"
+            accessibilityState={{ disabled }}
+            style={({ pressed }) => [styles.optionBtn, pressed && pressDown]}
             disabled={disabled}
             onPress={() => update(picked.filter((_, p) => p !== pos))}
           >
@@ -74,7 +86,10 @@ export function TapsView({
           return (
             <Pressable
               key={i}
-              style={[styles.optionBtn, used && { opacity: 0.3 }]}
+              accessibilityRole="button"
+              accessibilityLabel={used ? `${word}, used` : word}
+              accessibilityState={{ disabled: disabled || used }}
+              style={({ pressed }) => [styles.optionBtn, used && { opacity: 0.3 }, pressed && pressDown]}
               disabled={disabled || used}
               onPress={() => update([...picked, i])}
             >

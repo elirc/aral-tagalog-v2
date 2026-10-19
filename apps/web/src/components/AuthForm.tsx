@@ -38,24 +38,43 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
         {mode === "register" && (
           <p style={{ color: "var(--text-muted)" }}>Your guest progress carries over automatically.</p>
         )}
-        <form className="form" onSubmit={submit}>
+        <form className="form auth-form" onSubmit={submit}>
           <input
             type="email"
+            name="email"
+            inputMode="email"
+            autoComplete="email"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            enterKeyHint="next"
             placeholder="Email"
+            aria-label="Email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
+            name="password"
+            autoComplete={mode === "register" ? "new-password" : "current-password"}
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            enterKeyHint={mode === "register" ? "done" : "go"}
             placeholder={mode === "register" ? "Password (8+ characters)" : "Password"}
+            aria-label="Password"
             value={password}
             required
             minLength={8}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {error && <p className="form-error">{error}</p>}
-          <button className="btn btn-primary btn-block" disabled={busy}>
+          {error && (
+            <p className="form-error" role="alert">
+              {error}
+            </p>
+          )}
+          <button type="submit" className="btn btn-primary btn-block" disabled={busy} aria-busy={busy}>
             {busy ? "…" : mode === "register" ? "Sign up" : "Log in"}
           </button>
         </form>
@@ -66,6 +85,10 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
             <>New here? <Link href="/register">Create an account</Link></>
           )}
         </p>
+        {/* auth pages render no header — give phones a way back */}
+        <Link href="/" className="auth-back">
+          ← Back to course
+        </Link>
       </div>
     </main>
   );

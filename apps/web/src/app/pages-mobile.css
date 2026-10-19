@@ -1,0 +1,203 @@
+/* Phone/touch polish for the course map, stats, phrasebook, auth and
+   error/not-found pages. Layered on top of globals.css (imported by the
+   pages that need it). Overrides of globals.css declarations use one extra
+   ancestor class so they win regardless of stylesheet chunk order. */
+
+/* ------------------------------ course map ------------------------------ */
+
+/* unit headers: comfortable tap row, pressed feedback, no sticky hover on touch */
+.container .unit-card > summary {
+  min-height: 56px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.12s;
+}
+@media (hover: none) {
+  .container .unit-card > summary:hover { background: transparent; }
+}
+.container .unit-card > summary:active { background: var(--bg-muted); }
+.unit-card > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.unit-head-main .unit-title { overflow-wrap: anywhere; }
+
+/* lesson rows: the whole row is the link (dot + title + CTA), not just the button */
+.unit-body .lesson-row {
+  margin: 0 -8px;
+  padding: 10px 12px;
+}
+.lesson-name { min-width: 0; overflow-wrap: anywhere; }
+.lesson-row-link {
+  color: inherit;
+  min-height: 56px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.12s;
+}
+@media (hover: hover) {
+  .lesson-row-link:hover { background: var(--bg-muted); }
+}
+.lesson-row-link:active { background: var(--bg-muted); }
+.lesson-row-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.lesson-row .lesson-cta {
+  flex-shrink: 0;
+  padding: 10px 18px;
+}
+/* the CTA is a span inside the link, so mirror .btn-primary:active when the row is pressed */
+.lesson-row-link:active .lesson-cta {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  margin-bottom: 2px;
+}
+.lesson-row-locked .lesson-name { color: var(--text-muted); }
+
+/* hero + review banner */
+.hero-title { overflow-wrap: anywhere; }
+.review-banner {
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.12s, border-color 0.12s;
+}
+.review-banner:active { border-color: var(--accent); background: var(--bg-muted); }
+.review-banner:active .btn-primary {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  margin-bottom: 2px;
+}
+.review-banner:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.review-text { min-width: 0; }
+.review-emoji, .review-banner .btn { flex-shrink: 0; }
+
+@media (max-width: 480px) {
+  /* hero: text + ring on top, full-width thumb-sized CTA underneath */
+  .container .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    padding: 16px;
+  }
+  .container .hero-body { display: contents; }
+  .hero-body > .hero-kicker,
+  .hero-body > .hero-title,
+  .hero-body > .hero-sub { grid-column: 1; }
+  .hero-body > .btn {
+    grid-column: 1 / -1;
+    min-height: 48px;
+  }
+  .container .hero-ring {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: center;
+  }
+  .hero-ring svg { width: 76px; height: 76px; display: block; }
+
+  .container .review-banner { gap: 10px; padding: 12px 14px; }
+  .container .review-emoji { font-size: 24px; }
+  .container .review-banner .btn { padding: 10px 16px; }
+}
+
+@media (max-width: 400px) {
+  .container .unit-card > summary { gap: 10px; padding: 12px 14px; }
+  .unit-body .lesson-row { gap: 10px; }
+  .lesson-row .lesson-cta { padding: 10px 14px; }
+}
+
+/* --------------------------------- auth --------------------------------- */
+
+.auth-form input {
+  /* ≥16px or iOS Safari zooms the page on focus */
+  font-size: max(16px, 1em);
+  min-height: 48px;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-appearance: none;
+  appearance: none;
+}
+.auth-form input:focus { outline: none; border-color: var(--accent); }
+.auth-form .btn { min-height: 48px; }
+.auth-back {
+  display: inline-block;
+  padding: 12px 8px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* ------------------------------ phrasebook ------------------------------ */
+
+.container .search-input {
+  font-size: max(16px, 1em);
+  min-height: 48px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.word-row {
+  /* ~1k rows: let the browser skip layout/paint for off-screen ones */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 72px;
+}
+.word-row .word-audio {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.08s, filter 0.15s;
+}
+.word-row .word-audio:active { transform: scale(0.94); filter: brightness(0.92); }
+.word-row .word-audio:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.word-main { flex: 1; }
+.word-lemma, .word-translation, .word-notes { overflow-wrap: anywhere; }
+@media (max-width: 400px) {
+  .container .word-row { gap: 10px; padding: 10px 12px; }
+}
+
+/* --------------------------------- stats -------------------------------- */
+
+.stat-tile, .achievement { min-width: 0; }
+.stat-value, .stat-sub, .ach-title, .ach-desc { overflow-wrap: anywhere; }
+.tier-group-head { flex-wrap: wrap; }
+
+.goal-preset {
+  min-height: 48px;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.08s, border-color 0.15s, background 0.15s;
+}
+.goal-preset:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  margin-bottom: 2px;
+}
+.goal-preset:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 480px) {
+  /* ring can't sit beside the editor at phone width: stack and center it */
+  .card .goal-row { justify-content: center; gap: 16px; }
+  .card .goal-editor { flex-basis: 100%; min-width: 0; text-align: center; }
+  .card .goal-presets {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .card .goal-preset { padding: 8px 4px; min-height: 52px; }
+}
+@media (max-width: 400px) {
+  .card .goal-presets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ------------------- error / not-found / lesson gates ------------------- */
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.page-actions .btn { min-height: 48px; }
+@media (max-width: 480px) {
+  .page-actions { flex-direction: column; }
+}

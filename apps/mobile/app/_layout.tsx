@@ -12,6 +12,25 @@ function ThemedStatusBar() {
   return <StatusBar style={mode === "dark" ? "light" : "dark"} />;
 }
 
+/**
+ * Native stack with the theme's screen color as the card background, so a
+ * push/pop or swipe-back never flashes the default white behind a dark
+ * screen. expo-router already mounts SafeAreaProvider above this layout;
+ * each screen applies its own insets. Android hardware back pops the stack
+ * as usual (headerShown is off, so screens draw their own back buttons).
+ */
+function ThemedStack() {
+  const { colors } = useTheme();
+  return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: colors.bgMuted },
+      }}
+    />
+  );
+}
+
 export default function RootLayout() {
   // OFF-04: check for newer content in the background; never blocks play.
   // Then pull audio clips to device storage so lessons are playable offline
@@ -24,7 +43,7 @@ export default function RootLayout() {
     <ThemeProvider>
       <ProgressProvider>
         <ThemedStatusBar />
-        <Stack screenOptions={{ headerShown: false }} />
+        <ThemedStack />
       </ProgressProvider>
     </ThemeProvider>
   );

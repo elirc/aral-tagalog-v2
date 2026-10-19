@@ -2,14 +2,25 @@
    truth; import lives in layout.tsx). Only web-specific tokens live here. */
 :root {
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --bottom-nav-h: 60px;
+  /* native scrollbars / form controls follow the app theme, not the OS */
+  color-scheme: light;
 }
 
 :root[data-theme="dark"] {
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  /* iOS landscape would otherwise inflate text */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -30,10 +41,40 @@ button {
   cursor: pointer;
 }
 
+/* no double-tap-zoom delay on tappables */
+a, button, summary, label, input, [role="button"] {
+  touch-action: manipulation;
+}
+
 .container {
   max-width: 640px;
   margin: 0 auto;
   padding: 16px;
+  /* viewport-fit=cover: keep content clear of the notch in landscape */
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* Hover styles only where a real pointer can hover — on touch screens a tap
+   leaves :hover stuck on the last-touched element. */
+@media (hover: hover) {
+  .review-banner:hover { border-color: var(--accent); }
+  .stats-link:hover { opacity: 0.75; }
+  .nav-link:hover { opacity: 0.75; }
+  .theme-toggle:hover { border-color: var(--border-strong); }
+  .btn-primary:not(:disabled):hover { filter: brightness(1.06); }
+  .choice-btn:not(:disabled):hover, .word-chip:not(:disabled):hover, .pair-btn:not(:disabled):hover {
+    border-color: var(--border-strong);
+    background: var(--bg-muted);
+  }
+  /* must follow the rule above — a selected option keeps its selected look */
+  .choice-btn.selected:not(:disabled):hover, .pair-btn.selected:not(:disabled):hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .unit-card > summary:hover { background: var(--bg-muted); }
+  .word-audio:hover { filter: brightness(1.08); }
+  .bottom-tab:not(.active):hover { color: var(--text); }
 }
 
 /* --- review-mistakes banner (course map) --- */
@@ -48,9 +89,6 @@ button {
   margin: 16px 0;
   color: inherit;
   box-shadow: var(--shadow);
-}
-.review-banner:hover {
-  border-color: var(--accent);
 }
 .review-emoji {
   font-size: 28px;
@@ -74,11 +112,16 @@ button {
   position: sticky;
   top: 0;
   z-index: 10;
+  /* notch / status bar when running standalone with viewport-fit=cover;
+     resolves to 0 everywhere else */
+  padding-top: env(safe-area-inset-top);
 }
 .header-inner {
   max-width: 640px;
   margin: 0 auto;
   padding: 10px 16px;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
   display: flex;
   align-items: center;
   gap: 16px;
@@ -100,7 +143,6 @@ button {
   align-items: center;
   color: inherit;
 }
-.stats-link:hover { opacity: 0.75; }
 .level-chip {
   background: var(--primary-fill);
   color: #fff;
@@ -119,16 +161,42 @@ button {
 /* keep each stat (icon + number) on one line — they wrap vertically otherwise */
 .stats span, .stats a { white-space: nowrap; }
 .header .btn { white-space: nowrap; }
+.header-relogin { color: var(--danger); }
+.header-logout { display: inline-flex; align-items: center; justify-content: center; }
+.header-logout svg { display: block; }
+
+/* compact/full label swaps (Header log-out & session-expired) */
+.only-sm { display: none; }
+
+/* bottom nav covers Phrasebook from here down */
+@media (max-width: 640px) {
+  .header .nav-link { display: none; }
+}
 
 /* phone widths: the default paddings/gaps overflow a 390px header */
 @media (max-width: 480px) {
-  .header-inner { gap: 8px; padding: 8px 10px; }
+  .header-inner {
+    gap: 8px;
+    padding: 8px 10px;
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
   .logo { font-size: 19px; }
   .stats { gap: 8px; font-size: 14px; }
   .stats-link { gap: 8px; }
   .level-chip { font-size: 12px; padding: 2px 8px; }
-  .header .btn { padding: 8px 12px; font-size: 14px; }
-  .theme-toggle { padding: 5px 7px; font-size: 13px; }
+  .header .btn { padding: 7px 10px; font-size: 14px; }
+  .header .header-logout { padding: 0; width: 36px; height: 36px; }
+  .theme-toggle { min-width: 36px; height: 36px; padding: 0 7px; font-size: 13px; }
+  .hide-sm { display: none; }
+  .only-sm { display: inline; }
+}
+
+/* very narrow phones (SE 1st gen, Galaxy Fold cover) — keep the core stats */
+@media (max-width: 360px) {
+  .header .level-chip { display: none; }
+  .header-inner { gap: 6px; }
+  .stats, .stats-link { gap: 6px; }
 }
 
 /* --- buttons --- */
@@ -147,7 +215,6 @@ button {
   border-bottom: 4px solid var(--primary-deep);
   transition: transform 0.08s, filter 0.15s;
 }
-.btn-primary:not(:disabled):hover { filter: brightness(1.06); }
 .btn-primary:not(:disabled):active {
   transform: translateY(2px);
   border-bottom-width: 2px;
@@ -278,20 +345,12 @@ button {
 .choice-btn, .word-chip, .pair-btn {
   transition: transform 0.08s, border-color 0.15s, background 0.15s;
 }
-.choice-btn:not(:disabled):hover, .word-chip:not(:disabled):hover, .pair-btn:not(:disabled):hover {
-  border-color: var(--border-strong);
-  background: var(--bg-muted);
-}
 .choice-btn:not(:disabled):active, .word-chip:not(:disabled):active, .pair-btn:not(:disabled):active {
   transform: translateY(2px);
   border-bottom-width: 2px;
   margin-bottom: 2px;
 }
 .choice-btn.selected, .pair-btn.selected {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-.choice-btn.selected:not(:disabled):hover, .pair-btn.selected:not(:disabled):hover {
   border-color: var(--accent);
   background: var(--accent-soft);
 }
@@ -530,8 +589,8 @@ button {
   padding: 6px 9px;
   font-size: 15px;
   line-height: 1;
+  color: var(--text);
 }
-.theme-toggle:hover { border-color: var(--border-strong); }
 
 /* --- header nav icon links --- */
 .nav-link {
@@ -539,7 +598,56 @@ button {
   line-height: 1;
   text-decoration: none;
 }
-.nav-link:hover { opacity: 0.75; }
+
+/* --- bottom tab bar (phones; rendered by BottomNav, absent on lesson/auth) --- */
+.bottom-nav, .bottom-nav-spacer { display: none; }
+@media (max-width: 640px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background: var(--bg);
+    border-top: 2px solid var(--border);
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  /* in-flow clearance at the end of the page so the bar never hides content */
+  .bottom-nav-spacer {
+    display: block;
+    height: calc(var(--bottom-nav-h) + env(safe-area-inset-bottom));
+  }
+}
+.bottom-tab {
+  flex: 1;
+  min-height: var(--bottom-nav-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.bottom-tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+.bottom-tab.active { color: var(--primary-dark); }
+.bottom-tab.active .bottom-tab-icon {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+.bottom-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; border-radius: 12px; }
 
 /* --- course map: continue hero --- */
 .hero {
@@ -577,7 +685,6 @@ button {
   gap: 12px;
 }
 .unit-card > summary::-webkit-details-marker { display: none; }
-.unit-card > summary:hover { background: var(--bg-muted); }
 .unit-badge {
   width: 40px;
   height: 40px;
@@ -665,7 +772,6 @@ details[open] > summary .unit-chevron { transform: rotate(180deg); }
   font-size: 16px;
   flex-shrink: 0;
 }
-.word-audio:hover { filter: brightness(1.08); }
 .word-main { min-width: 0; }
 .word-lemma { font-weight: 800; margin: 0; }
 .word-translation { color: var(--text); font-size: 15px; margin: 1px 0 0; }

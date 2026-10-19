@@ -5,6 +5,10 @@ import { playAudio } from "@/lib/audio";
 import { spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
 
+/** pressed: the 4pt bottom edge sinks to 2pt; margin + translate keep the
+ *  layout box fixed so neighbours don't jump */
+const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ translateY: 2 }] } as const;
+
 function shuffled<T>(items: T[], seed: number): T[] {
   const out = [...items];
   let s = seed;
@@ -36,14 +40,22 @@ export function ChoiceView({
     <View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm }}>
         {exercise.audio && <AudioButton onPress={() => void playAudio(exercise.audio)} />}
-        <Text style={[styles.prompt, { flex: 1, marginBottom: 0 }]}>{exercise.prompt}</Text>
+        <Text accessibilityRole="header" style={[styles.prompt, { flex: 1, marginBottom: 0 }]}>
+          {exercise.prompt}
+        </Text>
       </View>
       {exercise.hint && <Text style={[styles.muted, { marginBottom: spacing.sm }]}>{exercise.hint}</Text>}
       <View style={{ gap: spacing.sm }}>
         {options.map((opt) => (
           <Pressable
             key={opt}
-            style={[styles.optionBtn, selected === opt && styles.optionSelected]}
+            accessibilityRole="button"
+            accessibilityState={{ selected: selected === opt, disabled }}
+            style={({ pressed }) => [
+              styles.optionBtn, // ≥50pt tall: 12pt padding ×2 + 17pt text + borders
+              selected === opt && styles.optionSelected,
+              pressed && pressDown,
+            ]}
             disabled={disabled}
             onPress={() => {
               setSelected(opt);

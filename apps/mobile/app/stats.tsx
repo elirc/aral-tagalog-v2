@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useRouter } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   ACHIEVEMENTS,
   displayStreak,
@@ -36,7 +36,11 @@ function Bar({ pct, color, height = 10 }: { pct: number; color?: string; height?
   const { colors } = useTheme();
   const clamped = Math.max(0, Math.min(100, pct));
   return (
-    <View style={{ height, backgroundColor: colors.border, borderRadius: radii.pill, overflow: "hidden" }}>
+    <View
+      accessibilityRole="progressbar"
+      accessibilityValue={{ min: 0, max: 100, now: Math.round(clamped) }}
+      style={{ height, backgroundColor: colors.border, borderRadius: radii.pill, overflow: "hidden" }}
+    >
       <View
         style={{
           width: `${clamped}%`,
@@ -49,25 +53,52 @@ function Bar({ pct, color, height = 10 }: { pct: number; color?: string; height?
   );
 }
 
-function StatTile({ children }: { children: ReactNode }) {
+/** `label` is what a screen reader announces for the whole tile, instead of
+ *  stepping through an emoji ("high voltage") and a bare number. */
+function StatTile({ children, label }: { children: ReactNode; label: string }) {
   const { styles } = useTheme();
-  return <View style={[styles.card, { width: "48%", padding: spacing.sm, gap: spacing.xs }]}>{children}</View>;
+  return (
+    <View
+      accessible
+      accessibilityLabel={label}
+      style={[styles.card, { width: "48%", padding: spacing.sm, gap: spacing.xs }]}
+    >
+      {children}
+    </View>
+  );
 }
 
 function TileLabel({ children }: { children: ReactNode }) {
   const { styles } = useTheme();
-  return <Text style={styles.muted}>{children}</Text>;
+  return (
+    <Text style={styles.muted} numberOfLines={1}>
+      {children}
+    </Text>
+  );
 }
 
 function TileValue({ children, color }: { children: ReactNode; color?: string }) {
   const { colors } = useTheme();
-  return <Text style={{ fontSize: font.sizeLg, fontWeight: "800", color: color ?? colors.text }}>{children}</Text>;
+  return (
+    // shrink rather than wrap/clip when a big XP total meets a narrow phone
+    <Text
+      numberOfLines={1}
+      adjustsFontSizeToFit
+      minimumFontScale={0.6}
+      style={{ fontSize: font.sizeLg, fontWeight: "800", color: color ?? colors.text }}
+    >
+      {children}
+    </Text>
+  );
 }
 
 export default function StatsScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { colors, styles } = useTheme();
   const { progress, addEvents } = useProgress();
+  // deep link / cold start lands here with nothing to pop back to
+  const goBack = () => (router.canGoBack() ? router.back() : router.replace("/"));
   const bundle = getBundle();
 
   const now = Date.now();
@@ -100,35 +131,35 @@ export default function StatsScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.screen} edges={["top"]}>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          paddingHorizontal: spacing.md,
-          paddingVertical: spacing.sm,
-          backgroundColor: colors.bg,
-          borderBottomWidth: 2,
-          borderBottomColor: colors.border,
-          gap: spacing.md,
-        }}
-      >
-        <Pressable onPress={() => router.back()} accessibilityLabel="back">
-          <Text style={{ fontSize: 22, color: colors.textMuted }}>‹ Back</Text>
+    <View style={styles.screen}>
+      <View style={[styles.header, { paddingTop: insets.top + spacing.xs }]}>
+        <Pressable
+          onPress={goBack}
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          hitSlop={8}
+          style={({ pressed }) => [styles.iconBtn, { marginLeft: -spacing.sm }, pressed && styles.pressed]}
+        >
+          <Text style={{ fontSize: 22, color: colors.textMuted, paddingHorizontal: spacing.sm }}>‹ Back</Text>
         </Pressable>
         <View style={{ flex: 1 }} />
-        <Text style={{ fontSize: 22, fontWeight: "800", color: colors.text }}>📊 Stats</Text>
+        <Text style={{ fontSize: 22, fontWeight: "800", color: colors.text }} accessibilityRole="header">
+          📊 Stats
+        </Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        // bottom inset keeps the last achievement clear of the home indicator
+        contentContainerStyle={[styles.container, { paddingBottom: spacing.md + insets.bottom }]}
+      >
         {/* Stat tiles */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", rowGap: spacing.md }}>
-          <StatTile>
+          <StatTile label={`Total XP: ${progress.xpTotal}`}>
             <TileLabel>Total XP</TileLabel>
             <TileValue color={colors.warningText}>⚡ {progress.xpTotal}</TileValue>
           </StatTile>
 
-          <StatTile>
+          <StatTile label={`Level ${level}: ${xpIntoLevel} of ${xpForNextLevel} XP to level ${level + 1}`}>
             <TileLabel>Level</TileLabel>
             <TileValue color={colors.primary}>Lv {level}</TileValue>
             <Bar pct={levelPct} />
@@ -137,23 +168,23 @@ export default function StatsScreen() {
             </Text>
           </StatTile>
 
-          <StatTile>
+          <StatTile label={`Streak: ${streak} days. Longest ${progress.longestStreak}`}>
             <TileLabel>Streak</TileLabel>
             <TileValue color={colors.heart}>🔥 {streak}</TileValue>
             <Text style={styles.muted}>Longest {progress.longestStreak}</Text>
           </StatTile>
 
-          <StatTile>
+          <StatTile label={`Lessons done: ${progress.lessonsCompleted}`}>
             <TileLabel>Lessons done</TileLabel>
             <TileValue>📚 {progress.lessonsCompleted}</TileValue>
           </StatTile>
 
-          <StatTile>
+          <StatTile label={`Perfect lessons: ${progress.perfectLessons}`}>
             <TileLabel>Perfect lessons</TileLabel>
             <TileValue>✨ {progress.perfectLessons}</TileValue>
           </StatTile>
 
-          <StatTile>
+          <StatTile label={`Practice runs: ${progress.practiceCount}`}>
             <TileLabel>Practice runs</TileLabel>
             <TileValue>🔁 {progress.practiceCount}</TileValue>
           </StatTile>
@@ -168,23 +199,31 @@ export default function StatsScreen() {
           </Text>
           <Bar pct={goalPct} color={goalReached ? colors.primary : colors.warning} height={14} />
           <Text style={styles.muted}>Set your daily goal</Text>
-          <View style={{ flexDirection: "row", gap: spacing.sm }}>
+          <View style={{ flexDirection: "row", gap: spacing.sm }} accessibilityRole="radiogroup">
             {GOAL_PRESETS.map((g) => {
               const selected = g === goal;
               return (
                 <Pressable
                   key={g}
                   onPress={() => setGoal(g)}
-                  accessibilityLabel={`set daily goal ${g} xp`}
-                  style={{
-                    flex: 1,
-                    paddingVertical: 10,
-                    borderRadius: radii.md,
-                    borderWidth: 2,
-                    alignItems: "center",
-                    borderColor: selected ? colors.primary : colors.border,
-                    backgroundColor: selected ? colors.primary : colors.bg,
-                  }}
+                  accessibilityRole="radio"
+                  accessibilityLabel={`Daily goal ${g} XP`}
+                  accessibilityState={{ selected, checked: selected }}
+                  style={({ pressed }) => [
+                    {
+                      flex: 1,
+                      minHeight: 44,
+                      paddingVertical: 10,
+                      borderRadius: radii.md,
+                      borderWidth: 2,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      // primaryFill, not primary: white on #58a700 is only 3:1
+                      borderColor: selected ? colors.primaryFill : colors.border,
+                      backgroundColor: selected ? colors.primaryFill : colors.bg,
+                    },
+                    pressed && styles.pressed,
+                  ]}
                 >
                   <Text style={{ fontWeight: "800", color: selected ? "#fff" : colors.text }}>{g}</Text>
                 </Pressable>
@@ -204,7 +243,12 @@ export default function StatsScreen() {
               const isToday = d.key === todayKey;
               const barH = d.xp === 0 ? 4 : Math.max(6, Math.round((d.xp / maxDayXp) * CHART_HEIGHT));
               return (
-                <View key={d.key} style={{ flex: 1, alignItems: "center", justifyContent: "flex-end" }}>
+                <View
+                  key={d.key}
+                  accessible
+                  accessibilityLabel={`${isToday ? "Today" : d.key}: ${d.xp} XP`}
+                  style={{ flex: 1, alignItems: "center", justifyContent: "flex-end" }}
+                >
                   <Text style={{ fontSize: 11, color: colors.textMuted, marginBottom: 2 }}>
                     {d.xp > 0 ? d.xp : ""}
                   </Text>
@@ -248,6 +292,8 @@ export default function StatsScreen() {
             return (
               <View
                 key={a.id}
+                accessible
+                accessibilityLabel={`${a.title}, ${isEarned ? "earned" : "locked"}. ${a.description}`}
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
@@ -271,6 +317,6 @@ export default function StatsScreen() {
           })}
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

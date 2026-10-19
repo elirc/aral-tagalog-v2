@@ -66,6 +66,13 @@ export function FillBlankView({
           disabled={disabled}
           placeholder="Type the missing word"
           aria-label="the missing word"
+          // answers are Tagalog: keep mobile keyboards from "fixing" them
+          autoCapitalize="none"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck={false}
+          // Enter submits straight to Check (onKeyDown below)
+          enterKeyHint="go"
           onChange={(e) => update(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter" && value.trim() && !disabled) onSubmit?.();

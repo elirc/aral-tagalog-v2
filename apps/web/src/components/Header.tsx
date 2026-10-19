@@ -5,6 +5,25 @@ import { displayStreak, levelForXp, localDayKey, MAX_HEARTS, regenerate } from "
 import { deviceTz, useProgress } from "@/lib/progress";
 import { ThemeToggle } from "./ThemeToggle";
 
+function LogoutIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <path d="M16 17l5-5-5-5M21 12H9" />
+    </svg>
+  );
+}
+
 export function Header() {
   const { progress, user, logout, ready, pendingCount, needsRelogin } = useProgress();
   if (!ready) return <header className="header"><div className="header-inner"><span className="logo">Aral</span></div></header>;
@@ -18,6 +37,7 @@ export function Header() {
     <header className="header">
       <div className="header-inner">
         <Link href="/" className="logo">Aral</Link>
+        {/* phones: the bottom nav's Phrasebook tab replaces this (CSS hides it) */}
         <Link href="/words" className="nav-link" title="Phrasebook" aria-label="Phrasebook">
           📖
         </Link>
@@ -33,8 +53,14 @@ export function Header() {
         </div>
         <ThemeToggle />
         {user && needsRelogin ? (
-          <Link href="/login" className="btn btn-ghost" style={{ color: "var(--danger)" }}>
-            Session expired — log in
+          <Link
+            href="/login"
+            className="btn btn-ghost header-relogin"
+            title="Session expired — log in"
+            aria-label="Session expired — log in"
+          >
+            <span className="hide-sm">Session expired — log in</span>
+            <span className="only-sm">⚠️ Log in</span>
           </Link>
         ) : user ? (
           <>
@@ -46,7 +72,10 @@ export function Header() {
                 ⟳ {pendingCount}
               </span>
             )}
-            <button className="btn btn-ghost" onClick={logout}>Log out</button>
+            <button className="btn btn-ghost header-logout" onClick={logout} title="Log out" aria-label="Log out">
+              <span className="only-sm"><LogoutIcon /></span>
+              <span className="hide-sm">Log out</span>
+            </button>
           </>
         ) : (
           <Link href="/login" className="btn btn-ghost">Log in</Link>

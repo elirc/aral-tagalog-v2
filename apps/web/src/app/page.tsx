@@ -13,6 +13,7 @@ import {
 import { Header } from "@/components/Header";
 import { bundle } from "@/lib/content";
 import { deviceTz, useProgress } from "@/lib/progress";
+import "./pages-mobile.css";
 
 const UNIT_COLORS = ["#4a8f00", "#1cb0f6", "#ce82ff", "#ff9600", "#ff4b4b", "#2bb6a3"];
 
@@ -165,19 +166,24 @@ function UnitLessons({
         const isDone = done.has(lesson.id);
         const isNext = lesson.id === nextLessonId;
         const locked = !isDone && !isNext;
+        if (locked) {
+          return (
+            <div className="lesson-row lesson-row-locked" key={lesson.id}>
+              <div className="lesson-dot locked">🔒</div>
+              <span className="lesson-name">{lesson.title}</span>
+            </div>
+          );
+        }
+        // the whole row is the tap target; the CTA is a visual-only button
         return (
-          <div className="lesson-row" key={lesson.id}>
-            <div className={`lesson-dot ${isDone ? "done" : isNext ? "next" : "locked"}`}>
-              {isDone ? "★" : isNext ? "▶" : "🔒"}
+          <Link className="lesson-row lesson-row-link" key={lesson.id} href={`/lesson/${lesson.id}`}>
+            <div className={`lesson-dot ${isDone ? "done" : "next"}`} aria-hidden>
+              {isDone ? "★" : "▶"}
             </div>
             <span className="lesson-name">{lesson.title}</span>
             <span className="spacer" />
-            {!locked && (
-              <Link className="btn btn-primary" href={`/lesson/${lesson.id}`}>
-                {isDone ? "Practice" : "Start"}
-              </Link>
-            )}
-          </div>
+            <span className="btn btn-primary lesson-cta">{isDone ? "Practice" : "Start"}</span>
+          </Link>
         );
       })}
     </>

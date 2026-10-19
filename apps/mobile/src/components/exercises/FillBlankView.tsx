@@ -5,17 +5,25 @@ import { playAudio } from "@/lib/audio";
 import { radii, spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
 
+/** pressed: the 4pt bottom edge sinks to 2pt; margin + translate keep the
+ *  layout box fixed so neighbours don't jump */
+const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ translateY: 2 }] } as const;
+
 export function FillBlankView({
   exercise,
   onAnswerChange,
   disabled,
+  onSubmit,
 }: {
   exercise: FillBlankExercise;
   onAnswerChange: (answer: string | null) => void;
   disabled: boolean;
+  /** invoked by the keyboard's return key, so typing flows straight to Check */
+  onSubmit?: () => void;
 }) {
   const { colors, styles } = useTheme();
   const [value, setValue] = useState("");
+  const [focused, setFocused] = useState(false);
   const [before, after] = exercise.sentence.split("___");
 
   const update = (v: string) => {
@@ -27,7 +35,11 @@ export function FillBlankView({
     <View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flexWrap: "wrap" }}>
         {exercise.audio && <AudioButton onPress={() => void playAudio(exercise.audio)} />}
-        <Text style={[styles.prompt, { marginBottom: 0 }]}>
+        <Text
+          style={[styles.prompt, { marginBottom: 0, flexShrink: 1 }]}
+          // screen readers would read the underscores; speak the gap instead
+          accessibilityLabel={`${before ?? ""} ${value || "blank"} ${after ?? ""}`}
+        >
           {before}
           <Text style={{ color: colors.accent, textDecorationLine: "underline" }}>
             {value || " ____ "}
@@ -43,7 +55,9 @@ export function FillBlankView({
           {exercise.options.map((opt) => (
             <Pressable
               key={opt}
-              style={[styles.optionBtn, value === opt && styles.optionSelected]}
+              accessibilityRole="button"
+              accessibilityState={{ selected: value === opt, disabled }}
+              style={({ pressed }) => [styles.optionBtn, value === opt && styles.optionSelected, pressed && pressDown]}
               disabled={disabled}
               onPress={() => update(opt)}
             >
@@ -55,19 +69,37 @@ export function FillBlankView({
         <TextInput
           style={{
             borderWidth: 2,
-            borderColor: colors.border,
+            borderColor: focused ? colors.accent : colors.border,
             borderRadius: radii.md,
-            padding: spacing.sm + 2,
+            paddingVertical: spacing.sm + 4,
+            paddingHorizontal: spacing.md,
             marginTop: spacing.md,
-            fontSize: 17,
+            minHeight: 52,
+            fontSize: 18,
             color: colors.text,
+            backgroundColor: disabled ? colors.bgMuted : colors.bg,
           }}
           value={value}
           editable={!disabled}
           placeholder="Type the missing word"
           placeholderTextColor={colors.textMuted}
+          accessibilityLabel="the missing word"
+          selectionColor={colors.accent}
+          // answers are Tagalog: the device dictionary "corrects" them into
+          // English words and capitalizes the first letter
           autoCapitalize="none"
+          autoCorrect={false}
+          spellCheck={false}
+          autoComplete="off"
+          textContentType="none"
+          importantForAutofill="no"
+          returnKeyType="done"
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           onChangeText={update}
+          onSubmitEditing={() => {
+            if (!disabled && value.trim()) onSubmit?.();
+          }}
         />
       )}
     </View>

@@ -13,6 +13,7 @@ import {
 import { Header } from "@/components/Header";
 import { bundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
+import "../pages-mobile.css";
 
 /* ---------- calendar/date helpers (pure "YYYY-MM-DD" math, DST-safe) ---------- */
 
@@ -236,6 +237,7 @@ function GoalEditor({ goal }: { goal: number }) {
         {GOAL_PRESETS.map((p) => (
           <button
             key={p.xp}
+            type="button"
             className={`goal-preset${goal === p.xp ? " active" : ""}`}
             onClick={() => setGoal(p.xp)}
             aria-pressed={goal === p.xp}

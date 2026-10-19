@@ -5,6 +5,7 @@ import type { VocabEntry } from "@aral/core";
 import { Header } from "@/components/Header";
 import { playAudio } from "@/lib/audio";
 import { bundle } from "@/lib/content";
+import "../pages-mobile.css";
 
 /**
  * Phrasebook: every vocab entry in the course, searchable, with audio.
@@ -55,9 +56,19 @@ export default function WordsPage() {
         <input
           className="search-input"
           type="search"
+          inputMode="search"
+          enterKeyHint="search"
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="none"
+          spellCheck={false}
           placeholder="Search Tagalog or English…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          // results filter live; Enter/"Search" just dismisses the phone keyboard
+          onKeyDown={(e) => {
+            if (e.key === "Enter") e.currentTarget.blur();
+          }}
           aria-label="Search words"
         />
         {shown.length === 0 && <p className="word-empty">No matches for “{query}”.</p>}
@@ -80,6 +91,7 @@ function WordRow({ entry }: { entry: VocabEntry }) {
   return (
     <div className="word-row">
       <button
+        type="button"
         className="word-audio"
         onClick={() => playAudio(entry.audio, entry.lemma)}
         aria-label={`play audio for ${entry.lemma}`}

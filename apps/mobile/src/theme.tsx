@@ -39,6 +39,9 @@ function makeStyles(colors: Palette) {
       borderRadius: radii.md,
       paddingVertical: 14,
       alignItems: "center",
+      justifyContent: "center",
+      // 44pt floor for compact variants that override paddingVertical
+      minHeight: 44,
       borderBottomWidth: 4,
       borderBottomColor: colors.primaryDeep,
     },
@@ -50,6 +53,8 @@ function makeStyles(colors: Palette) {
       borderRadius: radii.md,
       paddingVertical: 12,
       alignItems: "center",
+      justifyContent: "center",
+      minHeight: 44,
     },
     btnGhostText: { color: colors.textMuted, fontWeight: "700" },
     optionBtn: {
@@ -64,6 +69,39 @@ function makeStyles(colors: Palette) {
     optionSelected: { borderColor: colors.accent, backgroundColor: colors.accentSoft },
     optionText: { fontSize: font.sizeMd, fontWeight: "600", color: colors.text },
     chipRow: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
+    /** Top bar of a screen; callers add `paddingTop: insets.top + spacing.sm`
+     *  so the bar's own background runs up under the status bar. */
+    header: {
+      flexDirection: "row",
+      alignItems: "center",
+      paddingHorizontal: spacing.md,
+      paddingBottom: spacing.sm,
+      backgroundColor: colors.bg,
+      borderBottomWidth: 2,
+      borderBottomColor: colors.border,
+      gap: spacing.sm,
+    },
+    /** Square 44pt tap target for an icon/emoji-only button. */
+    iconBtn: {
+      minWidth: 44,
+      minHeight: 44,
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: radii.md,
+    },
+    /** Merge into a Pressable's style function: `({ pressed }) => [.., pressed && styles.pressed]` */
+    pressed: { opacity: 0.6 },
+    input: {
+      borderWidth: 2,
+      borderColor: colors.border,
+      borderRadius: radii.md,
+      paddingHorizontal: spacing.md,
+      paddingVertical: 12,
+      minHeight: 48,
+      fontSize: font.sizeMd,
+      backgroundColor: colors.bg,
+      color: colors.text,
+    },
   });
 }
 

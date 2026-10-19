@@ -1,6 +1,17 @@
 import { useRouter } from "expo-router";
-import { useEffect, useRef, useState } from "react";
-import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from "react-native";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  AccessibilityInfo,
+  Animated,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   ACHIEVEMENTS,
   currentExercise,
@@ -28,7 +39,7 @@ import { ads } from "@/lib/ads";
 import { playAudio } from "@/lib/audio";
 import { getBundle } from "@/lib/content";
 import { deviceTz, newEventId, useProgress } from "@/lib/progress";
-import { radii, spacing, useTheme } from "@/theme";
+import { font, radii, spacing, useTheme } from "@/theme";
 import { ChoiceView } from "./exercises/ChoiceView";
 import { FillBlankView } from "./exercises/FillBlankView";
 import { MatchView } from "./exercises/MatchView";
@@ -48,6 +59,102 @@ interface CompletionSummary {
   leveledUpTo: number | null;
 }
 
+/** pressed: the 4pt bottom edge sinks to 2pt; margin + translate keep the
+ *  layout box fixed so neighbours don't jump */
+const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ translateY: 2 }] } as const;
+
+function PrimaryButton({ label, onPress, disabled }: { label: string; onPress: () => void; disabled?: boolean }) {
+  const { styles } = useTheme();
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ disabled: Boolean(disabled) }}
+      disabled={disabled}
+      onPress={onPress}
+      // btnPrimary is ~54pt tall (14pt padding ×2 + label + 4pt edge)
+      style={({ pressed }) => [styles.btnPrimary, disabled && styles.btnPrimaryDisabled, pressed && pressDown]}
+    >
+      <Text style={styles.btnPrimaryText}>{label}</Text>
+    </Pressable>
+  );
+}
+
+/** Pinned footer: the primary action stays under the thumb, clear of the home
+ *  indicator, while the content above it scrolls. */
+function BottomBar({
+  children,
+  bottomInset,
+  tone = "neutral",
+}: {
+  children: ReactNode;
+  bottomInset: number;
+  tone?: "neutral" | "correct" | "wrong";
+}) {
+  const { colors } = useTheme();
+  return (
+    <View
+      style={{
+        paddingHorizontal: spacing.md,
+        paddingTop: spacing.md,
+        paddingBottom: bottomInset + spacing.md,
+        borderTopWidth: 2,
+        borderTopColor: tone === "correct" ? colors.primary : tone === "wrong" ? colors.danger : colors.border,
+        backgroundColor: tone === "correct" ? colors.correctBg : tone === "wrong" ? colors.wrongBg : colors.bg,
+        gap: spacing.md,
+      }}
+    >
+      {children}
+    </View>
+  );
+}
+
+/** Result line: icon + colored heading + text, so the verdict never rests on
+ *  color alone. Slides in briefly on mount. */
+function FeedbackResult({ correct, correctAnswer }: { correct: boolean; correctAnswer: string }) {
+  const { colors, styles } = useTheme();
+  const anim = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(anim, { toValue: 1, duration: 180, useNativeDriver: true }).start();
+  }, [anim]);
+  const tint = correct ? colors.primaryDark : colors.danger;
+  return (
+    <Animated.View
+      style={{
+        flexDirection: "row",
+        alignItems: "flex-start",
+        gap: spacing.sm + 4,
+        opacity: anim,
+        transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [10, 0] }) }],
+      }}
+    >
+      <View
+        accessibilityElementsHidden
+        importantForAccessibility="no-hide-descendants"
+        style={{
+          width: 36,
+          height: 36,
+          borderRadius: 18,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: correct ? colors.primaryFill : colors.danger,
+        }}
+      >
+        <Text style={{ color: "#fff", fontSize: 20, fontWeight: "900" }}>{correct ? "✓" : "✕"}</Text>
+      </View>
+      {/* flex: 1 lets a long correct answer wrap instead of running off-screen */}
+      <View style={{ flex: 1, gap: spacing.xs }} accessible>
+        <Text style={{ fontWeight: "800", fontSize: 20, color: tint }}>{correct ? "Nice!" : "Not quite."}</Text>
+        {!correct && correctAnswer ? (
+          <Text style={styles.body}>
+            <Text style={{ fontWeight: "700" }}>Correct answer: </Text>
+            {correctAnswer}
+          </Text>
+        ) : null}
+      </View>
+    </Animated.View>
+  );
+}
+
 export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: boolean }) {
   const router = useRouter();
   const { colors, styles } = useTheme();
@@ -63,6 +170,26 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
 
   const hearts = regenerate(progress.hearts, Date.now()).hearts;
   const exercise = currentExercise(session);
+
+  // The screen's SafeAreaView covers only the top edge so the footer's tint can
+  // run under the home indicator; the footer pads itself by the bottom inset —
+  // except while the keyboard is up, which already covers that area.
+  const insets = useSafeAreaInsets();
+  const [keyboardUp, setKeyboardUp] = useState(false);
+  useEffect(() => {
+    const ios = Platform.OS === "ios";
+    const show = Keyboard.addListener(ios ? "keyboardWillShow" : "keyboardDidShow", () => setKeyboardUp(true));
+    const hide = Keyboard.addListener(ios ? "keyboardWillHide" : "keyboardDidHide", () => setKeyboardUp(false));
+    return () => {
+      show.remove();
+      hide.remove();
+    };
+  }, []);
+  const bottomInset = keyboardUp ? 0 : insets.bottom;
+
+  useEffect(() => {
+    if (session.done) AccessibilityInfo.announceForAccessibility("Lesson complete");
+  }, [session.done]);
 
   // record the completion event exactly once, and compute the completion
   // summary from the *projected* progress (reduceEvents over the event before
@@ -116,87 +243,96 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
       .map((id) => ACHIEVEMENTS.find((a) => a.id === id))
       .filter((a): a is (typeof ACHIEVEMENTS)[number] => Boolean(a));
 
+    // fragment: the screen's SafeAreaView is the flex column for scroll + footer
     return (
-      <ScrollView contentContainerStyle={{ padding: spacing.md, paddingBottom: spacing.xl }}>
-        <View style={[styles.card, { alignItems: "center", gap: spacing.sm }]}>
-          <Text style={{ fontSize: 56 }}>{perfect ? "🏆" : "🎉"}</Text>
-          <Text style={styles.subtitle}>{perfect ? "Perfect lesson!" : "Lesson complete!"}</Text>
-          <Text style={styles.body}>
-            +{practice ? PRACTICE_XP : lessonXp(lesson, perfect)} XP
-            {perfect && !practice ? " (includes perfect bonus)" : ""}
-            {practice ? " · +1 ❤️ for practicing" : ""}
-          </Text>
-
-          {summary?.leveledUpTo != null && (
-            <View
-              style={{
-                alignSelf: "stretch",
-                padding: spacing.sm,
-                borderRadius: radii.md,
-                backgroundColor: colors.correctBg,
-              }}
-            >
-              <Text style={{ fontWeight: "800", color: colors.text, textAlign: "center" }}>
-                ⬆️ Level up! You reached Lv {summary.leveledUpTo}
-              </Text>
-            </View>
-          )}
-
-          <View style={{ alignSelf: "stretch", gap: spacing.xs, marginTop: spacing.xs }}>
-            <Text style={styles.muted}>
-              Daily goal · {todayXp}/{goal} XP{goalReached ? "  🎯 reached!" : ""}
+      <>
+        <ScrollView
+          style={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1, justifyContent: "center", padding: spacing.md, paddingTop: spacing.lg }}
+        >
+          <View style={[styles.card, { alignItems: "center", gap: spacing.sm, paddingVertical: spacing.lg }]}>
+            <Text style={{ fontSize: 56 }} accessibilityElementsHidden importantForAccessibility="no">
+              {perfect ? "🏆" : "🎉"}
             </Text>
-            <View
-              style={{
-                height: 14,
-                backgroundColor: colors.border,
-                borderRadius: radii.pill,
-                overflow: "hidden",
-              }}
-            >
+            <Text accessibilityRole="header" style={styles.subtitle}>
+              {perfect ? "Perfect lesson!" : "Lesson complete!"}
+            </Text>
+            <Text style={styles.body}>
+              +{practice ? PRACTICE_XP : lessonXp(lesson, perfect)} XP
+              {perfect && !practice ? " (includes perfect bonus)" : ""}
+              {practice ? " · +1 ❤️ for practicing" : ""}
+            </Text>
+
+            {summary?.leveledUpTo != null && (
               <View
                 style={{
-                  width: `${goalPct}%`,
-                  height: "100%",
-                  backgroundColor: goalReached ? colors.primary : colors.warning,
-                  borderRadius: radii.pill,
+                  alignSelf: "stretch",
+                  padding: spacing.sm,
+                  borderRadius: radii.md,
+                  backgroundColor: colors.correctBg,
                 }}
-              />
-            </View>
-          </View>
+              >
+                <Text style={{ fontWeight: "800", color: colors.text, textAlign: "center" }}>
+                  ⬆️ Level up! You reached Lv {summary.leveledUpTo}
+                </Text>
+              </View>
+            )}
 
-          {summary && newlyUnlocked.length > 0 && (
-            <View style={{ alignSelf: "stretch", gap: spacing.sm, marginTop: spacing.sm }}>
-              <Text style={{ fontWeight: "800", color: colors.text, textAlign: "center" }}>
-                Achievement{newlyUnlocked.length > 1 ? "s" : ""} unlocked!
+            <View style={{ alignSelf: "stretch", gap: spacing.xs, marginTop: spacing.xs }}>
+              <Text style={styles.muted}>
+                Daily goal · {todayXp}/{goal} XP{goalReached ? "  🎯 reached!" : ""}
               </Text>
-              {newlyUnlocked.map((a) => (
+              <View
+                style={{
+                  height: 14,
+                  backgroundColor: colors.border,
+                  borderRadius: radii.pill,
+                  overflow: "hidden",
+                }}
+              >
                 <View
-                  key={a.id}
                   style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: spacing.md,
-                    padding: spacing.sm,
-                    borderRadius: radii.md,
-                    backgroundColor: colors.correctBg,
+                    width: `${goalPct}%`,
+                    height: "100%",
+                    backgroundColor: goalReached ? colors.primary : colors.warning,
+                    borderRadius: radii.pill,
                   }}
-                >
-                  <Text style={{ fontSize: 28 }}>{a.emoji}</Text>
-                  <View style={{ flex: 1 }}>
-                    <Text style={{ fontWeight: "800", color: colors.text }}>{a.title}</Text>
-                    <Text style={styles.muted}>{a.description}</Text>
-                  </View>
-                </View>
-              ))}
+                />
+              </View>
             </View>
-          )}
 
-          <Pressable style={[styles.btnPrimary, { alignSelf: "stretch" }]} onPress={() => router.dismissTo("/")}>
-            <Text style={styles.btnPrimaryText}>Continue</Text>
-          </Pressable>
-        </View>
-      </ScrollView>
+            {summary && newlyUnlocked.length > 0 && (
+              <View style={{ alignSelf: "stretch", gap: spacing.sm, marginTop: spacing.sm }}>
+                <Text style={{ fontWeight: "800", color: colors.text, textAlign: "center" }}>
+                  Achievement{newlyUnlocked.length > 1 ? "s" : ""} unlocked!
+                </Text>
+                {newlyUnlocked.map((a) => (
+                  <View
+                    key={a.id}
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: spacing.md,
+                      padding: spacing.sm,
+                      borderRadius: radii.md,
+                      backgroundColor: colors.correctBg,
+                    }}
+                  >
+                    <Text style={{ fontSize: 28 }}>{a.emoji}</Text>
+                    <View style={{ flex: 1 }}>
+                      <Text style={{ fontWeight: "800", color: colors.text }}>{a.title}</Text>
+                      <Text style={styles.muted}>{a.description}</Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            )}
+          </View>
+        </ScrollView>
+        <BottomBar bottomInset={insets.bottom}>
+          <PrimaryButton label="Continue" onPress={() => router.dismissTo("/")} />
+        </BottomBar>
+      </>
     );
   }
 
@@ -205,18 +341,29 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
   if (!practice && hearts <= 0 && phase.kind === "answering") {
     const ms = msUntilNextHeart(progress.hearts, Date.now());
     return (
-      <View style={[styles.card, { alignItems: "center", gap: spacing.sm, margin: spacing.md }]}>
-        <Text style={{ fontSize: 56 }}>💔</Text>
-        <Text style={styles.subtitle}>You're out of hearts</Text>
-        <Text style={[styles.body, { textAlign: "center" }]}>
-          Practice a completed lesson to earn one back, or wait for hearts to regenerate.
-        </Text>
-        {ms !== null && (
-          <Text style={styles.muted}>Next heart in ~{Math.max(1, Math.ceil(ms / 60_000))} min</Text>
-        )}
-        <Pressable style={[styles.btnPrimary, { alignSelf: "stretch" }]} onPress={() => router.dismissTo("/")}>
-          <Text style={styles.btnPrimaryText}>Back to course</Text>
-        </Pressable>
+      <View style={{ flex: 1 }}>
+        <ScrollView
+          style={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1, justifyContent: "center", padding: spacing.md }}
+        >
+          <View style={[styles.card, { alignItems: "center", gap: spacing.sm, paddingVertical: spacing.lg }]}>
+            <Text style={{ fontSize: 56 }} accessibilityElementsHidden importantForAccessibility="no">
+              💔
+            </Text>
+            <Text accessibilityRole="header" style={styles.subtitle}>
+              You're out of hearts
+            </Text>
+            <Text style={[styles.body, { textAlign: "center" }]}>
+              Practice a completed lesson to earn one back, or wait for hearts to regenerate.
+            </Text>
+            {ms !== null && (
+              <Text style={styles.muted}>Next heart in ~{Math.max(1, Math.ceil(ms / 60_000))} min</Text>
+            )}
+          </View>
+        </ScrollView>
+        <BottomBar bottomInset={insets.bottom}>
+          <PrimaryButton label="Back to course" onPress={() => router.dismissTo("/")} />
+        </BottomBar>
       </View>
     );
   }
@@ -231,6 +378,15 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
     }
     if (exercise.audio && outcome.correct) void playAudio(exercise.audio);
     setPhase({ kind: "feedback", correct: outcome.correct, correctAnswer: outcome.correctAnswer, next: outcome.state });
+    // the input is read-only from here on; drop the keyboard so the result shows
+    Keyboard.dismiss();
+    AccessibilityInfo.announceForAccessibility(
+      outcome.correct
+        ? "Correct!"
+        : outcome.correctAnswer
+          ? `Not quite. Correct answer: ${outcome.correctAnswer}`
+          : "Not quite.",
+    );
   };
 
   const completeMatch = (mistakes: number) => {
@@ -255,6 +411,8 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
 
   const disabled = phase.kind === "feedback";
   const key = `${exercise.id}-${attempt}`;
+  const pct = Math.round(sessionProgress(session) * 100);
+  const hasFooter = exercise.type !== "match_pairs";
 
   return (
     // keep the Check/Continue footer reachable while the fill-blank TextInput
@@ -263,29 +421,65 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
       style={{ flex: 1 }}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, padding: spacing.md }}>
-        <Pressable onPress={() => router.dismissTo("/")} accessibilityLabel="quit lesson">
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          gap: spacing.sm,
+          paddingHorizontal: spacing.sm,
+          paddingVertical: spacing.xs,
+        }}
+      >
+        <Pressable
+          onPress={() => router.dismissTo("/")}
+          accessibilityRole="button"
+          accessibilityLabel="quit lesson"
+          hitSlop={12}
+          style={({ pressed }) => ({
+            width: 44,
+            height: 44,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: radii.pill,
+            backgroundColor: pressed ? colors.border : "transparent",
+          })}
+        >
           <Text style={{ fontSize: 22, color: colors.textMuted }}>✕</Text>
         </Pressable>
-        <View style={{ flex: 1, height: 14, backgroundColor: colors.border, borderRadius: 999, overflow: "hidden" }}>
+        <View
+          accessible
+          accessibilityRole="progressbar"
+          accessibilityLabel="lesson progress"
+          accessibilityValue={{ min: 0, max: 100, now: pct }}
+          style={{ flex: 1, height: 14, backgroundColor: colors.border, borderRadius: 999, overflow: "hidden" }}
+        >
           <View
             style={{
-              width: `${sessionProgress(session) * 100}%`,
+              width: `${pct}%`,
               height: "100%",
               backgroundColor: colors.primary,
               borderRadius: 999,
             }}
           />
         </View>
-        <Text style={{ color: colors.heart, fontWeight: "800" }}>
+        <Text
+          style={{ color: colors.heart, fontWeight: "800", fontSize: font.sizeMd, paddingRight: spacing.sm }}
+          accessibilityLabel={practice ? "practice mode, no hearts at stake" : `${hearts} of ${MAX_HEARTS} hearts`}
+        >
           {practice ? "practice" : `❤️ ${hearts}/${MAX_HEARTS}`}
         </Text>
       </View>
 
-      {/* persistTaps: without it the first tap on Check only dismisses the keyboard */}
+      {/* persistTaps: a tap on a word chip while the keyboard is up should land */}
       <ScrollView
+        style={{ flex: 1 }}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ padding: spacing.md, paddingBottom: spacing.xl }}
+        keyboardDismissMode={Platform.OS === "ios" ? "interactive" : "on-drag"}
+        contentContainerStyle={{
+          padding: spacing.md,
+          // match_pairs has no footer, so its content clears the home indicator itself
+          paddingBottom: spacing.xl + (hasFooter ? 0 : bottomInset),
+        }}
       >
         <View style={styles.card}>
           {exercise.type === "choice" && (
@@ -295,47 +489,36 @@ export function LessonPlayer({ lesson, practice }: { lesson: Lesson; practice: b
             <TapsView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
           )}
           {exercise.type === "fill_blank" && (
-            <FillBlankView key={key} exercise={exercise} onAnswerChange={setAnswer} disabled={disabled} />
+            <FillBlankView
+              key={key}
+              exercise={exercise}
+              onAnswerChange={setAnswer}
+              disabled={disabled}
+              onSubmit={check}
+            />
           )}
           {exercise.type === "match_pairs" && (
             <MatchView key={key} exercise={exercise} onComplete={completeMatch} />
           )}
         </View>
-
-        {exercise.type !== "match_pairs" && (
-          <View
-            style={{
-              marginTop: spacing.md,
-              padding: phase.kind === "feedback" ? spacing.md : 0,
-              borderRadius: 16,
-              backgroundColor:
-                phase.kind === "feedback" ? (phase.correct ? colors.correctBg : colors.wrongBg) : "transparent",
-            }}
-          >
-            {phase.kind === "feedback" ? (
-              <View style={{ gap: spacing.sm }}>
-                <Text style={{ fontWeight: "800", fontSize: 17, color: colors.text }}>
-                  {phase.correct ? "Nice!" : "Not quite."}
-                </Text>
-                {!phase.correct && phase.correctAnswer ? (
-                  <Text style={styles.body}>Correct answer: {phase.correctAnswer}</Text>
-                ) : null}
-                <Pressable style={styles.btnPrimary} onPress={advance}>
-                  <Text style={styles.btnPrimaryText}>Continue</Text>
-                </Pressable>
-              </View>
-            ) : (
-              <Pressable
-                style={[styles.btnPrimary, answer === null && styles.btnPrimaryDisabled]}
-                disabled={answer === null}
-                onPress={check}
-              >
-                <Text style={styles.btnPrimaryText}>Check</Text>
-              </Pressable>
-            )}
-          </View>
-        )}
       </ScrollView>
+
+      {/* outside the ScrollView: always visible, sits right on top of the keyboard */}
+      {hasFooter && (
+        <BottomBar
+          bottomInset={bottomInset}
+          tone={phase.kind === "feedback" ? (phase.correct ? "correct" : "wrong") : "neutral"}
+        >
+          {phase.kind === "feedback" ? (
+            <>
+              <FeedbackResult correct={phase.correct} correctAnswer={phase.correctAnswer} />
+              <PrimaryButton label="Continue" onPress={advance} />
+            </>
+          ) : (
+            <PrimaryButton label="Check" disabled={answer === null} onPress={check} />
+          )}
+        </BottomBar>
+      )}
     </KeyboardAvoidingView>
   );
 }
