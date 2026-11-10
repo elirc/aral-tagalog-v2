@@ -52,7 +52,12 @@ interface ProgressContextValue {
   /** register or login result -> adopt tokens, push outbox, pull baseline */
   adoptAuth: (tokens: AuthTokens) => Promise<void>;
   logout: () => void;
-  syncNow: () => Promise<void>;
+  /**
+   * Push the outbox now (single-flight: a call made mid-sync joins the one in
+   * flight). Resolves true when everything passed in reached the server, false
+   * when logged out, offline, timed out, or events are still left to send.
+   */
+  syncNow: () => Promise<boolean>;
   /** unsynced events waiting in the outbox (0 when everything is saved) */
   pendingCount: number;
   /** refresh token was rejected: still "logged in" locally but nothing syncs */
@@ -93,7 +98,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]) => {
+  /** resolves true when every event in `events` was sent (false: >500, more to go) */
+  const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]): Promise<boolean> => {
     // the server caps batches at 500; leftovers flush on the next debounce
     const batch = events.slice(0, 500);
     const push = async (t: AuthTokens) => {
@@ -132,23 +138,33 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         throw err; // offline or server down — outbox stays, retried next time
       }
     }
+    return batch.length === events.length;
   }, []);
 
   // One /sync at a time. Two overlapping syncs both hit 401 on an expired
   // access token and both present the same refresh token (the server treats
   // the loser as a benign race, but the second sync's older server snapshot
   // could still overwrite the newer baseline and lose events).
-  const syncingRef = useRef(false);
-  const syncNow = useCallback(async () => {
-    if (!auth || syncingRef.current) return;
-    syncingRef.current = true;
-    try {
-      await syncWith(auth, outbox);
-    } catch {
-      // offline or server down — the outbox keeps the events for next time
-    } finally {
-      syncingRef.current = false;
-    }
+  // The in-flight promise is the lock, so a caller arriving mid-sync (logout
+  // wanting to flush first) waits for the real outcome instead of a no-op.
+  // api.ts aborts a hung request after REQUEST_TIMEOUT_MS; that rejection lands
+  // in the catch below like any network failure, and `finally` frees the lock.
+  const syncingRef = useRef<Promise<boolean> | null>(null);
+  const syncNow = useCallback((): Promise<boolean> => {
+    if (!auth) return Promise.resolve(false);
+    if (syncingRef.current) return syncingRef.current;
+    const run = (async () => {
+      try {
+        return await syncWith(auth, outbox);
+      } catch {
+        // offline, timed out or server down — the outbox keeps the events
+        return false;
+      } finally {
+        syncingRef.current = null;
+      }
+    })();
+    syncingRef.current = run;
+    return run;
   }, [auth, outbox, syncWith]);
 
   const adoptAuth = useCallback(
@@ -193,6 +209,28 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     const t = setTimeout(() => void syncNow(), 1500);
     return () => clearTimeout(t);
   }, [ready, auth, outbox, syncNow]);
+
+  // The effect above only retries when the outbox *changes*: a lesson finished
+  // offline (or a sync that failed) would otherwise sit unsynced until the next
+  // lesson. Retry when the connection returns and when the tab/PWA comes back
+  // to the foreground — on phones that is the usual "back online" moment.
+  const syncNowRef = useRef(syncNow);
+  syncNowRef.current = syncNow;
+  useEffect(() => {
+    if (!ready) return;
+    const flush = () => {
+      if (outboxRef.current.length > 0) void syncNowRef.current();
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") flush();
+    };
+    window.addEventListener("online", flush);
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.removeEventListener("online", flush);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [ready]);
 
   // Pull server truth once on load. The sync effect above only fires when the
   // outbox has items, so without this a device with nothing to push never sees

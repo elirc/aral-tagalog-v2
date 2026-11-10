@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import {
+  AccessibilityInfo,
   ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
@@ -11,14 +12,33 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { api } from "@/lib/api";
+import { api, ApiError } from "@/lib/api";
 import { deviceTz, useProgress } from "@/lib/progress";
 import { font, spacing, useTheme } from "@/theme";
+
+/** Map transport/server failures to something a learner can act on — the raw
+ *  messages ("Network request failed", "invalid body") are developer-speak. */
+function friendlyAuthError(err: unknown, isRegister: boolean): string {
+  if (err instanceof ApiError) {
+    if (err.status === 401) return "That email and password don't match.";
+    if (err.status === 409) return "That email already has an account. Try logging in instead.";
+    if (err.status === 400) {
+      return isRegister
+        ? "Enter a valid email and a password of at least 8 characters."
+        : "Enter a valid email and password.";
+    }
+    if (err.status === 429) return "Too many attempts. Wait a minute and try again.";
+    if (err.status >= 500) return "Aral's server is having trouble. Try again in a moment.";
+    return err.message;
+  }
+  // fetch rejected (offline, server unreachable) or timed out
+  return "Can't reach Aral right now. Check your connection and try again. You can keep learning meanwhile — progress is saved on this device.";
+}
 
 export function AuthScreen({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { colors, styles } = useTheme();
+  const { colors, styles, mode: themeMode } = useTheme();
   const { adoptAuth } = useProgress();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,19 +47,34 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
   const passwordRef = useRef<TextInput>(null);
   const isRegister = mode === "register";
 
+  // a ref, not `busy`: two taps (or the "go" key racing the button) can both
+  // run before the re-render that would disable the button
+  const inFlight = useRef(false);
+
+  const fail = (message: string) => {
+    setError(message);
+    // iOS VoiceOver doesn't speak accessibilityRole="alert" on its own
+    AccessibilityInfo.announceForAccessibility(message);
+  };
+
   const submit = async () => {
-    // the keyboard's "go" key bypasses the disabled button
-    if (busy) return;
-    setBusy(true);
-    setError(null);
+    if (inFlight.current) return;
     // autofill and some keyboards append a trailing space to emails
     const addr = email.trim();
+    // catch the obvious cases locally: instant, and works offline
+    if (!addr || !password) return fail("Enter your email and password.");
+    if (!/^\S+@\S+\.\S+$/.test(addr)) return fail("That doesn't look like an email address.");
+    if (isRegister && password.length < 8) return fail("Use a password of at least 8 characters.");
+    inFlight.current = true;
+    setBusy(true);
+    setError(null);
     try {
       const tokens = isRegister ? await api.register(addr, password, deviceTz()) : await api.login(addr, password);
       await adoptAuth(tokens);
       router.dismissTo("/");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
+      fail(friendlyAuthError(err, isRegister));
+      inFlight.current = false;
       setBusy(false);
     }
   };
@@ -101,6 +136,7 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
               autoCorrect={false}
               autoComplete="email"
               textContentType="emailAddress"
+              keyboardAppearance={themeMode}
               returnKeyType="next"
               // keep the keyboard up while focus hops to the password field
               submitBehavior="submit"
@@ -120,6 +156,7 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
               autoCorrect={false}
               autoComplete={isRegister ? "new-password" : "current-password"}
               textContentType={isRegister ? "newPassword" : "password"}
+              keyboardAppearance={themeMode}
               returnKeyType="go"
               onSubmitEditing={() => void submit()}
               editable={!busy}
@@ -162,7 +199,7 @@ export function AuthScreen({ mode }: { mode: "login" | "register" }) {
             >
               <Text style={[styles.muted, { textAlign: "center" }]}>
                 {isRegister ? "Already have an account? " : "New here? "}
-                <Text style={{ color: colors.accent, fontWeight: "700" }}>
+                <Text style={{ color: colors.accentText, fontWeight: "700" }}>
                   {isRegister ? "Log in" : "Create an account"}
                 </Text>
               </Text>

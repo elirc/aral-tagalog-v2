@@ -53,6 +53,26 @@
 }
 .lesson-row-locked .lesson-name { color: var(--text-muted); }
 
+/* UNIT_COLORS are deepened so white badge digits pass AA; as progress fills on
+   the dark track that leaves ~2:1 — lift the fill only, the badge keeps its color */
+:root[data-theme="dark"] .unit-card .progress-fill {
+  filter: brightness(1.6) saturate(1.15);
+}
+.unit-head-meta .count { white-space: nowrap; }
+/* why a whole unit is grey: tapping a locked row does nothing, so say it up front */
+.unit-locked-note {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 /* hero + review banner */
 .hero-title { overflow-wrap: anywhere; }
 .review-banner {
@@ -123,6 +143,30 @@
   font-size: 15px;
   color: var(--text-muted);
 }
+.auth-title { font-size: 1.5em; font-weight: 800; margin: 0.2em 0 0.5em; }
+.auth-note { color: var(--text-muted); font-size: 15px; margin: 0 0 16px; }
+
+/* show/hide password: the toggle sits inside the field's right edge */
+.pw-field { position: relative; }
+.auth-form .pw-field input { padding-right: 76px; }
+.pw-toggle {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  min-width: 60px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent-text);
+  font-size: 14px;
+  font-weight: 800;
+  -webkit-tap-highlight-color: transparent;
+}
+.pw-toggle:active { background: var(--bg-muted); }
+.auth-form .form-error { line-height: 1.4; }
 
 /* ------------------------------ phrasebook ------------------------------ */
 
@@ -132,6 +176,33 @@
   -webkit-appearance: none;
   appearance: none;
 }
+/* our own clear button replaces the native one (absent on iOS, tiny elsewhere) */
+.search-field { position: relative; margin: 0 0 10px; }
+.search-field .search-input { margin: 0; padding-right: 50px; }
+.search-field .search-input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; display: none; }
+.search-clear {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  -webkit-tap-highlight-color: transparent;
+}
+.search-clear:active { background: var(--bg-muted); }
+.search-count { color: var(--text-muted); font-size: 13px; font-weight: 700; margin: 0 0 8px; }
+.search-count:empty { margin: 0; }
+.container .word-empty { padding: 24px 0; }
+.word-empty p { margin: 0 0 6px; }
+.word-empty .word-empty-hint { font-size: 14px; margin-bottom: 14px; }
+.word-empty .btn { min-height: 44px; padding: 10px 20px; }
 .word-row {
   /* ~1k rows: let the browser skip layout/paint for off-screen ones */
   content-visibility: auto;

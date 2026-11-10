@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import type { FillBlankExercise } from "@aral/core";
+import { useMemo, useState } from "react";
+import { presentationOrder, type FillBlankExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 
 export function FillBlankView({
   exercise,
+  salt,
   onAnswerChange,
   disabled,
   onSubmit,
 }: {
   exercise: FillBlankExercise;
+  /** SessionState.attempts: same attempt → same layout, a retry → reshuffled */
+  salt: number;
   onAnswerChange: (answer: string | null) => void;
   disabled: boolean;
   /** invoked on Enter in the free-text input, so typing flows straight to Check */
@@ -18,6 +21,7 @@ export function FillBlankView({
 }) {
   const [value, setValue] = useState<string>("");
   const [before, after] = exercise.sentence.split("___");
+  const options = useMemo(() => presentationOrder(exercise, salt).options, [exercise, salt]);
 
   const update = (v: string) => {
     setValue(v);
@@ -47,7 +51,7 @@ export function FillBlankView({
 
       {exercise.options ? (
         <div className="word-bank">
-          {exercise.options.map((opt) => (
+          {options.map((opt) => (
             <button
               key={opt}
               className={`word-chip ${value === opt ? "selected choice-btn" : ""}`}
@@ -75,7 +79,7 @@ export function FillBlankView({
           enterKeyHint="go"
           onChange={(e) => update(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter" && value.trim() && !disabled) onSubmit?.();
+            if (e.key === "Enter" && !e.nativeEvent.isComposing && value.trim() && !disabled) onSubmit?.();
           }}
         />
       )}

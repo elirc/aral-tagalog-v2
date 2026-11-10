@@ -1,10 +1,11 @@
 import { useCallback, useMemo, useState } from "react";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { Alert, FlatList, Pressable, RefreshControl, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   buildReviewLesson,
   displayStreak,
+  dueReviewIds,
   levelForXp,
   localDayKey,
   MAX_HEARTS,
@@ -13,8 +14,9 @@ import {
   type Unit,
 } from "@aral/core";
 import { getBundle } from "@/lib/content";
+import { findNextLesson } from "@/lib/nextLesson";
 import { deviceTz, useProgress } from "@/lib/progress";
-import { radii, spacing, useTheme } from "@/theme";
+import { ICON_MAX_SCALE, radii, spacing, useTheme } from "@/theme";
 
 export default function CourseMapScreen() {
   const router = useRouter();
@@ -26,24 +28,23 @@ export default function CourseMapScreen() {
   const done = useMemo(() => new Set(progress.completedLessonIds), [progress.completedLessonIds]);
   const now = Date.now();
   const hearts = regenerate(progress.hearts, now).hearts;
-  const streak = displayStreak(progress.streak, localDayKey(now, deviceTz()));
+  const today = localDayKey(now, deviceTz());
+  const streak = displayStreak(progress.streak, today);
+  const todayXp = progress.xpByDay[today] ?? 0;
+  const goal = progress.dailyGoalXp;
+  const goalReached = goal > 0 && todayXp >= goal;
+  const goalPct = goal > 0 ? Math.min(100, Math.round((todayXp / goal) * 100)) : 100;
   const level = levelForXp(progress.xpTotal);
-  // count only mistakes whose exercises still exist in this bundle version
+  // what is due right now (spaced review brings cleared mistakes back after
+  // 1/3/7/21 days); count only exercises that still exist in this bundle
   const reviewable =
-    buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
+    buildReviewLesson(bundle.units, dueReviewIds(progress, now), Number.MAX_SAFE_INTEGER)?.exercises
       .length ?? 0;
 
   // The first uncompleted lesson in course order. Computed up front rather
   // than tracked with a flag while rendering: the list is virtualized, so
   // unit cards do not render in order (or at all, until scrolled to).
-  const next = useMemo(() => {
-    for (let ui = 0; ui < bundle.units.length; ui++) {
-      const unit = bundle.units[ui]!;
-      const lesson = unit.lessons.find((l) => !done.has(l.id));
-      if (lesson) return { unit, lesson, unitIndex: ui };
-    }
-    return null;
-  }, [bundle.units, done]);
+  const next = useMemo(() => findNextLesson(bundle.units, done), [bundle.units, done]);
 
   // Pull-to-refresh = "fetch my progress from other devices now". Only
   // meaningful when signed in; syncNow is single-flight and swallows
@@ -120,7 +121,10 @@ export default function CourseMapScreen() {
               backgroundColor: isDone ? colors.warning : isNext ? colors.primaryFill : colors.border,
             }}
           >
-            <Text style={{ color: "#fff", fontWeight: "800" }}>{isDone ? "★" : isNext ? "▶" : "🔒"}</Text>
+            {/* white ★ on the gold "done" fill is 1.6:1 — dark glyph there instead */}
+            <Text maxFontSizeMultiplier={ICON_MAX_SCALE} style={{ color: isDone ? "#3c3c3c" : "#fff", fontWeight: "800" }}>
+              {isDone ? "★" : isNext ? "▶" : "🔒"}
+            </Text>
           </View>
         );
         const title = (
@@ -147,8 +151,12 @@ export default function CourseMapScreen() {
           >
             {badge}
             {title}
+            {/* capped: the row's label already says it, and at the largest
+                sizes an uncapped pill squeezes the lesson title to a sliver */}
             <View style={[styles.btnPrimary, { paddingVertical: 8, paddingHorizontal: 16 }]}>
-              <Text style={styles.btnPrimaryText}>{action}</Text>
+              <Text style={styles.btnPrimaryText} maxFontSizeMultiplier={ICON_MAX_SCALE}>
+                {action}
+              </Text>
             </View>
           </Pressable>
         );
@@ -157,6 +165,32 @@ export default function CourseMapScreen() {
   );
 
   const statText = { fontWeight: "700" as const };
+
+  // today's progress toward the daily goal, shown in the hero card
+  const goalRow = (
+    <View
+      accessible
+      accessibilityRole="progressbar"
+      accessibilityLabel={`Daily goal: ${todayXp} of ${goal} XP${goalReached ? ", reached" : ""}`}
+      accessibilityValue={{ min: 0, max: 100, now: goalPct }}
+      style={{ gap: spacing.xs, marginTop: spacing.xs }}
+    >
+      <Text style={styles.muted}>
+        Daily goal · {todayXp}/{goal} XP{goalReached ? "  🎯 reached!" : ""}
+      </Text>
+      <View style={{ height: 10, backgroundColor: colors.border, borderRadius: radii.pill, overflow: "hidden" }}>
+        <View
+          style={{
+            width: `${goalPct}%`,
+            height: "100%",
+            backgroundColor: goalReached ? colors.primary : colors.warning,
+            borderRadius: radii.pill,
+          }}
+        />
+      </View>
+    </View>
+  );
+  const dueLabel = reviewable > 0 ? ` · 🧹 ${reviewable} due for review` : "";
 
   return (
     <View style={styles.screen}>
@@ -186,7 +220,9 @@ export default function CourseMapScreen() {
             accessibilityLabel="Open phrasebook"
             style={({ pressed }) => [styles.iconBtn, pressed && styles.pressed]}
           >
-            <Text style={{ fontSize: 20 }}>📖</Text>
+            <Text style={{ fontSize: 20 }} maxFontSizeMultiplier={ICON_MAX_SCALE}>
+              📖
+            </Text>
           </Pressable>
           <Pressable
             onPress={() => router.push("/stats")}
@@ -194,7 +230,9 @@ export default function CourseMapScreen() {
             accessibilityLabel="View stats"
             style={({ pressed }) => [styles.iconBtn, pressed && styles.pressed]}
           >
-            <Text style={{ fontSize: 20 }}>📊</Text>
+            <Text style={{ fontSize: 20 }} maxFontSizeMultiplier={ICON_MAX_SCALE}>
+              📊
+            </Text>
           </Pressable>
           <Pressable
             onPress={toggle}
@@ -203,10 +241,13 @@ export default function CourseMapScreen() {
             accessibilityState={{ checked: mode === "dark" }}
             style={({ pressed }) => [styles.iconBtn, pressed && styles.pressed]}
           >
-            <Text style={{ fontSize: 20 }}>🌓</Text>
+            <Text style={{ fontSize: 20 }} maxFontSizeMultiplier={ICON_MAX_SCALE}>
+              🌓
+            </Text>
           </Pressable>
         </View>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        {/* wraps rather than overflowing at large accessibility font sizes */}
+        <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: spacing.md }}>
           <Text
             style={[statText, { color: colors.text }]}
             accessibilityLabel={`${streak} day streak`}
@@ -252,14 +293,21 @@ export default function CourseMapScreen() {
         }
         ListHeaderComponent={
           <View style={{ gap: spacing.md }}>
+            {/* whole line is the tap target: an inline link is one text-line
+                tall, well under 44pt */}
             {!user && (
-              <Text style={styles.muted}>
-                Playing as guest —{" "}
-                <Link href="/register" style={{ color: colors.accent, fontWeight: "700" }}>
-                  create an account
-                </Link>{" "}
-                to back up progress.
-              </Text>
+              <Pressable
+                onPress={() => router.push("/register")}
+                accessibilityRole="link"
+                accessibilityLabel="Playing as guest. Create an account to back up progress."
+                style={({ pressed }) => [{ minHeight: 44, justifyContent: "center" }, pressed && styles.pressed]}
+              >
+                <Text style={styles.muted}>
+                  Playing as guest —{" "}
+                  <Text style={{ color: colors.accentText, fontWeight: "700" }}>create an account</Text> to back up
+                  progress.
+                </Text>
+              </Pressable>
             )}
             {user && needsRelogin && (
               <Pressable
@@ -287,7 +335,9 @@ export default function CourseMapScreen() {
                 <Text style={styles.muted}>
                   Unit {next.unitIndex + 1} · {next.unit.title}
                   {streak > 0 ? ` · 🔥 ${streak}-day streak` : ""}
+                  {dueLabel}
                 </Text>
+                {goalRow}
                 <Pressable
                   style={({ pressed }) => [styles.btnPrimary, { marginTop: spacing.sm }, pressed && styles.pressed]}
                   onPress={() => router.push(`/lesson/${next.lesson.id}`)}
@@ -302,7 +352,10 @@ export default function CourseMapScreen() {
               <View style={[styles.card, { gap: spacing.xs }]}>
                 <Text style={styles.muted}>Course complete</Text>
                 <Text style={[styles.subtitle, { marginBottom: 0 }]}>You finished every lesson! 🏆</Text>
-                <Text style={styles.muted}>Replay any lesson below to practice and earn hearts back.</Text>
+                <Text style={styles.muted}>
+                  Replay any lesson below to practice and earn hearts back.{dueLabel}
+                </Text>
+                {goalRow}
               </View>
             )}
 

@@ -37,6 +37,16 @@
   min-width: 44px;
 }
 .lesson-player .player-quit {
+  /* a <button> (it may open the quit sheet): drop the UA button chrome */
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 22px;
+  color: var(--text-muted);
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +58,43 @@
   line-height: 1;
 }
 .lesson-player .player-quit:active { opacity: 0.6; }
+
+/* Option text color. The base rule sets none, so buttons fell back to the UA
+   color: blue on iOS 15+ Safari, and ~30%-alpha grey whenever disabled —
+   i.e. every option (and the built answer) during feedback, and the whole
+   right pairs column until a left word is picked, which made them unreadable
+   exactly when the user needs to read them. */
+.lesson-player .choice-btn,
+.lesson-player .word-chip,
+.lesson-player .pair-btn {
+  color: var(--text);
+}
+.lesson-player .choice-btn:disabled,
+.lesson-player .word-chip:disabled,
+.lesson-player .pair-btn:disabled {
+  cursor: default;
+}
+/* during feedback, recede the options that weren't picked so the pick stands
+   out (.used / .matched keep their own stronger fades) */
+.lesson-player .choice-btn:disabled:not(.selected),
+.lesson-player .word-bank .word-chip:disabled:not(.selected):not(.used) {
+  opacity: 0.6;
+}
+
+/* long Tagalog words / unbroken typed answers (the fill-blank echo is an
+   inline-block inside the prompt) wrap instead of pushing the card wide */
+.lesson-player .exercise-prompt,
+.lesson-player .exercise-hint,
+.lesson-player .result-line {
+  overflow-wrap: anywhere;
+}
+
+/* the card takes programmatic focus on each new exercise (tabIndex=-1) only
+   to keep keyboard/screen-reader position — it isn't a control, no ring */
+.lesson-player .exercise-card:focus { outline: none; }
+
+/* non-color verdict cue next to "Nice!" / "Not quite." */
+.lesson-player .result-mark { margin-right: 6px; }
 
 /* grid items default to min-width:auto and would overflow on a long word */
 .lesson-player .pairs-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -94,6 +141,17 @@
   .lesson-player .btn-primary:not(:disabled):hover { filter: none; }
 }
 
+/* globals.css already drops the card/banner/emoji keyframes; also make the
+   press-down (translateY) and color fades on options and buttons instant */
+@media (prefers-reduced-motion: reduce) {
+  .lesson-player .choice-btn,
+  .lesson-player .word-chip,
+  .lesson-player .pair-btn,
+  .lesson-player .btn-primary {
+    transition: none;
+  }
+}
+
 /* --- phone widths: Check/Continue pinned under the thumb --- */
 @media (max-width: 640px) {
   .lesson-player .player-footer.neutral,
@@ -130,4 +188,76 @@
   .lesson-player .word-bank,
   .lesson-player .answer-strip { gap: 6px; }
   .lesson-player .word-chip { padding: 10px 12px; font-size: 16px; }
+}
+
+/* --- end screens (lesson complete / out of hearts) ---
+   These cards replace .lesson-player, so they are scoped by .lesson-end. */
+.lesson-end .end-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 18px;
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.lesson-end .end-stats strong { color: var(--text); }
+
+.lesson-end .end-goal {
+  max-width: 320px;
+  margin: 14px auto 0;
+}
+.lesson-end .end-goal-bar { height: 10px; }
+.lesson-end .end-goal-bar.met .progress-fill { background: var(--warning); }
+.lesson-end .end-note { margin: 16px 0 0; }
+
+/* primary on top, full width under the thumb; one column at every size */
+.lesson-end .end-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 340px;
+  margin: 20px auto 0;
+}
+.lesson-end .end-actions .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+/* second line inside a button: which lesson is next / what review pays */
+.lesson-end .end-upnext {
+  display: block;
+  max-width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+  overflow-wrap: anywhere;
+}
+.lesson-end .end-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  color: var(--text-muted);
+  font-weight: 700;
+  -webkit-tap-highlight-color: transparent;
+}
+.lesson-end .end-link:active { opacity: 0.6; }
+.lesson-end .end-actions a:focus-visible,
+.lesson-end .end-actions button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+@media (hover: none) {
+  .lesson-end .btn-primary:not(:disabled):hover { filter: none; }
+}
+@media (max-width: 480px) {
+  .lesson-end { padding: 24px 16px; }
 }

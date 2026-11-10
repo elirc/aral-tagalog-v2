@@ -1,19 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { gradePair, type MatchPairsExercise } from "@aral/core";
+import { gradePair, presentationOrder, type MatchPairsExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
-
-function shuffled<T>(items: T[], seed: number): T[] {
-  const out = [...items];
-  let s = seed;
-  for (let i = out.length - 1; i > 0; i--) {
-    s = (s * 9301 + 49297) % 233280;
-    const j = Math.floor((s / 233280) * (i + 1));
-    [out[i], out[j]] = [out[j]!, out[i]!];
-  }
-  return out;
-}
 
 /**
  * Match pairs is self-driving: it reports completion (with mistake count)
@@ -21,13 +10,15 @@ function shuffled<T>(items: T[], seed: number): T[] {
  */
 export function MatchView({
   exercise,
+  salt,
   onComplete,
 }: {
   exercise: MatchPairsExercise;
+  /** SessionState.attempts: same attempt → same layout, a replay → reshuffled */
+  salt: number;
   onComplete: (mistakes: number) => void;
 }) {
-  const lefts = useMemo(() => shuffled(exercise.pairs.map((p) => p.left), 11), [exercise]);
-  const rights = useMemo(() => shuffled(exercise.pairs.map((p) => p.right), 29), [exercise]);
+  const { lefts, rights } = useMemo(() => presentationOrder(exercise, salt), [exercise, salt]);
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [matched, setMatched] = useState<Set<string>>(new Set());
   const [wrongFlash, setWrongFlash] = useState<string | null>(null);

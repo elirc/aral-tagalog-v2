@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
-import type { FillBlankExercise } from "@aral/core";
+import { presentationOrder, type FillBlankExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 import { radii, spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
@@ -11,20 +11,25 @@ const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ transla
 
 export function FillBlankView({
   exercise,
+  salt,
   onAnswerChange,
   disabled,
   onSubmit,
 }: {
   exercise: FillBlankExercise;
+  /** `SessionState.attempts`: reshuffles the layout each time the exercise comes round */
+  salt: number;
   onAnswerChange: (answer: string | null) => void;
   disabled: boolean;
   /** invoked by the keyboard's return key, so typing flows straight to Check */
   onSubmit?: () => void;
 }) {
-  const { colors, styles } = useTheme();
+  const { colors, styles, mode } = useTheme();
   const [value, setValue] = useState("");
   const [focused, setFocused] = useState(false);
   const [before, after] = exercise.sentence.split("___");
+  // seeded by (exercise, attempt): stable across re-renders, fresh on a retry
+  const options = useMemo(() => presentationOrder(exercise, salt).options, [exercise, salt]);
 
   const update = (v: string) => {
     setValue(v);
@@ -52,12 +57,17 @@ export function FillBlankView({
 
       {exercise.options ? (
         <View style={[styles.chipRow, { marginTop: spacing.md }]}>
-          {exercise.options.map((opt) => (
+          {options.map((opt) => (
             <Pressable
               key={opt}
               accessibilityRole="button"
               accessibilityState={{ selected: value === opt, disabled }}
-              style={({ pressed }) => [styles.optionBtn, value === opt && styles.optionSelected, pressed && pressDown]}
+              style={({ pressed }) => [
+                styles.optionBtn,
+                styles.chip,
+                value === opt && styles.optionSelected,
+                pressed && pressDown,
+              ]}
               disabled={disabled}
               onPress={() => update(opt)}
             >
@@ -85,6 +95,8 @@ export function FillBlankView({
           placeholderTextColor={colors.textMuted}
           accessibilityLabel="the missing word"
           selectionColor={colors.accent}
+          // iOS: match the app theme, which can differ from the system's
+          keyboardAppearance={mode}
           // answers are Tagalog: the device dictionary "corrects" them into
           // English words and capitalizes the first letter
           autoCapitalize="none"

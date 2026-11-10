@@ -2,16 +2,27 @@ import { useRef } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { buildReviewLesson, REVIEW_LESSON_ID, type Lesson } from "@aral/core";
+import { buildReviewLesson, dueReviewIds, REVIEW_LESSON_ID, type Lesson } from "@aral/core";
 import { LessonPlayer } from "@/components/LessonPlayer";
 import { findLesson, getBundle, isLessonUnlocked } from "@/lib/content";
 import { useProgress } from "@/lib/progress";
 import { spacing, useTheme } from "@/theme";
 
+/**
+ * Everything below freezes per-session state in refs (the review set, the
+ * practice flag), so the session screen is keyed by the route's lesson id and
+ * `run` nonce: going lesson → lesson, or review → review, from the completion
+ * screen always mounts a fresh session even if the navigator reuses this
+ * route component.
+ */
 export default function LessonScreen() {
+  const { lessonId, run } = useLocalSearchParams<{ lessonId: string; run?: string }>();
+  return <LessonSession key={`${lessonId ?? ""}:${run ?? ""}`} lessonId={lessonId} />;
+}
+
+function LessonSession({ lessonId }: { lessonId: string | undefined }) {
   const router = useRouter();
   const { styles } = useTheme();
-  const { lessonId } = useLocalSearchParams<{ lessonId: string }>();
   const { progress } = useProgress();
 
   const isReview = lessonId === REVIEW_LESSON_ID;
@@ -22,7 +33,8 @@ export default function LessonScreen() {
   const reviewRef = useRef<Lesson | null | undefined>(undefined);
   const practiceRef = useRef<boolean | null>(null);
   if (isReview && reviewRef.current === undefined) {
-    reviewRef.current = buildReviewLesson(getBundle().units, progress.weakExerciseIds);
+    // due as of this moment, not as of the provider's last fold
+    reviewRef.current = buildReviewLesson(getBundle().units, dueReviewIds(progress, Date.now()));
   }
   const reviewLesson = isReview ? (reviewRef.current ?? null) : null;
   const lesson = isReview ? reviewLesson : (found?.lesson ?? null);
@@ -31,10 +43,15 @@ export default function LessonScreen() {
     return (
       <SafeAreaView style={styles.screen}>
         <View style={[styles.card, { alignItems: "center", gap: spacing.sm, margin: spacing.md }]}>
-          <Text style={{ fontSize: 56 }}>🧹</Text>
-          <Text style={styles.subtitle}>Nothing to review</Text>
+          <Text style={{ fontSize: 56 }} accessibilityElementsHidden importantForAccessibility="no">
+            🧹
+          </Text>
+          <Text style={styles.subtitle} accessibilityRole="header">
+            Nothing to review
+          </Text>
           <Text style={[styles.body, { textAlign: "center" }]}>
-            Mistakes you make in lessons collect here so you can practice them again.
+            Mistakes you make in lessons collect here so you can practice them again. Ones you've cleared come back
+            for another look after a few days.
           </Text>
           <Pressable
             accessibilityRole="button"
@@ -53,7 +70,9 @@ export default function LessonScreen() {
     return (
       <SafeAreaView style={styles.screen}>
         <View style={[styles.card, { alignItems: "center", gap: spacing.sm, margin: spacing.md }]}>
-          <Text style={styles.subtitle}>{lesson ? "Finish earlier lessons first" : "Lesson not found"}</Text>
+          <Text style={styles.subtitle} accessibilityRole="header">
+            {lesson ? "Finish earlier lessons first" : "Lesson not found"}
+          </Text>
           <Pressable
             accessibilityRole="button"
             style={({ pressed }) => [styles.btnPrimary, { alignSelf: "stretch" }, pressed && { opacity: 0.85 }]}

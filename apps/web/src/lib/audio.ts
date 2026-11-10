@@ -11,16 +11,35 @@ import { audioUrl } from "./api";
  * bundle's audioTexts entry (or `fallbackText`) with a Filipino voice when
  * the device has one. Recorded clips always win once they exist.
  */
+let current: HTMLAudioElement | null = null;
+
 export function playAudio(ref: string | undefined, fallbackText?: string): Promise<boolean> {
+  stopAudio(); // rapid taps replace the playing clip instead of layering over it
   const text = (ref && bundle.audioTexts?.[ref]) || fallbackText;
   if (!ref) return text ? speak(text) : Promise.resolve(false);
   const file = bundle.audio[ref];
   if (!file) return text ? speak(text) : Promise.resolve(false);
   const el = new Audio(audioUrl(file));
+  current = el;
   return el.play().then(
     () => true,
-    () => (text ? speak(text) : false), // clip not recorded yet or autoplay blocked
+    // clip not recorded yet or autoplay blocked — but a pause() from a newer
+    // tap rejects this pending play() with AbortError, and that must not
+    // speak the OLD clip's text over the newer clip
+    (err) =>
+      current === el && (err as DOMException | undefined)?.name !== "AbortError" && text
+        ? speak(text)
+        : false,
   );
+}
+
+function stopAudio() {
+  if (current) {
+    current.pause();
+    current = null;
+  }
+  // a new clip should also cut short a TTS fallback still speaking
+  if (typeof window !== "undefined" && "speechSynthesis" in window) speechSynthesis.cancel();
 }
 
 function pickVoice(): SpeechSynthesisVoice | null {

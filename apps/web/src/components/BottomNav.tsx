@@ -62,10 +62,11 @@ function isActive(pathname: string, href: string) {
 export function BottomNav() {
   const pathname = usePathname() ?? "/";
 
-  // routes without the Header (lessons) still get the right status-bar tint
+  // routes without the Header (lessons) still get the right status-bar tint;
+  // re-run per route since navigation may re-emit the per-scheme viewport metas
   useEffect(() => {
     syncThemeColor();
-  }, []);
+  }, [pathname]);
 
   if (HIDDEN_PREFIXES.some((p) => pathname.startsWith(p))) return null;
 
@@ -83,6 +84,18 @@ export function BottomNav() {
               href={t.href}
               className={active ? "bottom-tab active" : "bottom-tab"}
               aria-current={active ? "page" : undefined}
+              onClick={
+                active
+                  ? (e) => {
+                      // modified clicks keep their open-in-new-tab/window meaning
+                      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                      // native tab-bar convention: tapping the current tab returns to the top
+                      e.preventDefault();
+                      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+                    }
+                  : undefined
+              }
             >
               <span className="bottom-tab-icon">{t.icon}</span>
               <span className="bottom-tab-label">{t.label}</span>

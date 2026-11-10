@@ -32,12 +32,14 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
 }
 
 button {
   font: inherit;
+  /* never the UA button color: faint when disabled, blue on recent iOS */
+  color: var(--text);
   cursor: pointer;
 }
 
@@ -45,6 +47,30 @@ button {
 a, button, summary, label, input, [role="button"] {
   touch-action: manipulation;
 }
+
+/* One keyboard focus ring that reads in both themes. :where() keeps this at
+   zero specificity, so any component's own :focus-visible rule still wins. */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* keyboard users can jump past the header; invisible until focused */
+.skip-link {
+  position: absolute;
+  left: max(8px, env(safe-area-inset-left));
+  top: calc(env(safe-area-inset-top) + 8px);
+  z-index: 30;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--accent-text);
+  font-weight: 800;
+  box-shadow: var(--shadow);
+  /* fully above the viewport even under a tall notch inset */
+  transform: translateY(calc(-100% - env(safe-area-inset-top) - 16px));
+}
+.skip-link:focus { transform: none; }
 
 .container {
   max-width: 640px;
@@ -192,11 +218,20 @@ a, button, summary, label, input, [role="button"] {
   .only-sm { display: inline; }
 }
 
+/* small phones (375px mini/SE): a guest's "Log in" button plus a 4-digit XP
+   total don't fit beside the level chip — level stays on /stats */
+@media (max-width: 400px) {
+  .header .level-chip { display: none; }
+}
+
 /* very narrow phones (SE 1st gen, Galaxy Fold cover) — keep the core stats */
 @media (max-width: 360px) {
-  .header .level-chip { display: none; }
   .header-inner { gap: 6px; }
   .stats, .stats-link { gap: 6px; }
+  .header .btn { padding: 6px 8px; font-size: 13px; }
+  .header .header-logout { padding: 0; width: 34px; height: 34px; }
+  .header .theme-toggle { min-width: 32px; height: 34px; padding: 0 5px; }
+  .header .header-pending, .hide-xs { display: none; }
 }
 
 /* --- buttons --- */
@@ -288,7 +323,7 @@ a, button, summary, label, input, [role="button"] {
   color: #fff;
   flex-shrink: 0;
 }
-.lesson-dot.done { background: var(--warning); }
+.lesson-dot.done { background: var(--warning); color: #3c3c3c; /* white ★ on gold is 1.6:1 */ }
 .lesson-dot.next { background: var(--primary-fill); }
 .lesson-dot.locked { background: var(--border); color: var(--text-muted); }
 .lesson-name { font-weight: 600; }
@@ -373,7 +408,8 @@ a, button, summary, label, input, [role="button"] {
 
 .audio-btn {
   background: var(--accent);
-  color: #fff;
+  /* the "🔊 Play" label: white on the accent blue is 3.4:1, black 6.2:1 */
+  color: #000;
   border: 0;
   border-radius: 12px;
   padding: 12px 18px;
@@ -402,6 +438,8 @@ a, button, summary, label, input, [role="button"] {
 .result-line small { display: block; font-weight: 500; }
 
 /* --- completion / auth --- */
+/* these cards head their page: h1 for landmark order, sized like the old h2 */
+.center-card h1 { font-size: 1.5rem; margin: 12px 0; }
 .center-card {
   background: var(--bg);
   border: 2px solid var(--border);
@@ -547,7 +585,8 @@ a, button, summary, label, input, [role="button"] {
   position: relative;
 }
 .achievement.earned { border-color: var(--primary); background: var(--primary-soft); }
-.achievement.locked { opacity: 0.6; filter: grayscale(0.9); }
+/* 0.85 keeps the title/desc above AA; 🔒 + grayscale carry the locked look */
+.achievement.locked { opacity: 0.85; filter: grayscale(0.9); }
 .ach-emoji { font-size: 30px; line-height: 1; }
 .ach-title { font-weight: 800; font-size: 14px; margin: 6px 0 0; }
 .ach-desc { color: var(--text-muted); font-size: 12px; margin: 3px 0 0; }
@@ -564,7 +603,7 @@ a, button, summary, label, input, [role="button"] {
 }
 .tier-1 { background: #eef8e3; color: var(--primary-dark); }
 .tier-2 { background: #e2f4fd; color: #0a72a8; }
-.tier-3 { background: #fff2c9; color: #8a6d00; }
+.tier-3 { background: #fff2c9; color: #7a6000; }
 .tier-group-head {
   display: flex;
   align-items: baseline;
@@ -876,3 +915,61 @@ details[open] > summary .unit-chevron { transform: rotate(180deg); }
 .unlocked-item .emoji { font-size: 26px; }
 .unlocked-item .t { font-weight: 800; font-size: 14px; }
 .unlocked-item .d { color: var(--text-muted); font-size: 12px; }
+
+/* --- confirm sheet (ConfirmSheet.tsx): native modal <dialog> ---
+   Bottom sheet on phones, centered card from 641px up. The top layer puts it
+   above the header, bottom nav and the lesson's pinned footer. */
+.sheet {
+  width: min(420px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: 0; /* padding lives on .sheet-body so backdrop taps are detectable */
+  border: 0;
+  border-radius: 16px;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  overflow: auto;
+}
+.sheet::backdrop { background: rgba(0, 0, 0, 0.5); }
+.sheet-body { padding: 20px; text-align: left; }
+.sheet h2 { font-size: 1.25rem; margin: 0 0 8px; }
+.sheet-text { color: var(--text-muted); overflow-wrap: anywhere; }
+.sheet-text p { margin: 0; }
+.sheet-text strong { color: var(--text); }
+.sheet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.sheet-actions .btn {
+  width: 100%;
+  min-height: 48px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.sheet-actions .sheet-danger { color: var(--danger); }
+.sheet-actions .sheet-danger:active { background: var(--wrong-bg); }
+.sheet-actions .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .sheet {
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0; /* pinned to the bottom edge */
+    border-radius: 16px 16px 0 0;
+  }
+  .sheet-body {
+    padding: 20px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px))
+      max(16px, env(safe-area-inset-left, 0px));
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sheet[open] { animation: sheet-in 0.18s ease-out; }
+  @keyframes sheet-in {
+    from { transform: translateY(12px); opacity: 0; }
+  }
+}

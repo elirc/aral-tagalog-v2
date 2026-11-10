@@ -1,35 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import {
-  buildReviewLesson,
-  DEFAULT_DAILY_GOAL_XP,
-  displayStreak,
-  localDayKey,
-  PRACTICE_XP,
-  type Lesson,
-  type Unit,
-} from "@aral/core";
+import { DEFAULT_DAILY_GOAL_XP, displayStreak, localDayKey, PRACTICE_XP, type Unit } from "@aral/core";
 import { Header } from "@/components/Header";
-import { bundle } from "@/lib/content";
+import { bundle, dueReviewCount, findNextLesson } from "@/lib/content";
 import { deviceTz, useProgress } from "@/lib/progress";
 import "./pages-mobile.css";
 
-const UNIT_COLORS = ["#4a8f00", "#1cb0f6", "#ce82ff", "#ff9600", "#ff4b4b", "#2bb6a3"];
-
-function findNext(done: Set<string>): { unit: Unit; lesson: Lesson; unitIndex: number } | null {
-  for (let ui = 0; ui < bundle.units.length; ui++) {
-    const unit = bundle.units[ui]!;
-    const lesson = unit.lessons.find((l) => !done.has(l.id));
-    if (lesson) return { unit, lesson, unitIndex: ui };
-  }
-  return null;
-}
+/* each color carries white 16px/800 badge digits, so all must stay ≥4.5:1 under white */
+const UNIT_COLORS = ["#3f7b00", "#0a72a8", "#9a4fd0", "#b35c00", "#d61f3c", "#13786b"];
 
 export default function CourseMapPage() {
   const { progress, ready, user } = useProgress();
   const done = new Set(progress.completedLessonIds);
-  const next = findNext(done);
+  const next = findNextLesson(done);
 
   const tz = deviceTz();
   const now = Date.now();
@@ -37,15 +21,15 @@ export default function CourseMapPage() {
   const goal = progress.dailyGoalXp || DEFAULT_DAILY_GOAL_XP;
   const streak = displayStreak(progress.streak, localDayKey(now, tz));
   const started = progress.lessonsCompleted > 0;
-  // count only mistakes whose exercises still exist in this bundle version
-  const reviewable =
-    buildReviewLesson(bundle.units, progress.weakExerciseIds, Number.MAX_SAFE_INTEGER)?.exercises
-      .length ?? 0;
+  // due now on the spaced schedule (cleared mistakes come back after 1/3/7/21
+  // days), counting only exercises that still exist in this bundle version
+  const reviewable = dueReviewCount(progress, now);
 
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="container" id="main">
+        <h1 className="sr-only">Tagalog course</h1>
         {!ready ? null : (
           <>
             {!user && (
@@ -90,8 +74,7 @@ export default function CourseMapPage() {
                 <span className="review-text">
                   <strong>Review your mistakes</strong>
                   <span>
-                    {reviewable} exercise{reviewable > 1 ? "s" : ""} to practice · +{PRACTICE_XP} XP
-                    · +1 ❤️
+                    {reviewable} due for review · +{PRACTICE_XP} XP · +1 ❤️
                   </span>
                 </span>
                 <span className="btn btn-primary">Review</span>
@@ -103,6 +86,8 @@ export default function CourseMapPage() {
               const doneCount = unit.lessons.filter((l) => done.has(l.id)).length;
               const pct = total > 0 ? (doneCount / total) * 100 : 0;
               const isCurrent = next?.unit.id === unit.id;
+              // every lesson here is gated behind the unit the learner is on now
+              const unitLocked = next !== null && ui > next.unitIndex && doneCount === 0;
               const color = UNIT_COLORS[ui % UNIT_COLORS.length];
               return (
                 <details className="unit-card" key={unit.id} open={isCurrent}>
@@ -120,7 +105,9 @@ export default function CourseMapPage() {
                           />
                         </span>
                         <span className="count" style={{ fontSize: 13, fontWeight: 700, color: "var(--text-muted)" }}>
+                          {unitLocked && <span aria-hidden>🔒 </span>}
                           {doneCount}/{total}
+                          <span className="sr-only"> lessons done{unitLocked ? ", locked" : ""}</span>
                         </span>
                       </span>
                     </span>
@@ -130,6 +117,11 @@ export default function CourseMapPage() {
                     </span>
                   </summary>
                   <div className="unit-body">
+                    {unitLocked && (
+                      <p className="unit-locked-note">
+                        <span aria-hidden>🔒</span> Finish Unit {ui} to unlock these lessons.
+                      </p>
+                    )}
                     {unit.description && <p className="unit-desc">{unit.description}</p>}
                     {unit.tip && (
                       <div className="tip-callout">
@@ -169,8 +161,13 @@ function UnitLessons({
         if (locked) {
           return (
             <div className="lesson-row lesson-row-locked" key={lesson.id}>
-              <div className="lesson-dot locked">🔒</div>
-              <span className="lesson-name">{lesson.title}</span>
+              <div className="lesson-dot locked" aria-hidden>
+                🔒
+              </div>
+              <span className="lesson-name">
+                {lesson.title}
+                <span className="sr-only"> (locked)</span>
+              </span>
             </div>
           );
         }

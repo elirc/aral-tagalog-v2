@@ -1,22 +1,30 @@
 "use client";
 
-import { useState } from "react";
-import type { ListenExercise, TranslateTapsExercise } from "@aral/core";
+import { useMemo, useRef, useState } from "react";
+import { presentationOrder, type ListenExercise, type TranslateTapsExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 
 /** Tap-the-words builder, used by both translate_taps and listen exercises. */
 export function TapsView({
   exercise,
+  salt,
   onAnswerChange,
   disabled,
 }: {
   exercise: TranslateTapsExercise | ListenExercise;
+  /** SessionState.attempts: same attempt → same layout, a retry → reshuffled */
+  salt: number;
   onAnswerChange: (answer: string[] | null) => void;
   disabled: boolean;
 }) {
   // picked = indices into wordBank, in tap order (indices allow duplicate words)
   const [picked, setPicked] = useState<number[]>([]);
   const [audioFailed, setAudioFailed] = useState(false);
+  // the failed state reveals the answer, so only the newest tap may set it —
+  // a stale rejection must not override a retry that played fine
+  const playGen = useRef(0);
+  // display order of the bank; `picked` and the answer keep the bank's own indices
+  const bankOrder = useMemo(() => presentationOrder(exercise, salt).wordBankOrder, [exercise, salt]);
 
   const update = (next: number[]) => {
     setPicked(next);
@@ -32,7 +40,12 @@ export function TapsView({
           <p className="exercise-prompt">Tap what you hear</p>
           <button
             className="audio-btn"
-            onClick={() => void playAudio(exercise.audio).then((ok) => setAudioFailed(!ok))}
+            onClick={() => {
+              const gen = ++playGen.current;
+              void playAudio(exercise.audio).then((ok) => {
+                if (gen === playGen.current) setAudioFailed(!ok);
+              });
+            }}
           >
             🔊 Play
           </button>
@@ -76,7 +89,7 @@ export function TapsView({
       </div>
 
       <div className="word-bank">
-        {exercise.wordBank.map((word, i) => (
+        {bankOrder.map((i) => (
           <button
             key={i}
             className={`word-chip ${picked.includes(i) ? "used" : ""}`}
@@ -84,7 +97,7 @@ export function TapsView({
             disabled={disabled || picked.includes(i)}
             onClick={() => update([...picked, i])}
           >
-            {word}
+            {exercise.wordBank[i]}
           </button>
         ))}
       </div>

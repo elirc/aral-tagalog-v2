@@ -45,6 +45,9 @@ function prettyDay(dayKey: string): string {
   });
 }
 
+/** 12345 → "12,345" (client-only render, so no SSR locale mismatch) */
+const fmt = (n: number) => n.toLocaleString("en-US");
+
 const GOAL_PRESETS = [
   { xp: 10, label: "Casual" },
   { xp: 20, label: "Regular" },
@@ -59,7 +62,10 @@ export default function StatsPage() {
     return (
       <>
         <Header />
-        <main className="container" />
+        {/* the Header's skip link targets #main even before progress loads */}
+        <main id="main" className="container">
+          <h1 className="sr-only">Your stats</h1>
+        </main>
       </>
     );
   }
@@ -81,7 +87,7 @@ export default function StatsPage() {
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="container" id="main">
         <h1 className="page-title">Your stats</h1>
         {!user ? (
           <p className="page-sub">
@@ -112,7 +118,7 @@ export default function StatsPage() {
           <div className="stat-tile">
             <div className="stat-top">⚡ Total XP</div>
             <p className="stat-value" style={{ color: "var(--warning-text)" }}>
-              {progress.xpTotal}
+              {fmt(progress.xpTotal)}
             </p>
           </div>
           <div className="stat-tile">
@@ -122,7 +128,7 @@ export default function StatsPage() {
               <div className="progress-fill" style={{ width: `${levelPct}%` }} />
             </div>
             <p className="stat-sub">
-              {lp.xpIntoLevel}/{lp.xpForNextLevel} XP to Lv {lp.level + 1}
+              {fmt(lp.xpIntoLevel)}/{fmt(lp.xpForNextLevel)} XP to Lv {lp.level + 1}
             </p>
           </div>
           <div className="stat-tile">
@@ -132,7 +138,7 @@ export default function StatsPage() {
           </div>
           <div className="stat-tile">
             <div className="stat-top">📘 Lessons</div>
-            <p className="stat-value">{progress.lessonsCompleted}</p>
+            <p className="stat-value">{fmt(progress.lessonsCompleted)}</p>
             <p className="stat-sub">completed</p>
           </div>
           <div className="stat-tile">
@@ -143,7 +149,7 @@ export default function StatsPage() {
           <div className="stat-tile">
             <div className="stat-top">🎯 Today</div>
             <p className="stat-value" style={{ color: goalMet ? "var(--primary)" : undefined }}>
-              {todayXp}
+              {fmt(todayXp)}
             </p>
             <p className="stat-sub">of {goal} XP goal</p>
           </div>
@@ -225,6 +231,8 @@ function GoalRing({ todayXp, goal }: { todayXp: number; goal: number }) {
 function GoalEditor({ goal }: { goal: number }) {
   const { addEvents } = useProgress();
   const setGoal = (goalXp: number) => {
+    // re-tapping the active preset would only queue a redundant event to sync
+    if (goalXp === goal) return;
     addEvents([{ id: newEventId(), type: "goal_set", occurredAt: Date.now(), goalXp }]);
   };
   return (
@@ -333,7 +341,7 @@ function XpBars({
                 style={{
                   fontSize: 9,
                   fontWeight: isToday ? 800 : 600,
-                  fill: isToday ? "var(--accent)" : "var(--text-muted)",
+                  fill: isToday ? "var(--accent-text)" : "var(--text-muted)",
                 }}
               >
                 {WEEKDAY[weekday(d.key)]}
@@ -343,9 +351,9 @@ function XpBars({
         })}
       </svg>
       <p className="chart-cap">
-        Today: <strong style={{ color: "var(--accent)" }}>{days[days.length - 1]!.xp} XP</strong>
+        Today: <strong style={{ color: "var(--accent-text)" }}>{fmt(days[days.length - 1]!.xp)} XP</strong>
         {" · "}
-        14-day total: {days.reduce((s, d) => s + d.xp, 0)} XP
+        14-day total: {fmt(days.reduce((s, d) => s + d.xp, 0))} XP
       </p>
     </>
   );
@@ -458,9 +466,18 @@ function Achievements({ earned }: { earned: Set<string> }) {
 function AchievementCard({ def, earned }: { def: AchievementDef; earned: boolean }) {
   return (
     <div className={`achievement ${earned ? "earned" : "locked"}`} title={def.description}>
-      {!earned && <span className="ach-lock">🔒</span>}
-      <div className="ach-emoji">{earned ? def.emoji : "❔"}</div>
-      <p className="ach-title">{def.title}</p>
+      {!earned && (
+        <span className="ach-lock" aria-hidden>
+          🔒
+        </span>
+      )}
+      <div className="ach-emoji" aria-hidden>
+        {earned ? def.emoji : "❔"}
+      </div>
+      <p className="ach-title">
+        {def.title}
+        <span className="sr-only">{earned ? " (earned)" : " (locked)"}</span>
+      </p>
       <p className="ach-desc">{def.description}</p>
     </div>
   );

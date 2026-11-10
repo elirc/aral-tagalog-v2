@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
-import type { ChoiceExercise } from "@aral/core";
+import { presentationOrder, type ChoiceExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
 import { spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
@@ -9,32 +9,22 @@ import { AudioButton } from "../AudioButton";
  *  layout box fixed so neighbours don't jump */
 const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ translateY: 2 }] } as const;
 
-function shuffled<T>(items: T[], seed: number): T[] {
-  const out = [...items];
-  let s = seed;
-  for (let i = out.length - 1; i > 0; i--) {
-    s = (s * 9301 + 49297) % 233280;
-    const j = Math.floor((s / 233280) * (i + 1));
-    [out[i], out[j]] = [out[j]!, out[i]!];
-  }
-  return out;
-}
-
 export function ChoiceView({
   exercise,
+  salt,
   onAnswerChange,
   disabled,
 }: {
   exercise: ChoiceExercise;
+  /** `SessionState.attempts`: reshuffles the layout each time the exercise comes round */
+  salt: number;
   onAnswerChange: (answer: string | null) => void;
   disabled: boolean;
 }) {
   const { styles } = useTheme();
   const [selected, setSelected] = useState<string | null>(null);
-  const options = useMemo(
-    () => shuffled([exercise.answer, ...exercise.distractors], exercise.id.length * 7 + exercise.prompt.length),
-    [exercise],
-  );
+  // seeded by (exercise, attempt): stable across re-renders, fresh on a retry
+  const options = useMemo(() => presentationOrder(exercise, salt).options, [exercise, salt]);
 
   return (
     <View>

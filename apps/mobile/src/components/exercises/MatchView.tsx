@@ -1,36 +1,31 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AccessibilityInfo, Pressable, Text, View } from "react-native";
-import { gradePair, type MatchPairsExercise } from "@aral/core";
+import { gradePair, presentationOrder, type MatchPairsExercise } from "@aral/core";
+import { playAudio } from "@/lib/audio";
 import { spacing, useTheme } from "@/theme";
 
 /** pressed: the 4pt bottom edge sinks to 2pt; margin + translate keep the
  *  layout box fixed so neighbours don't jump */
 const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ translateY: 2 }] } as const;
 
-function shuffled<T>(items: T[], seed: number): T[] {
-  const out = [...items];
-  let s = seed;
-  for (let i = out.length - 1; i > 0; i--) {
-    s = (s * 9301 + 49297) % 233280;
-    const j = Math.floor((s / 233280) * (i + 1));
-    [out[i], out[j]] = [out[j]!, out[i]!];
-  }
-  return out;
-}
-
 export function MatchView({
   exercise,
+  salt,
   onComplete,
 }: {
   exercise: MatchPairsExercise;
+  /** `SessionState.attempts`: reshuffles the layout each time the exercise comes round */
+  salt: number;
   onComplete: (mistakes: number) => void;
 }) {
   const { colors, styles } = useTheme();
-  const lefts = useMemo(() => shuffled(exercise.pairs.map((p) => p.left), 11), [exercise]);
-  const rights = useMemo(() => shuffled(exercise.pairs.map((p) => p.right), 29), [exercise]);
+  // seeded by (exercise, attempt): stable across re-renders, fresh next time
+  const { lefts, rights } = useMemo(() => presentationOrder(exercise, salt), [exercise, salt]);
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [matched, setMatched] = useState<Set<string>>(new Set());
-  const [wrongFlash, setWrongFlash] = useState<string | null>(null);
+  // both tiles of a wrong pairing flash: the left selection clears at once, so
+  // flashing only the right one hid which left word was tried
+  const [wrongFlash, setWrongFlash] = useState<{ left: string; right: string } | null>(null);
   const mistakes = useRef(0);
   const flashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -38,9 +33,14 @@ export function MatchView({
     if (flashTimer.current) clearTimeout(flashTimer.current);
   }, []);
 
+  const wrongStyle = { borderColor: colors.danger, backgroundColor: colors.wrongBg };
+
   const tryMatch = (right: string) => {
     if (!selectedLeft) return;
     if (gradePair(exercise, selectedLeft, right)) {
+      // vocab refs are the lowercased lemma with spaces/hyphens as underscores
+      // ("Bagong Taon" -> bagong_taon); TTS speaks the word if no clip exists
+      void playAudio(selectedLeft.toLowerCase().replace(/[\s-]+/g, "_"), selectedLeft);
       const next = new Set(matched).add(selectedLeft).add(`r:${right}`);
       setMatched(next);
       setSelectedLeft(null);
@@ -53,17 +53,20 @@ export function MatchView({
     } else {
       mistakes.current += 1;
       AccessibilityInfo.announceForAccessibility(`Not a match: ${selectedLeft}, ${right}`);
-      setWrongFlash(right);
+      setWrongFlash({ left: selectedLeft, right });
       if (flashTimer.current) clearTimeout(flashTimer.current);
-      flashTimer.current = setTimeout(() => setWrongFlash(null), 400);
+      flashTimer.current = setTimeout(() => setWrongFlash(null), 500);
       setSelectedLeft(null);
     }
   };
 
   return (
     <View>
-      <Text accessibilityRole="header" style={styles.prompt}>
+      <Text accessibilityRole="header" style={[styles.prompt, { marginBottom: spacing.xs }]}>
         Match the pairs
+      </Text>
+      <Text style={[styles.muted, { marginBottom: spacing.sm }]}>
+        Pick a Tagalog word on the left, then its match on the right.
       </Text>
       {exercise.hint && <Text style={[styles.muted, { marginBottom: spacing.sm }]}>{exercise.hint}</Text>}
       <View style={{ flexDirection: "row", gap: spacing.sm }}>
@@ -80,6 +83,7 @@ export function MatchView({
                   styles.optionBtn,
                   done && { opacity: 0.35 },
                   selectedLeft === left && styles.optionSelected,
+                  wrongFlash?.left === left && selectedLeft !== left && wrongStyle,
                   pressed && pressDown,
                 ]}
                 disabled={done}
@@ -103,7 +107,7 @@ export function MatchView({
                 style={({ pressed }) => [
                   styles.optionBtn,
                   done && { opacity: 0.35 },
-                  wrongFlash === right && { borderColor: colors.danger, backgroundColor: colors.wrongBg },
+                  wrongFlash?.right === right && wrongStyle,
                   pressed && pressDown,
                 ]}
                 disabled={done || !selectedLeft}

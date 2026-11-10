@@ -15,16 +15,32 @@ export interface AuthTokens {
   user: AuthUser;
 }
 
+/**
+ * A request that never settles (captive portal, a phone dropping to one bar
+ * mid-flight) would hold the single-flight sync lock forever — nothing would
+ * sync again until a reload. Abort instead: the rejection is a plain network
+ * failure to callers, so the outbox keeps its events for the next attempt.
+ */
+export const REQUEST_TIMEOUT_MS = 15_000;
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers: { "Content-Type": "application/json", ...init?.headers },
-  });
-  if (!res.ok) {
-    const body = await res.json().catch(() => ({}));
-    throw new ApiError(res.status, (body as { error?: string }).error ?? res.statusText);
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const res = await fetch(`${API_URL}${path}`, {
+      ...init,
+      headers: { "Content-Type": "application/json", ...init?.headers },
+      signal: ctrl.signal,
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new ApiError(res.status, (body as { error?: string }).error ?? res.statusText);
+    }
+    // awaited inside the try: the timeout also covers a stalled response body
+    return (await res.json()) as T;
+  } finally {
+    clearTimeout(timer);
   }
-  return res.json() as Promise<T>;
 }
 
 export class ApiError extends Error {

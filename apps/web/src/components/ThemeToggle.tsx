@@ -26,6 +26,24 @@ export function ThemeToggle() {
   useEffect(() => {
     setDark(document.documentElement.dataset.theme === "dark");
     syncThemeColor();
+
+    // no saved choice → keep following the OS live (e.g. auto dark at sunset),
+    // not just the scheme it had when the page loaded
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const onSchemeChange = (e: MediaQueryListEvent) => {
+      let saved: string | null = null;
+      try {
+        saved = localStorage.getItem("aral.theme");
+      } catch {
+        // storage blocked — treat as no saved choice
+      }
+      if (saved === "dark" || saved === "light") return;
+      document.documentElement.dataset.theme = e.matches ? "dark" : "light";
+      setDark(e.matches);
+      syncThemeColor();
+    };
+    mq.addEventListener("change", onSchemeChange);
+    return () => mq.removeEventListener("change", onSchemeChange);
   }, []);
 
   const toggle = () => {

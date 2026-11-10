@@ -238,7 +238,7 @@ export default function StatsScreen() {
             <Text style={styles.subtitle}>Last 7 days</Text>
             <Text style={styles.muted}>{weekTotal} XP</Text>
           </View>
-          <View style={{ flexDirection: "row", alignItems: "flex-end", height: CHART_HEIGHT + 24, gap: spacing.xs }}>
+          <View style={{ flexDirection: "row", alignItems: "flex-end", minHeight: CHART_HEIGHT + 24, gap: spacing.xs }}>
             {last7.map((d) => {
               const isToday = d.key === todayKey;
               const barH = d.xp === 0 ? 4 : Math.max(6, Math.round((d.xp / maxDayXp) * CHART_HEIGHT));
@@ -249,7 +249,13 @@ export default function StatsScreen() {
                   accessibilityLabel={`${isToday ? "Today" : d.key}: ${d.xp} XP`}
                   style={{ flex: 1, alignItems: "center", justifyContent: "flex-end" }}
                 >
-                  <Text style={{ fontSize: 11, color: colors.textMuted, marginBottom: 2 }}>
+                  {/* capped: seven columns share the card width and the
+                      chart height is fixed */}
+                  <Text
+                    maxFontSizeMultiplier={1.5}
+                    numberOfLines={1}
+                    style={{ fontSize: 11, color: colors.textMuted, marginBottom: 2 }}
+                  >
                     {d.xp > 0 ? d.xp : ""}
                   </Text>
                   <View
@@ -261,11 +267,12 @@ export default function StatsScreen() {
                     }}
                   />
                   <Text
+                    maxFontSizeMultiplier={1.5}
                     style={{
                       marginTop: 4,
                       fontSize: 12,
                       fontWeight: isToday ? "800" : "600",
-                      color: isToday ? colors.primary : colors.textMuted,
+                      color: isToday ? colors.primaryDark : colors.textMuted,
                     }}
                   >
                     {weekdayInitial(d.key)}
@@ -301,10 +308,10 @@ export default function StatsScreen() {
                   paddingVertical: spacing.sm,
                   borderTopWidth: i === 0 ? 0 : 1,
                   borderTopColor: colors.border,
-                  opacity: isEarned ? 1 : 0.4,
                 }}
               >
-                <Text style={{ fontSize: 28 }}>{a.emoji}</Text>
+                {/* fade only the emoji: at 0.4 row opacity the text fell below AA */}
+                <Text style={{ fontSize: 28, opacity: isEarned ? 1 : 0.4 }}>{a.emoji}</Text>
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontWeight: "800", color: colors.text }}>{a.title}</Text>
                   <Text style={styles.muted}>{a.description}</Text>

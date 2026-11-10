@@ -12,7 +12,9 @@
       "bundleIdentifier": "app.aral.mobile"
     },
     "android": {
-      "package": "app.aral.mobile"
+      "package": "app.aral.mobile",
+      "softwareKeyboardLayoutMode": "resize",
+      "edgeToEdgeEnabled": false
     },
     "plugins": ["expo-router", "expo-sqlite"],
     "extra": {

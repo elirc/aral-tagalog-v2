@@ -15,7 +15,7 @@ import { font, radii, spacing, useTheme } from "@/theme";
 export default function WordsScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { colors, styles } = useTheme();
+  const { colors, styles, mode } = useTheme();
   const [query, setQuery] = useState("");
   // deep link / cold start lands here with nothing to pop back to
   const goBack = () => (router.canGoBack() ? router.back() : router.replace("/"));
@@ -81,6 +81,9 @@ export default function WordsScreen() {
           autoCapitalize="none"
           autoComplete="off"
           returnKeyType="search"
+          // iOS: follow the app theme, which can differ from the system's
+          keyboardAppearance={mode}
+          selectionColor={colors.accent}
           clearButtonMode="while-editing"
           style={[styles.input, { paddingVertical: 10, minHeight: 44 }]}
         />

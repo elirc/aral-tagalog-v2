@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { Pressable, Text } from "react-native";
 import { isAudioPlaying, subscribeAudioPlaying } from "@/lib/audio";
-import { radii, useTheme } from "@/theme";
+import { ICON_MAX_SCALE, ON_ACCENT, radii, useTheme } from "@/theme";
 
 export function AudioButton({ onPress, large }: { onPress: () => void; large?: boolean }) {
   const { colors } = useTheme();
@@ -31,8 +31,11 @@ export function AudioButton({ onPress, large }: { onPress: () => void; large?: b
         transform: [{ scale: pressed ? 0.96 : 1 }],
       })}
     >
-      {/* base label keeps RN's default dark text (≈8:1 on accent; white is ~2.4:1) */}
-      <Text style={[{ fontSize: large ? 24 : 20, fontWeight: "700" }, playing && { color: colors.text }]}>
+      {/* dark label on the accent fill; theme text once it switches to the soft tint */}
+      <Text
+        maxFontSizeMultiplier={large ? undefined : ICON_MAX_SCALE}
+        style={{ fontSize: large ? 24 : 20, fontWeight: "700", color: playing ? colors.text : ON_ACCENT }}
+      >
         {playing ? "🔉" : "🔊"}
         {large ? (playing ? " Playing…" : " Play") : ""}
       </Text>

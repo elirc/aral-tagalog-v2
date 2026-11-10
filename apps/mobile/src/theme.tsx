@@ -12,6 +12,17 @@ import { kvGet, kvSet } from "@/lib/storage";
 
 export { font, radii, spacing, type Palette };
 
+/** Label color on an `accent` fill. Only dark text clears contrast on either
+ *  accent blue (light #0a93d5 ≈6.2:1, dark #1cb0f6 ≈8.6:1; white fails both).
+ *  Set explicitly: RN's default Text color turns light under Android's
+ *  DayNight theme in dark mode. */
+export const ON_ACCENT = "#000";
+
+/** Cap for glyphs that sit in fixed-size boxes (icons, badges, discs): at the
+ *  largest accessibility sizes they'd overflow the box without helping
+ *  legibility. Reading text keeps full scaling. */
+export const ICON_MAX_SCALE = 1.3;
+
 export type ThemeMode = "light" | "dark";
 
 /** kv key for the explicit preference; absent = follow the system scheme. */
@@ -47,6 +58,8 @@ function makeStyles(colors: Palette) {
     },
     btnPrimaryDisabled: { backgroundColor: colors.border, borderBottomColor: colors.borderStrong },
     btnPrimaryText: { color: "#fff", fontWeight: "700", fontSize: font.sizeMd },
+    // white on the light-mode disabled fill (#e5e5e5) is ~1.3:1 — invisible
+    btnPrimaryTextDisabled: { color: colors.textMuted },
     btnGhost: {
       borderWidth: 2,
       borderColor: colors.border,
@@ -69,6 +82,10 @@ function makeStyles(colors: Palette) {
     optionSelected: { borderColor: colors.accent, backgroundColor: colors.accentSoft },
     optionText: { fontSize: font.sizeMd, fontWeight: "600", color: colors.text },
     chipRow: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
+    /** Merge into each chip inside a chipRow: RN children don't shrink by
+     *  default, so one long word at a large font size would run past the card
+     *  edge instead of wrapping inside its chip. */
+    chip: { maxWidth: "100%" },
     /** Top bar of a screen; callers add `paddingTop: insets.top + spacing.sm`
      *  so the bar's own background runs up under the status bar. */
     header: {

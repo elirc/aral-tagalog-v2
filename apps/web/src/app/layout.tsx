@@ -6,7 +6,8 @@ import "@aral/ui/tokens.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aral — Learn Tagalog",
+  // routes set their own titles via their layouts' metadata
+  title: { default: "Aral — Learn Tagalog", template: "%s — Aral" },
   description: "A free Duolingo-style course teaching Tagalog to English speakers.",
   applicationName: "Aral",
   // launched from the iOS home screen → standalone, no Safari chrome.
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
   appleWebApp: { capable: true, title: "Aral", statusBarStyle: "default" },
   // iOS would otherwise turn XP/streak numbers into tel: links
   formatDetection: { telephone: false },
+  // Next 15 emits only mobile-web-app-capable; older iOS reads the apple- one
+  other: { "apple-mobile-web-app-capable": "yes" },
 };
 
 export const viewport: Viewport = {

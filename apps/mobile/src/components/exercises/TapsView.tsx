@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Pressable, Text, View } from "react-native";
-import type { ListenExercise, TranslateTapsExercise } from "@aral/core";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { AccessibilityInfo, Pressable, Text, View } from "react-native";
+import { presentationOrder, type ListenExercise, type TranslateTapsExercise } from "@aral/core";
 import { playAudio } from "@/lib/audio";
-import { spacing, useTheme } from "@/theme";
+import { radii, spacing, useTheme } from "@/theme";
 import { AudioButton } from "../AudioButton";
 
 /** pressed: the 4pt bottom edge sinks to 2pt; margin + translate keep the
@@ -11,15 +11,47 @@ const pressDown = { borderBottomWidth: 2, marginBottom: 2, transform: [{ transla
 
 export function TapsView({
   exercise,
+  salt,
   onAnswerChange,
   disabled,
 }: {
   exercise: TranslateTapsExercise | ListenExercise;
+  /** `SessionState.attempts`: reshuffles the layout each time the exercise comes round */
+  salt: number;
   onAnswerChange: (answer: string[] | null) => void;
   disabled: boolean;
 }) {
   const { colors, styles } = useTheme();
+  // picked = indices into wordBank, in tap order (indices allow duplicate words)
   const [picked, setPicked] = useState<number[]>([]);
+  // bank tiles in display order — seeded by (exercise, attempt): stable across
+  // re-renders, fresh on a retry
+  const bankOrder = useMemo(() => presentationOrder(exercise, salt).wordBankOrder, [exercise, salt]);
+  const [audioFailed, setAudioFailed] = useState(false);
+  // the failed state reveals the answer, so only the newest tap may set it —
+  // a stale failure must not override a retry that played fine
+  const playGen = useRef(0);
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+
+  const playListen = () => {
+    const gen = ++playGen.current;
+    void playAudio(exercise.audio).then(
+      (ok) => {
+        if (!mounted.current || gen !== playGen.current) return;
+        setAudioFailed(!ok);
+        if (!ok) {
+          AccessibilityInfo.announceForAccessibility(`Audio unavailable. Tap the words for: ${exercise.answer}`);
+        }
+      },
+      () => {},
+    );
+  };
 
   const update = (next: number[]) => {
     setPicked(next);
@@ -35,7 +67,24 @@ export function TapsView({
           <Text accessibilityRole="header" style={styles.prompt}>
             Tap what you hear
           </Text>
-          <AudioButton large onPress={() => void playAudio(exercise.audio)} />
+          <AudioButton large onPress={playListen} />
+          {audioFailed && (
+            // a listen exercise without audio is unanswerable (and would cost a
+            // heart on every forced guess) — fall back to showing the sentence
+            <View
+              style={{
+                marginTop: spacing.sm,
+                padding: spacing.sm,
+                borderRadius: radii.md,
+                backgroundColor: colors.bgMuted,
+              }}
+            >
+              <Text style={styles.muted}>
+                🔇 Audio unavailable — tap the words for:{" "}
+                <Text style={{ fontWeight: "800", color: colors.text }}>{exercise.answer}</Text>
+              </Text>
+            </View>
+          )}
         </>
       ) : (
         <>
@@ -71,7 +120,7 @@ export function TapsView({
             accessibilityLabel={`${exercise.wordBank[wordIdx]}, in answer`}
             accessibilityHint="removes the word"
             accessibilityState={{ disabled }}
-            style={({ pressed }) => [styles.optionBtn, pressed && pressDown]}
+            style={({ pressed }) => [styles.optionBtn, styles.chip, pressed && pressDown]}
             disabled={disabled}
             onPress={() => update(picked.filter((_, p) => p !== pos))}
           >
@@ -81,7 +130,8 @@ export function TapsView({
       </View>
 
       <View style={styles.chipRow}>
-        {exercise.wordBank.map((word, i) => {
+        {bankOrder.map((i) => {
+          const word = exercise.wordBank[i]!;
           const used = picked.includes(i);
           return (
             <Pressable
@@ -89,7 +139,7 @@ export function TapsView({
               accessibilityRole="button"
               accessibilityLabel={used ? `${word}, used` : word}
               accessibilityState={{ disabled: disabled || used }}
-              style={({ pressed }) => [styles.optionBtn, used && { opacity: 0.3 }, pressed && pressDown]}
+              style={({ pressed }) => [styles.optionBtn, styles.chip, used && { opacity: 0.3 }, pressed && pressDown]}
               disabled={disabled || used}
               onPress={() => update([...picked, i])}
             >

@@ -61,7 +61,14 @@ function ensureAudioMode(): Promise<void> {
 }
 
 /**
- * Play a clip by audio ref: local cache first, then network. Silent on failure.
+ * Play a clip by audio ref: local cache first, then network. Never throws.
+ *
+ * Resolves true once something is audible (the recording started, or the TTS
+ * fallback began speaking) and false when nothing could be played — no
+ * recording and no text to speak, or the device's speech engine failed. A
+ * listen exercise uses that to show its sentence instead of leaving the
+ * learner to guess (see TapsView). A call superseded by a newer one resolves
+ * true: it says nothing about whether audio works.
  *
  * While a recording is missing, falls back to device TTS speaking the bundle's
  * audioTexts entry (or `fallbackText`). Recorded clips always win (AUD-01).
@@ -69,10 +76,10 @@ function ensureAudioMode(): Promise<void> {
  * Replaying restarts the clip rather than layering a second copy over it; a
  * repeat of the same clip within DOUBLE_TAP_MS is ignored.
  */
-export async function playAudio(ref: string | undefined, fallbackText?: string): Promise<void> {
+export async function playAudio(ref: string | undefined, fallbackText?: string): Promise<boolean> {
   const key = ref ?? fallbackText;
   const now = Date.now();
-  if (key !== undefined && key === lastKey && playing && now - lastStartedAt < DOUBLE_TAP_MS) return;
+  if (key !== undefined && key === lastKey && playing && now - lastStartedAt < DOUBLE_TAP_MS) return true;
   lastKey = key;
   lastStartedAt = now;
 
@@ -95,7 +102,7 @@ export async function playAudio(ref: string | undefined, fallbackText?: string):
     if (gen !== generation) {
       // a newer tap superseded this one while it was loading
       void sound.unloadAsync().catch(() => {});
-      return;
+      return true;
     }
     current = sound;
     const loaded = sound;
@@ -109,34 +116,72 @@ export async function playAudio(ref: string | undefined, fallbackText?: string):
       }
     });
     await loaded.playAsync();
+    return true;
   } catch {
     if (sound && current === sound) current = null;
     if (sound) void sound.unloadAsync().catch(() => {});
-    if (gen !== generation) return;
+    if (gen !== generation) return true;
     // clip not recorded yet or no network — non-fatal (AUD-02)
-    speak(text, gen);
+    return speak(text, gen);
   }
 }
 
-/** Speak Tagalog text with the device voice; no-op when we have no text. */
-function speak(text: string | null | undefined, gen: number): void {
+/** how long to wait for the speech engine to report anything before calling
+ *  it unavailable (a cold Android TTS engine can take a second or two) */
+const SPEECH_START_TIMEOUT_MS = 4000;
+
+/**
+ * Speak Tagalog text with the device voice. Resolves true once the utterance
+ * starts (or was cut off by a newer tap), false when there is no text, the
+ * engine errors, or it never reports back.
+ */
+function speak(text: string | null | undefined, gen: number): Promise<boolean> {
   if (!text) {
     if (gen === generation) setPlaying(false);
-    return;
+    return Promise.resolve(false);
   }
   Speech.stop(); // don't stack utterances from rapid taps
   setPlaying(true);
-  // stale callbacks (an utterance cut off by a newer tap) must not clear the
-  // newer one's playing state
-  const done = () => {
-    if (gen === generation) setPlaying(false);
-  };
-  Speech.speak(text, {
-    language: "fil-PH",
-    rate: 0.85, // learners need slower speech
-    onDone: done,
-    onStopped: done,
-    onError: done,
+  return new Promise<boolean>((resolve) => {
+    let settled = false;
+    const settle = (ok: boolean) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolve(ok);
+    };
+    // stale callbacks (an utterance cut off by a newer tap) must not clear the
+    // newer one's playing state
+    const done = () => {
+      if (gen === generation) setPlaying(false);
+    };
+    const timer = setTimeout(() => {
+      // superseded calls are not evidence that speech is broken
+      settle(gen !== generation);
+      done();
+    }, SPEECH_START_TIMEOUT_MS);
+    try {
+      Speech.speak(text, {
+        language: "fil-PH",
+        rate: 0.85, // learners need slower speech
+        onStart: () => settle(true),
+        onDone: () => {
+          settle(true);
+          done();
+        },
+        onStopped: () => {
+          settle(true);
+          done();
+        },
+        onError: () => {
+          settle(false);
+          done();
+        },
+      });
+    } catch {
+      settle(false);
+      done();
+    }
   });
 }
 
@@ -159,7 +204,12 @@ export async function cacheAllAudio(onProgress?: (done: number, total: number) =
         const res = await FileSystem.downloadAsync(audioUrl(file), local);
         ok = res.status === 200;
       } catch {
-        ok = false; // interrupted mid-write
+        // network failure (offline / server unreachable / interrupted
+        // mid-write): drop the partial file and end this pass rather than
+        // firing one doomed request per clip; the next launch resumes, since
+        // finished files are skipped
+        await FileSystem.deleteAsync(local, { idempotent: true }).catch(() => {});
+        return;
       }
       if (!ok) await FileSystem.deleteAsync(local, { idempotent: true }).catch(() => {});
     }
