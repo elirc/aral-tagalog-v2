@@ -152,6 +152,9 @@ lessons:
       - type: translate
         prompt_en: The wind is strong today.
         answer_tl: Malakas ang hangin ngayon.
+        accept:
+          - "Malakas ngayon ang hangin"
+          - "Ngayon, malakas ang hangin"
         extra_words: [ulan, mainit, araw]
       - type: fill_blank
         sentence: "May ___ ngayon, malakas ang ulan at hangin."
@@ -183,4 +186,390 @@ lessons:
       - type: translate
         prompt_en: The weather is cold today.
         answer_tl: Malamig ang panahon ngayon.
+        accept:
+          - "Malamig ngayon ang panahon"
+          - "Ngayon, malamig ang panahon"
         extra_words: [mainit, hangin, bagyo]
+  - id: weather-5
+    title: "Ang init!"
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "Ang init!", en: "It's so hot!" }
+          - { tl: "Ang lamig!", en: "It's so cold!" }
+          - { tl: Oo nga, en: "Yes, indeed" }
+          - { tl: Umuulan, en: "It's raining" }
+      - type: choice
+        prompt: "It's a scorching afternoon. Your neighbor fans herself and says:"
+        answer: Ang init!
+        distractors: [Ang lamig!, Umuulan ngayon., Malakas ang hangin.]
+        hint: '"Ang" + a weather root is an exclamation: Ang init! = It''s so hot!'
+      - type: choice
+        prompt: "Someone says 'Ang init, ano?' You agree:"
+        answer: Oo nga.
+        distractors: [Malamig ngayon., Hindi umuulan., Salamat po.]
+        audio: ang_init_ano
+        audio_text: Ang init, ano?
+        hint: '"ano?" at the end works like "isn''t it?" — "Oo nga" = yes, indeed.'
+      - type: translate
+        prompt_tl: Ang lamig ngayon!
+        answer_en: It's so cold today!
+        accept: ["It is so cold today", "It's so cold now", "It is so cold now", "It's really cold today", "It's really cold now"]
+        extra_words: [hot, rain, sun]
+        audio: ang_lamig_ngayon
+      - type: fill_blank
+        sentence: "Ang ___! Uminom tayo ng malamig na tubig."
+        translation: "It's so hot! Let's drink some cold water."
+        answer: init
+        options: [init, lamig, ulan]
+      - type: listen
+        audio: ang_init_ano
+        answer_tl: Ang init, ano
+        accept: ["Ang init, ano?"]
+        extra_words: [lamig, ngayon]
+      - type: translate
+        prompt_tl: Malamig sa bundok.
+        answer_en: It's cold in the mountains.
+        accept: ["It is cold in the mountains", "It's cold on the mountain", "It is cold on the mountain", "It's cold in the mountain"]
+        extra_words: [hot, sea, sky]
+        audio: malamig_sa_bundok
+      - type: translate
+        prompt_en: It's so hot today!
+        answer_tl: Ang init ngayon!
+        extra_words: [lamig, ulan, araw]
+        audio: ang_init_ngayon
+  - id: weather-6
+    title: Clouds and umbrellas
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ulap, en: cloud }
+          - { tl: maulap, en: cloudy }
+          - { tl: payong, en: umbrella }
+          - { tl: basa, en: wet }
+      - type: choice
+        prompt: "'Maulap' means..."
+        answer: Cloudy
+        distractors: [Sunny, Windy, Wet]
+        audio: maulap
+        audio_text: Maulap
+        hint: '"ma-" + ulap (cloud) = cloudy. Many weather words are built this way.'
+      - type: translate
+        prompt_tl: Maulap ang langit.
+        answer_en: The sky is cloudy.
+        extra_words: [sunny, sea, rain]
+        audio: maulap_ang_langit
+      - type: fill_blank
+        sentence: "Umuulan! May ___ ka ba?"
+        translation: "It's raining! Do you have an umbrella?"
+        answer: payong
+        options: [payong, ulap, bagyo]
+      - type: translate
+        prompt_tl: Basa ang libro ko.
+        answer_en: My book is wet.
+        extra_words: [umbrella, cloud, dry]
+        audio: basa_ang_libro_ko
+      - type: listen
+        audio: may_payong_ka_ba
+        answer_tl: May payong ka ba
+        accept: ["May payong ka ba?"]
+        extra_words: [ulap, basa]
+      - type: choice
+        prompt: "You forgot your umbrella and it's pouring. You get home and say:"
+        answer: Basa ako!
+        distractors: [Ang init!, Maulap ngayon., Maganda ang panahon.]
+      - type: translate
+        prompt_en: I don't have an umbrella.
+        answer_tl: Wala akong payong.
+        extra_words: [may, ulap, ka]
+        audio: wala_akong_payong
+        hint: 'Same pattern as "Wala akong kapatid" — wala + ako + -ng.'
+      - type: translate
+        prompt_en: It's cloudy today.
+        answer_tl: Maulap ngayon.
+        extra_words: [umuulan, mainit, payong]
+        audio: maulap_ngayon
+  - id: weather-7
+    title: Two seasons
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tag-ulan, en: rainy season }
+          - { tl: tag-init, en: hot season }
+          - { tl: panahon, en: weather }
+          - { tl: araw-araw, en: every day }
+      - type: choice
+        prompt: "'Tag-init' means..."
+        answer: Hot / dry season
+        distractors: [Rainy season, Christmas season, Cold weather]
+        audio: tag_init
+        audio_text: Tag-init
+        hint: '"tag-" + a word = the season of it: tag-init (heat), tag-ulan (rain).'
+      - type: choice
+        prompt: "The Philippines has two main seasons:"
+        answer: tag-init at tag-ulan
+        distractors: [umaga at gabi, ulan at hangin, bundok at dagat]
+      - type: translate
+        prompt_tl: Umuulan araw-araw sa tag-ulan.
+        answer_en: It rains every day in the rainy season.
+        accept: ["It rains every day during the rainy season", "Every day it rains in the rainy season", "It's raining every day in the rainy season"]
+        extra_words: [hot, sun, never]
+        audio: umuulan_araw_araw_sa_tag_ulan
+      - type: fill_blank
+        sentence: "Mainit ang araw sa ___."
+        translation: "The sun is hot in the hot season."
+        answer: tag-init
+        options: [tag-init, tag-ulan, bagyo]
+      - type: listen
+        audio: mainit_sa_tag_init
+        answer_tl: Mainit sa tag-init
+        extra_words: [ulan, malamig]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "When do typhoons usually come?"
+        answer: Sa tag-ulan
+        distractors: [Sa tag-init, Sa umaga, Sa bundok]
+        hint: 'The rainy season runs roughly June to November — typhoon season too.'
+      - type: translate
+        prompt_en: There's a storm in the rainy season.
+        answer_tl: May bagyo sa tag-ulan.
+        accept: ["Sa tag-ulan, may bagyo"]
+        extra_words: [tag-init, araw, wala]
+        audio: may_bagyo_sa_tag_ulan
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I like the rainy season.
+        answer_tl: Gusto ko ang tag-ulan.
+        extra_words: [ayaw, tag-init, mainit]
+        audio: gusto_ko_ang_tag_ulan
+        grading: { hyphens: true }
+        hint: '"ang" here: you like THE season itself, a specific thing.'
+  - id: weather-8
+    title: Thunder and lightning
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kulog, en: thunder }
+          - { tl: kidlat, en: lightning }
+          - { tl: ulap, en: cloud }
+          - { tl: ulan, en: rain }
+      - type: choice
+        prompt: "'Kidlat' means..."
+        answer: Lightning
+        distractors: [Thunder, Cloud, Wind]
+        audio: kidlat
+        audio_text: Kidlat
+      - type: translate
+        prompt_tl: May kulog at kidlat.
+        answer_en: There's thunder and lightning.
+        accept: ["There is thunder and lightning"]
+        extra_words: [rain, cloud, no]
+        audio: may_kulog_at_kidlat
+      - type: fill_blank
+        sentence: "Malakas ang ___ at ang ulan."
+        translation: "The thunder and the rain are loud."
+        answer: kulog
+        options: [kulog, ulap, langit]
+      - type: choice
+        prompt: "'Malakas na ulan' means..."
+        answer: Heavy rain
+        distractors: [Light rain, Cold rain, No rain]
+        audio: malakas_na_ulan
+        audio_text: Malakas na ulan.
+        hint: '"na" links a describing word to a noun after a consonant: malakas na ulan.'
+      - type: listen
+        audio: may_kulog_at_kidlat
+        answer_tl: May kulog at kidlat
+        extra_words: [ulan, ulap]
+      - type: translate
+        prompt_tl: Maraming ulap sa langit.
+        answer_en: There are many clouds in the sky.
+        accept: ["There are a lot of clouds in the sky", "Many clouds are in the sky"]
+        extra_words: [sun, sea, few]
+        audio: maraming_ulap_sa_langit
+      - type: fill_blank
+        sentence: "Malakas ___ ulan."
+        translation: "Heavy rain."
+        answer: na
+        options: [na, ng, sa]
+        hint: 'The linker "na" joins malakas to ulan.'
+      - type: translate
+        prompt_en: The rain is heavy today.
+        answer_tl: Malakas ang ulan ngayon.
+        accept:
+          - "Malakas ngayon ang ulan"
+          - "Ngayon, malakas ang ulan"
+        extra_words: [kulog, mainit, araw]
+        audio: malakas_ang_ulan_ngayon
+  - id: weather-9
+    title: Typhoon season
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: baha, en: flood }
+          - { tl: bagyo, en: typhoon }
+          - { tl: walang pasok, en: no classes or work }
+          - { tl: malakas, en: strong }
+      - type: choice
+        prompt: "'Baha' means..."
+        answer: Flood
+        distractors: [Storm, Thunder, Cloud]
+        audio: baha
+        audio_text: Baha
+      - type: choice
+        prompt: "A strong typhoon is coming. The news says 'Walang pasok bukas.' That means..."
+        answer: No school or work tomorrow
+        distractors: [School starts tomorrow, The typhoon is tomorrow, There's no rain tomorrow]
+        audio: walang_pasok_bukas
+        audio_text: Walang pasok bukas.
+        hint: '"Pasok" is going in to school or work; "walang pasok" = classes and work are called off.'
+      - type: translate
+        prompt_tl: May baha sa palengke.
+        answer_en: There's a flood at the market.
+        accept: ["There is a flood at the market", "The market is flooded"]
+        extra_words: [storm, house, school]
+        audio: may_baha_sa_palengke
+      - type: fill_blank
+        sentence: "Walang ___ bukas dahil sa bagyo."
+        translation: "No classes tomorrow because of the typhoon."
+        answer: pasok
+        options: [pasok, baha, ulan]
+        hint: '"dahil sa" = because of'
+      - type: listen
+        audio: walang_pasok_bukas
+        answer_tl: Walang pasok bukas
+        extra_words: [bagyo, baha]
+      - type: translate
+        prompt_tl: Mag-ingat kayo, malakas ang bagyo ngayon.
+        answer_en: Be careful, the typhoon is strong today.
+        accept: ["Take care, the typhoon is strong today", "Be careful, the storm is strong today", "Take care, the storm is strong today", "Be careful, the typhoon is strong now", "Be careful, the storm is strong now"]
+        extra_words: [weak, sun, tomorrow]
+        audio: mag_ingat_kayo_malakas_ang_bagyo_ngayon
+        hint: '"Mag-ingat kayo" = take care / be careful (to a group, or politely).'
+      - type: translate
+        prompt_en: There's a flood because of the typhoon.
+        answer_tl: May baha dahil sa bagyo.
+        accept: ["Dahil sa bagyo, may baha"]
+        extra_words: [ulan, wala, ang]
+        audio: may_baha_dahil_sa_bagyo
+      - type: translate
+        prompt_en: No classes tomorrow.
+        answer_tl: Walang pasok bukas.
+        accept: ["Bukas, walang pasok"]
+        extra_words: [may, ngayon, bagyo]
+        audio: walang_pasok_bukas
+  - id: weather-10
+    title: Out in nature
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ilog, en: river }
+          - { tl: buwan, en: moon }
+          - { tl: bundok, en: mountain }
+          - { tl: bulaklak, en: flower }
+      - type: choice
+        prompt: "'Ilog' means..."
+        answer: River
+        distractors: [Sea, Mountain, Sky]
+        audio: ilog
+        audio_text: Ilog
+      - type: choice
+        prompt: "You reach the top of a mountain and see the view. You say:"
+        answer: Ang ganda!
+        distractors: [Basa ako!, Walang pasok!, May baha!]
+        hint: '"Ang ganda!" works like "Ang init!" — ang + the root of maganda.'
+      - type: translate
+        prompt_tl: Ang ganda ng langit ngayon!
+        answer_en: The sky is so beautiful today!
+        accept: ["The sky is so beautiful now", "The sky is really beautiful today", "How beautiful the sky is today"]
+        extra_words: [cloudy, sea, moon]
+        audio: ang_ganda_ng_langit_ngayon
+        hint: '"Ang ganda ng ..." = How beautiful the ... is!'
+      - type: fill_blank
+        sentence: "Malaki ang ___ ngayong gabi."
+        translation: "The moon is big tonight."
+        answer: buwan
+        options: [buwan, araw, ilog]
+        hint: '"ngayong gabi" = tonight'
+      - type: translate
+        prompt_tl: Maraming isda sa ilog.
+        answer_en: There are many fish in the river.
+        accept: ["There are a lot of fish in the river", "Many fish are in the river"]
+        extra_words: [sea, trees, few]
+        audio: maraming_isda_sa_ilog
+      - type: listen
+        audio: ang_ganda_ng_bulaklak
+        answer_tl: Ang ganda ng bulaklak
+        extra_words: [puno, ilog]
+      - type: translate
+        prompt_en: The trees on the mountain are tall.
+        answer_tl: Mataas ang mga puno sa bundok.
+        extra_words: [dagat, maliit, ilog]
+        audio: mataas_ang_mga_puno_sa_bundok
+        hint: '"mga" makes puno plural.'
+      - type: translate
+        prompt_en: How beautiful the moon is!
+        answer_tl: Ang ganda ng buwan!
+        extra_words: [araw, init, sa]
+        audio: ang_ganda_ng_buwan
+  - id: weather-11
+    title: Talking about the weather
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumusta ang panahon?' asks..."
+        answer: How's the weather?
+        distractors: [Where's the weather?, Is it raining?, What season is it?]
+        audio: kumusta_ang_panahon
+        audio_text: Kumusta ang panahon?
+      - type: translate
+        prompt_tl: Maulap at malamig ngayon, pero hindi umuulan.
+        answer_en: It's cloudy and cold today, but it's not raining.
+        accept: ["It is cloudy and cold today, but it is not raining", "It's cloudy and cold now, but it's not raining", "It is cloudy and cold now, but it is not raining", "It's cloudy and cold today but it isn't raining"]
+        extra_words: [hot, sunny, wet]
+        audio: maulap_at_malamig_ngayon_pero_hindi_umuulan
+        hint: '"pero" = but'
+      - type: fill_blank
+        sentence: "Umuulan, ___ wala akong payong."
+        translation: "It's raining, but I don't have an umbrella."
+        answer: pero
+        options: [pero, o, ba]
+      - type: match
+        pairs:
+          - { tl: tag-ulan, en: rainy season }
+          - { tl: maulap, en: cloudy }
+          - { tl: baha, en: flood }
+          - { tl: kidlat, en: lightning }
+      - type: translate
+        prompt_en: It's raining now, I'm wet!
+        answer_tl: Umuulan ngayon, basa ako!
+        extra_words: [payong, mainit, wala]
+        audio: umuulan_ngayon_basa_ako
+      - type: listen
+        audio: kumusta_ang_panahon
+        answer_tl: Kumusta ang panahon
+        accept: ["Kumusta ang panahon?"]
+        extra_words: [bagyo, ngayon]
+      - type: choice
+        prompt: "Your friend says 'Ang init, ano?' but it's actually cold and windy. You reply:"
+        answer: Hindi, malamig ngayon.
+        distractors: ["Oo nga, ang init.", Walang pasok bukas., May baha sa palengke.]
+      - type: translate
+        prompt_en: There's a typhoon tomorrow. No classes!
+        answer_tl: May bagyo bukas. Walang pasok!
+        accept: ["Bukas, may bagyo. Walang pasok"]
+        extra_words: [ngayon, baha, ulan]
+        audio: may_bagyo_bukas_walang_pasok
+      - type: translate
+        prompt_en: The weather is beautiful in the hot season.
+        answer_tl: Maganda ang panahon sa tag-init.
+        accept: ["Sa tag-init, maganda ang panahon"]
+        extra_words: [tag-ulan, malamig, ulap]
+        audio: maganda_ang_panahon_sa_tag_init
+        grading: { hyphens: true }

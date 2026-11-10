@@ -229,3 +229,349 @@ lessons:
         distractors: [Kain tayo sa handaan, Maglaro tayo ng basketbol, Bumili ka ng sapatos]
         audio: magpahinga_ka_at_uminom_ka_ng_gamot
         audio_text: Magpahinga ka at uminom ka ng gamot.
+  - id: doctor-5
+    title: How long has it been?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Gaano katagal?' means..."
+        answer: How long?
+        distractors: [How much?, How many?, How far?]
+        audio: gaano_katagal
+        audio_text: Gaano katagal?
+      - type: match
+        pairs:
+          - { tl: gaano katagal, en: how long }
+          - { tl: tatlong araw, en: three days }
+          - { tl: isang linggo, en: one week }
+          - { tl: dalawang buwan, en: two months }
+      - type: choice
+        prompt: "'Tatlong araw na akong may lagnat' means..."
+        answer: I have had a fever for three days now
+        distractors: [I had a fever three days ago, I will have a fever for three days, My fever left after three days]
+        audio: tatlong_araw_na_akong_may_lagnat
+        audio_text: Tatlong araw na akong may lagnat.
+        hint: '"na" after a time phrase = it has already been that long.'
+      - type: fill_blank
+        sentence: "___ katagal na ang ubo mo?"
+        translation: "How long have you had your cough?"
+        answer: Gaano
+        options: [Gaano, Magkano, Kailan]
+      - type: listen
+        audio: isang_linggo_na_ang_sipon_ko
+        answer_tl: Isang linggo na ang sipon ko
+        extra_words: [araw, ubo]
+      - type: translate
+        prompt_tl: Dalawang araw nang masama ang pakiramdam ko.
+        answer_en: I have been feeling unwell for two days now.
+        accept: ["I have been feeling unwell for two days", "I have felt unwell for two days", "I have been feeling bad for two days now"]
+        extra_words: [week, good, tomorrow]
+        audio: dalawang_araw_nang_masama_ang_pakiramdam_ko
+      - type: translate
+        prompt_en: I have had a cough for one week now.
+        answer_tl: Isang linggo na akong may ubo.
+        accept: ["Isang linggo na po akong may ubo"]
+        extra_words: [kahapon, lagnat, siya]
+        audio: isang_linggo_na_akong_may_ubo
+      - type: translate
+        prompt_en: How long has your head been hurting?
+        answer_tl: Gaano katagal nang masakit ang ulo mo?
+        extra_words: [tiyan, kailan, kanina]
+        audio: gaano_katagal_nang_masakit_ang_ulo_mo
+        grading: { ng_nang: true }
+  - id: doctor-6
+    title: More symptoms
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nahihilo, en: dizzy }
+          - { tl: nagsusuka, en: vomiting }
+          - { tl: lalamunan, en: throat }
+          - { tl: dugo, en: blood }
+      - type: choice
+        prompt: "'Nahihilo ako' means..."
+        answer: I feel dizzy
+        distractors: [I am vomiting, I am tired, I have a cold]
+        audio: nahihilo_ako
+        audio_text: Nahihilo ako.
+      - type: translate
+        prompt_tl: Masakit ang lalamunan ko at may ubo ako.
+        answer_en: My throat hurts and I have a cough.
+        accept: ["My throat is sore and I have a cough"]
+        extra_words: [head, fever, cold]
+        audio: masakit_ang_lalamunan_ko_at_may_ubo_ako
+      - type: fill_blank
+        sentence: "May ___ ang sugat niya."
+        translation: "There is blood on his wound."
+        answer: dugo
+        options: [dugo, gamot, tubig]
+      - type: choice
+        prompt: "'Hirap akong huminga' means..."
+        answer: I am having a hard time breathing
+        distractors: [I am breathing fine, I am very tired, I stopped coughing]
+        audio: hirap_akong_huminga
+        audio_text: Hirap akong huminga.
+        hint: '"hirap" = having a hard time — same root as "mahirap" (difficult).'
+      - type: listen
+        audio: nagsusuka_ang_anak_ko
+        answer_tl: Nagsusuka ang anak ko
+        extra_words: [nahihilo, asawa]
+      - type: translate
+        prompt_en: I feel dizzy and I am vomiting.
+        answer_tl: Nahihilo ako at nagsusuka.
+        accept: ["Nahihilo at nagsusuka ako"]
+        extra_words: [ubo, siya, lagnat]
+        audio: nahihilo_ako_at_nagsusuka
+      - type: translate
+        prompt_tl: Pumunta kami sa ospital kasi hirap siyang huminga.
+        answer_en: We went to the hospital because he was having a hard time breathing.
+        accept: ["We went to the hospital because she was having a hard time breathing", "We went to the hospital because he had a hard time breathing", "We went to the hospital because she had a hard time breathing"]
+        extra_words: [clinic, dizzy, yesterday]
+        audio: pumunta_kami_sa_ospital_kasi_hirap_siyang_huminga
+  - id: doctor-7
+    title: Sa klinika
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Klinika' means..."
+        answer: Clinic
+        distractors: [Pharmacy, Hospital, Office]
+        audio: klinika
+        audio_text: Klinika
+      - type: match
+        pairs:
+          - { tl: klinika, en: clinic }
+          - { tl: doktor, en: doctor }
+          - { tl: nars, en: nurse }
+          - { tl: gamot, en: medicine }
+      - type: translate
+        prompt_tl: Ano po ang pakiramdam ninyo ngayon?
+        answer_en: How are you feeling now?
+        accept: ["What are you feeling now?", "How do you feel now?"]
+        extra_words: [name, where, yesterday]
+        audio: ano_po_ang_pakiramdam_ninyo_ngayon
+        hint: 'A doctor asks politely with "po" and "ninyo".'
+      - type: fill_blank
+        sentence: "Pumunta ako sa ___ kasi may lagnat ako."
+        translation: "I went to the clinic because I have a fever."
+        answer: klinika
+        options: [klinika, palengke, paaralan]
+      - type: listen
+        audio: nasaan_po_ang_doktor
+        answer_tl: Nasaan po ang doktor
+        extra_words: [nars, klinika]
+      - type: choice
+        prompt: "The nurse asks 'Ano po ang pangalan ninyo?' You reply:"
+        answer: Ako po si Ana.
+        distractors: [Masakit po ang ulo ko., Magandang umaga po., Tatlong araw na po.]
+        audio: ako_po_si_ana
+        audio_text: Ako po si Ana.
+      - type: translate
+        prompt_en: Doctor, my stomach hurts and I feel dizzy.
+        answer_tl: Doktor, masakit ang tiyan ko at nahihilo ako.
+        accept: ["Doktor, masakit po ang tiyan ko at nahihilo po ako"]
+        extra_words: [ulo, siya, lagnat]
+        audio: doktor_masakit_ang_tiyan_ko_at_nahihilo_ako
+      - type: translate
+        prompt_tl: Magandang umaga po, doktor. Masama po ang pakiramdam ko.
+        answer_en: Good morning, doctor. I am not feeling well.
+        accept: ["Good morning doctor. I am not feeling well", "Good morning, doctor. I don't feel well", "Good morning doctor, I feel unwell"]
+        extra_words: [evening, head, nurse]
+        audio: magandang_umaga_po_doktor_masama_po_ang_pakiramdam_ko
+  - id: doctor-8
+    title: Reseta at gamot
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Reseta' means..."
+        answer: Prescription
+        distractors: [Medicine, Receipt, Appointment]
+        audio: reseta
+        audio_text: Reseta
+      - type: match
+        pairs:
+          - { tl: reseta, en: prescription }
+          - { tl: isang beses, en: once }
+          - { tl: dalawang beses, en: twice }
+          - { tl: tatlong beses, en: three times }
+      - type: fill_blank
+        sentence: "Uminom ng gamot tatlong ___ sa isang araw."
+        translation: "Take medicine three times a day."
+        answer: beses
+        options: [beses, araw, piso]
+      - type: translate
+        prompt_tl: Heto po ang reseta ninyo.
+        answer_en: Here is your prescription.
+        accept: ["Here's your prescription"]
+        extra_words: [medicine, my, change]
+        audio: heto_po_ang_reseta_ninyo
+      - type: listen
+        audio: uminom_po_kayo_ng_gamot_dalawang_beses
+        answer_tl: Uminom po kayo ng gamot dalawang beses sa isang araw
+        extra_words: [tatlong, tubig]
+      - type: choice
+        prompt: "The doctor hands you medicine. She says:"
+        answer: Uminom po kayo ng gamot sa umaga at sa gabi.
+        distractors: [Bumili po kayo ng kanin sa palengke., Magandang gabi po., Nasaan po ang banyo?]
+        audio: uminom_po_kayo_ng_gamot_sa_umaga_at_sa_gabi
+        audio_text: Uminom po kayo ng gamot sa umaga at sa gabi.
+      - type: translate
+        prompt_en: Take (drink) the medicine twice a day.
+        answer_tl: Uminom ng gamot dalawang beses sa isang araw.
+        accept: ["Uminom ka ng gamot dalawang beses sa isang araw"]
+        extra_words: [tatlong, tubig, bukas]
+        audio: uminom_ng_gamot_dalawang_beses_sa_isang_araw
+      - type: translate
+        prompt_tl: Wala po akong reseta. Pwede po bang bumili ng gamot?
+        answer_en: I don't have a prescription. Can I buy medicine?
+        accept: ["I have no prescription. Can I buy medicine?", "I don't have a prescription. May I buy medicine?"]
+        extra_words: [doctor, water, where]
+        audio: wala_po_akong_reseta_pwede_po_bang_bumili_ng_gamot
+  - id: doctor-9
+    title: Doctor's orders
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Magpahinga po kayo sa loob ng tatlong araw' means..."
+        answer: Rest for three days
+        distractors: [Rest in three days, Work for three days, Come back in three days]
+        audio: magpahinga_po_kayo_sa_loob_ng_tatlong_araw
+        audio_text: Magpahinga po kayo sa loob ng tatlong araw.
+        hint: '"sa loob ng" + a time = for/within that length of time.'
+      - type: match
+        pairs:
+          - { tl: magpahinga, en: to rest }
+          - { tl: huwag, en: "don't" }
+          - { tl: uminom, en: to drink }
+          - { tl: sa loob ng, en: within }
+      - type: fill_blank
+        sentence: "___ kang magtrabaho ngayon."
+        translation: "Don't work today."
+        answer: Huwag
+        options: [Huwag, Pwede, Gusto]
+      - type: translate
+        prompt_tl: Huwag kang uminom ng kape ngayon.
+        answer_en: Don't drink coffee today.
+        accept: ["Do not drink coffee today", "Don't drink coffee now"]
+        extra_words: [medicine, tomorrow, eat]
+        audio: huwag_kang_uminom_ng_kape_ngayon
+      - type: listen
+        audio: magpahinga_ka_muna_sa_bahay
+        answer_tl: Magpahinga ka muna sa bahay
+        extra_words: [ospital, huwag]
+      - type: choice
+        prompt: "You must stay home from work. Tell your boss politely:"
+        answer: May sakit po ako. Magpapahinga po ako sa bahay.
+        distractors: [Masaya po ako sa trabaho., Pupunta po ako sa handaan., Gutom po ako.]
+        audio: may_sakit_po_ako_magpapahinga_po_ako_sa_bahay
+        audio_text: May sakit po ako. Magpapahinga po ako sa bahay.
+      - type: translate
+        prompt_en: Rest first and drink a lot of water.
+        answer_tl: Magpahinga ka muna at uminom ng maraming tubig.
+        accept: ["Magpahinga muna at uminom ng maraming tubig"]
+        extra_words: [kape, bukas, gamot]
+        audio: magpahinga_ka_muna_at_uminom_ng_maraming_tubig
+      - type: translate
+        prompt_en: Don't play basketball for one week.
+        answer_tl: Huwag kang maglaro ng basketbol sa loob ng isang linggo.
+        extra_words: [dalawang, trabaho, kahapon]
+        audio: huwag_kang_maglaro_ng_basketbol_sa_loob_ng_isang_linggo
+  - id: doctor-10
+    title: Emergency!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Emerhensiya' means..."
+        answer: Emergency
+        distractors: [Ambulance, Medicine, Wound]
+        audio: emerhensiya
+        audio_text: Emerhensiya
+      - type: match
+        pairs:
+          - { tl: emerhensiya, en: emergency }
+          - { tl: ambulansya, en: ambulance }
+          - { tl: dugo, en: blood }
+          - { tl: ospital, en: hospital }
+      - type: choice
+        prompt: "Someone is badly hurt. Shout:"
+        answer: Tumawag ka ng ambulansya!
+        distractors: [Magandang hapon po!, Magkano ang gamot?, Kumain ka na ba?]
+        audio: tumawag_ka_ng_ambulansya
+        audio_text: Tumawag ka ng ambulansya!
+      - type: fill_blank
+        sentence: "May ___ ang ulo niya. Pumunta tayo sa ospital!"
+        translation: "His head is bleeding. Let's go to the hospital!"
+        answer: dugo
+        options: [dugo, sipon, sukli]
+      - type: listen
+        audio: emerhensiya_po_ito
+        answer_tl: Emerhensiya po ito
+        extra_words: [ambulansya, ospital]
+      - type: translate
+        prompt_tl: Hirap huminga ang lolo ko. Tumawag kayo ng doktor!
+        answer_en: My grandpa is having a hard time breathing. Call a doctor!
+        accept: ["My grandfather is having a hard time breathing. Call a doctor!", "My grandpa has a hard time breathing. Call a doctor!"]
+        extra_words: [grandma, nurse, slowly]
+        audio: hirap_huminga_ang_lolo_ko_tumawag_kayo_ng_doktor
+      - type: translate
+        prompt_en: This is an emergency. We will go to the hospital now.
+        answer_tl: Emerhensiya ito. Pupunta kami sa ospital ngayon.
+        accept: ["Emerhensiya po ito. Pupunta po kami sa ospital ngayon"]
+        extra_words: [klinika, bukas, siya]
+        audio: emerhensiya_ito_pupunta_kami_sa_ospital_ngayon
+      - type: translate
+        prompt_tl: Nasaan ang pinakamalapit na ospital?
+        answer_en: Where is the nearest hospital?
+        accept: ["Where is the closest hospital?"]
+        extra_words: [pharmacy, far, clinic]
+        audio: nasaan_ang_pinakamalapit_na_ospital
+  - id: doctor-11
+    title: The whole visit
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lagnat, en: fever }
+          - { tl: reseta, en: prescription }
+          - { tl: nahihilo, en: dizzy }
+          - { tl: klinika, en: clinic }
+      - type: choice
+        prompt: "You arrive at the clinic. The nurse asks 'Ano po ang pakiramdam ninyo?' You say:"
+        answer: Masakit po ang ulo ko at nahihilo ako.
+        distractors: [Ako po si doktor., Nasaan po ang palengke?, "Salamat po, paalam."]
+        audio: masakit_po_ang_ulo_ko_at_nahihilo_ako
+        audio_text: Masakit po ang ulo ko at nahihilo ako.
+      - type: translate
+        prompt_tl: Gaano katagal na po ang lagnat ninyo?
+        answer_en: How long have you had the fever?
+        accept: ["How long has your fever been?", "How long have you had your fever?"]
+        extra_words: [cough, when, medicine]
+        audio: gaano_katagal_na_po_ang_lagnat_ninyo
+      - type: translate
+        prompt_en: Two days now, doctor.
+        answer_tl: Dalawang araw na po, doktor.
+        accept: ["Dalawang araw na, doktor"]
+        extra_words: [tatlong, linggo, kahapon]
+        audio: dalawang_araw_na_po_doktor
+      - type: fill_blank
+        sentence: "Heto ang reseta. Uminom ng gamot tatlong beses sa isang ___."
+        translation: "Here is the prescription. Take medicine three times a day."
+        answer: araw
+        options: [araw, linggo, gabi]
+      - type: listen
+        audio: magpahinga_po_kayo_at_huwag_magtrabaho
+        answer_tl: Magpahinga po kayo at huwag magtrabaho
+        extra_words: [maglaro, bukas]
+      - type: translate
+        prompt_en: Thank you, doctor. I will buy medicine at the pharmacy.
+        answer_tl: Salamat po, doktor. Bibili ako ng gamot sa botika.
+        accept: ["Salamat po doktor. Bibili po ako ng gamot sa botika"]
+        extra_words: [ospital, kahapon, kape]
+        audio: salamat_po_doktor_bibili_ako_ng_gamot_sa_botika
+      - type: translate
+        prompt_tl: Pumunta ako sa klinika kanina kasi tatlong araw na akong may ubo at lagnat.
+        answer_en: I went to the clinic earlier because I have had a cough and a fever for three days now.
+        accept: ["I went to the clinic earlier because I have had a cough and fever for three days", "I went to the clinic earlier today because I have had a cough and a fever for three days"]
+        extra_words: [pharmacy, dizzy, week]
+        audio: pumunta_ako_sa_klinika_kanina_kasi_tatlong_araw_na_akong_may_ubo_at_lagnat

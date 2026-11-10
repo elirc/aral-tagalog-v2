@@ -270,3 +270,345 @@ lessons:
         extra_words: [malungkot, dito, kahapon]
         audio: masaya_raw_doon_gusto_mo_bang_pumunta_bukas
         hint: '"Masaya" ends in a vowel, so "daw" softens to "raw".'
+  - id: revquest-5
+    title: Questions at the market
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magkano, en: how much }
+          - { tl: ilan, en: how many }
+          - { tl: mura, en: cheap }
+          - { tl: mahal, en: expensive }
+      - type: choice
+        prompt: "'Ilan pa ang itlog natin?' means..."
+        answer: How many eggs do we have left?
+        distractors: [How many eggs did we buy?, How much are the eggs?, Do we still have eggs?]
+        audio: ilan_pa_ang_itlog_natin
+        audio_text: Ilan pa ang itlog natin?
+      - type: fill_blank
+        sentence: "___ ba ang isda ngayon? Mahal kahapon."
+        translation: "Is the fish cheap today? It was expensive yesterday."
+        answer: Mura
+        options: [Mura, Mahal, Magkano]
+      - type: translate
+        prompt_tl: Magkano po ba ang isang kilo ng manok?
+        answer_en: How much is one kilo of chicken?
+        accept: ["How much is a kilo of chicken?", "How much for one kilo of chicken?"]
+        extra_words: [fish, many, cheap]
+        audio: magkano_po_ba_ang_isang_kilo_ng_manok
+      - type: listen
+        audio: dalawang_kilo_lang_po
+        answer_tl: Dalawang kilo lang po
+        extra_words: [tatlong, isda]
+      - type: translate
+        prompt_en: How much is this? Is there a discount?
+        answer_tl: Magkano po ito? May tawad po ba?
+        accept: ["Magkano ito? May tawad ba?"]
+        extra_words: [ilan, mahal, sukli]
+        audio: magkano_po_ito_may_tawad_po_ba
+      - type: translate
+        prompt_tl: Mura lang ito kasi suki ako dito.
+        answer_en: This is cheap because I am a regular customer here.
+        accept: ["It's cheap because I'm a regular here", "This is cheap because I'm a regular customer here"]
+        extra_words: [expensive, store, new]
+        audio: mura_lang_ito_kasi_suki_ako_dito
+      - type: translate
+        prompt_en: Where will you buy fish tomorrow?
+        answer_tl: Saan ka bibili ng isda bukas?
+        accept: ["Saan po kayo bibili ng isda bukas?"]
+        extra_words: [magkano, kahapon, manok]
+        audio: saan_ka_bibili_ng_isda_bukas
+  - id: revquest-6
+    title: Questions on the road
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: saan, en: where (to) }
+          - { tl: nasaan, en: where (is) }
+          - { tl: pamasahe, en: fare }
+          - { tl: biyahe, en: trip }
+      - type: choice
+        prompt: "'Magkano po ang pamasahe?' asks about..."
+        answer: The fare
+        distractors: [The destination, The schedule, The driver]
+        audio: magkano_po_ang_pamasahe
+        audio_text: Magkano po ang pamasahe?
+      - type: fill_blank
+        sentence: "___ ka bumaba kanina?"
+        translation: "Where did you get off earlier?"
+        answer: Saan
+        options: [Saan, Nasaan, Kailan]
+      - type: translate
+        prompt_tl: Saan ka sumakay ng jeepney kanina?
+        answer_en: Where did you ride the jeepney earlier?
+        accept: ["Where did you get on the jeepney earlier?", "Where did you take the jeepney earlier?"]
+        extra_words: [when, bus, fare]
+        audio: saan_ka_sumakay_ng_jeepney_kanina
+      - type: listen
+        audio: bakit_sobra_ang_trapik_ngayon
+        answer_tl: Bakit sobra ang trapik ngayon
+        extra_words: [mabagal, kahapon]
+      - type: choice
+        prompt: "You're on a jeepney and want to get off at the corner. Say:"
+        answer: Para po sa kanto!
+        distractors: ["Sige po, salamat!", Magkano po ang pamasahe?, Diretso lang po!]
+        audio: para_po_sa_kanto
+        audio_text: Para po sa kanto!
+      - type: translate
+        prompt_en: When is your trip?
+        answer_tl: Kailan ang biyahe mo?
+        accept: ["Kailan po ang biyahe ninyo?"]
+        extra_words: [saan, pamasahe, bukas]
+        audio: kailan_ang_biyahe_mo
+      - type: translate
+        prompt_tl: Paano ka pumunta sa istasyon? Sumakay ka ba ng traysikel o naglakad ka lang?
+        answer_en: How did you go to the station? Did you ride a tricycle or did you just walk?
+        accept: ["How did you get to the station? Did you ride a tricycle or just walk?", "How did you go to the station? Did you take a tricycle or did you just walk?"]
+        extra_words: [bus, when, far]
+        audio: paano_ka_pumunta_sa_istasyon_sumakay_o_naglakad
+  - id: revquest-7
+    title: Whose and where
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kanino' means..."
+        answer: Whose
+        distractors: [Who, To where, Which]
+        audio: kanino
+        audio_text: Kanino
+      - type: match
+        pairs:
+          - { tl: kanino, en: whose }
+          - { tl: sino, en: who }
+          - { tl: nasaan, en: where (is) }
+          - { tl: saan, en: where (to) }
+      - type: translate
+        prompt_tl: Kanino ba ang selpon na ito?
+        answer_en: Whose cellphone is this?
+        accept: ["Whose phone is this?"]
+        extra_words: [who, where, charger]
+        audio: kanino_ba_ang_selpon_na_ito
+      - type: fill_blank
+        sentence: "___ ang bolpen ko?"
+        translation: "Where is my pen?"
+        answer: Nasaan
+        options: [Nasaan, Saan, Kanino]
+      - type: listen
+        audio: kanino_ang_damit_na_ito
+        answer_tl: Kanino ang damit na ito
+        extra_words: [sapatos, nasaan]
+      - type: translate
+        prompt_en: Whose shoes are these?
+        answer_tl: Kanino ang sapatos na ito?
+        accept: ["Kanino po ang sapatos na ito?"]
+        extra_words: [nasaan, damit, mo]
+        audio: kanino_ang_sapatos_na_ito
+      - type: translate
+        prompt_tl: Nasaan na ba ang drayber? Umuulan na!
+        answer_en: Where is the driver already? It is raining now!
+        accept: ["Where's the driver? It's already raining!", "Where is the driver now? It is already raining!"]
+        extra_words: [who, bus, hot]
+        audio: nasaan_na_ba_ang_drayber_umuulan_na
+      - type: translate
+        prompt_en: Where is your dad working now?
+        answer_tl: Saan na nagtatrabaho ang tatay mo ngayon?
+        accept: ["Saan nagtatrabaho ang tatay mo ngayon?"]
+        extra_words: [nasaan, kailan, kanina]
+        audio: saan_na_nagtatrabaho_ang_tatay_mo_ngayon
+  - id: revquest-8
+    title: Why? Because!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Bakit ka pumunta sa botika?' — a natural answer:"
+        answer: Kasi may sakit ang anak ko.
+        distractors: [Kasi masarap ang kape., "Oo, pumunta ako.", Sa botika.]
+        audio: kasi_may_sakit_ang_anak_ko
+        audio_text: Kasi may sakit ang anak ko.
+      - type: match
+        pairs:
+          - { tl: bakit, en: why }
+          - { tl: kasi, en: because (everyday) }
+          - { tl: dahil, en: because (formal) }
+          - { tl: paano, en: how }
+      - type: fill_blank
+        sentence: "Bakit ka malungkot? — ___ walang internet sa bahay."
+        translation: "Why are you sad? — Because there is no internet at home."
+        answer: Kasi
+        options: [Kasi, Bakit, Paano]
+      - type: translate
+        prompt_tl: Bakit wala ka nang load?
+        answer_en: Why do you have no more load?
+        accept: ["Why don't you have load anymore?", "Why do you have no load left?"]
+        extra_words: [still, money, who]
+        audio: bakit_wala_ka_nang_load
+      - type: listen
+        audio: bakit_ka_tumawag_kanina
+        answer_tl: Bakit ka tumawag kanina
+        extra_words: [paano, bukas]
+      - type: translate
+        prompt_en: Why is your big brother angry?
+        answer_tl: Bakit galit ang kuya mo?
+        extra_words: [malungkot, paano, ate]
+        audio: bakit_galit_ang_kuya_mo
+      - type: translate
+        prompt_tl: Paano ka nagluto ng sinigang? Masarap na masarap!
+        answer_en: How did you cook sinigang? It is so delicious!
+        accept: ["How did you cook the sinigang? It's very delicious!", "How did you cook sinigang? It's so delicious!"]
+        extra_words: [why, adobo, expensive]
+        audio: paano_ka_nagluto_ng_sinigang_masarap_na_masarap
+      - type: translate
+        prompt_en: I did not go to work yesterday because my stomach hurt.
+        answer_tl: Hindi ako pumunta sa trabaho kahapon kasi masakit ang tiyan ko.
+        accept: ["Hindi ako pumunta sa trabaho kahapon dahil masakit ang tiyan ko"]
+        extra_words: [paaralan, ulo, bukas]
+        audio: hindi_ako_pumunta_sa_trabaho_kahapon_kasi_masakit_ang_tiyan_ko
+  - id: revquest-9
+    title: They say, they say
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Mabagal daw ang internet doon' means..."
+        answer: They say the internet there is slow
+        distractors: [The internet there is definitely slow, Is the internet there slow?, I think the internet there is slow]
+        audio: mabagal_daw_ang_internet_doon
+        audio_text: Mabagal daw ang internet doon.
+      - type: match
+        pairs:
+          - { tl: daw, en: "they say (after a consonant)" }
+          - { tl: raw, en: "they say (after a vowel)" }
+          - { tl: din, en: "also (after a consonant)" }
+          - { tl: rin, en: "also (after a vowel)" }
+      - type: fill_blank
+        sentence: "May lagnat ___ si Ben. Wala siya ngayon."
+        translation: "They say Ben has a fever. He is not here today."
+        answer: daw
+        options: [daw, raw, ba]
+      - type: translate
+        prompt_tl: Sasayaw raw sila sa pista bukas.
+        answer_en: They say they will dance at the fiesta tomorrow.
+        accept: ["They will dance at the fiesta tomorrow, they say", "They say that they will dance at the fiesta tomorrow"]
+        extra_words: [sing, yesterday, party]
+        audio: sasayaw_raw_sila_sa_pista_bukas
+      - type: listen
+        audio: may_handaan_daw_sa_sabado
+        answer_tl: May handaan daw sa Sabado
+        extra_words: [linggo, raw]
+      - type: choice
+        prompt: "After 'Masaya', you say..."
+        answer: raw
+        distractors: [daw, din, pa]
+        audio: raw
+        audio_text: Raw
+      - type: translate
+        prompt_en: They say the doctor is kind.
+        answer_tl: Mabait daw ang doktor.
+        extra_words: [raw, nars, matalino]
+        audio: mabait_daw_ang_doktor
+      - type: translate
+        prompt_tl: Umuulan na raw sa bundok, pero mainit pa dito sa bahay.
+        answer_en: They say it is already raining in the mountains, but it is still hot here at home.
+        accept: ["It's already raining in the mountains, they say, but it's still hot here at home", "They say it is raining in the mountains already, but it is still hot here at home"]
+        extra_words: [cold, tomorrow, yesterday]
+        audio: umuulan_na_raw_sa_bundok_pero_mainit_pa_dito_sa_bahay
+  - id: revquest-10
+    title: Particle pile-up
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Hindi ka pa ba kumain?' means..."
+        answer: Haven't you eaten yet?
+        distractors: [Have you already eaten?, Are you still eating?, Don't you want to eat?]
+        audio: hindi_ka_pa_ba_kumain
+        audio_text: Hindi ka pa ba kumain?
+      - type: match
+        pairs:
+          - { tl: na ba, en: "already?" }
+          - { tl: pa ba, en: "still?" }
+          - { tl: na lang, en: "just / instead" }
+          - { tl: pa rin, en: "still / anyway" }
+      - type: fill_blank
+        sentence: "Kumain na ako, pero gutom ___ rin ako."
+        translation: "I already ate, but I am still hungry."
+        answer: pa
+        options: [pa, na, ba]
+      - type: translate
+        prompt_tl: Nag-aaral pa rin ba sa unibersidad ang ate mo?
+        answer_en: Is your big sister still studying at the university?
+        accept: ["Is your older sister still studying at the university?", "Does your big sister still study at the university?"]
+        extra_words: [working, school, already]
+        audio: nag_aaral_pa_rin_ba_sa_unibersidad_ang_ate_mo
+        grading: { hyphens: true }
+      - type: listen
+        audio: tatawag_na_lang_ako_bukas
+        answer_tl: Tatawag na lang ako bukas
+        extra_words: [pa, mamaya]
+      - type: choice
+        prompt: "Which word order is correct?"
+        answer: Pupunta ka pa ba sa palengke?
+        distractors: [Pupunta pa ka ba sa palengke?, Pupunta ka ba pa sa palengke?, Pa pupunta ka ba sa palengke?]
+        audio: pupunta_ka_pa_ba_sa_palengke
+        audio_text: Pupunta ka pa ba sa palengke?
+      - type: translate
+        prompt_en: Are you still working, or are you resting already?
+        answer_tl: Nagtatrabaho ka pa ba, o nagpapahinga ka na?
+        accept: ["Nagtatrabaho ka pa ba o nagpapahinga ka na"]
+        extra_words: [lang, kumakain, bukas]
+        audio: nagtatrabaho_ka_pa_ba_o_nagpapahinga_ka_na
+      - type: translate
+        prompt_tl: Isa na lang ang itlog natin. Bibili na lang ako mamaya.
+        answer_en: We have only one egg left. I will just buy some later.
+        accept: ["We have only one egg left. I will just buy later", "Only one egg is left. I'll just buy some later", "We only have one egg left. I will just buy some later"]
+        extra_words: [two, yesterday, chicken]
+        audio: isa_na_lang_ang_itlog_natin_bibili_na_lang_ako_mamaya
+  - id: revquest-11
+    title: The catch-up
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kumusta ka na?, en: How have you been? }
+          - { tl: Ayos lang ako., en: I'm just fine. }
+          - { tl: Ano na ang trabaho mo?, en: What is your job now? }
+          - { tl: Ilan na ang anak mo?, en: How many kids do you have now? }
+      - type: choice
+        prompt: "An old friend asks 'Ano na ang trabaho mo?' You answer:"
+        answer: Nars na ako sa ospital.
+        distractors: ["Oo, may trabaho ka.", Sa Lunes ako magtatrabaho., Mahal ang ospital.]
+        audio: nars_na_ako_sa_ospital
+        audio_text: Nars na ako sa ospital.
+      - type: translate
+        prompt_tl: Kailan ka pa nagtatrabaho sa botika?
+        answer_en: Since when have you been working at the pharmacy?
+        accept: ["How long have you been working at the pharmacy?", "Since when have you worked at the pharmacy?"]
+        extra_words: [where, hospital, why]
+        audio: kailan_ka_pa_nagtatrabaho_sa_botika
+      - type: fill_blank
+        sentence: "Saan ka ___ ba nag-aaral ngayon?"
+        translation: "So where are you studying now?"
+        answer: na
+        options: [na, pa, rin]
+      - type: listen
+        audio: ilan_na_ang_apo_ni_lola
+        answer_tl: Ilan na ang apo ni Lola
+        extra_words: [anak, kailan]
+      - type: translate
+        prompt_en: How is your mom? Is she still working at the market?
+        answer_tl: Kumusta ang nanay mo? Nagtatrabaho pa ba siya sa palengke?
+        accept: ["Kumusta po ang nanay ninyo? Nagtatrabaho pa po ba siya sa palengke?"]
+        extra_words: [tatay, tindahan, na]
+        audio: kumusta_ang_nanay_mo_nagtatrabaho_pa_ba_siya_sa_palengke
+      - type: translate
+        prompt_tl: Bakit hindi ka na pumupunta sa simbahan?
+        answer_en: Why don't you go to church anymore?
+        accept: ["Why do you not go to church anymore?", "Why aren't you going to church anymore?"]
+        extra_words: [school, still, who]
+        audio: bakit_hindi_ka_na_pumupunta_sa_simbahan
+      - type: translate
+        prompt_en: Who is your teacher now, and when is your test?
+        answer_tl: Sino na ang guro mo, at kailan ang pagsusulit mo?
+        accept: ["Sino na ang guro mo at kailan ang pagsusulit mo"]
+        extra_words: [saan, klase, bukas]
+        audio: sino_na_ang_guro_mo_at_kailan_ang_pagsusulit_mo

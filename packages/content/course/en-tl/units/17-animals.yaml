@@ -191,3 +191,345 @@ lessons:
         answer_en: We have a pet goat.
         accept: ["We have a goat as a pet"]
         extra_words: [dog, pig, sky]
+  - id: animals-5
+    title: What animals do
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: natutulog, en: sleeping }
+          - { tl: kumakain, en: eating }
+          - { tl: tumatahol, en: barking }
+          - { tl: lumilipad, en: flying }
+      - type: choice
+        prompt: "'Tumatahol' means..."
+        answer: Barking
+        distractors: [Flying, Sleeping, Eating]
+        audio: tumatahol
+        audio_text: Tumatahol.
+      - type: fill_blank
+        sentence: "___ ang aso sa bisita."
+        translation: "The dog is barking at the guest."
+        answer: Tumatahol
+        options: [Tumatahol, Natutulog, Lumilipad]
+      - type: translate
+        prompt_tl: Natutulog ang pusa sa kama.
+        answer_en: The cat is sleeping on the bed.
+        accept: ["The cat sleeps on the bed", "The cat is sleeping in the bed"]
+        extra_words: [dog, eating, floor]
+        audio: natutulog_ang_pusa_sa_kama
+      - type: listen
+        audio: kumakain_ang_kambing_ng_bulaklak
+        answer_tl: Kumakain ang kambing ng bulaklak
+        extra_words: [baboy, puno]
+      - type: choice
+        prompt: "Which animal 'lumilipad'?"
+        answer: Ibon
+        distractors: [Aso, Baboy, Isda]
+        audio: lumilipad
+        audio_text: Lumilipad.
+      - type: translate
+        prompt_en: The bird is flying in the sky.
+        answer_tl: Lumilipad ang ibon sa langit.
+        accept: ["Lumilipad sa langit ang ibon"]
+        extra_words: [tumatahol, puno, aso]
+        audio: lumilipad_ang_ibon_sa_langit
+      - type: translate
+        prompt_en: The carabao is eating in the garden.
+        answer_tl: Kumakain ang kalabaw sa hardin.
+        accept: ["Kumakain sa hardin ang kalabaw"]
+        extra_words: [natutulog, kabayo, bahay]
+        audio: kumakain_ang_kalabaw_sa_hardin
+  - id: animals-6
+    title: More animals
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: unggoy, en: monkey }
+          - { tl: ahas, en: snake }
+          - { tl: palaka, en: frog }
+          - { tl: pato, en: duck }
+      - type: choice
+        prompt: "'Unggoy' means..."
+        answer: Monkey
+        distractors: [Snake, Frog, Duck]
+        audio: unggoy
+        audio_text: Unggoy.
+      - type: choice
+        prompt: "'Ahas' means..."
+        answer: Snake
+        distractors: [Monkey, Rat, Bird]
+        audio: ahas
+        audio_text: Ahas.
+      - type: fill_blank
+        sentence: "Nasa puno ang ___."
+        translation: "The monkey is in the tree."
+        answer: unggoy
+        options: [unggoy, palaka, pato]
+      - type: listen
+        audio: nasa_tubig_ang_palaka
+        answer_tl: Nasa tubig ang palaka
+        extra_words: [pato, puno]
+      - type: choice
+        prompt: "'Pato' means..."
+        answer: Duck
+        distractors: [Chicken, Bird, Frog]
+        audio: pato
+        audio_text: Pato.
+      - type: translate
+        prompt_tl: Maliit ang palaka at malaki ang ahas.
+        answer_en: The frog is small and the snake is big.
+        accept: ["The frog is small and the snake is large"]
+        extra_words: [duck, monkey, fast]
+        audio: maliit_ang_palaka_at_malaki_ang_ahas
+      - type: translate
+        prompt_en: The duck is drinking water.
+        answer_tl: Umiinom ang pato ng tubig.
+        accept: ["Umiinom ng tubig ang pato"]
+        extra_words: [kumakain, palaka, gatas]
+        audio: umiinom_ang_pato_ng_tubig
+  - id: animals-7
+    title: Small creatures
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kuneho, en: rabbit }
+          - { tl: lamok, en: mosquito }
+          - { tl: paru-paro, en: butterfly }
+          - { tl: daga, en: rat }
+      - type: choice
+        prompt: "'Kuneho' means..."
+        answer: Rabbit
+        distractors: [Rat, Duck, Frog]
+        audio: kuneho
+        audio_text: Kuneho.
+      - type: choice
+        prompt: "'Lamok' means..."
+        answer: Mosquito
+        distractors: [Butterfly, Fly, Bird]
+        audio: lamok
+        audio_text: Lamok.
+      - type: fill_blank
+        sentence: "Maraming ___ sa gabi."
+        translation: "There are many mosquitoes at night."
+        answer: lamok
+        options: [lamok, paru-paro, kuneho]
+      - type: choice
+        prompt: "'Paru-paro' means..."
+        answer: Butterfly
+        distractors: [Mosquito, Bird, Wings]
+        audio: paru_paro
+        audio_text: Paru-paro.
+      - type: listen
+        audio: maliit_ang_daga
+        answer_tl: Maliit ang daga
+        extra_words: [malaki, pusa]
+      - type: translate
+        prompt_tl: Mabilis ang kuneho at mabagal ang kalabaw.
+        answer_en: The rabbit is fast and the carabao is slow.
+        accept: ["The rabbit is fast and the water buffalo is slow"]
+        extra_words: [rat, horse, small]
+        audio: mabilis_ang_kuneho_at_mabagal_ang_kalabaw
+      - type: translate
+        prompt_en: The butterfly is beautiful.
+        answer_tl: Maganda ang paru-paro.
+        extra_words: [malaki, ibon, pusa]
+        grading: { hyphens: true }
+        audio: maganda_ang_paru_paro
+  - id: animals-8
+    title: Animal bodies
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sungay, en: horn }
+          - { tl: balahibo, en: fur }
+          - { tl: buntot, en: tail }
+          - { tl: pakpak, en: wings }
+      - type: choice
+        prompt: "'Sungay' means..."
+        answer: Horn
+        distractors: [Tail, Wings, Fur]
+        audio: sungay
+        audio_text: Sungay.
+      - type: choice
+        prompt: "'Balahibo' means..."
+        answer: Fur / feathers
+        distractors: [Horn, Tail, Teeth]
+        audio: balahibo
+        audio_text: Balahibo.
+      - type: fill_blank
+        sentence: "Puti ang ___ ng pusa."
+        translation: "The cat's fur is white."
+        answer: balahibo
+        options: [balahibo, sungay, buntot]
+      - type: listen
+        audio: malaki_ang_pakpak_ng_ibon
+        answer_tl: Malaki ang pakpak ng ibon
+        extra_words: [maliit, buntot]
+      - type: translate
+        prompt_tl: May sungay ang kalabaw.
+        answer_en: The carabao has horns.
+        accept: ["The carabao has a horn", "The water buffalo has horns"]
+        extra_words: [tail, horse, wings]
+        audio: may_sungay_ang_kalabaw
+      - type: choice
+        prompt: "Which animal has 'pakpak'?"
+        answer: Ibon
+        distractors: [Baboy, Kuneho, Daga]
+        audio: pakpak
+        audio_text: Pakpak.
+      - type: translate
+        prompt_en: The goat has a tail and horns.
+        answer_tl: May buntot at sungay ang kambing.
+        accept: ["May sungay at buntot ang kambing"]
+        extra_words: [pakpak, balahibo, baka]
+        audio: may_buntot_at_sungay_ang_kambing
+  - id: animals-9
+    title: What color is it?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: puting pusa, en: white cat }
+          - { tl: itim na aso, en: black dog }
+          - { tl: berdeng palaka, en: green frog }
+          - { tl: dilaw na ibon, en: yellow bird }
+      - type: choice
+        prompt: "How do you say 'black cat'?"
+        answer: Itim na pusa
+        distractors: [Itim pusa, Itim ng pusa, Itimng pusa]
+        audio: itim_na_pusa
+        audio_text: Itim na pusa.
+      - type: translate
+        prompt_tl: Anong kulay ang kabayo mo?
+        answer_en: What color is your horse?
+        extra_words: [dog, big, where]
+        audio: anong_kulay_ang_kabayo_mo
+      - type: fill_blank
+        sentence: "___ na aso ang alaga ko."
+        translation: "My pet is a black dog."
+        answer: Itim
+        options: [Itim, Pula, Puting]
+      - type: listen
+        audio: puti_ang_balahibo_ng_kuneho
+        answer_tl: Puti ang balahibo ng kuneho
+        extra_words: [itim, pusa]
+      - type: choice
+        prompt: "'Berdeng palaka' means..."
+        answer: Green frog
+        distractors: [Yellow frog, Green bird, Small frog]
+        audio: berdeng_palaka
+        audio_text: Berdeng palaka.
+      - type: translate
+        prompt_en: The white horse is beautiful.
+        answer_tl: Maganda ang puting kabayo.
+        extra_words: [itim, maliit, baka]
+        audio: maganda_ang_puting_kabayo
+      - type: translate
+        prompt_en: I have a yellow bird.
+        answer_tl: May dilaw na ibon ako.
+        extra_words: [pula, pusa, wala]
+        audio: may_dilaw_na_ibon_ako
+  - id: animals-10
+    title: Ang alaga ko
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ilan ang alaga mo?' asks..."
+        answer: How many pets you have
+        distractors: ["What your pet's name is", Where your pet is, What color your pet is]
+        audio: ilan_ang_alaga_mo
+        audio_text: Ilan ang alaga mo?
+      - type: match
+        pairs:
+          - { tl: isang kuneho, en: one rabbit }
+          - { tl: dalawang pusa, en: two cats }
+          - { tl: tatlong aso, en: three dogs }
+          - { tl: apat na ibon, en: four birds }
+      - type: translate
+        prompt_tl: May dalawang aso at isang pusa ako.
+        answer_en: I have two dogs and one cat.
+        accept: ["I have two dogs and a cat"]
+        extra_words: [three, bird, rabbit]
+        audio: may_dalawang_aso_at_isang_pusa_ako
+      - type: fill_blank
+        sentence: "May apat ___ ibon si Lola."
+        translation: "Grandma has four birds."
+        answer: na
+        options: [na, ng, at]
+        hint: 'Numbers ending in a consonant take "na": apat na ibon.'
+      - type: listen
+        audio: kumakain_ang_alaga_kong_pusa
+        answer_tl: Kumakain ang alaga kong pusa
+        extra_words: [natutulog, aso]
+      - type: choice
+        prompt: "A friend asks 'May alaga ka ba?' You have one cat. Say:"
+        answer: Oo, may isang pusa ako.
+        distractors: [Wala akong alaga., Ilan ang pusa mo?, Ayaw ko ng pusa.]
+        audio: oo_may_isang_pusa_ako
+        audio_text: Oo, may isang pusa ako.
+      - type: translate
+        prompt_en: My pet sleeps in my bedroom.
+        answer_tl: Natutulog ang alaga ko sa kwarto ko.
+        accept: ["Natutulog sa kwarto ko ang alaga ko"]
+        extra_words: [kumakain, sala, aso]
+        audio: natutulog_ang_alaga_ko_sa_kwarto_ko
+      - type: translate
+        prompt_en: How many pets does your older sister have?
+        answer_tl: Ilan ang alaga ng ate mo?
+        extra_words: [sino, aso, ko]
+        audio: ilan_ang_alaga_ng_ate_mo
+  - id: animals-11
+    title: All the animals
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: May alaga ako, en: I have a pet }
+          - { tl: Wala akong alaga, en: "I don't have a pet" }
+          - { tl: Ilan ang alaga mo?, en: How many pets do you have? }
+          - { tl: Anong kulay?, en: What color? }
+      - type: choice
+        prompt: "Which sentence says the horse is NOT slow?"
+        answer: Hindi mabagal ang kabayo.
+        distractors: [Mabagal ang kabayo., Mabilis ang pusa., Hindi mabilis ang kabayo.]
+        audio: hindi_mabagal_ang_kabayo
+        audio_text: Hindi mabagal ang kabayo.
+      - type: translate
+        prompt_tl: Tumatahol ang aso kasi may daga sa kusina.
+        answer_en: The dog is barking because there is a rat in the kitchen.
+        accept:
+          - "The dog is barking because there's a rat in the kitchen"
+          - "The dog barks because there is a rat in the kitchen"
+        extra_words: [cat, sleeping, garden]
+        audio: tumatahol_ang_aso_kasi_may_daga
+      - type: fill_blank
+        sentence: "Takot ako sa ___."
+        translation: "I am afraid of snakes."
+        answer: ahas
+        options: [ahas, kuneho, paru-paro]
+      - type: listen
+        audio: lumilipad_ang_paru_paro_sa_hardin
+        answer_tl: Lumilipad ang paru-paro sa hardin
+        extra_words: [ibon, bahay]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Your friend's dog runs to you. It is fast. Say:"
+        answer: Mabilis ang aso mo!
+        distractors: [Mabagal ang aso mo!, Natutulog ang aso mo., Wala kang aso.]
+        audio: mabilis_ang_aso_mo
+        audio_text: Mabilis ang aso mo!
+      - type: translate
+        prompt_en: The pig is eating and the goat is sleeping.
+        answer_tl: Kumakain ang baboy at natutulog ang kambing.
+        extra_words: [baka, umiinom, maliit]
+        audio: kumakain_ang_baboy_at_natutulog_ang_kambing
+      - type: translate
+        prompt_en: We have two dogs and three cats at home.
+        answer_tl: May dalawang aso at tatlong pusa kami sa bahay.
+        accept: ["Sa bahay, may dalawang aso at tatlong pusa kami"]
+        extra_words: [ibon, apat, ako]
+        audio: may_dalawang_aso_at_tatlong_pusa_kami

@@ -238,3 +238,480 @@ lessons:
         extra_words: [kanin, gatas, bundok]
         audio: kumain_kami_ng_isda_at_uminom_ng_buko_sa_tabing_dagat
         grading: { hyphens: true }
+  - id: beach-5
+    title: Magdala tayo!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magdala, en: to bring }
+          - { tl: tuwalya, en: towel }
+          - { tl: tsinelas, en: flip-flops }
+          - { tl: baon, en: packed food }
+      - type: choice
+        prompt: "'Magdala ka ng tuwalya' means..."
+        answer: Bring a towel
+        distractors: [Buy a towel, Wash the towel, Here is a towel]
+        audio: magdala_ka_ng_tuwalya
+        audio_text: Magdala ka ng tuwalya.
+        hint: '"magdala" = to bring; "Magdala ka ng ..." = bring some ...'
+      - type: translate
+        prompt_tl: Nagdala kami ng baon sa tabing-dagat.
+        answer_en: We brought packed food to the beach.
+        accept: ["We brought food to the beach"]
+        extra_words: [bought, mountain, towel]
+        audio: nagdala_kami_ng_baon_sa_tabing_dagat
+        grading: { hyphens: true }
+        hint: '"baon" is food (or money) you pack and take along.'
+      - type: fill_blank
+        sentence: "Magdala ka ng ___ kasi mainit ang buhangin."
+        translation: "Bring flip-flops because the sand is hot."
+        answer: tsinelas
+        options: [tsinelas, tuwalya, baon]
+      - type: listen
+        audio: magdadala_ako_ng_tubig_at_baon
+        answer_tl: Magdadala ako ng tubig at baon
+        extra_words: [tuwalya, kami]
+        hint: '"magdadala" = will bring.'
+      - type: choice
+        prompt: "It is a very sunny day at the beach. What should you bring?"
+        answer: Sombrero at tubig
+        distractors: [Kalan at kawali, Libro at bolpen, Kama at silya]
+      - type: translate
+        prompt_tl: May tuwalya ka ba?
+        answer_en: Do you have a towel?
+        extra_words: [flip-flops, food, sand]
+        audio: may_tuwalya_ka_ba
+      - type: translate
+        prompt_en: Bring water and a towel.
+        answer_tl: Magdala ka ng tubig at tuwalya.
+        accept: ["Magdala ka ng tuwalya at tubig"]
+        extra_words: [baon, kami, dagat]
+        audio: magdala_ka_ng_tubig_at_tuwalya
+      - type: translate
+        prompt_en: We will bring packed food to the island.
+        answer_tl: Magdadala kami ng baon sa isla.
+        extra_words: [nagdala, tuwalya, sila]
+        audio: magdadala_kami_ng_baon_sa_isla
+  - id: beach-6
+    title: Mag-ingat sa tubig
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malalim, en: deep }
+          - { tl: mababaw, en: shallow }
+          - { tl: salbabida, en: life ring }
+          - { tl: alon, en: wave }
+      - type: choice
+        prompt: "'Malalim ang dagat doon' means..."
+        answer: The sea is deep over there
+        distractors:
+          - The sea is shallow over there
+          - The sea is cold over there
+          - The sea is clear over there
+        audio: malalim_ang_dagat_doon
+        audio_text: Malalim ang dagat doon.
+      - type: translate
+        prompt_tl: Mababaw ang tubig dito.
+        answer_en: The water is shallow here.
+        accept: ["The water here is shallow"]
+        extra_words: [deep, there, cold]
+        audio: mababaw_ang_tubig_dito
+      - type: fill_blank
+        sentence: "Huwag kang lumangoy doon, ___ ang tubig."
+        translation: "Don't swim there, the water is deep."
+        answer: malalim
+        options: [malalim, mababaw, malinaw]
+      - type: listen
+        audio: mag_ingat_ka_malakas_ang_alon
+        answer_tl: Mag-ingat ka, malakas ang alon
+        extra_words: [malalim, ako]
+        hint: '"Mag-ingat ka" = be careful / take care.'
+      - type: choice
+        prompt: "A little boy cannot swim yet. What does he need in the water?"
+        answer: Salbabida
+        distractors: [Tsinelas, Tuwalya, Baon]
+      - type: translate
+        prompt_tl: May salbabida ang bata.
+        answer_en: The child has a life ring.
+        accept: ["The kid has a life ring"]
+        extra_words: [towel, deep, sea]
+        audio: may_salbabida_ang_bata
+      - type: translate
+        prompt_en: Don't swim there because it's deep.
+        answer_tl: Huwag kang lumangoy doon kasi malalim.
+        accept: ["Huwag kang lumangoy doon dahil malalim"]
+        extra_words: [mababaw, dito, ako]
+        audio: huwag_kang_lumangoy_doon_kasi_malalim
+      - type: translate
+        prompt_en: Let's swim here because the water is shallow.
+        answer_tl: Lumangoy tayo dito kasi mababaw ang tubig.
+        accept: ["Lumangoy tayo dito dahil mababaw ang tubig"]
+        extra_words: [malalim, doon, kami]
+        audio: lumangoy_tayo_dito_kasi_mababaw_ang_tubig
+  - id: beach-7
+    title: Maglibot sa mga isla
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maglibot, en: to tour around }
+          - { tl: bangka, en: boat }
+          - { tl: isla, en: island }
+          - { tl: mangingisda, en: fisherman }
+      - type: choice
+        prompt: "'Maglilibot kami sa mga isla bukas' means..."
+        answer: We will tour the islands tomorrow
+        distractors:
+          - We toured the islands yesterday
+          - We live on an island
+          - We will swim to the island tomorrow
+        audio: maglilibot_kami_sa_mga_isla_bukas
+        audio_text: Maglilibot kami sa mga isla bukas.
+        hint: '"maglibot" = to go around / tour — island hopping is "maglibot sa mga isla".'
+      - type: translate
+        prompt_tl: Sumakay kami sa bangka at pumunta kami sa tatlong isla.
+        answer_en: We rode a boat and went to three islands.
+        accept: ["We took a boat and went to three islands", "We rode a boat and we went to three islands"]
+        extra_words: [two, swam, mountain]
+        audio: sumakay_kami_sa_bangka_at_pumunta_kami_sa_tatlong_isla
+      - type: fill_blank
+        sentence: "Naglibot kami sa limang ___ kahapon."
+        translation: "We toured five islands yesterday."
+        answer: isla
+        options: [isla, alon, bangka]
+      - type: listen
+        audio: maglilibot_tayo_sa_mga_isla
+        answer_tl: Maglilibot tayo sa mga isla
+        extra_words: [kami, bangka]
+      - type: choice
+        prompt: "The boatman says 'Tatlong isla tayo ngayon.' How many islands will you visit today?"
+        answer: Three
+        distractors: [Two, Four, Five]
+        audio: tatlong_isla_tayo_ngayon
+        audio_text: Tatlong isla tayo ngayon.
+      - type: translate
+        prompt_tl: Maganda ang maliit na pulo.
+        answer_en: The small island is beautiful.
+        accept: ["The little island is beautiful", "The small islet is beautiful"]
+        extra_words: [big, boat, sea]
+        audio: maganda_ang_maliit_na_pulo
+      - type: translate
+        prompt_en: The boat is heading to the island.
+        answer_tl: Papunta sa isla ang bangka.
+        accept: ["Papunta ang bangka sa isla"]
+        extra_words: [bundok, bus, kami]
+        audio: papunta_sa_isla_ang_bangka
+        hint: '"papunta sa" = on the way to / heading to.'
+      - type: translate
+        prompt_en: The fisherman's boat is small but fast.
+        answer_tl: Maliit pero mabilis ang bangka ng mangingisda.
+        accept: ["Maliit ang bangka ng mangingisda pero mabilis"]
+        extra_words: [malaki, mabagal, isla]
+        audio: maliit_pero_mabilis_ang_bangka_ng_mangingisda
+  - id: beach-8
+    title: Sumisid tayo!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sumisid, en: to dive }
+          - { tl: kabibe, en: seashell }
+          - { tl: isda, en: fish }
+          - { tl: malinaw, en: clear }
+      - type: choice
+        prompt: "'Sumisid siya sa dagat' means..."
+        answer: He dived into the sea
+        distractors: [He swam across the sea, He fished in the sea, He looked at the sea]
+        audio: sumisid_siya_sa_dagat
+        audio_text: Sumisid siya sa dagat.
+        hint: '"sumisid" = to dive / dived — an -um- verb, like lumangoy.'
+      - type: translate
+        prompt_tl: Maraming kabibe sa buhangin.
+        answer_en: There are many seashells in the sand.
+        accept: ["There are a lot of seashells in the sand", "There are many seashells on the sand"]
+        extra_words: [fish, sea, few]
+        audio: maraming_kabibe_sa_buhangin
+      - type: fill_blank
+        sentence: "Gusto kong ___ kasi malinaw ang tubig."
+        translation: "I want to dive because the water is clear."
+        answer: sumisid
+        options: [sumisid, matulog, bumili]
+      - type: listen
+        audio: maraming_isda_at_kabibe
+        answer_tl: Maraming isda at kabibe
+        extra_words: [buhangin, bangka]
+      - type: choice
+        prompt: "You find a pretty seashell on the beach. Call out:"
+        answer: May kabibe dito!
+        distractors: [May isda sa bangka!, Malalim ang tubig!, Nasaan ang tuwalya?]
+        audio: may_kabibe_dito
+        audio_text: May kabibe dito!
+      - type: translate
+        prompt_tl: Sumisid kami sa malinaw na tubig.
+        answer_en: We dived in the clear water.
+        accept: ["We dove in the clear water", "We dived into the clear water", "We dove into the clear water"]
+        extra_words: [deep, swam, sand]
+        audio: sumisid_kami_sa_malinaw_na_tubig
+      - type: translate
+        prompt_en: There are many fish in the clear water.
+        answer_tl: Maraming isda sa malinaw na tubig.
+        extra_words: [kabibe, malalim, dagat]
+        audio: maraming_isda_sa_malinaw_na_tubig
+      - type: translate
+        prompt_en: I want to dive but the water is deep.
+        answer_tl: Gusto kong sumisid pero malalim ang tubig.
+        extra_words: [lumangoy, mababaw, kami]
+        audio: gusto_kong_sumisid_pero_malalim_ang_tubig
+  - id: beach-9
+    title: Sama-sama tayo!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sama-sama, en: all together }
+          - { tl: dahan-dahan, en: slowly }
+          - { tl: araw-araw, en: every day }
+          - { tl: tabing-dagat, en: beach }
+      - type: choice
+        prompt: "'Sama-sama tayong kumain!' means..."
+        answer: Let's all eat together!
+        distractors: ["Let's eat later!", "Eat slowly!", "We already ate!"]
+        audio: sama_sama_tayong_kumain
+        audio_text: Sama-sama tayong kumain!
+        hint: '"sama-sama" = all together; it links to the pronoun with -ng: "sama-sama tayong ...".'
+      - type: translate
+        prompt_tl: Sama-sama kaming pumunta sa tabing-dagat.
+        answer_en: We went to the beach together.
+        accept: ["We all went to the beach together", "Together we went to the beach"]
+        extra_words: [alone, mountain, they]
+        audio: sama_sama_kaming_pumunta_sa_tabing_dagat
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "___ lang tayo, malalim na ang tubig."
+        translation: "Let's take it slow, the water is getting deep."
+        answer: Dahan-dahan
+        options: [Dahan-dahan, Sama-sama, Araw-araw]
+        grading: { hyphens: true }
+      - type: listen
+        audio: dahan_dahan_lang
+        answer_tl: Dahan-dahan lang
+        extra_words: [sama-sama, tayo]
+        grading: { hyphens: true }
+        hint: '"Dahan-dahan lang" = take it slow / easy does it.'
+      - type: choice
+        prompt: "Your whole barkada is at the beach. Invite everyone to swim together:"
+        answer: Sama-sama tayong lumangoy!
+        distractors: [Ayaw kong lumangoy., Huwag kang lumangoy!, Lumalangoy ako araw-araw.]
+        audio: sama_sama_tayong_lumangoy
+        audio_text: Sama-sama tayong lumangoy!
+      - type: translate
+        prompt_tl: Sasama ka ba sa tabing-dagat?
+        answer_en: Are you coming along to the beach?
+        accept: ["Are you coming to the beach?", "Will you come along to the beach?", "Will you come to the beach?"]
+        extra_words: [mountain, swimming, we]
+        audio: sasama_ka_ba_sa_tabing_dagat
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Let's all go to the beach together tomorrow.
+        answer_tl: Sama-sama tayong pumunta sa tabing-dagat bukas.
+        accept: ["Bukas, sama-sama tayong pumunta sa tabing-dagat"]
+        extra_words: [kami, kahapon, bundok]
+        audio: sama_sama_tayong_pumunta_sa_tabing_dagat_bukas
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Walk slowly, the sand is hot.
+        answer_tl: Maglakad ka nang dahan-dahan, mainit ang buhangin.
+        extra_words: [malamig, tayo, mabilis]
+        audio: maglakad_ka_nang_dahan_dahan_mainit_ang_buhangin
+        grading: { hyphens: true, ng_nang: true }
+        hint: 'Before a word that describes how you do something, use "nang": maglakad nang dahan-dahan.'
+  - id: beach-10
+    title: Ang biyahe
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: biyahe, en: trip }
+          - { tl: pamasahe, en: fare }
+          - { tl: sumakay, en: to ride }
+          - { tl: malayo, en: far }
+      - type: choice
+        prompt: "'Malayo ba ang isla?' means..."
+        answer: Is the island far?
+        distractors: ["Is the island big?", "Where is the island?", "Is the island beautiful?"]
+        audio: malayo_ba_ang_isla
+        audio_text: Malayo ba ang isla?
+      - type: translate
+        prompt_tl: Sumakay kami sa bus at sa bangka.
+        answer_en: We rode a bus and a boat.
+        accept: ["We took a bus and a boat", "We rode the bus and the boat"]
+        extra_words: [jeepney, walked, island]
+        audio: sumakay_kami_sa_bus_at_sa_bangka
+      - type: fill_blank
+        sentence: "Magkano ang ___ sa bangka?"
+        translation: "How much is the boat fare?"
+        answer: pamasahe
+        options: [pamasahe, sukli, tawad]
+      - type: listen
+        audio: mahaba_ang_biyahe_pero_masaya
+        answer_tl: Mahaba ang biyahe pero masaya
+        extra_words: [maikli, malungkot]
+      - type: choice
+        prompt: "At the pier, ask how much the boat ride costs:"
+        answer: Magkano po ang pamasahe?
+        distractors: [Nasaan po ang bangka?, Malayo po ba ang isla?, Salamat po sa bangka.]
+        audio: magkano_po_ang_pamasahe
+        audio_text: Magkano po ang pamasahe?
+      - type: translate
+        prompt_tl: Pagod kami pero masaya ang biyahe.
+        answer_en: We are tired but the trip is fun.
+        accept:
+          - "We're tired but the trip is fun"
+          - "We are tired but the trip was fun"
+          - "We're tired but the trip was fun"
+        extra_words: [sad, short, boat]
+        audio: pagod_kami_pero_masaya_ang_biyahe
+      - type: translate
+        prompt_en: The boat is heading to the island now.
+        answer_tl: Papunta na sa isla ang bangka.
+        accept: ["Papunta na ang bangka sa isla"]
+        extra_words: [bundok, bus, bukas]
+        audio: papunta_na_sa_isla_ang_bangka
+        hint: '"na" here means "now / already": papunta na = on its way now.'
+      - type: translate
+        prompt_en: The trip is long but the island is beautiful.
+        answer_tl: Mahaba ang biyahe pero maganda ang isla.
+        extra_words: [maikli, bangka, kami]
+        audio: mahaba_ang_biyahe_pero_maganda_ang_isla
+  - id: beach-11
+    title: Kumusta ang bakasyon mo?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumusta ang bakasyon mo?' means..."
+        answer: How was your vacation?
+        distractors: ["Where is your vacation?", "When is your vacation?", "Do you have a vacation?"]
+        audio: kumusta_ang_bakasyon_mo
+        audio_text: Kumusta ang bakasyon mo?
+      - type: match
+        pairs:
+          - { tl: lumangoy, en: swam }
+          - { tl: sumisid, en: dived }
+          - { tl: naglibot, en: toured }
+          - { tl: umuwi, en: went home }
+      - type: translate
+        prompt_tl: Lumangoy kami at sumisid kami sa isla.
+        answer_en: We swam and dived at the island.
+        accept: ["We swam and we dived at the island", "We swam and dove at the island", "We swam and dived on the island"]
+        extra_words: [ran, mountain, they]
+        audio: lumangoy_kami_at_sumisid_kami_sa_isla
+      - type: fill_blank
+        sentence: "___ kami sa tatlong isla kahapon."
+        translation: "We toured three islands yesterday."
+        answer: Naglibot
+        options: [Naglibot, Maglilibot, Naglalaro]
+        hint: '"naglibot" = toured (done); "maglilibot" = will tour.'
+      - type: listen
+        audio: umuwi_kami_kahapon
+        answer_tl: Umuwi kami kahapon
+        extra_words: [bukas, sila]
+      - type: translate
+        prompt_tl: Kumain kami ng isda at buko araw-araw.
+        answer_en: We ate fish and young coconut every day.
+        accept:
+          - "We ate fish and coconut every day"
+          - "Every day we ate fish and young coconut"
+          - "Every day we ate fish and coconut"
+        extra_words: [drank, rice, night]
+        audio: kumain_kami_ng_isda_at_buko_araw_araw
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Your friend asks 'Kumusta ang bakasyon mo?' You had a great time. Say:"
+        answer: Masaya! Lumangoy kami araw-araw.
+        distractors:
+          - Malungkot ako, umuulan araw-araw.
+          - Maglilibot kami bukas.
+          - Wala akong bakasyon.
+        audio: masaya_lumangoy_kami_araw_araw
+        audio_text: Masaya! Lumangoy kami araw-araw.
+      - type: translate
+        prompt_en: How was your vacation on the island?
+        answer_tl: Kumusta ang bakasyon mo sa isla?
+        extra_words: [saan, kailan, dagat]
+        audio: kumusta_ang_bakasyon_mo_sa_isla
+      - type: translate
+        prompt_en: We toured the islands and we went home yesterday.
+        answer_tl: Naglibot kami sa mga isla at umuwi kami kahapon.
+        accept:
+          - "Naglibot kami sa mga isla at umuwi kahapon"
+          - "Naglibot kami sa mga isla at kahapon, umuwi kami"
+        extra_words: [maglilibot, bukas, sila]
+        audio: naglibot_kami_sa_mga_isla_at_umuwi_kami_kahapon
+  - id: beach-12
+    title: Bakasyon sa isla
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malalim, en: deep }
+          - { tl: mababaw, en: shallow }
+          - { tl: dahan-dahan, en: slowly }
+          - { tl: sama-sama, en: all together }
+      - type: choice
+        prompt: "Before the boat leaves, the boatman says 'Mag-ingat kayo, malakas ang alon.' He means..."
+        answer: Be careful, the waves are strong
+        distractors:
+          - Hurry up, the boat is leaving
+          - Swim now, the water is calm
+          - Sit down, the trip is long
+        audio: mag_ingat_kayo_malakas_ang_alon
+        audio_text: Mag-ingat kayo, malakas ang alon.
+      - type: translate
+        prompt_tl: Nagdala kami ng tuwalya, tsinelas, at baon sa isla.
+        answer_en: We brought towels, flip-flops, and food to the island.
+        accept: ["We brought towels, slippers, and food to the island"]
+        extra_words: [slippers, water, beach]
+        audio: nagdala_kami_ng_tuwalya_tsinelas_at_baon_sa_isla
+      - type: fill_blank
+        sentence: "Huwag kang sumisid doon, ___ ang tubig at malakas ang alon."
+        translation: "Don't dive there, the water is deep and the waves are strong."
+        answer: malalim
+        options: [malalim, mababaw, malinaw]
+      - type: listen
+        audio: sama_sama_kaming_naglibot_sa_mga_isla
+        answer_tl: Sama-sama kaming naglibot sa mga isla
+        extra_words: [tayong, bangka]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Dahan-dahan lang, mababaw ang tubig dito at maraming kabibe.
+        answer_en: Take it slow, the water is shallow here and there are many shells.
+        accept:
+          - "Take it slow, the water here is shallow and there are many shells"
+          - "Take it slow, the water is shallow here and there are a lot of shells"
+        extra_words: [deep, fish, boat]
+        audio: dahan_dahan_lang_mababaw_ang_tubig_dito_at_maraming_kabibe
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Your little cousin wants to swim far out. Warn her:"
+        answer: Huwag kang lumangoy doon, malalim!
+        distractors:
+          - Sama-sama tayong lumangoy!
+          - Lumangoy ka doon, mababaw!
+          - Magdala ka ng baon.
+        audio: huwag_kang_lumangoy_doon_malalim
+        audio_text: Huwag kang lumangoy doon, malalim!
+      - type: translate
+        prompt_en: Bring a towel and flip-flops because we will tour the islands.
+        answer_tl: Magdala ka ng tuwalya at tsinelas kasi maglilibot tayo sa mga isla.
+        accept: ["Magdala ka ng tuwalya at tsinelas dahil maglilibot tayo sa mga isla"]
+        extra_words: [baon, naglibot, kami]
+        audio: magdala_ka_ng_tuwalya_at_tsinelas_kasi_maglilibot_tayo_sa_mga_isla
+      - type: translate
+        prompt_en: We all swam together and we dived in the clear water.
+        answer_tl: Sama-sama kaming lumangoy at sumisid kami sa malinaw na tubig.
+        accept: ["Sama-sama kaming lumangoy at sumisid sa malinaw na tubig"]
+        extra_words: [tayong, malalim, sila]
+        audio: sama_sama_kaming_lumangoy_at_sumisid_kami_sa_malinaw_na_tubig
+        grading: { hyphens: true }

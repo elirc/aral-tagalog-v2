@@ -222,3 +222,372 @@ lessons:
         accept: ["My family eats at my grandmother's house", "My family is eating at my grandma's house"]
         extra_words: [school, cooking, dad]
         audio: kumakain_ang_pamilya_ko_sa_bahay_ng_lola_ko
+  - id: revbasics-5
+    title: Food and drink
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: uhaw, en: thirsty }
+          - { tl: masarap, en: delicious }
+          - { tl: kanin, en: rice }
+      - type: choice
+        prompt: "You're at a party and the host says 'Kain tayo!' You're hungry. Reply:"
+        answer: Salamat po! Gutom na ako.
+        distractors: [Paalam po!, "Uhaw ako, ayaw kong kumain.", Wala akong pera.]
+        audio: salamat_po_gutom_na_ako
+        audio_text: Salamat po! Gutom na ako.
+      - type: fill_blank
+        sentence: "Kumain kami ___ mabilis kasi gutom kami."
+        translation: "We ate quickly because we were hungry."
+        answer: nang
+        options: [nang, ng, na]
+        grading: { ng_nang: true }
+      - type: listen
+        audio: gusto_ko_ng_kape_at_tinapay
+        answer_tl: Gusto ko ng kape at tinapay
+        extra_words: [gatas, itlog]
+      - type: translate
+        prompt_tl: Uminom ako ng kape sa umaga at umiinom ako ng tubig ngayon.
+        answer_en: I drank coffee in the morning and I am drinking water now.
+        accept: ["I drank coffee in the morning and am drinking water now"]
+        extra_words: [milk, yesterday, ate]
+        audio: uminom_kape_umaga_umiinom_tubig
+      - type: choice
+        prompt: "Your friend offers food: 'Gusto mo ba ng kanin?' You want some. Reply:"
+        answer: Oo, salamat! Gutom ako.
+        distractors: ["Hindi, ayaw ko po.", Nasaan ang kanin?, Mahal ang kanin.]
+        audio: oo_salamat_gutom_ako
+        audio_text: Oo, salamat! Gutom ako.
+      - type: translate
+        prompt_en: I don't like milk. I want coffee.
+        answer_tl: Ayaw ko ng gatas. Gusto ko ng kape.
+        extra_words: [tubig, masarap, ako]
+        audio: ayaw_gatas_gusto_kape
+      - type: translate
+        prompt_en: We are eating chicken and rice at my grandmother's house.
+        answer_tl: Kumakain kami ng manok at kanin sa bahay ng lola ko.
+        accept: ["Kumakain kami sa bahay ng lola ko ng manok at kanin"]
+        extra_words: [isda, kuya, umiinom]
+        audio: kumakain_manok_kanin_bahay_lola
+  - id: revbasics-6
+    title: Numbers and shopping
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magkano, en: how much }
+          - { tl: ilan, en: how many }
+          - { tl: sukli, en: change }
+          - { tl: presyo, en: price }
+      - type: choice
+        prompt: "You buy bread. The vendor says 'Walong piso po.' You pay with ten pesos. Your sukli is..."
+        answer: Dalawang piso
+        distractors: [Tatlong piso, Walong piso, Sampung piso]
+        audio: dalawang_piso
+        audio_text: Dalawang piso.
+      - type: fill_blank
+        sentence: "Mahal ang sapatos, ___ ang medyas."
+        translation: "The shoes are expensive, the socks are cheap."
+        answer: mura
+        options: [mura, mahal, maganda]
+      - type: listen
+        audio: bumili_ako_ng_siyam_na_bulaklak
+        answer_tl: Bumili ako ng siyam na bulaklak
+        extra_words: [sampu, regalo]
+      - type: translate
+        prompt_tl: Magkano ang limang itlog at dalawang tinapay?
+        answer_en: How much are five eggs and two pieces of bread?
+        accept:
+          - "How much for five eggs and two pieces of bread?"
+          - "How much are five eggs and two breads?"
+          - "How much for five eggs and two breads?"
+        extra_words: [ten, cheap, fish]
+        audio: magkano_limang_itlog_dalawang_tinapay
+      - type: choice
+        prompt: "'Bumibili ang nanay ko ng isda sa palengke araw-araw.' — where does Mom buy fish?"
+        answer: At the market
+        distractors: [At the store, At home, At church]
+        audio: nanay_bumibili_isda_palengke
+        audio_text: Bumibili ang nanay ko ng isda sa palengke araw-araw.
+      - type: translate
+        prompt_en: How much is this? It's so expensive!
+        answer_tl: Magkano ito? Ang mahal naman!
+        extra_words: [mura, presyo, piso]
+        audio: magkano_ito_ang_mahal_naman
+      - type: translate
+        prompt_en: I bought three eggs at the store yesterday.
+        answer_tl: Bumili ako ng tatlong itlog sa tindahan kahapon.
+        accept: ["Kahapon bumili ako ng tatlong itlog sa tindahan"]
+        extra_words: [apat, palengke, bumibili]
+        audio: bumili_tatlong_itlog_tindahan_kahapon
+  - id: revbasics-7
+    title: Out and about
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dito, en: here }
+          - { tl: doon, en: there }
+          - { tl: diretso, en: straight }
+          - { tl: kanto, en: corner }
+      - type: choice
+        prompt: "You're looking for the pharmacy. Ask:"
+        answer: Nasaan ang botika?
+        distractors: [Magkano ang botika?, Sino ang botika?, Bakit may botika?]
+        audio: nasaan_ang_botika
+        audio_text: Nasaan ang botika?
+      - type: fill_blank
+        sentence: "Lumiko ka sa kanan sa kanto, ___ diretso lang."
+        translation: "Turn right at the corner, then just go straight."
+        answer: tapos
+        options: [tapos, kasi, dahil]
+      - type: listen
+        audio: malayo_ang_ospital_sa_bahay_ko
+        answer_tl: Malayo ang ospital sa bahay ko
+        extra_words: [malapit, paaralan]
+      - type: translate
+        prompt_tl: Pumunta kami sa simbahan kahapon at pupunta kami sa palengke bukas.
+        answer_en: We went to church yesterday and we will go to the market tomorrow.
+        accept:
+          - "We went to church yesterday and will go to the market tomorrow"
+          - "We went to the church yesterday and we will go to the market tomorrow"
+        extra_words: [school, today, walked]
+        audio: pumunta_simbahan_pupunta_palengke
+      - type: choice
+        prompt: "A driver asks 'Saan ka pupunta?' He wants to know..."
+        answer: Where you are going
+        distractors: [Where you came from, Where you live, What you are buying]
+        audio: saan_ka_pupunta
+        audio_text: Saan ka pupunta?
+      - type: translate
+        prompt_en: The school is near, the hospital is far.
+        answer_tl: Malapit ang paaralan, malayo ang ospital.
+        extra_words: [simbahan, dito, doon]
+        audio: malapit_paaralan_malayo_ospital
+      - type: translate
+        prompt_en: I rode a jeepney and went to the market.
+        answer_tl: Sumakay ako ng jeepney at pumunta sa palengke.
+        accept:
+          - "Sumakay ako ng jeepney at pumunta ako sa palengke"
+          - "Sumakay ako sa jeepney at pumunta sa palengke"
+        extra_words: [naglalakad, tindahan, doon, sa]
+        audio: sumakay_jeepney_pumunta_palengke
+  - id: revbasics-8
+    title: Weather and feelings
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: masaya, en: happy }
+          - { tl: malungkot, en: sad }
+          - { tl: mainit, en: hot }
+          - { tl: malamig, en: cold }
+      - type: choice
+        prompt: "'Umuulan at malakas ang hangin. May bagyo!' — the weather is..."
+        answer: Stormy
+        distractors: [Sunny, Hot, Beautiful]
+        audio: umuulan_malakas_hangin_bagyo
+        audio_text: Umuulan at malakas ang hangin. May bagyo!
+      - type: fill_blank
+        sentence: "Takot ang aso ko sa ___."
+        translation: "My dog is afraid of storms."
+        answer: bagyo
+        options: [bagyo, bulaklak, araw]
+      - type: listen
+        audio: maganda_langit_mainit_araw
+        answer_tl: Maganda ang langit at mainit ang araw
+        extra_words: [ulan, malamig]
+      - type: translate
+        prompt_tl: Malungkot ako kasi umuulan at malamig.
+        answer_en: I'm sad because it's raining and cold.
+        accept: ["I am sad because it is raining and cold"]
+        extra_words: [happy, hot, sunny]
+        audio: malungkot_kasi_umuulan_malamig
+      - type: choice
+        prompt: "Your friend looks sad. Ask why:"
+        answer: Bakit ka malungkot?
+        distractors: [Bakit ka masaya?, Sino ang malungkot?, Malungkot ako.]
+        audio: bakit_ka_malungkot
+        audio_text: Bakit ka malungkot?
+      - type: translate
+        prompt_en: I'm happy because the weather is beautiful today.
+        answer_tl: Masaya ako kasi maganda ang panahon ngayon.
+        accept: ["Masaya ako dahil maganda ang panahon ngayon"]
+        extra_words: [malungkot, mainit, bukas]
+        audio: masaya_kasi_maganda_panahon
+      - type: translate
+        prompt_en: It's hot today. We are drinking cold water.
+        answer_tl: Mainit ngayon. Umiinom kami ng malamig na tubig.
+        extra_words: [kumakain, gatas, kahapon]
+        audio: mainit_umiinom_malamig_tubig
+  - id: revbasics-9
+    title: At home
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kusina, en: kitchen }
+          - { tl: kwarto, en: bedroom }
+          - { tl: naglilinis, en: cleaning }
+          - { tl: nagwawalis, en: sweeping }
+      - type: choice
+        prompt: "A guest knocks. Welcome them in politely:"
+        answer: Tuloy po kayo!
+        distractors: [Paalam po!, Nasaan po kayo?, Salamat po!]
+        audio: tuloy_po_kayo
+        audio_text: Tuloy po kayo!
+      - type: fill_blank
+        sentence: "Natutulog ang pusa sa ___ ko."
+        translation: "The cat is sleeping on my bed."
+        answer: kama
+        options: [kama, mesa, silya]
+      - type: listen
+        audio: naglilinis_kami_ng_bahay_araw_araw
+        answer_tl: Naglilinis kami ng bahay araw-araw
+        extra_words: [nagwawalis, kusina]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Naghuhugas si Ate ng mga plato sa kusina.
+        answer_en: My older sister is washing the dishes in the kitchen.
+        accept:
+          - "My older sister is washing dishes in the kitchen"
+          - "My big sister is washing the dishes in the kitchen"
+          - "Ate is washing the dishes in the kitchen"
+        extra_words: [sweeping, bathroom, cooking]
+        audio: naghuhugas_si_ate_ng_mga_plato
+      - type: choice
+        prompt: "'Nasa ibabaw ng mesa ang gatas.' — where is the milk?"
+        answer: On the table
+        distractors: [In the refrigerator, Under the chair, In the bedroom]
+        audio: nasa_ibabaw_ng_mesa_ang_gatas
+        audio_text: Nasa ibabaw ng mesa ang gatas.
+      - type: translate
+        prompt_en: Mom is cooking in the kitchen and Dad is sweeping in the living room.
+        answer_tl: Nagluluto si Nanay sa kusina at nagwawalis si Tatay sa sala.
+        accept:
+          - "Nagluluto sa kusina si Nanay at nagwawalis sa sala si Tatay"
+          - "Nagluluto sa kusina si Nanay at nagwawalis si Tatay sa sala"
+          - "Nagluluto si Nanay sa kusina at nagwawalis sa sala si Tatay"
+        extra_words: [naghuhugas, kwarto, banyo]
+        audio: nagluluto_nanay_nagwawalis_tatay
+      - type: translate
+        prompt_en: There are many chairs and one table in the living room.
+        answer_tl: Maraming silya at isang mesa sa sala.
+        accept: ["Sa sala, maraming silya at isang mesa"]
+        extra_words: [kama, dalawa, kusina]
+        audio: maraming_silya_isang_mesa_sala
+  - id: revbasics-10
+    title: Celebrations and clothes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: regalo, en: gift }
+          - { tl: handaan, en: party }
+          - { tl: damit, en: clothes }
+          - { tl: sapatos, en: shoes }
+      - type: choice
+        prompt: "It's your tita's birthday. Greet her:"
+        answer: Maligayang kaarawan po, Tita!
+        distractors: ["Maligayang Pasko po, Tita!", "Magandang gabi po, Tita!", "Binabati kita, Lola!"]
+        audio: maligayang_kaarawan_po_tita
+        audio_text: Maligayang kaarawan po, Tita!
+      - type: fill_blank
+        sentence: "Maraming bisita at masarap ang ___ sa pista."
+        translation: "There are many guests and the food is delicious at the fiesta."
+        answer: handa
+        options: [handa, regalo, parol]
+      - type: listen
+        audio: bumili_ako_ng_pulang_damit
+        answer_tl: Bumili ako ng pulang damit
+        extra_words: [puti, sapatos]
+      - type: translate
+        prompt_tl: Nakasuot siya ng dilaw na bestida sa handaan.
+        answer_en: She is wearing a yellow dress at the party.
+        accept: ["He is wearing a yellow dress at the party"]
+        extra_words: [red, shoes, church]
+        audio: nakasuot_dilaw_na_bestida_handaan
+      - type: choice
+        prompt: "'Pupunta kami sa Simbang Gabi' means..."
+        answer: We are going to Simbang Gabi
+        distractors: [We went to Simbang Gabi, We sing at Simbang Gabi, We have a gift]
+        audio: pupunta_kami_sa_simbang_gabi
+        audio_text: Pupunta kami sa Simbang Gabi.
+      - type: translate
+        prompt_en: Come to the party! We are singing and dancing.
+        answer_tl: Halika sa handaan! Kumakanta at sumasayaw kami.
+        accept: ["Halika sa handaan! Sumasayaw at kumakanta kami."]
+        extra_words: [regalo, naglalaro, sila]
+        audio: halika_handaan_kumakanta_sumasayaw
+      - type: translate
+        prompt_en: I am wearing white clothes and black shoes.
+        answer_tl: Nakasuot ako ng puting damit at itim na sapatos.
+        accept: ["Nakasuot ako ng puting damit at sapatos na itim"]
+        extra_words: [pula, medyas, dilaw]
+        audio: nakasuot_puting_damit_itim_sapatos
+  - id: revbasics-11
+    title: Putting it all together
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kumusta po kayo?, en: How are you? (polite) }
+          - { tl: Salamat po sa kape, en: Thank you for the coffee }
+          - { tl: Tuloy po kayo, en: Please come in }
+          - { tl: Paalam po, en: Goodbye (polite) }
+      - type: choice
+        prompt: "Your friend says 'Masakit ang ulo ko at may lagnat ako.' What's wrong?"
+        answer: Their head hurts and they have a fever
+        distractors:
+          - Their stomach hurts and they have a cough
+          - They are tired and hungry
+          - They are sad because of the rain
+        audio: masakit_ulo_may_lagnat
+        audio_text: Masakit ang ulo ko at may lagnat ako.
+      - type: fill_blank
+        sentence: "May alaga kaming aso at pusa ___ bahay."
+        translation: "We have a pet dog and cat at home."
+        answer: sa
+        options: [sa, ng, si]
+      - type: listen
+        audio: nag_aaral_ako_ng_tagalog_araw_araw
+        answer_tl: Nag-aaral ako ng Tagalog araw-araw
+        extra_words: [kumakanta, mabilis]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Guro ang nanay ko, doktor ang tatay ko, at estudyante ako.
+        answer_en: My mom is a teacher, my dad is a doctor, and I am a student.
+        accept: ["My mother is a teacher, my father is a doctor, and I am a student"]
+        extra_words: [nurse, farmer, sibling]
+        audio: guro_nanay_doktor_tatay_estudyante
+      - type: choice
+        prompt: "You meet your friend's lolo at a party. Greet him well:"
+        answer: Magandang gabi po, Lolo. Kumusta po kayo?
+        distractors:
+          - "Magandang gabi, Lolo. Kumusta ka?"
+          - "Halika, Lolo! Kain tayo!"
+          - "Paalam po, Lolo."
+        audio: magandang_gabi_po_lolo_kumusta
+        audio_text: Magandang gabi po, Lolo. Kumusta po kayo?
+      - type: translate
+        prompt_en: Who is cooking in the kitchen? I'm hungry!
+        answer_tl: Sino ang nagluluto sa kusina? Gutom na ako!
+        accept: ["Sino ang nagluluto sa kusina? Gutom ako!"]
+        extra_words: [saan, kumakain, uhaw]
+        audio: sino_nagluluto_gutom_na_ako
+      - type: translate
+        prompt_en: I have an older brother and two older sisters. I am the youngest.
+        answer_tl: May kuya ako at dalawang ate. Ako ang bunso.
+        extra_words: [pinsan, tatlo, siya]
+        audio: may_kuya_dalawang_ate_ako_ang_bunso
+      - type: translate
+        prompt_tl: Masaya ako ngayon kasi pupunta ang pamilya ko sa dagat bukas.
+        answer_en: I'm happy today because my family is going to the sea tomorrow.
+        accept:
+          - "I am happy today because my family is going to the sea tomorrow"
+          - "I'm happy now because my family is going to the sea tomorrow"
+          - "I'm happy today because my family will go to the sea tomorrow"
+        extra_words: [sad, mountain, yesterday]
+        audio: masaya_pupunta_dagat_bukas

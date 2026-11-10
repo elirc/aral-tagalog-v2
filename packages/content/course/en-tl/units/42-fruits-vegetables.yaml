@@ -59,6 +59,7 @@ lessons:
       - type: translate
         prompt_en: How much is the mango at the market?
         answer_tl: Magkano ang mangga sa palengke?
+        accept: ["Magkano sa palengke ang mangga"]
         extra_words: [saging, bumili, pera]
         audio: magkano_ang_mangga_sa_palengke
         hint: '"magkano" asks the price; "sa palengke" says where.'
@@ -116,6 +117,7 @@ lessons:
       - type: translate
         prompt_en: The vegetables at the market are cheap.
         answer_tl: Mura ang gulay sa palengke.
+        accept: ["Mura sa palengke ang gulay"]
         extra_words: [mahal, prutas, bumili]
         audio: mura_ang_gulay_sa_palengke
   - id: fruits-3
@@ -227,3 +229,398 @@ lessons:
         extra_words: [fruit, expensive, tomorrow]
         audio: araw_araw_akong_bumibili_ng_sariwang_gulay_sa_palengke
         grading: { hyphens: true }
+  - id: fruits-5
+    title: Pakwan at mansanas
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pakwan, en: watermelon }
+          - { tl: mansanas, en: apple }
+          - { tl: lansones, en: lanzones }
+          - { tl: saging, en: banana }
+      - type: choice
+        prompt: "'Pakwan' means..."
+        answer: Watermelon
+        distractors: [Apple, Papaya, Coconut]
+        audio: pakwan
+        audio_text: Pakwan
+      - type: translate
+        prompt_tl: Malaki at matamis ang pakwan.
+        answer_en: The watermelon is big and sweet.
+        accept: ["The watermelon is sweet and big"]
+        extra_words: [small, sour, apple]
+        audio: malaki_at_matamis_ang_pakwan
+      - type: fill_blank
+        sentence: "Bumili si Lola ng ___ sa palengke."
+        translation: "Grandma bought apples at the market."
+        answer: mansanas
+        options: [mansanas, kamatis, kalamansi]
+      - type: listen
+        audio: hinog_na_ang_papaya
+        answer_tl: Hinog na ang papaya
+        extra_words: [hilaw, pa]
+      - type: choice
+        prompt: "Which fruit grows in bunches and has thin yellow skin you peel to reveal sweet, slightly sour white segments?"
+        answer: Lansones
+        distractors: [Pakwan, Mansanas, Pinya]
+        audio: lansones
+        audio_text: Lansones
+      - type: translate
+        prompt_en: I want an apple.
+        answer_tl: Gusto ko ng mansanas.
+        extra_words: [pakwan, ang, ayaw]
+        audio: gusto_ko_ng_mansanas
+      - type: translate
+        prompt_tl: Mas matamis ang mangga kaysa sa mansanas.
+        answer_en: The mango is sweeter than the apple.
+        accept: ["Mango is sweeter than apple", "Mangoes are sweeter than apples"]
+        extra_words: [sour, bigger, banana]
+        audio: mas_matamis_ang_mangga_kaysa_sa_mansanas
+      - type: translate
+        prompt_en: The papaya and the watermelon are ripe now.
+        answer_tl: Hinog na ang papaya at pakwan.
+        accept: ["Hinog na ang papaya at ang pakwan"]
+        extra_words: [hilaw, pa, mansanas]
+        hint: '"na" right after the adjective means "now / already".'
+        audio: hinog_na_ang_papaya_at_pakwan
+  - id: fruits-6
+    title: Kalabasa at sitaw
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kalabasa, en: squash }
+          - { tl: sitaw, en: string beans }
+          - { tl: kangkong, en: water spinach }
+          - { tl: ampalaya, en: bitter gourd }
+      - type: choice
+        prompt: "'Kalabasa' means..."
+        answer: Squash
+        distractors: [Eggplant, String beans, Tomato]
+        audio: kalabasa
+        audio_text: Kalabasa
+      - type: choice
+        prompt: "Ampalaya is famous for tasting..."
+        answer: Mapait
+        distractors: [Matamis, Maasim, Maalat]
+        audio: mapait
+        audio_text: Mapait
+        hint: '"Mapait" = bitter.'
+      - type: translate
+        prompt_tl: Mapait ang ampalaya pero gusto ko ito.
+        answer_en: Bitter gourd is bitter but I like it.
+        accept: ["The bitter gourd is bitter but I like it", "Bitter gourd is bitter, but I like it"]
+        extra_words: [sweet, hate, squash]
+        audio: mapait_ang_ampalaya_pero_gusto_ko_ito
+      - type: fill_blank
+        sentence: "Nagluluto si Nanay ng ___ at sitaw."
+        translation: "Mom is cooking squash and string beans."
+        answer: kalabasa
+        options: [kalabasa, mansanas, pakwan]
+      - type: listen
+        audio: sariwa_ang_sitaw_at_kangkong
+        answer_tl: Sariwa ang sitaw at kangkong
+        extra_words: [kalabasa, hilaw]
+      - type: translate
+        prompt_en: I don't like bitter gourd because it is bitter.
+        answer_tl: Ayaw ko ng ampalaya kasi mapait ito.
+        accept: ["Ayaw ko ng ampalaya dahil mapait ito", "Ayaw ko ng ampalaya kasi mapait"]
+        extra_words: [matamis, gusto, siya]
+        audio: ayaw_ko_ng_ampalaya_kasi_mapait_ito
+      - type: translate
+        prompt_tl: May kangkong po ba kayo?
+        answer_en: Do you have water spinach?
+        accept: ["Do you have any water spinach?"]
+        extra_words: [squash, where, buy]
+        hint: '"kayo" here is a polite "you" for the vendor; "po" adds respect.'
+        audio: may_kangkong_po_ba_kayo
+      - type: translate
+        prompt_en: Squash and string beans are cheap today.
+        answer_tl: Mura ang kalabasa at sitaw ngayon.
+        accept: ["Mura ngayon ang kalabasa at sitaw"]
+        extra_words: [mahal, kahapon, gulay]
+        audio: mura_ang_kalabasa_at_sitaw_ngayon
+  - id: fruits-7
+    title: Panahon ng mangga
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tag-init, en: hot season }
+          - { tl: tag-ulan, en: rainy season }
+          - { tl: panahon, en: season }
+          - { tl: hinog, en: ripe }
+      - type: choice
+        prompt: "'Tag-ulan' means..."
+        answer: Rainy season
+        distractors: [Hot season, Christmas season, Every day]
+        audio: tag_ulan
+        audio_text: Tag-ulan
+        hint: '"tag-" + a word = the season of it: tag-ulan (rain), tag-init (heat).'
+      - type: translate
+        prompt_tl: Panahon na ng mangga!
+        answer_en: It's mango season now!
+        accept: ["It is mango season now!", "It's mango season already!", "It is already mango season!"]
+        extra_words: [rain, apple, summer]
+        hint: '"panahon ng ___" = ___ season; "na" = now / already.'
+        audio: panahon_na_ng_mangga
+      - type: fill_blank
+        sentence: "Maraming mangga tuwing ___."
+        translation: "There are lots of mangoes every hot season."
+        answer: tag-init
+        options: [tag-init, tag-ulan, Pasko]
+      - type: listen
+        audio: mahal_ang_mangga_kasi_tag_ulan_na
+        answer_tl: Mahal ang mangga kasi tag-ulan na
+        extra_words: [mura, tag-init]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Mangoes are sweetest and cheapest in the..."
+        answer: Tag-init
+        distractors: [Tag-ulan, Pasko, Bagong Taon]
+        audio: tag_init
+        audio_text: Tag-init
+      - type: translate
+        prompt_en: There are many lanzones now.
+        answer_tl: Maraming lansones ngayon.
+        accept: ["Ngayon, maraming lansones"]
+        extra_words: [marami, mangga, kahapon]
+        hint: '"marami" + the -ng linker → "maraming lansones".'
+        audio: maraming_lansones_ngayon
+      - type: translate
+        prompt_tl: Hindi pa panahon ng lansones. Mahal pa ito.
+        answer_en: It's not lanzones season yet. It's still expensive.
+        accept: ["It is not lanzones season yet. It is still expensive.", "It's not yet lanzones season. It's still expensive.", "It isn't lanzones season yet. It's still expensive."]
+        extra_words: [cheap, already, mango]
+        audio: hindi_pa_panahon_ng_lansones_mahal_pa_ito
+      - type: translate
+        prompt_en: Every rainy season, vegetables are expensive.
+        answer_tl: Tuwing tag-ulan, mahal ang gulay.
+        accept: ["Mahal ang gulay tuwing tag-ulan"]
+        extra_words: [mura, tag-init, prutas]
+        grading: { hyphens: true }
+        audio: tuwing_tag_ulan_mahal_ang_gulay
+  - id: fruits-8
+    title: Paborito kong prutas
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ano ang paborito mong prutas?' means..."
+        answer: What is your favorite fruit?
+        distractors: [Do you like fruit?, How much is the fruit?, Where is the fruit?]
+        audio: ano_ang_paborito_mong_prutas
+        audio_text: Ano ang paborito mong prutas?
+      - type: match
+        pairs:
+          - { tl: paborito, en: favorite }
+          - { tl: mas, en: more }
+          - { tl: kaysa, en: than }
+          - { tl: pinaka-, en: most }
+      - type: translate
+        prompt_en: My favorite fruit is mango.
+        answer_tl: Mangga ang paborito kong prutas.
+        accept: ["Ang paborito kong prutas ay mangga"]
+        extra_words: [mo, gulay, ng]
+        hint: '"paborito ko" + linker → "paborito kong prutas".'
+        audio: mangga_ang_paborito_kong_prutas
+      - type: translate
+        prompt_tl: Pinakamatamis ang mangga sa lahat ng prutas.
+        answer_en: The mango is the sweetest of all the fruits.
+        accept: ["The mango is the sweetest of all fruits", "Mango is the sweetest of all fruits", "Mangoes are the sweetest of all fruits"]
+        extra_words: [sourest, more, vegetables]
+        audio: pinakamatamis_ang_mangga_sa_lahat_ng_prutas
+      - type: fill_blank
+        sentence: "Mas gusto ko ang pinya ___ sa saging."
+        translation: "I like pineapple more than banana."
+        answer: kaysa
+        options: [kaysa, mas, pinaka]
+      - type: listen
+        audio: paborito_ko_ang_buko
+        answer_tl: Paborito ko ang buko
+        extra_words: [mangga, mo]
+      - type: choice
+        prompt: "A friend asks, 'Gusto mo ba ng ampalaya?' You don't. Say:"
+        answer: Hindi, ayaw ko ng ampalaya.
+        distractors: ["Oo, gusto ko ng ampalaya.", Paborito ko ang ampalaya., Masarap ang ampalaya.]
+        audio: hindi_ayaw_ko_ng_ampalaya
+        audio_text: Hindi, ayaw ko ng ampalaya.
+      - type: translate
+        prompt_tl: Ayaw ng kapatid ko ng gulay, pero gusto niya ng prutas.
+        answer_en: My sibling doesn't like vegetables, but he likes fruit.
+        accept:
+          - "My sibling doesn't like vegetables, but she likes fruit"
+          - "My sibling does not like vegetables, but he likes fruit"
+          - "My sibling does not like vegetables, but she likes fruit"
+        extra_words: [loves, I, juice]
+        hint: '"ayaw ng kapatid ko" = my sibling doesn''t like — "ng" marks who.'
+        audio: ayaw_ng_kapatid_ko_ng_gulay_pero_gusto_niya_ng_prutas
+      - type: translate
+        prompt_en: Watermelon is my favorite because it is sweet.
+        answer_tl: Pakwan ang paborito ko kasi matamis ito.
+        accept: ["Pakwan ang paborito ko dahil matamis ito"]
+        extra_words: [mapait, mo, mangga]
+        audio: pakwan_ang_paborito_ko_kasi_matamis_ito
+  - id: fruits-9
+    title: Tumpok at piraso
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tumpok, en: small pile }
+          - { tl: piraso, en: piece }
+          - { tl: tawad, en: discount }
+          - { tl: suki, en: regular customer }
+      - type: choice
+        prompt: "At the palengke, small produce is often sold by the 'tumpok'. What is a tumpok?"
+        answer: A small pile sold for one price
+        distractors: [A kilo, A basket you bring, A single piece]
+        audio: tumpok
+        audio_text: Tumpok
+      - type: translate
+        prompt_tl: Magkano ang isang tumpok ng kamatis?
+        answer_en: How much is one pile of tomatoes?
+        accept: ["How much is a pile of tomatoes?", "How much for one pile of tomatoes?", "How much for a pile of tomatoes?"]
+        extra_words: [kilo, piece, onions]
+        audio: magkano_ang_isang_tumpok_ng_kamatis
+      - type: fill_blank
+        sentence: "Bente pesos ang isang ___ ng mangga."
+        translation: "One piece of mango is twenty pesos."
+        answer: piraso
+        options: [piraso, kilo, tumpok]
+      - type: choice
+        prompt: "The vendor says, 'Singkwenta ang isang tumpok.' How much is one pile?"
+        answer: Fifty pesos
+        distractors: [Fifteen pesos, Five pesos, Twenty pesos]
+        audio: singkwenta_ang_isang_tumpok
+        audio_text: Singkwenta ang isang tumpok.
+      - type: listen
+        audio: tatlong_piraso_ng_mansanas
+        answer_tl: Tatlong piraso ng mansanas
+        extra_words: [kilo, dalawang]
+      - type: translate
+        prompt_tl: Bibili ako ng dalawang tumpok. May tawad po ba?
+        answer_en: I will buy two piles. Is there a discount?
+        accept: ["I'll buy two piles. Is there a discount?", "I will buy two piles. Any discount?"]
+        extra_words: [kilo, bought, price]
+        audio: bibili_ako_ng_dalawang_tumpok_may_tawad_po_ba
+      - type: translate
+        prompt_en: I will buy three pieces of papaya.
+        answer_tl: Bibili ako ng tatlong piraso ng papaya.
+        extra_words: [tumpok, bumili, dalawang]
+        audio: bibili_ako_ng_tatlong_piraso_ng_papaya
+      - type: translate
+        prompt_en: Suki, how much is one pile of string beans?
+        answer_tl: Suki, magkano ang isang tumpok ng sitaw?
+        accept: ["Magkano ang isang tumpok ng sitaw, suki?"]
+        extra_words: [piraso, kilo, ilan]
+        audio: suki_magkano_ang_isang_tumpok_ng_sitaw
+  - id: fruits-10
+    title: Masustansya
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Masustansya' means..."
+        answer: Nutritious
+        distractors: [Delicious, Expensive, Spicy]
+        audio: masustansya
+        audio_text: Masustansya
+      - type: match
+        pairs:
+          - { tl: masustansya, en: nutritious }
+          - { tl: sariwa, en: fresh }
+          - { tl: mapait, en: bitter }
+          - { tl: hinog, en: ripe }
+      - type: translate
+        prompt_tl: Masustansya ang gulay at prutas.
+        answer_en: Vegetables and fruit are nutritious.
+        accept: ["Vegetables and fruits are nutritious", "The vegetables and fruit are nutritious", "Fruit and vegetables are nutritious"]
+        extra_words: [expensive, fresh, rice]
+        audio: masustansya_ang_gulay_at_prutas
+      - type: fill_blank
+        sentence: "Kumain ka ng ___, anak. Masustansya ito."
+        translation: "Eat vegetables, child. They're good for you."
+        answer: gulay
+        options: [gulay, asukal, kape]
+      - type: listen
+        audio: kumain_ka_ng_prutas_araw_araw
+        answer_tl: Kumain ka ng prutas araw-araw
+        extra_words: [gulay, bukas]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Lola puts kangkong on your plate and says, 'Masustansya ito!' She means..."
+        answer: It's good for you
+        distractors: [It's expensive, It's spicy, It's unripe]
+        audio: masustansya_ito
+        audio_text: Masustansya ito!
+      - type: translate
+        prompt_en: Don't eat a lot of sugar.
+        answer_tl: Huwag kang kumain ng maraming asukal.
+        extra_words: [prutas, ka, matamis]
+        hint: '"huwag kang" + verb = don''t; "marami" + linker → "maraming".'
+        audio: huwag_kang_kumain_ng_maraming_asukal
+      - type: translate
+        prompt_tl: Kumakain ako ng sariwang prutas tuwing umaga.
+        answer_en: I eat fresh fruit every morning.
+        accept: ["I eat fresh fruits every morning", "Every morning I eat fresh fruit"]
+        extra_words: [vegetables, night, ate]
+        audio: kumakain_ako_ng_sariwang_prutas_tuwing_umaga
+      - type: translate
+        prompt_en: Bitter gourd is bitter but nutritious.
+        answer_tl: Mapait ang ampalaya pero masustansya.
+        accept: ["Mapait ang ampalaya pero masustansya ito", "Mapait pero masustansya ang ampalaya"]
+        extra_words: [matamis, at, kalabasa]
+        audio: mapait_ang_ampalaya_pero_masustansya
+  - id: fruits-11
+    title: "Challenge: Market day"
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "A vendor calls out, 'Bili na kayo, suki! Sariwa ito!' She is..."
+        answer: Inviting you to buy because it's fresh
+        distractors: [Saying it's sold out, Asking you for a discount, Saying it's still unripe]
+        audio: bili_na_kayo_suki_sariwa_ito
+        audio_text: Bili na kayo, suki! Sariwa ito!
+      - type: match
+        pairs:
+          - { tl: tumpok, en: small pile }
+          - { tl: piraso, en: piece }
+          - { tl: kilo, en: kilogram }
+          - { tl: sukli, en: change (money) }
+      - type: translate
+        prompt_tl: Hinog na ba ang mangga, o hilaw pa?
+        answer_en: Is the mango ripe yet, or still unripe?
+        accept: ["Is the mango ripe already, or still unripe?", "Are the mangoes ripe yet, or still unripe?"]
+        extra_words: [sweet, fresh, banana]
+        audio: hinog_na_ba_ang_mangga_o_hilaw_pa
+      - type: fill_blank
+        sentence: "Dalawang kilo ng saging at isang ___ ng kamatis, po."
+        translation: "Two kilos of bananas and one pile of tomatoes, please."
+        answer: tumpok
+        options: [tumpok, piraso, kilo]
+      - type: listen
+        audio: heto_po_ang_sukli
+        answer_tl: Heto po ang sukli
+        extra_words: [bayad, pera]
+      - type: translate
+        prompt_en: How much is one kilo of squash?
+        answer_tl: Magkano ang isang kilo ng kalabasa?
+        extra_words: [ilan, tumpok, sitaw]
+        audio: magkano_ang_isang_kilo_ng_kalabasa
+      - type: translate
+        prompt_tl: Suki, sariwa ba ang kangkong at sitaw ngayon?
+        answer_en: Suki, are the water spinach and string beans fresh today?
+        accept: ["Suki, are the water spinach and the string beans fresh today?", "Suki, is the water spinach and string beans fresh today?"]
+        extra_words: [ripe, squash, tomorrow]
+        audio: suki_sariwa_ba_ang_kangkong_at_sitaw_ngayon
+      - type: translate
+        prompt_en: I will buy two kilos of ripe mangoes and one pile of tomatoes.
+        answer_tl: Bibili ako ng dalawang kilo ng hinog na mangga at isang tumpok ng kamatis.
+        extra_words: [hilaw, piraso, bumili]
+        audio: bibili_ako_ng_dalawang_kilo_ng_hinog_na_mangga_at_isang_tumpok_ng_kamatis
+      - type: translate
+        prompt_en: It's mango season now. The mangoes are cheap and sweet.
+        answer_tl: Panahon na ng mangga. Mura at matamis ang mangga.
+        accept: ["Panahon na ng mangga. Matamis at mura ang mangga."]
+        extra_words: [mahal, maasim, tag-ulan]
+        audio: panahon_na_ng_mangga_mura_at_matamis_ang_mangga

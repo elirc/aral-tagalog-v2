@@ -261,3 +261,355 @@ lessons:
           - "I woke up, showered, ate, then I went to school"
         extra_words: [slept, church, before]
         audio: gumising_ako_naligo_kumain_tapos_pumunta_ako_sa_paaralan
+  - id: stories-5
+    title: Kagabi
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kagabi' means..."
+        answer: Last night
+        distractors: [Tonight, Yesterday morning, Earlier today]
+        audio: kagabi
+        audio_text: Kagabi
+      - type: match
+        pairs:
+          - { tl: kagabi, en: last night }
+          - { tl: kahapon, en: yesterday }
+          - { tl: kanina, en: earlier today }
+          - { tl: ngayon, en: now }
+      - type: translate
+        prompt_tl: Nanood kami ng pelikula kagabi.
+        answer_en: We watched a movie last night.
+        accept: ["Last night we watched a movie", "We watched a film last night"]
+        extra_words: [video, yesterday, cooked]
+        audio: nanood_kami_ng_pelikula_kagabi
+      - type: fill_blank
+        sentence: "Kumain kami sa restawran ___."
+        translation: "We ate at the restaurant last night."
+        answer: kagabi
+        options: [kagabi, bukas, mamaya]
+      - type: listen
+        audio: uminom_sila_ng_kape_kagabi
+        answer_tl: Uminom sila ng kape kagabi
+        extra_words: [kanina, gatas]
+      - type: choice
+        prompt: "'Nag-aral ako kagabi' means..."
+        answer: I studied last night
+        distractors: [I am studying tonight, I will study tonight, I studied this morning]
+        audio: nag_aral_ako_kagabi
+        audio_text: Nag-aral ako kagabi.
+      - type: translate
+        prompt_en: I cooked adobo last night.
+        answer_tl: Nagluto ako ng adobo kagabi.
+        accept: ["Kagabi nagluto ako ng adobo"]
+        extra_words: [sinigang, kanina, kami]
+        audio: nagluto_ako_ng_adobo_kagabi
+      - type: translate
+        prompt_tl: Hindi ako natulog kagabi kasi nag-aral ako. May pagsusulit ako ngayon.
+        answer_en: I did not sleep last night because I studied. I have a test today.
+        accept: ["I didn't sleep last night because I studied. I have a test today", "I did not sleep last night because I was studying. I have a test today"]
+        extra_words: [yesterday, played, work]
+        audio: hindi_ako_natulog_kagabi_kasi_nag_aral_ako
+        grading: { hyphens: true }
+  - id: stories-6
+    title: Dumating at umalis
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dumating, en: arrived }
+          - { tl: umalis, en: left }
+          - { tl: umuwi, en: went home }
+          - { tl: pumunta, en: went }
+      - type: choice
+        prompt: "'Dumating si Tita kanina' means..."
+        answer: Auntie arrived earlier
+        distractors: [Auntie left earlier, Auntie will arrive later, Auntie is arriving now]
+        audio: dumating_si_tita_kanina
+        audio_text: Dumating si Tita kanina.
+      - type: translate
+        prompt_tl: Umalis si Kuya kaninang umaga.
+        answer_en: Big brother left earlier this morning.
+        accept: ["My big brother left this morning", "Big brother left this morning"]
+        extra_words: [arrived, evening, yesterday]
+        audio: umalis_si_kuya_kaninang_umaga
+        hint: '"kaninang umaga" = earlier this morning — kanina + -ng + umaga.'
+      - type: fill_blank
+        sentence: "Kailan ___ ang lola mo?"
+        translation: "When did your grandma arrive?"
+        answer: dumating
+        options: [dumating, umalis, umuwi]
+      - type: listen
+        audio: umalis_na_sila
+        answer_tl: Umalis na sila
+        extra_words: [dumating, kami]
+      - type: choice
+        prompt: "The party is over and you're heading out. Say:"
+        answer: Aalis na ako. Paalam!
+        distractors: [Dumating na ako!, Kain tayo!, Isa pa!]
+        audio: aalis_na_ako_paalam
+        audio_text: Aalis na ako. Paalam!
+      - type: translate
+        prompt_en: The jeepney arrived, then we got on.
+        answer_tl: Dumating ang jeepney, tapos sumakay kami.
+        accept: ["Dumating ang jeepney tapos sumakay kami"]
+        extra_words: [umalis, bumaba, siya]
+        audio: dumating_ang_jeepney_tapos_sumakay_kami
+      - type: translate
+        prompt_tl: Dumating kami sa handaan, pero umalis na ang mga bisita.
+        answer_en: We arrived at the party, but the guests had already left.
+        accept: ["We arrived at the party but the guests already left", "We arrived at the celebration, but the guests had already left"]
+        extra_words: [ate, tomorrow, singing]
+        audio: dumating_kami_sa_handaan_pero_umalis_na_ang_mga_bisita
+  - id: stories-7
+    title: Anong nangyari?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Anong nangyari?' means..."
+        answer: What happened?
+        distractors: [What is happening?, What will happen?, Why did it happen?]
+        audio: anong_nangyari
+        audio_text: Anong nangyari?
+        hint: '"Anong" = ano + the -ng linker.'
+      - type: match
+        pairs:
+          - { tl: nangyari, en: happened }
+          - { tl: biglang, en: suddenly }
+          - { tl: nagkasakit, en: got sick }
+          - { tl: dumating, en: arrived }
+      - type: translate
+        prompt_tl: Anong nangyari kahapon? Bakit wala ka sa klase?
+        answer_en: What happened yesterday? Why were you not in class?
+        accept: ["What happened yesterday? Why weren't you in class?", "What happened yesterday? Why were you absent from class?"]
+        extra_words: [when, today, work]
+        audio: anong_nangyari_kahapon_bakit_wala_ka_sa_klase
+      - type: fill_blank
+        sentence: "Naglalakad ako, tapos ___ umulan."
+        translation: "I was walking, then suddenly it rained."
+        answer: biglang
+        options: [biglang, kanina, bukas]
+        hint: '"biglang" = bigla (sudden) + the -ng linker.'
+      - type: listen
+        audio: nagkasakit_ako_noong_lunes
+        answer_tl: Nagkasakit ako noong Lunes
+        extra_words: [martes, kanina]
+      - type: choice
+        prompt: "'Nagkasakit siya' means..."
+        answer: He got sick
+        distractors: [He is sick, He got hurt, He got well]
+        audio: nagkasakit_siya
+        audio_text: Nagkasakit siya.
+      - type: translate
+        prompt_en: I got sick last night. I did not go to work today.
+        answer_tl: Nagkasakit ako kagabi. Hindi ako pumunta sa trabaho ngayon.
+        accept: ["Nagkasakit ako kagabi at hindi ako pumunta sa trabaho ngayon"]
+        extra_words: [kahapon, paaralan, siya]
+        audio: nagkasakit_ako_kagabi_hindi_ako_pumunta_sa_trabaho_ngayon
+      - type: translate
+        prompt_tl: Naglalaro kami sa daan, tapos biglang dumating ang ulan.
+        answer_en: We were playing in the street, then suddenly the rain came.
+        accept: ["We were playing on the street, then suddenly the rain arrived", "We were playing in the street then suddenly the rain came"]
+        extra_words: [walking, sun, left]
+        audio: naglalaro_kami_sa_daan_tapos_biglang_dumating_ang_ulan
+  - id: stories-8
+    title: Naghintay at nagdala
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naghintay, en: waited }
+          - { tl: nagdala, en: brought }
+          - { tl: bumili, en: bought }
+          - { tl: nagluto, en: cooked }
+      - type: choice
+        prompt: "'Naghintay kami sa istasyon' means..."
+        answer: We waited at the station
+        distractors: [We walked to the station, We left the station, We are waiting at the station]
+        audio: naghintay_kami_sa_istasyon
+        audio_text: Naghintay kami sa istasyon.
+      - type: translate
+        prompt_tl: Nagdala si Nanay ng pansit sa handaan.
+        answer_en: Mom brought pansit to the party.
+        accept: ["Mother brought pansit to the party", "Mom brought noodles to the party"]
+        extra_words: [cooked, rice, fiesta]
+        audio: nagdala_si_nanay_ng_pansit_sa_handaan
+      - type: fill_blank
+        sentence: "___ ako ng jeepney kanina."
+        translation: "I waited for a jeepney earlier."
+        answer: Naghintay
+        options: [Naghintay, Nagdala, Sumakay]
+      - type: listen
+        audio: nagdala_ako_ng_regalo
+        answer_tl: Nagdala ako ng regalo
+        extra_words: [bumili, litrato]
+      - type: translate
+        prompt_en: We waited for the doctor at the clinic.
+        answer_tl: Naghintay kami sa doktor sa klinika.
+        accept: ["Naghintay kami ng doktor sa klinika"]
+        extra_words: [nars, ospital, kahapon, ng]
+        audio: naghintay_kami_sa_doktor_sa_klinika
+      - type: translate
+        prompt_tl: Naghintay ako sa sala, tapos dumating ang bisita.
+        answer_en: I waited in the living room, then the guest arrived.
+        accept: ["I waited in the living room, then the visitor arrived", "I waited in the living room then the guest came"]
+        extra_words: [kitchen, left, earlier]
+        audio: naghintay_ako_sa_sala_tapos_dumating_ang_bisita
+      - type: translate
+        prompt_en: Dad brought fish, then Grandma cooked sinigang.
+        answer_tl: Nagdala si Tatay ng isda, tapos nagluto si Lola ng sinigang.
+        accept: ["Nagdala si Tatay ng isda tapos nagluto si Lola ng sinigang"]
+        extra_words: [manok, bumili, kami]
+        audio: nagdala_si_tatay_ng_isda_tapos_nagluto_si_lola_ng_sinigang
+  - id: stories-9
+    title: Bumalik — going back
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Bumalik' means..."
+        answer: Came back / returned
+        distractors: [Left, Arrived, Went home]
+        audio: bumalik
+        audio_text: Bumalik
+      - type: match
+        pairs:
+          - { tl: bumalik, en: came back }
+          - { tl: bago, en: before }
+          - { tl: pagkatapos, en: after }
+          - { tl: muna, en: first }
+      - type: translate
+        prompt_tl: Bumalik ako sa bahay kasi nakalimutan ko ang selpon ko.
+        answer_en: I went back to the house because I forgot my phone.
+        accept: ["I went back home because I forgot my cellphone", "I came back to the house because I forgot my phone", "I returned to the house because I forgot my phone"]
+        extra_words: [left, bought, wallet]
+        audio: bumalik_ako_sa_bahay_kasi_nakalimutan_ko_ang_selpon_ko
+      - type: fill_blank
+        sentence: "Kumain muna kami ___ umalis."
+        translation: "We ate first before leaving."
+        answer: bago
+        options: [bago, tapos, pagkatapos]
+      - type: listen
+        audio: bumalik_siya_kahapon
+        answer_tl: Bumalik siya kahapon
+        extra_words: [umalis, bukas]
+      - type: translate
+        prompt_en: After the party, we went home.
+        answer_tl: Pagkatapos ng handaan, umuwi kami.
+        accept: ["Umuwi kami pagkatapos ng handaan", "Pagkatapos ng handaan umuwi kami"]
+        extra_words: [bago, pista, sila]
+        audio: pagkatapos_ng_handaan_umuwi_kami
+      - type: choice
+        prompt: "Which sentence says you showered BEFORE eating?"
+        answer: Naligo muna ako bago kumain.
+        distractors: [Kumain muna ako bago naligo., Naligo ako pagkatapos kumain., Kumain ako habang naliligo.]
+        audio: naligo_muna_ako_bago_kumain
+        audio_text: Naligo muna ako bago kumain.
+      - type: translate
+        prompt_tl: Pumunta ako sa botika, bumili ng gamot, tapos bumalik ako sa klinika.
+        answer_en: I went to the pharmacy, bought medicine, then I went back to the clinic.
+        accept: ["I went to the pharmacy, bought medicine, then went back to the clinic", "I went to the pharmacy, bought medicine, then I returned to the clinic"]
+        extra_words: [hospital, waited, before]
+        audio: pumunta_sa_botika_bumili_ng_gamot_tapos_bumalik_sa_klinika
+  - id: stories-10
+    title: Noong bata ako
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Noong bata ako' means..."
+        answer: When I was a child
+        distractors: [When I am old, Because I am young, "My child, back then"]
+        audio: noong_bata_ako
+        audio_text: Noong bata ako
+      - type: match
+        pairs:
+          - { tl: bata, en: child }
+          - { tl: noong, en: back when }
+          - { tl: buong araw, en: all day }
+          - { tl: araw-araw, en: every day }
+      - type: translate
+        prompt_tl: Noong bata ako, naglalaro kami sa daan araw-araw.
+        answer_en: When I was a child, we played in the street every day.
+        accept: ["When I was a kid, we played in the street every day", "When I was a child we played in the street every day", "When I was a child, we used to play in the street every day"]
+        extra_words: [walked, school, yesterday]
+        audio: noong_bata_ako_naglalaro_kami_sa_daan_araw_araw
+        grading: { hyphens: true }
+        hint: 'For past habits, Tagalog keeps the ongoing form: naglalaro = used to play.'
+      - type: fill_blank
+        sentence: "Nagtrabaho si Tatay ___ araw kahapon."
+        translation: "Dad worked all day yesterday."
+        answer: buong
+        options: [buong, araw-araw, isang]
+      - type: listen
+        audio: buong_araw_kaming_naglaro
+        answer_tl: Buong araw kaming naglaro
+        extra_words: [kanina, natulog]
+      - type: choice
+        prompt: "'Buong araw akong nag-aral' means..."
+        answer: I studied all day
+        distractors: [I study every day, I studied for one day, I will study all day]
+        audio: buong_araw_akong_nag_aral
+        audio_text: Buong araw akong nag-aral.
+      - type: translate
+        prompt_en: When I was a child, we sang and danced at the fiesta.
+        answer_tl: Noong bata ako, kumanta at sumayaw kami sa pista.
+        accept: ["Noong bata ako kumanta at sumayaw kami sa pista"]
+        extra_words: [naglaro, kahapon, simbahan]
+        audio: noong_bata_ako_kumanta_at_sumayaw_kami_sa_pista
+      - type: translate
+        prompt_tl: Noong bata ang nanay ko, naglalakad siya papunta sa paaralan araw-araw.
+        answer_en: When my mom was a child, she walked to school every day.
+        accept: ["When my mother was a child, she walked to school every day", "When my mom was a kid, she walked to school every day", "When my mom was young, she walked to school every day"]
+        extra_words: [played, market, now]
+        audio: noong_bata_ang_nanay_ko_naglalakad_siya_papunta_sa_paaralan_araw_araw
+        grading: { hyphens: true }
+  - id: stories-11
+    title: Ang araw ko
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gumising, en: woke up }
+          - { tl: umalis, en: left }
+          - { tl: bumalik, en: came back }
+          - { tl: natulog, en: slept }
+      - type: choice
+        prompt: "'Gumising ako, naligo, tapos kumain.' — which happened FIRST?"
+        answer: Gumising
+        distractors: [Naligo, Kumain, Natulog]
+        audio: gumising_ako_naligo_tapos_kumain
+        audio_text: Gumising ako, naligo, tapos kumain.
+      - type: fill_blank
+        sentence: "Gumising ako kanina, ___ ako, tapos kumain."
+        translation: "I woke up earlier, I took a bath, then I ate."
+        answer: naligo
+        options: [naligo, natulog, umalis]
+      - type: translate
+        prompt_tl: Kaninang umaga, naghintay ako ng bus, pero hindi ito dumating.
+        answer_en: Earlier this morning, I waited for a bus, but it did not come.
+        accept: ["This morning I waited for the bus, but it didn't come", "Earlier this morning, I waited for the bus, but it did not arrive", "Earlier this morning I waited for a bus but it did not come"]
+        extra_words: [left, tomorrow, jeepney]
+        audio: kaninang_umaga_naghintay_ako_ng_bus_pero_hindi_ito_dumating
+      - type: listen
+        audio: umuwi_ako_tapos_nagluto_ako
+        answer_tl: Umuwi ako tapos nagluto ako
+        extra_words: [kumain, bumalik]
+      - type: translate
+        prompt_en: I left the house, rode a jeepney, and arrived at work.
+        answer_tl: Umalis ako sa bahay, sumakay ng jeepney, at dumating sa trabaho.
+        accept:
+          - "Umalis ako sa bahay, sumakay ako ng jeepney, at dumating ako sa trabaho"
+          - "Umalis ako sa bahay, sumakay sa jeepney, at dumating sa trabaho"
+        extra_words: [bumalik, umuwi, kahapon, sa]
+        audio: umalis_ako_sa_bahay_sumakay_ng_jeepney_at_dumating_sa_trabaho
+      - type: translate
+        prompt_tl: Nagkasakit ako noong Lunes. Buong linggo akong nagpahinga.
+        answer_en: I got sick last Monday. I rested all week.
+        accept: ["I got sick on Monday. I rested the whole week", "I got sick last Monday and rested all week", "I got sick on Monday. I rested all week"]
+        extra_words: [worked, day, Tuesday]
+        audio: nagkasakit_ako_noong_lunes_buong_linggo_akong_nagpahinga
+      - type: translate
+        prompt_en: I woke up, drank coffee, went to the market, then I cooked all day.
+        answer_tl: Gumising ako, uminom ng kape, pumunta sa palengke, tapos nagluto ako buong araw.
+        accept: ["Gumising ako, uminom ako ng kape, pumunta ako sa palengke, tapos nagluto ako buong araw"]
+        extra_words: [kahapon, kumain, bumalik]
+        audio: gumising_ako_uminom_ng_kape_pumunta_sa_palengke_tapos_nagluto_buong_araw

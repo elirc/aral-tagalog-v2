@@ -252,5 +252,484 @@ lessons:
       - type: translate
         prompt_en: My older brother works in another country and my mom is a teacher.
         answer_tl: Nagtatrabaho ang kuya ko sa ibang bansa at guro ang nanay ko.
+        accept: ["Nagtatrabaho sa ibang bansa ang kuya ko at guro ang nanay ko"]
         extra_words: [doktor, sahod, sila]
         audio: nagtatrabaho_ang_kuya_ko_sa_ibang_bansa_at_guro_ang_nanay_ko
+  - id: jobs-5
+    title: Naghahanap ng trabaho
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maghanap, en: to look for }
+          - { tl: mag-apply, en: to apply }
+          - { tl: trabaho, en: job }
+          - { tl: kompanya, en: company }
+      - type: choice
+        prompt: "'Naghahanap ako ng trabaho' means..."
+        answer: I am looking for a job
+        distractors: [I have a job, I lost my job, I like my job]
+        audio: naghahanap_ako_ng_trabaho
+        audio_text: Naghahanap ako ng trabaho.
+        hint: '"maghanap" = to look for; "naghahanap" = is looking for.'
+      - type: translate
+        prompt_tl: Nag-apply ako sa isang kompanya.
+        answer_en: I applied to a company.
+        accept: ["I applied at a company"]
+        extra_words: [worked, office, school]
+        audio: nag_apply_ako_sa_isang_kompanya
+        hint: '"mag-apply" is borrowed from English and works like any mag- verb: nag-apply = applied.'
+      - type: fill_blank
+        sentence: "___ siya ng trabaho sa ospital."
+        translation: "She is looking for a job at the hospital."
+        answer: Naghahanap
+        options: [Naghahanap, Nagtatrabaho, Nag-aaral]
+      - type: listen
+        audio: gusto_kong_mag_apply_sa_ospital
+        answer_tl: Gusto kong mag-apply sa ospital
+        extra_words: [opisina, siya]
+      - type: choice
+        prompt: "Your friend just quit her job. Ask if she is looking for a new one:"
+        answer: Naghahanap ka ba ng trabaho?
+        distractors: ["Saan ka nagtatrabaho?", "Ano ang trabaho mo?", "Pagod ka ba?"]
+        audio: naghahanap_ka_ba_ng_trabaho
+        audio_text: Naghahanap ka ba ng trabaho?
+      - type: translate
+        prompt_tl: Naghahanap ng empleyado ang kompanya.
+        answer_en: The company is looking for an employee.
+        accept: ["The company is looking for employees"]
+        extra_words: [boss, office, works]
+        audio: naghahanap_ng_empleyado_ang_kompanya
+      - type: translate
+        prompt_en: My older brother is looking for a job.
+        answer_tl: Naghahanap ng trabaho ang kuya ko.
+        accept: ["Naghahanap ang kuya ko ng trabaho"]
+        extra_words: [nagtatrabaho, ate, sa]
+        audio: naghahanap_ng_trabaho_ang_kuya_ko
+      - type: translate
+        prompt_en: I want to apply to a big company.
+        answer_tl: Gusto kong mag-apply sa malaking kompanya.
+        extra_words: [magtrabaho, maliit, siya]
+        audio: gusto_kong_mag_apply_sa_malaking_kompanya
+  - id: jobs-6
+    title: Ang interbyu
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: interbyu, en: interview }
+          - { tl: karanasan, en: experience }
+          - { tl: amo, en: boss }
+          - { tl: sahod, en: salary }
+      - type: choice
+        prompt: "'May karanasan ka ba?' means..."
+        answer: Do you have experience?
+        distractors: ["Do you have a job?", "Are you the boss?", "Do you have an interview?"]
+        audio: may_karanasan_ka_ba
+        audio_text: May karanasan ka ba?
+      - type: translate
+        prompt_tl: May interbyu ako bukas.
+        answer_en: I have an interview tomorrow.
+        accept: ["Tomorrow I have an interview"]
+        extra_words: [yesterday, office, boss]
+        audio: may_interbyu_ako_bukas
+      - type: fill_blank
+        sentence: "Limang taon ___ akong nagtatrabaho."
+        translation: "I have been working for five years."
+        answer: na
+        options: [na, pa, ba]
+        hint: '"na" (already) + "ako" takes the -ng linker before the verb: "na akong nagtatrabaho".'
+      - type: listen
+        audio: may_karanasan_po_ako
+        answer_tl: May karanasan po ako
+        extra_words: [interbyu, wala]
+      - type: translate
+        prompt_tl: Bakit gusto mong magtrabaho dito?
+        answer_en: Why do you want to work here?
+        extra_words: [there, where, live]
+        audio: bakit_gusto_mong_magtrabaho_dito
+      - type: choice
+        prompt: "The interviewer asks 'Bakit gusto mong magtrabaho dito?' A good answer is..."
+        answer: Masipag po ako at gusto ko ang kompanya.
+        distractors: [Tamad po ako., Ayaw ko ng trabaho., Saan po ang banyo?]
+        audio: masipag_po_ako_at_gusto_ko_ang_kompanya
+        audio_text: Masipag po ako at gusto ko ang kompanya.
+        hint: Use "po" with an interviewer — it is a formal situation.
+      - type: translate
+        prompt_en: I have been working for three years.
+        answer_tl: Tatlong taon na akong nagtatrabaho.
+        extra_words: [lima, ako, nag-aaral]
+        audio: tatlong_taon_na_akong_nagtatrabaho
+      - type: translate
+        prompt_en: I have an interview at the company tomorrow.
+        answer_tl: May interbyu ako sa kompanya bukas.
+        accept: ["Bukas, may interbyu ako sa kompanya"]
+        extra_words: [kahapon, opisina, siya]
+        audio: may_interbyu_ako_sa_kompanya_bukas
+  - id: jobs-7
+    title: Sa lugar ng trabaho
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magturo, en: to teach }
+          - { tl: pasyente, en: patient }
+          - { tl: estudyante, en: student }
+          - { tl: ospital, en: hospital }
+      - type: choice
+        prompt: "'Nagtuturo siya ng Ingles' means..."
+        answer: She teaches English
+        distractors: [She studies English, She speaks English, She reads English]
+        audio: nagtuturo_siya_ng_ingles
+        audio_text: Nagtuturo siya ng Ingles.
+        hint: '"magturo" = to teach; "nagtuturo" = teaches / is teaching.'
+      - type: translate
+        prompt_tl: Maraming pasyente ang doktor.
+        answer_en: The doctor has many patients.
+        accept: ["The doctor has a lot of patients"]
+        extra_words: [nurse, few, students]
+        audio: maraming_pasyente_ang_doktor
+      - type: fill_blank
+        sentence: "Mabait ang nars sa mga ___."
+        translation: "The nurse is kind to the patients."
+        answer: pasyente
+        options: [pasyente, pulis, sundalo]
+      - type: listen
+        audio: nagtuturo_ang_guro_sa_paaralan
+        answer_tl: Nagtuturo ang guro sa paaralan
+        extra_words: [nag-aaral, ospital]
+      - type: match
+        pairs:
+          - { tl: kusinero, en: cook }
+          - { tl: mangingisda, en: fisherman }
+          - { tl: bumbero, en: firefighter }
+          - { tl: tindera, en: vendor }
+      - type: translate
+        prompt_tl: Nagluluto ang kusinero sa restawran.
+        answer_en: The cook cooks at the restaurant.
+        accept:
+          - "The cook is cooking at the restaurant"
+          - "The chef cooks at the restaurant"
+          - "The chef is cooking at the restaurant"
+        extra_words: [eats, market, fisherman]
+        audio: nagluluto_ang_kusinero_sa_restawran
+      - type: translate
+        prompt_en: The fisherman works at sea.
+        answer_tl: Nagtatrabaho ang mangingisda sa dagat.
+        accept: ["Sa dagat nagtatrabaho ang mangingisda"]
+        extra_words: [magsasaka, bundok, siya]
+        audio: nagtatrabaho_ang_mangingisda_sa_dagat
+      - type: translate
+        prompt_en: My mom teaches math at the university.
+        answer_tl: Nagtuturo ng matematika ang nanay ko sa unibersidad.
+        accept: ["Nagtuturo ang nanay ko ng matematika sa unibersidad"]
+        extra_words: [nag-aaral, paaralan, tatay]
+        audio: nagtuturo_ng_matematika_ang_nanay_ko_sa_unibersidad
+  - id: jobs-8
+    title: May pasok ka ba?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pasok, en: work or school day }
+          - { tl: maaga, en: early }
+          - { tl: pagod, en: tired }
+          - { tl: magpahinga, en: to rest }
+      - type: choice
+        prompt: "'May pasok ka ba bukas?' asks..."
+        answer: If you have work or school tomorrow
+        distractors:
+          - If you are coming inside now
+          - If you are tired tomorrow
+          - Where you work tomorrow
+        audio: may_pasok_ka_ba_bukas
+        audio_text: May pasok ka ba bukas?
+        hint: '"pasok" literally means "going in" — the day you go in to work or school.'
+      - type: translate
+        prompt_tl: Walang pasok sa Linggo.
+        answer_en: There is no work on Sunday.
+        accept:
+          - "There's no work on Sunday"
+          - "There is no school on Sunday"
+          - "There's no school on Sunday"
+        extra_words: [Monday, early, office]
+        audio: walang_pasok_sa_linggo
+      - type: fill_blank
+        sentence: "___ ang pasok ko bukas."
+        translation: "I start work early tomorrow."
+        answer: Maaga
+        options: [Maaga, Pagod, Mabait]
+      - type: listen
+        audio: maaga_ang_pasok_ko
+        answer_tl: Maaga ang pasok ko
+        extra_words: [wala, pagod]
+      - type: translate
+        prompt_tl: Pagod ako kasi maaga ang pasok ko.
+        answer_en: I'm tired because I start work early.
+        accept:
+          - "I am tired because I start work early"
+          - "I'm tired because my work starts early"
+          - "I am tired because my work starts early"
+        extra_words: [late, happy, school]
+        audio: pagod_ako_kasi_maaga_ang_pasok_ko
+      - type: choice
+        prompt: "Tomorrow is your day off. Tell your friend:"
+        answer: Wala akong pasok bukas, magpapahinga ako.
+        distractors:
+          - Maaga ang pasok ko bukas.
+          - May interbyu ako bukas.
+          - Pagod na ako sa opisina.
+        audio: wala_akong_pasok_bukas_magpapahinga_ako
+        audio_text: Wala akong pasok bukas, magpapahinga ako.
+      - type: translate
+        prompt_en: I don't have work tomorrow.
+        answer_tl: Wala akong pasok bukas.
+        accept: ["Bukas, wala akong pasok"]
+        extra_words: [may, maaga, siya]
+        audio: wala_akong_pasok_bukas
+        hint: '"wala" + "ako" takes the -ng linker: "wala akong pasok".'
+      - type: translate
+        prompt_en: Do you have work on Saturday?
+        answer_tl: May pasok ka ba sa Sabado?
+        extra_words: [wala, Linggo, ako]
+        audio: may_pasok_ka_ba_sa_sabado
+  - id: jobs-9
+    title: Pangarap kong maging...
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pangarap, en: dream }
+          - { tl: maging, en: to become }
+          - { tl: abogado, en: lawyer }
+          - { tl: inhinyero, en: engineer }
+      - type: choice
+        prompt: "'Pangarap kong maging doktor' means..."
+        answer: My dream is to become a doctor
+        distractors: [I dreamed about a doctor, My doctor is a dreamer, I am already a doctor]
+        audio: pangarap_kong_maging_doktor
+        audio_text: Pangarap kong maging doktor.
+        hint: '"pangarap ko" + the -ng linker → "pangarap kong"; "maging" = to become.'
+      - type: translate
+        prompt_tl: Ano ang pangarap mo?
+        answer_en: What is your dream?
+        accept: ["What's your dream?"]
+        extra_words: [job, where, name]
+        audio: ano_ang_pangarap_mo
+      - type: fill_blank
+        sentence: "Gusto niyang ___ guro."
+        translation: "She wants to become a teacher."
+        answer: maging
+        options: [maging, magturo, mag-aral]
+      - type: listen
+        audio: gusto_kong_maging_nars
+        answer_tl: Gusto kong maging nars
+        extra_words: [doktor, siya]
+      - type: translate
+        prompt_tl: Pangarap ng anak ko na maging abogado.
+        answer_en: My child's dream is to become a lawyer.
+        accept:
+          - "My son's dream is to become a lawyer"
+          - "My daughter's dream is to become a lawyer"
+        extra_words: [doctor, teacher, wants]
+        audio: pangarap_ng_anak_ko_na_maging_abogado
+      - type: choice
+        prompt: "A little girl tells you she wants to be a police officer someday. She says:"
+        answer: Gusto kong maging pulis.
+        distractors: [Pulis ang tatay ko., Nasaan ang pulis?, Ayaw ko ng pulis.]
+        audio: gusto_kong_maging_pulis
+        audio_text: Gusto kong maging pulis.
+      - type: translate
+        prompt_en: My dream is to become an engineer.
+        answer_tl: Pangarap kong maging inhinyero.
+        extra_words: [abogado, ako, magtrabaho]
+        audio: pangarap_kong_maging_inhinyero
+      - type: translate
+        prompt_en: My dream is to become a doctor and work in another country.
+        answer_tl: Pangarap kong maging doktor at magtrabaho sa ibang bansa.
+        extra_words: [nars, ospital, siya]
+        audio: pangarap_kong_maging_doktor_at_magtrabaho_sa_ibang_bansa
+  - id: jobs-10
+    title: Buhay OFW
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magpadala, en: to send }
+          - { tl: kontrata, en: contract }
+          - { tl: ibang bansa, en: another country }
+          - { tl: pamilya, en: family }
+      - type: choice
+        prompt: "'Nagpapadala siya ng pera sa pamilya niya' means..."
+        answer: He sends money to his family
+        distractors: [He borrows money from his family, He visits his family, He lives with his family]
+        audio: nagpapadala_siya_ng_pera_sa_pamilya_niya
+        audio_text: Nagpapadala siya ng pera sa pamilya niya.
+        hint: '"magpadala" = to send; "nagpapadala" = sends (regularly) / is sending.'
+      - type: translate
+        prompt_tl: Dalawang taon ang kontrata ng tatay ko.
+        answer_en: My dad's contract is two years.
+        accept:
+          - "My father's contract is two years"
+          - "My dad's contract is for two years"
+          - "My father's contract is for two years"
+        extra_words: [three, mom's, job]
+        audio: dalawang_taon_ang_kontrata_ng_tatay_ko
+      - type: fill_blank
+        sentence: "Nagpapadala ng ___ ang ate ko buwan-buwan."
+        translation: "My older sister sends money every month."
+        answer: pera
+        options: [pera, kontrata, amo]
+      - type: listen
+        audio: miss_na_niya_ang_pamilya_niya
+        answer_tl: Miss na niya ang pamilya niya
+        extra_words: [kita, bansa]
+      - type: translate
+        prompt_tl: Nars siya sa ibang bansa at nagpapadala siya ng pera.
+        answer_en: She is a nurse abroad and she sends money.
+        accept:
+          - "She is a nurse in another country and she sends money"
+          - "He is a nurse abroad and he sends money"
+          - "He is a nurse in another country and he sends money"
+        extra_words: [doctor, family, visits]
+        audio: nars_siya_sa_ibang_bansa_at_nagpapadala_siya_ng_pera
+      - type: choice
+        prompt: "Your uncle flies home after two years of work abroad. Everyone calls him a..."
+        answer: Balikbayan
+        distractors: [Manliligaw, Estudyante, Magsasaka]
+      - type: translate
+        prompt_en: My uncle sends money to his family.
+        answer_tl: Nagpapadala ng pera ang tito ko sa pamilya niya.
+        accept: ["Nagpapadala ang tito ko ng pera sa pamilya niya"]
+        extra_words: [tita, bansa, kami]
+        audio: nagpapadala_ng_pera_ang_tito_ko_sa_pamilya_niya
+      - type: translate
+        prompt_en: He misses his children because he works abroad.
+        answer_tl: Miss na niya ang mga anak niya kasi nagtatrabaho siya sa ibang bansa.
+        accept:
+          - "Miss na niya ang mga anak niya dahil nagtatrabaho siya sa ibang bansa"
+          - "Miss niya ang mga anak niya kasi nagtatrabaho siya sa ibang bansa"
+        extra_words: [pamilya, ako, dito]
+        audio: miss_na_niya_ang_mga_anak_niya_kasi_nagtatrabaho_siya_sa_ibang_bansa
+  - id: jobs-11
+    title: Kumusta ang trabaho mo?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumusta ang trabaho mo?' means..."
+        answer: How is your work?
+        distractors: ["What is your job?", "Where do you work?", "Do you have work?"]
+        audio: kumusta_ang_trabaho_mo
+        audio_text: Kumusta ang trabaho mo?
+      - type: match
+        pairs:
+          - { tl: mahirap, en: difficult }
+          - { tl: madali, en: easy }
+          - { tl: malayo, en: far }
+          - { tl: mabait, en: kind }
+      - type: translate
+        prompt_tl: Mahirap ang trabaho ko pero masaya ako.
+        answer_en: My job is difficult but I am happy.
+        accept:
+          - "My job is hard but I am happy"
+          - "My job is difficult but I'm happy"
+          - "My job is hard but I'm happy"
+          - "My work is difficult but I am happy"
+          - "My work is hard but I am happy"
+        extra_words: [easy, sad, boss]
+        audio: mahirap_ang_trabaho_ko_pero_masaya_ako
+      - type: fill_blank
+        sentence: "Mataas ang sahod pero ___ ang opisina."
+        translation: "The salary is high but the office is far."
+        answer: malayo
+        options: [malayo, malapit, mabait]
+      - type: listen
+        audio: mabait_ang_amo_ko
+        answer_tl: Mabait ang amo ko
+        extra_words: [tamad, empleyado]
+      - type: translate
+        prompt_tl: Madali ang trabaho niya.
+        answer_en: His job is easy.
+        accept: ["Her job is easy", "His work is easy", "Her work is easy"]
+        extra_words: [hard, my, salary]
+        audio: madali_ang_trabaho_niya
+      - type: choice
+        prompt: "Your friend looks exhausted after his shift. Ask:"
+        answer: Pagod ka ba sa trabaho?
+        distractors: ["Ano ang trabaho mo?", "May interbyu ka ba?", "Saan ang opisina mo?"]
+        audio: pagod_ka_ba_sa_trabaho
+        audio_text: Pagod ka ba sa trabaho?
+      - type: translate
+        prompt_en: How is your work at the hospital?
+        answer_tl: Kumusta ang trabaho mo sa ospital?
+        extra_words: [ano, saan, opisina]
+        audio: kumusta_ang_trabaho_mo_sa_ospital
+      - type: translate
+        prompt_en: My boss is kind but the work is difficult.
+        answer_tl: Mabait ang amo ko pero mahirap ang trabaho.
+        extra_words: [madali, tamad, kasi]
+        audio: mabait_ang_amo_ko_pero_mahirap_ang_trabaho
+  - id: jobs-12
+    title: Usapang trabaho
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: interbyu, en: interview }
+          - { tl: pasok, en: workday }
+          - { tl: pangarap, en: dream }
+          - { tl: karanasan, en: experience }
+      - type: choice
+        prompt: "At an interview, the boss asks 'Ilang taon ka nang nagtatrabaho?' He wants to know..."
+        answer: How many years you have been working
+        distractors: [How old you are, When you can start, How much your last salary was]
+        audio: ilang_taon_ka_nang_nagtatrabaho
+        audio_text: Ilang taon ka nang nagtatrabaho?
+        hint: '"ka na" + the -ng linker → "ka nang".'
+      - type: translate
+        prompt_tl: Naghahanap ng trabaho ang pinsan ko kasi wala siyang pera.
+        answer_en: My cousin is looking for a job because he has no money.
+        accept:
+          - "My cousin is looking for a job because she has no money"
+          - "My cousin is looking for work because he has no money"
+          - "My cousin is looking for work because she has no money"
+        extra_words: [sister, salary, found]
+        audio: naghahanap_ng_trabaho_ang_pinsan_ko_kasi_wala_siyang_pera
+      - type: fill_blank
+        sentence: "Nag-apply siya sa ospital kasi pangarap niyang ___ nars."
+        translation: "She applied at the hospital because her dream is to become a nurse."
+        answer: maging
+        options: [maging, magturo, maghanap]
+      - type: listen
+        audio: may_interbyu_ako_bukas_at_sabik_ako
+        answer_tl: May interbyu ako bukas at sabik ako
+        extra_words: [takot, kahapon]
+      - type: translate
+        prompt_tl: Nagtuturo si Ana sa umaga at nag-aaral siya sa gabi.
+        answer_en: Ana teaches in the morning and studies at night.
+        accept:
+          - "Ana teaches in the morning and she studies at night"
+          - "Ana teaches in the morning and studies in the evening"
+          - "Ana teaches in the morning and she studies in the evening"
+        extra_words: [works, afternoon, reads]
+        audio: nagtuturo_si_ana_sa_umaga_at_nag_aaral_siya_sa_gabi
+      - type: choice
+        prompt: "Your friend works abroad. The pay is good, but she is homesick. She says:"
+        answer: Mataas ang sahod pero miss ko na ang pamilya ko.
+        distractors:
+          - Wala akong pasok bukas.
+          - Pangarap kong maging guro.
+          - Mabait ang amo ko.
+        audio: mataas_ang_sahod_pero_miss_ko_na_ang_pamilya_ko
+        audio_text: Mataas ang sahod pero miss ko na ang pamilya ko.
+      - type: translate
+        prompt_en: I have been working at the company for two years.
+        answer_tl: Dalawang taon na akong nagtatrabaho sa kompanya.
+        extra_words: [ako, opisina, siya]
+        audio: dalawang_taon_na_akong_nagtatrabaho_sa_kompanya
+      - type: translate
+        prompt_en: I am looking for a job at a school because I want to become a teacher.
+        answer_tl: Naghahanap ako ng trabaho sa paaralan kasi gusto kong maging guro.
+        accept: ["Naghahanap ako ng trabaho sa paaralan dahil gusto kong maging guro"]
+        extra_words: [ospital, nars, siya]
+        audio: naghahanap_ako_ng_trabaho_sa_paaralan_kasi_gusto_kong_maging_guro

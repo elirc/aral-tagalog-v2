@@ -1,0 +1,798 @@
+id: know-think-hope
+title: I Know, I Think, I Hope
+description: >-
+  Say what you know, think, thought, and hope — alam ko, ewan ko, sa tingin ko,
+  akala ko, sana, baka — and join ideas with kung, kapag, and kahit.
+tip: >-
+  "Alam" (know) takes the ko-set: "Alam ko", "Alam mo ba?", "Hindi ko alam" —
+  or the casual shrug "Ewan ko". To know THAT something is so, add the linker:
+  "Alam kong pagod ka". To not know IF/WHERE/WHO, use kung: "Hindi ko alam kung
+  nasaan siya". "Sa tingin ko" is your opinion now; "Akala ko" is what you
+  believed but got wrong. "Sana" makes a wish and "baka" a maybe — both take
+  the basic verb form: "Sana manalo tayo", "Baka umulan". "Sigurado" = sure,
+  but "siguro" = probably! Finally, "kung" = if (it may not happen), "kapag" or
+  short "pag" = when/whenever (you expect it), and "kahit" = even if / even
+  though: "Kahit pagod ako, masaya ako".
+lessons:
+  - id: knowthink-1
+    title: Alam ko — I know
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Alam ko, en: I know }
+          - { tl: Hindi ko alam, en: "I don't know" }
+          - { tl: Alam mo ba?, en: Do you know? }
+          - { tl: Alam niya, en: He knows }
+          - { tl: Alam namin, en: We know }
+      - type: choice
+        prompt: "'Hindi ko alam' means..."
+        answer: "I don't know"
+        distractors: [I know, "I don't want to", "I don't have any"]
+        audio: hindi_ko_alam
+        audio_text: Hindi ko alam.
+      - type: translate
+        prompt_tl: Alam ko ang pangalan niya.
+        answer_en: I know his name.
+        accept: ["I know her name"]
+        extra_words: [your, answer, think]
+        audio: alam_ko_ang_pangalan_niya
+      - type: choice
+        prompt: "Someone asks 'Nasaan si Ana?' and you have no idea. You say:"
+        answer: Hindi ko alam.
+        distractors: [Alam ko., Wala akong pera., Ayaw ko.]
+        audio: hindi_ko_alam
+        audio_text: Hindi ko alam.
+      - type: listen
+        audio: alam_mo_ba_ang_sagot
+        answer_tl: Alam mo ba ang sagot
+        extra_words: [tanong, ko]
+      - type: translate
+        prompt_tl: Hindi niya alam ang daan.
+        answer_en: "He doesn't know the way."
+        accept:
+          - "She doesn't know the way"
+          - "He does not know the way"
+          - "She does not know the way"
+          - "He doesn't know the road"
+          - "She doesn't know the road"
+        extra_words: [name, I, answer]
+        audio: hindi_niya_alam_ang_daan
+      - type: fill_blank
+        sentence: "Hindi ___ alam ang sagot."
+        translation: "I don't know the answer."
+        answer: ko
+        options: [ko, ako, akin]
+        hint: '"Alam" takes the ko-set of pronouns: alam ko, alam mo, alam niya.'
+      - type: translate
+        prompt_en: Do you know her name?
+        answer_tl: Alam mo ba ang pangalan niya?
+        accept: ["Alam mo ang pangalan niya", "Alam ba ninyo ang pangalan niya", "Alam niyo ba ang pangalan niya"]
+        extra_words: [ko, ka, sagot]
+        audio: alam_mo_ba_ang_pangalan_niya
+      - type: translate
+        prompt_en: "I don't know the answer."
+        answer_tl: Hindi ko alam ang sagot.
+        extra_words: [ako, mo, tanong]
+        audio: hindi_ko_alam_ang_sagot
+        hint: 'The little pronoun jumps to right after "hindi": Hindi ko alam.'
+  - id: knowthink-2
+    title: I know that... I don't know if...
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Alam kong pagod ka' means..."
+        answer: "I know that you're tired"
+        distractors:
+          - "I don't know if you're tired"
+          - "You know that I'm tired"
+          - "I hope you're tired"
+        audio: alam_kong_pagod_ka
+        audio_text: Alam kong pagod ka.
+        hint: 'The linker -ng on "ko" joins "I know" to a whole sentence: Alam kong...'
+      - type: match
+        pairs:
+          - { tl: Alam kong..., en: I know that... }
+          - { tl: Alam mo bang..., en: Do you know that... }
+          - { tl: Hindi ko alam kung..., en: "I don't know if..." }
+          - { tl: Alam ko na, en: I already know }
+      - type: translate
+        prompt_tl: Alam kong may sakit siya.
+        answer_en: I know that he is sick.
+        accept:
+          - "I know that she is sick"
+          - "I know he is sick"
+          - "I know she is sick"
+          - "I know that he's sick"
+          - "I know that she's sick"
+          - "I know he's sick"
+          - "I know she's sick"
+        extra_words: [tired, if, you]
+        audio: alam_kong_may_sakit_siya
+      - type: translate
+        prompt_tl: Hindi ko alam kung nasaan ang payong ko.
+        answer_en: "I don't know where my umbrella is."
+        accept: ["I do not know where my umbrella is"]
+        extra_words: [who, your, money]
+        audio: hindi_ko_alam_kung_nasaan_ang_payong_ko
+      - type: listen
+        audio: alam_mo_ba_kung_nasaan_si_nanay
+        answer_tl: Alam mo ba kung nasaan si Nanay
+        extra_words: [Tatay, na]
+      - type: choice
+        prompt: "Which says 'I don't know if he will come'?"
+        answer: Hindi ko alam kung darating siya.
+        distractors:
+          - Alam kong darating siya.
+          - Hindi ko alam ang darating siya.
+          - Hindi niya alam kung darating ako.
+        audio: hindi_ko_alam_kung_darating_siya
+        audio_text: Hindi ko alam kung darating siya.
+      - type: fill_blank
+        sentence: "Hindi ko alam ___ saan siya nakatira."
+        translation: "I don't know where he lives."
+        answer: kung
+        options: [kung, na, ang]
+        hint: 'After "hindi ko alam", a question word needs "kung" in front: kung saan, kung sino, kung kailan.'
+      - type: translate
+        prompt_en: I know that you are hungry.
+        answer_tl: Alam kong gutom ka.
+        accept: ["Alam ko na gutom ka", "Alam kong gutom kayo", "Alam ko na gutom kayo"]
+        extra_words: [ko, kung, pagod]
+        audio: alam_kong_gutom_ka
+        hint: '"I know that..." = Alam kong... — the -ng linker does the job of "that".'
+      - type: translate
+        prompt_en: Do you know where the market is?
+        answer_tl: Alam mo ba kung nasaan ang palengke?
+        accept:
+          - "Alam mo ba kung saan ang palengke"
+          - "Alam mo kung nasaan ang palengke"
+          - "Alam ba ninyo kung nasaan ang palengke"
+          - "Alam niyo ba kung nasaan ang palengke"
+        extra_words: [na, tindahan, ko]
+        audio: alam_mo_ba_kung_nasaan_ang_palengke
+  - id: knowthink-3
+    title: Ewan ko — dunno
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ewan ko' means..."
+        answer: "I don't know (casual)"
+        distractors: [I know already, "I'm not going", I think so]
+        audio: ewan_ko
+        audio_text: Ewan ko.
+      - type: match
+        pairs:
+          - { tl: Ewan ko, en: I dunno }
+          - { tl: Alam ko, en: I know }
+          - { tl: Alam mo ba?, en: Do you know? }
+          - { tl: Alam ko na, en: I already know }
+      - type: translate
+        prompt_tl: Ewan ko kung bakit siya galit.
+        answer_en: "I don't know why he is angry."
+        accept:
+          - "I don't know why she is angry"
+          - "I don't know why he's angry"
+          - "I don't know why she's angry"
+          - "I dunno why he is angry"
+          - "I dunno why she is angry"
+          - "I don't know why he is mad"
+          - "I don't know why she is mad"
+        extra_words: [where, happy, you]
+        audio: ewan_ko_kung_bakit_siya_galit
+      - type: choice
+        prompt: "A friend asks 'Anong oras darating si Ben?' You have no idea and shrug:"
+        answer: Ewan ko.
+        distractors: [Alam ko na., "Oo, alam ko.", Alam mo ba?]
+        audio: ewan_ko
+        audio_text: Ewan ko.
+      - type: listen
+        audio: ewan_ko_kung_nasaan_siya
+        answer_tl: Ewan ko kung nasaan siya
+        extra_words: [alam, bakit]
+      - type: translate
+        prompt_tl: Hindi namin alam kung kailan ang kasal nila.
+        answer_en: "We don't know when their wedding is."
+        accept: ["We do not know when their wedding is"]
+        extra_words: [where, birthday, our]
+        audio: hindi_namin_alam_kung_kailan_ang_kasal_nila
+      - type: fill_blank
+        sentence: "___ ko kung sino siya."
+        translation: "I dunno who he is."
+        answer: Ewan
+        options: [Ewan, Alam, Hindi]
+        hint: '"Ewan ko" is the casual, shrugging way to say "Hindi ko alam".'
+      - type: translate
+        prompt_en: "I don't know who he is."
+        answer_tl: Hindi ko alam kung sino siya.
+        accept: ["Ewan ko kung sino siya"]
+        extra_words: [na, saan, mo]
+        audio: hindi_ko_alam_kung_sino_siya
+      - type: translate
+        prompt_en: Do you know when she will arrive?
+        answer_tl: Alam mo ba kung kailan siya darating?
+        accept:
+          - "Alam mo ba kung kailan darating siya"
+          - "Alam mo kung kailan siya darating"
+          - "Alam ba ninyo kung kailan siya darating"
+          - "Alam niyo ba kung kailan siya darating"
+        extra_words: [saan, ko, dumating]
+        audio: alam_mo_ba_kung_kailan_siya_darating
+        hint: '"will arrive" is the future form darating; dumating = arrived.'
+  - id: knowthink-4
+    title: Sa tingin ko — right or wrong?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tama, en: correct }
+          - { tl: mali, en: wrong }
+          - { tl: sa tingin ko, en: I think }
+          - { tl: Ano sa tingin mo?, en: What do you think? }
+          - { tl: sagot, en: answer }
+      - type: choice
+        prompt: "'Sa tingin ko, tama ka' means..."
+        answer: "I think you're right"
+        distractors: ["I think you're wrong", "I know you're tired", "Do you think I'm right?"]
+        audio: sa_tingin_ko_tama_ka
+        audio_text: Sa tingin ko, tama ka.
+      - type: translate
+        prompt_tl: Sa tingin ko, mali ang sagot niya.
+        answer_en: I think his answer is wrong.
+        accept: ["I think her answer is wrong", "I think that his answer is wrong", "I think that her answer is wrong", "In my opinion, his answer is wrong", "In my opinion, her answer is wrong"]
+        extra_words: [right, question, your]
+        audio: sa_tingin_ko_mali_ang_sagot_niya
+      - type: choice
+        prompt: "You want your friend's opinion. You ask:"
+        answer: Ano sa tingin mo?
+        distractors: [Ano ang pangalan mo?, Nasaan ka?, Anong oras na?]
+        audio: ano_sa_tingin_mo
+        audio_text: Ano sa tingin mo?
+      - type: listen
+        audio: sa_tingin_ko_tama_ang_sagot_mo
+        answer_tl: Sa tingin ko, tama ang sagot mo
+        extra_words: [mali, niya]
+      - type: translate
+        prompt_tl: Sa tingin niya, madali ang pagsusulit.
+        answer_en: He thinks the test is easy.
+        accept: ["She thinks the test is easy", "He thinks the exam is easy", "She thinks the exam is easy", "He thinks that the test is easy", "She thinks that the test is easy"]
+        extra_words: [hard, I, wrong]
+        audio: sa_tingin_niya_madali_ang_pagsusulit
+      - type: fill_blank
+        sentence: "Sa tingin ___, uulan mamaya."
+        translation: "I think it will rain later."
+        answer: ko
+        options: [ko, ako, akin]
+        hint: '"Sa tingin" takes ko / mo / niya: sa tingin ko, sa tingin mo, sa tingin niya.'
+      - type: translate
+        prompt_en: I think you are wrong.
+        answer_tl: Sa tingin ko, mali ka.
+        accept: ["Sa tingin ko, mali kayo"]
+        extra_words: [tama, ako, mo]
+        audio: sa_tingin_ko_mali_ka
+      - type: translate
+        prompt_en: What do you think? Is my answer correct?
+        answer_tl: Ano sa tingin mo? Tama ba ang sagot ko?
+        accept: ["Ano sa tingin ninyo? Tama ba ang sagot ko", "Ano sa tingin niyo? Tama ba ang sagot ko"]
+        extra_words: [mali, niya, alam]
+        audio: ano_sa_tingin_mo_tama_ba_ang_sagot_ko
+        hint: 'In a yes/no question, "ba" comes right after the first word: Tama ba...?'
+  - id: knowthink-5
+    title: Akala ko — I thought
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Akala ko' means..."
+        answer: I thought (but I was wrong)
+        distractors: [I think (my opinion now), I know for sure, I hope so]
+        audio: akala_ko
+        audio_text: Akala ko.
+        hint: 'Use "akala ko" when what you believed turned out false; "sa tingin ko" is your opinion now.'
+      - type: match
+        pairs:
+          - { tl: akala ko, en: I thought }
+          - { tl: sa tingin ko, en: I think }
+          - { tl: totoo, en: "true" }
+          - { tl: hindi totoo, en: not true }
+          - { tl: alam ko, en: I know }
+      - type: translate
+        prompt_tl: Akala ko nasa bahay ka.
+        answer_en: I thought you were at home.
+        accept: ["I thought you were home", "I thought that you were at home", "I thought you were at the house"]
+        extra_words: [know, school, he]
+        audio: akala_ko_nasa_bahay_ka
+      - type: choice
+        prompt: "'Totoo ba ang balita?' means..."
+        answer: Is the news true?
+        distractors: [Is the news good?, Is there any news?, Do you know the news?]
+        audio: totoo_ba_ang_balita
+        audio_text: Totoo ba ang balita?
+      - type: listen
+        audio: akala_ko_linggo_ngayon
+        answer_tl: Akala ko Linggo ngayon
+        extra_words: [alam, bukas]
+      - type: translate
+        prompt_tl: Akala namin walang pasok ngayon.
+        answer_en: We thought there was no school today.
+        accept:
+          - "We thought there were no classes today"
+          - "We thought there was no class today"
+          - "We thought there was no work today"
+          - "We thought there was no school or work today"
+          - "We thought that there was no school today"
+        extra_words: [know, tomorrow, they]
+        audio: akala_namin_walang_pasok_ngayon
+      - type: fill_blank
+        sentence: "___ ko Sabado ngayon, pero Biyernes pa lang."
+        translation: "I thought today was Saturday, but it's only Friday."
+        answer: Akala
+        options: [Akala, Alam, Ewan]
+      - type: translate
+        prompt_en: I thought you were sick.
+        answer_tl: Akala ko may sakit ka.
+        accept: ["Akala ko may sakit kayo"]
+        extra_words: [alam, siya, totoo]
+        audio: akala_ko_may_sakit_ka
+        hint: 'No linker needed: "Akala ko" + the sentence you wrongly believed.'
+      - type: translate
+        prompt_en: "That's not true!"
+        answer_tl: Hindi totoo iyan!
+        accept: ["Hindi iyan totoo", "Hindi totoo 'yan", "Hindi 'yan totoo", "Hindi totoo yan", "Hindi yan totoo"]
+        extra_words: [ko, akala, ito]
+        audio: hindi_totoo_iyan
+  - id: knowthink-6
+    title: Sigurado or siguro?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sigurado, en: sure }
+          - { tl: siguro, en: probably }
+          - { tl: Sigurado ka ba?, en: Are you sure? }
+          - { tl: Hindi ako sigurado, en: "I'm not sure" }
+          - { tl: totoo, en: "true" }
+      - type: choice
+        prompt: "'Sigurado ka ba?' means..."
+        answer: Are you sure?
+        distractors: [Are you tired?, Do you know?, Is it true?]
+        audio: sigurado_ka_ba
+        audio_text: Sigurado ka ba?
+      - type: translate
+        prompt_tl: Siguro pagod lang siya.
+        answer_en: "He's probably just tired."
+        accept:
+          - "She's probably just tired"
+          - "He is probably just tired"
+          - "She is probably just tired"
+          - "Maybe he's just tired"
+          - "Maybe she's just tired"
+          - "Maybe he is just tired"
+          - "Maybe she is just tired"
+          - "He's probably only tired"
+          - "She's probably only tired"
+        extra_words: [sure, sick, you]
+        audio: siguro_pagod_lang_siya
+      - type: choice
+        prompt: "'Sigurado' and 'siguro' look alike. Which one means 'probably'?"
+        answer: siguro
+        distractors: [sigurado, totoo, tama]
+        hint: '"Sigurado" = sure, certain. "Siguro" = probably, I guess — much less sure!'
+      - type: listen
+        audio: hindi_ako_sigurado
+        answer_tl: Hindi ako sigurado
+        extra_words: [siguro, ko]
+      - type: translate
+        prompt_tl: Sigurado akong darating siya bukas.
+        answer_en: "I'm sure he will come tomorrow."
+        accept:
+          - "I'm sure she will come tomorrow"
+          - "I am sure he will come tomorrow"
+          - "I am sure she will come tomorrow"
+          - "I'm sure he will arrive tomorrow"
+          - "I'm sure she will arrive tomorrow"
+          - "I'm sure that he will come tomorrow"
+          - "I'm sure that she will come tomorrow"
+          - "I'm sure he's coming tomorrow"
+          - "I'm sure she's coming tomorrow"
+        extra_words: [probably, today, know]
+        audio: sigurado_akong_darating_siya_bukas
+      - type: fill_blank
+        sentence: "Hindi ___ sigurado kung tama ang sagot."
+        translation: "I'm not sure if the answer is right."
+        answer: ako
+        options: [ako, ko, akin]
+        hint: '"Sigurado" is a describing word, so it takes ako — unlike "alam ko".'
+      - type: translate
+        prompt_en: "Are you sure? I'm not sure."
+        answer_tl: Sigurado ka ba? Hindi ako sigurado.
+        accept: ["Sigurado ba kayo? Hindi ako sigurado"]
+        extra_words: [ko, siguro, mo]
+        audio: sigurado_ka_ba_hindi_ako_sigurado
+      - type: translate
+        prompt_en: He is probably at work.
+        answer_tl: Siguro nasa trabaho siya.
+        accept: ["Nasa trabaho siguro siya", "Siguro, nasa trabaho siya", "Baka nasa trabaho siya"]
+        extra_words: [sigurado, bahay, ko]
+        audio: siguro_nasa_trabaho_siya
+        hint: '"Siguro" usually opens the sentence: Siguro + what you guess is true.'
+  - id: knowthink-7
+    title: Sana — I hope
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Sana hindi umulan bukas' means..."
+        answer: "I hope it doesn't rain tomorrow"
+        distractors:
+          - "It won't rain tomorrow"
+          - "I think it will rain tomorrow"
+          - "It didn't rain yesterday"
+        audio: sana_hindi_umulan_bukas
+        audio_text: Sana hindi umulan bukas.
+        hint: 'After "sana", a wish about the future uses the basic verb form: umulan, manalo, pumasa.'
+      - type: match
+        pairs:
+          - { tl: sana, en: hopefully }
+          - { tl: pumasa, en: to pass (a test) }
+          - { tl: manalo, en: to win }
+          - { tl: gumaling, en: to get better }
+          - { tl: Sana nga, en: I hope so }
+      - type: translate
+        prompt_tl: Sana pumasa ako sa pagsusulit.
+        answer_en: I hope I pass the test.
+        accept:
+          - "I hope I pass the exam"
+          - "I hope that I pass the test"
+          - "Hopefully I pass the test"
+          - "Hopefully I pass the exam"
+          - "I hope I will pass the test"
+          - "I hope I will pass the exam"
+        extra_words: [win, you, know]
+        audio: sana_pumasa_ako_sa_pagsusulit
+      - type: translate
+        prompt_tl: Sana gumaling ka na.
+        answer_en: I hope you get better soon.
+        accept:
+          - "I hope you get well soon"
+          - "I hope you get better now"
+          - "I hope you get better"
+          - "I hope you get well"
+          - "Hopefully you get better soon"
+          - "Hope you get well soon"
+        extra_words: [win, he, think]
+        audio: sana_gumaling_ka_na
+      - type: listen
+        audio: sana_manalo_ang_koponan_natin
+        answer_tl: Sana manalo ang koponan natin
+        extra_words: [nanalo, ko]
+      - type: choice
+        prompt: "A friend tells you 'Papasa ka sa pagsusulit!' You answer 'Sana nga!' You mean:"
+        answer: I hope so!
+        distractors: [I already know!, "That's not true!", "I thought so!"]
+        audio: sana_nga
+        audio_text: Sana nga!
+      - type: fill_blank
+        sentence: "Sana ___ tayo bukas."
+        translation: "I hope we win tomorrow."
+        answer: manalo
+        options: [manalo, nanalo, nananalo]
+        hint: 'A wish about the future takes the basic form manalo, not the past nanalo.'
+      - type: translate
+        prompt_en: I hope you pass the test.
+        answer_tl: Sana pumasa ka sa pagsusulit.
+        accept: ["Sana pumasa kayo sa pagsusulit", "Sana makapasa ka sa pagsusulit"]
+        extra_words: [ako, alam, manalo]
+        audio: sana_pumasa_ka_sa_pagsusulit
+      - type: translate
+        prompt_en: "I hope it doesn't rain later."
+        answer_tl: Sana hindi umulan mamaya.
+        accept: ["Sana huwag umulan mamaya", "Sana hindi uulan mamaya"]
+        extra_words: [bukas, umuulan, ko]
+        audio: sana_hindi_umulan_mamaya
+        hint: '"Sana" goes first, then the whole wish: Sana + hindi umulan.'
+  - id: knowthink-8
+    title: Baka — maybe
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Baka umulan mamaya' means..."
+        answer: It might rain later
+        distractors: [The cow is in the rain, It will surely rain later, I hope it rains later]
+        audio: baka_umulan_mamaya
+        audio_text: Baka umulan mamaya.
+        hint: 'You met "baka" as "cow" — but opening a sentence it means "maybe / might".'
+      - type: match
+        pairs:
+          - { tl: baka, en: maybe }
+          - { tl: siguro, en: probably }
+          - { tl: sigurado, en: sure }
+          - { tl: sana, en: hopefully }
+          - { tl: akala ko, en: I thought }
+      - type: translate
+        prompt_tl: Baka may sakit siya.
+        answer_en: Maybe he is sick.
+        accept:
+          - "Maybe she is sick"
+          - "Maybe he's sick"
+          - "Maybe she's sick"
+          - "He might be sick"
+          - "She might be sick"
+          - "He may be sick"
+          - "She may be sick"
+        extra_words: [hope, tired, you]
+        audio: baka_may_sakit_siya
+      - type: translate
+        prompt_tl: Baka hindi ako makapunta bukas.
+        answer_en: I might not be able to go tomorrow.
+        accept:
+          - "I might not be able to come tomorrow"
+          - "I may not be able to go tomorrow"
+          - "I may not be able to come tomorrow"
+          - "Maybe I can't go tomorrow"
+          - "Maybe I can't come tomorrow"
+          - "I might not make it tomorrow"
+        extra_words: [today, hope, he]
+        audio: baka_hindi_ako_makapunta_bukas
+      - type: listen
+        audio: baka_nasa_palengke_si_nanay
+        answer_tl: Baka nasa palengke si Nanay
+        extra_words: [sana, bahay]
+      - type: choice
+        prompt: "The sky is cloudy. Which is a sensible warning?"
+        answer: Magdala ka ng payong. Baka umulan.
+        distractors:
+          - Magdala ka ng payong. Akala ko umulan.
+          - Huwag kang magdala ng payong. Baka umulan.
+          - Magdala ka ng payong. Alam kong maaraw.
+        audio: magdala_ka_ng_payong_baka_umulan
+        audio_text: Magdala ka ng payong. Baka umulan.
+      - type: fill_blank
+        sentence: "___ pagod lang siya."
+        translation: "Maybe he's just tired."
+        answer: Baka
+        options: [Baka, Sana, Akala]
+        accept: [Siguro]
+      - type: translate
+        prompt_en: Maybe she is at home.
+        answer_tl: Baka nasa bahay siya.
+        accept: ["Siguro nasa bahay siya", "Nasa bahay siguro siya"]
+        extra_words: [sana, trabaho, ko]
+        audio: baka_nasa_bahay_siya
+      - type: translate
+        prompt_en: Bring an umbrella. It might rain later.
+        answer_tl: Magdala ka ng payong. Baka umulan mamaya.
+        accept:
+          - "Magdala ka ng payong. Baka uulan mamaya"
+          - "Magdala kayo ng payong. Baka umulan mamaya"
+        extra_words: [sana, bukas, umuulan]
+        audio: magdala_ka_ng_payong_baka_umulan_mamaya
+        hint: 'After "baka", use the basic form (umulan) for something that might happen.'
+  - id: knowthink-9
+    title: Kung or kapag?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kung may pera ako, en: If I have money }
+          - { tl: Kapag may pera ako, en: Whenever I have money }
+          - { tl: Kung uulan, en: If it will rain }
+          - { tl: Pag umuulan, en: When it rains }
+      - type: choice
+        prompt: "'Pag' is the everyday short form of..."
+        answer: kapag
+        distractors: [kung, pagod, pero]
+        audio: pag
+        audio_text: Pag
+        hint: '"Kapag" and "pag" mean the same: when / whenever. "Pag" is what you will hear most in conversation.'
+      - type: translate
+        prompt_tl: Pag may oras ako, nagbabasa ako ng libro.
+        answer_en: When I have time, I read a book.
+        accept:
+          - "Whenever I have time, I read a book"
+          - "When I have time, I read books"
+          - "Whenever I have time, I read books"
+        extra_words: [if, money, write]
+        audio: pag_may_oras_ako_nagbabasa_ako_ng_libro
+      - type: translate
+        prompt_tl: Kung uulan bukas, sa bahay lang ako.
+        answer_en: "If it rains tomorrow, I'll just stay home."
+        accept:
+          - "If it rains tomorrow, I will just stay home"
+          - "If it rains tomorrow, I'll just stay at home"
+          - "If it rains tomorrow, I will just stay at home"
+          - "If it rains tomorrow, I'll just be at home"
+          - "If it rains tomorrow, I'll just be home"
+          - "If it will rain tomorrow, I'll just stay home"
+        extra_words: [when, work, today]
+        audio: kung_uulan_bukas_sa_bahay_lang_ako
+      - type: listen
+        audio: pag_dumating_siya_kakain_na_tayo
+        answer_tl: Pag dumating siya, kakain na tayo
+        extra_words: [kung, sila]
+      - type: fill_blank
+        sentence: "___ may tanong ka, tumawag ka sa akin."
+        translation: "If you have a question, call me."
+        answer: Kung
+        options: [Kung, Habang, Baka]
+        hint: '"Kung" = if — it may or may not happen.'
+      - type: fill_blank
+        sentence: "___ dumating si Tatay, kakain na tayo."
+        translation: "When Dad arrives, we'll eat."
+        answer: Pag
+        options: [Pag, Kung, Baka]
+        accept: [Kapag]
+        hint: 'Dad is definitely coming, so it is "when" (pag / kapag), not "if" (kung).'
+      - type: translate
+        prompt_en: If you are tired, rest.
+        answer_tl: Kung pagod ka, magpahinga ka.
+        accept: ["Kung pagod kayo, magpahinga kayo", "Kung pagod ka, magpahinga ka muna", "Magpahinga ka kung pagod ka"]
+        extra_words: [habang, gutom, ako]
+        audio: kung_pagod_ka_magpahinga_ka
+      - type: translate
+        prompt_en: Whenever I am sick, I take medicine.
+        answer_tl: Kapag may sakit ako, umiinom ako ng gamot.
+        accept: ["Pag may sakit ako, umiinom ako ng gamot", "Umiinom ako ng gamot kapag may sakit ako", "Umiinom ako ng gamot pag may sakit ako"]
+        extra_words: [kung, doktor, uminom]
+        audio: kapag_may_sakit_ako_umiinom_ako_ng_gamot
+        hint: 'A habit: kapag + the "-ing" form in both halves (umiinom), and medicine is "drunk" in Tagalog.'
+  - id: knowthink-10
+    title: Kahit — even if
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kahit pagod ako, masaya ako' means..."
+        answer: "Even though I'm tired, I'm happy"
+        distractors:
+          - "Because I'm tired, I'm happy"
+          - "If I'm tired, I'm not happy"
+          - "Whenever I'm tired, I'm sad"
+        audio: kahit_pagod_ako_masaya_ako
+        audio_text: Kahit pagod ako, masaya ako.
+      - type: match
+        pairs:
+          - { tl: kahit, en: even though }
+          - { tl: kahit ano, en: anything }
+          - { tl: kahit saan, en: anywhere }
+          - { tl: kung, en: if }
+          - { tl: pag, en: when }
+      - type: translate
+        prompt_tl: Kahit umuulan, pumunta siya sa trabaho.
+        answer_en: Even though it was raining, he went to work.
+        accept:
+          - "Even though it was raining, she went to work"
+          - "Although it was raining, he went to work"
+          - "Although it was raining, she went to work"
+          - "Even though it's raining, he went to work"
+          - "Even though it's raining, she went to work"
+          - "Even though it is raining, he went to work"
+          - "Even though it is raining, she went to work"
+        extra_words: [because, school, if]
+        audio: kahit_umuulan_pumunta_siya_sa_trabaho
+      - type: choice
+        prompt: "'Ano ang gusto mong kainin?' — 'Kahit ano.' The answer means:"
+        answer: Anything is fine
+        distractors: [Nothing at all, "I don't know", Something expensive]
+        audio: kahit_ano
+        audio_text: Kahit ano.
+        hint: '"Kahit" + a question word = any-: kahit ano (anything), kahit saan (anywhere).'
+      - type: listen
+        audio: may_trapik_kahit_saan
+        answer_tl: May trapik kahit saan
+        extra_words: [ano, walang]
+      - type: translate
+        prompt_tl: Pag gutom siya, kumakain siya ng kahit ano.
+        answer_en: "When he's hungry, he eats anything."
+        accept:
+          - "When she's hungry, she eats anything"
+          - "When he is hungry, he eats anything"
+          - "When she is hungry, she eats anything"
+          - "Whenever he's hungry, he eats anything"
+          - "Whenever she's hungry, she eats anything"
+          - "Whenever he is hungry, he eats anything"
+          - "Whenever she is hungry, she eats anything"
+        extra_words: [if, anywhere, full]
+        audio: pag_gutom_siya_kumakain_siya_ng_kahit_ano
+      - type: fill_blank
+        sentence: "___ busog na ako, kakain pa ako ng keyk."
+        translation: "Even though I'm already full, I'll still eat cake."
+        answer: Kahit
+        options: [Kahit, Kasi, Baka]
+        hint: '"Kahit" introduces something that does not stop the main action.'
+      - type: translate
+        prompt_en: Even if it rains, we will go to the sea.
+        answer_tl: Kahit umulan, pupunta kami sa dagat.
+        accept:
+          - "Kahit umulan, pupunta tayo sa dagat"
+          - "Kahit na umulan, pupunta kami sa dagat"
+          - "Kahit na umulan, pupunta tayo sa dagat"
+          - "Kahit uulan, pupunta kami sa dagat"
+          - "Kahit uulan, pupunta tayo sa dagat"
+          - "Pupunta kami sa dagat kahit umulan"
+          - "Pupunta tayo sa dagat kahit umulan"
+        extra_words: [kung, palengke, kasi]
+        audio: kahit_umulan_pupunta_kami_sa_dagat
+        hint: '"Kahit" + the basic form (umulan) = even if it happens.'
+      - type: translate
+        prompt_en: We can eat anywhere.
+        answer_tl: Pwede tayong kumain kahit saan.
+        accept:
+          - "Puwede tayong kumain kahit saan"
+          - "Pwede kaming kumain kahit saan"
+          - "Puwede kaming kumain kahit saan"
+          - "Kahit saan, pwede tayong kumain"
+          - "Kahit saan, puwede tayong kumain"
+        extra_words: [ano, tayo, uminom]
+        audio: pwede_tayong_kumain_kahit_saan
+  - id: knowthink-11
+    title: Know, think, or hope?
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: alam ko, en: I know }
+          - { tl: akala ko, en: I thought }
+          - { tl: sa tingin ko, en: I think }
+          - { tl: baka, en: maybe }
+          - { tl: kahit ano, en: anything }
+      - type: choice
+        prompt: "Which sentence shows the speaker turned out to be WRONG?"
+        answer: Akala ko tama ang sagot ko.
+        distractors:
+          - Alam kong tama ang sagot ko.
+          - Sana tama ang sagot ko.
+          - Sigurado akong tama ang sagot ko.
+        audio: akala_ko_tama_ang_sagot_ko
+        audio_text: Akala ko tama ang sagot ko.
+      - type: translate
+        prompt_tl: Ewan ko kung papasa ako, pero sana nga.
+        answer_en: "I don't know if I will pass, but I hope so."
+        accept:
+          - "I don't know if I'll pass, but I hope so"
+          - "I dunno if I will pass, but I hope so"
+          - "I dunno if I'll pass, but I hope so"
+          - "I don't know whether I will pass, but I hope so"
+        extra_words: [win, think, sure]
+        audio: ewan_ko_kung_papasa_ako_pero_sana_nga
+      - type: choice
+        prompt: "'Kahit saan ka pumunta, sasama ako' means..."
+        answer: "Wherever you go, I'll come along"
+        distractors:
+          - "If you go somewhere, I'll stay home"
+          - "I don't know where you are going"
+          - "Maybe I'll go somewhere with you"
+        audio: kahit_saan_ka_pumunta_sasama_ako
+        audio_text: Kahit saan ka pumunta, sasama ako.
+      - type: listen
+        audio: baka_umulan_kaya_magdala_ka_ng_payong
+        answer_tl: Baka umulan, kaya magdala ka ng payong
+        extra_words: [sana, kasi]
+      - type: translate
+        prompt_tl: Akala ko totoo ang balita, pero mali ako.
+        answer_en: I thought the news was true, but I was wrong.
+        accept:
+          - "I thought that the news was true, but I was wrong"
+          - "I thought the news was true but I was wrong"
+        extra_words: [know, right, hope]
+        audio: akala_ko_totoo_ang_balita_pero_mali_ako
+      - type: fill_blank
+        sentence: "Hindi ako sigurado ___ darating siya."
+        translation: "I'm not sure if he will come."
+        answer: kung
+        options: [kung, kapag, kahit]
+        hint: '"If / whether" after not knowing or not being sure is always kung, never kapag.'
+      - type: translate
+        prompt_en: "Maybe he doesn't know the way."
+        answer_tl: Baka hindi niya alam ang daan.
+        accept: ["Siguro hindi niya alam ang daan", "Hindi niya siguro alam ang daan"]
+        extra_words: [siya, sana, ko]
+        audio: baka_hindi_niya_alam_ang_daan
+        hint: '"Baka" goes first; then "hindi" pulls the pronoun: Baka hindi niya alam...'
+      - type: translate
+        prompt_en: "I'm not sure, but I think you're right."
+        answer_tl: Hindi ako sigurado, pero sa tingin ko, tama ka.
+        accept:
+          - "Hindi ako sigurado pero sa tingin ko tama ka"
+          - "Hindi ako sigurado, pero sa tingin ko, tama kayo"
+          - "Hindi ako sigurado, pero tama ka sa tingin ko"
+        extra_words: [mali, alam, siguro]
+        audio: hindi_ako_sigurado_pero_sa_tingin_ko_tama_ka
+        hint: '"Sigurado" takes ako, but "sa tingin" takes ko.'

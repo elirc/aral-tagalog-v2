@@ -1,0 +1,725 @@
+id: review-focus
+title: "Review: Who Did What"
+description: >-
+  Markers and focus together — say who did it, what it was done to, and who it
+  was for, at home, in the kitchen, and at the market.
+tip: >-
+  Every Tagalog sentence puts one thing in the spotlight, marked by ang (or si
+  for a name). The verb tells you what that thing is. Actor focus (-um-, mag-):
+  the doer is the star → "Kumain ako ng mangga" (I ate a mango). Object focus
+  (-in, i-, -an): the thing or person acted on is the star, and the doer steps
+  back to the ng-set (ko, mo, niya, ni Ana) → "Kinain ko ang mangga" (I ate
+  the mango). A quick test: if English says "the", "it" or names a person as
+  the object, reach for object focus. Sa and kay mark the place or the person
+  something goes to: "Ibinigay ko ang regalo kay Lola." And with bigyan the
+  receiver takes the spotlight: "Binigyan ko si Lola ng regalo."
+lessons:
+  - id: revfocus-1
+    title: Actor or object focus?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kumain ako, en: I ate }
+          - { tl: Kinain ko, en: I ate it }
+          - { tl: Uminom ako, en: I drank }
+          - { tl: Ininom ko, en: I drank it }
+      - type: choice
+        prompt: "'Kinain ko ang mangga.' What is in focus (marked by ang)?"
+        answer: The mango
+        distractors: [The person eating, The place, The time]
+        audio: kinain_ko_ang_mangga
+        audio_text: Kinain ko ang mangga.
+      - type: translate
+        prompt_tl: Kumain ako ng mangga.
+        answer_en: I ate a mango.
+        accept: ["I ate mango", "I ate some mango"]
+        extra_words: [the, drank, bought]
+        audio: kumain_ako_ng_mangga
+      - type: translate
+        prompt_tl: Kinain ko ang mangga.
+        answer_en: I ate the mango.
+        extra_words: [a, drank, bought]
+        audio: kinain_ko_ang_mangga
+      - type: choice
+        prompt: "Which sentence means 'I bought the fish'?"
+        answer: Binili ko ang isda.
+        distractors: [Bumili ako ng isda., Binili ako ng isda., Bumili ko ang isda.]
+        audio: binili_ko_ang_isda
+        audio_text: Binili ko ang isda.
+      - type: fill_blank
+        sentence: "___ ko ang gatas."
+        translation: "I drank the milk."
+        answer: Ininom
+        options: [Ininom, Uminom, Iinom]
+        hint: '"Ko" and "ang gatas" signal object focus, so the verb is the -in form: ininom.'
+      - type: listen
+        audio: binili_ko_ang_tinapay
+        answer_tl: Binili ko ang tinapay
+        extra_words: [bumili, ng]
+      - type: translate
+        prompt_en: I bought fish at the market.
+        answer_tl: Bumili ako ng isda sa palengke.
+        accept: ["Bumili ako sa palengke ng isda"]
+        extra_words: [binili, ko, ang]
+        audio: bumili_ako_ng_isda_sa_palengke
+        hint: 'No "the" before fish, so the buyer stays in focus: bumili ako ng…'
+      - type: translate
+        prompt_en: I drank the coffee.
+        answer_tl: Ininom ko ang kape.
+        extra_words: [uminom, ako, ng]
+        audio: ininom_ko_ang_kape
+        hint: '"The coffee" is definite, so it takes ang and the drinker becomes ko.'
+  - id: revfocus-2
+    title: Ang, ng, sa in action
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: si Ana, en: Ana (in focus) }
+          - { tl: ni Ana, en: of Ana / by Ana }
+          - { tl: kay Ana, en: to Ana }
+          - { tl: sina Ana, en: Ana and the others }
+      - type: choice
+        prompt: "'Tinawag ni Ben si Ana.' Who called whom?"
+        answer: Ben called Ana
+        distractors: [Ana called Ben, Ben and Ana called someone, Someone called Ben and Ana]
+        audio: tinawag_ni_ben_si_ana
+        audio_text: Tinawag ni Ben si Ana.
+      - type: translate
+        prompt_tl: Binili ni Ana ang isda sa palengke.
+        answer_en: Ana bought the fish at the market.
+        accept: ["Ana bought the fish in the market", "Ana bought the fish from the market"]
+        extra_words: [Ben, cooked, kitchen]
+        audio: binili_ni_ana_ang_isda_sa_palengke
+      - type: fill_blank
+        sentence: "Kumain ___ Ben ng tinapay."
+        translation: "Ben ate bread."
+        answer: si
+        options: [si, ni, kay]
+        hint: 'With an actor-focus verb like kumain, the doer is in focus: si.'
+      - type: fill_blank
+        sentence: "Kinain ___ Ben ang tinapay."
+        translation: "Ben ate the bread."
+        answer: ni
+        options: [ni, si, kay]
+        hint: 'The bread already has ang, so the doer steps back to ni.'
+      - type: listen
+        audio: nagluto_si_nanay_ng_adobo
+        answer_tl: Nagluto si Nanay ng adobo
+        extra_words: [ni, ang]
+      - type: translate
+        prompt_tl: Ibinigay ko ang pera kay Ben.
+        answer_en: I gave the money to Ben.
+        accept: ["I gave Ben the money"]
+        extra_words: [Ana, from, bread]
+        audio: ibinigay_ko_ang_pera_kay_ben
+      - type: translate
+        prompt_en: Mom cooked the chicken.
+        answer_tl: Niluto ni Nanay ang manok.
+        accept: ["Niluto ng nanay ko ang manok"]
+        extra_words: [si, ng, nagluto]
+        audio: niluto_ni_nanay_ang_manok
+        hint: 'The chicken is definite ("the"), so it takes ang and Mom steps back to ni.'
+      - type: translate
+        prompt_en: Ana read a book at school.
+        answer_tl: Nagbasa si Ana ng libro sa paaralan.
+        accept:
+          - "Nagbasa ng libro si Ana sa paaralan"
+          - "Bumasa si Ana ng libro sa paaralan"
+        extra_words: [ni, ang, binasa]
+        audio: nagbasa_si_ana_ng_libro_sa_paaralan
+  - id: revfocus-3
+    title: Ako or ko?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ako, en: I }
+          - { tl: ko, en: my / by me }
+          - { tl: sa akin, en: to me }
+          - { tl: siya, en: he / she }
+          - { tl: niya, en: his / her }
+      - type: match
+        pairs:
+          - { tl: ito, en: this (in focus) }
+          - { tl: nito, en: of this }
+          - { tl: dito, en: here }
+          - { tl: sa iyo, en: to you }
+      - type: choice
+        prompt: "Which sentence is correct?"
+        answer: Kinuha ko ang libro.
+        distractors: [Kinuha ako ang libro., Kumuha ko ang libro., Kumuha ko ng libro.]
+        audio: kinuha_ko_ang_libro
+        audio_text: Kinuha ko ang libro.
+      - type: translate
+        prompt_tl: Tinawag niya ako.
+        answer_en: She called me.
+        accept: ["He called me"]
+        extra_words: [I, her, him]
+        audio: tinawag_niya_ako
+      - type: translate
+        prompt_tl: Kumain ako nito kahapon.
+        answer_en: I ate some of this yesterday.
+        accept: ["I ate this yesterday", "I ate some of this one yesterday"]
+        extra_words: [here, tomorrow, drank]
+        audio: kumain_ako_nito_kahapon
+      - type: fill_blank
+        sentence: "Binasa ___ ang libro mo."
+        translation: "I read your book."
+        answer: ko
+        options: [ko, ako, akin]
+        hint: 'In object focus the doer comes from the ng-set: ko, mo, niya.'
+      - type: listen
+        audio: hinanap_ka_namin
+        answer_tl: Hinanap ka namin
+        extra_words: [kami, mo]
+      - type: translate
+        prompt_en: He looked for me at school.
+        answer_tl: Hinanap niya ako sa paaralan.
+        extra_words: [siya, ko, akin]
+        audio: hinanap_niya_ako_sa_paaralan
+        hint: 'The one being looked for is in focus (ako); the one looking is niya.'
+      - type: translate
+        prompt_en: We ate this.
+        answer_tl: Kinain namin ito.
+        accept: ["Kinain natin ito"]
+        extra_words: [kami, nito, dito]
+        audio: kinain_namin_ito
+  - id: revfocus-4
+    title: Done, doing, will do
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ginawa, en: did }
+          - { tl: ginagawa, en: doing }
+          - { tl: gagawin, en: will do }
+          - { tl: kukunin, en: will get }
+          - { tl: binabasa, en: reading }
+      - type: choice
+        prompt: "'Ano ang ginagawa mo?' means..."
+        answer: What are you doing?
+        distractors: [What did you do?, What will you do?, Who are you with?]
+        audio: ano_ang_ginagawa_mo
+        audio_text: Ano ang ginagawa mo?
+      - type: translate
+        prompt_tl: Ano ang ginawa mo kahapon?
+        answer_en: What did you do yesterday?
+        extra_words: [doing, tomorrow, will]
+        audio: ano_ang_ginawa_mo_kahapon
+      - type: choice
+        prompt: "'___ ko ang libro bukas.' (I will buy the book tomorrow.)"
+        answer: Bibilhin
+        distractors: [Binili, Binibili, Bibili]
+        audio: bibilhin_ko_ang_libro_bukas
+        audio_text: Bibilhin ko ang libro bukas.
+        hint: 'Future -in verbs double the first syllable and keep the -in ending: bibilhin.'
+      - type: fill_blank
+        sentence: "___ ni Tatay ang libro ngayon."
+        translation: "Dad is reading the book now."
+        answer: Binabasa
+        options: [Binabasa, Binasa, Babasahin]
+      - type: listen
+        audio: sinabi_ko_na_sa_kanya
+        answer_tl: Sinabi ko na sa kanya
+        extra_words: [sinasabi, niya]
+      - type: translate
+        prompt_tl: Kukunin ko ang bag mo mamaya.
+        answer_en: I will get your bag later.
+        accept:
+          - "I'll get your bag later"
+          - "I will take your bag later"
+          - "I will pick up your bag later"
+        extra_words: [got, my, yesterday]
+        audio: kukunin_ko_ang_bag_mo_mamaya
+      - type: translate
+        prompt_en: She is looking for her money.
+        answer_tl: Hinahanap niya ang pera niya.
+        accept: ["Hinahanap niya ang kanyang pera"]
+        extra_words: [hinanap, hahanapin, siya]
+        audio: hinahanap_niya_ang_pera_niya
+        hint: 'Ongoing -in verbs double the first syllable and keep -in- inside: hinahanap.'
+      - type: translate
+        prompt_en: I will call the doctor tomorrow.
+        answer_tl: Tatawagin ko ang doktor bukas.
+        accept: ["Tatawagin ko bukas ang doktor", "Bukas tatawagin ko ang doktor"]
+        extra_words: [tinawag, tinatawag, ako]
+        audio: tatawagin_ko_ang_doktor_bukas
+  - id: revfocus-5
+    title: Give it, put it, throw it
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ibinigay, en: gave }
+          - { tl: inilagay, en: put (past) }
+          - { tl: itinapon, en: threw away }
+          - { tl: isinulat, en: wrote }
+          - { tl: isinara, en: closed }
+      - type: choice
+        prompt: "'Ipinakita niya sa akin ang litrato.' means..."
+        answer: She showed me the photo
+        distractors: [I showed her the photo, She gave me the photo, She will show me the photo]
+        audio: ipinakita_niya_sa_akin_ang_litrato
+        audio_text: Ipinakita niya sa akin ang litrato.
+      - type: translate
+        prompt_tl: Itinapon ko ang basura kanina.
+        answer_en: I threw out the trash earlier.
+        accept:
+          - "I threw away the trash earlier"
+          - "I threw the trash away earlier"
+          - "I threw the trash out earlier"
+          - "I threw out the garbage earlier"
+          - "I threw away the garbage earlier"
+          - "I threw out the trash earlier today"
+        extra_words: [will, tomorrow, closed]
+        audio: itinapon_ko_ang_basura_kanina
+      - type: fill_blank
+        sentence: "___ ko ang gatas sa ref mamaya."
+        translation: "I will put the milk in the fridge later."
+        answer: Ilalagay
+        options: [Ilalagay, Inilagay, Inilalagay]
+        hint: 'Future i- verbs keep i- and double the root''s first syllable: ilalagay.'
+      - type: listen
+        audio: isinara_ko_ang_bintana
+        answer_tl: Isinara ko ang bintana
+        extra_words: [isasara, pinto]
+      - type: translate
+        prompt_tl: Isinusulat ng guro ang pangalan niya.
+        answer_en: The teacher is writing her name.
+        accept:
+          - "The teacher is writing his name"
+          - "The teacher is writing down her name"
+          - "The teacher is writing down his name"
+        extra_words: [wrote, my, student]
+        audio: isinusulat_ng_guro_ang_pangalan_niya
+      - type: translate
+        prompt_en: I gave the gift to Grandma.
+        answer_tl: Ibinigay ko ang regalo kay Lola.
+        accept: ["Ibinigay ko kay Lola ang regalo"]
+        extra_words: [ibibigay, si, ako]
+        audio: ibinigay_ko_ang_regalo_kay_lola
+        hint: '"Ibigay" puts the thing given in focus (ang regalo); the receiver takes kay.'
+      - type: translate
+        prompt_en: Ben will show the photo to Ana.
+        answer_tl: Ipapakita ni Ben ang litrato kay Ana.
+        accept:
+          - "Ipapakita ni Ben kay Ana ang litrato"
+          - "Ipakikita ni Ben ang litrato kay Ana"
+          - "Ipakikita ni Ben kay Ana ang litrato"
+        extra_words: [ipinakita, si, ng]
+        audio: ipapakita_ni_ben_ang_litrato_kay_ana
+  - id: revfocus-6
+    title: Open it, wash it, help them
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: binuksan, en: opened }
+          - { tl: hinugasan, en: washed }
+          - { tl: tiningnan, en: looked at }
+          - { tl: tinulungan, en: helped }
+          - { tl: binayaran, en: paid }
+      - type: choice
+        prompt: "'Binigyan ko si Ana ng regalo.' Who or what is in focus?"
+        answer: Ana, the receiver
+        distractors: ["Me, the giver", The gift, Nobody]
+        audio: binigyan_ko_si_ana_ng_regalo
+        audio_text: Binigyan ko si Ana ng regalo.
+      - type: match
+        pairs:
+          - { tl: bubuksan, en: will open }
+          - { tl: binubuksan, en: opening }
+          - { tl: tutulungan, en: will help }
+          - { tl: pinuntahan, en: went to / visited }
+          - { tl: bibigyan, en: will give to }
+      - type: translate
+        prompt_tl: Hinugasan ni Kuya ang mga plato.
+        answer_en: Big brother washed the plates.
+        accept:
+          - "My older brother washed the plates"
+          - "Older brother washed the plates"
+          - "Kuya washed the plates"
+          - "Big brother washed the dishes"
+          - "My older brother washed the dishes"
+          - "Kuya washed the dishes"
+        extra_words: [opened, will, glasses]
+        audio: hinugasan_ni_kuya_ang_mga_plato
+      - type: translate
+        prompt_tl: Pupuntahan namin si Lola sa Linggo.
+        answer_en: We will visit Grandma on Sunday.
+        accept:
+          - "We'll visit Grandma on Sunday"
+          - "We will go to Grandma on Sunday"
+          - "We will go see Grandma on Sunday"
+          - "We will visit Grandmother on Sunday"
+          - "We are going to visit Grandma on Sunday"
+        extra_words: [visited, Saturday, Grandpa]
+        audio: pupuntahan_namin_si_lola_sa_linggo
+      - type: fill_blank
+        sentence: "___ ko ang tindera kanina."
+        translation: "I paid the vendor earlier."
+        answer: Binayaran
+        options: [Binayaran, Babayaran, Binabayaran]
+      - type: listen
+        audio: tinulungan_ko_si_nanay_sa_kusina
+        answer_tl: Tinulungan ko si Nanay sa kusina
+        extra_words: [tutulungan, ni]
+      - type: translate
+        prompt_en: He is looking at the photo.
+        answer_tl: Tinitingnan niya ang litrato.
+        extra_words: [tiningnan, siya, titingnan]
+        audio: tinitingnan_niya_ang_litrato
+        hint: 'Ongoing -an verbs double the first syllable with -in- inside: tinitingnan.'
+      - type: translate
+        prompt_en: I gave the child water.
+        answer_tl: Binigyan ko ng tubig ang bata.
+        accept:
+          - "Binigyan ko ang bata ng tubig"
+          - "Nagbigay ako ng tubig sa bata"
+        extra_words: [binuksan, si, ako]
+        audio: binigyan_ko_ng_tubig_ang_bata
+        hint: '"Bigyan" puts the receiver in focus (ang bata); the thing given takes ng.'
+  - id: revfocus-7
+    title: In the kitchen
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kusina, en: kitchen }
+          - { tl: plato, en: plate }
+          - { tl: baso, en: glass }
+          - { tl: ref, en: fridge }
+          - { tl: mesa, en: table }
+      - type: choice
+        prompt: "Mom asks, 'Ano ang niluluto mo?' She wants to know..."
+        answer: What you are cooking
+        distractors: [What you cooked yesterday, Who is cooking, Where you are cooking]
+        audio: ano_ang_niluluto_mo
+        audio_text: Ano ang niluluto mo?
+      - type: translate
+        prompt_tl: Niluluto ni Nanay ang isda sa kusina.
+        answer_en: Mom is cooking the fish in the kitchen.
+        accept:
+          - "Mother is cooking the fish in the kitchen"
+          - "My mom is cooking the fish in the kitchen"
+        extra_words: [cooked, chicken, market]
+        audio: niluluto_ni_nanay_ang_isda_sa_kusina
+      - type: choice
+        prompt: "Which sentence means 'I will wash the glasses'?"
+        answer: Huhugasan ko ang mga baso.
+        distractors: [Hinugasan ko ang mga baso., Hinuhugasan ko ang mga baso., Huhugasan ako ng mga baso.]
+        audio: huhugasan_ko_ang_mga_baso
+        audio_text: Huhugasan ko ang mga baso.
+      - type: fill_blank
+        sentence: "Inilagay ko ang mga plato ___ mesa."
+        translation: "I put the plates on the table."
+        answer: sa
+        options: [sa, ng, ang]
+        hint: 'Where something ends up is marked by sa.'
+      - type: listen
+        audio: kinuha_niya_ang_gatas_sa_ref
+        answer_tl: Kinuha niya ang gatas sa ref
+        extra_words: [kukunin, baso]
+      - type: translate
+        prompt_tl: Nagluto si Lola ng adobo, at kinain namin ito.
+        answer_en: Grandma cooked adobo, and we ate it.
+        accept:
+          - "Grandmother cooked adobo, and we ate it"
+          - "Grandma cooked some adobo, and we ate it"
+          - "Grandma made adobo, and we ate it"
+        extra_words: [drank, will, they]
+        audio: nagluto_si_lola_ng_adobo_at_kinain_namin_ito
+      - type: translate
+        prompt_en: Open the fridge and get the eggs.
+        answer_tl: Buksan mo ang ref at kunin mo ang mga itlog.
+        accept:
+          - "Buksan mo ang ref at kunin ang mga itlog"
+          - "Buksan mo ang ref at kunin mo ang itlog"
+          - "Buksan ninyo ang ref at kunin ninyo ang mga itlog"
+        extra_words: [binuksan, kinuha, sa]
+        audio: buksan_mo_ang_ref_at_kunin_mo_ang_mga_itlog
+        hint: 'An object-focus command is the plain verb + mo + the ang-thing.'
+      - type: translate
+        prompt_en: I cooked the chicken and washed the plates.
+        answer_tl: Niluto ko ang manok at hinugasan ko ang mga plato.
+        accept:
+          - "Niluto ko ang manok at hinugasan ang mga plato"
+          - "Niluto ko ang manok tapos hinugasan ko ang mga plato"
+        extra_words: [nagluto, ako, ng]
+        audio: niluto_ko_ang_manok_at_hinugasan_ko_ang_mga_plato
+        hint: 'Both objects are definite ("the"), so both verbs are object focus with ko.'
+  - id: revfocus-8
+    title: At the market
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tindera, en: vendor }
+          - { tl: sukli, en: change }
+          - { tl: bayad, en: payment }
+          - { tl: suki, en: regular customer }
+          - { tl: sariwa, en: fresh }
+      - type: choice
+        prompt: "The vendor asks, 'Ano po ang hinahanap ninyo?' She means..."
+        answer: What are you looking for?
+        distractors: [What did you buy?, How much will you pay?, Where are you going?]
+        audio: ano_po_ang_hinahanap_ninyo
+        audio_text: Ano po ang hinahanap ninyo?
+      - type: translate
+        prompt_tl: Tiningnan ko ang mga gulay sa palengke.
+        answer_en: I looked at the vegetables at the market.
+        accept: ["I looked at the vegetables in the market"]
+        extra_words: [bought, fish, will]
+        audio: tiningnan_ko_ang_mga_gulay_sa_palengke
+      - type: translate
+        prompt_tl: Binayaran ko ang tindera, at ibinigay niya sa akin ang sukli.
+        answer_en: I paid the vendor, and she gave me the change.
+        accept:
+          - "I paid the vendor, and he gave me the change"
+          - "I paid the seller, and she gave me the change"
+          - "I paid the seller, and he gave me the change"
+          - "I paid the vendor, and she gave the change to me"
+          - "I paid the vendor, and she gave me my change"
+        extra_words: [bought, money, helped]
+        audio: binayaran_ko_ang_tindera_at_ibinigay_niya_sa_akin_ang_sukli
+      - type: choice
+        prompt: "Which sentence means 'I will buy the mangoes'?"
+        answer: Bibilhin ko ang mga mangga.
+        distractors: [Binili ko ang mga mangga., Bibili ko ang mga mangga., Binibili ko ang mga mangga.]
+        audio: bibilhin_ko_ang_mga_mangga
+        audio_text: Bibilhin ko ang mga mangga.
+      - type: fill_blank
+        sentence: "Bumili si Ana ___ isda sa palengke."
+        translation: "Ana bought fish at the market."
+        answer: ng
+        options: [ng, nang, ang]
+        hint: '"Ng" marks the object; "nang" is for how or when something is done.'
+      - type: listen
+        audio: binili_ni_nanay_ang_mga_kamatis
+        answer_tl: Binili ni Nanay ang mga kamatis
+        extra_words: [bumili, si]
+      - type: translate
+        prompt_en: What did you buy at the market?
+        answer_tl: Ano ang binili mo sa palengke?
+        accept:
+          - "Ano ang binili ninyo sa palengke"
+          - "Anong binili mo sa palengke"
+        extra_words: [bumili, ka, ng]
+        audio: ano_ang_binili_mo_sa_palengke
+        hint: 'Asking "ano" about the thing bought puts that thing in focus: binili mo.'
+      - type: translate
+        prompt_en: I will pay for the fish.
+        answer_tl: Babayaran ko ang isda.
+        accept: ["Babayaran ko po ang isda"]
+        extra_words: [binayaran, ako, ng]
+        audio: babayaran_ko_ang_isda
+  - id: revfocus-9
+    title: Do this, please
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Buksan mo, en: Open it }
+          - { tl: Isara mo, en: Close it }
+          - { tl: Kunin mo, en: Get it }
+          - { tl: Itapon mo, en: Throw it away }
+          - { tl: Tingnan mo, en: Look at it }
+      - type: choice
+        prompt: "You want someone to pass the water, politely. Say:"
+        answer: Pakibigay po ang tubig.
+        distractors: [Ibinigay ko ang tubig., Binigyan mo ako ng tubig., Iniinom ko ang tubig.]
+        audio: pakibigay_po_ang_tubig
+        audio_text: Pakibigay po ang tubig.
+      - type: translate
+        prompt_tl: Hugasan mo ang mga kamay mo.
+        answer_en: Wash your hands.
+        extra_words: [my, plates, open]
+        audio: hugasan_mo_ang_mga_kamay_mo
+      - type: translate
+        prompt_tl: Inumin mo ang gamot mo bago matulog.
+        answer_en: Take your medicine before sleeping.
+        accept:
+          - "Drink your medicine before sleeping"
+          - "Take your medicine before you sleep"
+          - "Drink your medicine before you sleep"
+          - "Take your medicine before going to sleep"
+          - "Take your medicine before bed"
+        extra_words: [after, eating, my]
+        audio: inumin_mo_ang_gamot_mo_bago_matulog
+      - type: choice
+        prompt: "Which sentence is a command?"
+        answer: Isara mo ang pinto.
+        distractors: [Isinara mo ang pinto., Isinasara mo ang pinto., Isasara mo ang pinto.]
+        audio: isara_mo_ang_pinto
+        audio_text: Isara mo ang pinto.
+        hint: 'Commands use the plain form: no doubled syllable and no -in-.'
+      - type: fill_blank
+        sentence: "___ mo ang basura mamaya."
+        translation: "Throw out the trash later."
+        answer: Itapon
+        options: [Itapon, Itinapon, Itinatapon]
+      - type: listen
+        audio: pakibigay_ito_kay_tatay
+        answer_tl: Pakibigay ito kay Tatay
+        extra_words: [ibinigay, si]
+      - type: translate
+        prompt_en: Help me in the kitchen.
+        answer_tl: Tulungan mo ako sa kusina.
+        accept:
+          - "Tulungan mo po ako sa kusina"
+          - "Tulungan ninyo ako sa kusina"
+          - "Tulungan mo naman ako sa kusina"
+        extra_words: [tinulungan, ko, ka]
+        audio: tulungan_mo_ako_sa_kusina
+        hint: 'The person helped is in focus (ako); the helper is mo.'
+      - type: translate
+        prompt_en: Put the book on the table.
+        answer_tl: Ilagay mo ang libro sa mesa.
+        accept:
+          - "Ilagay mo sa mesa ang libro"
+          - "Ilagay ang libro sa mesa"
+          - "Ilagay ninyo ang libro sa mesa"
+        extra_words: [inilagay, ng, ako]
+        audio: ilagay_mo_ang_libro_sa_mesa
+        hint: 'An object-focus command is the plain verb + mo + the ang-thing.'
+  - id: revfocus-10
+    title: "A short story: Yesterday"
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pumunta, en: went }
+          - { tl: binili, en: bought (it) }
+          - { tl: niluto, en: cooked (it) }
+          - { tl: kinain, en: ate (it) }
+          - { tl: hinugasan, en: washed (it) }
+      - type: translate
+        prompt_tl: Kahapon, pumunta si Ana sa palengke.
+        answer_en: Yesterday, Ana went to the market.
+        accept: ["Ana went to the market yesterday"]
+        extra_words: [tomorrow, store, will]
+        audio: kahapon_pumunta_si_ana_sa_palengke
+      - type: choice
+        prompt: "'Bumili siya ng isda at gulay.' What did Ana do?"
+        answer: She bought fish and vegetables
+        distractors:
+          - She cooked fish and vegetables
+          - She will buy fish and vegetables
+          - She ate fish and vegetables
+        audio: bumili_siya_ng_isda_at_gulay
+        audio_text: Bumili siya ng isda at gulay.
+      - type: translate
+        prompt_tl: Binayaran niya ang tindera, tapos umuwi siya.
+        answer_en: She paid the vendor, then she went home.
+        accept:
+          - "She paid the vendor, then went home"
+          - "She paid the vendor and then she went home"
+          - "She paid the vendor and then went home"
+          - "She paid the seller, then she went home"
+          - "He paid the vendor, then he went home"
+          - "He paid the vendor, then went home"
+          - "He paid the seller, then he went home"
+        extra_words: [bought, market, will]
+        audio: binayaran_niya_ang_tindera_tapos_umuwi_siya
+      - type: listen
+        audio: niluto_ni_nanay_ang_isda
+        answer_tl: Niluto ni Nanay ang isda
+        extra_words: [nagluto, si]
+      - type: fill_blank
+        sentence: "Kinain ___ ang isda. Masarap!"
+        translation: "We ate the fish. Delicious!"
+        answer: namin
+        options: [namin, kami, amin]
+        hint: 'Kinain is object focus, so "we" comes from the ng-set: namin.'
+      - type: translate
+        prompt_tl: Tapos hinugasan ni Ben ang mga plato.
+        answer_en: Then Ben washed the plates.
+        accept:
+          - "Then Ben washed the dishes"
+          - "After that, Ben washed the plates"
+          - "After that, Ben washed the dishes"
+        extra_words: [Ana, will, glasses]
+        audio: tapos_hinugasan_ni_ben_ang_mga_plato
+      - type: translate
+        prompt_en: Ana gave the mango to Grandma.
+        answer_tl: Ibinigay ni Ana ang mangga kay Lola.
+        accept: ["Ibinigay ni Ana kay Lola ang mangga"]
+        extra_words: [si, sa, nagluto]
+        audio: ibinigay_ni_ana_ang_mangga_kay_lola
+        hint: 'Ibinigay puts the mango in focus (ang); the giver is ni Ana and the receiver kay Lola.'
+      - type: translate
+        prompt_en: What did you do yesterday? I read the book.
+        answer_tl: Ano ang ginawa mo kahapon? Binasa ko ang libro.
+        accept:
+          - "Ano ang ginawa ninyo kahapon? Binasa ko ang libro"
+          - "Anong ginawa mo kahapon? Binasa ko ang libro"
+        extra_words: [ginagawa, ako, ng]
+        audio: ano_ang_ginawa_mo_kahapon_binasa_ko_ang_libro
+  - id: revfocus-11
+    title: "Challenge: Who did what?"
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Tinulungan ko siya, en: I helped her }
+          - { tl: Tinulungan niya ako, en: She helped me }
+          - { tl: Binigyan ko siya, en: I gave her something }
+          - { tl: Binigyan niya ako, en: She gave me something }
+      - type: match
+        pairs:
+          - { tl: Sino ang kumain?, en: Who ate? }
+          - { tl: Ano ang kinain?, en: What was eaten? }
+          - { tl: Sino ang bumili?, en: Who bought? }
+          - { tl: Ano ang binili?, en: What was bought? }
+      - type: choice
+        prompt: "'Sino ang kumain ng tinapay ko?' Which answer fits?"
+        answer: Si Ben ang kumain.
+        distractors: [Ni Ben ang kumain., Kay Ben ang kumain., Tinapay ang kumain.]
+        audio: si_ben_ang_kumain
+        audio_text: Si Ben ang kumain.
+        hint: '"Sino ang kumain" asks about the doer, so the answer names him with si.'
+      - type: translate
+        prompt_tl: Hindi ko kinain ang mangga mo.
+        answer_en: I did not eat your mango.
+        accept: ["I didn't eat your mango"]
+        extra_words: [my, drank, a]
+        audio: hindi_ko_kinain_ang_mangga_mo
+      - type: translate
+        prompt_tl: Binuksan ni Tatay ang pinto at ipinakita niya sa amin ang regalo.
+        answer_en: Dad opened the door and showed us the gift.
+        accept:
+          - "Dad opened the door and he showed us the gift"
+          - "Dad opened the door and showed the gift to us"
+          - "Father opened the door and showed us the gift"
+          - "Dad opened the door and showed us the present"
+          - "My dad opened the door and showed us the gift"
+        extra_words: [closed, them, gave]
+        audio: binuksan_ni_tatay_ang_pinto_at_ipinakita_niya_sa_amin_ang_regalo
+      - type: listen
+        audio: ano_ang_sinabi_ng_guro_sa_iyo
+        answer_tl: Ano ang sinabi ng guro sa iyo
+        extra_words: [sinasabi, ko]
+      - type: fill_blank
+        sentence: "Binigyan ___ Nanay ng pera si Ana."
+        translation: "Mom gave Ana money."
+        answer: ni
+        options: [ni, si, kay]
+        hint: 'Ana, the receiver, already has si, so the giver takes ni.'
+      - type: translate
+        prompt_en: I bought a mango at the market, and Ben ate it.
+        answer_tl: Bumili ako ng mangga sa palengke, at kinain ito ni Ben.
+        accept:
+          - "Bumili ako ng mangga sa palengke, at kinain ni Ben ito"
+          - "Bumili ako ng mangga sa palengke, at kinain iyon ni Ben"
+          - "Bumili ako ng mangga sa palengke, tapos kinain ito ni Ben"
+        extra_words: [binili, si, kumain]
+        audio: bumili_ako_ng_mangga_sa_palengke_at_kinain_ito_ni_ben
+        hint: 'First mention is "a mango" (ng, actor focus); once it is known, "it" takes object focus.'
+      - type: translate
+        prompt_en: Dad closed the window and I threw out the trash.
+        answer_tl: Isinara ni Tatay ang bintana at itinapon ko ang basura.
+        accept: ["Isinara ng tatay ko ang bintana at itinapon ko ang basura"]
+        extra_words: [si, ako, isasara]
+        audio: isinara_ni_tatay_ang_bintana_at_itinapon_ko_ang_basura

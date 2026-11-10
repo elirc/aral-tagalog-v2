@@ -286,3 +286,456 @@ lessons:
         hint: 'One long sentence, three habits — "araw-araw" sets the whole thing in the everyday.'
         audio: araw_araw_naglalakad_ang_ate_ko_sa_palengke_at_bumibili_ng_isda_tapos_nagluluto_siya_sa_bahay
         grading: { hyphens: true }
+  - id: grand-5
+    title: Yesterday, today, tomorrow
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bumili, en: bought }
+          - { tl: bumibili, en: is buying }
+          - { tl: bibili, en: will buy }
+          - { tl: bumaba, en: got off }
+      - type: fill_blank
+        sentence: "Kanina ___ ako ng kape, at mamaya iinom ako ng gatas."
+        translation: "Earlier I drank coffee, and later I will drink milk."
+        answer: uminom
+        options: [uminom, umiinom, iinom]
+      - type: fill_blank
+        sentence: "Hindi pa ___ si Lola; natutulog pa siya."
+        translation: "Grandma hasn't eaten yet; she is still sleeping."
+        answer: kumakain
+        options: [kumakain, kumain, kakain]
+      - type: listen
+        audio: magluluto_ako_ng_adobo_mamaya
+        answer_tl: Magluluto ako ng adobo mamaya
+        extra_words: [nagluto, kanina]
+      - type: translate
+        prompt_tl: Nanood kami ng pelikula kahapon, nag-aaral kami ngayon, at maglalaro kami bukas.
+        answer_en: We watched a movie yesterday, we are studying now, and we will play tomorrow.
+        accept:
+          - Yesterday we watched a movie, now we are studying, and tomorrow we will play
+          - We watched a movie yesterday, we're studying now, and we'll play tomorrow
+        extra_words: [sleep, today, cooked]
+        audio: nanood_kami_ng_pelikula_kahapon_nag_aaral_kami_ngayon_at_maglalaro_kami_bukas
+      - type: translate
+        prompt_en: Every morning my dad drinks coffee, but earlier today he drank milk.
+        answer_tl: Tuwing umaga umiinom ng kape ang tatay ko, pero kanina uminom siya ng gatas.
+        accept:
+          - Tuwing umaga, umiinom ng kape ang tatay ko, pero kanina uminom siya ng gatas
+          - Tuwing umaga umiinom ang tatay ko ng kape, pero kanina uminom siya ng gatas
+          - Tuwing umaga, umiinom ang tatay ko ng kape, pero kanina uminom siya ng gatas
+          - Tuwing umaga, umiinom ng kape ang tatay ko, pero uminom siya ng gatas kanina
+        extra_words: [iinom, tubig, bukas]
+        audio: tuwing_umaga_umiinom_ng_kape_ang_tatay_ko_pero_kanina_uminom_siya_ng_gatas
+      - type: translate
+        prompt_en: I haven't cooked yet because I'm still tired.
+        answer_tl: Hindi pa ako nagluluto kasi pagod pa ako.
+        accept: ["Hindi pa ako nagluluto dahil pagod pa ako"]
+        extra_words: [nagluto, na, magluluto]
+        audio: hindi_pa_ako_nagluluto_kasi_pagod_pa_ako
+      - type: translate
+        prompt_en: We will go to the market later and buy fish, then Mom will cook.
+        answer_tl: Pupunta kami sa palengke mamaya at bibili kami ng isda, tapos magluluto si Nanay.
+        accept:
+          - Mamaya, pupunta kami sa palengke at bibili kami ng isda, tapos magluluto si Nanay
+          - Mamaya pupunta kami sa palengke at bibili kami ng isda, tapos magluluto si Nanay
+          - Pupunta kami sa palengke mamaya at bibili ng isda, tapos magluluto si Nanay
+          - Pupunta kami mamaya sa palengke at bibili kami ng isda, tapos magluluto si Nanay
+        extra_words: [bumili, nagluto, kanina]
+        audio: pupunta_kami_sa_palengke_mamaya_at_bibili_kami_ng_isda_tapos_magluluto_si_nanay
+      - type: translate
+        prompt_en: Yesterday we swam in the sea, today we are resting, and tomorrow we will go home.
+        answer_tl: Lumangoy kami sa dagat kahapon, nagpapahinga kami ngayon, at uuwi kami bukas.
+        accept:
+          - Kahapon lumangoy kami sa dagat, ngayon nagpapahinga kami, at bukas uuwi kami
+          - Kahapon, lumangoy kami sa dagat, ngayon nagpapahinga kami, at bukas uuwi kami
+          - Lumangoy kami sa dagat kahapon, nagpapahinga kami ngayon at uuwi kami bukas
+        extra_words: [lumalangoy, umuwi, magpapahinga]
+        audio: lumangoy_kami_sa_dagat_kahapon_nagpapahinga_kami_ngayon_at_uuwi_kami_bukas
+  - id: grand-6
+    title: The little words, in their places
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which one means 'Have you eaten yet?'"
+        answer: Kumain ka na ba?
+        distractors: [Kumain na ba ka?, Kumain ba ka na?, Na kumain ka ba?]
+      - type: fill_blank
+        sentence: "Uminom ka ___ ng tubig bago ka kumain."
+        translation: "Drink some water first before you eat."
+        answer: muna
+        options: [muna, pa, rin]
+      - type: fill_blank
+        sentence: "Nasa opisina pa ___ ang tatay mo."
+        translation: "They say your dad is still at the office."
+        answer: raw
+        options: [raw, daw, ba]
+      - type: listen
+        audio: hindi_pa_raw_sila_kumakain
+        answer_tl: Hindi pa raw sila kumakain
+        extra_words: [daw, na]
+      - type: translate
+        prompt_tl: Ikaw naman, saan ka na nagtatrabaho ngayon?
+        answer_en: How about you, where are you working now?
+        accept:
+          - And you, where are you working now?
+          - How about you, where do you work now?
+          - And you, where do you work now?
+        extra_words: [why, yesterday, living]
+        audio: ikaw_naman_saan_ka_na_nagtatrabaho_ngayon
+      - type: translate
+        prompt_en: I only have ten pesos, but I want coffee too.
+        answer_tl: May sampung piso lang ako, pero gusto ko rin ng kape.
+        accept:
+          - May sampung piso lang ako pero gusto ko rin ng kape
+          - Sampung piso lang ang pera ko, pero gusto ko rin ng kape
+          - Sampung piso lang ang pera ko pero gusto ko rin ng kape
+        extra_words: [din, pa, na]
+        audio: may_sampung_piso_lang_ako_pero_gusto_ko_rin_ng_kape
+      - type: translate
+        prompt_en: Are you still a student? — No, I'm already working.
+        answer_tl: Estudyante ka pa ba? Hindi, nagtatrabaho na ako.
+        extra_words: [rin, lang, siya]
+        audio: estudyante_ka_pa_ba_hindi_nagtatrabaho_na_ako
+      - type: translate
+        prompt_en: They say there's a storm tomorrow. Let's go to the market now.
+        answer_tl: May bagyo raw bukas. Pumunta na tayo sa palengke ngayon.
+        accept:
+          - May bagyo raw bukas, pumunta na tayo sa palengke ngayon
+          - May bagyo raw bukas. Pumunta tayo sa palengke ngayon
+        extra_words: [daw, pa, bumili]
+        audio: may_bagyo_raw_bukas_pumunta_na_tayo_sa_palengke_ngayon
+      - type: translate
+        prompt_en: Is your older brother still sleeping? Has he eaten already?
+        answer_tl: Natutulog pa ba ang kuya mo? Kumain na ba siya?
+        extra_words: [ate, ko, kakain]
+        audio: natutulog_pa_ba_ang_kuya_mo_kumain_na_ba_siya
+  - id: grand-7
+    title: Describe it, compare it
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matalinong estudyante, en: smart student }
+          - { tl: mabait na guro, en: kind teacher }
+          - { tl: malaking bahay, en: big house }
+          - { tl: berdeng palda, en: green skirt }
+      - type: fill_blank
+        sentence: "Bumili si Ana ng dilaw ___ sombrero."
+        translation: "Ana bought a yellow hat."
+        answer: na
+        options: [na, ng, nang]
+      - type: fill_blank
+        sentence: "Mas matangkad si Juan kaysa ___ Ana."
+        translation: "Juan is taller than Ana."
+        answer: kay
+        options: [kay, sa, ni]
+      - type: listen
+        audio: ito_ang_pinakamasarap_na_adobo_sa_lahat
+        answer_tl: Ito ang pinakamasarap na adobo sa lahat
+        extra_words: [mas, kaysa]
+      - type: translate
+        prompt_tl: Mas mura ang sariwang isda sa palengke kaysa sa malaking tindahan.
+        answer_en: Fresh fish at the market is cheaper than at the big store.
+        accept:
+          - The fresh fish at the market is cheaper than at the big store
+          - Fresh fish is cheaper at the market than at the big store
+          - The fresh fish is cheaper at the market than at the big store
+        extra_words: [expensive, small, chicken]
+        audio: mas_mura_ang_sariwang_isda_sa_palengke_kaysa_sa_malaking_tindahan
+      - type: translate
+        prompt_en: My older sister is the most hardworking in our family.
+        answer_tl: Ang ate ko ang pinakamasipag sa pamilya namin.
+        accept: ["Pinakamasipag sa pamilya namin ang ate ko"]
+        extra_words: [mas, natin, kuya]
+        audio: ang_ate_ko_ang_pinakamasipag_sa_pamilya_namin
+      - type: translate
+        prompt_en: The tall man is wearing a black shirt and blue pants.
+        answer_tl: Nakasuot ng itim na kamiseta at asul na pantalon ang matangkad na lalaki.
+        accept: ["Nakasuot ang matangkad na lalaki ng itim na kamiseta at asul na pantalon"]
+        extra_words: [pandak, puting, babae]
+        audio: nakasuot_ng_itim_na_kamiseta_at_asul_na_pantalon_ang_matangkad_na_lalaki
+      - type: translate
+        prompt_en: Our house is not as big as their house, but it is more beautiful.
+        answer_tl: Hindi kasinglaki ng bahay nila ang bahay namin, pero mas maganda ito.
+        accept:
+          - Hindi kasinglaki ng bahay nila ang bahay namin pero mas maganda ito
+          - Hindi kasinglaki ng bahay nila ang bahay namin, pero mas maganda
+        extra_words: [kaysa, natin, pinakamaganda]
+        audio: hindi_kasinglaki_ng_bahay_nila_ang_bahay_namin_pero_mas_maganda_ito
+      - type: translate
+        prompt_en: My friend Maria is kind and smart, and she is taller than Juan.
+        answer_tl: Mabait at matalino ang kaibigan kong si Maria, at mas matangkad siya kaysa kay Juan.
+        accept: ["Mabait at matalino ang kaibigan kong si Maria at mas matangkad siya kaysa kay Juan"]
+        extra_words: [sa, ni, pinakamatangkad]
+        audio: mabait_at_matalino_ang_kaibigan_kong_si_maria_at_mas_matangkad_siya_kaysa_kay_juan
+  - id: grand-8
+    title: Who, whose, where, why
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanino, en: whose }
+          - { tl: kailan, en: when }
+          - { tl: paano, en: how }
+          - { tl: nasaan, en: where is }
+      - type: choice
+        prompt: "You want to know whose shoes these are. You ask:"
+        answer: Kanino ang sapatos na ito?
+        distractors: [Sino ang sapatos na ito?, Saan ang sapatos na ito?, Ilan ang sapatos na ito?]
+      - type: fill_blank
+        sentence: "___ ka nagtatrabaho? — Sa ospital, nars ako."
+        translation: "Where do you work? — At the hospital, I'm a nurse."
+        answer: Saan
+        options: [Saan, Nasaan, Kailan]
+      - type: fill_blank
+        sentence: "Ito ang aso ___ Juan."
+        translation: "This is Juan's dog."
+        answer: ni
+        options: [ni, si, kay]
+      - type: listen
+        audio: bakit_hindi_ka_pumunta_sa_paaralan_kahapon
+        answer_tl: Bakit hindi ka pumunta sa paaralan kahapon
+        extra_words: [kailan, pupunta]
+      - type: translate
+        prompt_tl: Paano ka pumupunta sa opisina araw-araw? Sumasakay ako ng jeepney.
+        answer_en: How do you go to the office every day? I ride a jeepney.
+        accept:
+          - How do you get to the office every day? I ride a jeepney.
+          - How do you go to the office every day? I take a jeepney.
+          - How do you get to the office every day? I take a jeepney.
+          - How do you get to the office every day? I take the jeepney.
+          - How do you go to the office every day? I ride the jeepney.
+        extra_words: [when, bus, yesterday]
+        audio: paano_ka_pumupunta_sa_opisina_araw_araw_sumasakay_ako_ng_jeepney
+      - type: translate
+        prompt_en: When is your mother's birthday? I will buy a gift for her.
+        answer_tl: Kailan ang kaarawan ng nanay mo? Bibili ako ng regalo para sa kanya.
+        extra_words: [bumili, ni, kahapon]
+        audio: kailan_ang_kaarawan_ng_nanay_mo_bibili_ako_ng_regalo_para_sa_kanya
+      - type: translate
+        prompt_en: How many siblings do you have, and what are their jobs?
+        answer_tl: Ilan ang kapatid mo, at ano ang trabaho nila?
+        accept:
+          - Ilan ang kapatid mo at ano ang trabaho nila?
+          - Ilan ang mga kapatid mo, at ano ang trabaho nila?
+          - Ilan ang mga kapatid mo at ano ang trabaho nila?
+        extra_words: [magkano, sino, niya]
+        audio: ilan_ang_kapatid_mo_at_ano_ang_trabaho_nila
+      - type: translate
+        prompt_en: Why didn't you eat? — Because I'm not hungry yet.
+        answer_tl: Bakit hindi ka kumain? Kasi hindi pa ako gutom.
+        accept:
+          - Bakit hindi ka kumain? Dahil hindi pa ako gutom
+          - Bakit hindi ka kumain? Hindi pa kasi ako gutom
+        extra_words: [kumakain, na, busog]
+        audio: bakit_hindi_ka_kumain_kasi_hindi_pa_ako_gutom
+  - id: grand-9
+    title: Please, don't, may I
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "At Lola's house, you want to ask politely if you may sit here. Say:"
+        answer: Pwede po bang umupo dito?
+        distractors: [Pwede ba po umupo dito?, Umupo po kayo dito., Huwag po kayong umupo dito.]
+      - type: match
+        pairs:
+          - { tl: pakiabot, en: please pass }
+          - { tl: huwag, en: don't }
+          - { tl: sandali lang, en: just a moment }
+          - { tl: tuloy po kayo, en: please come in }
+      - type: fill_blank
+        sentence: "Huwag ___ uminom ng malamig na tubig, may ubo ka."
+        translation: "Don't drink cold water, you have a cough."
+        answer: kang
+        options: [kang, ka, mong]
+      - type: fill_blank
+        sentence: "Pwede ___ bumili ng gamot sa botika?"
+        translation: "Can I buy medicine at the pharmacy?"
+        answer: bang
+        options: [bang, ba, ng]
+      - type: listen
+        audio: sandali_lang_po_nagluluto_pa_ako
+        answer_tl: Sandali lang po, nagluluto pa ako
+        accept: ["Sandali lang po nagluluto pa ako"]
+        extra_words: [na, kumakain]
+      - type: translate
+        prompt_tl: Pakiabot po ang toyo at ang suka sa mesa.
+        answer_en: Please pass the soy sauce and the vinegar on the table.
+        accept:
+          - Please pass the soy sauce and vinegar on the table
+          - Please pass the soy sauce and the vinegar from the table
+        extra_words: [salt, sugar, kitchen]
+        audio: pakiabot_po_ang_toyo_at_ang_suka_sa_mesa
+      - type: translate
+        prompt_en: Don't buy there (near you), the price is high. Let's go to the market.
+        answer_tl: Huwag kang bumili diyan, mahal ang presyo. Pumunta tayo sa palengke.
+        accept:
+          - Huwag kang bumili diyan. Mahal ang presyo. Pumunta tayo sa palengke
+          - Huwag kang bumili diyan, mahal ang presyo, pumunta tayo sa palengke
+        extra_words: [doon, mura, kayo]
+        audio: huwag_kang_bumili_diyan_mahal_ang_presyo_pumunta_tayo_sa_palengke
+      - type: translate
+        prompt_en: Grandma, please sit down first. I will cook sinigang.
+        answer_tl: Lola, umupo po muna kayo. Magluluto po ako ng sinigang.
+        accept:
+          - Lola, umupo muna po kayo. Magluluto po ako ng sinigang
+          - Lola, umupo po muna kayo. Magluluto ako ng sinigang
+          - Lola, umupo muna po kayo. Magluluto ako ng sinigang
+        extra_words: [ka, nagluto, adobo]
+        audio: lola_umupo_po_muna_kayo_magluluto_po_ako_ng_sinigang
+      - type: translate
+        prompt_en: Mom, may we watch a movie later? We already cleaned the house.
+        answer_tl: Nanay, pwede ba kaming manood ng pelikula mamaya? Naglinis na kami ng bahay.
+        accept:
+          - Nanay, pwede po ba kaming manood ng pelikula mamaya? Naglinis na po kami ng bahay
+          - Nanay, pwede po ba kaming manood ng pelikula mamaya? Naglinis na kami ng bahay
+        extra_words: [tayong, nanood, maglilinis]
+        audio: nanay_pwede_ba_kaming_manood_ng_pelikula_mamaya_naglinis_na_kami_ng_bahay
+  - id: grand-10
+    title: Telling the whole story
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Naligo muna ako bago kumain' means..."
+        answer: I took a bath first before eating
+        distractors:
+          - I ate first before taking a bath
+          - I took a bath while eating
+          - I will take a bath after eating
+        audio: naligo_muna_ako_bago_kumain
+        audio_text: Naligo muna ako bago kumain.
+      - type: fill_blank
+        sentence: "Kumakanta si Lola ___ nagluluto siya ng pansit."
+        translation: "Grandma sings while she cooks pancit."
+        answer: habang
+        options: [habang, bago, kung]
+      - type: fill_blank
+        sentence: "___ umuulan, hindi kami pupunta sa tabing-dagat."
+        translation: "If it's raining, we won't go to the beach."
+        answer: Kung
+        options: [Kung, Habang, Noong]
+      - type: listen
+        audio: pagkatapos_ng_klase_umuwi_kami_at_kumain
+        answer_tl: Pagkatapos ng klase, umuwi kami at kumain
+        accept: ["Pagkatapos ng klase umuwi kami at kumain"]
+        extra_words: [bago, nang]
+      - type: translate
+        prompt_tl: Noong Pasko, umuwi kami sa probinsya at kumain kami ng masarap na handa sa bahay ni Lola.
+        answer_en: At Christmas, we went home to the province and ate delicious party food at Grandma's house.
+        accept:
+          - At Christmas we went home to the province and ate delicious party food at Grandma's house
+          - Last Christmas, we went home to the province and ate delicious party food at Grandma's house
+          - At Christmas, we went home to the province and ate delicious food at Grandma's house
+          - Last Christmas, we went home to the province and ate delicious food at Grandma's house
+        extra_words: [city, will, cheap]
+        audio: noong_pasko_umuwi_kami_sa_probinsya_at_kumain_kami_ng_masarap_na_handa_sa_bahay_ni_lola
+      - type: translate
+        prompt_en: The other day, I woke up, took a bath, ate, then walked to school.
+        answer_tl: Noong isang araw, gumising ako, naligo, kumain, tapos naglakad ako papunta sa paaralan.
+        accept:
+          - Noong isang araw gumising ako, naligo, kumain, tapos naglakad ako papunta sa paaralan
+          - Noong isang araw, gumising ako, naligo, kumain, tapos naglakad ako sa paaralan
+        extra_words: [kanina, sumakay, natulog]
+        audio: noong_isang_araw_gumising_ako_naligo_kumain_tapos_naglakad_ako_papunta_sa_paaralan
+      - type: translate
+        prompt_en: Before going home, we bought medicine at the pharmacy because Dad had a fever.
+        answer_tl: Bago umuwi, bumili kami ng gamot sa botika kasi may lagnat si Tatay.
+        accept:
+          - Bago umuwi, bumili kami ng gamot sa botika dahil may lagnat si Tatay
+          - Bago kami umuwi, bumili kami ng gamot sa botika kasi may lagnat si Tatay
+          - Bago kami umuwi, bumili kami ng gamot sa botika dahil may lagnat si Tatay
+          - Bago umuwi, bumili kami ng gamot sa botika kasi may lagnat ang tatay ko
+        extra_words: [pagkatapos, bibili, ubo]
+        audio: bago_umuwi_bumili_kami_ng_gamot_sa_botika_kasi_may_lagnat_si_tatay
+      - type: translate
+        prompt_en: While Mom was cooking, we cleaned the living room.
+        answer_tl: Habang nagluluto si Nanay, naglinis kami ng sala.
+        accept: ["Naglinis kami ng sala habang nagluluto si Nanay"]
+        extra_words: [nagluto, maglilinis, kusina]
+        audio: habang_nagluluto_si_nanay_naglinis_kami_ng_sala
+      - type: translate
+        prompt_en: I was tired yesterday, but I was happy because our team won.
+        answer_tl: Pagod ako kahapon, pero masaya ako kasi nanalo ang koponan namin.
+        accept:
+          - Pagod ako kahapon pero masaya ako kasi nanalo ang koponan namin
+          - Pagod ako kahapon, pero masaya ako dahil nanalo ang koponan namin
+          - Kahapon, pagod ako, pero masaya ako kasi nanalo ang koponan namin
+        extra_words: [natalo, natin, bukas]
+        audio: pagod_ako_kahapon_pero_masaya_ako_kasi_nanalo_ang_koponan_namin
+  - id: grand-11
+    title: The last lesson
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kita tayo bukas!, en: See you tomorrow! }
+          - { tl: Ingat!, en: Take care! }
+          - { tl: Binabati kita!, en: Congratulations! }
+          - { tl: Paalam, en: Goodbye }
+      - type: listen
+        audio: araw_araw_akong_nag_aaral_ng_tagalog
+        answer_tl: Araw-araw akong nag-aaral ng Tagalog
+        extra_words: [nag-aral, ako]
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "Nag-aral ako ng Tagalog ___ gusto kong pumunta sa Pilipinas."
+        translation: "I studied Tagalog because I want to go to the Philippines."
+        answer: kasi
+        options: [kasi, pero, habang]
+      - type: fill_blank
+        sentence: "Bukas ___ ako sa bahay ng lola ko, at magluluto kami ng adobo."
+        translation: "Tomorrow I will go to my grandmother's house, and we will cook adobo."
+        answer: pupunta
+        options: [pupunta, pumunta, pumupunta]
+      - type: translate
+        prompt_tl: Mahirap ang Tagalog, pero masaya ako kasi nag-aaral ako araw-araw.
+        answer_en: Tagalog is hard, but I am happy because I study every day.
+        accept:
+          - Tagalog is difficult, but I am happy because I study every day
+          - Tagalog is hard, but I'm happy because I study every day
+          - Tagalog is difficult, but I'm happy because I study every day
+        extra_words: [easy, sad, yesterday]
+        audio: mahirap_ang_tagalog_pero_masaya_ako_kasi_nag_aaral_ako_araw_araw
+      - type: translate
+        prompt_en: In December, I will go to the Philippines, and we will eat adobo and halo-halo at my grandmother's house.
+        answer_tl: Sa Disyembre, pupunta ako sa Pilipinas, at kakain kami ng adobo at halo-halo sa bahay ng lola ko.
+        accept:
+          - Sa Disyembre, pupunta ako sa Pilipinas at kakain kami ng adobo at halo-halo sa bahay ng lola ko
+          - Sa Disyembre pupunta ako sa Pilipinas, at kakain kami ng adobo at halo-halo sa bahay ng lola ko
+        extra_words: [pumunta, kumain, ni]
+        audio: sa_disyembre_pupunta_ako_sa_pilipinas_at_kakain_kami_ng_adobo_at_halo_halo_sa_bahay_ng_lola_ko
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: If it's not raining, let's go to the beach, swim in the sea, and drink buko.
+        answer_tl: Kung hindi umuulan, pumunta tayo sa tabing-dagat, lumangoy tayo sa dagat, at uminom tayo ng buko.
+        accept:
+          - Kung hindi umuulan, pumunta tayo sa tabing-dagat, lumangoy sa dagat, at uminom ng buko
+          - Kung hindi umuulan, pumunta tayo sa tabing-dagat, lumangoy tayo sa dagat at uminom tayo ng buko
+        extra_words: [habang, kami, lumalangoy]
+        audio: kung_hindi_umuulan_pumunta_tayo_sa_tabing_dagat_lumangoy_tayo_sa_dagat_at_uminom_tayo_ng_buko
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: My older sister is a nurse at the hospital; she works every day, but she is always happy.
+        answer_tl: Nars sa ospital ang ate ko; nagtatrabaho siya araw-araw, pero palagi siyang masaya.
+        accept:
+          - Nars ang ate ko sa ospital; nagtatrabaho siya araw-araw, pero palagi siyang masaya
+          - Nars sa ospital ang ate ko, nagtatrabaho siya araw-araw, pero palagi siyang masaya
+          - Nars ang ate ko sa ospital, nagtatrabaho siya araw-araw, pero palagi siyang masaya
+          - Nars sa ospital ang ate ko. Nagtatrabaho siya araw-araw, pero palagi siyang masaya
+        extra_words: [kuya, nagtrabaho, malungkot]
+        audio: nars_sa_ospital_ang_ate_ko_nagtatrabaho_siya_araw_araw_pero_palagi_siyang_masaya
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Thank you for everything! I will study Tagalog every day. Goodbye, take care!
+        answer_tl: Salamat sa lahat! Mag-aaral ako ng Tagalog araw-araw. Paalam, ingat!
+        accept:
+          - Salamat po sa lahat! Mag-aaral ako ng Tagalog araw-araw. Paalam po, ingat po!
+          - Salamat po sa lahat! Mag-aaral po ako ng Tagalog araw-araw. Paalam po, ingat po!
+          - Salamat sa lahat! Araw-araw akong mag-aaral ng Tagalog. Paalam, ingat!
+          - Salamat sa lahat! Mag-aaral ako ng Tagalog araw-araw. Paalam, mag-ingat ka!
+        extra_words: [nag-aaral, nag-aral, kami]
+        audio: salamat_sa_lahat_mag_aaral_ako_ng_tagalog_araw_araw_paalam_ingat
+        grading: { hyphens: true }
+        hint: 'The very last sentence: "mag-aaral" looks ahead (will study) — because the learning keeps going. Paalam, at ingat!'

@@ -173,7 +173,7 @@ lessons:
         answer_en: We eat in the afternoon.
         extra_words: [morning, drinking, they]
       - type: fill_blank
-        sentence: "Naglalakad ako sa paaralan ___ mabilis."
+        sentence: "Naglalakad ako ___ mabilis papunta sa paaralan."
         translation: "I walk to school quickly."
         answer: nang
         options: [nang, ng, at]
@@ -188,3 +188,358 @@ lessons:
         audio: kumakain_ako_ng_kanin
         answer_tl: Kumakain ako ng kanin
         extra_words: [umiinom, tubig]
+  - id: everyday-5
+    title: Morning routine
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gumigising, en: wakes up }
+          - { tl: naliligo, en: takes a bath }
+          - { tl: nagsisipilyo, en: brushes teeth }
+          - { tl: nagbibihis, en: gets dressed }
+      - type: choice
+        prompt: "'Naliligo' means..."
+        answer: Taking a bath
+        distractors: [Brushing teeth, Getting dressed, Waking up]
+        audio: naliligo
+        audio_text: Naliligo
+      - type: translate
+        prompt_tl: Gumigising ako sa umaga.
+        answer_en: I wake up in the morning.
+        extra_words: [night, sleep, she]
+        audio: gumigising_ako_sa_umaga
+      - type: fill_blank
+        sentence: "___ ako araw-araw."
+        translation: "I take a bath every day."
+        answer: Naliligo
+        options: [Naliligo, Natutulog, Kumakain]
+        audio: naliligo_ako_araw_araw
+      - type: listen
+        audio: nagsisipilyo_ang_bata
+        answer_tl: Nagsisipilyo ang bata
+        extra_words: [naliligo, anak]
+      - type: choice
+        prompt: "'Nagbibihis siya' means..."
+        answer: She is getting dressed
+        distractors: [She is taking a bath, She is waking up, She is brushing her teeth]
+        audio: nagbibihis_siya
+        audio_text: Nagbibihis siya.
+      - type: translate
+        prompt_tl: Naliligo si Tatay sa umaga.
+        answer_en: Dad takes a bath in the morning.
+        accept: ["Dad bathes in the morning", "Dad is taking a bath in the morning"]
+        extra_words: [night, mom, sleeps]
+        audio: naliligo_si_tatay_sa_umaga
+      - type: translate
+        prompt_en: I am getting dressed.
+        answer_tl: Nagbibihis ako.
+        extra_words: [naliligo, siya, ng]
+        audio: nagbibihis_ako
+  - id: everyday-6
+    title: Meals of the day
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: almusal, en: breakfast }
+          - { tl: tanghalian, en: lunch }
+          - { tl: hapunan, en: dinner }
+          - { tl: kanin, en: rice }
+      - type: choice
+        prompt: "You eat 'hapunan'..."
+        answer: In the evening
+        distractors: [In the morning, At noon, Every hour]
+        audio: hapunan
+        audio_text: Hapunan
+      - type: translate
+        prompt_tl: Kumakain kami ng almusal sa umaga.
+        answer_en: We eat breakfast in the morning.
+        extra_words: [dinner, night, they]
+        audio: kumakain_kami_ng_almusal_sa_umaga
+      - type: fill_blank
+        sentence: "Masarap ang ___ ngayong gabi."
+        translation: "Dinner is delicious tonight."
+        answer: hapunan
+        options: [hapunan, almusal, tanghalian]
+        audio: masarap_ang_hapunan_ngayong_gabi
+        hint: '"ngayong gabi" = tonight.'
+      - type: listen
+        audio: tinapay_at_kape_ang_almusal_ko
+        answer_tl: Tinapay at kape ang almusal ko
+        extra_words: [kanin, hapunan]
+      - type: choice
+        prompt: "'Ano ang almusal mo?' asks about your..."
+        answer: Breakfast
+        distractors: [Lunch, Dinner, Work]
+        audio: ano_ang_almusal_mo
+        audio_text: Ano ang almusal mo?
+      - type: translate
+        prompt_tl: Kanin at isda ang tanghalian namin.
+        answer_en: Our lunch is rice and fish.
+        accept: ["Rice and fish is our lunch"]
+        extra_words: [dinner, chicken, my]
+        audio: kanin_at_isda_ang_tanghalian_namin
+      - type: translate
+        prompt_en: I eat lunch at school.
+        answer_tl: Kumakain ako ng tanghalian sa paaralan.
+        accept: ["Kumakain ako sa paaralan ng tanghalian"]
+        extra_words: [hapunan, bahay, kumain]
+        audio: kumakain_ako_ng_tanghalian_sa_paaralan
+  - id: everyday-7
+    title: Early, noon, every night
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maaga, en: early }
+          - { tl: tanghali, en: noon }
+          - { tl: hapon, en: afternoon }
+          - { tl: gabi, en: night }
+      - type: choice
+        prompt: "'Gumigising ako nang maaga' means..."
+        answer: I wake up early
+        distractors: [I wake up late, I sleep early, I eat early]
+        audio: gumigising_ako_nang_maaga
+        audio_text: Gumigising ako nang maaga.
+        hint: '"nang maaga" = early; "nang" links the verb to how or when.'
+      - type: fill_blank
+        sentence: "Gumigising si Lola ___ maaga."
+        translation: "Grandma wakes up early."
+        answer: nang
+        options: [nang, ng, sa]
+        audio: gumigising_si_lola_nang_maaga
+      - type: translate
+        prompt_tl: Natutulog ang bata sa tanghali.
+        answer_en: The child sleeps at noon.
+        accept: ["The child naps at noon", "The child is sleeping at noon"]
+        extra_words: [night, early, mom]
+        audio: natutulog_ang_bata_sa_tanghali
+      - type: listen
+        audio: tuwing_umaga_naglalakad_ako
+        answer_tl: Tuwing umaga, naglalakad ako
+        extra_words: [gabi, natutulog]
+        hint: '"tuwing" = every (each time).'
+      - type: choice
+        prompt: "Which means 'every night'?"
+        answer: Tuwing gabi
+        distractors: [Ngayong gabi, Magandang gabi, Kahapon]
+        audio: tuwing_gabi
+        audio_text: Tuwing gabi
+      - type: translate
+        prompt_tl: Tuwing gabi, nagbabasa si Nanay ng libro.
+        answer_en: Every night, Mom reads a book.
+        accept: ["Mom reads a book every night"]
+        extra_words: [morning, dad, sleeps]
+        audio: tuwing_gabi_nagbabasa_si_nanay_ng_libro
+      - type: translate
+        prompt_en: I wake up early every day.
+        answer_tl: Gumigising ako nang maaga araw-araw.
+        accept: ["Araw-araw, gumigising ako nang maaga"]
+        extra_words: [sa, gabi, natutulog]
+        grading: { hyphens: true, ng_nang: true }
+        audio: gumigising_ako_nang_maaga_araw_araw
+  - id: everyday-8
+    title: First, then, after
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tapos, en: then }
+          - { tl: pagkatapos, en: after }
+          - { tl: bago, en: before }
+          - { tl: araw-araw, en: every day }
+      - type: choice
+        prompt: "'Naliligo ako, tapos nagbibihis ako' means..."
+        answer: I take a bath, then I get dressed
+        distractors: ["I get dressed, then I take a bath", I take a bath before I sleep, I am not taking a bath]
+        audio: naliligo_ako_tapos_nagbibihis_ako
+        audio_text: Naliligo ako, tapos nagbibihis ako.
+      - type: translate
+        prompt_tl: Kumakain ako, tapos nagsisipilyo ako.
+        answer_en: I eat, then I brush my teeth.
+        accept: ["I eat and then I brush my teeth"]
+        extra_words: [before, bath, sleep]
+        audio: kumakain_ako_tapos_nagsisipilyo_ako
+      - type: fill_blank
+        sentence: "___ kumain, nagsisipilyo ako."
+        translation: "After eating, I brush my teeth."
+        answer: Pagkatapos
+        options: [Pagkatapos, Bago, Tapos]
+        audio: pagkatapos_kumain_nagsisipilyo_ako
+        hint: 'After "pagkatapos" and "bago", use the basic verb form: kumain, matulog.'
+      - type: listen
+        audio: bago_matulog_nagbabasa_ako
+        answer_tl: Bago matulog, nagbabasa ako
+        extra_words: [pagkatapos, kumain]
+      - type: choice
+        prompt: "'Bago matulog' means..."
+        answer: Before sleeping
+        distractors: [After sleeping, While sleeping, Not sleeping]
+        audio: bago_matulog
+        audio_text: Bago matulog
+      - type: translate
+        prompt_tl: Pagkatapos mag-aral, naglalakad kami sa parke.
+        answer_en: After studying, we walk in the park.
+        accept: ["We walk in the park after studying"]
+        extra_words: [before, eating, school]
+        audio: pagkatapos_mag_aral_naglalakad_kami_sa_parke
+        hint: '"mag-aral" is the basic form of "nag-aaral".'
+      - type: translate
+        prompt_en: I take a bath, then I eat.
+        answer_tl: Naliligo ako, tapos kumakain ako.
+        accept: ["Naliligo ako, tapos kumakain"]
+        extra_words: [bago, natutulog, siya]
+        audio: naliligo_ako_tapos_kumakain_ako
+  - id: everyday-9
+    title: Leaving and going home
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umaalis, en: leaves }
+          - { tl: umuuwi, en: goes home }
+          - { tl: pumupunta, en: goes }
+          - { tl: naglalakad, en: walks }
+      - type: choice
+        prompt: "'Umuuwi' means..."
+        answer: Going home
+        distractors: [Leaving, Waking up, Walking]
+        audio: umuuwi
+        audio_text: Umuuwi
+      - type: translate
+        prompt_tl: Umaalis si Tatay sa umaga.
+        answer_en: Dad leaves in the morning.
+        accept: ["Dad is leaving in the morning"]
+        extra_words: [night, mom, home]
+        audio: umaalis_si_tatay_sa_umaga
+      - type: fill_blank
+        sentence: "___ kami sa bahay sa hapon."
+        translation: "We go home in the afternoon."
+        answer: Umuuwi
+        options: [Umuuwi, Umaalis, Umiinom]
+        audio: umuuwi_kami_sa_bahay_sa_hapon
+      - type: listen
+        audio: umuuwi_si_nanay_sa_gabi
+        answer_tl: Umuuwi si Nanay sa gabi
+        extra_words: [umaalis, umaga]
+      - type: choice
+        prompt: "You're walking out the door to school. What are you doing?"
+        answer: Umaalis ako.
+        distractors: [Umuuwi ako., Natutulog ako., Naliligo ako.]
+        audio: umaalis_ako
+        audio_text: Umaalis ako.
+      - type: translate
+        prompt_tl: Umuuwi ang mga bata sa hapon.
+        answer_en: The children go home in the afternoon.
+        extra_words: [leave, morning, school]
+        audio: umuuwi_ang_mga_bata_sa_hapon
+      - type: translate
+        prompt_en: I leave early.
+        answer_tl: Umaalis ako nang maaga.
+        extra_words: [umuuwi, sa, gabi]
+        audio: umaalis_ako_nang_maaga
+        grading: { ng_nang: true }
+  - id: everyday-10
+    title: What are you doing?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ano ang ginagawa mo?' means..."
+        answer: What are you doing?
+        distractors: [What did you eat?, Where are you going?, What is your name?]
+        audio: ano_ang_ginagawa_mo
+        audio_text: Ano ang ginagawa mo?
+      - type: translate
+        prompt_tl: Ano ang ginagawa ni Nanay?
+        answer_en: What is Mom doing?
+        extra_words: [dad, eating, where]
+        audio: ano_ang_ginagawa_ni_nanay
+      - type: fill_blank
+        sentence: "Ano ang ___ mo ngayon?"
+        translation: "What are you doing now?"
+        answer: ginagawa
+        options: [ginagawa, pangalan, almusal]
+        audio: ano_ang_ginagawa_mo_ngayon
+      - type: listen
+        audio: nagluluto_ako_ng_hapunan
+        answer_tl: Nagluluto ako ng hapunan
+        extra_words: [almusal, kumakain]
+      - type: choice
+        prompt: "Someone asks 'Ano ang ginagawa mo?' You are reading. Reply:"
+        answer: Nagbabasa ako.
+        distractors: [Natutulog ako., Nagluluto ako., Pumunta ako.]
+        audio: nagbabasa_ako
+        audio_text: Nagbabasa ako.
+      - type: match
+        pairs:
+          - { tl: ginagawa, en: doing }
+          - { tl: nagbabasa, en: reading }
+          - { tl: nagluluto, en: cooking }
+          - { tl: natutulog, en: sleeping }
+      - type: translate
+        prompt_tl: Nag-aaral ang kuya ko, at natutulog ang bunso.
+        answer_en: My older brother is studying, and the youngest is sleeping.
+        accept: ["My big brother is studying, and the youngest is sleeping"]
+        extra_words: [working, sister, eating]
+        audio: nag_aaral_ang_kuya_ko_at_natutulog_ang_bunso
+      - type: translate
+        prompt_en: What are they doing?
+        answer_tl: Ano ang ginagawa nila?
+        extra_words: [mo, sila, saan]
+        audio: ano_ang_ginagawa_nila
+  - id: everyday-11
+    title: A day in my life
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Gumigising ako nang maaga, tapos naliligo ako.
+        answer_en: I wake up early, then I take a bath.
+        extra_words: [late, sleep, before]
+        audio: gumigising_ako_nang_maaga_tapos_naliligo_ako
+      - type: choice
+        prompt: "Which one means 'I eat dinner at night'?"
+        answer: Kumakain ako ng hapunan sa gabi.
+        distractors: [Kumakain ako ng almusal sa gabi., Kumakain ako ng hapunan sa umaga., Nagluluto ako ng tanghalian sa gabi.]
+        audio: kumakain_ako_ng_hapunan_sa_gabi
+        audio_text: Kumakain ako ng hapunan sa gabi.
+      - type: fill_blank
+        sentence: "Bago ___, nagsisipilyo ako."
+        translation: "Before sleeping, I brush my teeth."
+        answer: matulog
+        options: [matulog, natutulog, kumain]
+        audio: bago_matulog_nagsisipilyo_ako
+      - type: listen
+        audio: umuuwi_ako_tapos_nagluluto_ako
+        answer_tl: Umuuwi ako, tapos nagluluto ako
+        extra_words: [umaalis, natutulog]
+      - type: match
+        pairs:
+          - { tl: almusal, en: breakfast }
+          - { tl: maaga, en: early }
+          - { tl: umaalis, en: leaves }
+          - { tl: nagbibihis, en: gets dressed }
+      - type: translate
+        prompt_tl: Tuwing hapon, umuuwi ang mga bata at kumakain sila.
+        answer_en: Every afternoon, the children go home and they eat.
+        accept: ["Every afternoon the children go home and eat", "The children go home and eat every afternoon"]
+        extra_words: [morning, leave, sleep]
+        audio: tuwing_hapon_umuuwi_ang_mga_bata_at_kumakain_sila
+      - type: translate
+        prompt_en: I eat breakfast, then I leave.
+        answer_tl: Kumakain ako ng almusal, tapos umaalis ako.
+        accept: ["Kumakain ako ng almusal, tapos umaalis"]
+        extra_words: [hapunan, umuuwi, bago]
+        audio: kumakain_ako_ng_almusal_tapos_umaalis_ako
+      - type: translate
+        prompt_en: At night, I read a book before sleeping.
+        answer_tl: Sa gabi, nagbabasa ako ng libro bago matulog.
+        accept: ["Nagbabasa ako ng libro bago matulog sa gabi"]
+        extra_words: [pagkatapos, umaga, natutulog]
+        audio: sa_gabi_nagbabasa_ako_ng_libro_bago_matulog
+      - type: translate
+        prompt_en: Mom cooks dinner every night.
+        answer_tl: Nagluluto si Nanay ng hapunan tuwing gabi.
+        accept: ["Tuwing gabi, nagluluto si Nanay ng hapunan", "Nagluluto ng hapunan si Nanay tuwing gabi"]
+        extra_words: [almusal, umaga, ang]
+        audio: nagluluto_si_nanay_ng_hapunan_tuwing_gabi

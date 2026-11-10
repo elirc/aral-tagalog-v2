@@ -1,0 +1,696 @@
+id: object-focus-in
+title: "Kinain Ko: -IN Verbs"
+description: >-
+  Meet object focus: put the spotlight on the thing eaten, bought, or done with
+  -in verbs like kinain, binili, and ginawa — in past, present, and future.
+tip: >-
+  So far the ang-word has been the doer: "Kumain ako ng mangga" (I ate a
+  mango). Tagalog can also spotlight the thing acted on — usually something
+  specific, "the mango". Then the verb changes shape and the markers swap:
+  "Kinain ko ang mangga" (I ate the mango). The object takes ang, and the doer
+  moves to the ng-set: ko, mo, niya, namin, nila, ng bata, ni Ana. For -in
+  verbs, the past puts -in- inside the root (kain → kinain), the present also
+  repeats a syllable (kinakain), and the future repeats the syllable and adds
+  -in at the end (kakainin). The base form (kainin, bilhin, gawin) follows
+  gusto: "Gusto kong kainin ang mangga." Favorite question: "Ano ang ginawa mo?"
+lessons:
+  - id: ofin-1
+    title: Kumain or kinain?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Warm-up: 'Kumain ako ng mangga' means..."
+        answer: I ate a mango.
+        distractors: [I am eating a mango., I will eat a mango., I bought a mango.]
+        audio: kumain_ako_ng_mangga
+        audio_text: Kumain ako ng mangga.
+      - type: choice
+        prompt: "'Kinain ko ang mangga' means..."
+        answer: I ate the mango.
+        distractors: [I am eating the mango., You ate the mango., I bought the mango.]
+        audio: kinain_ko_ang_mangga
+        audio_text: Kinain ko ang mangga.
+      - type: match
+        pairs:
+          - { tl: kumain ako, en: I ate }
+          - { tl: kinain ko, en: I ate it }
+          - { tl: ng mangga, en: a mango }
+          - { tl: ang mangga, en: the mango }
+      - type: translate
+        prompt_tl: Kinain ko ang saging.
+        answer_en: I ate the banana.
+        extra_words: [a, mango, bought]
+        audio: kinain_ko_ang_saging
+      - type: listen
+        audio: kinain_ko_ang_mangga
+        answer_tl: Kinain ko ang mangga
+        extra_words: [ako, ng]
+      - type: choice
+        prompt: "In 'Kinain ko ang isda', which word is the ang-marked topic?"
+        answer: isda — the thing eaten
+        distractors: [ko — the eater, kinain — the action]
+        hint: 'In object focus, "ang" marks the thing acted on, not the doer.'
+      - type: translate
+        prompt_tl: Kinain mo ang tinapay ko.
+        answer_en: You ate my bread.
+        extra_words: [I, your, rice]
+        audio: kinain_mo_ang_tinapay_ko
+      - type: fill_blank
+        sentence: "Kinain ___ ang mangga."
+        translation: "I ate the mango."
+        answer: ko
+        options: [ko, ako, akin]
+        hint: 'With an object-focus verb like "kinain", the doer uses the ng-set: ko, not ako.'
+      - type: translate
+        prompt_en: I ate the fish.
+        answer_tl: Kinain ko ang isda.
+        extra_words: [ako, kumain, mangga]
+        audio: kinain_ko_ang_isda
+        hint: '"The fish" is specific, so it takes ang — and the verb becomes kinain with ko.'
+  - id: ofin-2
+    title: Who did it? Ko, mo, niya
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Binili ko ang libro' means..."
+        answer: I bought the book.
+        distractors: [I read the book., I am buying the book., You bought the book.]
+        audio: binili_ko_ang_libro
+        audio_text: Binili ko ang libro.
+      - type: match
+        pairs:
+          - { tl: kinain ko, en: I ate it }
+          - { tl: kinain mo, en: you ate it }
+          - { tl: kinain niya, en: he or she ate it }
+          - { tl: kinain namin, en: we ate it }
+          - { tl: kinain nila, en: they ate it }
+      - type: translate
+        prompt_tl: Binili niya ang sapatos.
+        answer_en: She bought the shoes.
+        accept: ["He bought the shoes"]
+        extra_words: [ate, a, dress]
+        audio: binili_niya_ang_sapatos
+      - type: translate
+        prompt_tl: Kinain ng bata ang keyk.
+        answer_en: The child ate the cake.
+        accept: ["The kid ate the cake"]
+        extra_words: [bought, dog, bread]
+        audio: kinain_ng_bata_ang_keyk
+      - type: listen
+        audio: binili_ko_ang_libro
+        answer_tl: Binili ko ang libro
+        extra_words: [ako, kinain]
+      - type: choice
+        prompt: "Which says 'Ana ate the mango'?"
+        answer: Kinain ni Ana ang mangga.
+        distractors:
+          - Kinain si Ana ang mangga.
+          - Kinain ni Ana ng mangga.
+          - Kumain ni Ana ang mangga.
+        audio: kinain_ni_ana_ang_mangga
+        audio_text: Kinain ni Ana ang mangga.
+        hint: 'A named doer takes "ni" in object focus; the thing eaten takes "ang".'
+      - type: translate
+        prompt_en: You bought the bread.
+        answer_tl: Binili mo ang tinapay.
+        accept: ["Binili ninyo ang tinapay", "Binili niyo ang tinapay"]
+        extra_words: [ka, ikaw, kinain]
+        audio: binili_mo_ang_tinapay
+      - type: fill_blank
+        sentence: "Kinain ___ aso ang isda."
+        translation: "The dog ate the fish."
+        answer: ng
+        options: [ng, ang, sa]
+        hint: 'In object focus the doer is marked "ng"; "ang" is saved for the thing acted on.'
+      - type: translate
+        prompt_en: Mom bought the fish.
+        answer_tl: Binili ni Nanay ang isda.
+        accept: ["Binili ng nanay ang isda", "Binili ng nanay ko ang isda"]
+        extra_words: [si, kay, kinain]
+        audio: binili_ni_nanay_ang_isda
+  - id: ofin-3
+    title: Ano ang ginawa mo?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ano ang ginawa mo?' means..."
+        answer: What did you do?
+        distractors: [What are you doing?, What will you do?, What did you eat?]
+        audio: ano_ang_ginawa_mo
+        audio_text: Ano ang ginawa mo?
+      - type: match
+        pairs:
+          - { tl: ginawa, en: did }
+          - { tl: kinuha, en: took }
+          - { tl: kinain, en: ate }
+          - { tl: binili, en: bought }
+      - type: translate
+        prompt_tl: Ginawa ko ang assignment ko.
+        answer_en: I did my assignment.
+        accept: ["I did my homework"]
+        extra_words: [took, your, book]
+        audio: ginawa_ko_ang_assignment_ko
+      - type: listen
+        audio: ano_ang_ginawa_mo_kahapon
+        answer_tl: Ano ang ginawa mo kahapon
+        extra_words: [kinuha, bukas]
+      - type: translate
+        prompt_tl: Kinuha niya ang payong ko.
+        answer_en: He took my umbrella.
+        accept: ["She took my umbrella", "He got my umbrella", "She got my umbrella"]
+        extra_words: [bought, your, money]
+        audio: kinuha_niya_ang_payong_ko
+      - type: choice
+        prompt: "Which asks 'What did Ana do?'"
+        answer: Ano ang ginawa ni Ana?
+        distractors:
+          - Ano ang ginawa si Ana?
+          - Ano ang gumawa ni Ana?
+          - Sino ang ginawa ni Ana?
+        audio: ano_ang_ginawa_ni_ana
+        audio_text: Ano ang ginawa ni Ana?
+      - type: translate
+        prompt_en: What did you do yesterday?
+        answer_tl: Ano ang ginawa mo kahapon?
+        accept:
+          - "Anong ginawa mo kahapon?"
+          - "Ano ang ginawa ninyo kahapon?"
+          - "Ano ang ginawa niyo kahapon?"
+        extra_words: [ka, gumawa, bukas]
+        audio: ano_ang_ginawa_mo_kahapon
+        hint: 'The doer of "ginawa" is the ng-form "mo", never "ka".'
+      - type: fill_blank
+        sentence: "___ ko ang payong sa kotse."
+        translation: "I got the umbrella from the car."
+        answer: Kinuha
+        options: [Kinuha, Kumuha, Kumain]
+        hint: 'The doer is "ko", so the verb must be object focus: kinuha, not kumuha.'
+      - type: translate
+        prompt_en: I did the assignment.
+        answer_tl: Ginawa ko ang assignment.
+        extra_words: [ako, gumawa, kinuha]
+        audio: ginawa_ko_ang_assignment
+  - id: ofin-4
+    title: Ininom and binasa
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ininom, en: drank }
+          - { tl: binasa, en: read }
+          - { tl: diyaryo, en: newspaper }
+          - { tl: sulat, en: letter }
+      - type: choice
+        prompt: "'Binasa ko ang sulat mo' means..."
+        answer: I read your letter.
+        distractors: [I took your letter., I am reading your letter., You read my letter.]
+        audio: binasa_ko_ang_sulat_mo
+        audio_text: Binasa ko ang sulat mo.
+      - type: translate
+        prompt_tl: Ininom ko ang gamot.
+        answer_en: I took the medicine.
+        accept: ["I drank the medicine"]
+        extra_words: [bought, a, milk]
+        audio: ininom_ko_ang_gamot
+      - type: listen
+        audio: binasa_ni_tatay_ang_diyaryo
+        answer_tl: Binasa ni Tatay ang diyaryo
+        extra_words: [si, sulat]
+      - type: translate
+        prompt_tl: Ininom ng pusa ang gatas.
+        answer_en: The cat drank the milk.
+        extra_words: [dog, ate, water]
+        audio: ininom_ng_pusa_ang_gatas
+      - type: translate
+        prompt_en: I read the letter yesterday.
+        answer_tl: Binasa ko ang sulat kahapon.
+        accept: ["Binasa ko kahapon ang sulat", "Kahapon, binasa ko ang sulat"]
+        extra_words: [ako, diyaryo, ininom]
+        audio: binasa_ko_ang_sulat_kahapon
+        hint: 'The reader is the ng-form "ko"; the specific thing read takes "ang".'
+      - type: fill_blank
+        sentence: "___ niya ang kape ko."
+        translation: "She drank my coffee."
+        answer: Ininom
+        options: [Ininom, Uminom, Kinain]
+        hint: 'Roots that start with a vowel put in- at the very front: inom → ininom.'
+      - type: translate
+        prompt_en: Dad drank the coffee.
+        answer_tl: Ininom ni Tatay ang kape.
+        accept: ["Ininom ng tatay ang kape", "Ininom ng tatay ko ang kape"]
+        extra_words: [si, uminom, binasa]
+        audio: ininom_ni_tatay_ang_kape
+  - id: ofin-5
+    title: "Happening now: kinakain, ginagawa"
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ano ang ginagawa mo?' means..."
+        answer: What are you doing?
+        distractors: [What did you do?, What will you do?, What are you eating?]
+        audio: ano_ang_ginagawa_mo
+        audio_text: Ano ang ginagawa mo?
+      - type: match
+        pairs:
+          - { tl: kinakain, en: is eating }
+          - { tl: binibili, en: is buying }
+          - { tl: iniinom, en: is drinking }
+          - { tl: binabasa, en: is reading }
+          - { tl: ginagawa, en: is doing }
+      - type: choice
+        prompt: "Kinain → kinakain. Following the same pattern, kinuha → ?"
+        answer: kinukuha
+        distractors: [kumukuha, kukunin, kinuhakuha]
+        hint: 'Present = the past form with the first syllable of the root repeated: k-in-u-kuha.'
+      - type: translate
+        prompt_tl: Binibili ni Ate ang gulay sa palengke.
+        answer_en: My older sister is buying the vegetables at the market.
+        accept:
+          - "Ate is buying the vegetables at the market"
+          - "My big sister is buying the vegetables at the market"
+          - "My sister is buying the vegetables at the market"
+          - "My older sister is buying the vegetables in the market"
+        extra_words: [brother, cooking, store]
+        audio: binibili_ni_ate_ang_gulay_sa_palengke
+      - type: listen
+        audio: ano_ang_ginagawa_mo_ngayon
+        answer_tl: Ano ang ginagawa mo ngayon
+        extra_words: [ginawa, kahapon]
+      - type: translate
+        prompt_en: I am doing my assignment.
+        answer_tl: Ginagawa ko ang assignment ko.
+        extra_words: [ako, ginawa, gumagawa]
+        audio: ginagawa_ko_ang_assignment_ko
+        hint: 'For something in progress, repeat the first syllable of the root: ginawa → ginagawa.'
+      - type: fill_blank
+        sentence: "___ ng bata ang gatas niya."
+        translation: "The child is drinking her milk."
+        answer: Iniinom
+        options: [Iniinom, Ininom, Umiinom]
+        hint: '"ng bata" is the doer, so the verb is object focus; "is drinking" = iniinom.'
+      - type: fill_blank
+        sentence: "Kinakain ___ aso ang sapatos ko!"
+        translation: "The dog is eating my shoe!"
+        answer: ng
+        options: [ng, ang, si]
+      - type: translate
+        prompt_en: What are you eating?
+        answer_tl: Ano ang kinakain mo?
+        accept:
+          - "Anong kinakain mo?"
+          - "Ano ang kinakain ninyo?"
+          - "Ano ang kinakain niyo?"
+        extra_words: [ka, kinain, kumakain]
+        audio: ano_ang_kinakain_mo
+  - id: ofin-6
+    title: Niluto and hinanap
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Niluto ni Nanay ang adobo' means..."
+        answer: Mom cooked the adobo.
+        distractors: [Mom is cooking the adobo., Mom ate the adobo., Mom will cook the adobo.]
+        audio: niluto_ni_nanay_ang_adobo
+        audio_text: Niluto ni Nanay ang adobo.
+      - type: match
+        pairs:
+          - { tl: niluto, en: cooked }
+          - { tl: niluluto, en: is cooking }
+          - { tl: hinanap, en: looked for }
+          - { tl: hinahanap, en: is looking for }
+          - { tl: susi, en: key }
+      - type: translate
+        prompt_tl: Hinahanap ko ang pitaka ko.
+        answer_en: I am looking for my wallet.
+        accept: ["I'm looking for my wallet"]
+        extra_words: [key, your, cooking]
+        audio: hinahanap_ko_ang_pitaka_ko
+        hint: '"pitaka" = wallet.'
+      - type: listen
+        audio: hinahanap_ko_ang_susi_ko
+        answer_tl: Hinahanap ko ang susi ko
+        extra_words: [hinanap, pitaka]
+      - type: translate
+        prompt_tl: Niluluto ni Lola ang sinigang.
+        answer_en: Grandma is cooking the sinigang.
+        accept:
+          - "Grandmother is cooking the sinigang"
+          - "My grandma is cooking the sinigang"
+          - "My grandmother is cooking the sinigang"
+          - "Lola is cooking the sinigang"
+        extra_words: [cooked, Grandpa, eating]
+        audio: niluluto_ni_lola_ang_sinigang
+      - type: choice
+        prompt: "Why is it 'niluto' and not 'linuto'?"
+        answer: Roots starting with L take ni- at the front
+        distractors: [It is the future form, It is actor focus, It is a command]
+      - type: translate
+        prompt_en: I looked for the key.
+        answer_tl: Hinanap ko ang susi.
+        extra_words: [ako, naghanap, pitaka]
+        audio: hinanap_ko_ang_susi
+      - type: fill_blank
+        sentence: "___ ko ang isda kagabi."
+        translation: "I cooked the fish last night."
+        answer: Niluto
+        options: [Niluto, Nagluto, Niluluto]
+        hint: '"ko" needs an object-focus verb, and "kagabi" calls for the completed form: niluto.'
+      - type: translate
+        prompt_en: What are you looking for?
+        answer_tl: Ano ang hinahanap mo?
+        accept:
+          - "Anong hinahanap mo?"
+          - "Ano ang hinahanap ninyo?"
+          - "Ano ang hinahanap niyo?"
+        extra_words: [ka, hinanap, susi]
+        audio: ano_ang_hinahanap_mo
+  - id: ofin-7
+    title: Sinabi and tinawag
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ano ang sinabi niya?' means..."
+        answer: What did she say?
+        distractors: [What did she do?, Who did she call?, What is she saying?]
+        audio: ano_ang_sinabi_niya
+        audio_text: Ano ang sinabi niya?
+      - type: match
+        pairs:
+          - { tl: sinabi, en: said }
+          - { tl: sinasabi, en: is saying }
+          - { tl: tinawag, en: called }
+          - { tl: tinatawag, en: is calling }
+          - { tl: ang totoo, en: the truth }
+      - type: choice
+        prompt: "'Tinawag ako ni Nanay' means..."
+        answer: Mom called me.
+        distractors: [I called Mom., Mom is calling me., Mom looked for me.]
+        audio: tinawag_ako_ni_nanay
+        audio_text: Tinawag ako ni Nanay.
+        hint: '"ako" is the ang-form, so I am the one who was called; "ni Nanay" is the caller.'
+      - type: translate
+        prompt_tl: Sinabi ko ang totoo.
+        answer_en: I told the truth.
+        accept: ["I said the truth"]
+        extra_words: [called, you, name]
+        audio: sinabi_ko_ang_totoo
+      - type: listen
+        audio: tinatawag_ka_ni_lola
+        answer_tl: Tinatawag ka ni Lola
+        extra_words: [mo, tinawag]
+      - type: translate
+        prompt_en: I called the doctor.
+        answer_tl: Tinawag ko ang doktor.
+        extra_words: [ako, tumawag, sinabi]
+        audio: tinawag_ko_ang_doktor
+      - type: fill_blank
+        sentence: "Sinabi ___ ang pangalan niya."
+        translation: "He said his name."
+        answer: niya
+        options: [niya, siya, kanya]
+        hint: 'The one who said it is the doer, so use the ng-form: niya, not siya.'
+      - type: translate
+        prompt_en: What did you say?
+        answer_tl: Ano ang sinabi mo?
+        accept:
+          - "Anong sinabi mo?"
+          - "Ano ang sinabi ninyo?"
+          - "Ano ang sinabi niyo?"
+        extra_words: [ka, tinawag, nagsabi]
+        audio: ano_ang_sinabi_mo
+  - id: ofin-8
+    title: "Later: kakainin, bibilhin"
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ano ang gagawin mo bukas?' means..."
+        answer: What will you do tomorrow?
+        distractors:
+          - What did you do yesterday?
+          - What are you doing now?
+          - Where will you go tomorrow?
+        audio: ano_ang_gagawin_mo_bukas
+        audio_text: Ano ang gagawin mo bukas?
+      - type: match
+        pairs:
+          - { tl: kakainin, en: will eat }
+          - { tl: bibilhin, en: will buy }
+          - { tl: gagawin, en: will do }
+          - { tl: kukunin, en: will take }
+          - { tl: iinumin, en: will drink }
+      - type: translate
+        prompt_tl: Bibilhin ko ang sapatos bukas.
+        answer_en: I will buy the shoes tomorrow.
+        accept:
+          - "I'll buy the shoes tomorrow"
+          - "I am going to buy the shoes tomorrow"
+          - "I'm going to buy the shoes tomorrow"
+        extra_words: [bought, yesterday, dress]
+        audio: bibilhin_ko_ang_sapatos_bukas
+      - type: translate
+        prompt_tl: Kukunin ni Kuya ang susi mamaya.
+        answer_en: My older brother will get the key later.
+        accept:
+          - "My older brother will take the key later"
+          - "Kuya will get the key later"
+          - "Kuya will take the key later"
+          - "My big brother will get the key later"
+          - "My brother will get the key later"
+        extra_words: [sister, took, wallet]
+        audio: kukunin_ni_kuya_ang_susi_mamaya
+      - type: listen
+        audio: iinumin_ko_ang_gamot_mamaya
+        answer_tl: Iinumin ko ang gamot mamaya
+        extra_words: [ininom, kanina]
+      - type: choice
+        prompt: "The base form is 'kainin' (Gusto kong kainin ito). The future repeats its first syllable. Which means 'will eat it'?"
+        answer: kakainin
+        distractors: [kinakain, kinain, kakain]
+      - type: translate
+        prompt_en: I will eat the mango later.
+        answer_tl: Kakainin ko ang mangga mamaya.
+        accept:
+          - "Kakainin ko mamaya ang mangga"
+          - "Mamaya, kakainin ko ang mangga"
+          - "Mamaya ko kakainin ang mangga"
+        extra_words: [ako, kinain, kakain]
+        audio: kakainin_ko_ang_mangga_mamaya
+        hint: 'Future = repeat the first syllable and end in -in, with no -in- inside: ka-kain-in.'
+      - type: fill_blank
+        sentence: "___ mo ba ang keyk?"
+        translation: "Will you buy the cake?"
+        answer: Bibilhin
+        options: [Bibilhin, Binili, Bibili]
+        hint: 'bili + -in shortens to bilhin, so the future is bibilhin.'
+      - type: translate
+        prompt_en: What will you do tomorrow?
+        answer_tl: Ano ang gagawin mo bukas?
+        accept:
+          - "Anong gagawin mo bukas?"
+          - "Ano ang gagawin ninyo bukas?"
+          - "Ano ang gagawin niyo bukas?"
+        extra_words: [ka, ginawa, kahapon]
+        audio: ano_ang_gagawin_mo_bukas
+  - id: ofin-9
+    title: "More plans: babasahin, lulutuin"
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: babasahin, en: will read }
+          - { tl: lulutuin, en: will cook }
+          - { tl: sasabihin, en: will say }
+          - { tl: hahanapin, en: will look for }
+          - { tl: tatawagin, en: will call }
+      - type: choice
+        prompt: "'Lulutuin ko ang isda mamaya' means..."
+        answer: I will cook the fish later.
+        distractors:
+          - I cooked the fish earlier.
+          - I am cooking the fish now.
+          - I will eat the fish later.
+        audio: lulutuin_ko_ang_isda_mamaya
+        audio_text: Lulutuin ko ang isda mamaya.
+      - type: choice
+        prompt: "'Gusto kong basahin ang sulat mo' means..."
+        answer: I want to read your letter.
+        distractors:
+          - I read your letter.
+          - I will read your letter.
+          - I want to take your letter.
+        audio: gusto_kong_basahin_ang_sulat_mo
+        audio_text: Gusto kong basahin ang sulat mo.
+        hint: 'After "gusto" use the base form: basahin, kainin, bilhin.'
+      - type: translate
+        prompt_tl: Babasahin ko ang diyaryo mamaya.
+        answer_en: I will read the newspaper later.
+        accept:
+          - "I'll read the newspaper later"
+          - "I am going to read the newspaper later"
+          - "I'm going to read the newspaper later"
+        extra_words: [letter, read, yesterday]
+        audio: babasahin_ko_ang_diyaryo_mamaya
+      - type: listen
+        audio: hahanapin_ko_ang_pitaka_ko
+        answer_tl: Hahanapin ko ang pitaka ko
+        extra_words: [hinanap, susi]
+      - type: translate
+        prompt_en: I will call the doctor.
+        answer_tl: Tatawagin ko ang doktor.
+        extra_words: [ako, tinawag, tatawag]
+        audio: tatawagin_ko_ang_doktor
+      - type: fill_blank
+        sentence: "___ ni Nanay ang sinigang bukas."
+        translation: "Mom will cook the sinigang tomorrow."
+        answer: Lulutuin
+        options: [Lulutuin, Niluto, Magluluto]
+        hint: '"ni Nanay" is a ng-form doer, so the verb is object focus; "bukas" makes it future.'
+      - type: translate
+        prompt_en: I will read your letter tomorrow.
+        answer_tl: Babasahin ko ang sulat mo bukas.
+        accept:
+          - "Babasahin ko bukas ang sulat mo"
+          - "Bukas, babasahin ko ang sulat mo"
+          - "Bukas ko babasahin ang sulat mo"
+        extra_words: [ako, binasa, diyaryo]
+        audio: babasahin_ko_ang_sulat_mo_bukas
+  - id: ofin-10
+    title: Actor or object focus?
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "'Sino ang kumain ng keyk?' asks about..."
+        answer: The one who ate
+        distractors: [The thing that was eaten, The place, The time]
+        audio: sino_ang_kumain_ng_keyk
+        audio_text: Sino ang kumain ng keyk?
+      - type: choice
+        prompt: "You mean one specific pair: 'I bought the shoes.' Which is correct?"
+        answer: Binili ko ang sapatos.
+        distractors:
+          - Bumili ako ang sapatos.
+          - Binili ako ng sapatos.
+          - Bumili ko ng sapatos.
+        audio: binili_ko_ang_sapatos
+        audio_text: Binili ko ang sapatos.
+        hint: 'Bumili goes with ako + ng; binili goes with ko + ang.'
+      - type: translate
+        prompt_tl: Bumili ako ng libro, tapos binasa ko ito.
+        answer_en: I bought a book, then I read it.
+        accept:
+          - "I bought a book, and then I read it"
+          - "I bought a book and then I read it"
+          - "I bought a book then read it"
+          - "I bought a book, then read it"
+        extra_words: [the, ate, letter]
+        audio: bumili_ako_ng_libro_tapos_binasa_ko_ito
+      - type: listen
+        audio: sino_ang_kumain_ng_keyk_ko
+        answer_tl: Sino ang kumain ng keyk ko
+        extra_words: [kinain, ano]
+      - type: translate
+        prompt_tl: Hindi ko kinuha ang pitaka mo.
+        answer_en: I didn't take your wallet.
+        accept: ["I did not take your wallet", "I didn't get your wallet"]
+        extra_words: [key, my, buy]
+        audio: hindi_ko_kinuha_ang_pitaka_mo
+      - type: translate
+        prompt_en: Who took my key?
+        answer_tl: Sino ang kumuha ng susi ko?
+        accept: ["Sinong kumuha ng susi ko?"]
+        extra_words: [kinuha, mo, pitaka]
+        audio: sino_ang_kumuha_ng_susi_ko
+        hint: 'Asking about the doer? Then the doer is the topic, so use actor focus: kumuha.'
+      - type: fill_blank
+        sentence: "Kumain ___ ng mangga kanina."
+        translation: "I ate a mango earlier."
+        answer: ako
+        options: [ako, ko, akin]
+        hint: 'Actor-focus "kumain" takes the ang-form doer: ako.'
+      - type: fill_blank
+        sentence: "Gusto kong ___ ang sapatos na ito."
+        translation: "I want to buy these shoes."
+        answer: bilhin
+        options: [bilhin, bumili, binili]
+        hint: 'The shoes are marked "ang", so use the object-focus base form: bilhin.'
+      - type: translate
+        prompt_en: Did you read my letter?
+        answer_tl: Binasa mo ba ang sulat ko?
+        accept:
+          - "Binasa mo na ba ang sulat ko?"
+          - "Binasa ba ninyo ang sulat ko?"
+          - "Binasa ba niyo ang sulat ko?"
+          - "Binasa niyo ba ang sulat ko?"
+        extra_words: [ka, bumasa, diyaryo]
+        audio: binasa_mo_ba_ang_sulat_ko
+        hint: 'Short pronouns come first: "mo" goes right after the verb, then "ba".'
+  - id: ofin-11
+    title: Isang araw sa bahay
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Ano ang ginawa mo?, en: What did you do? }
+          - { tl: Ano ang ginagawa mo?, en: What are you doing? }
+          - { tl: Ano ang gagawin mo?, en: What will you do? }
+          - { tl: Ano ang sinabi mo?, en: What did you say? }
+          - { tl: Ano ang hinahanap mo?, en: What are you looking for? }
+      - type: choice
+        prompt: "'Binili ni Tatay ang isda, tapos niluto ito ni Nanay' means..."
+        answer: Dad bought the fish, then Mom cooked it.
+        distractors:
+          - Mom bought the fish, then Dad cooked it.
+          - Dad is buying the fish and Mom is cooking it.
+          - Dad cooked the fish, then Mom ate it.
+        audio: binili_ni_tatay_ang_isda_tapos_niluto_ito_ni_nanay
+        audio_text: Binili ni Tatay ang isda, tapos niluto ito ni Nanay.
+      - type: choice
+        prompt: "Lola asks: 'Ininom mo na ba ang gamot mo?' Not yet — but you will. You say..."
+        answer: Iinumin ko po mamaya.
+        distractors:
+          - Ininom ko po mamaya.
+          - Iinom ko po mamaya.
+          - Iniinom po ako mamaya.
+        audio: iinumin_ko_po_mamaya
+        audio_text: Iinumin ko po mamaya.
+      - type: translate
+        prompt_tl: Hinanap ko ang pitaka ko, pero kinuha ito ni Kuya.
+        answer_en: I looked for my wallet, but my older brother took it.
+        accept:
+          - "I looked for my wallet, but Kuya took it"
+          - "I looked for my wallet, but my big brother took it"
+          - "I looked for my wallet, but my brother took it"
+          - "I looked for my wallet but my older brother took it"
+        extra_words: [key, sister, bought]
+        audio: hinanap_ko_ang_pitaka_ko_pero_kinuha_ito_ni_kuya
+      - type: listen
+        audio: tinawag_ko_si_ate_at_sinabi_ko_ang_totoo
+        answer_tl: Tinawag ko si Ate at sinabi ko ang totoo
+        extra_words: [ni, ako]
+      - type: translate
+        prompt_en: Grandma is reading the newspaper.
+        answer_tl: Binabasa ni Lola ang diyaryo.
+        accept: ["Binabasa ng lola ang diyaryo", "Binabasa ng lola ko ang diyaryo"]
+        extra_words: [si, binasa, sulat]
+        audio: binabasa_ni_lola_ang_diyaryo
+      - type: translate
+        prompt_en: What will you cook later?
+        answer_tl: Ano ang lulutuin mo mamaya?
+        accept:
+          - "Anong lulutuin mo mamaya?"
+          - "Ano ang lulutuin ninyo mamaya?"
+          - "Ano ang lulutuin niyo mamaya?"
+        extra_words: [ka, niluto, magluluto]
+        audio: ano_ang_lulutuin_mo_mamaya
+      - type: fill_blank
+        sentence: "Kinukuha ___ Ana ang payong niya."
+        translation: "Ana is getting her umbrella."
+        answer: ni
+        options: [ni, si, kay]
+        hint: 'A named doer in object focus takes "ni", not "si".'
+      - type: translate
+        prompt_en: I did my assignment, then I ate the cake.
+        answer_tl: Ginawa ko ang assignment ko, tapos kinain ko ang keyk.
+        accept: ["Ginawa ko ang assignment ko tapos kinain ko ang keyk"]
+        extra_words: [ako, kumain, gumawa]
+        audio: ginawa_ko_ang_assignment_ko_tapos_kinain_ko_ang_keyk

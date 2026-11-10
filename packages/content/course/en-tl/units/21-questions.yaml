@@ -227,3 +227,350 @@ lessons:
         accept: ["Masaya ako dahil kaarawan ko"]
         extra_words: [bakit, malungkot, regalo]
         audio: masaya_ako_kasi_kaarawan_ko
+  - id: questions-5
+    title: Yes or no — asking with ba
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Where does 'ba' go in a yes/no question?"
+        answer: Right after the first word
+        distractors: [At the very end, At the very beginning, Anywhere you like]
+      - type: choice
+        prompt: "'Masarap ba?' means..."
+        answer: Is it delicious?
+        distractors: [It is delicious., Is it cheap?, Was it ready?]
+        audio: masarap_ba
+        audio_text: Masarap ba?
+      - type: translate
+        prompt_tl: Malapit ba ang palengke?
+        answer_en: Is the market near?
+        accept: ["Is the market nearby?", "Is the market close?"]
+        extra_words: [far, where, store]
+        audio: malapit_ba_ang_palengke
+      - type: fill_blank
+        sentence: "Mahal ___ ang isda?"
+        translation: "Is the fish expensive?"
+        answer: ba
+        options: [ba, na, pa]
+      - type: translate
+        prompt_en: Are you tired?
+        answer_tl: Pagod ka ba?
+        accept: ["Pagod po ba kayo?"]
+        extra_words: [ako, siya, masaya]
+        audio: pagod_ka_ba
+        hint: 'The one-syllable "ka" squeezes in before "ba": Pagod ka ba?'
+      - type: listen
+        audio: estudyante_ka_ba
+        answer_tl: Estudyante ka ba
+        extra_words: [guro, ako]
+      - type: choice
+        prompt: "Turn 'Guro siya.' (She is a teacher.) into a question:"
+        answer: Guro ba siya?
+        distractors: [Guro siya ba?, Ba guro siya?, Siya guro ba?]
+        audio: guro_ba_siya
+        audio_text: Guro ba siya?
+      - type: translate
+        prompt_en: Is the coffee delicious?
+        answer_tl: Masarap ba ang kape?
+        accept: ["Masarap po ba ang kape?"]
+        extra_words: [mahal, tubig, mura]
+        audio: masarap_ba_ang_kape
+  - id: questions-6
+    title: Alin — which one
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Alin' means..."
+        answer: Which
+        distractors: [What, Who, How]
+        audio: alin
+        audio_text: Alin
+      - type: match
+        pairs:
+          - { tl: alin, en: which }
+          - { tl: ano, en: what }
+          - { tl: sino, en: who }
+          - { tl: ito, en: this }
+      - type: translate
+        prompt_tl: Alin ang gusto mo?
+        answer_en: Which one do you like?
+        accept: ["Which do you like?", "Which one do you want?", "Which do you want?"]
+        extra_words: [who, what, this]
+        audio: alin_ang_gusto_mo
+      - type: fill_blank
+        sentence: "___ ang bahay mo?"
+        translation: "Which one is your house?"
+        answer: Alin
+        options: [Alin, Ano, Sino]
+        hint: 'Use "alin" when choosing among things you can point at.'
+      - type: translate
+        prompt_en: Which one is cheap?
+        answer_tl: Alin ang mura?
+        accept: ["Alin po ang mura?"]
+        extra_words: [mahal, ano, ito]
+        audio: alin_ang_mura
+      - type: listen
+        audio: alin_ang_paborito_mo
+        answer_tl: Alin ang paborito mo
+        extra_words: [ano, gusto]
+      - type: choice
+        prompt: "Two jeepneys are waiting. Ask which one goes to the market:"
+        answer: Alin ang pupunta sa palengke?
+        distractors: [Saan ang palengke?, Nasaan ang jeepney?, Ano ang palengke?]
+        audio: alin_ang_pupunta_sa_palengke
+        audio_text: Alin ang pupunta sa palengke?
+      - type: translate
+        prompt_en: Which one is your favorite?
+        answer_tl: Alin ang paborito mo?
+        accept: ["Alin po ang paborito ninyo?"]
+        extra_words: [ano, kulay, gusto]
+        audio: alin_ang_paborito_mo
+  - id: questions-7
+    title: Where it is — answering with nasa
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which question needs 'nasaan'?"
+        answer: Where is the hospital?
+        distractors: [Where are you going?, Where do you work?, Where did you eat?]
+      - type: fill_blank
+        sentence: "___ ka kumain kahapon?"
+        translation: "Where did you eat yesterday?"
+        answer: Saan
+        options: [Saan, Nasaan, Ilan]
+        hint: '"Saan" pairs with an action word like "kumain".'
+      - type: translate
+        prompt_tl: Nasaan ang bolpen ko?
+        answer_en: Where is my pen?
+        accept: ["Where's my pen?"]
+        extra_words: [book, your, bag]
+        audio: nasaan_ang_bolpen_ko
+      - type: choice
+        prompt: "Your friend asks 'Nasaan ka?' You're at home. Say..."
+        answer: Nasa bahay ako.
+        distractors: [Pupunta ako sa bahay., Bahay ako., Saan ang bahay?]
+        audio: nasa_bahay_ako
+        audio_text: Nasa bahay ako.
+        hint: 'Answer "nasaan" with "nasa" + place.'
+      - type: listen
+        audio: nasa_kusina_si_nanay
+        answer_tl: Nasa kusina si Nanay
+        extra_words: [banyo, tatay]
+      - type: translate
+        prompt_tl: Saan ka bumili ng regalo?
+        answer_en: Where did you buy a gift?
+        accept: ["Where did you buy the gift?"]
+        extra_words: [when, flowers, sell]
+        audio: saan_ka_bumili_ng_regalo
+      - type: translate
+        prompt_en: Where is the church?
+        answer_tl: Nasaan ang simbahan?
+        accept: ["Nasaan po ang simbahan?"]
+        extra_words: [saan, paaralan, malayo]
+        audio: nasaan_ang_simbahan
+      - type: translate
+        prompt_en: Where is my change?
+        answer_tl: Nasaan ang sukli ko?
+        accept: ["Nasaan po ang sukli ko?"]
+        extra_words: [pera, saan, magkano]
+        audio: nasaan_ang_sukli_ko
+  - id: questions-8
+    title: Kailan — pinning down the time
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kailan, en: when }
+          - { tl: bukas, en: tomorrow }
+          - { tl: kahapon, en: yesterday }
+          - { tl: ngayon, en: now }
+      - type: choice
+        prompt: "'Kailan ka pupunta?' asks about..."
+        answer: Time — when you will go
+        distractors: [Place — where you will go, Reason — why you will go, Manner — how you will go]
+        audio: kailan_ka_pupunta
+        audio_text: Kailan ka pupunta?
+      - type: translate
+        prompt_tl: Kailan ang klase mo?
+        answer_en: When is your class?
+        accept: ["When's your class?"]
+        extra_words: [where, test, who]
+        audio: kailan_ang_klase_mo
+      - type: fill_blank
+        sentence: "___ ka pupunta sa simbahan? — Bukas."
+        translation: "When are you going to church? — Tomorrow."
+        answer: Kailan
+        options: [Kailan, Magkano, Sino]
+      - type: translate
+        prompt_en: When did they eat?
+        answer_tl: Kailan sila kumain?
+        extra_words: [tayo, bukas, saan]
+        audio: kailan_sila_kumain
+      - type: listen
+        audio: kailan_ka_pupunta_sa_palengke
+        answer_tl: Kailan ka pupunta sa palengke
+        extra_words: [saan, tindahan]
+      - type: choice
+        prompt: "Someone asks 'Kailan ang kaarawan mo?' A good answer is..."
+        answer: Bukas!
+        distractors: [Sa palengke!, Si Maria!, Masarap!]
+        audio: kailan_ang_kaarawan_mo
+        audio_text: Kailan ang kaarawan mo?
+      - type: translate
+        prompt_en: When did you go to the market?
+        answer_tl: Kailan ka pumunta sa palengke?
+        accept: ["Kailan po kayo pumunta sa palengke?"]
+        extra_words: [saan, kahapon, tindahan]
+        audio: kailan_ka_pumunta_sa_palengke
+  - id: questions-9
+    title: Bakit — asking and answering why
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Bakit ka pagod?' means..."
+        answer: Why are you tired?
+        distractors: [Are you tired?, Why are you sad?, When did you sleep?]
+        audio: bakit_ka_pagod
+        audio_text: Bakit ka pagod?
+      - type: translate
+        prompt_tl: Bakit ka pumunta sa ospital kahapon?
+        answer_en: Why did you go to the hospital yesterday?
+        extra_words: [when, doctor, church]
+        audio: bakit_ka_pumunta_sa_ospital_kahapon
+      - type: fill_blank
+        sentence: "Umiinom ako ng gamot ___ masakit ang ulo ko."
+        translation: "I'm taking medicine because my head hurts."
+        answer: kasi
+        options: [kasi, bakit, ba]
+      - type: choice
+        prompt: "Your friend asks 'Bakit ka masaya?' Start your answer with..."
+        answer: Kasi...
+        distractors: [Saan..., Sino..., Ilan...]
+        audio: bakit_ka_masaya
+        audio_text: Bakit ka masaya?
+      - type: listen
+        audio: bakit_ka_malungkot
+        answer_tl: Bakit ka malungkot
+        extra_words: [masaya, paano]
+      - type: translate
+        prompt_tl: Malungkot ako kasi malayo ang pamilya ko.
+        answer_en: I am sad because my family is far away.
+        accept: ["I'm sad because my family is far away", "I am sad because my family is far", "I'm sad because my family is far"]
+        extra_words: [happy, near, friend]
+        audio: malungkot_ako_kasi_malayo_ang_pamilya_ko
+      - type: translate
+        prompt_en: Why is the fish expensive?
+        answer_tl: Bakit mahal ang isda?
+        accept: ["Bakit po mahal ang isda?"]
+        extra_words: [magkano, mura, manok]
+        audio: bakit_mahal_ang_isda
+      - type: translate
+        prompt_en: I am tired because I worked yesterday.
+        answer_tl: Pagod ako kasi nagtrabaho ako kahapon.
+        accept: ["Pagod ako dahil nagtrabaho ako kahapon"]
+        extra_words: [bakit, masaya, bukas]
+        audio: pagod_ako_kasi_nagtrabaho_ako_kahapon
+        hint: '"kasi" and "dahil" both mean "because" — "kasi" is the everyday one.'
+  - id: questions-10
+    title: Paano and ilan — how and how many
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: paano, en: how }
+          - { tl: ilan, en: how many }
+          - { tl: magkano, en: how much }
+          - { tl: bakit, en: why }
+      - type: choice
+        prompt: "'Ilan' asks about..."
+        answer: A number of things
+        distractors: [A price, A place, A reason]
+        audio: ilan
+        audio_text: Ilan
+      - type: translate
+        prompt_tl: Paano ka nagluto ng isda?
+        answer_en: How did you cook the fish?
+        accept: ["How did you cook fish?"]
+        extra_words: [why, bought, chicken]
+        audio: paano_ka_nagluto_ng_isda
+      - type: fill_blank
+        sentence: "___ ang anak ninyo? — Tatlo po."
+        translation: "How many children do you have? — Three."
+        answer: Ilan
+        options: [Ilan, Magkano, Paano]
+      - type: translate
+        prompt_en: How many eggs do you want?
+        answer_tl: Ilang itlog ang gusto mo?
+        accept: ["Ilang itlog po ang gusto ninyo?"]
+        extra_words: [magkano, isda, mura]
+        audio: ilang_itlog_ang_gusto_mo
+        hint: 'Before a noun, "ilan" takes the linker: "Ilang itlog?"'
+      - type: listen
+        audio: ilan_ang_kapatid_mo
+        answer_tl: Ilan ang kapatid mo
+        extra_words: [magkano, pinsan]
+      - type: choice
+        prompt: "You want to know HOW to get to the station. Ask..."
+        answer: Paano pumunta sa istasyon?
+        distractors: [Saan ang istasyon?, Ilan ang istasyon?, Magkano ang istasyon?]
+        audio: paano_pumunta_sa_istasyon
+        audio_text: Paano pumunta sa istasyon?
+      - type: translate
+        prompt_en: How do you cook rice?
+        answer_tl: Paano ka nagluluto ng kanin?
+        accept: ["Paano po kayo nagluluto ng kanin?"]
+        extra_words: [bakit, isda, kumakain]
+        audio: paano_ka_nagluluto_ng_kanin
+  - id: questions-11
+    title: The big interview
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kailan, en: when }
+          - { tl: bakit, en: why }
+          - { tl: alin, en: which }
+          - { tl: nasaan, en: where (is) }
+      - type: translate
+        prompt_tl: Sino ang guro mo at ano ang pangalan niya?
+        answer_en: Who is your teacher and what is her name?
+        accept:
+          - "Who is your teacher and what is his name?"
+          - "Who's your teacher and what's her name?"
+          - "Who's your teacher and what's his name?"
+        extra_words: [where, friend, school]
+        audio: sino_ang_guro_mo_at_ano_ang_pangalan_niya
+      - type: fill_blank
+        sentence: "___ gusto mo ang kape? — Kasi masarap!"
+        translation: "Why do you like coffee? — Because it's delicious!"
+        answer: Bakit
+        options: [Bakit, Alin, Kailan]
+      - type: translate
+        prompt_en: When is the fiesta and where is the church?
+        answer_tl: Kailan ang pista at nasaan ang simbahan?
+        accept: ["Kailan po ang pista at nasaan po ang simbahan?"]
+        extra_words: [saan, bakit, palengke]
+        audio: kailan_ang_pista_at_nasaan_ang_simbahan
+      - type: listen
+        audio: saan_ka_nagtatrabaho
+        answer_tl: Saan ka nagtatrabaho
+        extra_words: [nasaan, pumunta]
+      - type: choice
+        prompt: "You got the wrong change. Which question fits?"
+        answer: Magkano ang sukli ko?
+        distractors: [Ilan ang sukli ko?, Kailan ang sukli ko?, Paano ang sukli ko?]
+        audio: magkano_ang_sukli_ko
+        audio_text: Magkano ang sukli ko?
+      - type: translate
+        prompt_tl: Bakit wala kang pera? Kasi bumili ako ng regalo.
+        answer_en: Why don't you have money? Because I bought a gift.
+        accept: ["Why do you have no money? Because I bought a gift."]
+        extra_words: [when, change, shoes]
+        audio: bakit_wala_kang_pera_kasi_bumili_ako_ng_regalo
+      - type: translate
+        prompt_en: Which jeepney goes to the market?
+        answer_tl: Aling jeepney ang pupunta sa palengke?
+        accept: ["Alin ang jeepney na pupunta sa palengke?"]
+        extra_words: [saan, istasyon, magkano]
+        audio: aling_jeepney_ang_pupunta_sa_palengke
+        hint: 'Before a noun, "alin" becomes "aling": "Aling jeepney?"'

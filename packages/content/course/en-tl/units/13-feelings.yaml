@@ -226,3 +226,398 @@ lessons:
         answer: talaga
         options: [talaga, medyo, kasi]
         hint: '"talaga" follows the feeling, before the pronoun.'
+  - id: feelings-5
+    title: Nervous, worried, sleepy
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kinakabahan, en: nervous }
+          - { tl: nag-aalala, en: worried }
+          - { tl: inaantok, en: sleepy }
+          - { tl: nahihiya, en: shy }
+      - type: choice
+        prompt: "'Inaantok na ako' means..."
+        answer: I'm sleepy now
+        distractors: ["I'm tired now", "I'm hungry now", "I'm nervous now"]
+        audio: inaantok_na_ako
+        audio_text: Inaantok na ako.
+      - type: translate
+        prompt_tl: Kinakabahan ako ngayon.
+        answer_en: I'm nervous today.
+        accept: ["I am nervous today", "I'm nervous now", "I am nervous now"]
+        extra_words: [happy, sleepy, tomorrow]
+        audio: kinakabahan_ako_ngayon
+        hint: '"kinakabahan" comes from "kaba" — the thump of a nervous heart.'
+      - type: fill_blank
+        sentence: "___ ako sa iyo."
+        translation: "I'm worried about you."
+        answer: Nag-aalala
+        options: [Nag-aalala, Inaantok, Nahihiya]
+        audio: nag_aalala_ako_sa_iyo
+        hint: '"sa iyo" = about you / to you.'
+      - type: listen
+        audio: inaantok_na_ako
+        answer_tl: Inaantok na ako
+        extra_words: [pagod, kinakabahan]
+      - type: choice
+        prompt: "Guests arrive and a little girl hides behind her mom. She is..."
+        answer: Nahihiya
+        distractors: [Galit, Gutom, Inaantok]
+        audio: nahihiya
+        audio_text: Nahihiya
+        hint: '"nahihiya" covers shy and embarrassed — from "hiya", shame.'
+      - type: translate
+        prompt_en: She's feeling shy.
+        answer_tl: Nahihiya siya.
+        extra_words: [ako, kinakabahan, galit]
+        audio: nahihiya_siya
+      - type: translate
+        prompt_en: Are you nervous?
+        answer_tl: Kinakabahan ka ba?
+        extra_words: [ako, inaantok, kasi]
+        audio: kinakabahan_ka_ba
+        hint: '"ba" turns a statement into a yes/no question.'
+  - id: feelings-6
+    title: Moods
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nababagot, en: bored }
+          - { tl: nagulat, en: surprised }
+          - { tl: tuwang-tuwa, en: overjoyed }
+          - { tl: inaantok, en: sleepy }
+      - type: choice
+        prompt: "'Nababagot ako' means..."
+        answer: I'm bored
+        distractors: ["I'm sleepy", "I'm shy", "I'm surprised"]
+        audio: nababagot_ako
+        audio_text: Nababagot ako.
+      - type: translate
+        prompt_tl: Tuwang-tuwa ang mga anak ko.
+        answer_en: My children are overjoyed.
+        accept: ["My kids are overjoyed", "My children are very happy", "My kids are very happy"]
+        extra_words: [bored, sleepy, house]
+        audio: tuwang_tuwa_ang_mga_anak_ko
+        hint: 'Doubling a root with a hyphen intensifies it: tuwa (joy) → tuwang-tuwa.'
+      - type: fill_blank
+        sentence: "Medyo ___ ako ngayon."
+        translation: "I'm a bit bored today."
+        answer: nababagot
+        options: [nababagot, nagulat, masaya]
+        audio: medyo_nababagot_ako_ngayon
+      - type: listen
+        audio: nagulat_ako
+        answer_tl: Nagulat ako
+        extra_words: [nababagot, siya]
+      - type: choice
+        prompt: "A friend you haven't seen in years walks into your house. You say:"
+        answer: Nagulat ako!
+        distractors: ["Nababagot ako.", "Inaantok ako.", "Galit ako."]
+        audio: nagulat_ako
+        audio_text: Nagulat ako!
+        hint: '"nagulat" = was surprised — it''s a completed action, so it looks like a past verb.'
+      - type: translate
+        prompt_en: I'm really bored.
+        answer_tl: Nababagot talaga ako.
+        accept: ["Talagang nababagot ako."]
+        extra_words: [medyo, masaya, ka]
+        audio: nababagot_talaga_ako
+        hint: '"talaga" sits after the feeling, before "ako".'
+      - type: translate
+        prompt_en: Grandma is overjoyed.
+        answer_tl: Tuwang-tuwa si Lola.
+        extra_words: [nagulat, ang, ako]
+        audio: tuwang_tuwa_si_lola
+        grading: { hyphens: true }
+  - id: feelings-7
+    title: Kasi — giving reasons
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pagsusulit, en: exam }
+          - { tl: umuulan, en: it is raining }
+          - { tl: may sakit, en: is sick }
+          - { tl: kinakabahan, en: nervous }
+      - type: choice
+        prompt: "'Kinakabahan ako kasi may pagsusulit ako bukas' means..."
+        answer: I'm nervous because I have an exam tomorrow
+        distractors:
+          - "I'm tired because I studied for the exam"
+          - "I'm happy because there's no exam tomorrow"
+          - "I'm nervous because it will rain tomorrow"
+        audio: kinakabahan_ako_kasi_may_pagsusulit_ako_bukas
+        audio_text: Kinakabahan ako kasi may pagsusulit ako bukas.
+      - type: fill_blank
+        sentence: "Malungkot si Ana ___ may sakit ang lola niya."
+        translation: "Ana is sad because her grandmother is sick."
+        answer: kasi
+        options: [kasi, bakit, ba]
+        audio: malungkot_si_ana_kasi_may_sakit_ang_lola_niya
+      - type: translate
+        prompt_tl: Masaya ang nanay ko kasi maganda ang panahon.
+        answer_en: My mom is happy because the weather is nice.
+        accept:
+          - "My mother is happy because the weather is nice"
+          - "My mom is happy because the weather is beautiful"
+          - "My mother is happy because the weather is beautiful"
+          - "My mom is happy because the weather is good"
+          - "My mother is happy because the weather is good"
+        extra_words: [sad, rain, father]
+        audio: masaya_ang_nanay_ko_kasi_maganda_ang_panahon
+      - type: listen
+        audio: pagod_si_tatay_kasi_marami_siyang_trabaho
+        answer_tl: Pagod si Tatay kasi marami siyang trabaho
+        extra_words: [nanay, galit]
+        hint: '"siya" slips in after "marami" and takes the -ng linker: marami siyang trabaho.'
+      - type: choice
+        prompt: "Someone asks 'Bakit ka takot?' Which answer fits?"
+        answer: Kasi may bagyo.
+        distractors: ["Kasi masarap ang kape.", "Ayos lang ako.", "Masaya ako."]
+        audio: kasi_may_bagyo
+        audio_text: Kasi may bagyo.
+        hint: 'In conversation, an answer to "bakit" can start right off with "kasi".'
+      - type: translate
+        prompt_en: I'm hungry because I didn't eat.
+        answer_tl: Gutom ako kasi hindi ako kumain.
+        accept: ["Gutom ako dahil hindi ako kumain."]
+        extra_words: [kumakain, uhaw, ba]
+        audio: gutom_ako_kasi_hindi_ako_kumain
+        hint: '"hindi" pulls "ako" forward: hindi ako kumain.'
+      - type: translate
+        prompt_en: She's sad because it's raining.
+        answer_tl: Malungkot siya kasi umuulan.
+        accept: ["Malungkot siya dahil umuulan."]
+        extra_words: [masaya, ako, bakit]
+        audio: malungkot_siya_kasi_umuulan
+  - id: feelings-8
+    title: What's wrong?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nangyari, en: happened }
+          - { tl: problema, en: problem }
+          - { tl: umiiyak, en: crying }
+          - { tl: nag-aalala, en: worried }
+      - type: choice
+        prompt: "'Ano ang nangyari?' means..."
+        answer: What happened?
+        distractors: ["What's your name?", "Where are you going?", "What are you eating?"]
+        audio: ano_ang_nangyari
+        audio_text: Ano ang nangyari?
+        hint: 'In speech it often shrinks to "Anong nangyari?"'
+      - type: translate
+        prompt_tl: May problema ka ba?
+        answer_en: Is something wrong?
+        accept: ["Do you have a problem?", "Is there a problem?", "Is anything wrong?"]
+        extra_words: [happy, why, today]
+        audio: may_problema_ka_ba
+      - type: fill_blank
+        sentence: "Bakit ka ___?"
+        translation: "Why are you crying?"
+        answer: umiiyak
+        options: [umiiyak, kumakain, natutulog]
+        audio: bakit_ka_umiiyak
+      - type: listen
+        audio: ano_ang_nangyari
+        answer_tl: Ano ang nangyari
+        accept: ["Anong nangyari"]
+        extra_words: [bakit, problema]
+      - type: choice
+        prompt: "Your friend looks upset. How do you ask if something is wrong?"
+        answer: May problema ka ba?
+        distractors: ["Masaya ka ba?", "Gutom ka ba?", "Nasaan ka?"]
+        audio: may_problema_ka_ba
+        audio_text: May problema ka ba?
+      - type: translate
+        prompt_tl: Umiiyak ang anak ko kasi gutom siya.
+        answer_en: My child is crying because he's hungry.
+        accept:
+          - "My child is crying because she's hungry"
+          - "My child is crying because he is hungry"
+          - "My child is crying because she is hungry"
+          - "My kid is crying because he's hungry"
+          - "My kid is crying because she's hungry"
+        extra_words: [sleepy, mother, tired]
+        audio: umiiyak_ang_anak_ko_kasi_gutom_siya
+      - type: translate
+        prompt_en: What happened? Why are you sad?
+        answer_tl: Ano ang nangyari? Bakit ka malungkot?
+        accept: ["Anong nangyari? Bakit ka malungkot?"]
+        extra_words: [ako, galit, kasi]
+        audio: ano_ang_nangyari_bakit_ka_malungkot
+      - type: fill_blank
+        sentence: "Wala, ___ lang ako."
+        translation: "Nothing, I'm just tired."
+        answer: pagod
+        options: [pagod, galit, gutom]
+        audio: wala_pagod_lang_ako
+        hint: '"Wala" here = nothing (is wrong); "lang" softens it: just.'
+  - id: feelings-9
+    title: Comforting a friend
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Huwag kang mag-alala, en: "Don't worry" }
+          - { tl: Kaya mo iyan, en: You can do it }
+          - { tl: Nandito lang ako, en: "I'm here for you" }
+          - { tl: Ayos lang iyan, en: "That's okay" }
+      - type: choice
+        prompt: "Your friend is nervous about an exam. You say:"
+        answer: Kaya mo iyan!
+        distractors: ["Nakakainis ka!", "Inaantok ako.", "Gutom na ako."]
+        audio: kaya_mo_iyan
+        audio_text: Kaya mo iyan!
+        hint: 'Speakers often shorten it: "Kaya mo ''yan!"'
+      - type: translate
+        prompt_tl: Huwag kang mag-alala.
+        answer_en: Don't worry.
+        accept: ["Do not worry"]
+        extra_words: [cry, sad, happy]
+        audio: huwag_kang_mag_alala
+        hint: '"huwag" + "ka" + -ng linker = don''t (you) ...'
+      - type: fill_blank
+        sentence: "Huwag kang ___."
+        translation: "Don't be sad."
+        answer: malungkot
+        options: [malungkot, masaya, kumain]
+        audio: huwag_kang_malungkot
+      - type: listen
+        audio: nandito_lang_ako
+        answer_tl: Nandito lang ako
+        extra_words: [kaya, ikaw]
+      - type: choice
+        prompt: "'Nandito lang ako' means..."
+        answer: I'm right here for you
+        distractors: ["I'm leaving now", "I'm just tired", "I'm not here"]
+        audio: nandito_lang_ako
+        audio_text: Nandito lang ako.
+        hint: '"nandito" = here (where someone is); "lang" = just.'
+      - type: translate
+        prompt_tl: Ayos lang iyan. Kaya mo iyan!
+        answer_en: That's okay. You can do it!
+        accept: ["It's okay. You can do it!", "That is okay. You can do it!", "It is okay. You can do it!"]
+        extra_words: [worry, sad, cannot]
+        audio: ayos_lang_iyan_kaya_mo_iyan
+      - type: translate
+        prompt_en: Don't worry. I'm here for you.
+        answer_tl: Huwag kang mag-alala. Nandito lang ako.
+        extra_words: [malungkot, ka, kasi]
+        audio: huwag_kang_mag_alala_nandito_lang_ako
+  - id: feelings-10
+    title: Nakakatakot! — things that make you feel
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nakakatakot, en: scary }
+          - { tl: nakakapagod, en: tiring }
+          - { tl: nakakalungkot, en: saddening }
+          - { tl: nakakatuwa, en: delightful }
+      - type: choice
+        prompt: "'Nakakatakot ang bagyo' means..."
+        answer: The storm is scary
+        distractors: ["I'm afraid of the storm", "The storm is over", "The storm is tiring"]
+        audio: nakakatakot_ang_bagyo
+        audio_text: Nakakatakot ang bagyo.
+        hint: '"takot ako" = I am afraid; "nakakatakot" = it makes you afraid.'
+      - type: fill_blank
+        sentence: "___ ang trabaho ko."
+        translation: "My work is tiring."
+        answer: Nakakapagod
+        options: [Nakakapagod, Nakakatawa, Nakakatakot]
+        audio: nakakapagod_ang_trabaho_ko
+        hint: '"nakaka-" + a feeling = something that causes it: pagod → nakakapagod.'
+      - type: translate
+        prompt_tl: Nakakalungkot ang pelikula.
+        answer_en: The movie is sad.
+        accept: ["The film is sad", "The movie is saddening"]
+        extra_words: [funny, scary, book]
+        audio: nakakalungkot_ang_pelikula
+      - type: choice
+        prompt: "Which word means 'funny'?"
+        answer: Nakakatawa
+        distractors: [Nakakatuwa, Nakakatakot, Nakakapagod]
+        hint: '"tawa" = laugh, "tuwa" = joy — one vowel apart!'
+      - type: listen
+        audio: nakakatuwa_ang_mga_anak_mo
+        answer_tl: Nakakatuwa ang mga anak mo
+        extra_words: [nakakatawa, ko]
+      - type: translate
+        prompt_en: The storm is scary.
+        answer_tl: Nakakatakot ang bagyo.
+        extra_words: [takot, ako, ulan]
+        audio: nakakatakot_ang_bagyo
+      - type: translate
+        prompt_en: The book is really funny.
+        answer_tl: Nakakatawa talaga ang libro.
+        accept: ["Talagang nakakatawa ang libro."]
+        extra_words: [nakakatuwa, medyo, ako]
+        audio: nakakatawa_talaga_ang_libro
+  - id: feelings-11
+    title: "Kumusta ka, talaga?"
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kaya mo iyan!, en: You can do it! }
+          - { tl: Ano ang nangyari?, en: What happened? }
+          - { tl: Nag-aalala ako., en: "I'm worried." }
+          - { tl: Sa tingin ko, en: I think }
+      - type: choice
+        prompt: "Your friend says 'Kinakabahan ako.' The kindest reply is..."
+        answer: Huwag kang mag-alala. Kaya mo iyan!
+        distractors: ["Nakakainis ka.", "Inaantok na ako.", "Bakit ka masaya?"]
+        audio: huwag_kang_mag_alala_kaya_mo_iyan
+        audio_text: Huwag kang mag-alala. Kaya mo iyan!
+      - type: translate
+        prompt_tl: Nag-aalala si Nanay kasi malayo ang bahay ko.
+        answer_en: Mom is worried because my house is far.
+        accept:
+          - "Mother is worried because my house is far"
+          - "Mom is worried because my house is far away"
+          - "Mother is worried because my house is far away"
+        extra_words: [near, happy, school]
+        audio: nag_aalala_si_nanay_kasi_malayo_ang_bahay_ko
+      - type: fill_blank
+        sentence: "Kinakabahan si Ben ___ may pagsusulit siya."
+        translation: "Ben is nervous because he has an exam."
+        answer: kasi
+        options: [kasi, bakit, sa]
+        audio: kinakabahan_si_ben_kasi_may_pagsusulit_siya
+      - type: choice
+        prompt: "Your friend just got a new job. You say:"
+        answer: Masaya ako para sa iyo!
+        distractors: ["Nakakainis ka!", "Ano ang nangyari?", "Huwag kang mag-alala."]
+        audio: masaya_ako_para_sa_iyo
+        audio_text: Masaya ako para sa iyo!
+        hint: '"para sa iyo" = for you.'
+      - type: listen
+        audio: masaya_ako_para_sa_iyo
+        answer_tl: Masaya ako para sa iyo
+        extra_words: [malungkot, ka]
+      - type: translate
+        prompt_tl: Medyo pagod ako, pero masaya ako.
+        answer_en: I'm a bit tired, but I'm happy.
+        accept:
+          - "I am a bit tired, but I am happy"
+          - "I'm a little tired, but I'm happy"
+          - "I am a little tired, but I am happy"
+        extra_words: [sleepy, sad, very]
+        audio: medyo_pagod_ako_pero_masaya_ako
+        hint: '"pero" = but.'
+      - type: translate
+        prompt_en: Why are you nervous? Don't worry.
+        answer_tl: Bakit ka kinakabahan? Huwag kang mag-alala.
+        extra_words: [ako, malungkot, kasi]
+        audio: bakit_ka_kinakabahan_huwag_kang_mag_alala
+      - type: translate
+        prompt_en: I'm happy because you're here.
+        answer_tl: Masaya ako kasi nandito ka.
+        accept: ["Masaya ako dahil nandito ka."]
+        extra_words: [lang, malungkot, siya]
+        audio: masaya_ako_kasi_nandito_ka

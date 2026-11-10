@@ -133,6 +133,9 @@ lessons:
         answer: anuman
         options: [anuman, umaga, po]
         audio: walang_anuman
+        # the ref is shared with the plain phrase — don't let this exercise
+        # register the whole dialogue line as its spoken text
+        audio_text: "Walang anuman."
       - type: choice
         prompt: "Your friend asks if you like coffee. You do. Say yes casually."
         answer: Oo
@@ -230,3 +233,388 @@ lessons:
         answer: si
         options: [si, ang, po]
         hint: '"si" marks a person''s name.'
+  - id: greetings-6
+    title: Good day, good noon
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "It's 12 noon. How do you greet someone?"
+        answer: Magandang tanghali
+        distractors: [Magandang umaga, Magandang gabi, Magandang hapon]
+        audio: magandang_tanghali
+        audio_text: Magandang tanghali!
+        hint: '"Tanghali" is noon — roughly 11 AM to 1 PM.'
+      - type: match
+        pairs:
+          - { tl: umaga, en: morning }
+          - { tl: tanghali, en: noon }
+          - { tl: hapon, en: afternoon }
+          - { tl: gabi, en: evening }
+      - type: translate
+        prompt_tl: Magandang araw!
+        answer_en: Good day!
+        extra_words: [night, morning, thanks]
+        audio: magandang_araw
+        hint: '"Magandang araw" works at any time of day.'
+      - type: fill_blank
+        sentence: "Magandang ___ po!"
+        translation: "Good day! (polite)"
+        answer: araw
+        options: [araw, salamat, paalam]
+        audio: magandang_araw_po
+      - type: listen
+        audio: magandang_tanghali
+        answer_tl: Magandang tanghali
+        extra_words: [hapon, umaga]
+      - type: choice
+        prompt: "You visit a friend at 7 PM and her grandmother opens the door. Say:"
+        answer: Magandang gabi po
+        distractors: [Magandang umaga po, Magandang tanghali po, Paalam po]
+        audio: magandang_gabi_po
+        audio_text: Magandang gabi po!
+      - type: translate
+        prompt_en: Good afternoon! (polite)
+        answer_tl: Magandang hapon po!
+        extra_words: [tanghali, umaga, gabi]
+        audio: magandang_hapon_po
+      - type: translate
+        prompt_en: Good noon! (polite, said around 12 PM)
+        answer_tl: Magandang tanghali po!
+        extra_words: [hapon, umaga, araw]
+        audio: magandang_tanghali_po
+  - id: greetings-7
+    title: Thank you very much
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Maraming salamat' means..."
+        answer: Thank you very much
+        distractors: [Good morning, "You're welcome", Goodbye]
+        audio: maraming_salamat
+        audio_text: Maraming salamat!
+        hint: '"Marami" means many — literally "many thanks".'
+      - type: match
+        pairs:
+          - { tl: salamat, en: thank you }
+          - { tl: maraming salamat, en: thank you very much }
+          - { tl: walang anuman, en: "you're welcome" }
+          - { tl: salamat din, en: thanks too }
+      - type: translate
+        prompt_tl: Maraming salamat po!
+        answer_en: Thank you very much!
+        accept: ["Thank you so much", "Thanks a lot", "Many thanks", "Thanks so much"]
+        extra_words: [welcome, morning, good]
+        audio: maraming_salamat_po
+      - type: fill_blank
+        sentence: "___ salamat po!"
+        translation: "Thank you very much!"
+        answer: Maraming
+        options: [Maraming, Magandang, Walang]
+        audio: maraming_salamat_po
+      - type: listen
+        audio: salamat_din
+        answer_tl: Salamat din
+        extra_words: [rin, anuman]
+      - type: choice
+        prompt: "Someone thanks you for your help. Reply:"
+        answer: Walang anuman
+        distractors: [Maraming salamat, Magandang gabi, Paalam]
+        audio: walang_anuman
+        audio_text: Walang anuman.
+      - type: fill_blank
+        sentence: "Salamat! — Salamat ___."
+        translation: "Thank you! — Thanks too."
+        answer: din
+        options: [din, ka, ako]
+        audio: salamat_din
+        audio_text: Salamat din.
+        hint: '"din" means "too / also" — it becomes "rin" after a vowel.'
+      - type: translate
+        prompt_en: Thank you very much!
+        answer_tl: Maraming salamat!
+        accept: ["Maraming salamat po!"]
+        extra_words: [po, walang, anuman]
+        audio: maraming_salamat
+  - id: greetings-8
+    title: Excuse me, sorry
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You bump into someone by accident. Say sorry:"
+        answer: Pasensya na
+        distractors: [Salamat, Walang anuman, Magandang umaga]
+        audio: pasensya_na
+        audio_text: Pasensya na.
+        hint: '"Pasensya na" — literally "patience, please" — is the everyday "sorry".'
+      - type: choice
+        prompt: "You need to walk past someone in a narrow hallway. Say:"
+        answer: Makikiraan po
+        distractors: [Salamat po, Walang anuman po, Paalam po]
+        audio: makikiraan_po
+        audio_text: Makikiraan po.
+        hint: '"Makikiraan" means "may I pass through?" — the polite excuse-me for getting by.'
+      - type: match
+        pairs:
+          - { tl: pasensya na, en: sorry }
+          - { tl: makikiraan po, en: excuse me (to pass) }
+          - { tl: ayos lang, en: "it's okay" }
+          - { tl: salamat, en: thank you }
+      - type: translate
+        prompt_tl: Pasensya na po.
+        answer_en: I'm sorry.
+        accept: ["I am sorry", "Sorry"]
+        extra_words: [thank, you, okay]
+        audio: pasensya_na_po
+      - type: listen
+        audio: ayos_lang
+        answer_tl: Ayos lang
+        extra_words: [na, pasensya]
+        hint: '"Ayos lang" = it''s okay / no problem.'
+      - type: fill_blank
+        sentence: "Pasensya na! — Ayos ___."
+        translation: "Sorry! — It's okay."
+        answer: lang
+        options: [lang, din, ka]
+        audio: ayos_lang
+        audio_text: Ayos lang.
+      - type: choice
+        prompt: "'Paumanhin po' is..."
+        answer: A formal way to say sorry or excuse me
+        distractors: [A way to say thank you, A greeting for the evening, A way to say goodbye]
+        audio: paumanhin_po
+        audio_text: Paumanhin po.
+      - type: translate
+        prompt_en: Sorry! (polite)
+        answer_tl: Pasensya na po!
+        accept: ["Pasensiya na po!", "Paumanhin po!"]
+        extra_words: [salamat, lang, ayos]
+        audio: pasensya_na_po
+  - id: greetings-9
+    title: What's new?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumusta ka na?' is what you ask someone..."
+        answer: "You haven't seen in a while"
+        distractors: [You are meeting for the first time, Who is leaving, Who just thanked you]
+        audio: kumusta_ka_na
+        audio_text: Kumusta ka na?
+        hint: '"na" adds "by now" — how have you been?'
+      - type: translate
+        prompt_tl: Mabuti naman. Ikaw?
+        answer_en: I'm fine. And you?
+        accept: ["I am fine. And you?", "I'm good. And you?", "I am good. And you?", "Fine. And you?", "I'm fine. You?"]
+        extra_words: [too, morning, not]
+        audio: mabuti_naman_ikaw
+        hint: '"naman" softens the reply — "fine, thanks".'
+      - type: match
+        pairs:
+          - { tl: ikaw, en: you }
+          - { tl: balita, en: news }
+          - { tl: mabuti, en: fine }
+          - { tl: ayos lang, en: just okay }
+      - type: choice
+        prompt: "'Anong balita?' means..."
+        answer: "What's new?"
+        distractors: ["What's your name?", Where are you?, Who is that?]
+        audio: anong_balita
+        audio_text: Anong balita?
+      - type: listen
+        audio: kumusta_ka_na
+        answer_tl: Kumusta ka na
+        extra_words: [ako, naman]
+      - type: fill_blank
+        sentence: "Kumusta ka? — Ayos ___ ako."
+        translation: "How are you? — I'm okay."
+        answer: lang
+        options: [lang, ka, si]
+        audio: ayos_lang_ako
+        audio_text: Ayos lang ako.
+      - type: choice
+        prompt: "How do you ask an older neighbor how she has been?"
+        answer: Kumusta na po kayo?
+        distractors: [Kumusta ka na?, Anong balita?, Ayos lang po.]
+        audio: kumusta_na_po_kayo
+        audio_text: Kumusta na po kayo?
+        hint: '"po kayo" is the respectful version of "ka".'
+      - type: translate
+        prompt_en: I'm fine. And you?
+        answer_tl: Mabuti naman. Ikaw?
+        accept: ["Mabuti naman ako. Ikaw?", "Mabuti ako. Ikaw?", "Mabuti naman. Ikaw naman?", "Ayos lang. Ikaw?"]
+        extra_words: [ka, ako, din]
+        audio: mabuti_naman_ikaw
+      - type: translate
+        prompt_en: How have you been? (to a friend)
+        answer_tl: Kumusta ka na?
+        extra_words: [naman, ikaw, ako]
+        audio: kumusta_ka_na
+  - id: greetings-10
+    title: Welcome, come in!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You arrive at a friend's gate and want to announce yourself. Call out:"
+        answer: Tao po!
+        distractors: [Paalam po!, Salamat po!, Walang anuman!]
+        audio: tao_po
+        audio_text: Tao po!
+        hint: 'Literally "a person (is here)!" — the polite knock-knock at a Filipino home.'
+      - type: choice
+        prompt: "The host opens the door and says 'Tuloy po kayo!' — what does it mean?"
+        answer: Please come in!
+        distractors: [Please leave!, Good evening!, Thank you!]
+        audio: tuloy_po_kayo
+        audio_text: Tuloy po kayo.
+      - type: match
+        pairs:
+          - { tl: tao po, en: anyone home? }
+          - { tl: tuloy po kayo, en: please come in }
+          - { tl: maligayang pagdating, en: welcome }
+          - { tl: umupo po kayo, en: please sit down }
+      - type: translate
+        prompt_tl: Maligayang pagdating!
+        answer_en: Welcome!
+        extra_words: [goodbye, come, thanks]
+        audio: maligayang_pagdating
+        hint: '"Maligayang pagdating" — literally "happy arrival".'
+      - type: listen
+        audio: tuloy_po_kayo
+        answer_tl: Tuloy po kayo
+        extra_words: [tao, umupo]
+      - type: fill_blank
+        sentence: "Maligayang ___!"
+        translation: "Welcome!"
+        answer: pagdating
+        options: [pagdating, umaga, gabi]
+        audio: maligayang_pagdating
+      - type: choice
+        prompt: "'Mabuhay!' is a famous Filipino word used to..."
+        answer: Welcome or cheer people
+        distractors: [Say sorry, Ask for directions, Say goodbye]
+        audio: mabuhay
+        audio_text: Mabuhay!
+        hint: 'Literally "long live!" — you will see it at airports, welcoming visitors.'
+      - type: translate
+        prompt_en: Please come in! (polite)
+        answer_tl: Tuloy po kayo!
+        extra_words: [tao, umupo, ka]
+        audio: tuloy_po_kayo
+      - type: translate
+        prompt_en: Please sit down. (polite)
+        answer_tl: Umupo po kayo.
+        accept: ["Maupo po kayo."]
+        extra_words: [tuloy, tao, ka]
+        audio: umupo_po_kayo
+  - id: greetings-11
+    title: Take care!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Someone is leaving and you say 'Ingat!' It means..."
+        answer: Take care!
+        distractors: [Come in!, Thank you!, Good morning!]
+        audio: ingat
+        audio_text: Ingat!
+      - type: match
+        pairs:
+          - { tl: ingat, en: take care }
+          - { tl: sige, en: okay }
+          - { tl: paalam, en: goodbye }
+          - { tl: mauna na ako, en: "I'll go ahead" }
+      - type: translate
+        prompt_tl: Sige, ingat ka!
+        answer_en: Okay, take care!
+        accept: ["Ok, take care!", "Bye, take care!", "Alright, take care!"]
+        extra_words: [come, in, morning]
+        audio: sige_ingat_ka
+        hint: '"Sige" = okay / alright — often the first word of a goodbye.'
+      - type: fill_blank
+        sentence: "Ingat ___ kayo!"
+        translation: "Take care! (polite)"
+        answer: po
+        options: [po, ka, ako]
+        audio: ingat_po_kayo
+      - type: listen
+        audio: mauna_na_ako
+        answer_tl: Mauna na ako
+        extra_words: [sige, ingat]
+        hint: '"Mauna na ako" — "I''ll go ahead" — the polite way to excuse yourself.'
+      - type: choice
+        prompt: "You're leaving your friend's house before everyone else. Say:"
+        answer: Mauna na ako.
+        distractors: [Tuloy po kayo., Tao po!, Maligayang pagdating!]
+        audio: mauna_na_ako
+        audio_text: Mauna na ako.
+      - type: translate
+        prompt_tl: Paalam po, ingat po kayo!
+        answer_en: Goodbye, take care!
+        accept: ["Bye, take care!"]
+        extra_words: [come, in, welcome]
+        audio: paalam_po_ingat_po_kayo
+      - type: translate
+        prompt_en: Take care! (polite)
+        answer_tl: Ingat po kayo!
+        extra_words: [ka, sige, tuloy]
+        audio: ingat_po_kayo
+      - type: translate
+        prompt_en: Okay, I'll go ahead.
+        answer_tl: Sige, mauna na ako.
+        accept: ["Sige, mauna na po ako."]
+        extra_words: [po, ingat, tuloy]
+        audio: sige_mauna_na_ako
+  - id: greetings-12
+    title: "Challenge: First meeting"
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "It's 9 AM and you meet an older neighbor. Which greeting fits best?"
+        answer: Magandang umaga po!
+        distractors: [Magandang gabi po!, Kumusta ka na?, Paalam po!]
+        audio: magandang_umaga_po
+        audio_text: Magandang umaga po!
+      - type: translate
+        prompt_tl: Magandang hapon po! Ako po si Ana.
+        answer_en: Good afternoon! I am Ana.
+        accept: ["Good afternoon! I'm Ana."]
+        extra_words: [evening, name, you]
+        audio: magandang_hapon_po_ako_po_si_ana
+      - type: translate
+        prompt_tl: Kumusta ka? Ako si Ben.
+        answer_en: How are you? I am Ben.
+        accept: ["How are you? I'm Ben.", "Hello! I am Ben.", "Hello! I'm Ben."]
+        extra_words: [name, she, fine]
+        audio: kumusta_ka_ako_si_ben
+      - type: fill_blank
+        sentence: "Mabuti ___ ako. Ikaw?"
+        translation: "I'm fine. And you?"
+        answer: naman
+        options: [naman, si, ang]
+        audio: mabuti_naman_ako_ikaw
+      - type: match
+        pairs:
+          - { tl: magandang tanghali, en: good noon }
+          - { tl: pasensya na, en: sorry }
+          - { tl: maligayang pagdating, en: welcome }
+          - { tl: walang anuman, en: "you're welcome" }
+      - type: listen
+        audio: maraming_salamat_po_ingat_po_kayo
+        answer_tl: Maraming salamat po! Ingat po kayo.
+        extra_words: [ka, sige]
+      - type: choice
+        prompt: "Your friend apologizes: 'Pasensya na!' Reply kindly:"
+        answer: Ayos lang!
+        distractors: [Tao po!, Maligayang pagdating!, Magandang tanghali!]
+        audio: ayos_lang
+        audio_text: Ayos lang!
+      - type: translate
+        prompt_en: Good evening! How are you? (polite)
+        answer_tl: Magandang gabi po! Kumusta po kayo?
+        accept: ["Magandang gabi po! Kumusta na po kayo?"]
+        extra_words: [ka, umaga, salamat]
+        audio: magandang_gabi_po_kumusta_po_kayo
+      - type: translate
+        prompt_en: Thank you very much! Take care!
+        answer_tl: Maraming salamat! Ingat ka!
+        accept: ["Maraming salamat po! Ingat po kayo!", "Maraming salamat! Ingat kayo!", "Maraming salamat! Ingat!"]
+        extra_words: [sige, tuloy, anuman]
+        audio: maraming_salamat_ingat_ka

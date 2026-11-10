@@ -251,3 +251,432 @@ lessons:
         extra_words: [bukid, tahimik, umuwi]
         audio: lumaki_ako_sa_probinsya_pero_nagtatrabaho_ako_sa_lungsod_ngayon
         hint: '"pero" joins two contrasting halves — it means but.'
+  - id: cityprov-5
+    title: Stuck in traffic
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: siksikan, en: crowded }
+          - { tl: mabagal, en: slow }
+          - { tl: sasakyan, en: vehicle }
+          - { tl: biyahe, en: trip }
+      - type: choice
+        prompt: "'Siksikan' means..."
+        answer: Crowded / packed
+        distractors: [Quiet, Empty, Clean]
+        audio: siksikan
+        audio_text: Siksikan
+      - type: choice
+        prompt: "'Mahuhuli ako' means..."
+        answer: I will be late
+        distractors: [I was late, I will go home, I am tired]
+        audio: mahuhuli_ako
+        audio_text: Mahuhuli ako.
+        hint: '"mahuli" is to be late; "mahuhuli" doubles the first syllable of the root — it hasn''t happened yet.'
+      - type: translate
+        prompt_tl: Siksikan ang jeepney tuwing umaga.
+        answer_en: The jeepney is crowded every morning.
+        accept: ["The jeepney is packed every morning", "The jeepneys are crowded every morning"]
+        extra_words: [empty, evening, quiet]
+        audio: siksikan_ang_jeepney_tuwing_umaga
+      - type: fill_blank
+        sentence: "Maraming ___ sa daan ngayon."
+        translation: "There are a lot of vehicles on the road now."
+        answer: sasakyan
+        options: [sasakyan, kalabaw, gusali]
+      - type: listen
+        audio: mahuhuli_ako_sa_trabaho
+        answer_tl: Mahuhuli ako sa trabaho
+        extra_words: [trapik, bukas]
+      - type: translate
+        prompt_tl: Mainit at maingay sa lungsod kasi maraming sasakyan.
+        answer_en: It is hot and noisy in the city because there are many vehicles.
+        accept:
+          - It's hot and noisy in the city because there are many vehicles
+          - It is hot and noisy in the city because there are a lot of vehicles
+          - It's hot and noisy in the city because there are a lot of vehicles
+        extra_words: [quiet, cold, province]
+        audio: mainit_at_maingay_sa_lungsod_kasi_maraming_sasakyan
+      - type: translate
+        prompt_en: I will be late because the traffic is really bad.
+        answer_tl: Mahuhuli ako kasi sobrang trapik.
+        accept: ["Mahuhuli ako dahil sobrang trapik", "Mahuhuli po ako kasi sobrang trapik"]
+        extra_words: [tahimik, umuwi, bukid]
+        audio: mahuhuli_ako_kasi_sobrang_trapik
+      - type: translate
+        prompt_en: The bus is crowded and slow.
+        answer_tl: Siksikan at mabagal ang bus.
+        accept: ["Mabagal at siksikan ang bus"]
+        extra_words: [mabilis, jeepney, tahimik]
+        audio: siksikan_at_mabagal_ang_bus
+  - id: cityprov-6
+    title: Rice fields and mountains
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: palayan, en: rice field }
+          - { tl: palay, en: rice (growing) }
+          - { tl: bundok, en: mountain }
+          - { tl: puno, en: tree }
+      - type: choice
+        prompt: "'Palayan' means..."
+        answer: Rice field
+        distractors: [Mountain, Garden, Market]
+        audio: palayan
+        audio_text: Palayan
+      - type: translate
+        prompt_tl: Berde ang palayan sa probinsya.
+        answer_en: The rice field in the province is green.
+        accept: ["The rice fields in the province are green", "The rice field is green in the province"]
+        extra_words: [mountain, red, city]
+        audio: berde_ang_palayan_sa_probinsya
+      - type: choice
+        prompt: "'Nagtatanim ng gulay ang magsasaka' means..."
+        answer: The farmer is planting vegetables
+        distractors:
+          - The farmer is selling vegetables
+          - The farmer is cooking vegetables
+          - The farmer bought vegetables
+        audio: nagtatanim_ng_gulay_ang_magsasaka
+        audio_text: Nagtatanim ng gulay ang magsasaka.
+        hint: '"magtanim" is to plant — a mag- verb like magluto: nagtanim, nagtatanim, magtatanim.'
+      - type: fill_blank
+        sentence: "Gumigising ___ maaga ang mga magsasaka."
+        translation: "Farmers wake up early."
+        answer: nang
+        options: [nang, ng, na]
+        hint: '"maaga" means early — "nang" links it to the verb, just like "nang mabilis".'
+      - type: listen
+        audio: mataas_ang_bundok_at_malamig_ang_hangin
+        answer_tl: Mataas ang bundok at malamig ang hangin
+        extra_words: [ilog, mainit]
+      - type: translate
+        prompt_tl: Maraming puno sa bundok at malamig ang ilog.
+        answer_en: There are many trees on the mountain and the river is cold.
+        accept: ["There are a lot of trees on the mountain and the river is cold"]
+        extra_words: [city, hot, rice]
+        audio: maraming_puno_sa_bundok_at_malamig_ang_ilog
+      - type: translate
+        prompt_en: My grandfather plants rice in the rice field.
+        answer_tl: Nagtatanim ng palay ang lolo ko sa palayan.
+        accept: ["Nagtatanim ang lolo ko ng palay sa palayan"]
+        extra_words: [bukid, kanin, nagtanim]
+        audio: nagtatanim_ng_palay_ang_lolo_ko_sa_palayan
+        hint: '"palay" is rice still growing in the field; "kanin" is cooked rice on your plate.'
+      - type: translate
+        prompt_en: We woke up early and walked to the river.
+        answer_tl: Gumising kami nang maaga at naglakad kami papunta sa ilog.
+        accept: ["Gumising kami nang maaga at naglakad papunta sa ilog"]
+        extra_words: [ng, bundok, natulog]
+        audio: gumising_kami_nang_maaga_at_naglakad_kami_papunta_sa_ilog
+  - id: cityprov-7
+    title: Visiting relatives
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kamag-anak, en: relative }
+          - { tl: pasalubong, en: gift from a trip }
+          - { tl: pinsan, en: cousin }
+          - { tl: tita, en: aunt }
+      - type: choice
+        prompt: "'Dumalaw kami kay Lola' means..."
+        answer: We visited Grandma
+        distractors: [We called Grandma, We will visit Grandma, We cooked for Grandma]
+        audio: dumalaw_kami_kay_lola
+        audio_text: Dumalaw kami kay Lola.
+        hint: '"dumalaw" is to visit someone — the person you visit takes "kay".'
+      - type: translate
+        prompt_tl: Marami akong kamag-anak sa probinsya.
+        answer_en: I have a lot of relatives in the province.
+        accept: ["I have many relatives in the province"]
+        extra_words: [city, few, friends]
+        audio: marami_akong_kamag_anak_sa_probinsya
+      - type: fill_blank
+        sentence: "May ___ kami para sa mga pinsan namin."
+        translation: "We have gifts from our trip for our cousins."
+        answer: pasalubong
+        options: [pasalubong, kamag-anak, palayan]
+        hint: 'A "pasalubong" is the gift you bring home from a trip — no Filipino visits family without one.'
+      - type: listen
+        audio: dadalaw_kami_kay_lolo_bukas
+        answer_tl: Dadalaw kami kay Lolo bukas
+        extra_words: [dumalaw, kahapon]
+        hint: 'Future of "dumalaw": drop -um- and double the first syllable → dadalaw.'
+      - type: choice
+        prompt: "You arrive at your aunt's house in the province. She says 'Ang laki mo na!' She means..."
+        answer: You've grown so big!
+        distractors: [You're so late!, You look so tired!, You've gotten so thin!]
+        audio: ang_laki_mo_na
+        audio_text: Ang laki mo na!
+        hint: '"Ang" + an adjective root makes an exclamation, like "Ang mahal naman!"'
+      - type: translate
+        prompt_tl: Dumalaw ang mga kamag-anak namin noong Pasko.
+        answer_en: Our relatives visited at Christmas.
+        accept:
+          - Our relatives visited during Christmas
+          - Our relatives visited us at Christmas
+          - Our relatives visited us during Christmas
+          - Our relatives visited last Christmas
+        extra_words: [will, city, cousins]
+        audio: dumalaw_ang_mga_kamag_anak_namin_noong_pasko
+      - type: translate
+        prompt_en: I bought pasalubong for my cousins.
+        answer_tl: Bumili ako ng pasalubong para sa mga pinsan ko.
+        extra_words: [kamag-anak, tita, dumalaw]
+        audio: bumili_ako_ng_pasalubong_para_sa_mga_pinsan_ko
+      - type: translate
+        prompt_en: We will visit our relatives in the province at Christmas.
+        answer_tl: Dadalaw kami sa mga kamag-anak namin sa probinsya sa Pasko.
+        accept: ["Sa Pasko, dadalaw kami sa mga kamag-anak namin sa probinsya"]
+        extra_words: [dumalaw, lungsod, kahapon]
+        audio: dadalaw_kami_sa_mga_kamag_anak_namin_sa_probinsya_sa_pasko
+        grading: { hyphens: true }
+  - id: cityprov-8
+    title: City or province?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Mas tahimik sa probinsya' means..."
+        answer: It's quieter in the province
+        distractors: [It's noisier in the province, The province is the quietest, It's as quiet as the province]
+        audio: mas_tahimik_sa_probinsya
+        audio_text: Mas tahimik sa probinsya.
+      - type: match
+        pairs:
+          - { tl: mas maingay, en: noisier }
+          - { tl: mas mura, en: cheaper }
+          - { tl: mas malayo, en: farther }
+          - { tl: mas sariwa, en: fresher }
+      - type: fill_blank
+        sentence: "Mas mahal ang bahay sa lungsod ___ sa probinsya."
+        translation: "Houses in the city are more expensive than in the province."
+        answer: kaysa
+        options: [kaysa, pero, kasi]
+      - type: translate
+        prompt_tl: Mas sariwa ang gulay sa probinsya kaysa sa lungsod.
+        answer_en: The vegetables in the province are fresher than in the city.
+        accept:
+          - Vegetables in the province are fresher than in the city
+          - Vegetables are fresher in the province than in the city
+          - The vegetables are fresher in the province than in the city
+        extra_words: [cheaper, town, market]
+        audio: mas_sariwa_ang_gulay_sa_probinsya_kaysa_sa_lungsod
+      - type: listen
+        audio: mas_maraming_trabaho_sa_lungsod
+        answer_tl: Mas maraming trabaho sa lungsod
+        extra_words: [probinsya, bukid]
+      - type: translate
+        prompt_tl: Ang Maynila ang pinakamaingay na lungsod.
+        answer_en: Manila is the noisiest city.
+        accept: ["Manila is the loudest city"]
+        extra_words: [quietest, province, biggest]
+        audio: ang_maynila_ang_pinakamaingay_na_lungsod
+      - type: fill_blank
+        sentence: "Hindi kasinglaki ___ Maynila ang bayan namin."
+        translation: "Our town is not as big as Manila."
+        answer: ng
+        options: [ng, kaysa, ang]
+      - type: translate
+        prompt_en: Life in the province is cheaper than in the city.
+        answer_tl: Mas mura ang buhay sa probinsya kaysa sa lungsod.
+        accept: ["Mas mura ang buhay sa probinsya kaysa sa siyudad"]
+        extra_words: [mahal, pinakamura, bayan]
+        audio: mas_mura_ang_buhay_sa_probinsya_kaysa_sa_lungsod
+      - type: translate
+        prompt_en: The city is noisier, but there are more jobs there.
+        answer_tl: Mas maingay ang lungsod, pero mas maraming trabaho doon.
+        accept:
+          - Mas maingay ang lungsod pero mas maraming trabaho doon
+          - Mas maingay ang siyudad, pero mas maraming trabaho doon
+        extra_words: [tahimik, dito, kaysa]
+        audio: mas_maingay_ang_lungsod_pero_mas_maraming_trabaho_doon
+  - id: cityprov-9
+    title: Neighbors and the fiesta
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kapitbahay, en: neighbor }
+          - { tl: pista, en: fiesta }
+          - { tl: bayan, en: town }
+          - { tl: bisita, en: guest }
+      - type: choice
+        prompt: "'Kapitbahay' means..."
+        answer: Neighbor
+        distractors: [Relative, Guest, Classmate]
+        audio: kapitbahay
+        audio_text: Kapitbahay
+      - type: translate
+        prompt_tl: Mabait ang mga kapitbahay namin sa probinsya.
+        answer_en: Our neighbors in the province are kind.
+        accept: ["Our neighbors in the province are nice"]
+        extra_words: [city, lazy, relatives]
+        audio: mabait_ang_mga_kapitbahay_namin_sa_probinsya
+      - type: fill_blank
+        sentence: "May ___ sa bayan namin bukas."
+        translation: "There is a fiesta in our town tomorrow."
+        answer: pista
+        options: [pista, palayan, trapik]
+      - type: listen
+        audio: masarap_ang_handa_ng_kapitbahay_namin
+        answer_tl: Masarap ang handa ng kapitbahay namin
+        extra_words: [bisita, mahal]
+      - type: choice
+        prompt: "During the fiesta, a neighbor waves you into her house. She says:"
+        answer: Halika, kain tayo!
+        distractors: [Ingat ka!, Paalam na!, Sobrang trapik ngayon.]
+        audio: halika_kain_tayo
+        audio_text: Halika, kain tayo!
+      - type: translate
+        prompt_tl: Tuwing pista, dumadalaw ang mga kapitbahay sa bahay namin.
+        answer_en: Every fiesta, the neighbors visit our house.
+        accept:
+          - Every fiesta, our neighbors visit our house
+          - The neighbors visit our house every fiesta
+          - Our neighbors visit our house every fiesta
+        extra_words: [church, never, relatives]
+        audio: tuwing_pista_dumadalaw_ang_mga_kapitbahay_sa_bahay_namin
+      - type: translate
+        prompt_en: Our neighbor is a farmer and he has a carabao.
+        answer_tl: Magsasaka ang kapitbahay namin at may kalabaw siya.
+        extra_words: [kamag-anak, bukid, wala]
+        audio: magsasaka_ang_kapitbahay_namin_at_may_kalabaw_siya
+      - type: translate
+        prompt_en: We will dance and sing at the fiesta in town.
+        answer_tl: Sasayaw at kakanta kami sa pista sa bayan.
+        accept: ["Kakanta at sasayaw kami sa pista sa bayan"]
+        extra_words: [sumayaw, kumanta, simbahan]
+        audio: sasayaw_at_kakanta_kami_sa_pista_sa_bayan
+  - id: cityprov-10
+    title: Moving to the city
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nakatira ako sa Maynila' means..."
+        answer: I live in Manila
+        distractors: [I work in Manila, I went to Manila, I grew up in Manila]
+        audio: nakatira_ako_sa_maynila
+        audio_text: Nakatira ako sa Maynila.
+      - type: match
+        pairs:
+          - { tl: lumipat, en: moved }
+          - { tl: nakatira, en: lives }
+          - { tl: lumaki, en: grew up }
+          - { tl: umuwi, en: went home }
+      - type: translate
+        prompt_tl: Lumipat ang pamilya namin sa lungsod noong isang taon.
+        answer_en: Our family moved to the city last year.
+        extra_words: [province, will, tomorrow]
+        audio: lumipat_ang_pamilya_namin_sa_lungsod_noong_isang_taon
+        hint: '"noong isang taon" — last year, like "noong isang araw" (the other day).'
+      - type: fill_blank
+        sentence: "Saan ka ___?"
+        translation: "Where do you live?"
+        answer: nakatira
+        options: [nakatira, lumipat, umuwi]
+      - type: listen
+        audio: nakatira_ang_kuya_ko_sa_lungsod
+        answer_tl: Nakatira ang kuya ko sa lungsod
+        extra_words: [lumipat, probinsya]
+      - type: choice
+        prompt: "'Lilipat kami sa probinsya' means..."
+        answer: We will move to the province
+        distractors: [We moved to the province, We live in the province, We grew up in the province]
+        audio: lilipat_kami_sa_probinsya
+        audio_text: Lilipat kami sa probinsya.
+        hint: 'Future of "lumipat": drop -um- and double the first syllable → lilipat.'
+      - type: translate
+        prompt_tl: Nakatira pa rin ang lolo at lola ko sa bukid.
+        answer_en: My grandparents still live on the farm.
+        accept:
+          - My grandfather and grandmother still live on the farm
+          - My grandpa and grandma still live on the farm
+        extra_words: [moved, city, never]
+        audio: nakatira_pa_rin_ang_lolo_at_lola_ko_sa_bukid
+        hint: '"pa rin" = still, even now.'
+      - type: translate
+        prompt_en: I live in the city, but my family lives in the province.
+        answer_tl: Nakatira ako sa lungsod, pero nakatira ang pamilya ko sa probinsya.
+        accept:
+          - Nakatira ako sa lungsod pero nakatira ang pamilya ko sa probinsya
+          - Nakatira ako sa siyudad, pero nakatira ang pamilya ko sa probinsya
+        extra_words: [lumipat, bayan, kami]
+        audio: nakatira_ako_sa_lungsod_pero_nakatira_ang_pamilya_ko_sa_probinsya
+      - type: translate
+        prompt_en: We moved to the city because there is no work in our town.
+        answer_tl: Lumipat kami sa lungsod kasi walang trabaho sa bayan namin.
+        accept:
+          - Lumipat kami sa lungsod dahil walang trabaho sa bayan namin
+          - Lumipat kami sa siyudad kasi walang trabaho sa bayan namin
+        extra_words: [nakatira, may, probinsya]
+        audio: lumipat_kami_sa_lungsod_kasi_walang_trabaho_sa_bayan_namin
+  - id: cityprov-11
+    title: Coming home for Christmas
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pasalubong, en: homecoming gift }
+          - { tl: kamag-anak, en: relative }
+          - { tl: maaga, en: early }
+          - { tl: siksikan, en: crowded }
+      - type: choice
+        prompt: "Your cousin calls and asks 'Kailan ka uuwi?' She wants to know..."
+        answer: When you are coming home
+        distractors: [Where you live, When you got home, Why you moved]
+        audio: kailan_ka_uuwi
+        audio_text: Kailan ka uuwi?
+      - type: listen
+        audio: uuwi_ako_sa_probinsya_sa_disyembre
+        answer_tl: Uuwi ako sa probinsya sa Disyembre
+        extra_words: [umuwi, lungsod]
+      - type: fill_blank
+        sentence: "Siksikan ang bus kasi maraming ___ sa probinsya tuwing Pasko."
+        translation: "The bus is packed because many people go home to the province every Christmas."
+        answer: umuuwi
+        options: [umuuwi, umuwi, uuwi]
+      - type: translate
+        prompt_tl: Umuwi kami nang maaga kasi siksikan ang bus sa gabi.
+        answer_en: We went home early because the bus is crowded at night.
+        accept:
+          - We went home early because the bus is packed at night
+          - We went home early because the bus gets crowded at night
+        extra_words: [late, morning, train]
+        audio: umuwi_kami_nang_maaga_kasi_siksikan_ang_bus_sa_gabi
+      - type: translate
+        prompt_tl: Masaya ang lola ko kasi uuwi ako bukas.
+        answer_en: My grandmother is happy because I will go home tomorrow.
+        accept:
+          - My grandmother is happy because I am going home tomorrow
+          - My grandmother is happy because I'm going home tomorrow
+          - My grandma is happy because I will go home tomorrow
+          - My grandma is happy because I'm going home tomorrow
+        extra_words: [went, yesterday, sad]
+        audio: masaya_ang_lola_ko_kasi_uuwi_ako_bukas
+      - type: translate
+        prompt_en: I live in the city now, but I grew up on a farm in the province.
+        answer_tl: Nakatira ako sa lungsod ngayon, pero lumaki ako sa bukid sa probinsya.
+        accept:
+          - Nakatira ako ngayon sa lungsod, pero lumaki ako sa bukid sa probinsya
+          - Nakatira ako sa lungsod ngayon pero lumaki ako sa bukid sa probinsya
+        extra_words: [lumipat, nayon, uuwi]
+        audio: nakatira_ako_sa_lungsod_ngayon_pero_lumaki_ako_sa_bukid_sa_probinsya
+      - type: translate
+        prompt_en: Every Christmas, we go home to the province and visit our relatives.
+        answer_tl: Tuwing Pasko, umuuwi kami sa probinsya at dumadalaw kami sa mga kamag-anak namin.
+        accept:
+          - Tuwing Pasko, umuuwi kami sa probinsya at dumadalaw sa mga kamag-anak namin
+          - Tuwing Pasko ay umuuwi kami sa probinsya at dumadalaw kami sa mga kamag-anak namin
+        extra_words: [umuwi, dumalaw, lungsod]
+        audio: tuwing_pasko_umuuwi_kami_sa_probinsya_at_dumadalaw_kami_sa_mga_kamag_anak_namin
+        grading: { hyphens: true }
+        hint: 'A habit ("tuwing Pasko") takes the doubled form — for both verbs.'
+      - type: translate
+        prompt_en: The air is fresher and the nights are quieter in the province than in the city.
+        answer_tl: Mas sariwa ang hangin at mas tahimik ang gabi sa probinsya kaysa sa lungsod.
+        accept: ["Mas sariwa ang hangin at mas tahimik ang gabi sa probinsya kaysa sa siyudad"]
+        extra_words: [maingay, mainit, bayan]
+        audio: mas_sariwa_ang_hangin_at_mas_tahimik_ang_gabi_sa_probinsya_kaysa_sa_lungsod

@@ -211,3 +211,372 @@ lessons:
         translation: "Please come in!"
         answer: Tuloy
         options: [Tuloy, Paalam, Salamat]
+  - id: home-5
+    title: Upstairs, downstairs
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: itaas, en: upstairs }
+          - { tl: ibaba, en: downstairs }
+          - { tl: hagdan, en: stairs }
+          - { tl: labas, en: outside }
+      - type: choice
+        prompt: "'Nasa itaas ang kwarto ko' means..."
+        answer: My bedroom is upstairs
+        distractors: [My bedroom is downstairs, My bedroom is outside, Where is my bedroom?]
+        audio: nasa_itaas_ang_kwarto_ko
+        audio_text: Nasa itaas ang kwarto ko.
+        hint: '"itaas" = up / upstairs; "ibaba" = down / downstairs.'
+      - type: translate
+        prompt_tl: Nasa ibaba ang kusina.
+        answer_en: The kitchen is downstairs.
+        extra_words: [upstairs, bathroom, outside]
+        audio: nasa_ibaba_ang_kusina
+      - type: fill_blank
+        sentence: "Nasa ___ si Tatay. Nasa hardin siya."
+        translation: "Dad is outside. He's in the garden."
+        answer: labas
+        options: [labas, loob, itaas]
+        audio: nasa_labas_si_tatay_nasa_hardin_siya
+      - type: listen
+        audio: nasa_itaas_ang_banyo
+        answer_tl: Nasa itaas ang banyo
+        extra_words: [ibaba, kusina]
+      - type: choice
+        prompt: "'Hagdan' means..."
+        answer: Stairs
+        distractors: [Door, Floor, Roof]
+        audio: hagdan
+        audio_text: Hagdan
+      - type: translate
+        prompt_en: Where are the stairs?
+        answer_tl: Nasaan ang hagdan?
+        extra_words: [saan, itaas, ba]
+        audio: nasaan_ang_hagdan
+      - type: translate
+        prompt_en: Mom is upstairs.
+        answer_tl: Nasa itaas si Nanay.
+        extra_words: [ibaba, ang, ako]
+        audio: nasa_itaas_si_nanay
+  - id: home-6
+    title: Under, beside, behind
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ilalim, en: under }
+          - { tl: tabi, en: beside }
+          - { tl: likod, en: behind }
+          - { tl: harap, en: in front }
+      - type: choice
+        prompt: "'Nasa ilalim ng mesa ang libro' means..."
+        answer: The book is under the table
+        distractors: [The book is on the table, The book is beside the table, The table is under the book]
+        audio: nasa_ilalim_ng_mesa_ang_libro
+        audio_text: Nasa ilalim ng mesa ang libro.
+        hint: '"ilalim" = underside; like "ibabaw", it links to the thing with "ng".'
+      - type: fill_blank
+        sentence: "Nasa ___ ng kama ang silya."
+        translation: "The chair is beside the bed."
+        answer: tabi
+        options: [tabi, ilalim, loob]
+        audio: nasa_tabi_ng_kama_ang_silya
+      - type: translate
+        prompt_tl: Nasa likod ng bahay ang hardin.
+        answer_en: The garden is behind the house.
+        extra_words: [front, beside, kitchen]
+        audio: nasa_likod_ng_bahay_ang_hardin
+        hint: '"likod" is your back — and also "behind".'
+      - type: listen
+        audio: nasa_harap_ng_bahay_ako
+        answer_tl: Nasa harap ng bahay ako
+        extra_words: [likod, ilalim]
+      - type: choice
+        prompt: "Which one says 'The trash is behind the door'?"
+        answer: Nasa likod ng pinto ang basura
+        distractors:
+          - Nasa harap ng pinto ang basura
+          - Nasa ilalim ng pinto ang basura
+          - Nasa tabi ng pinto ang basura
+      - type: translate
+        prompt_en: The books are under the bed.
+        answer_tl: Nasa ilalim ng kama ang mga libro.
+        extra_words: [ibabaw, tabi, sa]
+        audio: nasa_ilalim_ng_kama_ang_mga_libro
+      - type: translate
+        prompt_en: Where is the light? It's beside the window.
+        answer_tl: Nasaan ang ilaw? Nasa tabi ng bintana.
+        extra_words: [ilalim, pinto, saan]
+        audio: nasaan_ang_ilaw_nasa_tabi_ng_bintana
+  - id: home-7
+    title: Bedroom and living room
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: unan, en: pillow }
+          - { tl: kumot, en: blanket }
+          - { tl: telebisyon, en: television }
+          - { tl: sopa, en: sofa }
+      - type: choice
+        prompt: "'Kumot' means..."
+        answer: Blanket
+        distractors: [Pillow, Bed, Window]
+        audio: kumot
+        audio_text: Kumot
+      - type: translate
+        prompt_tl: Nasa ibabaw ng kama ang unan.
+        answer_en: The pillow is on the bed.
+        accept: ["The pillow is on top of the bed"]
+        extra_words: [under, blanket, chair]
+        audio: nasa_ibabaw_ng_kama_ang_unan
+      - type: fill_blank
+        sentence: "Malamig. Nasaan ang ___ ko?"
+        translation: "It's cold. Where is my blanket?"
+        answer: kumot
+        options: [kumot, unan, kama]
+        audio: malamig_nasaan_ang_kumot_ko
+      - type: listen
+        audio: nasa_sala_ang_telebisyon
+        answer_tl: Nasa sala ang telebisyon
+        extra_words: [kwarto, sopa]
+      - type: choice
+        prompt: "'Natutulog si Lolo sa sopa' means..."
+        answer: Grandpa is sleeping on the sofa
+        distractors: [Grandpa is sitting on the bed, Grandpa is cleaning the sofa, Grandpa is in the kitchen]
+        audio: natutulog_si_lolo_sa_sopa
+        audio_text: Natutulog si Lolo sa sopa.
+      - type: translate
+        prompt_en: There is a big sofa in the living room.
+        answer_tl: May malaking sopa sa sala.
+        accept: ["Sa sala, may malaking sopa"]
+        extra_words: [maliit, kwarto, ang]
+        audio: may_malaking_sopa_sa_sala
+        hint: '"malaki" takes the -ng linker before a noun: malaking sopa.'
+      - type: translate
+        prompt_en: I have two pillows.
+        answer_tl: May dalawang unan ako.
+        accept: ["Dalawa ang unan ko."]
+        extra_words: [tatlo, kumot, ka]
+        audio: may_dalawang_unan_ako
+        hint: 'Numbers take the linker too: dalawa → dalawang unan.'
+  - id: home-8
+    title: More chores
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naglalaba, en: doing laundry }
+          - { tl: nagliligpit, en: tidying up }
+          - { tl: nagdidilig, en: watering plants }
+          - { tl: nagluluto, en: cooking }
+      - type: choice
+        prompt: "'Naglalaba ako' means..."
+        answer: I'm doing the laundry
+        distractors: ["I'm washing the dishes", "I'm sweeping", "I'm cooking"]
+        audio: naglalaba_ako
+        audio_text: Naglalaba ako.
+        hint: '"naglalaba" is for clothes; "naghuhugas" is for dishes.'
+      - type: translate
+        prompt_tl: Nagdidilig si Lolo ng mga bulaklak.
+        answer_en: Grandpa is watering the flowers.
+        extra_words: [garden, sweeping, trees]
+        audio: nagdidilig_si_lolo_ng_mga_bulaklak
+      - type: fill_blank
+        sentence: "___ ako ng kwarto ko."
+        translation: "I'm tidying up my room."
+        answer: Nagliligpit
+        options: [Nagliligpit, Nagdidilig, Naglalaba]
+        audio: nagliligpit_ako_ng_kwarto_ko
+      - type: listen
+        audio: naglalaba_si_nanay_sa_labas
+        answer_tl: Naglalaba si Nanay sa labas
+        extra_words: [loob, tatay]
+      - type: choice
+        prompt: "'Sino ang naghuhugas ng plato?' asks..."
+        answer: Who is washing the dishes?
+        distractors: [Where are the plates?, Who is cooking?, Are you washing the dishes?]
+        audio: sino_ang_naghuhugas_ng_plato
+        audio_text: Sino ang naghuhugas ng plato?
+        hint: '"Sino ang ...?" = Who is ...?'
+      - type: translate
+        prompt_en: Dad is washing the dishes.
+        answer_tl: Naghuhugas si Tatay ng plato.
+        accept: ["Naghuhugas ng plato si Tatay."]
+        extra_words: [naglalaba, ang, nanay]
+        audio: naghuhugas_si_tatay_ng_plato
+      - type: translate
+        prompt_en: I'm sweeping and she's doing the laundry.
+        answer_tl: Nagwawalis ako at naglalaba siya.
+        extra_words: [nagluluto, ka, sa]
+        audio: nagwawalis_ako_at_naglalaba_siya
+        hint: '"at" = and.'
+  - id: home-9
+    title: Clean or messy?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malinis, en: clean }
+          - { tl: marumi, en: dirty }
+          - { tl: makalat, en: messy }
+          - { tl: basura, en: trash }
+      - type: choice
+        prompt: "'Makalat ang kwarto mo!' means..."
+        answer: Your room is messy!
+        distractors: [Your room is clean!, Your room is small!, Where is your room?]
+        audio: makalat_ang_kwarto_mo
+        audio_text: Makalat ang kwarto mo!
+      - type: translate
+        prompt_tl: Malinis na ang kusina.
+        answer_en: The kitchen is clean now.
+        accept: ["The kitchen is already clean"]
+        extra_words: [dirty, bathroom, still]
+        audio: malinis_na_ang_kusina
+        hint: '"na" = now / already, just like "Pagod na ako".'
+      - type: fill_blank
+        sentence: "___ ang banyo. Naglilinis ako ngayon."
+        translation: "The bathroom is dirty. I'm cleaning it now."
+        answer: Marumi
+        options: [Marumi, Malinis, Malaki]
+        audio: marumi_ang_banyo_naglilinis_ako_ngayon
+      - type: listen
+        audio: malinis_na_ang_bahay
+        answer_tl: Malinis na ang bahay
+        extra_words: [marumi, pa]
+      - type: choice
+        prompt: "Mom sees your messy room and says 'Magligpit ka!' She wants you to..."
+        answer: Tidy up
+        distractors: [Go to sleep, Do the laundry, Water the plants]
+        audio: magligpit_ka
+        audio_text: Magligpit ka!
+        hint: 'mag- + root + "ka" = a direct command: magligpit ka = tidy up.'
+      - type: translate
+        prompt_en: My room is messy because I'm tired.
+        answer_tl: Makalat ang kwarto ko kasi pagod ako.
+        accept: ["Makalat ang kwarto ko dahil pagod ako."]
+        extra_words: [malinis, mo, bakit]
+        audio: makalat_ang_kwarto_ko_kasi_pagod_ako
+      - type: translate
+        prompt_en: Is the bathroom clean?
+        answer_tl: Malinis ba ang banyo?
+        extra_words: [marumi, na, ka]
+        audio: malinis_ba_ang_banyo
+  - id: home-10
+    title: Welcoming a guest
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Tuloy po kayo, en: Please come in }
+          - { tl: Umupo po kayo, en: Please sit down }
+          - { tl: Pasensya na, en: Sorry }
+          - { tl: Salamat po, en: Thank you }
+      - type: choice
+        prompt: "'Pasensya na, makalat ang bahay' means..."
+        answer: Sorry, the house is messy
+        distractors: ["Welcome, the house is clean", "Sorry, I'm late", "Please sit on the sofa"]
+        audio: pasensya_na_makalat_ang_bahay
+        audio_text: Pasensya na, makalat ang bahay.
+        hint: '"pasensya na" = sorry (for the trouble) — literally "have patience".'
+      - type: translate
+        prompt_tl: Umupo po kayo sa sopa.
+        answer_en: Please sit on the sofa.
+        accept: ["Please have a seat on the sofa", "Sit on the sofa, please"]
+        extra_words: [bed, stand, chair]
+        audio: umupo_po_kayo_sa_sopa
+        hint: '"po" + "kayo" turns a command into a polite invitation.'
+      - type: fill_blank
+        sentence: "Ang ___ ng bahay ninyo!"
+        translation: "Your house is so beautiful!"
+        answer: ganda
+        options: [ganda, maganda, malaki]
+        audio: ang_ganda_ng_bahay_ninyo
+        hint: 'Exclaim with "ang" + the bare root + "ng": maganda → Ang ganda ng ...!'
+      - type: choice
+        prompt: "Your host says 'Huwag po kayong mahiya.' They mean..."
+        answer: Make yourself at home
+        distractors: [Please leave now, "Don't sit there", "Don't be late"]
+        audio: huwag_po_kayong_mahiya
+        audio_text: Huwag po kayong mahiya.
+        hint: 'Literally "don''t be shy" — hosts say it so guests feel at home.'
+      - type: listen
+        audio: gusto_po_ba_ninyo_ng_kape
+        answer_tl: Gusto po ba ninyo ng kape
+        extra_words: [tubig, kayo]
+      - type: translate
+        prompt_tl: Salamat po. Ang ganda ng sala ninyo!
+        answer_en: Thank you. Your living room is so beautiful!
+        accept:
+          - "Thank you. Your living room is so nice!"
+          - "Thanks. Your living room is so beautiful!"
+          - "Thank you. Your living room is beautiful!"
+        extra_words: [kitchen, small, my]
+        audio: salamat_po_ang_ganda_ng_sala_ninyo
+      - type: translate
+        prompt_en: Please come in! Would you like some water?
+        answer_tl: Tuloy po kayo! Gusto po ba ninyo ng tubig?
+        accept: ["Tuloy po kayo! Gusto ba ninyo ng tubig"]
+        extra_words: [kape, ka, mo]
+        audio: tuloy_po_kayo_gusto_po_ba_ninyo_ng_tubig
+        hint: '"ninyo" is the polite "you" that pairs with "kayo".'
+  - id: home-11
+    title: A visit
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: hagdan, en: stairs }
+          - { tl: makalat, en: messy }
+          - { tl: kumot, en: blanket }
+          - { tl: tabi, en: beside }
+      - type: choice
+        prompt: "You arrive at a friend's house. The host says 'Tuloy po kayo!' You reply:"
+        answer: Salamat po.
+        distractors: [Paalam po., Walang anuman., Pasensya na.]
+        audio: salamat_po
+        audio_text: Salamat po.
+      - type: translate
+        prompt_tl: Nasa itaas ang banyo, sa tabi ng kwarto ko.
+        answer_en: The bathroom is upstairs, beside my bedroom.
+        accept:
+          - "The bathroom is upstairs, next to my bedroom"
+          - "The bathroom is upstairs, beside my room"
+          - "The bathroom is upstairs, next to my room"
+        extra_words: [downstairs, kitchen, under]
+        audio: nasa_itaas_ang_banyo_sa_tabi_ng_kwarto_ko
+      - type: fill_blank
+        sentence: "Naglilinis kami ___ may bisita bukas."
+        translation: "We're cleaning because a guest is coming tomorrow."
+        answer: kasi
+        options: [kasi, bakit, nasa]
+        audio: naglilinis_kami_kasi_may_bisita_bukas
+        hint: '"bisita" = guest.'
+      - type: listen
+        audio: pasensya_na_makalat_ang_kwarto_ko
+        answer_tl: Pasensya na, makalat ang kwarto ko
+        extra_words: [malinis, bahay]
+      - type: choice
+        prompt: "'Nasa harap ng telebisyon si Lolo' means..."
+        answer: Grandpa is in front of the TV
+        distractors: [Grandpa is behind the TV, Grandpa is under the TV, Grandpa is beside the TV]
+        audio: nasa_harap_ng_telebisyon_si_lolo
+        audio_text: Nasa harap ng telebisyon si Lolo.
+      - type: translate
+        prompt_en: Sorry, the kitchen is dirty.
+        answer_tl: Pasensya na, marumi ang kusina.
+        extra_words: [malinis, makalat, sa]
+        audio: pasensya_na_marumi_ang_kusina
+      - type: translate
+        prompt_en: Your house is so clean!
+        answer_tl: Ang linis ng bahay mo!
+        accept: ["Ang linis ng bahay ninyo!"]
+        extra_words: [malinis, ninyo, ganda]
+        audio: ang_linis_ng_bahay_mo
+        hint: 'Same pattern as "Ang ganda ng ...!": malinis → Ang linis ng ...!'
+      - type: translate
+        prompt_en: Mom is upstairs. She's tidying up the bedroom.
+        answer_tl: Nasa itaas si Nanay. Nagliligpit siya ng kwarto.
+        extra_words: [ibaba, naglalaba, ako]
+        audio: nasa_itaas_si_nanay_nagliligpit_siya_ng_kwarto

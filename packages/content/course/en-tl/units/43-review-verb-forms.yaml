@@ -41,6 +41,10 @@ lessons:
       - type: translate
         prompt_en: She will drink milk tomorrow.
         answer_tl: Iinom siya ng gatas bukas.
+        accept:
+          - "Bukas, iinom siya ng gatas"
+          - "Iinom siya bukas ng gatas"
+          - "Bukas siya iinom ng gatas"
         extra_words: [uminom, kape, kahapon]
         audio: iinom_siya_ng_gatas_bukas
         hint: 'Future of "uminom": drop the -um- and double the first syllable → iinom.'
@@ -214,7 +218,14 @@ lessons:
       - type: translate
         prompt_en: I will sleep later because I am tired.
         answer_tl: Matutulog ako mamaya kasi pagod ako.
-        extra_words: [natulog, natutulog, bukas]
+        accept:
+          - "Mamaya, matutulog ako kasi pagod ako"
+          - "Mamaya ako matutulog kasi pagod ako"
+          - "Matutulog ako mamaya dahil pagod ako"
+          - "Mamaya, matutulog ako dahil pagod ako"
+          - "Mamaya ako matutulog dahil pagod ako"
+          - "Dahil pagod ako, matutulog ako mamaya"
+        extra_words: [natulog, natutulog, bukas, dahil]
         audio: matutulog_ako_mamaya_kasi_pagod_ako
       - type: fill_blank
         sentence: "Sumayaw kami kahapon at ___ kami bukas."
@@ -248,3 +259,411 @@ lessons:
         extra_words: [pupunta, nagluto, bukas]
         audio: pumunta_ako_sa_palengke_kahapon_nagluluto_ako_ngayon_at_kakain_kami_mamaya
         hint: 'Three clauses, three aspects: done, happening, still to come.'
+  - id: revverbs-5
+    title: Buy, go, go home
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bumili, en: bought }
+          - { tl: bumibili, en: buying }
+          - { tl: bibili, en: will buy }
+          - { tl: pupunta, en: will go }
+      - type: choice
+        prompt: "Which is the future form of 'umuwi' (went home)?"
+        answer: Uuwi
+        distractors: [Umuuwi, Umuwi, Uwi]
+        audio: uuwi
+        audio_text: Uuwi
+      - type: fill_blank
+        sentence: "___ kami sa simbahan sa Linggo."
+        translation: "We will go to church on Sunday."
+        answer: Pupunta
+        options: [Pupunta, Pumunta, Pumupunta]
+      - type: translate
+        prompt_tl: Umuuwi ako tuwing Biyernes.
+        answer_en: I go home every Friday.
+        accept: ["Every Friday I go home"]
+        extra_words: [went, will, Monday]
+        audio: umuuwi_ako_tuwing_biyernes
+      - type: listen
+        audio: bumibili_siya_ng_tinapay_araw_araw
+        answer_tl: Bumibili siya ng tinapay araw-araw
+        extra_words: [bumili, bibili]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I went home earlier, and I will go to the market later.
+        answer_tl: Umuwi ako kanina, at pupunta ako sa palengke mamaya.
+        accept: ["Umuwi ako kanina at pupunta ako sa palengke mamaya"]
+        extra_words: [uuwi, pumunta, bukas]
+        audio: umuwi_ako_kanina_at_pupunta_ako_sa_palengke_mamaya
+      - type: choice
+        prompt: "Which sentence is correct?"
+        answer: Bibili ako ng gatas bukas.
+        distractors: [Bumili ako ng gatas bukas., Bibili ako ng gatas kahapon., Bumili ako ng gatas mamaya.]
+        audio: bibili_ako_ng_gatas_bukas
+        audio_text: Bibili ako ng gatas bukas.
+      - type: translate
+        prompt_tl: Pumupunta sila sa palengke tuwing Sabado, pero pupunta sila sa simbahan bukas.
+        answer_en: They go to the market every Saturday, but they will go to church tomorrow.
+        accept:
+          - "They go to the market every Saturday but they will go to church tomorrow"
+          - "They go to the market every Saturday, but tomorrow they will go to church"
+          - "They go to the market every Saturday, but they will go to the church tomorrow"
+        extra_words: [went, Sunday, buy]
+        audio: pumupunta_sila_sa_palengke_tuwing_sabado_pero_pupunta_sila_sa_simbahan_bukas
+      - type: translate
+        prompt_en: Did you buy bread? I will buy milk.
+        answer_tl: Bumili ka ba ng tinapay? Bibili ako ng gatas.
+        extra_words: [bumibili, na, kami]
+        audio: bumili_ka_ba_ng_tinapay_bibili_ako_ng_gatas
+  - id: revverbs-6
+    title: Read, clean, walk
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nagbasa, en: read (past) }
+          - { tl: nagbabasa, en: reading }
+          - { tl: magbabasa, en: will read }
+          - { tl: naglilinis, en: cleaning }
+      - type: choice
+        prompt: "'Maglalakad kami mamaya' means..."
+        answer: We will walk later
+        distractors: [We walked earlier, We are walking now, We walk every day]
+        audio: maglalakad_kami_mamaya
+        audio_text: Maglalakad kami mamaya.
+      - type: translate
+        prompt_tl: Nagbabasa si Lolo ng libro ngayon.
+        answer_en: Grandpa is reading a book now.
+        accept: ["Grandpa is reading a book right now", "Grandfather is reading a book now"]
+        extra_words: [read, will, yesterday]
+        audio: nagbabasa_si_lolo_ng_libro_ngayon
+      - type: fill_blank
+        sentence: "___ ako ng kwarto ko bukas."
+        translation: "I will clean my room tomorrow."
+        answer: Maglilinis
+        options: [Maglilinis, Naglinis, Naglilinis]
+      - type: listen
+        audio: naglakad_kami_sa_hardin_kahapon
+        answer_tl: Naglakad kami sa hardin kahapon
+        extra_words: [maglalakad, naglalakad]
+      - type: translate
+        prompt_en: My sibling is studying, and I will study later.
+        answer_tl: Nag-aaral ang kapatid ko, at mag-aaral ako mamaya.
+        accept: ["Nag-aaral ang kapatid ko at mag-aaral ako mamaya"]
+        extra_words: [nag-aral, bukas, siya]
+        grading: { hyphens: true }
+        audio: nag_aaral_ang_kapatid_ko_at_mag_aaral_ako_mamaya
+      - type: choice
+        prompt: "'Nagtrabaho' — when did it happen?"
+        answer: It already happened
+        distractors: [It is happening now, It will happen, It happens every day]
+        audio: nagtrabaho
+        audio_text: Nagtrabaho
+      - type: translate
+        prompt_tl: Nagtatrabaho si Tatay ngayon, at magtatrabaho rin siya bukas.
+        answer_en: Dad is working now, and he will work tomorrow too.
+        accept:
+          - "Dad is working now and he will work tomorrow too"
+          - "Dad is working now, and he will also work tomorrow"
+          - "Father is working now, and he will work tomorrow too"
+        extra_words: [worked, yesterday, today]
+        audio: nagtatrabaho_si_tatay_ngayon_at_magtatrabaho_rin_siya_bukas
+      - type: translate
+        prompt_en: I read a book yesterday, and I am cleaning the house now.
+        answer_tl: Nagbasa ako ng libro kahapon, at naglilinis ako ng bahay ngayon.
+        accept: ["Nagbasa ako ng libro kahapon at naglilinis ako ng bahay ngayon"]
+        extra_words: [magbabasa, maglilinis, bukas]
+        audio: nagbasa_ako_ng_libro_kahapon_at_naglilinis_ako_ng_bahay_ngayon
+  - id: revverbs-7
+    title: Bathe, sleep, watch
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naligo, en: took a bath }
+          - { tl: naliligo, en: taking a bath }
+          - { tl: maliligo, en: will take a bath }
+          - { tl: nanonood, en: watching }
+      - type: choice
+        prompt: "Which sentence means 'Grandma is sleeping now'?"
+        answer: Natutulog si Lola ngayon.
+        distractors: [Natulog si Lola kanina., Matutulog si Lola mamaya., Naliligo si Lola ngayon.]
+        audio: natutulog_si_lola_ngayon
+        audio_text: Natutulog si Lola ngayon.
+      - type: translate
+        prompt_tl: Naligo ako bago pumunta sa simbahan.
+        answer_en: I took a bath before going to church.
+        accept: ["I bathed before going to church", "I showered before going to church", "I took a bath before I went to church"]
+        extra_words: [after, will, school]
+        audio: naligo_ako_bago_pumunta_sa_simbahan
+      - type: fill_blank
+        sentence: "___ kami ng pelikula mamaya."
+        translation: "We will watch a movie later."
+        answer: Manonood
+        options: [Manonood, Nanood, Nanonood]
+      - type: listen
+        audio: maliligo_muna_ako
+        answer_tl: Maliligo muna ako
+        extra_words: [naligo, tapos]
+      - type: translate
+        prompt_en: He slept earlier because he was tired.
+        answer_tl: Natulog siya kanina kasi pagod siya.
+        accept: ["Natulog siya kanina dahil pagod siya"]
+        extra_words: [natutulog, matutulog, bukas]
+        audio: natulog_siya_kanina_kasi_pagod_siya
+      - type: choice
+        prompt: "We ___ a movie yesterday. Which form fits?"
+        answer: Nanood
+        distractors: [Nanonood, Manonood, Manood]
+        audio: nanood
+        audio_text: Nanood
+      - type: translate
+        prompt_tl: Nanonood sila ng pelikula tuwing Sabado.
+        answer_en: They watch a movie every Saturday.
+        accept: ["They watch movies every Saturday", "Every Saturday they watch a movie"]
+        extra_words: [watched, will, Sunday]
+        audio: nanonood_sila_ng_pelikula_tuwing_sabado
+      - type: translate
+        prompt_en: I will take a bath first, then I will sleep.
+        answer_tl: Maliligo muna ako, tapos matutulog ako.
+        accept: ["Maliligo muna ako tapos matutulog ako"]
+        extra_words: [naligo, natulog, bago]
+        audio: maliligo_muna_ako_tapos_matutulog_ako
+  - id: revverbs-8
+    title: Na at pa
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: na, en: already }
+          - { tl: pa, en: still }
+          - { tl: hindi pa, en: not yet }
+          - { tl: muna, en: first }
+      - type: choice
+        prompt: "A friend asks, 'Nag-aral ka na ba?' You haven't yet. Say:"
+        answer: Hindi pa ako nag-aaral.
+        distractors: ["Oo, nag-aral na ako.", Nag-aral ako kahapon., Mag-aaral ako kahapon.]
+        audio: hindi_pa_ako_nag_aaral
+        audio_text: Hindi pa ako nag-aaral.
+      - type: translate
+        prompt_tl: Hindi pa siya umuuwi.
+        answer_en: She hasn't gone home yet.
+        accept:
+          - "He hasn't gone home yet"
+          - "She has not gone home yet"
+          - "He has not gone home yet"
+          - "She hasn't come home yet"
+          - "He hasn't come home yet"
+        extra_words: [already, went, will]
+        audio: hindi_pa_siya_umuuwi
+      - type: fill_blank
+        sentence: "Kumain ka ___ ba?"
+        translation: "Have you eaten yet?"
+        answer: na
+        options: [na, pa, muna]
+      - type: listen
+        audio: hindi_pa_kami_kumakain
+        answer_tl: Hindi pa kami kumakain
+        extra_words: [na, kumain]
+      - type: translate
+        prompt_en: I already drank coffee.
+        answer_tl: Uminom na ako ng kape.
+        extra_words: [umiinom, pa, iinom]
+        audio: uminom_na_ako_ng_kape
+      - type: choice
+        prompt: "Which sentence means 'They haven't cooked yet'?"
+        answer: Hindi pa sila nagluluto.
+        distractors: [Nagluto na sila., Magluluto sila mamaya., Nagluluto pa sila.]
+        audio: hindi_pa_sila_nagluluto
+        audio_text: Hindi pa sila nagluluto.
+      - type: translate
+        prompt_tl: Nagluluto pa si Nanay. Mamaya pa tayo kakain.
+        answer_en: Mom is still cooking. We will eat later.
+        accept: ["Mom is still cooking. We'll eat later.", "Mother is still cooking. We will eat later."]
+        extra_words: [already, cooked, now]
+        audio: nagluluto_pa_si_nanay_mamaya_pa_tayo_kakain
+      - type: translate
+        prompt_en: Have you gone to the market yet? I haven't gone yet.
+        answer_tl: Pumunta ka na ba sa palengke? Hindi pa ako pumupunta.
+        extra_words: [pupunta, bumili, kami]
+        audio: pumunta_ka_na_ba_sa_palengke_hindi_pa_ako_pumupunta
+  - id: revverbs-9
+    title: Commands or statements?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maglaro, en: to play }
+          - { tl: naglaro, en: played }
+          - { tl: naglalaro, en: playing }
+          - { tl: maglalaro, en: will play }
+      - type: choice
+        prompt: "Which sentence is a command?"
+        answer: Maglinis ka ng kwarto mo.
+        distractors: [Naglinis ka ng kwarto mo., Naglilinis ka ng kwarto mo., Maglilinis ka ng kwarto mo.]
+        audio: maglinis_ka_ng_kwarto_mo
+        audio_text: Maglinis ka ng kwarto mo.
+        hint: 'Commands take the plain form: mag- with no doubled syllable.'
+      - type: translate
+        prompt_tl: Gusto kong manood ng pelikula mamaya.
+        answer_en: I want to watch a movie later.
+        accept: ["I'd like to watch a movie later", "I want to watch a film later"]
+        extra_words: [watched, will, yesterday]
+        audio: gusto_kong_manood_ng_pelikula_mamaya
+      - type: fill_blank
+        sentence: "Huwag kang ___ ng kape sa gabi."
+        translation: "Don't drink coffee at night."
+        answer: uminom
+        options: [uminom, umiinom, iinom]
+        hint: 'After "huwag kang", use the plain form — for -um- verbs it looks just like the completed one.'
+      - type: listen
+        audio: kumain_ka_muna_bago_maglaro
+        answer_tl: Kumain ka muna bago maglaro
+        extra_words: [kumakain, naglaro]
+      - type: translate
+        prompt_en: Don't sleep now, we will eat later.
+        answer_tl: Huwag kang matulog ngayon, kakain tayo mamaya.
+        accept: ["Huwag kang matulog ngayon kakain tayo mamaya", "Huwag kang matulog ngayon, kakain kami mamaya"]
+        extra_words: [natutulog, kumain, bukas]
+        audio: huwag_kang_matulog_ngayon_kakain_tayo_mamaya
+      - type: choice
+        prompt: "Complete 'Pwede bang ___ dito?' (May I sit here?)"
+        answer: Umupo
+        distractors: [Umuupo, Uupo, Tumayo]
+        audio: pwede_bang_umupo_dito
+        audio_text: Pwede bang umupo dito?
+      - type: translate
+        prompt_tl: Naglaro kami kanina, at maglalaro rin kami bukas.
+        answer_en: We played earlier, and we will play tomorrow too.
+        accept:
+          - "We played earlier and we will play tomorrow too"
+          - "We played earlier, and we will also play tomorrow"
+          - "We played earlier today, and we will play tomorrow too"
+        extra_words: [playing, yesterday, now]
+        audio: naglaro_kami_kanina_at_maglalaro_rin_kami_bukas
+      - type: translate
+        prompt_en: Study first, then you can play.
+        answer_tl: Mag-aral ka muna, tapos pwede kang maglaro.
+        accept: ["Mag-aral ka muna tapos pwede kang maglaro"]
+        extra_words: [nag-aral, naglaro, huwag]
+        grading: { hyphens: true }
+        audio: mag_aral_ka_muna_tapos_pwede_kang_maglaro
+  - id: revverbs-10
+    title: Spot the mismatch
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which sentence is wrong?"
+        answer: Kakain ako kahapon.
+        distractors: [Kumain ako kahapon., Kakain ako bukas., Kumakain ako ngayon.]
+      - type: choice
+        prompt: "Which sentence is wrong?"
+        answer: Naglinis kami bukas.
+        distractors: [Naglinis kami kanina., Maglilinis kami bukas., Naglilinis kami ngayon.]
+      - type: fill_blank
+        sentence: "Tuwing Linggo, ___ kami sa simbahan."
+        translation: "Every Sunday, we go to church."
+        answer: pumupunta
+        options: [pumupunta, pumunta, pupunta]
+      - type: fill_blank
+        sentence: "Noong Pasko, ___ si Lola ng adobo."
+        translation: "Last Christmas, Grandma cooked adobo."
+        answer: nagluto
+        options: [nagluto, nagluluto, magluluto]
+      - type: listen
+        audio: gumigising_ako_tuwing_umaga
+        answer_tl: Gumigising ako tuwing umaga
+        extra_words: [gumising, gigising]
+      - type: translate
+        prompt_tl: Sumasayaw si Ate tuwing Biyernes, pero kakanta siya bukas.
+        answer_en: Big sister dances every Friday, but she will sing tomorrow.
+        accept:
+          - "My older sister dances every Friday, but she will sing tomorrow"
+          - "Ate dances every Friday, but she will sing tomorrow"
+          - "Big sister dances every Friday but she will sing tomorrow"
+        extra_words: [danced, sang, Saturday]
+        audio: sumasayaw_si_ate_tuwing_biyernes_pero_kakanta_siya_bukas
+      - type: choice
+        prompt: "'Kahapon, ___ kami ng basketbol.' Which form fits?"
+        answer: Naglaro
+        distractors: [Naglalaro, Maglalaro, Maglaro]
+        audio: naglaro
+        audio_text: Naglaro
+      - type: translate
+        prompt_en: I woke up earlier, I am eating now, and I will go to school later.
+        answer_tl: Gumising ako kanina, kumakain ako ngayon, at pupunta ako sa paaralan mamaya.
+        accept: ["Gumising ako kanina kumakain ako ngayon at pupunta ako sa paaralan mamaya"]
+        extra_words: [gigising, kumain, pumunta]
+        audio: gumising_ako_kanina_kumakain_ako_ngayon_at_pupunta_ako_sa_paaralan_mamaya
+      - type: translate
+        prompt_en: We will dance at the party later, but we sang earlier.
+        answer_tl: Sasayaw kami sa handaan mamaya, pero kumanta kami kanina.
+        accept: ["Sasayaw kami sa handaan mamaya pero kumanta kami kanina"]
+        extra_words: [sumayaw, kakanta, bukas]
+        audio: sasayaw_kami_sa_handaan_mamaya_pero_kumanta_kami_kanina
+  - id: revverbs-11
+    title: "Challenge: My week"
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kahapon, en: yesterday }
+          - { tl: tuwing Sabado, en: every Saturday }
+          - { tl: bukas, en: tomorrow }
+          - { tl: noong isang araw, en: the other day }
+      - type: choice
+        prompt: "Which sentence describes a habit?"
+        answer: Naglalakad ako tuwing umaga.
+        distractors: [Naglakad ako kanina., Maglalakad ako bukas., Naglakad kami noong Lunes.]
+        audio: naglalakad_ako_tuwing_umaga
+        audio_text: Naglalakad ako tuwing umaga.
+      - type: translate
+        prompt_tl: Noong Lunes, nagtrabaho ako; ngayon, nagpapahinga ako; bukas, maglalaro ako ng basketbol.
+        answer_en: Last Monday, I worked; now, I am resting; tomorrow, I will play basketball.
+        accept:
+          - "Last Monday I worked, now I am resting, tomorrow I will play basketball"
+          - "On Monday I worked, now I am resting, and tomorrow I will play basketball"
+          - "Last Monday, I worked; now, I'm resting; tomorrow, I'll play basketball"
+        extra_words: [played, working, Sunday]
+        audio: noong_lunes_nagtrabaho_ako_ngayon_nagpapahinga_ako_bukas_maglalaro_ako_ng_basketbol
+      - type: fill_blank
+        sentence: "Nagluto ako kanina, kumakain kami ngayon, at ___ ako ng plato mamaya."
+        translation: "I cooked earlier, we are eating now, and I will wash the plates later."
+        answer: maghuhugas
+        options: [maghuhugas, naghugas, naghuhugas]
+      - type: listen
+        audio: bibili_ako_ng_regalo_tapos_pupunta_ako_sa_kaarawan_ni_ana
+        answer_tl: Bibili ako ng regalo tapos pupunta ako sa kaarawan ni Ana
+        extra_words: [bumili, pumunta]
+      - type: translate
+        prompt_en: Every day I drink coffee, but earlier I drank milk.
+        answer_tl: Araw-araw akong umiinom ng kape, pero kanina uminom ako ng gatas.
+        accept:
+          - "Araw-araw akong umiinom ng kape pero kanina uminom ako ng gatas"
+          - "Umiinom ako ng kape araw-araw, pero kanina uminom ako ng gatas"
+        extra_words: [iinom, bukas, tubig]
+        grading: { hyphens: true }
+        audio: araw_araw_akong_umiinom_ng_kape_pero_kanina_uminom_ako_ng_gatas
+      - type: translate
+        prompt_tl: Hindi pa ako naliligo kasi naglilinis pa ako ng bahay.
+        answer_en: I haven't taken a bath yet because I am still cleaning the house.
+        accept:
+          - "I have not taken a bath yet because I am still cleaning the house"
+          - "I haven't taken a bath yet because I'm still cleaning the house"
+          - "I haven't bathed yet because I am still cleaning the house"
+        extra_words: [already, cleaned, will]
+        audio: hindi_pa_ako_naliligo_kasi_naglilinis_pa_ako_ng_bahay
+      - type: choice
+        prompt: "'Magkukuwento si Lolo mamaya' means..."
+        answer: Grandpa will tell a story later
+        distractors: [Grandpa told a story earlier, Grandpa is telling a story now, Grandpa tells stories every day]
+        audio: magkukuwento_si_lolo_mamaya
+        audio_text: Magkukuwento si Lolo mamaya.
+      - type: translate
+        prompt_en: We went to the sea yesterday, we are resting now, and we will go home tomorrow.
+        answer_tl: Pumunta kami sa dagat kahapon, nagpapahinga kami ngayon, at uuwi kami bukas.
+        accept: ["Pumunta kami sa dagat kahapon nagpapahinga kami ngayon at uuwi kami bukas"]
+        extra_words: [umuwi, pupunta, mamaya]
+        audio: pumunta_kami_sa_dagat_kahapon_nagpapahinga_kami_ngayon_at_uuwi_kami_bukas

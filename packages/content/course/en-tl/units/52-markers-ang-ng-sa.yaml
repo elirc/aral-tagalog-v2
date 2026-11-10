@@ -1,0 +1,714 @@
+id: markers-ang-ng-sa
+title: Ang, Ng, Sa
+description: >-
+  The three little markers that hold every Tagalog sentence together — who it
+  is about, what or whose, and where or to whom.
+tip: >-
+  Every noun in a Tagalog sentence wears a marker. "Ang" marks the topic — who
+  or what the sentence is about: "Kumain ang bata". "Ng" (say "nang") marks the
+  object or the owner: "Kumain ang bata ng mangga", "susi ng kotse". "Sa" marks
+  a place, a direction or a receiver: "sa palengke", "Nagbigay ako ng pera sa
+  bata". People's names get their own set: si / ni / kay (plural sina / nina /
+  kina) — "Nagbigay si Ana ng sulat kay Ben". Pronouns come in the same three
+  sets: ako / ko / sa akin, ito / nito / dito. Don't mix up "ng" with the longer
+  "nang", which tells how something is done: "Tumakbo siya nang mabilis".
+lessons:
+  - id: markers-1
+    title: Ang — the spotlight
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "In 'Natutulog ang bata', what does 'ang' do?"
+        answer: It marks the topic — who the sentence is about
+        distractors: [It marks the place, It marks the owner, It makes the sentence a question]
+        audio: natutulog_ang_bata
+        audio_text: Natutulog ang bata.
+      - type: match
+        pairs:
+          - { tl: ang bata, en: the child }
+          - { tl: ang kotse, en: the car }
+          - { tl: ang susi, en: the key }
+          - { tl: ang bahay, en: the house }
+      - type: translate
+        prompt_tl: Maganda ang kotse.
+        answer_en: The car is beautiful.
+        accept: ["The car is nice", "The car is pretty"]
+        extra_words: [key, house, big]
+        audio: maganda_ang_kotse
+      - type: choice
+        prompt: "'Susi' means..."
+        answer: Key
+        distractors: [Car, Door, Bag]
+        audio: susi
+        audio_text: Susi
+      - type: listen
+        audio: nasaan_ang_susi
+        answer_tl: Nasaan ang susi
+        extra_words: [kotse, ng]
+      - type: translate
+        prompt_tl: Kumakain ang aso.
+        answer_en: The dog is eating.
+        extra_words: [cat, sleeping, ate]
+        audio: kumakain_ang_aso
+      - type: fill_blank
+        sentence: "Malaki ___ kotse."
+        translation: "The car is big."
+        answer: ang
+        options: [ang, ng, sa]
+        hint: 'The thing being described is the topic, so it takes "ang".'
+      - type: translate
+        prompt_en: The key is small.
+        answer_tl: Maliit ang susi.
+        extra_words: [ng, kotse, malaki]
+        audio: maliit_ang_susi
+      - type: translate
+        prompt_en: The child is sleeping.
+        answer_tl: Natutulog ang bata.
+        extra_words: [ng, sa, kumakain]
+        audio: natutulog_ang_bata
+        hint: 'With -um- and mag- verbs, the doer is the topic and takes "ang".'
+  - id: markers-2
+    title: Ng — what and whose
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumain ang bata ng mangga' means..."
+        answer: The child ate a mango
+        distractors:
+          - The child is eating a mango
+          - The child bought a mango
+          - The child will eat a mango
+        audio: kumain_ang_bata_ng_mangga
+        audio_text: Kumain ang bata ng mangga.
+      - type: match
+        pairs:
+          - { tl: susi ng kotse, en: car key }
+          - { tl: pinto ng bahay, en: door of the house }
+          - { tl: bag ng bata, en: the child's bag }
+          - { tl: pangalan ng aso, en: the dog's name }
+      - type: translate
+        prompt_tl: Bumili ang nanay ng isda.
+        answer_en: The mother bought fish.
+        accept: ["The mother bought a fish", "The mom bought fish", "The mom bought a fish"]
+        extra_words: [father, ate, bag]
+        audio: bumili_ang_nanay_ng_isda
+      - type: choice
+        prompt: "Which means 'the color of the car'?"
+        answer: ang kulay ng kotse
+        distractors: [ang kotse ng kulay, ang kulay sa kotse, ang kulay ang kotse]
+        audio: ang_kulay_ng_kotse
+        audio_text: Ang kulay ng kotse
+        hint: 'The thing owned comes first, then "ng" + the owner.'
+      - type: listen
+        audio: uminom_ang_pusa_ng_gatas
+        answer_tl: Uminom ang pusa ng gatas
+        extra_words: [aso, tubig]
+      - type: translate
+        prompt_tl: Nasaan ang susi ng kotse?
+        answer_en: Where is the car key?
+        accept:
+          - "Where is the key of the car?"
+          - "Where is the key to the car?"
+          - "Where are the car keys?"
+        extra_words: [bag, house, who]
+        audio: nasaan_ang_susi_ng_kotse
+      - type: fill_blank
+        sentence: "Bumili ang babae ___ bag."
+        translation: "The woman bought a bag."
+        answer: ng
+        options: [ng, ang, sa]
+        hint: 'After an -um- or mag- verb, the thing acted on takes "ng".'
+      - type: translate
+        prompt_en: The dog ate bread.
+        answer_tl: Kumain ang aso ng tinapay.
+        accept: ["Kumain ng tinapay ang aso"]
+        extra_words: [sa, pusa, uminom]
+        audio: kumain_ang_aso_ng_tinapay
+      - type: translate
+        prompt_en: The child's bag is big.
+        answer_tl: Malaki ang bag ng bata.
+        extra_words: [sa, kotse, maliit]
+        audio: malaki_ang_bag_ng_bata
+        hint: 'The owner follows the thing owned, joined by "ng": bag ng bata.'
+  - id: markers-3
+    title: Sa — where and to whom
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pumunta ang bata sa paaralan' means..."
+        answer: The child went to school
+        distractors:
+          - The child will go to school
+          - The teacher went to the school
+          - The child bought a school
+        audio: pumunta_ang_bata_sa_paaralan
+        audio_text: Pumunta ang bata sa paaralan.
+      - type: match
+        pairs:
+          - { tl: sa bahay, en: at home }
+          - { tl: sa palengke, en: at the market }
+          - { tl: sa bata, en: to the child }
+          - { tl: nagbigay, en: gave }
+          - { tl: laruan, en: toy }
+      - type: translate
+        prompt_tl: Bumili ako ng laruan sa tindahan.
+        answer_en: I bought a toy at the store.
+        accept: ["I bought a toy from the store", "I bought a toy in the store"]
+        extra_words: [bag, market, gave]
+        audio: bumili_ako_ng_laruan_sa_tindahan
+      - type: choice
+        prompt: "'Nagbigay' means..."
+        answer: Gave
+        distractors: [Bought, Took, Ate]
+        audio: nagbigay
+        audio_text: Nagbigay
+      - type: listen
+        audio: nagbigay_ang_lola_ng_laruan_sa_bata
+        answer_tl: Nagbigay ang lola ng laruan sa bata
+        extra_words: [lolo, regalo]
+      - type: translate
+        prompt_tl: Nagbigay ang guro ng libro sa estudyante.
+        answer_en: The teacher gave a book to the student.
+        accept: ["The teacher gave the student a book"]
+        extra_words: [toy, bought, child]
+        audio: nagbigay_ang_guro_ng_libro_sa_estudyante
+      - type: fill_blank
+        sentence: "Kumakain ang pamilya ___ kusina."
+        translation: "The family is eating in the kitchen."
+        answer: sa
+        options: [sa, ng, ang]
+      - type: fill_blank
+        sentence: "Nagbigay ang tatay ng pera ___ anak niya."
+        translation: "The father gave money to his child."
+        answer: sa
+        options: [sa, ng, ang]
+        hint: 'The receiver of an action takes "sa", just like a place.'
+      - type: translate
+        prompt_en: The woman gave a toy to the child.
+        answer_tl: Nagbigay ang babae ng laruan sa bata.
+        accept:
+          - "Nagbigay ng laruan ang babae sa bata"
+          - "Nagbigay ang babae sa bata ng laruan"
+          - "Nagbigay ng laruan sa bata ang babae"
+        extra_words: [kotse, bumili, lalaki]
+        audio: nagbigay_ang_babae_ng_laruan_sa_bata
+        hint: '"ang" = the giver, "ng" = the thing given, "sa" = the receiver.'
+  - id: markers-4
+    title: Si, ni, kay — names
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Before a person's name, 'ang' becomes..."
+        answer: si
+        distractors: [ni, kay, ng]
+        audio: si
+        audio_text: Si
+      - type: match
+        pairs:
+          - { tl: si, en: "ang, for a name" }
+          - { tl: ni, en: "ng, for a name" }
+          - { tl: kay, en: "sa, for a name" }
+          - { tl: para kay, en: for (a person) }
+          - { tl: sulat, en: letter }
+      - type: translate
+        prompt_tl: Kotse ni Ben ito.
+        answer_en: This is Ben's car.
+        accept: ["This is the car of Ben", "It is Ben's car"]
+        extra_words: [key, Ana's, bag]
+        audio: kotse_ni_ben_ito
+      - type: choice
+        prompt: "'Sumulat si Ana kay Ben' means..."
+        answer: Ana wrote to Ben
+        distractors: [Ben wrote to Ana, Ana called Ben, Ana and Ben wrote]
+        audio: sumulat_si_ana_kay_ben
+        audio_text: Sumulat si Ana kay Ben.
+      - type: listen
+        audio: nagbigay_si_ana_ng_sulat_kay_ben
+        answer_tl: Nagbigay si Ana ng sulat kay Ben
+        extra_words: [ni, regalo]
+      - type: translate
+        prompt_tl: Para kay Lola ang bulaklak.
+        answer_en: The flower is for Grandma.
+        accept:
+          - "The flowers are for Grandma"
+          - "The flower is for Grandmother"
+          - "The flowers are for Grandmother"
+          - "The flower is for Lola"
+        extra_words: [letter, from, Grandpa]
+        audio: para_kay_lola_ang_bulaklak
+      - type: fill_blank
+        sentence: "Nagluto ___ Tatay ng adobo."
+        translation: "Dad cooked adobo."
+        answer: si
+        options: [si, ni, kay]
+        hint: 'Dad is the doer (the topic) and is named, so "ang" becomes "si".'
+      - type: translate
+        prompt_en: Maria's bag is beautiful.
+        answer_tl: Maganda ang bag ni Maria.
+        extra_words: [si, kay, susi]
+        audio: maganda_ang_bag_ni_maria
+      - type: translate
+        prompt_en: Ben gave a letter to Ana.
+        answer_tl: Nagbigay si Ben ng sulat kay Ana.
+        accept:
+          - "Nagbigay ng sulat si Ben kay Ana"
+          - "Nagbigay si Ben kay Ana ng sulat"
+          - "Nagbigay ng sulat kay Ana si Ben"
+        extra_words: [ni, sa, regalo]
+        audio: nagbigay_si_ben_ng_sulat_kay_ana
+        hint: 'With names: "si" marks the doer and "kay" marks the receiver.'
+  - id: markers-5
+    title: Sina, nina, kina
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Why is it 'sina Ana at Ben', not 'si Ana at Ben'?"
+        answer: There is more than one named person
+        distractors: [It is the past tense, It shows possession, It is more polite]
+        audio: sina_ana_at_ben
+        audio_text: Sina Ana at Ben
+      - type: match
+        pairs:
+          - { tl: sina, en: plural of si }
+          - { tl: nina, en: plural of ni }
+          - { tl: kina, en: plural of kay }
+          - { tl: tumulong, en: helped }
+      - type: translate
+        prompt_tl: Dumating sina Lolo at Lola.
+        answer_en: Grandpa and Grandma arrived.
+        accept:
+          - "Grandma and Grandpa arrived"
+          - "Grandfather and Grandmother arrived"
+          - "Grandpa and Grandma have arrived"
+          - "Lolo and Lola arrived"
+        extra_words: [left, Mom, Dad]
+        audio: dumating_sina_lolo_at_lola
+      - type: choice
+        prompt: "'Pupunta kami kina Lola' means..."
+        answer: We are going to Grandma's place
+        distractors:
+          - Grandma is coming to our place
+          - We went to Grandma's place
+          - We are going with Grandma
+        audio: pupunta_kami_kina_lola
+        audio_text: Pupunta kami kina Lola.
+        hint: '"kina" + one name often means that person''s household or home.'
+      - type: listen
+        audio: malaki_ang_bahay_nina_ana_at_ben
+        answer_tl: Malaki ang bahay nina Ana at Ben
+        extra_words: [sina, kotse]
+      - type: translate
+        prompt_tl: Tumulong si Ben kina Nanay at Tatay.
+        answer_en: Ben helped Mom and Dad.
+        accept:
+          - "Ben helped Dad and Mom"
+          - "Ben helped Mother and Father"
+          - "Ben helped Mum and Dad"
+        extra_words: [Grandma, called, gave]
+        audio: tumulong_si_ben_kina_nanay_at_tatay
+      - type: fill_blank
+        sentence: "Kotse ___ Tito at Tita ito."
+        translation: "This is Uncle and Auntie's car."
+        answer: nina
+        options: [nina, sina, kina]
+        hint: 'Two named owners: "ni" becomes the plural "nina".'
+      - type: translate
+        prompt_en: Ana helped Grandma.
+        answer_tl: Tumulong si Ana kay Lola.
+        extra_words: [ni, sina, Lolo]
+        audio: tumulong_si_ana_kay_lola
+      - type: translate
+        prompt_en: Ana and Ben went to the market.
+        answer_tl: Pumunta sina Ana at Ben sa palengke.
+        accept:
+          - "Pumunta sina Ben at Ana sa palengke"
+          - "Pumunta sa palengke sina Ana at Ben"
+          - "Pumunta sa palengke sina Ben at Ana"
+        extra_words: [si, nina, tindahan]
+        audio: pumunta_sina_ana_at_ben_sa_palengke
+        hint: 'Two named doers share one plural marker: "sina Ana at Ben".'
+  - id: markers-6
+    title: Ako, ko, sa akin
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which is the ang / ng / sa set for 'I'?"
+        answer: ako / ko / sa akin
+        distractors: [ko / ako / sa akin, ako / akin / sa ko, ako / mo / sa iyo]
+      - type: match
+        pairs:
+          - { tl: ako, en: I }
+          - { tl: ko, en: my }
+          - { tl: sa akin, en: to me }
+          - { tl: mo, en: your }
+          - { tl: sa iyo, en: to you }
+      - type: translate
+        prompt_tl: Nagbigay siya ng regalo sa akin.
+        answer_en: She gave a gift to me.
+        accept:
+          - "He gave a gift to me"
+          - "She gave me a gift"
+          - "He gave me a gift"
+          - "She gave a present to me"
+          - "He gave a present to me"
+        extra_words: [you, letter, bought]
+        audio: nagbigay_siya_ng_regalo_sa_akin
+      - type: choice
+        prompt: "'Nagtanong' means..."
+        answer: Asked
+        distractors: [Answered, Helped, Wrote]
+        audio: nagtanong
+        audio_text: Nagtanong
+      - type: listen
+        audio: nagtanong_ako_sa_kanya
+        answer_tl: Nagtanong ako sa kanya
+        extra_words: [ko, niya]
+      - type: translate
+        prompt_tl: Tumulong ka ba sa kanya?
+        answer_en: Did you help him?
+        accept: ["Did you help her?"]
+        extra_words: [me, ask, they]
+        audio: tumulong_ka_ba_sa_kanya
+      - type: fill_blank
+        sentence: "Nasaan ang susi ___?"
+        translation: "Where is my key?"
+        answer: ko
+        options: [ko, ako, akin]
+        hint: 'An owner after the noun uses the ng-set: susi ko, susi mo, susi niya.'
+      - type: fill_blank
+        sentence: "Nagtanong ang guro sa ___."
+        translation: "The teacher asked me."
+        answer: akin
+        options: [akin, ako, ko]
+        hint: 'After "sa", use the sa-set: sa akin, sa iyo, sa kanya.'
+      - type: translate
+        prompt_en: I gave money to him.
+        answer_tl: Nagbigay ako ng pera sa kanya.
+        accept: ["Nagbigay ako sa kanya ng pera"]
+        extra_words: [ko, niya, siya]
+        audio: nagbigay_ako_ng_pera_sa_kanya
+  - id: markers-7
+    title: Sila, nila, sa kanila
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sila, en: they }
+          - { tl: nila, en: their }
+          - { tl: sa kanila, en: to them }
+          - { tl: namin, en: our }
+          - { tl: sa amin, en: to us }
+      - type: choice
+        prompt: "'Bahay nila ito' means..."
+        answer: This is their house
+        distractors: [This is our house, They are at this house, This is his house]
+        audio: bahay_nila_ito
+        audio_text: Bahay nila ito.
+      - type: translate
+        prompt_tl: Nagbigay kami ng pagkain sa kanila.
+        answer_en: We gave food to them.
+        accept: ["We gave them food"]
+        extra_words: [us, money, they]
+        audio: nagbigay_kami_ng_pagkain_sa_kanila
+      - type: choice
+        prompt: "Which means 'Our teacher helped us' (the listener is not included)?"
+        answer: Tumulong sa amin ang guro namin.
+        distractors:
+          - Tumulong sa atin ang guro natin.
+          - Tumulong kami sa guro namin.
+          - Tumulong sa kanila ang guro nila.
+        audio: tumulong_sa_amin_ang_guro_namin
+        audio_text: Tumulong sa amin ang guro namin.
+      - type: listen
+        audio: dumalaw_sila_sa_amin_kahapon
+        answer_tl: Dumalaw sila sa amin kahapon
+        extra_words: [kami, namin]
+      - type: translate
+        prompt_tl: Sumulat ba kayo sa kanila?
+        answer_en: Did you write to them?
+        extra_words: [us, call, he]
+        audio: sumulat_ba_kayo_sa_kanila
+      - type: fill_blank
+        sentence: "Malaki ang kotse ___."
+        translation: "Their car is big."
+        answer: nila
+        options: [nila, sila, kanila]
+      - type: translate
+        prompt_en: They helped us.
+        answer_tl: Tumulong sila sa amin.
+        accept: ["Tumulong sila sa atin"]
+        extra_words: [kami, nila, namin]
+        audio: tumulong_sila_sa_amin
+        hint: 'The helpers are the topic (sila); the people helped take "sa" (sa amin).'
+      - type: translate
+        prompt_en: Our grandma gave a toy to them.
+        answer_tl: Nagbigay ang lola namin ng laruan sa kanila.
+        accept:
+          - "Nagbigay ang lola natin ng laruan sa kanila"
+          - "Nagbigay ng laruan ang lola namin sa kanila"
+          - "Nagbigay ang lola namin sa kanila ng laruan"
+        extra_words: [nila, kami, sulat]
+        audio: nagbigay_ang_lola_namin_ng_laruan_sa_kanila
+  - id: markers-8
+    title: Ito, nito, dito
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which is the ang / ng / sa set for 'this'?"
+        answer: ito / nito / dito
+        distractors: [ito / dito / nito, nito / ito / dito, dito / nito / ito]
+      - type: match
+        pairs:
+          - { tl: ito, en: this }
+          - { tl: nito, en: of this }
+          - { tl: dito, en: here }
+          - { tl: doon, en: over there }
+      - type: translate
+        prompt_tl: Ito ang bag ko.
+        answer_en: This is my bag.
+        extra_words: [here, key, your]
+        audio: ito_ang_bag_ko
+      - type: choice
+        prompt: "'Gusto ko nito' means..."
+        answer: I want this
+        distractors: [I want to be here, This is mine, I want that one over there]
+        audio: gusto_ko_nito
+        audio_text: Gusto ko nito.
+      - type: listen
+        audio: bumili_ako_nito_sa_palengke
+        answer_tl: Bumili ako nito sa palengke
+        extra_words: [ito, dito]
+      - type: translate
+        prompt_tl: Ano ang pangalan nito?
+        answer_en: What is the name of this?
+        accept:
+          - "What is this called?"
+          - "What is its name?"
+          - "What's the name of this?"
+        extra_words: [here, color, who]
+        audio: ano_ang_pangalan_nito
+      - type: fill_blank
+        sentence: "Kumain ka ___; masarap!"
+        translation: "Eat some of this; it's delicious!"
+        answer: nito
+        options: [nito, ito, dito]
+        hint: 'The thing eaten takes the ng-form, and the ng-form of "ito" is "nito".'
+      - type: fill_blank
+        sentence: "Nakatira kami ___."
+        translation: "We live here."
+        answer: dito
+        options: [dito, ito, nito]
+      - type: translate
+        prompt_en: I bought this here.
+        answer_tl: Bumili ako nito dito.
+        accept: ["Dito ako bumili nito"]
+        extra_words: [ito, ng, doon]
+        audio: bumili_ako_nito_dito
+        hint: '"this" as the thing bought is "nito"; "here" is the sa-form "dito".'
+  - id: markers-9
+    title: Ng or nang?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which sentence needs 'nang' (not 'ng') in the blank?"
+        answer: "Tumakbo siya ___ mabilis."
+        distractors:
+          - "Bumili siya ___ tinapay."
+          - "Ito ang bag ___ bata."
+          - "Uminom ako ___ tubig."
+        hint: '"nang" comes before a word that tells how; "ng" comes before a noun.'
+      - type: match
+        pairs:
+          - { tl: nang mabilis, en: quickly }
+          - { tl: nang maaga, en: early }
+          - { tl: nang mabuti, en: well }
+          - { tl: nang malakas, en: loudly }
+      - type: translate
+        prompt_tl: Kumanta si Ana nang malakas.
+        answer_en: Ana sang loudly.
+        extra_words: [quickly, Ben, danced]
+        audio: kumanta_si_ana_nang_malakas
+      - type: choice
+        prompt: "'Nag-aral siya nang mabuti' means..."
+        answer: She studied hard
+        distractors: [She studied early, She studied quickly, She will study hard]
+        audio: nag_aral_siya_nang_mabuti
+        audio_text: Nag-aral siya nang mabuti.
+      - type: listen
+        audio: gumising_ako_nang_maaga
+        answer_tl: Gumising ako nang maaga
+        extra_words: [mabilis, kami]
+      - type: fill_blank
+        sentence: "Bumili ako ___ kape."
+        translation: "I bought coffee."
+        answer: ng
+        options: [ng, nang, sa]
+        hint: 'Before a noun (the thing bought), write the short "ng".'
+      - type: fill_blank
+        sentence: "Tumakbo ang bata ___ mabilis."
+        translation: "The child ran fast."
+        answer: nang
+        options: [nang, ng, sa]
+        hint: '"nang" links a verb to how it was done.'
+      - type: translate
+        prompt_en: Eat well.
+        answer_tl: Kumain ka nang mabuti.
+        extra_words: [ng, ako, maaga]
+        audio: kumain_ka_nang_mabuti
+      - type: translate
+        prompt_en: We ate dinner early.
+        answer_tl: Kumain kami ng hapunan nang maaga.
+        accept: ["Kumain kami nang maaga ng hapunan"]
+        extra_words: [sa, mabilis, almusal]
+        audio: kumain_kami_ng_hapunan_nang_maaga
+        hint: '"ng" + the thing eaten (hapunan); "nang" + how or when it was done (maaga).'
+  - id: markers-10
+    title: Who did what to whom?
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "In 'Nagbigay si Ana ng sulat kay Ben', who received the letter?"
+        answer: Ben
+        distractors: [Ana, Both of them, The teacher]
+        audio: nagbigay_si_ana_ng_sulat_kay_ben
+        audio_text: Nagbigay si Ana ng sulat kay Ben.
+      - type: match
+        pairs:
+          - { tl: si Ana, en: Ana (the topic) }
+          - { tl: ni Ana, en: Ana's }
+          - { tl: kay Ana, en: to Ana }
+          - { tl: kina Ana, en: to Ana's place }
+      - type: translate
+        prompt_tl: Nagtanong ang bata sa nanay niya.
+        answer_en: The child asked his mother.
+        accept:
+          - "The child asked her mother"
+          - "The child asked their mother"
+          - "The child asked his mom"
+          - "The child asked her mom"
+        extra_words: [father, helped, teacher]
+        audio: nagtanong_ang_bata_sa_nanay_niya
+      - type: choice
+        prompt: "Which means 'Ana's sibling bought a toy for Ben'?"
+        answer: Bumili ang kapatid ni Ana ng laruan para kay Ben.
+        distractors:
+          - Bumili si Ana ng laruan para sa kapatid ni Ben.
+          - Bumili ang kapatid ni Ben ng laruan para kay Ana.
+          - Bumili si Ben ng laruan para kay Ana.
+        audio: bumili_ang_kapatid_ni_ana_ng_laruan_para_kay_ben
+        audio_text: Bumili ang kapatid ni Ana ng laruan para kay Ben.
+      - type: listen
+        audio: tumulong_ang_mga_bata_kina_lolo_at_lola
+        answer_tl: Tumulong ang mga bata kina Lolo at Lola
+        extra_words: [sina, nina]
+      - type: translate
+        prompt_tl: Nagdala si Tita ng pagkain para sa amin.
+        answer_en: Auntie brought food for us.
+        accept:
+          - "Aunt brought food for us"
+          - "Auntie brought us food"
+          - "Tita brought food for us"
+        extra_words: [them, toy, gave]
+        audio: nagdala_si_tita_ng_pagkain_para_sa_amin
+      - type: fill_blank
+        sentence: "Nagbigay ang kuya ko ng laruan ___ bunso namin."
+        translation: "My older brother gave a toy to our youngest."
+        answer: sa
+        options: [sa, ng, kay]
+        hint: '"kay" is only for names; an ordinary noun like "bunso" takes "sa".'
+      - type: translate
+        prompt_en: Ana's mother bought a bag at the market.
+        answer_tl: Bumili ang nanay ni Ana ng bag sa palengke.
+        accept:
+          - "Bumili ng bag ang nanay ni Ana sa palengke"
+          - "Bumili ng bag sa palengke ang nanay ni Ana"
+          - "Bumili ang nanay ni Ana sa palengke ng bag"
+        extra_words: [si, kay, susi]
+        audio: bumili_ang_nanay_ni_ana_ng_bag_sa_palengke
+        hint: 'The buyer is "ang nanay"; her owner Ana is named, so it is "ni Ana".'
+      - type: translate
+        prompt_en: Grandma gave money to Ben and Ana.
+        answer_tl: Nagbigay si Lola ng pera kina Ben at Ana.
+        accept:
+          - "Nagbigay si Lola ng pera kina Ana at Ben"
+          - "Nagbigay ng pera si Lola kina Ben at Ana"
+          - "Nagbigay ng pera si Lola kina Ana at Ben"
+          - "Nagbigay si Lola kina Ben at Ana ng pera"
+          - "Nagbigay si Lola kina Ana at Ben ng pera"
+        extra_words: [kay, sina, sulat]
+        audio: nagbigay_si_lola_ng_pera_kina_ben_at_ana
+        hint: 'Two named receivers take the plural "kina".'
+  - id: markers-11
+    title: Marker challenge
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: susi ng kotse, en: car key }
+          - { tl: sulat ni Ana, en: Ana's letter }
+          - { tl: para kay Ben, en: for Ben }
+          - { tl: bahay nina Lolo at Lola, en: Grandpa and Grandma's house }
+          - { tl: kulay nito, en: the color of this }
+      - type: choice
+        prompt: "'Kumuha si Ben ng susi sa bag ni Ana' means..."
+        answer: Ben took a key from Ana's bag
+        distractors:
+          - Ana took a key from Ben's bag
+          - Ben gave a key to Ana
+          - Ben took Ana's bag and a key
+        audio: kumuha_si_ben_ng_susi_sa_bag_ni_ana
+        audio_text: Kumuha si Ben ng susi sa bag ni Ana.
+      - type: translate
+        prompt_tl: Tumulong sina Ana at Ben sa kapitbahay nila.
+        answer_en: Ana and Ben helped their neighbor.
+        accept:
+          - "Ben and Ana helped their neighbor"
+          - "Ana and Ben helped their neighbour"
+          - "Ana and Ben helped their neighbors"
+        extra_words: [our, asked, teacher]
+        audio: tumulong_sina_ana_at_ben_sa_kapitbahay_nila
+      - type: choice
+        prompt: "Which is written correctly?"
+        answer: Nagtanong siya nang malakas.
+        distractors:
+          - Nagtanong siya ng malakas.
+          - Nagtanong siya sa malakas.
+          - Nagtanong siya ang malakas.
+        audio: nagtanong_siya_nang_malakas
+        audio_text: Nagtanong siya nang malakas.
+      - type: listen
+        audio: nagbigay_ako_nito_kay_maria
+        answer_tl: Nagbigay ako nito kay Maria
+        extra_words: [ito, ni]
+      - type: translate
+        prompt_tl: Nasa bag ko ang susi ng kotse natin.
+        answer_en: Our car key is in my bag.
+        accept:
+          - "The key to our car is in my bag"
+          - "The key of our car is in my bag"
+          - "Our car keys are in my bag"
+        extra_words: [your, house, letter]
+        audio: nasa_bag_ko_ang_susi_ng_kotse_natin
+      - type: fill_blank
+        sentence: "Sumulat ako ng sulat para ___ Lola."
+        translation: "I wrote a letter for Grandma."
+        answer: kay
+        options: [kay, si, ni]
+      - type: translate
+        prompt_en: Ben's dog ran fast.
+        answer_tl: Tumakbo nang mabilis ang aso ni Ben.
+        accept: ["Tumakbo ang aso ni Ben nang mabilis"]
+        extra_words: [ng, si, pusa]
+        audio: tumakbo_nang_mabilis_ang_aso_ni_ben
+        hint: '"nang" before how it ran (mabilis); "ni" before the named owner.'
+      - type: translate
+        prompt_en: Maria and Ana gave a letter to their teacher.
+        answer_tl: Nagbigay sina Maria at Ana ng sulat sa guro nila.
+        accept:
+          - "Nagbigay sina Ana at Maria ng sulat sa guro nila"
+          - "Nagbigay ng sulat sina Maria at Ana sa guro nila"
+          - "Nagbigay ng sulat sina Ana at Maria sa guro nila"
+          - "Nagbigay sina Maria at Ana sa guro nila ng sulat"
+          - "Nagbigay sina Ana at Maria sa guro nila ng sulat"
+        extra_words: [si, kay, namin]
+        audio: nagbigay_sina_maria_at_ana_ng_sulat_sa_guro_nila

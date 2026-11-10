@@ -161,14 +161,17 @@
   lemma: ayaw
   translation: to not like / to not want
   audio: ayaw
+  notes: 'A pseudo-verb with no aspect forms: "Ayaw ko ng kape." "Ayaw ko" is often shortened to "ayoko".'
 - id: kumain
   lemma: kumain
   translation: ate (to eat)
   audio: kumain
+  notes: 'Aspects: kumain (completed), kumakain (ongoing), kakain (will).'
 - id: uminom
   lemma: uminom
   translation: drank (to drink)
   audio: uminom
+  notes: 'Aspects: uminom (completed), umiinom (ongoing), iinom (will).'
 - id: isa
   lemma: isa
   translation: one
@@ -271,6 +274,7 @@
   lemma: pumunta
   translation: went (to go)
   audio: pumunta
+  notes: 'Aspects: pumunta (completed), pumupunta (ongoing), pupunta (will).'
 - id: malaki
   lemma: malaki
   translation: big
@@ -351,30 +355,37 @@
   lemma: umiinom
   translation: drinking / drinks
   audio: umiinom
+  notes: 'Dictionary form uminom. Aspects: uminom (completed), umiinom (ongoing), iinom (will).'
 - id: natutulog
   lemma: natutulog
   translation: sleeping / sleeps
   audio: natutulog
+  notes: 'Dictionary form matulog. Aspects: natulog (completed), natutulog (ongoing), matutulog (will).'
 - id: nagtatrabaho
   lemma: nagtatrabaho
   translation: working / works
   audio: nagtatrabaho
+  notes: 'Dictionary form magtrabaho. Aspects: nagtrabaho (completed), nagtatrabaho (ongoing), magtatrabaho (will).'
 - id: nag_aaral
   lemma: nag-aaral
   translation: studying / studies
   audio: nag_aaral
+  notes: 'Dictionary form mag-aral. Aspects: nag-aral (completed), nag-aaral (ongoing), mag-aaral (will).'
 - id: naglalakad
   lemma: naglalakad
   translation: walking / walks
   audio: naglalakad
+  notes: 'Dictionary form maglakad. Aspects: naglakad (completed), naglalakad (ongoing), maglalakad (will).'
 - id: nagluluto
   lemma: nagluluto
   translation: cooking / cooks
   audio: nagluluto
+  notes: 'Dictionary form magluto. Aspects: nagluto (completed), nagluluto (ongoing), magluluto (will).'
 - id: nagbabasa
   lemma: nagbabasa
   translation: reading / reads
   audio: nagbabasa
+  notes: 'Dictionary form magbasa. Aspects: nagbasa (completed), nagbabasa (ongoing), magbabasa (will).'
 - id: trabaho
   lemma: trabaho
   translation: work / job
@@ -393,10 +404,12 @@
   lemma: bumili
   translation: bought (to buy)
   audio: bumili
+  notes: 'Aspects: bumili (completed), bumibili (ongoing), bibili (will).'
 - id: bumibili
   lemma: bumibili
   translation: buying / buys
   audio: bumibili
+  notes: 'Dictionary form bumili. Aspects: bumili (completed), bumibili (ongoing), bibili (will).'
 - id: mahal
   lemma: mahal
   translation: expensive / dear
@@ -440,6 +453,7 @@
   lemma: umuulan
   translation: it is raining
   audio: umuulan
+  notes: 'Dictionary form umulan. Aspects: umulan (completed), umuulan (ongoing), uulan (will).'
 - id: mainit
   lemma: mainit
   translation: hot
@@ -532,6 +546,7 @@
   lemma: sumakay
   translation: rode / boarded (to ride)
   audio: sumakay
+  notes: 'Aspects: sumakay (completed), sumasakay (ongoing), sasakay (will).'
 - id: jeepney
   lemma: jeepney
   translation: jeepney
@@ -545,6 +560,7 @@
   lemma: lumiko
   translation: turned (to turn)
   audio: lumiko
+  notes: 'Aspects: lumiko (completed), lumiliko (ongoing), liliko (will).'
 - id: kanto
   lemma: kanto
   translation: corner
@@ -917,6 +933,7 @@
   lemma: naglilinis
   translation: cleaning / cleans
   audio: naglilinis
+  notes: 'Dictionary form maglinis. Aspects: naglinis (completed), naglilinis (ongoing), maglilinis (will).'
 - id: naghuhugas
   lemma: naghuhugas
   translation: washing / washes
@@ -1007,6 +1024,7 @@
   lemma: nagdiriwang
   translation: celebrating / celebrates
   audio: nagdiriwang
+  notes: 'Dictionary form magdiwang. Aspects: nagdiwang (completed), nagdiriwang (ongoing), magdiriwang (will).'
 - id: imbitasyon
   lemma: imbitasyon
   translation: invitation
@@ -1210,6 +1228,7 @@
   lemma: naglalaro
   translation: playing / plays
   audio: naglalaro
+  notes: 'Dictionary form maglaro. Aspects: naglaro (completed), naglalaro (ongoing), maglalaro (will).'
 - id: basketbol
   lemma: basketbol
   translation: basketball
@@ -1224,6 +1243,7 @@
   lemma: kumakanta
   translation: singing / sings
   audio: kumakanta
+  notes: 'Dictionary form kumanta. Aspects: kumanta (completed), kumakanta (ongoing), kakanta (will).'
 - id: kanta
   lemma: kanta
   translation: song
@@ -1237,6 +1257,7 @@
   lemma: sumasayaw
   translation: dancing / dances
   audio: sumasayaw
+  notes: 'Dictionary form sumayaw. Aspects: sumayaw (completed), sumasayaw (ongoing), sasayaw (will).'
 - id: manood
   lemma: manood
   translation: to watch
@@ -1246,6 +1267,7 @@
   lemma: nanonood
   translation: watching / watches
   audio: nanonood
+  notes: 'Dictionary form manood. Aspects: nanood (completed), nanonood (ongoing), manonood (will).'
 - id: magbasa
   lemma: magbasa
   translation: to read
@@ -1353,6 +1375,7 @@
 - id: ni
   lemma: ni
   translation: (possession marker before a name)
+  audio: ni
   notes: "ang libro ni Maria = Maria's book."
 - id: tawad
   lemma: tawad
@@ -1401,7 +1424,8 @@
   translation: Saturday
 - id: linggo
   lemma: Linggo
-  translation: Sunday / week
+  translation: Sunday
+  audio: linggo
   notes: Capitalized Linggo is Sunday; lowercase linggo means a week.
 - id: buwan
   lemma: buwan
@@ -1456,6 +1480,7 @@
 - id: bumaba
   lemma: bumaba
   translation: got off (to get off / go down)
+  notes: 'Aspects: bumaba (completed), bumababa (ongoing), bababa (will).'
 - id: para
   lemma: para
   translation: "stop! (to halt a jeepney)"
@@ -1507,6 +1532,7 @@
 - id: umorder
   lemma: umorder
   translation: ordered (to order)
+  notes: 'Aspects: umorder (completed), umoorder (ongoing), oorder (will).'
 - id: pabili_po
   lemma: pabili po
   translation: "I'd like to buy, please"
@@ -1551,6 +1577,7 @@
 - id: tumawad
   lemma: tumawad
   translation: to haggle / ask for a discount
+  notes: 'Aspects: tumawad (completed), tumatawad (ongoing), tatawad (will).'
 - id: pwede
   lemma: pwede
   translation: can / may / possible
@@ -1651,9 +1678,11 @@
 - id: umupo
   lemma: umupo
   translation: to sit / sat down
+  notes: 'Aspects: umupo (completed), umuupo (ongoing), uupo (will).'
 - id: tumayo
   lemma: tumayo
   translation: to stand / stood up
+  notes: 'Aspects: tumayo (completed), tumatayo (ongoing), tatayo (will).'
 - id: huwag
   lemma: huwag
   translation: "don't"
@@ -1713,9 +1742,11 @@
 - id: magpahinga
   lemma: magpahinga
   translation: to rest
+  notes: 'Aspects: nagpahinga (completed), nagpapahinga (ongoing), magpapahinga (will).'
 - id: nagpapahinga
   lemma: nagpapahinga
   translation: resting / rests
+  notes: 'Dictionary form magpahinga. Aspects: nagpahinga (completed), nagpapahinga (ongoing), magpapahinga (will).'
 - id: sugat
   lemma: sugat
   translation: wound / cut
@@ -1738,9 +1769,11 @@
 - id: tumawag
   lemma: tumawag
   translation: to call / called
+  notes: 'Aspects: tumawag (completed), tumatawag (ongoing), tatawag (will).'
 - id: tumatawag
   lemma: tumatawag
   translation: calling / calls
+  notes: 'Dictionary form tumawag. Aspects: tumawag (completed), tumatawag (ongoing), tatawag (will).'
 - id: tatawag
   lemma: tatawag
   translation: will call
@@ -1784,6 +1817,7 @@
 - id: kumukuha
   lemma: kumukuha
   translation: taking / takes
+  notes: 'Dictionary form kumuha. Aspects: kumuha (completed), kumukuha (ongoing), kukuha (will).'
 - id: video
   lemma: video
   translation: video
@@ -1802,9 +1836,11 @@
 - id: gumising
   lemma: gumising
   translation: woke up (to wake up)
+  notes: 'Aspects: gumising (completed), gumigising (ongoing), gigising (will).'
 - id: naligo
   lemma: naligo
   translation: took a bath / showered
+  notes: 'Dictionary form maligo. Aspects: naligo (completed), naliligo (ongoing), maliligo (will).'
 - id: natulog
   lemma: natulog
   translation: slept
@@ -1820,6 +1856,7 @@
 - id: nagkuwento
   lemma: nagkuwento
   translation: told a story
+  notes: 'Dictionary form magkuwento. Aspects: nagkuwento (completed), nagkukuwento (ongoing), magkukuwento (will).'
 - id: kuwento
   lemma: kuwento
   translation: story
@@ -1831,18 +1868,23 @@
 - id: magprito
   lemma: magprito
   translation: to fry
+  notes: 'Aspects: nagprito (completed), nagpiprito (ongoing), magpiprito (will).'
 - id: nagpiprito
   lemma: nagpiprito
   translation: frying / fries
+  notes: 'Dictionary form magprito. Aspects: nagprito (completed), nagpiprito (ongoing), magpiprito (will).'
 - id: magpakulo
   lemma: magpakulo
   translation: to boil (something)
+  notes: 'Aspects: nagpakulo (completed), nagpapakulo (ongoing), magpapakulo (will).'
 - id: maghiwa
   lemma: maghiwa
   translation: to slice
+  notes: 'Aspects: naghiwa (completed), naghihiwa (ongoing), maghihiwa (will).'
 - id: naghihiwaa
   lemma: naghihiwa
   translation: slicing / slices
+  notes: 'Dictionary form maghiwa. Aspects: naghiwa (completed), naghihiwa (ongoing), maghihiwa (will).'
 - id: kaldero
   lemma: kaldero
   translation: pot
@@ -1979,12 +2021,14 @@
 - id: manligaw
   lemma: manligaw
   translation: to court
+  notes: 'Aspects: nanligaw (completed), nanliligaw (ongoing), manliligaw (will).'
 - id: manliligaw
   lemma: manliligaw
   translation: suitor
 - id: nanliligaw
   lemma: nanliligaw
   translation: is courting / courts
+  notes: 'Dictionary form manligaw. Aspects: nanligaw (completed), nanliligaw (ongoing), manliligaw (will).'
 - id: harana
   lemma: harana
   translation: serenade
@@ -1999,6 +2043,7 @@
 - id: ikakasal
   lemma: ikakasal
   translation: will get married
+  notes: 'Dictionary form ikasal. Aspects: ikinasal (completed), ikinakasal (ongoing), ikakasal (will).'
 - id: anibersaryo
   lemma: anibersaryo
   translation: anniversary
@@ -2091,6 +2136,7 @@
 - id: tumatakbo
   lemma: tumatakbo
   translation: running / runs
+  notes: 'Dictionary form tumakbo. Aspects: tumakbo (completed), tumatakbo (ongoing), tatakbo (will).'
 - id: lumangoy
   lemma: lumangoy
   translation: to swim / swam
@@ -2098,9 +2144,11 @@
 - id: lumalangoy
   lemma: lumalangoy
   translation: swimming / swims
+  notes: 'Dictionary form lumangoy. Aspects: lumangoy (completed), lumalangoy (ongoing), lalangoy (will).'
 - id: manalo
   lemma: manalo
   translation: to win
+  notes: 'Aspects: nanalo (completed), nananalo (ongoing), mananalo (will).'
 - id: nanalo
   lemma: nanalo
   translation: won
@@ -2108,6 +2156,7 @@
 - id: matalo
   lemma: matalo
   translation: to lose
+  notes: 'Aspects: natalo (completed), natatalo (ongoing), matatalo (will).'
 - id: natalo
   lemma: natalo
   translation: lost
@@ -2194,6 +2243,7 @@
 - id: uuwi
   lemma: uuwi
   translation: will go home
+  notes: 'Dictionary form umuwi. Aspects: umuwi (completed), umuuwi (ongoing), uuwi (will).'
 - id: gusali
   lemma: gusali
   translation: building
@@ -2236,6 +2286,7 @@
 - id: nawawala
   lemma: nawawala
   translation: lost / missing
+  notes: 'Dictionary form mawala. Aspects: nawala (completed), nawawala (ongoing), mawawala (will).'
 - id: nakaw
   lemma: nakaw
   translation: theft / steal
@@ -2262,3 +2313,2133 @@
 - id: lindol
   lemma: lindol
   translation: earthquake
+- id: tanghali
+  lemma: tanghali
+  translation: noon / midday
+  audio: tanghali
+- id: magandang_tanghali
+  lemma: magandang tanghali
+  translation: good noon (greeting around midday)
+  audio: magandang_tanghali
+- id: magandang_araw
+  lemma: magandang araw
+  translation: good day
+  audio: magandang_araw
+- id: maraming_salamat
+  lemma: maraming salamat
+  translation: thank you very much
+  audio: maraming_salamat
+- id: pasensya_na
+  lemma: pasensya na
+  translation: sorry
+  audio: pasensya_na
+  notes: Also spelled "pasensiya na". The everyday apology; add "po" for elders.
+- id: makikiraan
+  lemma: makikiraan
+  translation: excuse me (may I pass through?)
+  audio: makikiraan
+  notes: Said when squeezing past people — "Makikiraan po."
+- id: paumanhin
+  lemma: paumanhin
+  translation: apology / excuse me (formal)
+  audio: paumanhin
+- id: balita
+  lemma: balita
+  translation: news
+  audio: balita
+  notes: "\"Anong balita?\" = What's new?"
+- id: tao_po
+  lemma: tao po
+  translation: anyone home? (called out at someone's gate or door)
+  audio: tao_po
+  notes: Literally "a person (is here)". The host usually answers "Tuloy po kayo!"
+- id: maligayang_pagdating
+  lemma: maligayang pagdating
+  translation: welcome
+  audio: maligayang_pagdating
+- id: mabuhay
+  lemma: mabuhay
+  translation: long live! / welcome!
+  audio: mabuhay
+- id: sige
+  lemma: sige
+  translation: okay / alright / go ahead
+  audio: sige
+- id: mauna_na_ako
+  lemma: mauna na ako
+  translation: I'll go ahead (said when leaving first)
+  audio: mauna_na_ako
+- id: mga
+  lemma: mga
+  translation: (plural marker)
+  audio: mga
+  notes: Pronounced "ma-NGA". mga kaibigan = friends.
+- id: taga_saan
+  lemma: taga-saan
+  translation: from where?
+  audio: taga_saan
+  notes: '"Taga-saan ka?" = Where are you from? Answer with taga- + place: "Taga-Maynila ako."'
+- id: maynila
+  lemma: Maynila
+  translation: Manila
+  audio: maynila
+- id: pilipino
+  lemma: Pilipino
+  translation: Filipino (man; also the general word)
+  audio: pilipino
+- id: pilipina
+  lemma: Pilipina
+  translation: Filipina (woman)
+  audio: pilipina
+- id: amerikano
+  lemma: Amerikano
+  translation: American (man)
+  audio: amerikano
+- id: amerikana
+  lemma: Amerikana
+  translation: American (woman)
+  audio: amerikana
+- id: tagalog
+  lemma: Tagalog
+  translation: Tagalog (the language)
+  audio: tagalog
+- id: magsalita
+  lemma: magsalita
+  translation: to speak
+  audio: magsalita
+  notes: '"Nagsasalita ka ba ng Ingles?" = Do you speak English?'
+- id: kaunti
+  lemma: kaunti
+  translation: a little / few
+  audio: kaunti
+  notes: Often said "konti". "Kaunti lang" = just a little.
+- id: hindi_ko_naiintindihan
+  lemma: hindi ko naiintindihan
+  translation: I don't understand
+  audio: hindi_ko_naiintindihan
+- id: pakiulit
+  lemma: pakiulit
+  translation: please repeat
+  audio: pakiulit
+  notes: paki- + ulit (again). "Pakiulit po." is the polite form.
+- id: dahan_dahan
+  lemma: dahan-dahan
+  translation: slowly
+  audio: dahan_dahan
+  notes: '"Dahan-dahan lang po." = Slowly, please.'
+- id: almusal
+  lemma: almusal
+  translation: breakfast
+  audio: almusal
+- id: tanghalian
+  lemma: tanghalian
+  translation: lunch
+  audio: tanghalian
+  notes: From tanghali (noon).
+- id: hapunan
+  lemma: hapunan
+  translation: dinner
+  audio: hapunan
+- id: pagkain
+  lemma: pagkain
+  translation: food
+  audio: pagkain
+- id: pahingi
+  lemma: pahingi
+  translation: may I have some
+  audio: pahingi
+  notes: Polite request for a little of something — "Pahingi po ng tubig."
+- id: maalat
+  lemma: maalat
+  translation: salty
+  audio: maalat
+- id: maanghang
+  lemma: maanghang
+  translation: spicy
+  audio: maanghang
+- id: gustong_gusto
+  lemma: gustong-gusto
+  translation: really like
+  audio: gustong_gusto
+  notes: Doubling gusto intensifies it — "Gustong-gusto ko ng kape."
+- id: labing_isa
+  lemma: labing-isa
+  translation: eleven
+  audio: labing_isa
+- id: labindalawa
+  lemma: labindalawa
+  translation: twelve
+  audio: labindalawa
+- id: labinlima
+  lemma: labinlima
+  translation: fifteen
+  audio: labinlima
+- id: dalawampu
+  lemma: dalawampu
+  translation: twenty
+  audio: dalawampu
+- id: tatlumpu
+  lemma: tatlumpu
+  translation: thirty
+  audio: tatlumpu
+- id: limampu
+  lemma: limampu
+  translation: fifty
+  audio: limampu
+- id: sandaan
+  lemma: sandaan
+  translation: one hundred
+  audio: sandaan
+  notes: Also "isang daan".
+- id: oras
+  lemma: oras
+  translation: hour / time
+  audio: oras
+- id: anong_oras_na
+  lemma: anong oras na
+  translation: what time is it?
+  audio: anong_oras_na
+- id: ilang_taon
+  lemma: ilang taon
+  translation: how old / how many years
+  audio: ilang_taon
+  notes: '"Ilang taon ka na?" = How old are you?'
+- id: ala_una
+  lemma: ala-una
+  translation: one o'clock
+  audio: ala_una
+  notes: The only hour that takes "ala-" instead of "alas-".
+- id: alas_dos
+  lemma: alas-dos
+  translation: two o'clock
+  audio: alas_dos
+- id: alas_tres
+  lemma: alas-tres
+  translation: three o'clock
+  audio: alas_tres
+- id: alas_kuwatro
+  lemma: alas-kuwatro
+  translation: four o'clock
+  audio: alas_kuwatro
+- id: alas_singko
+  lemma: alas-singko
+  translation: five o'clock
+  audio: alas_singko
+- id: alas_sais
+  lemma: alas-sais
+  translation: six o'clock
+  audio: alas_sais
+- id: alas_siyete
+  lemma: alas-siyete
+  translation: seven o'clock
+  audio: alas_siyete
+- id: alas_otso
+  lemma: alas-otso
+  translation: eight o'clock
+  audio: alas_otso
+- id: alas_nuwebe
+  lemma: alas-nuwebe
+  translation: nine o'clock
+  audio: alas_nuwebe
+- id: alas_diyes
+  lemma: alas-diyes
+  translation: ten o'clock
+  audio: alas_diyes
+- id: alas_dose
+  lemma: alas-dose
+  translation: twelve o'clock
+  audio: alas_dose
+- id: y_medya
+  lemma: y medya
+  translation: half past (the hour)
+  audio: y_medya
+  notes: '"Alas-tres y medya" = 3:30.'
+- id: parke
+  lemma: parke
+  translation: park
+  audio: parke
+- id: bangko
+  lemma: bangko
+  translation: bank
+  audio: bangko
+  notes: Also means "bench" in some contexts.
+- id: tabi
+  lemma: tabi
+  translation: side; beside
+  audio: tabi
+  notes: '"Nasa tabi ng ..." = beside the ...'
+- id: harap
+  lemma: harap
+  translation: front; in front of
+  audio: harap
+  notes: '"Nasa harap ng ..." = in front of the ...'
+- id: sakayan
+  lemma: sakayan
+  translation: loading stop (for jeepneys, tricycles)
+  audio: sakayan
+- id: panganay
+  lemma: panganay
+  translation: eldest child
+  audio: panganay
+- id: matanda
+  lemma: matanda
+  translation: old; elderly person
+  audio: matanda
+- id: bata
+  lemma: bata
+  translation: child; young
+  audio: bata
+  notes: '"Bata pa siya" = she/he is still young.'
+- id: manong
+  lemma: manong
+  translation: respectful address for an older man
+  audio: manong
+- id: manang
+  lemma: manang
+  translation: respectful address for an older woman
+  audio: manang
+- id: maligo
+  lemma: maligo
+  translation: to take a bath
+  audio: maligo
+  notes: naliligo (bathing), naligo (bathed), maliligo (will bathe)
+- id: magsipilyo
+  lemma: magsipilyo
+  translation: to brush one's teeth
+  audio: magsipilyo
+  notes: nagsisipilyo (brushing)
+- id: magbihis
+  lemma: magbihis
+  translation: to get dressed
+  audio: magbihis
+  notes: nagbibihis (getting dressed)
+- id: maaga
+  lemma: maaga
+  translation: early
+  audio: maaga
+  notes: '"nang maaga" = early (adverb)'
+- id: umalis
+  lemma: umalis
+  translation: to leave
+  audio: umalis
+  notes: umaalis (leaving), aalis (will leave)
+- id: gawin
+  lemma: gawin
+  translation: to do
+  audio: gawin
+  notes: '"Ano ang ginagawa mo?" = What are you doing?'
+- id: matulog
+  lemma: matulog
+  translation: to sleep
+  audio: matulog
+  notes: Basic form used after "bago" (before) and "pagkatapos" (after).
+- id: isang_daan
+  lemma: isang daan
+  translation: one hundred
+  audio: isang_daan
+  notes: Also written "isandaan" / "sandaan".
+- id: sukat
+  lemma: sukat
+  translation: size; measurement
+  audio: sukat
+- id: masyado
+  lemma: masyado
+  translation: too (much)
+  audio: masyado
+  notes: '"masyadong maliit" = too small'
+- id: kunin
+  lemma: kunin
+  translation: to take; to get
+  audio: kunin
+  notes: "\"Kukunin ko ito\" = I'll take this."
+- id: lahat
+  lemma: lahat
+  translation: all; everything
+  audio: lahat
+- id: kulang
+  lemma: kulang
+  translation: lacking; not enough
+  audio: kulang
+- id: kalahati
+  lemma: kalahati
+  translation: half
+  audio: kalahati
+  notes: '"kalahating kilo" = half a kilo'
+- id: init
+  lemma: init
+  translation: heat
+  audio: init
+  notes: "\"Ang init!\" = It's so hot! (ang + root as an exclamation)"
+- id: lamig
+  lemma: lamig
+  translation: cold / coldness
+  audio: lamig
+  notes: "\"Ang lamig!\" = It's so cold!"
+- id: oo_nga
+  lemma: oo nga
+  translation: yes, indeed / that's right
+  audio: oo_nga
+- id: ulap
+  lemma: ulap
+  translation: cloud
+  audio: ulap
+- id: maulap
+  lemma: maulap
+  translation: cloudy
+  audio: maulap
+- id: payong
+  lemma: payong
+  translation: umbrella
+  audio: payong
+- id: basa
+  lemma: basa
+  translation: wet
+  audio: basa
+- id: tag_ulan
+  lemma: tag-ulan
+  translation: rainy season
+  audio: tag_ulan
+- id: tag_init
+  lemma: tag-init
+  translation: hot / dry season
+  audio: tag_init
+- id: kulog
+  lemma: kulog
+  translation: thunder
+  audio: kulog
+- id: kidlat
+  lemma: kidlat
+  translation: lightning
+  audio: kidlat
+- id: baha
+  lemma: baha
+  translation: flood
+  audio: baha
+- id: pasok
+  lemma: pasok
+  translation: start of / attendance at school or work
+  audio: pasok
+  notes: '"Walang pasok" = no classes / no work (e.g. called off for a typhoon). "Anong oras ang pasok mo?" = What time do you start?'
+- id: tapat
+  lemma: tapat
+  translation: opposite / across from
+  audio: tapat
+  notes: '"sa tapat ng" = across from'
+- id: gaano_kalayo
+  lemma: gaano kalayo
+  translation: how far
+  audio: gaano_kalayo
+- id: minuto
+  lemma: minuto
+  translation: minute
+  audio: minuto
+- id: maligaw
+  lemma: maligaw
+  translation: to get lost (lose one's way)
+  audio: maligaw
+  notes: "\"Naliligaw ako.\" = I'm lost."
+- id: mapa
+  lemma: mapa
+  translation: map
+  audio: mapa
+- id: tumawid
+  lemma: tumawid
+  translation: to cross / crossed
+  audio: tumawid
+  notes: 'Aspects: tumawid (completed), tumatawid (ongoing), tatawid (will).'
+- id: tulay
+  lemma: tulay
+  translation: bridge
+  audio: tulay
+- id: dulo
+  lemma: dulo
+  translation: end / tip
+  audio: dulo
+- id: hanggang
+  lemma: hanggang
+  translation: until / up to
+  audio: hanggang
+- id: braso
+  lemma: braso
+  translation: arm
+  audio: braso
+- id: binti
+  lemma: binti
+  translation: leg
+  audio: binti
+- id: leeg
+  lemma: leeg
+  translation: neck
+  audio: leeg
+- id: dibdib
+  lemma: dibdib
+  translation: chest
+  audio: dibdib
+- id: daliri
+  lemma: daliri
+  translation: finger / toe
+  audio: daliri
+- id: lalamunan
+  lemma: lalamunan
+  translation: throat
+  audio: lalamunan
+- id: nahihilo
+  lemma: nahihilo
+  translation: dizzy / feeling dizzy
+  audio: nahihilo
+- id: nasusuka
+  lemma: nasusuka
+  translation: nauseous / feeling like throwing up
+  audio: nasusuka
+- id: reseta
+  lemma: reseta
+  translation: prescription
+  audio: reseta
+- id: beses
+  lemma: beses
+  translation: times (how often)
+  audio: beses
+  notes: '"tatlong beses sa isang araw" = three times a day'
+- id: gumaling
+  lemma: gumaling
+  translation: to get better / recover
+  audio: gumaling
+  notes: 'Aspects: gumaling (completed), gumagaling (ongoing), gagaling (will).'
+- id: pagaling_ka
+  lemma: Pagaling ka!
+  translation: Get well soon!
+  audio: pagaling_ka
+  notes: 'To an elder: "Pagaling po kayo!"'
+- id: magturo
+  lemma: magturo
+  translation: to teach
+  audio: magturo
+  notes: nagtuturo = teaches / is teaching
+- id: magtinda
+  lemma: magtinda
+  translation: to sell
+  audio: magtinda
+  notes: nagtitinda = sells / is selling
+- id: magmaneho
+  lemma: magmaneho
+  translation: to drive
+  audio: magmaneho
+  notes: nagmamaneho = drives / is driving
+- id: mula
+  lemma: mula
+  translation: from (a time or place)
+  audio: mula
+  notes: '"mula ... hanggang" = from ... until'
+- id: makinig
+  lemma: makinig
+  translation: to listen
+  audio: makinig
+  notes: 'Aspects: nakinig (completed), nakikinig (ongoing), makikinig (will).'
+- id: tanong
+  lemma: tanong
+  translation: question
+  audio: tanong
+- id: maintindihan
+  lemma: maintindihan
+  translation: to understand
+  audio: maintindihan
+  notes: "\"Hindi ko naiintindihan.\" = I don't understand."
+- id: kinakabahan
+  lemma: kinakabahan
+  translation: nervous
+  audio: kinakabahan
+  notes: From kaba, the pounding of a nervous heart. Kinakabahan ako = I'm nervous.
+- id: nag_aalala
+  lemma: nag-aalala
+  translation: worried
+  audio: nag_aalala
+  notes: Nag-aalala ako sa iyo = I'm worried about you.
+- id: inaantok
+  lemma: inaantok
+  translation: sleepy
+  audio: inaantok
+- id: nahihiya
+  lemma: nahihiya
+  translation: shy, embarrassed
+  audio: nahihiya
+  notes: From hiya (shame, shyness).
+- id: nababagot
+  lemma: nababagot
+  translation: bored
+  audio: nababagot
+- id: nagulat
+  lemma: nagulat
+  translation: surprised (was startled)
+  audio: nagulat
+  notes: 'Dictionary form magulat. Aspects: nagulat (completed), nagugulat (ongoing), magugulat (will).'
+- id: tuwang_tuwa
+  lemma: tuwang-tuwa
+  translation: overjoyed
+  audio: tuwang_tuwa
+  notes: Reduplicated tuwa (joy) for intensity.
+- id: nangyari
+  lemma: nangyari
+  translation: happened
+  audio: nangyari
+  notes: Ano ang nangyari? = What happened?
+- id: problema
+  lemma: problema
+  translation: problem
+  audio: problema
+- id: umiiyak
+  lemma: umiiyak
+  translation: crying
+  audio: umiiyak
+  notes: 'Dictionary form umiyak. Aspects: umiyak (completed), umiiyak (ongoing), iiyak (will).'
+- id: huwag_kang_mag_alala
+  lemma: Huwag kang mag-alala
+  translation: Don't worry
+  audio: huwag_kang_mag_alala
+- id: kaya_mo_iyan
+  lemma: Kaya mo iyan
+  translation: You can do it
+  audio: kaya_mo_iyan
+  notes: Often shortened in speech to "Kaya mo 'yan!"
+- id: nandito_lang_ako
+  lemma: Nandito lang ako
+  translation: I'm here for you
+  audio: nandito_lang_ako
+- id: nakakatakot
+  lemma: nakakatakot
+  translation: scary
+  audio: nakakatakot
+- id: nakakapagod
+  lemma: nakakapagod
+  translation: tiring
+  audio: nakakapagod
+- id: nakakalungkot
+  lemma: nakakalungkot
+  translation: sad, saddening
+  audio: nakakalungkot
+- id: nakakatuwa
+  lemma: nakakatuwa
+  translation: delightful, heartwarming
+  audio: nakakatuwa
+  notes: Not to be confused with nakakatawa (funny).
+- id: para_sa_iyo
+  lemma: para sa iyo
+  translation: for you
+  audio: para_sa_iyo
+- id: itaas
+  lemma: itaas
+  translation: up, upstairs
+  audio: itaas
+- id: ibaba
+  lemma: ibaba
+  translation: down, downstairs
+  audio: ibaba
+- id: hagdan
+  lemma: hagdan
+  translation: stairs
+  audio: hagdan
+- id: labas
+  lemma: labas
+  translation: outside
+  audio: labas
+- id: ilalim
+  lemma: ilalim
+  translation: under, underneath
+  audio: ilalim
+  notes: nasa ilalim ng mesa = under the table
+- id: unan
+  lemma: unan
+  translation: pillow
+  audio: unan
+- id: kumot
+  lemma: kumot
+  translation: blanket
+  audio: kumot
+- id: telebisyon
+  lemma: telebisyon
+  translation: television
+  audio: telebisyon
+- id: sopa
+  lemma: sopa
+  translation: sofa
+  audio: sopa
+- id: naglalaba
+  lemma: naglalaba
+  translation: doing laundry
+  audio: naglalaba
+  notes: 'Dictionary form maglaba. Aspects: naglaba (completed), naglalaba (ongoing), maglalaba (will).'
+- id: nagliligpit
+  lemma: nagliligpit
+  translation: tidying up
+  audio: nagliligpit
+  notes: 'Dictionary form magligpit. Aspects: nagligpit (completed), nagliligpit (ongoing), magliligpit (will).'
+- id: nagdidilig
+  lemma: nagdidilig
+  translation: watering (plants)
+  audio: nagdidilig
+  notes: 'Dictionary form magdilig. Aspects: nagdilig (completed), nagdidilig (ongoing), magdidilig (will).'
+- id: malinis
+  lemma: malinis
+  translation: clean
+  audio: malinis
+- id: marumi
+  lemma: marumi
+  translation: dirty
+  audio: marumi
+- id: makalat
+  lemma: makalat
+  translation: messy
+  audio: makalat
+- id: huwag_po_kayong_mahiya
+  lemma: Huwag po kayong mahiya
+  translation: Make yourself at home
+  audio: huwag_po_kayong_mahiya
+  notes: Literally "don't be shy".
+- id: keyk
+  lemma: keyk
+  translation: cake
+  audio: keyk
+- id: kandila
+  lemma: kandila
+  translation: candle
+  audio: kandila
+- id: ilang_taon_ka_na
+  lemma: Ilang taon ka na?
+  translation: How old are you?
+  audio: ilang_taon_ka_na
+  notes: "Polite: Ilang taon na po kayo?"
+- id: hipan
+  lemma: hipan
+  translation: to blow (on)
+  audio: hipan
+  notes: Hipan mo ang kandila! = Blow out the candles!
+- id: buksan
+  lemma: buksan
+  translation: to open
+  audio: buksan
+  notes: 'Object-focus verb. Aspects: binuksan (completed), binubuksan (ongoing), bubuksan (will).'
+- id: prusisyon
+  lemma: prusisyon
+  translation: procession
+  audio: prusisyon
+- id: banda
+  lemma: banda
+  translation: (music) band
+  audio: banda
+- id: lechon
+  lemma: lechon
+  translation: roast pig
+  audio: lechon
+- id: ninong
+  lemma: ninong
+  translation: godfather
+  audio: ninong
+- id: ninang
+  lemma: ninang
+  translation: godmother
+  audio: ninang
+- id: pamasko
+  lemma: pamasko
+  translation: Christmas gift
+  audio: pamasko
+- id: noche_buena
+  lemma: Noche Buena
+  translation: Christmas Eve midnight feast
+  audio: noche_buena
+- id: mano_po
+  lemma: Mano po
+  translation: (greeting of respect to an elder)
+  audio: mano_po
+  notes: Said while pressing the elder's hand to your forehead.
+- id: hatinggabi
+  lemma: hatinggabi
+  translation: midnight
+  audio: hatinggabi
+- id: nangangaroling
+  lemma: nangangaroling
+  translation: caroling
+  audio: nangangaroling
+  notes: 'Dictionary form mangaroling. Aspects: nangaroling (completed), nangangaroling (ongoing), mangangaroling (will).'
+- id: namamasko_po
+  lemma: Namamasko po!
+  translation: (carolers' call for a Christmas treat)
+  audio: namamasko_po
+- id: paputok
+  lemma: paputok
+  translation: firecrackers
+  audio: paputok
+- id: sana
+  lemma: sana
+  translation: I hope, hopefully
+  audio: sana
+- id: maligayang_bati
+  lemma: Maligayang bati
+  translation: Best wishes (lit. happy greetings)
+  audio: maligayang_bati
+  notes: The opening words of the Tagalog birthday song.
+- id: pagpalain_ka_ng_diyos
+  lemma: Pagpalain ka ng Diyos
+  translation: God bless you
+  audio: pagpalain_ka_ng_diyos
+- id: lila
+  lemma: lila
+  translation: purple
+  audio: lila
+- id: kayumanggi
+  lemma: kayumanggi
+  translation: brown
+  audio: kayumanggi
+- id: kulay_abo
+  lemma: kulay-abo
+  translation: gray
+  audio: kulay_abo
+  notes: Literally ash-colored.
+- id: tsinelas
+  lemma: tsinelas
+  translation: slippers, flip-flops
+  audio: tsinelas
+- id: dyaket
+  lemma: dyaket
+  translation: jacket
+  audio: dyaket
+- id: relo
+  lemma: relo
+  translation: watch, clock
+  audio: relo
+- id: isukat
+  lemma: isukat
+  translation: to try on
+  audio: isukat
+  notes: 'Object-focus verb. Aspects: isinukat (completed), isinusukat (ongoing), isusukat (will).'
+- id: maluwag
+  lemma: maluwag
+  translation: loose
+  audio: maluwag
+- id: masikip
+  lemma: masikip
+  translation: tight
+  audio: masikip
+- id: kasya
+  lemma: kasya
+  translation: fits
+  audio: kasya
+- id: bagay
+  lemma: bagay
+  translation: suits, looks good on
+  audio: bagay
+  notes: Bagay sa iyo! = It suits you! (bagay also means 'thing'.)
+- id: guwapo
+  lemma: guwapo
+  translation: handsome
+  audio: guwapo
+- id: magsuot
+  lemma: magsuot
+  translation: to put on, to wear
+  audio: magsuot
+  notes: 'Aspects: nagsuot (completed), nagsusuot (ongoing), magsusuot (will).'
+- id: magdala
+  lemma: magdala
+  translation: to bring, to carry
+  audio: magdala
+  notes: 'Aspects: nagdala (completed), nagdadala (ongoing), magdadala (will).'
+- id: palaka
+  lemma: palaka
+  translation: frog
+  audio: palaka
+- id: unggoy
+  lemma: unggoy
+  translation: monkey
+  audio: unggoy
+- id: ahas
+  lemma: ahas
+  translation: snake
+  audio: ahas
+- id: pato
+  lemma: pato
+  translation: duck
+  audio: pato
+- id: kuneho
+  lemma: kuneho
+  translation: rabbit
+  audio: kuneho
+- id: lamok
+  lemma: lamok
+  translation: mosquito
+  audio: lamok
+- id: paru_paro
+  lemma: paru-paro
+  translation: butterfly
+  audio: paru_paro
+- id: sungay
+  lemma: sungay
+  translation: horn (of an animal)
+  audio: sungay
+- id: balahibo
+  lemma: balahibo
+  translation: fur / feathers
+  audio: balahibo
+  notes: An animal's coat — fur on a cat, feathers on a bird; also body hair.
+- id: sine
+  lemma: sine
+  translation: movie theater
+  audio: sine
+  notes: Also "the movies" — manood ng sine = go see a movie.
+- id: palabas
+  lemma: palabas
+  translation: show
+  audio: palabas
+- id: tumugtog
+  lemma: tumugtog
+  translation: to play (an instrument)
+  audio: tumugtog
+  notes: Takes ng — tumugtog ng gitara. Incompleted form is tumutugtog.
+- id: piyano
+  lemma: piyano
+  translation: piano
+  audio: piyano
+- id: gumuhit
+  lemma: gumuhit
+  translation: to draw
+  audio: gumuhit
+  notes: Incompleted form is gumuguhit.
+- id: larawan
+  lemma: larawan
+  translation: picture
+  audio: larawan
+- id: mahilig
+  lemma: mahilig
+  translation: fond of / really into
+  audio: mahilig
+  notes: mahilig sa + noun (Mahilig ako sa musika); mahilig + verb (Mahilig akong kumanta).
+- id: kasama
+  lemma: kasama
+  translation: together with
+  audio: kasama
+- id: dumating
+  lemma: dumating
+  translation: to arrive / arrived
+  audio: dumating
+  notes: UM verb of dating; d softens to r in dumarating (arriving) and darating (will arrive).
+- id: sumulat
+  lemma: sumulat
+  translation: to write / wrote
+  audio: sumulat
+  notes: UM verb of sulat; sumusulat (writing), susulat (will write).
+- id: maglaba
+  lemma: maglaba
+  translation: to wash clothes
+  audio: maglaba
+  notes: MAG verb of laba; naglaba (did laundry), naglalaba (doing laundry), maglalaba (will do laundry).
+- id: magsaing
+  lemma: magsaing
+  translation: to cook rice
+  audio: magsaing
+  notes: Its own everyday verb — nagsaing (cooked rice), nagsasaing (cooking rice), magsasaing (will cook rice).
+- id: alin
+  lemma: alin
+  translation: which
+  audio: alin
+  notes: Becomes "aling" before a noun ("Aling jeepney?").
+- id: amin
+  lemma: amin
+  translation: ours (not including you)
+  audio: amin
+- id: atin
+  lemma: atin
+  translation: ours (including you)
+  audio: atin
+- id: inyo
+  lemma: inyo
+  translation: yours (plural)
+  audio: inyo
+- id: kanila
+  lemma: kanila
+  translation: theirs
+  audio: kanila
+- id: mayroon
+  lemma: mayroon
+  translation: there is / to have
+  audio: mayroon
+  notes: Fuller form of "may"; often "meron" in speech.
+- id: kapitbahay
+  lemma: kapitbahay
+  translation: neighbor
+  audio: kapitbahay
+- id: abril
+  lemma: Abril
+  translation: April
+  audio: abril
+- id: mayo
+  lemma: Mayo
+  translation: May
+  audio: mayo
+- id: hulyo
+  lemma: Hulyo
+  translation: July
+  audio: hulyo
+- id: agosto
+  lemma: Agosto
+  translation: August
+  audio: agosto
+- id: setyembre
+  lemma: Setyembre
+  translation: September
+  audio: setyembre
+- id: oktubre
+  lemma: Oktubre
+  translation: October
+  audio: oktubre
+- id: nobyembre
+  lemma: Nobyembre
+  translation: November
+  audio: nobyembre
+- id: linggo_week
+  lemma: linggo
+  translation: week
+  audio: linggo
+  notes: Lowercase linggo is a week; capital Linggo is Sunday. Audio ref shared with the day name.
+- id: susunod
+  lemma: susunod
+  translation: next
+  audio: susunod
+  notes: sa susunod na linggo — next week.
+- id: nakaraan
+  lemma: nakaraan
+  translation: last / previous
+  audio: nakaraan
+  notes: noong nakaraang linggo — last week.
+- id: tren
+  lemma: tren
+  translation: train
+  audio: tren
+- id: mrt
+  lemma: MRT
+  translation: the MRT (Metro Manila train)
+  audio: mrt
+  notes: Said letter by letter, like in English.
+- id: bisikleta
+  lemma: bisikleta
+  translation: bicycle
+  audio: bisikleta
+- id: motorsiklo
+  lemma: motorsiklo
+  translation: motorcycle
+  audio: motorsiklo
+- id: eroplano
+  lemma: eroplano
+  translation: airplane
+  audio: eroplano
+- id: paliparan
+  lemma: paliparan
+  translation: airport
+  audio: paliparan
+- id: maghintay
+  lemma: maghintay
+  translation: to wait
+  audio: maghintay
+  notes: naghihintay — waiting; naghintay — waited.
+- id: pumila
+  lemma: pumila
+  translation: to line up
+  audio: pumila
+  notes: pila — a line or queue.
+- id: tsaa
+  lemma: tsaa
+  translation: tea
+  audio: tsaa
+- id: mahina
+  lemma: mahina
+  translation: weak
+  audio: mahina
+- id: pareho
+  lemma: pareho
+  translation: the same
+  audio: pareho
+- id: turo_turo
+  lemma: turo-turo
+  translation: point-point eatery
+  audio: turo_turo
+  notes: Canteen-style eatery where you point at the pots of cooked food.
+- id: sabaw
+  lemma: sabaw
+  translation: broth
+  audio: sabaw
+- id: inumin
+  lemma: inumin
+  translation: drink (beverage)
+  audio: inumin
+- id: panghimagas
+  lemma: panghimagas
+  translation: dessert
+  audio: panghimagas
+- id: pabalot
+  lemma: pabalot
+  translation: wrapped to go
+  audio: pabalot
+  notes: Pa- + balot — "please wrap it"; the standard way to ask for takeout.
+- id: resibo
+  lemma: resibo
+  translation: receipt
+  audio: resibo
+- id: hati
+  lemma: hati
+  translation: split / share
+  audio: hati
+  notes: "\"Hati tayo\" — let's split it (the bill)."
+- id: bawal
+  lemma: bawal
+  translation: not allowed / forbidden
+  audio: bawal
+- id: apatnapu
+  lemma: apatnapu
+  translation: forty
+  audio: apatnapu
+- id: libo
+  lemma: libo
+  translation: thousand
+  audio: libo
+- id: sari_sari
+  lemma: sari-sari store
+  translation: small neighborhood store
+  audio: sari_sari
+  notes: Kept in English spelling ("store"), as spoken in the Philippines.
+- id: utang
+  lemma: utang
+  translation: debt
+  audio: utang
+  notes: Also small store credit written in the tindera's notebook.
+- id: bawas
+  lemma: bawas
+  translation: reduction / a bit off the price
+  audio: bawas
+- id: kuripot
+  lemma: kuripot
+  translation: stingy
+  audio: kuripot
+- id: sasakay
+  lemma: sasakay
+  translation: will ride
+  audio: sasakay
+  notes: 'Dictionary form sumakay. Aspects: sumakay (completed), sumasakay (ongoing), sasakay (will).'
+- id: kakanta
+  lemma: kakanta
+  translation: will sing
+  audio: kakanta
+  notes: 'Dictionary form kumanta. Aspects: kumanta (completed), kumakanta (ongoing), kakanta (will).'
+- id: sasayaw
+  lemma: sasayaw
+  translation: will dance
+  audio: sasayaw
+  notes: 'Dictionary form sumayaw. Aspects: sumayaw (completed), sumasayaw (ongoing), sasayaw (will).'
+- id: magbabasa
+  lemma: magbabasa
+  translation: will read
+  audio: magbabasa
+  notes: 'Dictionary form magbasa. Aspects: nagbasa (completed), nagbabasa (ongoing), magbabasa (will).'
+- id: magtatrabaho
+  lemma: magtatrabaho
+  translation: will work
+  audio: magtatrabaho
+  notes: 'Dictionary form magtrabaho. Aspects: nagtrabaho (completed), nagtatrabaho (ongoing), magtatrabaho (will).'
+- id: mag_aaral
+  lemma: mag-aaral
+  translation: will study
+  audio: mag_aaral
+  notes: 'Dictionary form mag-aral. Aspects: nag-aral (completed), nag-aaral (ongoing), mag-aaral (will).'
+- id: maglilinis
+  lemma: maglilinis
+  translation: will clean
+  audio: maglilinis
+  notes: 'Dictionary form maglinis. Aspects: naglinis (completed), naglilinis (ongoing), maglilinis (will).'
+- id: sa_susunod
+  lemma: sa susunod
+  translation: next (upcoming)
+  audio: sa_susunod
+  notes: sa susunod na linggo / buwan / taon — next week / month / year.
+- id: sa_makalawa
+  lemma: sa makalawa
+  translation: the day after tomorrow
+  audio: sa_makalawa
+- id: plano
+  lemma: plano
+  translation: plan
+  audio: plano
+- id: gwapo
+  lemma: gwapo
+  translation: handsome
+  audio: gwapo
+- id: matapang
+  lemma: matapang
+  translation: brave
+  audio: matapang
+- id: mahiyain
+  lemma: mahiyain
+  translation: shy
+  audio: mahiyain
+- id: masayahin
+  lemma: masayahin
+  translation: cheerful
+  audio: masayahin
+- id: palakaibigan
+  lemma: palakaibigan
+  translation: friendly
+  audio: palakaibigan
+- id: mukha
+  lemma: mukha
+  translation: face
+  audio: mukha
+- id: salamin
+  lemma: salamin
+  translation: eyeglasses
+  audio: salamin
+  notes: Also means "mirror" or "glass".
+- id: tuwid
+  lemma: tuwid
+  translation: straight
+  audio: tuwid
+- id: nga
+  lemma: nga
+  translation: request softener ("please")
+  audio: nga
+  notes: Softens requests - "Pakiabot nga ang tubig." Also adds emphasis.
+- id: tara
+  lemma: tara
+  translation: let's go
+  audio: tara
+- id: tumigil
+  lemma: tumigil
+  translation: to stop
+  audio: tumigil
+  notes: 'Aspects: tumigil (completed), tumitigil (ongoing), titigil (will).'
+- id: pakibuksan
+  lemma: pakibuksan
+  translation: please open
+  audio: pakibuksan
+- id: pakisara
+  lemma: pakisara
+  translation: please close
+  audio: pakisara
+- id: kapag
+  lemma: kapag
+  translation: when / whenever
+  audio: kapag
+- id: kaya
+  lemma: kaya
+  translation: so / that's why
+  audio: kaya
+  notes: As a connector it gives a result; also means "can / able".
+- id: gaano_katagal
+  lemma: gaano katagal
+  translation: how long
+  audio: gaano_katagal
+- id: nagsusuka
+  lemma: nagsusuka
+  translation: vomiting
+  audio: nagsusuka
+  notes: 'Dictionary form magsuka. Aspects: nagsuka (completed), nagsusuka (ongoing), magsusuka (will).'
+- id: dugo
+  lemma: dugo
+  translation: blood
+  audio: dugo
+- id: hirap
+  lemma: hirap
+  translation: having a hard time
+  audio: hirap
+  notes: Same root as "mahirap" (difficult). "Hirap akong huminga" = I'm having a hard time breathing.
+- id: huminga
+  lemma: huminga
+  translation: to breathe
+  audio: huminga
+  notes: 'Aspects: huminga (completed), humihinga (ongoing), hihinga (will).'
+- id: klinika
+  lemma: klinika
+  translation: clinic
+  audio: klinika
+- id: nasira
+  lemma: nasira
+  translation: broke / got broken
+  audio: nasira
+  notes: 'Dictionary form masira. Aspects: nasira (completed), nasisira (ongoing), masisira (will).'
+- id: mag_charge
+  lemma: mag-charge
+  translation: to charge (a phone)
+  audio: mag_charge
+  notes: 'Aspects: nag-charge (completed), nagcha-charge (ongoing), magcha-charge (will).'
+- id: signal
+  lemma: signal
+  translation: signal (phone reception)
+  audio: signal
+- id: mensahe
+  lemma: mensahe
+  translation: message
+  audio: mensahe
+- id: nakalimutan
+  lemma: nakalimutan
+  translation: forgot
+  audio: nakalimutan
+  notes: '"Nakalimutan ko" = I forgot (it).'
+- id: mag_post
+  lemma: mag-post
+  translation: to post (online)
+  audio: mag_post
+  notes: 'Aspects: nag-post (completed), nagpo-post (ongoing), magpo-post (will).'
+- id: selfie
+  lemma: selfie
+  translation: selfie
+  audio: selfie
+- id: social_media
+  lemma: social media
+  translation: social media
+  audio: social_media
+- id: app
+  lemma: app
+  translation: app
+  audio: app
+- id: mag_download
+  lemma: mag-download
+  translation: to download
+  audio: mag_download
+  notes: 'Aspects: nag-download (completed), nagda-download (ongoing), magda-download (will).'
+- id: video_call
+  lemma: video call
+  translation: video call
+  audio: video_call
+- id: online
+  lemma: online
+  translation: online
+  audio: online
+- id: kagabi
+  lemma: kagabi
+  translation: last night
+  audio: kagabi
+- id: bumalik
+  lemma: bumalik
+  translation: came back / returned
+  audio: bumalik
+  notes: 'Aspects: bumalik (completed), bumabalik (ongoing), babalik (will).'
+- id: bigla
+  lemma: bigla
+  translation: sudden / suddenly
+  audio: bigla
+  notes: Usually with the -ng linker — "biglang umulan" = it suddenly rained.
+- id: magkasakit
+  lemma: magkasakit
+  translation: to get sick
+  audio: magkasakit
+  notes: 'Aspects: nagkasakit (completed), nagkakasakit (ongoing), magkakasakit (will).'
+- id: buong_araw
+  lemma: buong araw
+  translation: all day
+  audio: buong_araw
+- id: bigas
+  lemma: bigas
+  translation: uncooked rice
+  audio: bigas
+  notes: Raw grains are bigas; once cooked they become kanin.
+- id: sampalok
+  lemma: sampalok
+  translation: tamarind
+  audio: sampalok
+  notes: The classic souring agent for sinigang.
+- id: kangkong
+  lemma: kangkong
+  translation: water spinach
+  audio: kangkong
+- id: paminta
+  lemma: paminta
+  translation: black pepper
+  audio: paminta
+- id: ilagay
+  lemma: ilagay
+  translation: to put (something) in or on
+  audio: ilagay
+  notes: '"Ilagay mo ang ___" (put the ___ in); with ka use the actor form: "Maglagay ka ng ___".'
+- id: tikman
+  lemma: tikman
+  translation: to taste
+  audio: tikman
+  notes: '"Tikman mo ang sabaw" — taste the soup.'
+- id: kumulo
+  lemma: kumulo
+  translation: to come to a boil
+  audio: kumulo
+  notes: Same root as magpakulo (to boil something); "Kumukulo na ang tubig" — the water is boiling.
+- id: haluin
+  lemma: haluin
+  translation: to stir, to mix
+  audio: haluin
+  notes: Root halo, as in halo-halo; "Pakihalo ang sabaw" — please stir the soup.
+- id: pakwan
+  lemma: pakwan
+  translation: watermelon
+  audio: pakwan
+- id: mansanas
+  lemma: mansanas
+  translation: apple
+  audio: mansanas
+- id: lansones
+  lemma: lansones
+  translation: lanzones (a bunch-growing tropical fruit)
+  audio: lansones
+- id: papaya
+  lemma: papaya
+  translation: papaya
+  audio: papaya
+- id: kalabasa
+  lemma: kalabasa
+  translation: squash
+  audio: kalabasa
+- id: sitaw
+  lemma: sitaw
+  translation: string beans
+  audio: sitaw
+- id: mapait
+  lemma: mapait
+  translation: bitter
+  audio: mapait
+- id: tumpok
+  lemma: tumpok
+  translation: small pile (market unit sold for one price)
+  audio: tumpok
+- id: piraso
+  lemma: piraso
+  translation: piece
+  audio: piraso
+- id: masustansya
+  lemma: masustansya
+  translation: nutritious
+  audio: masustansya
+- id: sinta
+  lemma: sinta
+  translation: beloved, sweetheart (poetic)
+  audio: sinta
+- id: kilig
+  lemma: kilig
+  translation: giddy thrill, butterflies
+  audio: kilig
+  notes: '"Kinikilig ako!" — I have butterflies!'
+- id: malambing
+  lemma: malambing
+  translation: sweet, affectionate
+  audio: malambing
+- id: tampo
+  lemma: tampo
+  translation: sulking, hurt feelings
+  audio: tampo
+  notes: nagtatampo = sulking; "Huwag ka nang magtampo" — don't sulk anymore.
+- id: pasensya
+  lemma: pasensya
+  translation: patience; sorry
+  audio: pasensya
+  notes: "\"Pasensya ka na\" — I'm sorry (literally, be patient with me)."
+- id: pangako
+  lemma: pangako
+  translation: promise
+  audio: pangako
+- id: singsing
+  lemma: singsing
+  translation: ring
+  audio: singsing
+- id: pamamanhikan
+  lemma: pamamanhikan
+  translation: formal visit by the groom's family to ask for the bride's hand
+  audio: pamamanhikan
+- id: magkasintahan
+  lemma: magkasintahan
+  translation: a couple (sweethearts)
+  audio: magkasintahan
+- id: sagot
+  lemma: sagot
+  translation: answer
+  audio: sagot
+  notes: In courtship, "sinagot niya ako" = she said yes to me (accepted my courtship).
+- id: maghanap
+  lemma: maghanap
+  translation: to look for / to search
+  audio: maghanap
+  notes: Naghahanap ako ng trabaho. = I'm looking for a job.
+- id: mag_apply
+  lemma: mag-apply
+  translation: to apply (for a job)
+  audio: mag_apply
+  notes: "Borrowed from English; conjugates like any mag- verb: nag-apply (applied)."
+- id: interbyu
+  lemma: interbyu
+  translation: interview
+  audio: interbyu
+- id: karanasan
+  lemma: karanasan
+  translation: experience
+  audio: karanasan
+- id: pasyente
+  lemma: pasyente
+  translation: patient (medical)
+  audio: pasyente
+- id: pangarap
+  lemma: pangarap
+  translation: dream / aspiration
+  audio: pangarap
+  notes: Pangarap kong maging doktor. = My dream is to become a doctor.
+- id: maging
+  lemma: maging
+  translation: to become
+  audio: maging
+  notes: 'Aspects: naging (completed), nagiging (ongoing), magiging (will).'
+- id: magpadala
+  lemma: magpadala
+  translation: to send
+  audio: magpadala
+  notes: Nagpapadala siya ng pera sa pamilya niya. = He sends money to his family.
+- id: kontrata
+  lemma: kontrata
+  translation: contract
+  audio: kontrata
+- id: sumali
+  lemma: sumali
+  translation: to join / to take part
+  audio: sumali
+  notes: 'Aspects: sumali (completed), sumasali (ongoing), sasali (will).'
+- id: sumama
+  lemma: sumama
+  translation: to come along / to go with
+  audio: sumama
+  notes: 'Future: sasama. "Sasama ka ba?" = Are you coming along?'
+- id: tagahanga
+  lemma: tagahanga
+  translation: fan / admirer
+  audio: tagahanga
+- id: kalaban
+  lemma: kalaban
+  translation: opponent / rival
+  audio: kalaban
+- id: tabla
+  lemma: tabla
+  translation: tie / draw (in a game)
+  audio: tabla
+- id: magsanay
+  lemma: magsanay
+  translation: to practice / to train
+  audio: magsanay
+  notes: 'Aspects: nagsanay (completed), nagsasanay (ongoing), magsasanay (will).'
+- id: ipasa
+  lemma: ipasa
+  translation: to pass (something to someone)
+  audio: ipasa
+  notes: '"Ipasa mo ang bola!" = Pass the ball!'
+- id: ang_galing
+  lemma: ang galing
+  translation: awesome! / so skilled!
+  audio: ang_galing
+  notes: "\"Ang galing mo!\" = You're so good!"
+- id: pawis
+  lemma: pawis
+  translation: sweat
+  audio: pawis
+  notes: "\"Pawis na pawis ako.\" = I'm dripping with sweat."
+- id: sayang
+  lemma: sayang
+  translation: what a pity / too bad
+  audio: sayang
+- id: tuwalya
+  lemma: tuwalya
+  translation: towel
+  audio: tuwalya
+- id: salbabida
+  lemma: salbabida
+  translation: life ring / swim float
+  audio: salbabida
+- id: baon
+  lemma: baon
+  translation: packed food (or money) brought along
+  audio: baon
+- id: malalim
+  lemma: malalim
+  translation: deep
+  audio: malalim
+- id: mababaw
+  lemma: mababaw
+  translation: shallow
+  audio: mababaw
+- id: maglibot
+  lemma: maglibot
+  translation: to tour around / to go around
+  audio: maglibot
+  notes: 'Island hopping: "maglibot sa mga isla".'
+- id: sumisid
+  lemma: sumisid
+  translation: to dive / dived
+  audio: sumisid
+  notes: 'Aspects: sumisid (completed), sumisisid (ongoing), sisisid (will).'
+- id: kabibe
+  lemma: kabibe
+  translation: seashell
+  audio: kabibe
+- id: sama_sama
+  lemma: sama-sama
+  translation: all together
+  audio: sama_sama
+  notes: "\"Sama-sama tayong kumain!\" = Let's all eat together!"
+- id: siksikan
+  lemma: siksikan
+  translation: crowded / packed
+  audio: siksikan
+  notes: What a rush-hour jeepney or bus is — "Siksikan ang jeepney."
+- id: mahuli
+  lemma: mahuli
+  translation: to be late
+  audio: mahuli
+  notes: '"Mahuhuli ako" = I will be late. "Nahuli" = was late (it can also mean "was caught").'
+- id: palayan
+  lemma: palayan
+  translation: rice field
+  audio: palayan
+- id: palay
+  lemma: palay
+  translation: rice (growing / unhusked)
+  audio: palay
+  notes: Tagalog has three words for rice — palay in the field, bigas uncooked, kanin cooked.
+- id: magtanim
+  lemma: magtanim
+  translation: to plant
+  audio: magtanim
+  notes: 'Aspects: nagtanim (completed), nagtatanim (ongoing), magtatanim (will).'
+- id: kamag_anak
+  lemma: kamag-anak
+  translation: relative
+  audio: kamag_anak
+- id: dumalaw
+  lemma: dumalaw
+  translation: to visit (someone)
+  audio: dumalaw
+  notes: The person visited takes "kay" or "sa" — "Dumalaw kami kay Lola." Future "dadalaw".
+- id: pasalubong
+  lemma: pasalubong
+  translation: gift brought home from a trip
+  audio: pasalubong
+  notes: Coming home without pasalubong for family is almost unthinkable.
+- id: lumipat
+  lemma: lumipat
+  translation: to move (to a new place)
+  audio: lumipat
+  notes: Future "lilipat".
+- id: nakatira
+  lemma: nakatira
+  translation: lives / resides
+  audio: nakatira
+  notes: '"Saan ka nakatira?" = Where do you live?'
+- id: tawagan
+  lemma: tawagan
+  translation: to call (someone)
+  audio: tawagan
+  notes: '"Tawagan mo ang pulis!" = Call the police! "Tatawagan kita" = I will call you.'
+- id: kuryente
+  lemma: kuryente
+  translation: electricity
+  audio: kuryente
+  notes: '"Walang kuryente" = there is no power (a "brownout").'
+- id: lumikas
+  lemma: lumikas
+  translation: to evacuate
+  audio: lumikas
+  notes: 'Aspects: lumikas (completed), lumilikas (ongoing), lilikas (will).'
+- id: lumindol
+  lemma: lumindol
+  translation: (for an earthquake) to happen
+  audio: lumindol
+  notes: '"Lumindol" = there was an earthquake; "Lumilindol!" = there is an earthquake right now.'
+- id: magtago
+  lemma: magtago
+  translation: to hide / take cover
+  audio: magtago
+  notes: 'Aspects: nagtago (completed), nagtatago (ongoing), magtatago (will).'
+- id: mangyari
+  lemma: mangyari
+  translation: to happen
+  audio: mangyari
+  notes: '"Ano ang nangyari?" = What happened?'
+- id: makita
+  lemma: makita
+  translation: to see
+  audio: makita
+  notes: '"Nakita ko" = I saw.'
+- id: huminahon
+  lemma: huminahon
+  translation: to calm down
+  audio: huminahon
+  notes: '"Huminahon ka" = calm down; to an elder, "Huminahon po kayo".'
+- id: si
+  lemma: si
+  translation: '(marker before a person''s name)'
+  audio: si
+  notes: 'The name version of "ang": "Kumain si Ana" = Ana ate.'
+- id: kay
+  lemma: kay
+  translation: 'to / for / from (before a person''s name)'
+  audio: kay
+  notes: 'The name version of "sa": "Ibigay mo kay Ana"; in comparisons, "kaysa kay Juan".'
+- id: sina
+  lemma: sina
+  translation: '(marker before two or more names)'
+  audio: sina
+  notes: 'Plural of "si": "Dumating sina Ana at Ben" = Ana and Ben arrived.'
+- id: ang
+  lemma: ang
+  translation: 'the (topic marker)'
+  audio: ang
+  notes: 'Marks what the sentence is about: "Maganda ang bahay" = The house is beautiful.'
+- id: ng
+  lemma: ng
+  translation: 'of / (object marker)'
+  audio: ng
+  notes: 'Pronounced "nang". Marks an object ("Kumain ako ng mangga") or an owner ("bahay ng lola ko").'
+- id: sa
+  lemma: sa
+  translation: in / at / on / to
+  audio: sa
+  notes: 'The all-purpose place and direction marker: "sa bahay" = at home, "pumunta sa palengke" = went to the market.'
+- id: nasa
+  lemma: nasa
+  translation: is in / at / on
+  audio: nasa
+  notes: 'Says where something is: "Nasa kusina si Nanay." The question word is "Nasaan?".'
+- id: ay
+  lemma: ay
+  translation: '(marker for subject-first word order)'
+  audio: ay
+  notes: '"Ako ay guro" means the same as "Guro ako" — common in writing, more formal in speech.'
+- id: nang
+  lemma: nang
+  translation: '(links a verb to how it is done); when; already'
+  audio: nang
+  notes: '"Kumain siya nang mabilis" = She ate quickly. Sounds exactly like "ng", which marks objects and owners.'
+- id: papunta
+  lemma: papunta
+  translation: going to / on the way to
+  audio: papunta
+  notes: 'Use "papunta sa" + place: "Naglalakad ako papunta sa paaralan" = I am walking to school.'
+- id: iba
+  lemma: iba
+  translation: other / different
+  audio: iba
+  notes: 'Takes -ng before a noun: "ibang bansa" = another country.'
+- id: magaling
+  lemma: magaling
+  translation: good at something / skilled
+  audio: magaling
+  notes: '"Magaling siyang kumanta" = She sings well. Also "recovered": "Magaling na ako."'
+- id: mahirap
+  lemma: mahirap
+  translation: difficult; poor
+  audio: mahirap
+  notes: '"Mahirap ang pagsusulit" = The test is hard. The opposite is "madali".'
+- id: madali
+  lemma: madali
+  translation: easy
+  audio: madali
+  notes: '"Madali ang aralin" = The lesson is easy. The opposite is "mahirap".'
+- id: plato
+  lemma: plato
+  translation: plate
+  audio: plato
+  notes: '"Maghugas ka ng plato" = wash the dishes.'
+- id: barangay
+  lemma: barangay
+  translation: 'barangay (the smallest local district; a neighborhood or village)'
+  audio: barangay
+  notes: 'Every Philippine address belongs to a barangay; its head is the "kapitan".'
+- id: ayoko
+  lemma: ayoko
+  translation: 'I don''t want / I don''t like'
+  audio: ayoko
+  notes: 'Short for "ayaw ko": "Ayoko ng kape" = I don''t want coffee.'
+- id: magkapatid
+  lemma: magkapatid
+  translation: siblings (of each other)
+  audio: magkapatid
+  notes: mag- + kapatid, like magkaibigan. "Magkapatid sila" = they are siblings.
+- id: animnapu
+  lemma: animnapu
+  translation: sixty
+  audio: animnapu
+  notes: Before a noun it takes -ng (animnapung piso).
+- id: pitumpu
+  lemma: pitumpu
+  translation: seventy
+  audio: pitumpu
+- id: walumpu
+  lemma: walumpu
+  translation: eighty
+  audio: walumpu
+- id: siyamnapu
+  lemma: siyamnapu
+  translation: ninety
+  audio: siyamnapu
+- id: kotse
+  lemma: kotse
+  translation: car
+  audio: kotse
+  notes: From Spanish "coche"; "sasakyan" is any vehicle.
+- id: susi
+  lemma: susi
+  translation: key
+  audio: susi
+  notes: '"Susi ng kotse" — car key.'
+- id: bag
+  lemma: bag
+  translation: bag
+  audio: bag
+- id: laruan
+  lemma: laruan
+  translation: toy
+  audio: laruan
+  notes: From "laro" (play/game).
+- id: sulat
+  lemma: sulat
+  translation: letter (a written message)
+  audio: sulat
+  notes: The noun; also the root of sumulat (to write).
+- id: magbigay
+  lemma: magbigay
+  translation: to give
+  audio: magbigay
+  notes: "MAG verb: nagbigay (gave), nagbibigay (giving), magbibigay (will give). The thing given takes ng, the receiver sa/kay."
+- id: tumulong
+  lemma: tumulong
+  translation: to help / helped
+  audio: tumulong
+  notes: "UM verb: tumulong (helped), tumutulong (helping), tutulong (will help). The person helped takes sa/kay."
+- id: magtanong
+  lemma: magtanong
+  translation: to ask
+  audio: magtanong
+  notes: "MAG verb: nagtanong (asked), nagtatanong (asking), magtatanong (will ask). The person asked takes sa/kay."
+- id: para_kay
+  lemma: para kay
+  translation: for (a named person)
+  audio: para_kay
+  notes: '"Para kay Lola" — for Grandma; with ordinary nouns and pronouns use "para sa".'
+- id: nina
+  lemma: nina
+  translation: of (two or more named people)
+  audio: nina
+  notes: 'Plural of "ni": "bahay nina Ana at Ben".'
+- id: kina
+  lemma: kina
+  translation: to / at (two or more named people)
+  audio: kina
+  notes: Plural of "kay"; "kina Lola" also means "at Grandma's place".
+- id: nito
+  lemma: nito
+  translation: of this / this (as object)
+  audio: nito
+  notes: 'The ng-form of "ito": "Bumili ako nito" — I bought this.'
+- id: kainin
+  lemma: kainin
+  translation: to eat (something specific)
+  audio: kainin
+  notes: 'Object focus: kinain (ate), kinakain (is eating), kakainin (will eat). "Kinain ko ang mangga."'
+- id: bilhin
+  lemma: bilhin
+  translation: to buy (something specific)
+  audio: bilhin
+  notes: "Object focus: binili (bought), binibili (is buying), bibilhin (will buy)."
+- id: inumin_verb
+  lemma: inumin
+  translation: to drink (something specific)
+  audio: inumin
+  notes: "Object focus: ininom (drank), iniinom (is drinking), iinumin (will drink). Also used for taking medicine."
+- id: basahin
+  lemma: basahin
+  translation: to read (something specific)
+  audio: basahin
+  notes: "Object focus: binasa (read), binabasa (is reading), babasahin (will read)."
+- id: lutuin
+  lemma: lutuin
+  translation: to cook (something specific)
+  audio: lutuin
+  notes: "Object focus: niluto (cooked), niluluto (is cooking), lulutuin (will cook). L-roots take ni- in front."
+- id: sabihin
+  lemma: sabihin
+  translation: to say; to tell
+  audio: sabihin
+  notes: 'Object focus: sinabi (said), sinasabi (is saying), sasabihin (will say). "Ano ang sinabi mo?"'
+- id: hanapin
+  lemma: hanapin
+  translation: to look for
+  audio: hanapin
+  notes: "Object focus: hinanap (looked for), hinahanap (is looking for), hahanapin (will look for)."
+- id: tawagin
+  lemma: tawagin
+  translation: to call (someone over)
+  audio: tawagin
+  notes: 'Object focus: tinawag (called), tinatawag (is calling), tatawagin (will call). To phone someone is "tawagan".'
+- id: kinain
+  lemma: kinain
+  translation: ate (it)
+  audio: kinain
+  notes: Completed object-focus form of kainin. The doer is ko/mo/niya/ng…; the thing eaten takes ang.
+- id: binili
+  lemma: binili
+  translation: bought (it)
+  audio: binili
+  notes: Completed object-focus form of bilhin.
+- id: ginawa
+  lemma: ginawa
+  translation: did; made
+  audio: ginawa
+  notes: 'Completed form of gawin: ginawa (did), ginagawa (is doing), gagawin (will do). "Ano ang ginawa mo?" = What did you do?'
+- id: gagawin
+  lemma: gagawin
+  translation: will do
+  audio: gagawin
+  notes: '"Ano ang gagawin mo bukas?" = What will you do tomorrow?'
+- id: kinuha
+  lemma: kinuha
+  translation: took; got
+  audio: kinuha
+  notes: "Completed form of kunin: kinuha (took), kinukuha (is taking), kukunin (will take)."
+- id: ininom
+  lemma: ininom
+  translation: drank (it)
+  audio: ininom
+  notes: Completed object-focus form of inumin. Vowel-initial roots put in- at the front.
+- id: pitaka
+  lemma: pitaka
+  translation: wallet
+  audio: pitaka
+- id: diyaryo
+  lemma: diyaryo
+  translation: newspaper
+  audio: diyaryo
+  notes: Also spelled "dyaryo".
+- id: totoo
+  lemma: totoo
+  translation: true; real
+  audio: totoo
+  notes: '"ang totoo" = the truth. "Sinabi ko ang totoo." = I told the truth.'
+- id: assignment
+  lemma: assignment
+  translation: assignment; homework
+  audio: assignment
+  notes: The everyday word in Manila; the formal term is "takdang-aralin".
+- id: ibigay
+  lemma: ibigay
+  translation: to give (something)
+  audio: ibigay
+  notes: ibinigay / ibinibigay / ibibigay. The thing given takes "ang"; the receiver takes "sa" or "kay".
+- id: itapon
+  lemma: itapon
+  translation: to throw (something) away
+  audio: itapon
+  notes: itinapon / itinatapon / itatapon.
+- id: isulat
+  lemma: isulat
+  translation: to write (something) down
+  audio: isulat
+  notes: isinulat / isinusulat / isusulat.
+- id: isara
+  lemma: isara
+  translation: to close (something)
+  audio: isara
+  notes: isinara / isinasara / isasara.
+- id: ipakita
+  lemma: ipakita
+  translation: to show (something)
+  audio: ipakita
+  notes: ipinakita / ipinapakita / ipapakita. The person shown takes "sa" or "kay".
+- id: hugasan
+  lemma: hugasan
+  translation: to wash (something)
+  audio: hugasan
+  notes: hinugasan / hinuhugasan / huhugasan.
+- id: tingnan
+  lemma: tingnan
+  translation: to look at
+  audio: tingnan
+  notes: tiningnan / tinitingnan / titingnan.
+- id: bigyan
+  lemma: bigyan
+  translation: to give to (someone)
+  audio: bigyan
+  notes: binigyan / binibigyan / bibigyan. The receiver takes "ang"; the thing given takes "ng".
+- id: bayaran
+  lemma: bayaran
+  translation: to pay (a bill or a person)
+  audio: bayaran
+  notes: binayaran / binabayaran / babayaran.
+- id: puntahan
+  lemma: puntahan
+  translation: to go to (a person or place)
+  audio: puntahan
+  notes: pinuntahan / pinupuntahan / pupuntahan.
+- id: kahon
+  lemma: kahon
+  translation: box
+  audio: kahon
+- id: basurahan
+  lemma: basurahan
+  translation: trash can
+  audio: basurahan
+  notes: basura (trash) + -han, "the place for trash".
+- id: papel
+  lemma: papel
+  translation: paper
+  audio: papel
+- id: upa
+  lemma: upa
+  translation: rent
+  audio: upa
+- id: pakilagay
+  lemma: pakilagay
+  translation: please put
+  audio: pakilagay
+  notes: paki- + lagay (put).
+- id: pakitapon
+  lemma: pakitapon
+  translation: please throw away
+  audio: pakitapon
+  notes: paki- + tapon (throw).
+- id: dapat
+  lemma: dapat
+  translation: should / must
+  audio: dapat
+  notes: Takes ako/ka/siya plus the linker — "Dapat kang magpahinga." Negative is "Hindi ka dapat…".
+- id: marunong
+  lemma: marunong
+  translation: knows how to
+  audio: marunong
+  notes: A learned skill — "Marunong akong lumangoy"; negative "Hindi ako marunong lumangoy."
+- id: kaya_ko
+  lemma: kaya ko
+  translation: I can manage / I can do it
+  audio: kaya_ko
+  notes: Ability or strength; takes ko/mo/niya — "Kaya kong maglakad", "Hindi ko kaya." Different from kaya = "so".
+- id: pahinga
+  lemma: pahinga
+  translation: rest / a break
+  audio: pahinga
+  notes: Noun behind the verb magpahinga — "Kailangan ko ng pahinga."
+- id: pasaporte
+  lemma: pasaporte
+  translation: passport
+  audio: pasaporte
+- id: lisensya
+  lemma: lisensya
+  translation: license
+  audio: lisensya
+  notes: Usually a driver's license — "Wala akong lisensya."
+- id: mabigat
+  lemma: mabigat
+  translation: heavy
+  audio: mabigat
+- id: pumasok
+  lemma: pumasok
+  translation: to enter / to go in (to work or school)
+  audio: pumasok
+  notes: pumasok / pumapasok / papasok
+- id: magbayad
+  lemma: magbayad
+  translation: to pay
+  audio: magbayad
+  notes: nagbayad / nagbabayad / magbabayad
+- id: makatulog
+  lemma: makatulog
+  translation: to be able to sleep
+  audio: makatulog
+  notes: nakatulog / nakakatulog / makakatulog — "Hindi ako makatulog" = I can't sleep.
+- id: makakain
+  lemma: makakain
+  translation: to be able to eat
+  audio: makakain
+  notes: nakakain / nakakakain / makakakain — "Nakakain ka na ba?" = Have you eaten yet?
+- id: makapunta
+  lemma: makapunta
+  translation: to be able to go
+  audio: makapunta
+  notes: nakapunta / nakakapunta / makakapunta — "Nakapunta na ako sa Cebu" = I have been to Cebu.
+- id: makabili
+  lemma: makabili
+  translation: to be able to buy
+  audio: makabili
+  notes: nakabili / nakakabili / makakabili
+- id: manigarilyo
+  lemma: manigarilyo
+  translation: to smoke
+  audio: manigarilyo
+  notes: nanigarilyo / naninigarilyo / maninigarilyo — seen on signs as "Bawal manigarilyo."
+- id: pumarada
+  lemma: pumarada
+  translation: to park
+  audio: pumarada
+  notes: pumarada / pumaparada / paparada
+- id: magtapon
+  lemma: magtapon
+  translation: to throw away
+  audio: magtapon
+  notes: nagtapon / nagtatapon / magtatapon — "Bawal magtapon ng basura."
+- id: alam
+  lemma: alam
+  translation: know (a fact)
+  audio: alam
+  notes: 'Takes the ko-set: "Alam ko" = I know, "Alam mo ba?" = Do you know? "Alam kong..." = I know that...'
+- id: hindi_ko_alam
+  lemma: hindi ko alam
+  translation: I don't know
+  audio: hindi_ko_alam
+  notes: 'Add "kung" before a question word: "Hindi ko alam kung nasaan siya."'
+- id: ewan
+  lemma: ewan
+  translation: dunno / no idea
+  audio: ewan
+  notes: "\"Ewan ko\" is the casual, shrugging \"I don't know\"."
+- id: tama
+  lemma: tama
+  translation: correct / right
+  audio: tama
+  notes: "\"Tama ka\" = You're right."
+- id: mali
+  lemma: mali
+  translation: wrong / incorrect
+  audio: mali
+- id: akala
+  lemma: akala
+  translation: thought / mistaken belief
+  audio: akala
+  notes: '"Akala ko..." = I thought... (but it turned out otherwise).'
+- id: sigurado
+  lemma: sigurado
+  translation: sure / certain
+  audio: sigurado
+  notes: 'Takes ako: "Sigurado ako." Do not confuse with "siguro" (probably).'
+- id: siguro
+  lemma: siguro
+  translation: probably / I guess
+  audio: siguro
+  notes: Despite looking like "sigurado" (sure), it signals a guess.
+- id: pumasa
+  lemma: pumasa
+  translation: to pass (a test)
+  audio: pumasa
+  notes: pumasa / pumapasa / papasa
+- id: baka_maybe
+  lemma: baka
+  translation: maybe / might
+  audio: baka
+  notes: 'Opens the sentence: "Baka umulan" = It might rain. Same spelling as "baka" (cow).'
+- id: pag
+  lemma: pag
+  translation: when / whenever (short for kapag)
+  audio: pag
+  notes: The everyday spoken form of "kapag".
+- id: kahit
+  lemma: kahit
+  translation: even if / even though
+  audio: kahit
+  notes: '"Kahit pagod ako, masaya ako." Also "kahit na".'
+- id: kahit_ano
+  lemma: kahit ano
+  translation: anything / whatever
+  audio: kahit_ano
+- id: kahit_saan
+  lemma: kahit saan
+  translation: anywhere / wherever
+  audio: kahit_saan

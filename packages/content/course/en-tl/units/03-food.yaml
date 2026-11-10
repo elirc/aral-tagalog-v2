@@ -72,6 +72,7 @@ lessons:
       - type: translate
         prompt_en: I don't like coffee.
         answer_tl: Ayaw ko ng kape.
+        accept: ["Ayoko ng kape.", "Hindi ko gusto ang kape."]
         extra_words: [gusto, gatas, masarap]
       - type: listen
         audio: gusto_ko_ng_kape
@@ -139,3 +140,469 @@ lessons:
           - { tl: uminom, en: drank }
           - { tl: manok, en: chicken }
           - { tl: isda, en: fish }
+  - id: food-4
+    title: Breakfast, lunch, dinner
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: almusal, en: breakfast }
+          - { tl: tanghalian, en: lunch }
+          - { tl: hapunan, en: dinner }
+          - { tl: kape, en: coffee }
+      - type: choice
+        prompt: "'Almusal' means..."
+        answer: Breakfast
+        distractors: [Lunch, Dinner, Dessert]
+        audio: almusal
+        audio_text: Almusal
+      - type: translate
+        prompt_tl: Kumain ako ng almusal.
+        answer_en: I ate breakfast.
+        accept: ["I had breakfast"]
+        extra_words: [lunch, drank, dinner]
+        audio: kumain_ako_ng_almusal
+      - type: listen
+        audio: tanghalian
+        answer_tl: Tanghalian
+        extra_words: [hapunan, almusal]
+        hint: '"tanghali" = noon, so "tanghalian" = lunch.'
+      - type: fill_blank
+        sentence: "Masarap ang ___."
+        translation: "Dinner is delicious."
+        answer: hapunan
+        options: [hapunan, almusal, tanghalian]
+        audio: masarap_ang_hapunan
+      - type: translate
+        prompt_tl: Tinapay at kape ang almusal ko.
+        answer_en: My breakfast is bread and coffee.
+        accept: ["Bread and coffee is my breakfast", "Bread and coffee are my breakfast"]
+        extra_words: [lunch, rice, milk]
+        audio: tinapay_at_kape_ang_almusal_ko
+        hint: '"ko" after a noun = my: almusal ko = my breakfast.'
+      - type: translate
+        prompt_en: I ate lunch.
+        answer_tl: Kumain ako ng tanghalian.
+        accept: ["Nagtanghalian ako."]
+        extra_words: [hapunan, uminom, siya]
+        audio: kumain_ako_ng_tanghalian
+  - id: food-5
+    title: Hungry and thirsty
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Gutom ako' means..."
+        answer: I am hungry
+        distractors: [I am thirsty, I am full, I am tired]
+        audio: gutom_ako
+        audio_text: Gutom ako.
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: uhaw, en: thirsty }
+          - { tl: tubig, en: water }
+          - { tl: kanin, en: rice }
+      - type: translate
+        prompt_tl: Uhaw ako. Gusto ko ng tubig.
+        answer_en: I am thirsty. I want water.
+        accept: ["I'm thirsty. I want water.", "I am thirsty. I want some water.", "I'm thirsty. I want some water."]
+        extra_words: [hungry, coffee, milk]
+        audio: uhaw_ako_gusto_ko_ng_tubig
+      - type: fill_blank
+        sentence: "___ ako. Gusto ko ng kanin."
+        translation: "I'm hungry. I want rice."
+        answer: Gutom
+        options: [Gutom, Uhaw, Masarap]
+        audio: gutom_ako_gusto_ko_ng_kanin
+      - type: listen
+        audio: uhaw_ako
+        answer_tl: Uhaw ako
+        extra_words: [gutom, ka]
+      - type: choice
+        prompt: "'Gutom ka ba?' — what is the question?"
+        answer: Are you hungry?
+        distractors: [Are you thirsty?, Did you eat?, Is it delicious?]
+        audio: gutom_ka_ba
+        audio_text: Gutom ka ba?
+        hint: '"ba" makes it a yes/no question.'
+      - type: translate
+        prompt_en: I'm hungry.
+        answer_tl: Gutom ako.
+        accept: ["Gutom na ako.", "Nagugutom ako.", "Nagugutom na ako."]
+        extra_words: [uhaw, ka, ng]
+        audio: gutom_ako
+  - id: food-6
+    title: May I have some?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "At a friend's home you'd like some water. Politely ask:"
+        answer: Pahingi po ng tubig.
+        distractors: [Salamat po sa tubig., Masarap ang tubig., Ayaw ko ng tubig.]
+        audio: pahingi_po_ng_tubig
+        audio_text: Pahingi po ng tubig.
+        hint: '"Pahingi" = "may I have some" — a polite request for something small.'
+      - type: match
+        pairs:
+          - { tl: pahingi, en: may I have some }
+          - { tl: heto, en: here you go }
+          - { tl: tubig, en: water }
+          - { tl: gatas, en: milk }
+      - type: translate
+        prompt_tl: Pahingi po ng kanin.
+        answer_en: May I have some rice, please?
+        accept: ["Can I have some rice, please?", "May I have rice, please?", "Some rice, please", "Can I have some rice?", "May I have some rice?"]
+        extra_words: [water, want, bread]
+        audio: pahingi_po_ng_kanin
+      - type: fill_blank
+        sentence: "Pahingi po ___ kape."
+        translation: "May I have some coffee, please?"
+        answer: ng
+        options: [ng, si, ang]
+        audio: pahingi_po_ng_kape
+      - type: listen
+        audio: heto_po
+        answer_tl: Heto po
+        extra_words: [salamat, ng]
+        hint: '"Heto" = here it is / here you go.'
+      - type: translate
+        prompt_tl: Ano ang gusto mo?
+        answer_en: What do you want?
+        accept: ["What would you like?", "What do you like?"]
+        extra_words: [eat, is, name]
+        audio: ano_ang_gusto_mo
+      - type: choice
+        prompt: "Your host asks 'Ano ang gusto mo?' You'd like coffee. Reply:"
+        answer: Kape po.
+        distractors: [Heto po., Ayaw ko po., Uhaw po.]
+        audio: kape_po
+        audio_text: Kape po.
+      - type: translate
+        prompt_en: May I have some water, please?
+        answer_tl: Pahingi po ng tubig.
+        accept: ["Pahingi ng tubig.", "Pahingi naman po ng tubig.", "Pahingi po ako ng tubig."]
+        extra_words: [gusto, ko, kape]
+        audio: pahingi_po_ng_tubig
+  - id: food-7
+    title: Sweet, salty, spicy
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matamis, en: sweet }
+          - { tl: maalat, en: salty }
+          - { tl: maanghang, en: spicy }
+          - { tl: masarap, en: delicious }
+      - type: choice
+        prompt: "You bite into a red chili. Say:"
+        answer: Maanghang!
+        distractors: [Matamis!, Maalat!, Malamig!]
+        audio: maanghang
+        audio_text: Maanghang!
+      - type: translate
+        prompt_tl: Matamis ang kape.
+        answer_en: The coffee is sweet.
+        extra_words: [salty, milk, cold]
+        audio: matamis_ang_kape
+      - type: fill_blank
+        sentence: "Mainit ang kape at ___ ang tubig."
+        translation: "The coffee is hot and the water is cold."
+        answer: malamig
+        options: [malamig, maalat, matamis]
+        audio: mainit_ang_kape_at_malamig_ang_tubig
+        hint: '"mainit" = hot, "malamig" = cold.'
+      - type: listen
+        audio: maalat_ang_isda
+        answer_tl: Maalat ang isda
+        extra_words: [matamis, manok]
+      - type: translate
+        prompt_tl: Maanghang ba ito?
+        answer_en: Is this spicy?
+        accept: ["Is it spicy?"]
+        extra_words: [sweet, that, salty]
+        audio: maanghang_ba_ito
+        hint: '"ito" = this.'
+      - type: translate
+        prompt_en: The fish is salty.
+        answer_tl: Maalat ang isda.
+        extra_words: [matamis, manok, ng]
+        audio: maalat_ang_isda
+  - id: food-8
+    title: Do you like it?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Gusto mo ba ng isda?' means..."
+        answer: Do you like fish?
+        distractors: [I like fish., Is the fish delicious?, Did you eat fish?]
+        audio: gusto_mo_ba_ng_isda
+        audio_text: Gusto mo ba ng isda?
+        hint: 'After "gusto", "you" is "mo" and "I" is "ko".'
+      - type: match
+        pairs:
+          - { tl: gusto ko, en: I like }
+          - { tl: gusto mo, en: you like }
+          - { tl: ayaw ko, en: "I don't like" }
+          - { tl: gustong-gusto ko, en: I really like }
+      - type: translate
+        prompt_tl: Oo, gusto ko.
+        answer_en: Yes, I like it.
+        accept: ["Yes, I do", "Yes, I want it", "Yes, I want some"]
+        extra_words: ["no", "don't", you]
+        audio: oo_gusto_ko
+      - type: fill_blank
+        sentence: "Hindi, ___ ko."
+        translation: "No, I don't like it."
+        answer: ayaw
+        options: [ayaw, gusto, masarap]
+        audio: hindi_ayaw_ko
+      - type: listen
+        audio: gustong_gusto_ko_ng_kape
+        answer_tl: Gustong-gusto ko ng kape
+        extra_words: [ayaw, mo]
+        grading: { hyphens: true }
+        hint: 'Doubling "gusto" → "gustong-gusto" = really like.'
+      - type: translate
+        prompt_tl: Gustong-gusto ko ng kanin at manok.
+        answer_en: I really like rice and chicken.
+        accept: ["I love rice and chicken"]
+        extra_words: ["don't", fish, you]
+        audio: gustong_gusto_ko_ng_kanin_at_manok
+      - type: translate
+        prompt_en: Do you like coffee?
+        answer_tl: Gusto mo ba ng kape?
+        accept: ["Gusto mo ng kape?", "Gusto mo ba ang kape?", "Gusto po ba ninyo ng kape?", "Gusto n'yo po ba ng kape?"]
+        extra_words: [ko, ayaw, ka]
+        audio: gusto_mo_ba_ng_kape
+      - type: translate
+        prompt_en: I really like bread.
+        answer_tl: Gustong-gusto ko ng tinapay.
+        accept: ["Gustong-gusto ko ang tinapay."]
+        extra_words: [ayaw, mo, ang]
+        grading: { hyphens: true }
+        audio: gustong_gusto_ko_ng_tinapay
+  - id: food-9
+    title: My favorite food
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pagkain, en: food }
+          - { tl: paborito, en: favorite }
+          - { tl: masarap, en: delicious }
+          - { tl: almusal, en: breakfast }
+      - type: choice
+        prompt: "'Ano ang paborito mong pagkain?' asks about your..."
+        answer: Favorite food
+        distractors: [Favorite drink, Breakfast, Name]
+        audio: ano_ang_paborito_mong_pagkain
+        audio_text: Ano ang paborito mong pagkain?
+        hint: '"mong" = mo + the linker -ng: paborito mong pagkain = your favorite food.'
+      - type: translate
+        prompt_tl: Adobo ang paborito ko.
+        answer_en: Adobo is my favorite.
+        accept: ["My favorite is adobo", "Adobo is my favorite food", "My favorite food is adobo"]
+        extra_words: [food, your, rice]
+        audio: adobo_ang_paborito_ko
+        hint: 'Adobo is meat stewed in vinegar, soy sauce, and garlic.'
+      - type: fill_blank
+        sentence: "Ano ang paborito mong ___?"
+        translation: "What is your favorite food?"
+        answer: pagkain
+        options: [pagkain, almusal, tubig]
+        audio: ano_ang_paborito_mong_pagkain
+      - type: listen
+        audio: paborito_ko_ang_sinigang
+        answer_tl: Paborito ko ang sinigang
+        extra_words: [mo, adobo]
+        hint: 'Sinigang is a sour soup, often made with tamarind.'
+      - type: translate
+        prompt_tl: Masarap ang pagkain.
+        answer_en: The food is delicious.
+        extra_words: [drink, coffee, rice]
+        audio: masarap_ang_pagkain
+      - type: translate
+        prompt_en: Adobo is my favorite.
+        answer_tl: Adobo ang paborito ko.
+        accept: ["Paborito ko ang adobo."]
+        extra_words: [mo, ng, si]
+        audio: adobo_ang_paborito_ko
+  - id: food-10
+    title: "Challenge: Kain tayo!"
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "Filipinos often greet visitors at mealtime with 'Kain tayo!' It means..."
+        answer: "Let's eat!"
+        distractors: ["I'm full!", "It's delicious!", "I'm hungry!"]
+        audio: kain_tayo
+        audio_text: Kain tayo!
+        hint: 'A warm invitation — a polite reply is "Salamat po!"'
+      - type: match
+        pairs:
+          - { tl: busog, en: full }
+          - { tl: gutom, en: hungry }
+          - { tl: uhaw, en: thirsty }
+          - { tl: maanghang, en: spicy }
+      - type: translate
+        prompt_tl: Gutom ka ba? Kain tayo!
+        answer_en: "Are you hungry? Let's eat!"
+        accept: ["Are you hungry? Let us eat!"]
+        extra_words: [thirsty, full, drink]
+        audio: gutom_ka_ba_kain_tayo
+      - type: fill_blank
+        sentence: "Salamat po, ___ na ako."
+        translation: "Thank you, I'm already full."
+        answer: busog
+        options: [busog, gutom, uhaw]
+        audio: salamat_po_busog_na_ako
+        hint: '"na" = already.'
+      - type: listen
+        audio: maanghang_pahingi_po_ng_tubig
+        answer_tl: Maanghang! Pahingi po ng tubig.
+        extra_words: [kape, gusto]
+      - type: translate
+        prompt_tl: Kumain kami ng hapunan. Masarap ang manok!
+        answer_en: We ate dinner. The chicken is delicious!
+        accept: ["We had dinner. The chicken is delicious!", "We ate dinner. The chicken was delicious!", "We had dinner. The chicken was delicious!"]
+        extra_words: [lunch, fish, they]
+        audio: kumain_kami_ng_hapunan_masarap_ang_manok
+        hint: '"kami" = we (not including you).'
+      - type: choice
+        prompt: "Your host offers more rice, but you're full. Say politely:"
+        answer: Salamat po, busog na ako.
+        distractors: [Pahingi po ng kanin., Gutom ako., Kain tayo!]
+        audio: salamat_po_busog_na_ako
+        audio_text: Salamat po, busog na ako.
+      - type: translate
+        prompt_en: Do you like spicy food?
+        answer_tl: Gusto mo ba ng maanghang na pagkain?
+        accept: ["Gusto mo ba ng pagkaing maanghang?", "Gusto mo ba ng maanghang?", "Gusto mo ba ang maanghang na pagkain?"]
+        extra_words: [ko, matamis, ang]
+        audio: gusto_mo_ba_ng_maanghang_na_pagkain
+        hint: '"na" links an adjective to a noun after a consonant: maanghang na pagkain.'
+      - type: translate
+        prompt_en: "I'm thirsty. May I have some water, please?"
+        answer_tl: Uhaw ako. Pahingi po ng tubig.
+        accept: ["Nauuhaw ako. Pahingi po ng tubig."]
+        extra_words: [gutom, kape, ka]
+        audio: uhaw_ako_pahingi_po_ng_tubig
+  - id: food-11
+    title: What did you eat?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain ako, en: I ate }
+          - { tl: uminom ako, en: I drank }
+          - { tl: gutom ako, en: I'm hungry }
+          - { tl: busog ako, en: I'm full }
+      - type: choice
+        prompt: "'Uminom si Ben ng malamig na tubig.' What did Ben drink?"
+        answer: Cold water
+        distractors: [Hot coffee, Cold milk, Sweet coffee]
+        audio: uminom_si_ben_ng_malamig_na_tubig
+        audio_text: Uminom si Ben ng malamig na tubig.
+        hint: '"na" links the describing word to the thing: malamig na tubig = cold water.'
+      - type: translate
+        prompt_tl: Kumain ang lola ko ng isda at kanin.
+        answer_en: My grandmother ate fish and rice.
+        accept: ["My grandma ate fish and rice", "My lola ate fish and rice"]
+        extra_words: [chicken, drank, bread]
+        audio: kumain_ang_lola_ko_ng_isda_at_kanin
+      - type: fill_blank
+        sentence: "___ ang tatay ko ng kape."
+        translation: "My dad drank coffee."
+        answer: Uminom
+        options: [Uminom, Kumain, Gutom]
+        audio: uminom_ang_tatay_ko_ng_kape
+      - type: listen
+        audio: uminom_kami_ng_mainit_na_kape
+        answer_tl: Uminom kami ng mainit na kape
+        extra_words: [malamig, kumain]
+      - type: fill_blank
+        sentence: "Isda at kanin ang ___ ko."
+        translation: "My dinner is fish and rice."
+        answer: hapunan
+        options: [hapunan, almusal, tanghalian]
+        audio: isda_at_kanin_ang_hapunan_ko
+      - type: match
+        pairs:
+          - { tl: mainit na kape, en: hot coffee }
+          - { tl: malamig na tubig, en: cold water }
+          - { tl: matamis na tinapay, en: sweet bread }
+          - { tl: maalat na isda, en: salty fish }
+          - { tl: maanghang na manok, en: spicy chicken }
+      - type: translate
+        prompt_en: I drank cold milk.
+        answer_tl: Uminom ako ng malamig na gatas.
+        accept: ["Uminom ako ng gatas na malamig."]
+        extra_words: [kumain, mainit, ang]
+        audio: uminom_ako_ng_malamig_na_gatas
+        hint: 'The describing word comes first, then "na", then the thing: malamig na gatas.'
+      - type: translate
+        prompt_en: My mom ate bread and egg.
+        answer_tl: Kumain ang nanay ko ng tinapay at itlog.
+        accept: ["Kumain ng tinapay at itlog ang nanay ko.", "Kumain ang nanay ko ng itlog at tinapay.", "Kumain ng itlog at tinapay ang nanay ko."]
+        extra_words: [uminom, siya, tatay]
+        audio: kumain_ang_nanay_ko_ng_tinapay_at_itlog
+  - id: food-12
+    title: At a friend's table
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Gutom ka ba?, en: Are you hungry? }
+          - { tl: Busog na ako., en: I'm already full. }
+          - { tl: Kain tayo!, en: "Let's eat!" }
+          - { tl: Heto po., en: Here you go. }
+      - type: choice
+        prompt: "Your friend's mom asks 'Gusto mo ba ng sinigang?' You'd love some. Reply:"
+        answer: Opo, gustong-gusto ko po.
+        distractors: [Ayaw ko po., Busog na po ako., Heto po.]
+        audio: opo_gustong_gusto_ko_po
+        audio_text: Opo, gustong-gusto ko po.
+      - type: translate
+        prompt_tl: Ayaw ko ng maalat na pagkain.
+        answer_en: I don't like salty food.
+        accept: ["I do not like salty food", "I don't want salty food", "I do not want salty food"]
+        extra_words: [spicy, sweet, like]
+        audio: ayaw_ko_ng_maalat_na_pagkain
+      - type: fill_blank
+        sentence: "Pahingi po ng ___ na tubig."
+        translation: "May I have some cold water, please?"
+        answer: malamig
+        options: [malamig, mainit, maalat]
+        audio: pahingi_po_ng_malamig_na_tubig
+      - type: listen
+        audio: gusto_mo_ba_ng_gatas
+        answer_tl: Gusto mo ba ng gatas
+        accept: ["Gusto mo ba ng gatas?"]
+        extra_words: [ko, kape]
+      - type: fill_blank
+        sentence: "Gusto ___ ba ng matamis na kape?"
+        translation: "Do you like sweet coffee?"
+        answer: mo
+        options: [mo, ko, ka]
+        audio: gusto_mo_ba_ng_matamis_na_kape
+        hint: 'After "gusto", "you" is "mo", not "ka".'
+      - type: fill_blank
+        sentence: "Ano ang paborito ___ almusal?"
+        translation: "What is your favorite breakfast?"
+        answer: mong
+        options: [mong, mo, ko]
+        audio: ano_ang_paborito_mong_almusal
+        hint: '"mo" needs the linker -ng before the next word: paborito mong almusal.'
+      - type: translate
+        prompt_en: Is the chicken spicy?
+        answer_tl: Maanghang ba ang manok?
+        accept: ["Maanghang po ba ang manok?"]
+        extra_words: [matamis, ito, ng]
+        audio: maanghang_ba_ang_manok
+      - type: translate
+        prompt_en: No, thank you. I'm already full.
+        answer_tl: Hindi, salamat. Busog na ako.
+        accept: ["Hindi po, salamat. Busog na po ako.", "Hindi na, salamat. Busog na ako.", "Hindi na po, salamat. Busog na po ako.", "Hindi, salamat po. Busog na ako.", "Hindi, salamat po. Busog na po ako."]
+        extra_words: [gutom, oo, ka]
+        audio: hindi_salamat_busog_na_ako
+        hint: '"na" after busog = already.'

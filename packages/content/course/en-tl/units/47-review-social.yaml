@@ -251,3 +251,472 @@ lessons:
         extra_words: [tamad, sumasayaw, bukas]
         audio: matulungin_ang_barkada_ko_at_kumakanta_kami_sa_videoke_araw_araw
         grading: { hyphens: true }
+  - id: revsocial-5
+    title: Bakit ka malungkot?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malungkot, en: sad }
+          - { tl: galit, en: angry }
+          - { tl: sabik, en: excited }
+          - { tl: takot, en: afraid }
+      - type: choice
+        prompt: "Your friend has been quiet all day. Ask her why she is sad:"
+        answer: Bakit ka malungkot?
+        distractors: [Bakit ka galit?, Malungkot ka ba?, Masaya ka ba?]
+        audio: bakit_ka_malungkot
+        audio_text: Bakit ka malungkot?
+      - type: translate
+        prompt_tl: Malungkot si Ana kasi natalo ang koponan niya.
+        answer_en: Ana is sad because her team lost.
+        extra_words: [won, happy, their]
+        audio: malungkot_si_ana_kasi_natalo_ang_koponan_niya
+      - type: fill_blank
+        sentence: "Galit ang amo ko ___ tamad ang mga empleyado."
+        translation: "My boss is angry because the employees are lazy."
+        answer: kasi
+        options: [kasi, pero, bakit]
+      - type: listen
+        audio: sabik_ang_barkada_ko_sa_kasal
+        answer_tl: Sabik ang barkada ko sa kasal
+        extra_words: [takot, kaibigan]
+      - type: translate
+        prompt_tl: Pagod ang kaibigan ko kasi nagtatrabaho siya araw-araw.
+        answer_en: My friend is tired because she works every day.
+        accept:
+          - "My friend is tired because he works every day"
+          - "My friend is tired because she is working every day"
+          - "My friend is tired because he is working every day"
+        extra_words: [happy, sometimes, studies]
+        audio: pagod_ang_kaibigan_ko_kasi_nagtatrabaho_siya_araw_araw
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Why are you angry at your boyfriend?
+        answer_tl: Bakit ka galit sa nobyo mo?
+        extra_words: [nobya, ako, kasi]
+        audio: bakit_ka_galit_sa_nobyo_mo
+      - type: translate
+        prompt_en: I'm excited because my best friend is getting married tomorrow.
+        answer_tl: Sabik ako kasi ikakasal ang matalik kong kaibigan bukas.
+        accept: ["Sabik ako dahil ikakasal ang matalik kong kaibigan bukas"]
+        extra_words: [kasal, takot, siya]
+        audio: sabik_ako_kasi_ikakasal_ang_matalik_kong_kaibigan_bukas
+      - type: translate
+        prompt_en: She is sad because she misses her family.
+        answer_tl: Malungkot siya kasi miss niya ang pamilya niya.
+        accept: ["Malungkot siya dahil miss niya ang pamilya niya"]
+        extra_words: [masaya, ko, kita]
+        audio: malungkot_siya_kasi_miss_niya_ang_pamilya_niya
+  - id: revsocial-6
+    title: Laro ng barkada
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Naglalaro ng basketbol ang barkada ko tuwing Sabado' means..."
+        answer: My friends play basketball every Saturday
+        distractors:
+          - My friends watch basketball every Saturday
+          - My friends played basketball last Saturday
+          - My friend plays volleyball every Saturday
+        audio: naglalaro_ng_basketbol_ang_barkada_ko_tuwing_sabado
+        audio_text: Naglalaro ng basketbol ang barkada ko tuwing Sabado.
+      - type: match
+        pairs:
+          - { tl: manlalaro, en: player }
+          - { tl: koponan, en: team }
+          - { tl: nanalo, en: won }
+          - { tl: natalo, en: lost }
+      - type: translate
+        prompt_tl: Masaya ang barkada namin kasi nanalo kami kahapon.
+        answer_en: Our group of friends is happy because we won yesterday.
+        accept: ["Our barkada is happy because we won yesterday"]
+        extra_words: [lost, they, tomorrow]
+        audio: masaya_ang_barkada_namin_kasi_nanalo_kami_kahapon
+      - type: fill_blank
+        sentence: "Mabilis tumakbo ang kaibigan ko pero ___ siyang lumangoy."
+        translation: "My friend runs fast but he swims slowly."
+        answer: mabagal
+        options: [mabagal, mabilis, matangkad]
+      - type: listen
+        audio: malakas_ang_koponan_ng_nobyo_ko
+        answer_tl: Malakas ang koponan ng nobyo ko
+        extra_words: [nobya, mabagal]
+      - type: choice
+        prompt: "Your friend's team just lost and he looks upset. Comfort him:"
+        answer: Huwag kang malungkot.
+        distractors: [Masaya ako kasi natalo ka., Bakit ka nanalo?, Galit ako sa koponan mo.]
+        audio: huwag_kang_malungkot
+        audio_text: Huwag kang malungkot.
+      - type: translate
+        prompt_en: My boyfriend plays basketball and I watch.
+        answer_tl: Naglalaro ng basketbol ang nobyo ko at nanonood ako.
+        accept: ["Naglalaro ang nobyo ko ng basketbol at nanonood ako"]
+        extra_words: [nobya, bolibol, siya]
+        audio: naglalaro_ng_basketbol_ang_nobyo_ko_at_nanonood_ako
+      - type: translate
+        prompt_en: Can we play volleyball tomorrow?
+        answer_tl: Pwede ba tayong maglaro ng bolibol bukas?
+        accept: ["Pwede ba tayong maglaro bukas ng bolibol"]
+        extra_words: [kami, basketbol, kahapon]
+        audio: pwede_ba_tayong_maglaro_ng_bolibol_bukas
+      - type: translate
+        prompt_en: Our team lost but my friends are funny.
+        answer_tl: Natalo ang koponan namin pero nakakatawa ang mga kaibigan ko.
+        extra_words: [nanalo, malungkot, nila]
+        audio: natalo_ang_koponan_namin_pero_nakakatawa_ang_mga_kaibigan_ko
+  - id: revsocial-7
+    title: Usapang trabaho
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: abogado, en: lawyer }
+          - { tl: sundalo, en: soldier }
+          - { tl: bumbero, en: firefighter }
+          - { tl: kusinero, en: cook }
+      - type: choice
+        prompt: "'Saan nagtatrabaho ang nobya mo?' asks..."
+        answer: Where your girlfriend works
+        distractors:
+          - What your girlfriend's job is
+          - Where your girlfriend lives
+          - Who your girlfriend is
+        audio: saan_nagtatrabaho_ang_nobya_mo
+        audio_text: Saan nagtatrabaho ang nobya mo?
+      - type: translate
+        prompt_tl: Pagod ang ate ko kasi nars siya sa ospital.
+        answer_en: My older sister is tired because she is a nurse at the hospital.
+        accept:
+          - "My older sister is tired because she's a nurse at the hospital"
+          - "My older sister is tired because she is a nurse in the hospital"
+        extra_words: [happy, doctor, school]
+        audio: pagod_ang_ate_ko_kasi_nars_siya_sa_ospital
+      - type: fill_blank
+        sentence: "Masaya ang tatay ko kasi mataas ang ___ niya."
+        translation: "My dad is happy because his salary is high."
+        answer: sahod
+        options: [sahod, amo, opisina]
+      - type: listen
+        audio: masipag_na_guro_ang_nanay_ko
+        answer_tl: Masipag na guro ang nanay ko
+        extra_words: [tamad, nars]
+      - type: translate
+        prompt_tl: Mas masipag ang empleyado kaysa sa amo.
+        answer_en: The employee is more hardworking than the boss.
+        extra_words: [lazy, less, office]
+        audio: mas_masipag_ang_empleyado_kaysa_sa_amo
+      - type: choice
+        prompt: "Your friend says 'Mabait ang amo ko pero maliit ang sahod.' How does she feel about her job?"
+        answer: Mixed — the boss is nice but the pay is low
+        distractors:
+          - She loves everything about it
+          - She does not like her boss
+          - She has no job right now
+        audio: mabait_ang_amo_ko_pero_maliit_ang_sahod
+        audio_text: Mabait ang amo ko pero maliit ang sahod.
+      - type: translate
+        prompt_en: My boyfriend is a soldier and I miss him.
+        answer_tl: Sundalo ang nobyo ko at miss ko na siya.
+        accept: ["Sundalo ang nobyo ko at miss ko siya"]
+        extra_words: [pulis, kita, nobya]
+        audio: sundalo_ang_nobyo_ko_at_miss_ko_na_siya
+      - type: translate
+        prompt_en: Where does your friend work? He is a cook at a restaurant.
+        answer_tl: Saan nagtatrabaho ang kaibigan mo? Kusinero siya sa restawran.
+        extra_words: [ano, karinderya, ako]
+        audio: saan_nagtatrabaho_ang_kaibigan_mo_kusinero_siya_sa_restawran
+  - id: revsocial-8
+    title: Malayo sa pamilya
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Your mom works abroad. On a video call, you tell her:"
+        answer: Miss na kita, Nanay.
+        distractors:
+          - Mahal ang pamasahe, Nanay.
+          - Ikakasal ako bukas, Nanay.
+          - Natalo kami, Nanay.
+        audio: miss_na_kita_nanay
+        audio_text: Miss na kita, Nanay.
+      - type: match
+        pairs:
+          - { tl: ibang bansa, en: another country }
+          - { tl: balikbayan, en: Filipino home from abroad }
+          - { tl: pamilya, en: family }
+          - { tl: sahod, en: salary }
+      - type: translate
+        prompt_tl: Nagtatrabaho sa ibang bansa ang tatay ko at miss na namin siya.
+        answer_en: My dad works abroad and we miss him.
+        accept:
+          - "My father works abroad and we miss him"
+          - "My dad works in another country and we miss him"
+          - "My father works in another country and we miss him"
+        extra_words: [mom, love, here]
+        audio: nagtatrabaho_sa_ibang_bansa_ang_tatay_ko_at_miss_na_namin_siya
+      - type: fill_blank
+        sentence: "___ na kita, Kuya!"
+        translation: "I miss you, big brother!"
+        answer: Miss
+        options: [Miss, Sabik, Galit]
+      - type: listen
+        audio: balikbayan_na_ang_tita_ko
+        answer_tl: Balikbayan na ang tita ko
+        extra_words: [tito, bansa]
+      - type: translate
+        prompt_tl: Mataas ang sahod sa ibang bansa pero malungkot siya.
+        answer_en: The salary abroad is high but he is sad.
+        accept:
+          - "The salary abroad is high but she is sad"
+          - "The salary in another country is high but he is sad"
+          - "The salary in another country is high but she is sad"
+        extra_words: [low, happy, family]
+        audio: mataas_ang_sahod_sa_ibang_bansa_pero_malungkot_siya
+      - type: choice
+        prompt: "'Mahal kita, anak. Miss na kita.' Who is most likely speaking?"
+        answer: A parent working far from their child
+        distractors:
+          - A boss talking to an employee
+          - A player talking to the team
+          - A vendor talking to a customer
+        audio: mahal_kita_anak_miss_na_kita
+        audio_text: Mahal kita, anak. Miss na kita.
+      - type: translate
+        prompt_en: My mom is a nurse in another country.
+        answer_tl: Nars ang nanay ko sa ibang bansa.
+        accept: ["Nars sa ibang bansa ang nanay ko"]
+        extra_words: [doktor, tatay, dito]
+        audio: nars_ang_nanay_ko_sa_ibang_bansa
+      - type: translate
+        prompt_en: I love you, Dad, and I miss you.
+        answer_tl: Mahal kita, Tatay, at miss na kita.
+        accept: ["Tatay, mahal kita at miss na kita"]
+        extra_words: [ko, siya, nanay]
+        audio: mahal_kita_tatay_at_miss_na_kita
+  - id: revsocial-9
+    title: Torpe o manliligaw?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: manliligaw, en: suitor }
+          - { tl: torpe, en: too shy to confess }
+          - { tl: kasintahan, en: sweetheart }
+          - { tl: harana, en: serenade }
+      - type: choice
+        prompt: "Your friend has liked Maria for a year but never tells her. He is..."
+        answer: Torpe
+        distractors: [Masipag, Makulit, Matulungin]
+      - type: translate
+        prompt_tl: Takot siyang manligaw kasi torpe siya.
+        answer_en: He is afraid to court because he is too shy.
+        accept: ["He is scared to court because he is too shy"]
+        extra_words: [happy, wedding, she]
+        audio: takot_siyang_manligaw_kasi_torpe_siya
+      - type: fill_blank
+        sentence: "Kumanta ng ___ ang manliligaw kay Maria."
+        translation: "The suitor sang a serenade to Maria."
+        answer: harana
+        options: [harana, kasal, puso]
+      - type: listen
+        audio: crush_ko_ang_kaibigan_ng_ate_ko
+        answer_tl: Crush ko ang kaibigan ng ate ko
+        extra_words: [nobyo, kuya]
+      - type: translate
+        prompt_tl: Sabik si Ana kasi may manliligaw siya.
+        answer_en: Ana is excited because she has a suitor.
+        extra_words: [sad, boyfriend, he]
+        audio: sabik_si_ana_kasi_may_manliligaw_siya
+      - type: choice
+        prompt: "Your friend whispers 'Crush ko si Juan, pero torpe siya.' She means..."
+        answer: She likes Juan, but he is too shy to make a move
+        distractors:
+          - Juan is already her boyfriend
+          - Juan courts her every day
+          - She is angry at Juan
+        audio: crush_ko_si_juan_pero_torpe_siya
+        audio_text: Crush ko si Juan, pero torpe siya.
+      - type: translate
+        prompt_en: He is courting my best friend.
+        answer_tl: Nanliligaw siya sa matalik kong kaibigan.
+        extra_words: [kay, nobya, ako]
+        audio: nanliligaw_siya_sa_matalik_kong_kaibigan
+      - type: translate
+        prompt_en: Why aren't you courting her? Are you too shy?
+        answer_tl: Bakit hindi ka nanliligaw sa kanya? Torpe ka ba?
+        extra_words: [siya, kasi, ako]
+        audio: bakit_hindi_ka_nanliligaw_sa_kanya_torpe_ka_ba
+  - id: revsocial-10
+    title: Sa kasal ng kaibigan
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kasal, en: wedding }
+          - { tl: bisita, en: guest }
+          - { tl: simbahan, en: church }
+          - { tl: handaan, en: party }
+      - type: choice
+        prompt: "At your best friend's wedding, you greet her:"
+        answer: Binabati kita!
+        distractors: [Paalam!, Sayang!, Miss na kita!]
+        audio: binabati_kita
+        audio_text: Binabati kita!
+      - type: translate
+        prompt_tl: Sumayaw ang mga bisita sa handaan pagkatapos ng kasal.
+        answer_en: The guests danced at the party after the wedding.
+        accept: ["The guests danced at the reception after the wedding"]
+        extra_words: [sang, church, before]
+        audio: sumayaw_ang_mga_bisita_sa_handaan_pagkatapos_ng_kasal
+      - type: fill_blank
+        sentence: "___ sila sa simbahan sa Sabado."
+        translation: "They will get married at the church on Saturday."
+        answer: Ikakasal
+        options: [Ikakasal, Natalo, Nanliligaw]
+      - type: listen
+        audio: guro_ang_nobya_at_inhinyero_ang_nobyo
+        answer_tl: Guro ang nobya at inhinyero ang nobyo
+        extra_words: [abogado, nars]
+      - type: translate
+        prompt_tl: Kumanta ang barkada namin sa videoke sa handaan.
+        answer_en: Our friends sang at the videoke at the party.
+        accept: ["Our barkada sang at the videoke at the party"]
+        extra_words: [danced, church, wedding]
+        audio: kumanta_ang_barkada_namin_sa_videoke_sa_handaan
+      - type: choice
+        prompt: "A guest asks 'Ano ang trabaho ng nobyo?' She wants to know..."
+        answer: What the groom does for a living
+        distractors: [Where the groom lives, How the groom met the bride, When the wedding is]
+        audio: ano_ang_trabaho_ng_nobyo
+        audio_text: Ano ang trabaho ng nobyo?
+      - type: translate
+        prompt_en: The bride is a lawyer and the groom is a nurse.
+        answer_tl: Abogado ang nobya at nars ang nobyo.
+        extra_words: [guro, doktor, sila]
+        audio: abogado_ang_nobya_at_nars_ang_nobyo
+      - type: translate
+        prompt_en: I am happy because my cousin and her boyfriend will get married.
+        answer_tl: Masaya ako kasi ikakasal ang pinsan ko at ang nobyo niya.
+        accept: ["Masaya ako dahil ikakasal ang pinsan ko at ang nobyo niya"]
+        extra_words: [kasal, nobya, kami]
+        audio: masaya_ako_kasi_ikakasal_ang_pinsan_ko_at_ang_nobyo_niya
+  - id: revsocial-11
+    title: Sa tingin ko...
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: medyo, en: a bit }
+          - { tl: talaga, en: really }
+          - { tl: sobra, en: too much }
+          - { tl: sa tingin ko, en: I think }
+      - type: choice
+        prompt: "'Sa tingin ko, mas magaling si Juan kaysa kay Ben' means..."
+        answer: I think Juan is better than Ben
+        distractors: [I think Ben is better than Juan, I know Juan and Ben, Juan and Ben are both good]
+        audio: sa_tingin_ko_mas_magaling_si_juan_kaysa_kay_ben
+        audio_text: Sa tingin ko, mas magaling si Juan kaysa kay Ben.
+      - type: translate
+        prompt_tl: Medyo tamad ang kapatid ko pero mabait siya.
+        answer_en: My sibling is a bit lazy but he is kind.
+        accept:
+          - "My sibling is a bit lazy but she is kind"
+          - "My brother is a bit lazy but he is kind"
+          - "My sister is a bit lazy but she is kind"
+          - "My sibling is a bit lazy but he is nice"
+          - "My sibling is a bit lazy but she is nice"
+        extra_words: [very, hardworking, they]
+        audio: medyo_tamad_ang_kapatid_ko_pero_mabait_siya
+      - type: fill_blank
+        sentence: "Nakakatawa ___ ang nobyo mo!"
+        translation: "Your boyfriend is really funny!"
+        answer: talaga
+        options: [talaga, medyo, kasi]
+      - type: listen
+        audio: sobrang_masipag_ang_nanay_ko
+        answer_tl: Sobrang masipag ang nanay ko
+        extra_words: [medyo, tamad]
+      - type: translate
+        prompt_tl: Sa tingin ko, nakakainis ang manliligaw ni Ana.
+        answer_en: I think Ana's suitor is annoying.
+        extra_words: [funny, boyfriend, Maria's]
+        audio: sa_tingin_ko_nakakainis_ang_manliligaw_ni_ana
+      - type: choice
+        prompt: "Your friend asks what you think of her new boyfriend. You like him. Say:"
+        answer: Sa tingin ko, mabait talaga siya.
+        distractors:
+          - Sa tingin ko, nakakainis siya.
+          - Medyo tamad siya.
+          - Galit ako sa kanya.
+        audio: sa_tingin_ko_mabait_talaga_siya
+        audio_text: Sa tingin ko, mabait talaga siya.
+      - type: translate
+        prompt_en: I think my best friend is the smartest.
+        answer_tl: Sa tingin ko, pinakamatalino ang matalik kong kaibigan.
+        accept: ["Pinakamatalino ang matalik kong kaibigan sa tingin ko"]
+        extra_words: [mas, kaysa, siya]
+        audio: sa_tingin_ko_pinakamatalino_ang_matalik_kong_kaibigan
+      - type: translate
+        prompt_en: My older brother is more hardworking than my older sister.
+        answer_tl: Mas masipag ang kuya ko kaysa sa ate ko.
+        accept: ["Mas masipag ang kuya ko kaysa ate ko"]
+        extra_words: [tamad, kay, siya]
+        audio: mas_masipag_ang_kuya_ko_kaysa_sa_ate_ko
+  - id: revsocial-12
+    title: Kuwento ng barkada
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kasintahan, en: sweetheart }
+          - { tl: manlalaro, en: player }
+          - { tl: empleyado, en: employee }
+          - { tl: matulungin, en: helpful }
+      - type: choice
+        prompt: "Your best friend tells you she is getting married. Say:"
+        answer: Binabati kita! Masaya ako para sa iyo.
+        distractors:
+          - Sayang! Malungkot ako para sa iyo.
+          - Bakit ka galit sa akin?
+          - Pagod na ako sa trabaho.
+        audio: binabati_kita_masaya_ako_para_sa_iyo
+        audio_text: Binabati kita! Masaya ako para sa iyo.
+      - type: translate
+        prompt_tl: Pagod si Ben kasi nagtrabaho siya kahapon, pero masaya siya kasi nanalo ang koponan niya.
+        answer_en: Ben is tired because he worked yesterday, but he is happy because his team won.
+        accept: ["Ben is tired because he worked yesterday but he's happy because his team won"]
+        extra_words: [lost, she, tomorrow]
+        audio: pagod_si_ben_kasi_nagtrabaho_siya_kahapon_pero_masaya_siya_kasi_nanalo_ang_koponan_niya
+      - type: fill_blank
+        sentence: "Mahal ___ siya, pero torpe ako."
+        translation: "I love her, but I am too shy to say it."
+        answer: ko
+        options: [ko, kita, mo]
+      - type: listen
+        audio: sina_maria_at_juan_ang_kampeon
+        answer_tl: Sina Maria at Juan ang kampeon
+        extra_words: [si, koponan]
+      - type: translate
+        prompt_tl: Pinakamatangkad sa koponan ang nobyo ni Maria.
+        answer_en: Maria's boyfriend is the tallest on the team.
+        accept: ["Maria's boyfriend is the tallest in the team"]
+        extra_words: [shortest, girlfriend, "Ana's"]
+        audio: pinakamatangkad_sa_koponan_ang_nobyo_ni_maria
+      - type: choice
+        prompt: "Which sentence says 'My friends Ana and Ben are teachers'?"
+        answer: Guro ang mga kaibigan kong sina Ana at Ben.
+        distractors:
+          - Guro ang kaibigan kong si Ana.
+          - Guro ang mga kaibigan nina Ana at Ben.
+          - Kaibigan ng guro sina Ana at Ben.
+      - type: translate
+        prompt_en: I'm tired from work but I'm excited because my boyfriend's team will play tonight.
+        answer_tl: Pagod ako sa trabaho pero sabik ako kasi maglalaro ang koponan ng nobyo ko ngayong gabi.
+        accept: ["Pagod ako sa trabaho pero sabik ako dahil maglalaro ang koponan ng nobyo ko ngayong gabi"]
+        extra_words: [naglaro, nobya, kahapon]
+        audio: pagod_ako_sa_trabaho_pero_sabik_ako_kasi_maglalaro_ang_koponan_ng_nobyo_ko_ngayong_gabi
+      - type: translate
+        prompt_en: My best friend is a doctor, her boyfriend is a soldier, and they will get married in the church.
+        answer_tl: Doktor ang matalik kong kaibigan, sundalo ang nobyo niya, at ikakasal sila sa simbahan.
+        extra_words: [nars, pulis, kami]
+        audio: doktor_ang_matalik_kong_kaibigan_sundalo_ang_nobyo_niya_at_ikakasal_sila_sa_simbahan

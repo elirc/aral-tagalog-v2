@@ -108,6 +108,7 @@ lessons:
       - type: translate
         prompt_en: The shoes at the store are expensive.
         answer_tl: Mahal ang sapatos sa tindahan.
+        accept: ["Mahal sa tindahan ang sapatos"]
         extra_words: [mura, palengke, damit]
         audio: mahal_ang_sapatos_sa_tindahan
   - id: bargain-3
@@ -236,3 +237,408 @@ lessons:
           ["I paid fifty and the change is ten", "My payment is fifty and my change is ten"]
         extra_words: [twenty, price, coins]
         audio: singkwenta_ang_bayad_ko_at_sampu_ang_sukli
+  - id: bargain-5
+    title: Counting past ten
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Labing-isa' means..."
+        answer: Eleven
+        distractors: [One, Ten, Twenty]
+        audio: labing_isa
+        audio_text: Labing-isa
+        hint: '"labing-" + a number makes 11-19: labing-isa (11), labindalawa (12), labinlima (15).'
+      - type: match
+        pairs:
+          - { tl: labing-isa, en: eleven }
+          - { tl: labinlima, en: fifteen }
+          - { tl: dalawampu, en: twenty }
+          - { tl: sampu, en: ten }
+      - type: choice
+        prompt: "'Dalawampu' means..."
+        answer: Twenty
+        distractors: [Twelve, Two hundred, Ten]
+        audio: dalawampu
+        audio_text: Dalawampu
+        hint: '"bente" and "dalawampu" are the same price — Spanish-style and Tagalog-style.'
+      - type: fill_blank
+        sentence: "Sampu + sampu = ___."
+        translation: "Ten + ten = twenty."
+        answer: dalawampu
+        options: [dalawampu, labing-isa, labinlima]
+      - type: translate
+        prompt_tl: Labinlimang piso ang pamasahe.
+        answer_en: The fare is fifteen pesos.
+        accept: ["Fifteen pesos is the fare", "The fare is 15 pesos"]
+        extra_words: [eleven, twenty, price]
+        audio: labinlimang_piso_ang_pamasahe
+      - type: listen
+        audio: labing_isang_piso_lang
+        answer_tl: Labing-isang piso lang
+        extra_words: [dalawampung, sampung]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: The egg is twenty pesos.
+        answer_tl: Dalawampung piso ang itlog.
+        accept: ["Dalawampu ang itlog"]
+        extra_words: [sampung, labinlimang, mahal]
+        audio: dalawampung_piso_ang_itlog
+      - type: choice
+        prompt: "A vendor says 'Labindalawang piso po.' You pay..."
+        answer: Twelve pesos
+        distractors: [Twenty pesos, Eleven pesos, Fifteen pesos]
+        audio: labindalawang_piso_po
+        audio_text: Labindalawang piso po.
+  - id: bargain-6
+    title: Twenty to fifty
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tatlumpu, en: thirty }
+          - { tl: apatnapu, en: forty }
+          - { tl: limampu, en: fifty }
+          - { tl: dalawampu, en: twenty }
+      - type: choice
+        prompt: "'Limampu' means..."
+        answer: Fifty
+        distractors: [Five, Fifteen, Forty]
+        audio: limampu
+        audio_text: Limampu
+        hint: '"singkwenta" and "limampu" are both fifty — vendors use either.'
+      - type: fill_blank
+        sentence: "Dalawampu, tatlumpu, ___, limampu."
+        translation: "Twenty, thirty, forty, fifty."
+        answer: apatnapu
+        options: [apatnapu, sampu, labinlima]
+      - type: translate
+        prompt_tl: Tatlumpung piso ang tatlong itlog.
+        answer_en: Three eggs are thirty pesos.
+        accept: ["The three eggs are thirty pesos", "Thirty pesos for three eggs"]
+        extra_words: [forty, thirteen, chicken]
+        audio: tatlumpung_piso_ang_tatlong_itlog
+      - type: listen
+        audio: apatnapung_piso_po_ang_isda
+        answer_tl: Apatnapung piso po ang isda
+        extra_words: [tatlumpung, manok]
+      - type: choice
+        prompt: "'Dalawampu't lima' means..."
+        answer: Twenty-five
+        distractors: [Twenty, Fifty-two, Thirty-five]
+        audio: dalawamput_lima
+        audio_text: Dalawampu't lima
+        hint: "The 't links tens and ones: dalawampu't lima = 25, tatlumpu't dalawa = 32."
+      - type: translate
+        prompt_en: The fare is twenty-five pesos.
+        answer_tl: Dalawampu't limang piso ang pamasahe.
+        extra_words: [tatlumpung, sukli, bayad]
+        audio: dalawamput_limang_piso_ang_pamasahe
+      - type: translate
+        prompt_tl: Limampung piso ang manok at tatlumpung piso ang isda.
+        answer_en: The chicken is fifty pesos and the fish is thirty pesos.
+        accept: ["Chicken is fifty pesos and fish is thirty pesos"]
+        extra_words: [forty, eggs, cheap]
+        audio: limampung_piso_ang_manok_at_tatlumpung_piso_ang_isda
+  - id: bargain-7
+    title: Daan at libo
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Isang daan' means..."
+        answer: One hundred
+        distractors: [One thousand, Ten, One road]
+        audio: isang_daan
+        audio_text: Isang daan
+        hint: '"daan" is also the word for road — context tells you which.'
+      - type: match
+        pairs:
+          - { tl: isang daan, en: one hundred }
+          - { tl: limang daan, en: five hundred }
+          - { tl: isang libo, en: one thousand }
+          - { tl: limampu, en: fifty }
+      - type: translate
+        prompt_tl: Isang daang piso ang bestida.
+        answer_en: The dress is one hundred pesos.
+        accept: ["The dress is a hundred pesos", "The dress costs one hundred pesos"]
+        extra_words: [thousand, fifty, shoes]
+        audio: isang_daang_piso_ang_bestida
+      - type: fill_blank
+        sentence: "Sampung daan = isang ___."
+        translation: "Ten hundreds = one thousand."
+        answer: libo
+        options: [libo, daan, piso]
+      - type: listen
+        audio: limang_daang_piso_ang_sapatos
+        answer_tl: Limang daang piso ang sapatos
+        extra_words: [libong, daan]
+      - type: choice
+        prompt: "'Isang libo' means..."
+        answer: One thousand
+        distractors: [One hundred, One million, Ten]
+        audio: isang_libo
+        audio_text: Isang libo
+      - type: translate
+        prompt_en: The shoes are one thousand pesos.
+        answer_tl: Isang libong piso ang sapatos.
+        accept: ["Isang libo ang sapatos"]
+        extra_words: [daang, limampung, mura]
+        audio: isang_libong_piso_ang_sapatos
+      - type: translate
+        prompt_tl: Mahal! Limang daang piso ang isang kilo ng baboy.
+        answer_en: Expensive! One kilo of pork is five hundred pesos.
+        accept: ["Expensive! A kilo of pork is five hundred pesos", "That's expensive! One kilo of pork is five hundred pesos"]
+        extra_words: [cheap, chicken, thousand]
+        audio: mahal_limang_daang_piso_ang_isang_kilo_ng_baboy
+  - id: bargain-8
+    title: Sa sari-sari store
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A 'sari-sari store' is..."
+        answer: A small neighborhood store
+        distractors: [A big supermarket, A fish stall, A clothing shop]
+        audio: sari_sari
+        audio_text: Sari-sari store
+      - type: match
+        pairs:
+          - { tl: utang, en: debt }
+          - { tl: tindahan, en: store }
+          - { tl: barya, en: coins }
+          - { tl: pera, en: money }
+      - type: translate
+        prompt_tl: Bumili ako ng gatas sa sari-sari store.
+        answer_en: I bought milk at the sari-sari store.
+        accept: ["I bought milk from the sari-sari store"]
+        extra_words: [bread, market, sold]
+        audio: bumili_ako_ng_gatas_sa_sari_sari_store
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Utang' means..."
+        answer: Debt
+        distractors: [Change, Savings, Payment]
+        audio: utang
+        audio_text: Utang
+      - type: fill_blank
+        sentence: "Wala akong pera ngayon. Pwede po bang ___?"
+        translation: "I have no money today. Could it be on credit?"
+        answer: utang
+        options: [utang, bayad, tawad]
+        hint: "Sari-sari stores keep a notebook of neighbors' utang, paid on payday."
+      - type: listen
+        audio: magkano_po_ang_utang_ko
+        answer_tl: Magkano po ang utang ko
+        extra_words: [sukli, bayad]
+      - type: translate
+        prompt_en: How much is my debt at the store?
+        answer_tl: Magkano ang utang ko sa tindahan?
+        accept: ["Magkano po ang utang ko sa tindahan?"]
+        extra_words: [bayad, sukli, mo]
+        audio: magkano_ang_utang_ko_sa_tindahan
+      - type: translate
+        prompt_tl: Bumibili kami sa sari-sari store araw-araw.
+        answer_en: We buy at the sari-sari store every day.
+        accept: ["We shop at the sari-sari store every day", "Every day we buy at the sari-sari store"]
+        extra_words: [market, weekly, sell]
+        audio: bumibili_kami_sa_sari_sari_store_araw_araw
+        grading: { hyphens: true }
+  - id: bargain-9
+    title: Haggling politely
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Bawas' means..."
+        answer: A reduction
+        distractors: [An addition, A payment, A free item]
+        audio: bawas
+        audio_text: Bawas
+      - type: translate
+        prompt_tl: Ang mahal naman po! Pwede pa pong bumaba?
+        answer_en: That's so expensive! Can it still go lower?
+        accept: ["So expensive! Can it go lower?", "That's expensive! Can the price still go down?"]
+        extra_words: [cheap, higher, discount]
+        audio: ang_mahal_naman_po_pwede_pa_pong_bumaba
+        hint: '"Ang mahal naman!" — what a price! "naman" softens the complaint.'
+      - type: choice
+        prompt: "Polite haggling at the palengke starts with..."
+        answer: May tawad po ba?
+        distractors: [Libre po ba ito?, Bayad po!, Ano po ito?]
+        audio: may_tawad_po_ba
+        audio_text: May tawad po ba?
+      - type: fill_blank
+        sentence: "Suki na po ako dito — ___ naman po."
+        translation: "I'm a regular here — a little off, please."
+        answer: bawas
+        options: [bawas, bayad, barya]
+      - type: listen
+        audio: may_bawas_po_ang_suki
+        answer_tl: May bawas po ang suki
+        extra_words: [tawad, libre]
+      - type: choice
+        prompt: "The vendor won't go lower and says 'Wala na pong tawad.' She means..."
+        answer: No more discount
+        distractors: [No more stock, It's free now, Prices went up]
+        audio: wala_na_pong_tawad
+        audio_text: Wala na pong tawad.
+      - type: translate
+        prompt_en: Is there a discount for a regular customer?
+        answer_tl: May tawad po ba ang suki?
+        extra_words: [bawas, libre, presyo]
+        audio: may_tawad_po_ba_ang_suki
+      - type: translate
+        prompt_tl: Tatlumpu po? Dalawampu't lima na lang po.
+        answer_en: Thirty? Just twenty-five, please.
+        accept: ["Thirty pesos? Just twenty-five, please", "Thirty? Make it just twenty-five, please"]
+        extra_words: [fifty, change, free]
+        audio: tatlumpu_po_dalawamput_lima_na_lang_po
+        hint: 'Counter-offer with "na lang" — "just make it...".'
+  - id: bargain-10
+    title: Counting your change
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sukli, en: change }
+          - { tl: bayad, en: payment }
+          - { tl: presyo, en: price }
+          - { tl: libre, en: free }
+      - type: choice
+        prompt: "Your ulam is apatnapu pesos. You pay limampu. Your sukli is..."
+        answer: Sampu
+        distractors: [Dalawampu, Lima, Apatnapu]
+      - type: translate
+        prompt_tl: Isang daan po ang bayad ko at limampu ang sukli ko.
+        answer_en: My payment is one hundred and my change is fifty.
+        accept: ["I paid one hundred and my change is fifty"]
+        extra_words: [twenty, price, debt]
+        audio: isang_daan_ang_bayad_limampu_ang_sukli
+      - type: fill_blank
+        sentence: "Tatlumpu ang presyo. Limampu ang bayad ko. ___ ang sukli ko."
+        translation: "The price is thirty. I paid fifty. My change is twenty."
+        answer: Dalawampu
+        options: [Dalawampu, Tatlumpu, Sampu]
+      - type: listen
+        audio: kulang_po_ang_sukli
+        answer_tl: Kulang po ang sukli
+        extra_words: [sobra, bayad]
+      - type: choice
+        prompt: "'Kulang' means..."
+        answer: Not enough
+        distractors: [Too much, Exact, Free]
+        audio: kulang
+        audio_text: Kulang
+      - type: translate
+        prompt_en: Excuse me, my change is short.
+        answer_tl: Kulang po ang sukli ko.
+        accept: ["Kulang ang sukli ko"]
+        extra_words: [sobra, barya, bayad]
+        audio: kulang_po_ang_sukli_ko
+      - type: translate
+        prompt_tl: Sobra po ang sukli — heto po ang lima.
+        answer_en: The change is too much — here is five.
+        accept: ["The change is too much, here's five", "You gave too much change — here is five"]
+        extra_words: [short, ten, debt]
+        audio: sobra_po_ang_sukli_heto_po_ang_lima
+        hint: "Returning extra change marks you as suki material — honesty is noticed."
+  - id: bargain-11
+    title: Kuripot!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kuripot' means..."
+        answer: Stingy
+        distractors: [Generous, Thrifty, Rich]
+        audio: kuripot
+        audio_text: Kuripot
+      - type: match
+        pairs:
+          - { tl: kuripot, en: stingy }
+          - { tl: gastos, en: expenses }
+          - { tl: mahal, en: expensive }
+          - { tl: mura, en: cheap }
+      - type: translate
+        prompt_tl: Kuripot ang tito ko — ayaw niyang bumili ng regalo.
+        answer_en: My uncle is stingy — he doesn't want to buy a gift.
+        accept: ["My uncle is stingy — he does not want to buy a gift", "My uncle is stingy, he doesn't want to buy gifts"]
+        extra_words: [generous, aunt, money]
+        audio: kuripot_ang_tito_ko_ayaw_niyang_bumili_ng_regalo
+      - type: fill_blank
+        sentence: "Hindi ako kuripot! Maliit lang talaga ang ___ ko."
+        translation: "I'm not stingy! My expenses are just really small."
+        answer: gastos
+        options: [gastos, sukli, utang]
+      - type: listen
+        audio: sobrang_kuripot_niya
+        answer_tl: Sobrang kuripot niya
+        extra_words: [mahal, gastos]
+      - type: choice
+        prompt: "Your friend never wants to split the bill and never pays his utang. He is..."
+        answer: Kuripot
+        distractors: [Suki, Tindera, Libre]
+        audio: kuripot
+        audio_text: Kuripot
+      - type: translate
+        prompt_en: This is cheap! My expenses today are small.
+        answer_tl: Mura ito! Maliit ang gastos ko ngayon.
+        accept: ["Mura ito. Maliit ang gastos ko ngayon."]
+        extra_words: [mahal, malaki, utang]
+        audio: mura_ito_maliit_ang_gastos_ko_ngayon
+      - type: translate
+        prompt_tl: May utang pa siya sa akin — singkwenta!
+        answer_en: He still has a debt to me — fifty!
+        accept: ["She still has a debt to me — fifty!", "He still owes me fifty!"]
+        extra_words: [change, hundred, paid]
+        audio: may_utang_pa_siya_sa_akin_singkwenta
+  - id: bargain-12
+    title: Palengke master
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "You want to know the price of fish. You ask..."
+        answer: Magkano po ang isda?
+        distractors: [Nasaan po ang isda?, Ano po ang isda?, Sino po ang isda?]
+        audio: magkano_po_ang_isda
+        audio_text: Magkano po ang isda?
+      - type: translate
+        prompt_tl: Isang daan po ang isang kilo.
+        answer_en: One kilo is one hundred.
+        accept: ["A kilo is one hundred", "One kilo is one hundred pesos", "One hundred per kilo"]
+        extra_words: [fifty, fish, change]
+        audio: isang_daan_po_ang_isang_kilo
+      - type: choice
+        prompt: "Too expensive! You open the haggle politely with..."
+        answer: Ang mahal naman po. May tawad po ba?
+        distractors: [Libre po ba ito?, Ayaw ko!, Magkano po ito?]
+        audio: ang_mahal_naman_po_may_tawad_po_ba
+        audio_text: Ang mahal naman po. May tawad po ba?
+      - type: fill_blank
+        sentence: "___ na lang po — suki na po ako dito!"
+        translation: "Just forty — I'm a regular here!"
+        answer: Apatnapu
+        options: [Apatnapu, Apat, Labing-apat]
+      - type: listen
+        audio: wala_na_pong_tawad_mura_na_po_ito
+        answer_tl: Wala na pong tawad, mura na po ito
+        extra_words: [mahal, bawas]
+      - type: translate
+        prompt_en: Here is one hundred. Where is my change?
+        answer_tl: Heto po ang isang daan. Nasaan po ang sukli ko?
+        accept: ["Heto po ang isang daan. Nasaan ang sukli ko?"]
+        extra_words: [libo, bayad, barya]
+        audio: heto_po_ang_isang_daan_nasaan_po_ang_sukli_ko
+      - type: fill_blank
+        sentence: "Limampu ang presyo. Isang daan ang bayad ko. ___ ang sukli ko."
+        translation: "The price is fifty. I paid one hundred. My change is fifty."
+        answer: Limampu
+        options: [Limampu, Apatnapu, Sampu]
+      - type: translate
+        prompt_tl: Bumili ako ng dalawang kilo ng manok at may bawas pa ako.
+        answer_en: I bought two kilos of chicken and I even got a discount.
+        accept: ["I bought two kilos of chicken and even got a discount", "I bought two kilos of chicken and got a discount too"]
+        extra_words: [fish, change, three]
+        audio: bumili_ako_ng_dalawang_kilo_ng_manok_at_may_bawas_pa_ako
+      - type: translate
+        prompt_en: Thank you! I am a regular here now.
+        answer_tl: Salamat po! Suki na po ako dito.
+        accept: ["Salamat! Suki na ako dito."]
+        extra_words: [tindera, bawas, doon]
+        audio: salamat_po_suki_na_po_ako_dito

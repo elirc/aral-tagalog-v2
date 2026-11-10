@@ -205,3 +205,342 @@ lessons:
           - { tl: kumakanta, en: singing }
           - { tl: sumasayaw, en: dancing }
           - { tl: nanonood, en: watching }
+  - id: hobbies-5
+    title: Watching and reading
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: telebisyon, en: television }
+          - { tl: sine, en: movie theater }
+          - { tl: palabas, en: show }
+          - { tl: pelikula, en: movie }
+      - type: choice
+        prompt: "'Palabas' means..."
+        answer: A show
+        distractors: [A movie theater, A song, A game]
+        audio: palabas
+        audio_text: Palabas
+      - type: choice
+        prompt: "'Sine' means..."
+        answer: Movie theater
+        distractors: [Television, Show, Book]
+        audio: sine
+        audio_text: Sine
+      - type: fill_blank
+        sentence: "Nanonood sila ng pelikula sa ___."
+        translation: "They are watching a movie at the movie theater."
+        answer: sine
+        options: [sine, telebisyon, paaralan]
+      - type: listen
+        audio: nagbabasa_ako_ng_libro_sa_gabi
+        answer_tl: Nagbabasa ako ng libro sa gabi
+        extra_words: [nanonood, umaga]
+      - type: translate
+        prompt_tl: Nanonood kami ng palabas sa telebisyon.
+        answer_en: We are watching a show on television.
+        accept: ["We watch a show on television", "We are watching a show on TV"]
+        extra_words: [movie, reading, singing]
+        audio: nanonood_kami_ng_palabas_sa_telebisyon
+      - type: translate
+        prompt_en: I want to watch television.
+        answer_tl: Gusto kong manood ng telebisyon.
+        extra_words: [magbasa, pelikula, siya]
+        audio: gusto_kong_manood_ng_telebisyon
+      - type: translate
+        prompt_en: My grandfather is reading a book in the living room.
+        answer_tl: Nagbabasa ang lolo ko ng libro sa sala.
+        accept: ["Nagbabasa ng libro ang lolo ko sa sala"]
+        extra_words: [nanonood, lola, kusina]
+        audio: nagbabasa_ang_lolo_ko_ng_libro_sa_sala
+  - id: hobbies-6
+    title: Playing music
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tumugtog, en: to play music }
+          - { tl: gitara, en: guitar }
+          - { tl: piyano, en: piano }
+          - { tl: kanta, en: song }
+      - type: choice
+        prompt: "'Tumutugtog' means..."
+        answer: Playing (an instrument)
+        distractors: [Singing, Dancing, Listening]
+        audio: tumutugtog
+        audio_text: Tumutugtog
+      - type: choice
+        prompt: "'Piyano' means..."
+        answer: Piano
+        distractors: [Guitar, Music, Radio]
+        audio: piyano
+        audio_text: Piyano
+      - type: fill_blank
+        sentence: "Tumutugtog ang kuya ko ng ___."
+        translation: "My older brother plays the piano."
+        answer: piyano
+        options: [piyano, gitara, kanta]
+      - type: listen
+        audio: gusto_kong_tumugtog_ng_gitara
+        answer_tl: Gusto kong tumugtog ng gitara
+        extra_words: [piyano, kumanta]
+      - type: translate
+        prompt_tl: Tumutugtog siya ng gitara.
+        answer_en: She is playing the guitar.
+        accept: ["He is playing the guitar", "She plays the guitar", "He plays the guitar"]
+        extra_words: [piano, singing, song]
+        audio: tumutugtog_siya_ng_gitara
+      - type: translate
+        prompt_en: I want to play the piano.
+        answer_tl: Gusto kong tumugtog ng piyano.
+        extra_words: [gitara, manood, ako]
+        audio: gusto_kong_tumugtog_ng_piyano
+      - type: translate
+        prompt_tl: Kumakanta si Ana at tumutugtog ng gitara si Ben.
+        answer_en: Ana is singing and Ben is playing the guitar.
+        accept: ["Ana sings and Ben plays the guitar"]
+        extra_words: [dancing, piano, movie]
+        audio: kumakanta_si_ana_tumutugtog_si_ben
+  - id: hobbies-7
+    title: Drawing and pictures
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Gumuhit' means..."
+        answer: To draw
+        distractors: [To sing, To read, To watch]
+        audio: gumuhit
+        audio_text: Gumuhit
+      - type: match
+        pairs:
+          - { tl: gumuhit, en: to draw }
+          - { tl: gumuguhit, en: drawing }
+          - { tl: larawan, en: picture }
+          - { tl: libangan, en: hobby }
+      - type: fill_blank
+        sentence: "Gumuguhit siya ng ___ ng aso niya."
+        translation: "She is drawing a picture of her dog."
+        answer: larawan
+        options: [larawan, libro, kanta]
+      - type: listen
+        audio: maganda_ang_larawan_mo
+        answer_tl: Maganda ang larawan mo
+        extra_words: [malaki, gumuhit]
+      - type: choice
+        prompt: "Your friend shows you her drawing. Say:"
+        answer: Maganda ang larawan mo!
+        distractors: [Masarap ang larawan mo!, Nasaan ang larawan mo?, Ayaw ko ng larawan.]
+        audio: maganda_ang_larawan_mo
+        audio_text: Maganda ang larawan mo!
+      - type: translate
+        prompt_tl: Gumuguhit ako ng larawan.
+        answer_en: I am drawing a picture.
+        accept: ["I draw a picture"]
+        extra_words: [reading, song, watching]
+        audio: gumuguhit_ako_ng_larawan
+      - type: translate
+        prompt_en: I like to draw animals.
+        answer_tl: Gusto kong gumuhit ng mga hayop.
+        accept: ["Gusto kong gumuhit ng hayop"]
+        extra_words: [larawan, magbasa, ako]
+        audio: gusto_kong_gumuhit_ng_mga_hayop
+      - type: translate
+        prompt_en: My child is drawing a carabao.
+        answer_tl: Gumuguhit ang anak ko ng kalabaw.
+        accept: ["Gumuguhit ng kalabaw ang anak ko"]
+        extra_words: [larawan, kabayo, lola]
+        audio: gumuguhit_ang_anak_ko_ng_kalabaw
+  - id: hobbies-8
+    title: Mahilig ako
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Mahilig ako sa musika' means..."
+        answer: I'm really into music
+        distractors: [I am listening to music, "I don't like music", I play music]
+        audio: mahilig_ako_sa_musika
+        audio_text: Mahilig ako sa musika.
+        hint: '"mahilig sa" = fond of / really into.'
+      - type: match
+        pairs:
+          - { tl: mahilig sa musika, en: into music }
+          - { tl: mahilig sa laro, en: into games }
+          - { tl: mahilig magbasa, en: loves to read }
+          - { tl: mahilig kumanta, en: loves to sing }
+      - type: translate
+        prompt_tl: Mahilig akong manood ng pelikula.
+        answer_en: I love to watch movies.
+        accept: ["I like to watch movies", "I love watching movies", "I like watching movies"]
+        extra_words: [singing, television, read]
+        audio: mahilig_akong_manood_ng_pelikula
+      - type: fill_blank
+        sentence: "___ si Ate sa videoke."
+        translation: "My older sister is really into videoke."
+        answer: Mahilig
+        options: [Mahilig, Gusto, Paborito]
+      - type: listen
+        audio: mahilig_siyang_sumayaw
+        answer_tl: Mahilig siyang sumayaw
+        extra_words: [kumanta, ako]
+      - type: choice
+        prompt: "Ask your friend what they're into:"
+        answer: Ano ang hilig mo?
+        distractors: [Ano ang pangalan mo?, Saan ka pupunta?, Kumusta ka?]
+        audio: ano_ang_hilig_mo
+        audio_text: Ano ang hilig mo?
+      - type: translate
+        prompt_en: My dad loves to sing.
+        answer_tl: Mahilig kumanta ang tatay ko.
+        accept: ["Mahilig kumanta si Tatay"]
+        extra_words: [sumayaw, nanay, sa]
+        audio: mahilig_kumanta_ang_tatay_ko
+      - type: translate
+        prompt_en: They love to play basketball.
+        answer_tl: Mahilig silang maglaro ng basketbol.
+        extra_words: [kumanta, kami, sa]
+        audio: mahilig_silang_maglaro_ng_basketbol
+  - id: hobbies-9
+    title: Together with friends
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kasama' means..."
+        answer: Together with
+        distractors: [Alone, Friend, Family]
+        audio: kasama
+        audio_text: Kasama
+      - type: match
+        pairs:
+          - { tl: kasama, en: together with }
+          - { tl: kaibigan, en: friend }
+          - { tl: pamilya, en: family }
+          - { tl: bisita, en: guest }
+      - type: translate
+        prompt_tl: Naglalaro ako kasama ang mga kaibigan ko.
+        answer_en: I am playing with my friends.
+        accept: ["I play with my friends", "I am playing together with my friends"]
+        extra_words: [singing, family, watching]
+        audio: naglalaro_ako_kasama_ang_mga_kaibigan_ko
+      - type: fill_blank
+        sentence: "Kumakanta kami sa videoke ___ ang pamilya ko."
+        translation: "We sing videoke together with my family."
+        answer: kasama
+        options: [kasama, kaibigan, sila]
+      - type: listen
+        audio: sumasayaw_siya_kasama_ang_ate_niya
+        answer_tl: Sumasayaw siya kasama ang ate niya
+        extra_words: [kumakanta, kuya]
+      - type: choice
+        prompt: "You want to invite a friend to play basketball. Say:"
+        answer: Gusto mo bang maglaro ng basketbol?
+        distractors: [Gusto mo bang kumanta?, Naglalaro ka ba kahapon?, Ayaw kong maglaro.]
+        audio: gusto_mo_bang_maglaro_ng_basketbol
+        audio_text: Gusto mo bang maglaro ng basketbol?
+      - type: translate
+        prompt_en: I am watching a movie with my older brother.
+        answer_tl: Nanonood ako ng pelikula kasama ang kuya ko.
+        extra_words: [sine, ate, siya]
+        audio: nanonood_ako_ng_pelikula_kasama_ang_kuya_ko
+      - type: translate
+        prompt_en: We eat together with the guests at the party.
+        answer_tl: Kumakain kami kasama ang mga bisita sa handaan.
+        accept: ["Kumakain kami sa handaan kasama ang mga bisita"]
+        extra_words: [kumakanta, regalo, doon]
+        audio: kasama_ang_mga_bisita_sa_handaan
+  - id: hobbies-10
+    title: Ano ang paborito mo?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: paborito, en: favorite }
+          - { tl: pelikula, en: movie }
+          - { tl: musika, en: music }
+          - { tl: laro, en: game }
+      - type: choice
+        prompt: "'Ano ang paborito mong kanta?' asks about your favorite..."
+        answer: Song
+        distractors: [Movie, Game, Singer]
+        audio: ano_ang_paborito_mong_kanta
+        audio_text: Ano ang paborito mong kanta?
+      - type: translate
+        prompt_tl: Ano ang paborito mong pelikula?
+        answer_en: What is your favorite movie?
+        accept: ["What's your favorite movie?"]
+        extra_words: [song, hobby, who]
+        audio: ano_ang_paborito_mong_pelikula
+      - type: fill_blank
+        sentence: "Videoke ang paborito ___ libangan."
+        translation: "Videoke is my favorite hobby."
+        answer: kong
+        options: [kong, ko, mong]
+        hint: '"paborito ko" takes the -ng linker before the noun: paborito kong libangan.'
+      - type: listen
+        audio: musika_ang_paborito_kong_libangan
+        answer_tl: Musika ang paborito kong libangan
+        extra_words: [videoke, kanta]
+      - type: choice
+        prompt: "'Paborito ko ang kantang ito' means..."
+        answer: This song is my favorite
+        distractors: ["I don't like this song", This is a new song, Sing this song]
+        audio: paborito_ko_ang_kantang_ito
+        audio_text: Paborito ko ang kantang ito.
+      - type: translate
+        prompt_en: My favorite song is beautiful.
+        answer_tl: Maganda ang paborito kong kanta.
+        extra_words: [pelikula, masarap, mo]
+        audio: maganda_ang_paborito_kong_kanta
+      - type: translate
+        prompt_en: What is your favorite game?
+        answer_tl: Ano ang paborito mong laro?
+        extra_words: [kanta, libangan, ito]
+        audio: ano_ang_paborito_mong_laro
+  - id: hobbies-11
+    title: My free time
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Gusto kong magbasa, en: I want to read }
+          - { tl: Mahilig akong kumanta, en: I love to sing }
+          - { tl: Ano ang hilig mo?, en: What are you into? }
+          - { tl: Paborito ko ito, en: This is my favorite }
+      - type: choice
+        prompt: "'Sa umaga, nagbabasa ako. Sa gabi, nanonood ako ng telebisyon.' — what do they do at night?"
+        answer: Watch television
+        distractors: [Read a book, Sing videoke, Play basketball]
+        audio: sa_umaga_nagbabasa_sa_gabi_nanonood
+        audio_text: "Sa umaga, nagbabasa ako. Sa gabi, nanonood ako ng telebisyon."
+      - type: translate
+        prompt_tl: Araw-araw akong tumutugtog ng gitara.
+        answer_en: I play the guitar every day.
+        accept: ["Every day I play the guitar"]
+        extra_words: [piano, sing, yesterday]
+        grading: { hyphens: true }
+        audio: araw_araw_akong_tumutugtog_ng_gitara
+      - type: fill_blank
+        sentence: "Gusto ___ bang sumayaw?"
+        translation: "Do you want to dance?"
+        answer: mo
+        options: [mo, ko, ka]
+      - type: listen
+        audio: gusto_kong_manood_ng_pelikula_sa_sine
+        answer_tl: Gusto kong manood ng pelikula sa sine
+        extra_words: [telebisyon, magbasa]
+      - type: choice
+        prompt: "Your friends are singing videoke and call you over: 'Halika! Kumanta tayo!' They want you to..."
+        answer: Come and sing with them
+        distractors: [Go home, Watch them dance, Buy a videoke machine]
+        audio: halika_kumanta_tayo
+        audio_text: Halika! Kumanta tayo!
+      - type: translate
+        prompt_en: In the evening, we watch a show on television.
+        answer_tl: Sa gabi, nanonood kami ng palabas sa telebisyon.
+        accept: ["Nanonood kami ng palabas sa telebisyon sa gabi"]
+        extra_words: [sine, umaga, sila]
+        audio: sa_gabi_nanonood_kami_ng_palabas
+      - type: translate
+        prompt_en: I want to play the guitar and sing at the videoke.
+        answer_tl: Gusto kong tumugtog ng gitara at kumanta sa videoke.
+        extra_words: [piyano, sumayaw, mahilig]
+        audio: tumugtog_ng_gitara_at_kumanta_sa_videoke

@@ -62,6 +62,7 @@ lessons:
       - type: translate
         prompt_en: I bought bread and milk at the market.
         answer_tl: Bumili ako ng tinapay at gatas sa palengke.
+        accept: ["Bumili ako sa palengke ng tinapay at gatas"]
         extra_words: [bumibili, kape, tindahan]
         audio: bumili_ako_ng_tinapay_at_gatas_sa_palengke
         hint: 'One completed action, yesterday-style: bumili, not bumibili.'
@@ -151,6 +152,9 @@ lessons:
       - type: translate
         prompt_en: He worked yesterday.
         answer_tl: Nagtrabaho siya kahapon.
+        accept:
+          - "Kahapon, nagtrabaho siya"
+          - "Kahapon siya nagtrabaho"
         extra_words: [nagtatrabaho, bukas, ako]
         audio: nagtrabaho_siya_kahapon
       - type: fill_blank
@@ -248,3 +252,376 @@ lessons:
           - "Did you study already? We have a test tomorrow"
         extra_words: [worked, yesterday, class]
         audio: nag_aral_ka_na_ba_may_pagsusulit_tayo_bukas
+  - id: umverbs-5
+    title: The dictionary form
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magluto, en: to cook }
+          - { tl: mag-aral, en: to study }
+          - { tl: maglakad, en: to walk }
+          - { tl: magtrabaho, en: to work }
+      - type: choice
+        prompt: "After 'Gusto kong ...', which form of 'eat' fits?"
+        answer: kumain
+        distractors: [kumakain, kakain, kain]
+        audio: kumain
+        audio_text: Kumain
+        hint: 'The dictionary (infinitive) form follows "gusto" — for UM verbs it looks like the completed form.'
+      - type: fill_blank
+        sentence: "Gusto niyang ___ sa unibersidad."
+        translation: "She wants to study at the university."
+        answer: mag-aral
+        options: [mag-aral, nag-aral, nag-aaral]
+        hint: 'MAG verbs use plain mag- for the dictionary form: mag-aral.'
+      - type: listen
+        audio: ayaw_kong_magtrabaho_ngayon
+        answer_tl: Ayaw kong magtrabaho ngayon
+        extra_words: [mag-aral, bukas]
+      - type: choice
+        prompt: "'Gusto kong bumili ng gitara' means..."
+        answer: I want to buy a guitar
+        distractors: [I bought a guitar, I am buying a guitar, I want to sell a guitar]
+        audio: gusto_kong_bumili_ng_gitara
+        audio_text: Gusto kong bumili ng gitara.
+      - type: translate
+        prompt_tl: Gusto kong magluto ng manok.
+        answer_en: I want to cook chicken.
+        accept: ["I like to cook chicken"]
+        extra_words: [eat, fish, buy]
+        audio: gusto_kong_magluto_ng_manok
+      - type: translate
+        prompt_en: Do you want to drink coffee?
+        answer_tl: Gusto mo bang uminom ng kape?
+        extra_words: [umiinom, gatas, ako]
+        audio: gusto_mo_bang_uminom_ng_kape
+      - type: translate
+        prompt_en: I don't want to walk. I want to ride a jeepney.
+        answer_tl: Ayaw kong maglakad. Gusto kong sumakay ng jeepney.
+        accept: ["Ayaw kong maglakad. Gusto kong sumakay sa jeepney"]
+        extra_words: [naglakad, bumili, siya, sa]
+        audio: ayaw_maglakad_gusto_sumakay_jeepney
+  - id: umverbs-6
+    title: Leaving, arriving, writing
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umalis, en: left (departed) }
+          - { tl: dumating, en: arrived }
+          - { tl: sumulat, en: wrote }
+          - { tl: umaalis, en: leaving }
+      - type: choice
+        prompt: "'Dumating' means..."
+        answer: Arrived
+        distractors: [Left, Wrote, Will arrive]
+        audio: dumating
+        audio_text: Dumating
+      - type: fill_blank
+        sentence: "___ na si Tatay. Nasa opisina siya ngayon."
+        translation: "Dad has already left. He is at the office now."
+        answer: Umalis
+        options: [Umalis, Dumating, Sumulat]
+      - type: listen
+        audio: sumulat_ako_ng_kanta
+        answer_tl: Sumulat ako ng kanta
+        extra_words: [sumusulat, libro]
+      - type: choice
+        prompt: "Which is the 'happening now' form of 'sumulat' (wrote)?"
+        answer: Sumusulat
+        distractors: [Susulat, Sumulat, Sulat]
+        audio: sumusulat
+        audio_text: Sumusulat
+      - type: translate
+        prompt_tl: Dumating ang lola ko kahapon.
+        answer_en: My grandmother arrived yesterday.
+        accept: ["My grandma arrived yesterday"]
+        extra_words: [left, tomorrow, mother]
+        audio: dumating_ang_lola_ko_kahapon
+      - type: translate
+        prompt_en: The guests arrived at the party.
+        answer_tl: Dumating ang mga bisita sa handaan.
+        accept: ["Dumating sa handaan ang mga bisita"]
+        extra_words: [umalis, regalo, kami]
+        audio: dumating_ang_mga_bisita_sa_handaan
+      - type: translate
+        prompt_en: I am writing a book.
+        answer_tl: Sumusulat ako ng libro.
+        extra_words: [sumulat, nagbabasa, kanta]
+        audio: sumusulat_ako_ng_libro
+  - id: umverbs-7
+    title: Laundry and chores
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naglaba, en: did laundry }
+          - { tl: naglalaba, en: doing laundry }
+          - { tl: nagsaing, en: cooked rice }
+          - { tl: naglinis, en: cleaned }
+      - type: choice
+        prompt: "'Maglaba' means..."
+        answer: To wash clothes
+        distractors: [To wash dishes, To cook rice, To sweep]
+        audio: maglaba
+        audio_text: Maglaba
+      - type: fill_blank
+        sentence: "___ si Ate. May kanin na tayo."
+        translation: "Ate cooked rice. We have rice now."
+        answer: Nagsaing
+        options: [Nagsaing, Naglaba, Naglinis]
+        hint: '"magsaing" = to cook rice — its own verb in every Filipino kitchen.'
+      - type: listen
+        audio: naghugas_ako_ng_mga_plato
+        answer_tl: Naghugas ako ng mga plato
+        extra_words: [naghuhugas, mesa]
+      - type: choice
+        prompt: "Yesterday you cleaned your room. Which is correct?"
+        answer: Naglinis ako ng kwarto ko kahapon.
+        distractors:
+          - Naglilinis ako ng kwarto ko kahapon.
+          - Maglinis ako ng kwarto ko kahapon.
+          - Naglinis ako ng kwarto ko bukas.
+        audio: naglinis_ako_ng_kwarto_ko_kahapon
+        audio_text: Naglinis ako ng kwarto ko kahapon.
+      - type: translate
+        prompt_tl: Naglaba ako kahapon.
+        answer_en: I did the laundry yesterday.
+        accept: ["I washed clothes yesterday", "I did laundry yesterday"]
+        extra_words: [cooked, cleaned, tomorrow]
+        audio: naglaba_ako_kahapon
+      - type: translate
+        prompt_en: My mom is doing laundry now.
+        answer_tl: Naglalaba ang nanay ko ngayon.
+        accept:
+          - "Naglalaba ngayon ang nanay ko"
+          - "Ngayon, naglalaba ang nanay ko"
+        extra_words: [naglaba, naglilinis, kahapon]
+        audio: naglalaba_ang_nanay_ko_ngayon
+      - type: translate
+        prompt_en: I cooked rice and cleaned the kitchen.
+        answer_tl: Nagsaing ako at naglinis ng kusina.
+        accept: ["Nagsaing ako at naglinis ako ng kusina"]
+        extra_words: [naglaba, kwarto, nagluto]
+        audio: nagsaing_naglinis_kusina
+  - id: umverbs-8
+    title: Done, doing, will do
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: eating }
+          - { tl: kakain, en: will eat }
+      - type: choice
+        prompt: "'Kakain' means..."
+        answer: Will eat
+        distractors: [Ate, Eating, Already ate]
+        audio: kakain
+        audio_text: Kakain
+        hint: 'The repeated syllable stays but -um- drops: kain → KAkain (will eat).'
+      - type: match
+        pairs:
+          - { tl: uminom, en: drank }
+          - { tl: umiinom, en: drinking }
+          - { tl: iinom, en: will drink }
+      - type: fill_blank
+        sentence: "Kumain ako kahapon, kumakain ako ngayon, at ___ ako bukas."
+        translation: "I ate yesterday, I am eating now, and I will eat tomorrow."
+        answer: kakain
+        options: [kakain, kumain, kumakain]
+      - type: listen
+        audio: iinom_ako_ng_gatas_bukas
+        answer_tl: Iinom ako ng gatas bukas
+        extra_words: [uminom, kape]
+      - type: choice
+        prompt: "'Magluluto si Nanay bukas' means..."
+        answer: Mom will cook tomorrow
+        distractors: [Mom cooked yesterday, Mom is cooking now, Mom cooks every day]
+        audio: magluluto_si_nanay_bukas
+        audio_text: Magluluto si Nanay bukas.
+        hint: 'MAG verbs keep mag- and repeat the root''s first syllable: magLUluto.'
+      - type: choice
+        prompt: "Hear the difference: which one means 'bought'?"
+        answer: Bumili
+        distractors: [Bibili, Bumibili, Bili]
+        audio: bumili
+        audio_text: Bumili
+        hint: 'bumili = bought; bumibili = buying; bibili = will buy.'
+      - type: translate
+        prompt_tl: Nagluto ako kahapon at magluluto ako bukas.
+        answer_en: I cooked yesterday and I will cook tomorrow.
+        accept: ["I cooked yesterday and will cook tomorrow"]
+        extra_words: [eating, today, rice]
+        audio: nagluto_kahapon_magluluto_bukas
+  - id: umverbs-9
+    title: Will do
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "To say something WILL happen, UM verbs..."
+        answer: Drop -um- and repeat the first syllable (kain → kakain)
+        distractors:
+          - Keep -um- and repeat (kumakain)
+          - Just use the root (kain)
+          - Add nag- in front (nagkain)
+        hint: 'MAG verbs keep mag-: magluluto.'
+      - type: fill_blank
+        sentence: "Bumili ako ng isda kahapon at ___ ako ng manok bukas."
+        translation: "I bought fish yesterday and I will buy chicken tomorrow."
+        answer: bibili
+        options: [bibili, bumili, bumibili]
+      - type: listen
+        audio: maglalaro_sila_ng_basketbol_bukas
+        answer_tl: Maglalaro sila ng basketbol bukas
+        extra_words: [naglalaro, ngayon]
+      - type: fill_blank
+        sentence: "___ ako ng mga damit bukas."
+        translation: "I will wash clothes tomorrow."
+        answer: Maglalaba
+        options: [Maglalaba, Naglaba, Naglalaba]
+      - type: translate
+        prompt_tl: Aalis sila bukas.
+        answer_en: They will leave tomorrow.
+        accept: ["They are leaving tomorrow"]
+        extra_words: [arrived, yesterday, we]
+        audio: aalis_sila_bukas
+      - type: translate
+        prompt_en: We will drink milk tomorrow.
+        answer_tl: Iinom kami ng gatas bukas.
+        accept:
+          - "Bukas, iinom kami ng gatas"
+          - "Iinom kami bukas ng gatas"
+          - "Bukas kami iinom ng gatas"
+        extra_words: [umiinom, kape, ngayon]
+        audio: iinom_kami_ng_gatas_bukas
+      - type: translate
+        prompt_en: She will study tomorrow because there is a test.
+        answer_tl: Mag-aaral siya bukas kasi may pagsusulit.
+        accept: ["Mag-aaral siya bukas dahil may pagsusulit"]
+        extra_words: [nag-aral, ngayon, klase]
+        audio: mag_aaral_siya_bukas_may_pagsusulit
+      - type: translate
+        prompt_en: Grandma will arrive tomorrow. I will cook fish.
+        answer_tl: Darating si Lola bukas. Magluluto ako ng isda.
+        accept:
+          - "Darating bukas si Lola. Magluluto ako ng isda"
+          - "Bukas, darating si Lola. Magluluto ako ng isda"
+        extra_words: [dumating, kahapon, manok]
+        audio: darating_si_lola_magluluto_isda
+        hint: 'dating softens d to r in the "will" form: DArating, not dadating.'
+  - id: umverbs-10
+    title: Na and pa in action
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Kumain na ako, en: I already ate }
+          - { tl: Hindi pa ako kumakain, en: "I haven't eaten yet" }
+          - { tl: Umalis na sila, en: They already left }
+          - { tl: Dumating na si Lola, en: Grandma has already arrived }
+      - type: choice
+        prompt: "'Umalis na ba si Ben?' asks..."
+        answer: Has Ben already left?
+        distractors: [Is Ben arriving?, Will Ben leave tomorrow?, Where did Ben go?]
+        audio: umalis_na_ba_si_ben
+        audio_text: Umalis na ba si Ben?
+      - type: fill_blank
+        sentence: "Naglaba ka ___ ba?"
+        translation: "Have you done the laundry yet?"
+        answer: na
+        options: [na, pa, ba]
+      - type: listen
+        audio: nagsaing_na_ako
+        answer_tl: Nagsaing na ako
+        extra_words: [naglaba, pa]
+      - type: translate
+        prompt_tl: Hindi pa dumarating ang mga bisita.
+        answer_en: The guests haven't arrived yet.
+        accept: ["The guests have not arrived yet", "The guests are not here yet"]
+        extra_words: [already, left, late]
+        audio: hindi_pa_dumarating_ang_mga_bisita
+        hint: 'After "hindi pa", use the doubled (incompleted) form — dating also softens d to r: dumaRAting.'
+      - type: choice
+        prompt: "Your friend asks 'Nagluto ka na ba?' You haven't yet. Say:"
+        answer: Hindi pa ako nagluluto.
+        distractors: ["Oo, nagluto na ako.", Nagluluto pa ako., Magluluto ka ba?]
+        audio: hindi_pa_ako_nagluluto
+        audio_text: Hindi pa ako nagluluto.
+      - type: translate
+        prompt_en: I already bought fish at the market.
+        answer_tl: Bumili na ako ng isda sa palengke.
+        accept: ["Bumili na ako sa palengke ng isda"]
+        extra_words: [pa, tindahan, bibili]
+        audio: bumili_na_ako_ng_isda_sa_palengke
+      - type: translate
+        prompt_en: Dad hasn't left yet. He is still working.
+        answer_tl: Hindi pa umaalis si Tatay. Nagtatrabaho pa siya.
+        extra_words: [na, umalis, opisina]
+        audio: hindi_pa_umaalis_nagtatrabaho_pa
+  - id: umverbs-11
+    title: The verb workshop
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bumili, en: bought }
+          - { tl: bumibili, en: buying }
+          - { tl: bibili, en: will buy }
+          - { tl: nagluto, en: cooked }
+      - type: choice
+        prompt: "Which sentence is about YESTERDAY?"
+        answer: Naglinis kami ng bahay kahapon.
+        distractors:
+          - Maglilinis kami ng bahay bukas.
+          - Naglilinis kami ng bahay ngayon.
+          - Maglinis tayo ng bahay.
+        audio: naglinis_kami_ng_bahay_kahapon
+        audio_text: Naglinis kami ng bahay kahapon.
+      - type: fill_blank
+        sentence: "Dumating na si Lola, at ___ si Lolo bukas."
+        translation: "Grandma has arrived, and Grandpa will arrive tomorrow."
+        answer: darating
+        options: [darating, dumating, dumarating]
+      - type: translate
+        prompt_tl: Araw-araw akong nag-aaral ng Tagalog at sumusulat ng mga kanta.
+        answer_en: Every day I study Tagalog and write songs.
+        accept: ["I study Tagalog and write songs every day"]
+        extra_words: [read, yesterday, books]
+        grading: { hyphens: true }
+        audio: nag_aaral_tagalog_sumusulat_kanta
+      - type: listen
+        audio: kakain_kami_sa_handaan_bukas
+        answer_tl: Kakain kami sa handaan bukas
+        extra_words: [kumain, ngayon]
+      - type: translate
+        prompt_en: I did laundry this morning and I will clean the house tomorrow.
+        answer_tl: Naglaba ako kaninang umaga at maglilinis ako ng bahay bukas.
+        accept:
+          - "Naglaba ako kaninang umaga at maglilinis ng bahay bukas"
+          - "Naglaba ako kaninang umaga at bukas, maglilinis ako ng bahay"
+          - "Kaninang umaga, naglaba ako at maglilinis ako ng bahay bukas"
+        extra_words: [naglalaba, kusina, ngayon]
+        audio: naglaba_kaninang_umaga_maglilinis_bukas
+        hint: '"kaninang umaga" = earlier this morning: kanina + -ng + umaga.'
+      - type: choice
+        prompt: "A friend asks 'Kumain ka na ba?' You haven't eaten yet, but you will eat at home. Say:"
+        answer: Hindi pa. Kakain ako sa bahay.
+        distractors: [Kumain na ako sa bahay., Kumakain pa ako., Ayaw kong kumain kahapon.]
+        audio: hindi_pa_kakain_ako_sa_bahay
+        audio_text: Hindi pa. Kakain ako sa bahay.
+      - type: translate
+        prompt_en: She wrote a song. She will sing tomorrow.
+        answer_tl: Sumulat siya ng kanta. Kakanta siya bukas.
+        accept:
+          - "Sumulat siya ng kanta. Bukas, kakanta siya"
+          - "Sumulat siya ng kanta. Bukas siya kakanta"
+        extra_words: [sumusulat, sasayaw, ngayon]
+        audio: sumulat_kanta_kakanta_bukas
+      - type: translate
+        prompt_tl: Bumili ako ng isda sa palengke, nagluto ako sa kusina, at kumain ang pamilya ko.
+        answer_en: I bought fish at the market, I cooked in the kitchen, and my family ate.
+        accept: ["I bought fish at the market, cooked in the kitchen, and my family ate"]
+        extra_words: [chicken, store, tomorrow]
+        audio: bumili_isda_nagluto_kumain_pamilya

@@ -218,3 +218,390 @@ lessons:
         accept: ["He is good at math", "She's good at math", "He's good at math"]
         extra_words: [difficult, easy, history]
         hint: '"magaling sa..." = good at...'
+  - id: work-5
+    title: Who does what?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nagtuturo, en: teaches }
+          - { tl: nagtitinda, en: sells }
+          - { tl: nagmamaneho, en: drives }
+          - { tl: nagtatrabaho, en: works }
+      - type: choice
+        prompt: "'Nagtuturo siya' means..."
+        answer: She teaches
+        distractors: [She studies, She sells, She drives]
+        audio: nagtuturo_siya
+        audio_text: Nagtuturo siya.
+        hint: 'From "turo" (teach): nag- + the repeated "tu" = teaches / is teaching.'
+      - type: translate
+        prompt_tl: Nagtuturo ng Ingles ang guro ko.
+        answer_en: My teacher teaches English.
+        accept: ["My teacher is teaching English"]
+        extra_words: [math, studies, student]
+        audio: nagtuturo_ng_ingles_ang_guro_ko
+      - type: fill_blank
+        sentence: "Nagmamaneho ng jeepney ang ___."
+        translation: "The driver drives a jeepney."
+        answer: drayber
+        options: [drayber, nars, guro]
+      - type: fill_blank
+        sentence: "___ ng isda ang tindera sa palengke."
+        translation: "The vendor sells fish at the market."
+        answer: Nagtitinda
+        options: [Nagtitinda, Nagtuturo, Nagmamaneho]
+      - type: listen
+        audio: nagtitinda_ng_isda_ang_tindera
+        answer_tl: Nagtitinda ng isda ang tindera
+        extra_words: [nagtuturo, guro]
+      - type: choice
+        prompt: "Who 'nagtuturo sa paaralan'?"
+        answer: Ang guro
+        distractors: [Ang drayber, Ang tindera, Ang magsasaka]
+      - type: translate
+        prompt_en: My dad drives a jeepney.
+        answer_tl: Nagmamaneho ng jeepney ang tatay ko.
+        accept: ["Nagmamaneho ang tatay ko ng jeepney."]
+        extra_words: [nanay, nagtitinda, siya]
+        audio: nagmamaneho_ng_jeepney_ang_tatay_ko
+      - type: translate
+        prompt_en: She teaches math.
+        answer_tl: Nagtuturo siya ng matematika.
+        accept: ["Nagtuturo siya ng math."]
+        extra_words: [nag-aaral, Ingles, ako]
+        audio: nagtuturo_siya_ng_matematika
+  - id: work-6
+    title: Where do you work?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ospital, en: hospital }
+          - { tl: opisina, en: office }
+          - { tl: paaralan, en: school }
+          - { tl: palengke, en: market }
+      - type: choice
+        prompt: "'Saan ka nagtatrabaho?' asks..."
+        answer: Where do you work?
+        distractors: [What is your job?, When do you work?, Do you like your work?]
+        audio: saan_ka_nagtatrabaho
+        audio_text: Saan ka nagtatrabaho?
+      - type: translate
+        prompt_tl: Sa ospital nagtatrabaho ang nanay ko.
+        answer_en: My mom works at the hospital.
+        accept: ["My mother works at the hospital", "My mom works in the hospital", "My mother works in the hospital"]
+        extra_words: [school, dad, office]
+        audio: sa_ospital_nagtatrabaho_ang_nanay_ko
+        hint: 'Putting "Sa ospital" first stresses the place.'
+      - type: fill_blank
+        sentence: "Saan ___ nagtatrabaho?"
+        translation: "Where do you work?"
+        answer: ka
+        options: [ka, ko, mo]
+        hint: 'Short pronouns like "ka" slip in right after the question word.'
+      - type: choice
+        prompt: "Where does a magsasaka work?"
+        answer: Sa bukid
+        distractors: [Sa opisina, Sa ospital, Sa paaralan]
+        hint: '"bukid" = farm / field'
+      - type: listen
+        audio: saan_ka_nagtatrabaho
+        answer_tl: Saan ka nagtatrabaho
+        accept: ["Saan ka nagtatrabaho?"]
+        extra_words: [ano, ako]
+      - type: translate
+        prompt_tl: Nars siya sa ospital.
+        answer_en: She is a nurse at the hospital.
+        accept: ["He is a nurse at the hospital", "She's a nurse at the hospital", "He's a nurse at the hospital", "She is a nurse in the hospital", "He is a nurse in the hospital"]
+        extra_words: [doctor, office, I]
+        audio: nars_siya_sa_ospital
+      - type: translate
+        prompt_en: I work at an office.
+        answer_tl: Nagtatrabaho ako sa opisina.
+        accept: ["Sa opisina ako nagtatrabaho."]
+        extra_words: [ospital, ka, nag-aaral]
+        audio: nagtatrabaho_ako_sa_opisina
+      - type: translate
+        prompt_en: Where does your older sister work?
+        answer_tl: Saan nagtatrabaho ang ate mo?
+        extra_words: [ano, kuya, ka]
+        audio: saan_nagtatrabaho_ang_ate_mo
+  - id: work-7
+    title: What time?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: oras, en: time / hour }
+          - { tl: alas-otso, en: "8 o'clock" }
+          - { tl: alas-singko, en: "5 o'clock" }
+          - { tl: pasok, en: start of work or school }
+      - type: choice
+        prompt: "'Anong oras na?' asks..."
+        answer: What time is it?
+        distractors: [How many hours?, Where is the clock?, Are you late?]
+        audio: anong_oras_na
+        audio_text: Anong oras na?
+        hint: '"Anong" = ano + -ng, linking to "oras".'
+      - type: choice
+        prompt: "Clock times use Spanish numbers. 'Alas-otso' is..."
+        answer: "8:00"
+        distractors: ["5:00", "7:00", "10:00"]
+        audio: alas_otso
+        audio_text: Alas-otso
+      - type: translate
+        prompt_tl: Alas-otso ang pasok ko.
+        answer_en: I start at eight o'clock.
+        accept: ["I start at 8 o'clock", "I start at eight", "My work starts at eight o'clock", "My school starts at eight o'clock", "My class starts at eight o'clock"]
+        extra_words: [five, end, night]
+        audio: alas_otso_ang_pasok_ko
+        hint: '"pasok" = when you start work or school (literally "going in").'
+      - type: fill_blank
+        sentence: "Anong ___ ang pasok mo?"
+        translation: "What time do you start?"
+        answer: oras
+        options: [oras, araw, minuto]
+      - type: listen
+        audio: anong_oras_ang_pasok_mo
+        answer_tl: Anong oras ang pasok mo
+        accept: ["Anong oras ang pasok mo?"]
+        extra_words: [alas-otso, ko]
+      - type: choice
+        prompt: "Work ends at 5:00 PM. You say the time as..."
+        answer: alas-singko
+        distractors: [alas-otso, lima, limang minuto]
+      - type: translate
+        prompt_en: It's eight o'clock.
+        answer_tl: Alas-otso na.
+        accept: ["Alas-otso."]
+        extra_words: [alas-singko, oras, ang]
+        audio: alas_otso_na
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: What time is your class?
+        answer_tl: Anong oras ang klase mo?
+        extra_words: [ano, araw, ko]
+        audio: anong_oras_ang_klase_mo
+  - id: work-8
+    title: My schedule
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umaga, en: morning }
+          - { tl: tanghali, en: noon }
+          - { tl: hapon, en: afternoon }
+          - { tl: gabi, en: evening }
+      - type: choice
+        prompt: "'Tanghali' means..."
+        answer: Noon
+        distractors: [Morning, Evening, Midnight]
+        audio: tanghali
+        audio_text: Tanghali
+      - type: translate
+        prompt_tl: Mula alas-otso hanggang alas-singko ang trabaho ko.
+        answer_en: My work is from eight to five.
+        accept: ["I work from eight to five", "My work is from 8 to 5", "I work from 8 to 5", "My job is from eight to five"]
+        extra_words: [seven, noon, night]
+        audio: mula_alas_otso_hanggang_alas_singko_ang_trabaho_ko
+        hint: '"mula ... hanggang" = from ... until. You met hanggang giving directions.'
+      - type: fill_blank
+        sentence: "Kumakain kami sa ___."
+        translation: "We eat at noon."
+        answer: tanghali
+        options: [tanghali, oras, opisina]
+      - type: fill_blank
+        sentence: "May pasok ako ___ alas-otso hanggang alas-singko."
+        translation: "I have work from eight to five."
+        answer: mula
+        options: [mula, tapos, sa]
+      - type: listen
+        audio: kumakain_kami_sa_tanghali
+        answer_tl: Kumakain kami sa tanghali
+        extra_words: [gabi, umaga]
+      - type: choice
+        prompt: "'Anong oras ka uuwi?' asks..."
+        answer: What time will you go home?
+        distractors: [What time do you start?, Where do you live?, Are you going to work?]
+        audio: anong_oras_ka_uuwi
+        audio_text: Anong oras ka uuwi?
+        hint: '"uuwi" = will go home.'
+      - type: translate
+        prompt_en: I'll go home at five.
+        answer_tl: Alas-singko ako uuwi.
+        accept: ["Uuwi ako ng alas-singko.", "Uuwi ako nang alas-singko."]
+        extra_words: [alas-otso, ka, pasok]
+        audio: alas_singko_ako_uuwi
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I work from eight to five.
+        answer_tl: Nagtatrabaho ako mula alas-otso hanggang alas-singko.
+        accept: ["Mula alas-otso hanggang alas-singko ako nagtatrabaho."]
+        extra_words: [sa, tanghali, ka]
+        audio: nagtatrabaho_ako_mula_alas_otso_hanggang_alas_singko
+        grading: { hyphens: true }
+  - id: work-9
+    title: In the classroom
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: makinig, en: to listen }
+          - { tl: tanong, en: question }
+          - { tl: aralin, en: lesson }
+          - { tl: estudyante, en: student }
+      - type: choice
+        prompt: "The teacher claps and says 'Makinig kayo!' She wants everyone to..."
+        answer: Listen
+        distractors: [Go home, Write, Sing]
+        audio: makinig_kayo
+        audio_text: Makinig kayo!
+        hint: '"kayo" = you all.'
+      - type: choice
+        prompt: "You raise your hand to ask something. You say:"
+        answer: May tanong po ako.
+        distractors: [Makinig po kayo., Wala pong klase., Guro po ako.]
+      - type: translate
+        prompt_tl: May tanong ba kayo?
+        answer_en: Do you have any questions?
+        accept: ["Do you have a question?", "Do you have questions?", "Do you all have questions?", "Any questions?"]
+        extra_words: [lesson, teacher, I]
+        audio: may_tanong_ba_kayo
+      - type: fill_blank
+        sentence: "Makinig kayo sa ___."
+        translation: "Listen to the teacher."
+        answer: guro
+        options: [guro, libro, bolpen]
+      - type: listen
+        audio: may_tanong_po_ako
+        answer_tl: May tanong po ako
+        extra_words: [kayo, wala]
+      - type: translate
+        prompt_tl: Nasaan ang libro at bolpen mo?
+        answer_en: Where are your book and pen?
+        accept: ["Where is your book and pen?", "Where are your book and your pen?"]
+        extra_words: [my, lesson, class]
+        audio: nasaan_ang_libro_at_bolpen_mo
+      - type: translate
+        prompt_en: Listen to the lesson.
+        answer_tl: Makinig kayo sa aralin.
+        accept: ["Makinig ka sa aralin."]
+        extra_words: [guro, ng, tanong]
+        audio: makinig_kayo_sa_aralin
+      - type: translate
+        prompt_en: I have a question.
+        answer_tl: May tanong ako.
+        accept: ["May tanong po ako."]
+        extra_words: [po, wala, ka]
+        audio: may_tanong_ako
+  - id: work-10
+    title: I don't understand
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Pakiulit po., en: Please repeat. }
+          - { tl: Dahan-dahan po., en: "Slowly, please." }
+          - { tl: Hindi ko po naiintindihan., en: "I don't understand." }
+          - { tl: May tanong po ako., en: I have a question. }
+      - type: choice
+        prompt: "'Hindi ko naiintindihan' means..."
+        answer: I don't understand
+        distractors: [I don't know, I don't like it, I can't hear]
+        audio: hindi_ko_naiintindihan
+        audio_text: Hindi ko naiintindihan.
+        hint: 'From "intindi" (understand). To a teacher, add po: Hindi ko po naiintindihan.'
+      - type: choice
+        prompt: "The teacher spoke too fast. You ask her to say it again:"
+        answer: Pakiulit po.
+        distractors: [Makinig po kayo., Salamat po., Paalam po.]
+        hint: '"paki-" + a verb root = please do it: pakiulit = please repeat.'
+      - type: translate
+        prompt_tl: Pakiulit po, dahan-dahan lang.
+        answer_en: Please repeat, slowly.
+        accept: ["Please repeat that slowly", "Please repeat it slowly", "Please repeat, just slowly", "Please say it again, slowly"]
+        extra_words: [fast, question, teacher]
+        audio: pakiulit_po_dahan_dahan_lang
+      - type: fill_blank
+        sentence: "Hindi ko po ___."
+        translation: "I don't understand."
+        answer: naiintindihan
+        options: [naiintindihan, nag-aaral, makinig]
+      - type: listen
+        audio: dahan_dahan_po
+        answer_tl: Dahan-dahan po
+        extra_words: [lang, pakiulit]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Naiintindihan mo ba ang aralin?
+        answer_en: Do you understand the lesson?
+        extra_words: [question, teacher, don't]
+        audio: naiintindihan_mo_ba_ang_aralin
+      - type: translate
+        prompt_en: I don't understand the question.
+        answer_tl: Hindi ko naiintindihan ang tanong.
+        accept: ["Hindi ko po naiintindihan ang tanong."]
+        extra_words: [aralin, mo, ba]
+        audio: hindi_ko_naiintindihan_ang_tanong
+      - type: translate
+        prompt_en: Slowly, please.
+        answer_tl: Dahan-dahan po.
+        accept: ["Dahan-dahan lang po."]
+        extra_words: [pakiulit, lang, ako]
+        audio: dahan_dahan_po
+        grading: { hyphens: true }
+  - id: work-11
+    title: A day at work and school
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A classmate asks 'Ano ang trabaho ng nanay mo?' Your mom teaches at a university. You answer:"
+        answer: Nagtuturo siya sa unibersidad.
+        distractors: [Nag-aaral siya sa unibersidad., Nagtitinda siya sa palengke., Nagmamaneho siya ng jeepney.]
+        audio: ano_ang_trabaho_ng_nanay_mo
+        audio_text: Ano ang trabaho ng nanay mo?
+      - type: translate
+        prompt_tl: Mula alas-otso hanggang alas-singko ang klase ko, tapos uuwi ako.
+        answer_en: My classes are from eight to five, then I go home.
+        accept: ["My class is from eight to five, then I go home", "My classes are from eight to five, then I'll go home", "My class is from eight to five, then I'll go home", "My classes are from eight to five, then I will go home"]
+        extra_words: [seven, work, noon]
+        audio: mula_alas_otso_hanggang_alas_singko_ang_klase_ko
+      - type: fill_blank
+        sentence: "Anong oras ang ___ mo bukas?"
+        translation: "What time do you start tomorrow?"
+        answer: pasok
+        options: [pasok, tanong, baha]
+      - type: match
+        pairs:
+          - { tl: nagtitinda, en: sells }
+          - { tl: tanghali, en: noon }
+          - { tl: pakiulit, en: please repeat }
+          - { tl: mula, en: from }
+      - type: listen
+        audio: hindi_ko_po_naiintindihan
+        answer_tl: Hindi ko po naiintindihan
+        extra_words: [mo, makinig]
+      - type: translate
+        prompt_en: My older brother is an engineer. He works in an office.
+        answer_tl: Inhinyero ang kuya ko. Nagtatrabaho siya sa opisina.
+        extra_words: [ate, ospital, ako]
+        audio: inhinyero_ang_kuya_ko_nagtatrabaho_siya_sa_opisina
+      - type: choice
+        prompt: "The radio says 'Walang pasok bukas dahil sa bagyo.' The students will..."
+        answer: Stay home — no classes
+        distractors: [Go to school early, Have a test, Study at the university]
+        audio: walang_pasok_bukas_dahil_sa_bagyo
+        audio_text: Walang pasok bukas dahil sa bagyo.
+      - type: translate
+        prompt_en: Please repeat the question.
+        answer_tl: Pakiulit po ang tanong.
+        extra_words: [aralin, ko, ng]
+        audio: pakiulit_po_ang_tanong
+      - type: translate
+        prompt_en: What time is it? It's five o'clock.
+        answer_tl: Anong oras na? Alas-singko na.
+        accept: ["Anong oras na? Alas-singko."]
+        extra_words: [alas-otso, ang, pasok]
+        audio: anong_oras_na_alas_singko_na
+        grading: { hyphens: true }

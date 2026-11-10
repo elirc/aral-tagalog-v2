@@ -217,3 +217,367 @@ lessons:
         distractors: [Maligayang kaarawan, Manigong Bagong Taon, Kain tayo]
         audio: maligayang_pasko_po_lola
         audio_text: Maligayang Pasko po, Lola.
+  - id: fiesta-5
+    title: The birthday party
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: keyk, en: cake }
+          - { tl: kandila, en: candle }
+          - { tl: kaarawan, en: birthday }
+          - { tl: regalo, en: gift }
+      - type: choice
+        prompt: "'Ilang taon ka na?' asks..."
+        answer: How old are you?
+        distractors: [When is your birthday?, How much is the cake?, How many candles are there?]
+        audio: ilang_taon_ka_na
+        audio_text: Ilang taon ka na?
+        hint: '"taon" = year — literally "how many years are you now?"'
+      - type: translate
+        prompt_tl: Sampung taon na ako.
+        answer_en: I'm ten years old.
+        accept: ["I am ten years old", "I'm ten", "I am ten"]
+        extra_words: [five, months, today]
+        audio: sampung_taon_na_ako
+        hint: 'Numbers link to "taon" with -ng: sampu → sampung taon.'
+      - type: fill_blank
+        sentence: "Hipan mo ang ___!"
+        translation: "Blow out the candles!"
+        answer: kandila
+        options: [kandila, keyk, regalo]
+        audio: hipan_mo_ang_kandila
+        hint: '"hipan mo" = blow (it) — a friendly command.'
+      - type: listen
+        audio: may_keyk_at_kandila
+        answer_tl: May keyk at kandila
+        extra_words: [regalo, wala]
+      - type: choice
+        prompt: "At a Filipino birthday, long pansit noodles are served for..."
+        answer: A long life
+        distractors: [Good luck in school, A rich harvest, A happy marriage]
+        hint: Long noodles mean a long life — so don't cut them short!
+      - type: translate
+        prompt_en: How old are you, Grandma?
+        answer_tl: Ilang taon na po kayo, Lola?
+        accept: ["Ilang taon na kayo, Lola?"]
+        extra_words: [ka, ikaw, kaarawan]
+        audio: ilang_taon_na_po_kayo_lola
+        hint: 'With elders, "ka" becomes "po kayo".'
+      - type: translate
+        prompt_en: I'm seven years old.
+        answer_tl: Pitong taon na ako.
+        extra_words: [pito, ka, sampung]
+        audio: pitong_taon_na_ako
+  - id: fiesta-6
+    title: Gifts and thanks
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: para sa iyo, en: for you }
+          - { tl: buksan mo, en: open it }
+          - { tl: regalo, en: gift }
+          - { tl: maraming salamat, en: thank you very much }
+      - type: choice
+        prompt: "'Para sa iyo ito' means..."
+        answer: This is for you
+        distractors: [Is this for me?, This is mine, Where is it?]
+        audio: para_sa_iyo_ito
+        audio_text: Para sa iyo ito.
+      - type: translate
+        prompt_tl: Maraming salamat sa regalo!
+        answer_en: Thank you very much for the gift!
+        accept: ["Thanks a lot for the gift!", "Thank you so much for the gift!", "Many thanks for the gift!"]
+        extra_words: [birthday, cake, party]
+        audio: maraming_salamat_sa_regalo
+        hint: '"maraming salamat" = many thanks.'
+      - type: fill_blank
+        sentence: "Buksan mo ___!"
+        translation: "Go ahead, open it!"
+        answer: na
+        options: [na, ba, ang]
+        audio: buksan_mo_na
+        hint: '"na" here nudges: go ahead, now!'
+      - type: choice
+        prompt: "You open a gift and love it. You say:"
+        answer: Ang ganda! Salamat!
+        distractors: ["Nakakainis! Salamat!", "Ano ang nangyari?", "Pasensya na."]
+        audio: ang_ganda_salamat
+        audio_text: Ang ganda! Salamat!
+      - type: listen
+        audio: para_sa_iyo_ito
+        answer_tl: Para sa iyo ito
+        extra_words: [ako, regalo]
+      - type: translate
+        prompt_en: This is for you, Ana.
+        answer_tl: Para sa iyo ito, Ana.
+        accept: ["Ana, para sa iyo ito"]
+        extra_words: [ako, regalo, ba]
+        audio: para_sa_iyo_ito_ana
+      - type: translate
+        prompt_en: I bought a gift for my mother.
+        answer_tl: Bumili ako ng regalo para sa nanay ko.
+        extra_words: [kaarawan, mo, ka]
+        audio: bumili_ako_ng_regalo_para_sa_nanay_ko
+  - id: fiesta-7
+    title: Fiesta day
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: prusisyon, en: procession }
+          - { tl: banda, en: band }
+          - { tl: lechon, en: roast pig }
+          - { tl: handa, en: party food }
+      - type: choice
+        prompt: "'May lechon sa handaan!' means..."
+        answer: There's roast pig at the party!
+        distractors: [There's no food at the party!, The roast pig is expensive!, Where is the party?]
+        audio: may_lechon_sa_handaan
+        audio_text: May lechon sa handaan!
+      - type: translate
+        prompt_tl: May prusisyon mamayang gabi.
+        answer_en: There's a procession tonight.
+        accept: ["There is a procession tonight", "There will be a procession tonight"]
+        extra_words: [tomorrow, band, morning]
+        audio: may_prusisyon_mamayang_gabi
+        hint: '"mamaya" = later; "mamayang gabi" = tonight.'
+      - type: fill_blank
+        sentence: "Masaya ang ___ sa pista."
+        translation: "The band at the fiesta is fun."
+        answer: banda
+        options: [banda, lechon, simbahan]
+        audio: masaya_ang_banda_sa_pista
+      - type: listen
+        audio: pumunta_kayo_sa_amin
+        answer_tl: Pumunta kayo sa amin
+        extra_words: [kami, pista]
+        hint: '"sa amin" = to our place.'
+      - type: choice
+        prompt: "Your friend says 'Pista sa amin bukas. Pumunta kayo!' They are..."
+        answer: Inviting you to their town's fiesta
+        distractors: [Asking where the fiesta is, Saying the fiesta is over, "Telling you they can't come"]
+        audio: pista_sa_amin_bukas_pumunta_kayo
+        audio_text: Pista sa amin bukas. Pumunta kayo!
+        hint: On fiesta day, every house in town opens its doors to guests.
+      - type: translate
+        prompt_en: The roast pig is delicious!
+        answer_tl: Masarap ang lechon!
+        extra_words: [mahal, handa, ba]
+        audio: masarap_ang_lechon
+      - type: translate
+        prompt_en: There are many guests at our fiesta.
+        answer_tl: Maraming bisita sa pista namin.
+        accept: ["Sa pista namin, maraming bisita"]
+        extra_words: [kami, handa, ang]
+        audio: maraming_bisita_sa_pista_namin
+  - id: fiesta-8
+    title: Christmas traditions
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ninong, en: godfather }
+          - { tl: ninang, en: godmother }
+          - { tl: pamasko, en: Christmas gift }
+          - { tl: Noche Buena, en: Christmas Eve feast }
+      - type: choice
+        prompt: "On Christmas Day, children visit their ninong and ninang to..."
+        answer: Receive a pamasko (a gift or money)
+        distractors: [Sing at Simbang Gabi, Cook the Noche Buena, Hang the parol]
+        hint: Godparents are expected to give their godchildren a pamasko.
+      - type: translate
+        prompt_tl: Kumakain kami ng Noche Buena sa hatinggabi.
+        answer_en: We eat the Noche Buena at midnight.
+        accept: ["We eat Noche Buena at midnight", "We have Noche Buena at midnight", "We have the Noche Buena at midnight"]
+        extra_words: [morning, church, lantern]
+        audio: kumakain_kami_ng_noche_buena_sa_hatinggabi
+        hint: '"hatinggabi" = midnight — literally the "half of the night".'
+      - type: choice
+        prompt: "You greet an elder by touching their hand to your forehead. You say:"
+        answer: Mano po
+        distractors: [Kain tayo, Paalam po, Tuloy po kayo]
+        audio: mano_po
+        audio_text: Mano po.
+        hint: The "mano" is a sign of respect for elders, all year round.
+      - type: fill_blank
+        sentence: "Maligayang Pasko po, ___!"
+        translation: "Merry Christmas, Godmother!"
+        answer: Ninang
+        options: [Ninang, Ninong, Nanay]
+        audio: maligayang_pasko_po_ninang
+      - type: listen
+        audio: mano_po_ninong
+        answer_tl: Mano po, Ninong
+        extra_words: [lola, pasko]
+      - type: translate
+        prompt_en: Where is my Christmas gift, Godfather?
+        answer_tl: Nasaan po ang pamasko ko, Ninong?
+        accept: ["Nasaan ang pamasko ko, Ninong?"]
+        extra_words: [regalo, mo, ninang]
+        audio: nasaan_po_ang_pamasko_ko_ninong
+      - type: translate
+        prompt_en: We go to Grandma's house every Christmas.
+        answer_tl: Pumupunta kami sa bahay ni Lola tuwing Pasko.
+        accept: ["Tuwing Pasko, pumupunta kami sa bahay ni Lola."]
+        extra_words: [pupunta, ng, Lolo]
+        audio: pumupunta_kami_sa_bahay_ni_lola_tuwing_pasko
+        hint: '"tuwing" = every (time): tuwing Pasko = every Christmas.'
+  - id: fiesta-9
+    title: Caroling and New Year
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nangangaroling, en: caroling }
+          - { tl: paputok, en: firecrackers }
+          - { tl: hatinggabi, en: midnight }
+          - { tl: Bagong Taon, en: New Year }
+      - type: choice
+        prompt: "Carolers at your gate call out 'Namamasko po!' They are..."
+        answer: Asking for a Christmas treat
+        distractors: [Saying goodbye, Inviting you to church, Selling lanterns]
+        audio: namamasko_po
+        audio_text: Namamasko po!
+        hint: 'From "pamasko" — they hope for a little gift or some coins.'
+      - type: translate
+        prompt_tl: Nangangaroling ang mga bata tuwing Disyembre.
+        answer_en: The children go caroling every December.
+        accept: ["The kids go caroling every December", "Children go caroling every December", "Kids go caroling every December"]
+        extra_words: [lanterns, January, church]
+        audio: nangangaroling_ang_mga_bata_tuwing_disyembre
+      - type: fill_blank
+        sentence: "Maingay ang ___ sa Bagong Taon."
+        translation: "The firecrackers are loud at New Year."
+        answer: paputok
+        options: [paputok, parol, simbahan]
+        audio: maingay_ang_paputok_sa_bagong_taon
+        hint: '"maingay" = noisy, loud.'
+      - type: choice
+        prompt: "At the stroke of midnight on New Year's Eve, many Filipino kids..."
+        answer: Jump, to grow taller
+        distractors: [Go to sleep, Open their Christmas gifts, Eat only rice]
+        hint: Tradition says jumping at midnight makes you tall. Twelve round fruits on the table bring luck too!
+      - type: listen
+        audio: manigong_bagong_taon_po
+        answer_tl: Manigong Bagong Taon po
+        extra_words: [maligayang, pasko]
+      - type: translate
+        prompt_en: Happy New Year, Grandpa!
+        answer_tl: Manigong Bagong Taon po, Lolo!
+        accept: ["Manigong Bagong Taon, Lolo!"]
+        extra_words: [maligayang, pasko, lola]
+        audio: manigong_bagong_taon_po_lolo
+      - type: translate
+        prompt_en: There are many firecrackers at midnight.
+        answer_tl: Maraming paputok sa hatinggabi.
+        accept: ["Sa hatinggabi, maraming paputok"]
+        extra_words: [parol, umaga, ang]
+        audio: maraming_paputok_sa_hatinggabi
+  - id: fiesta-10
+    title: Wishes and blessings
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sana, en: I hope }
+          - { tl: Binabati kita, en: Congratulations }
+          - { tl: Maligayang bati, en: Best wishes }
+          - { tl: Pagpalain ka ng Diyos, en: God bless you }
+      - type: choice
+        prompt: "'Sana masaya ka sa kaarawan mo' means..."
+        answer: I hope you're happy on your birthday
+        distractors: ["You're happy on your birthday", "Are you happy on your birthday?", "I was happy on your birthday"]
+        audio: sana_masaya_ka_sa_kaarawan_mo
+        audio_text: Sana masaya ka sa kaarawan mo.
+        hint: '"sana" = I hope / hopefully — it turns any sentence into a wish.'
+      - type: translate
+        prompt_tl: Sana masaya ang Pasko ninyo.
+        answer_en: I hope your Christmas is happy.
+        accept: ["I hope you have a merry Christmas", "I hope your Christmas is merry", "Hopefully your Christmas is happy"]
+        extra_words: [birthday, sad, my]
+        audio: sana_masaya_ang_pasko_ninyo
+      - type: fill_blank
+        sentence: "___ marami kang regalo!"
+        translation: "I hope you get lots of gifts!"
+        answer: Sana
+        options: [Sana, Kasi, Bakit]
+        audio: sana_marami_kang_regalo
+        hint: '"ka" slips in after "marami" with the -ng linker: marami kang ...'
+      - type: choice
+        prompt: "Your friend just graduated. You say:"
+        answer: Binabati kita!
+        distractors: [Pasensya na!, Mano po!, Namamasko po!]
+        audio: binabati_kita
+        audio_text: Binabati kita!
+      - type: listen
+        audio: pagpalain_ka_ng_diyos
+        answer_tl: Pagpalain ka ng Diyos
+        extra_words: [sana, kita]
+      - type: translate
+        prompt_en: Happy birthday! I hope you're happy.
+        answer_tl: Maligayang kaarawan! Sana masaya ka.
+        extra_words: [pasko, ako, malungkot]
+        audio: maligayang_kaarawan_sana_masaya_ka
+      - type: translate
+        prompt_en: Congratulations! God bless you.
+        answer_tl: Binabati kita! Pagpalain ka ng Diyos.
+        extra_words: [sana, ako, salamat]
+        audio: binabati_kita_pagpalain_ka_ng_diyos
+  - id: fiesta-11
+    title: At the party
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: hatinggabi, en: midnight }
+          - { tl: prusisyon, en: procession }
+          - { tl: pamasko, en: Christmas gift }
+          - { tl: kandila, en: candle }
+      - type: choice
+        prompt: "The host says 'Kumain pa kayo! Marami pang handa.' They mean..."
+        answer: "Have some more! There's lots of food left"
+        distractors: [The food is all gone, Please go home now, "Let's cook more food"]
+        audio: kumain_pa_kayo_marami_pang_handa
+        audio_text: Kumain pa kayo! Marami pang handa.
+        hint: '"pa" = more / still.'
+      - type: translate
+        prompt_tl: Bukas ang kaarawan ni Lolo. Bumili ako ng keyk.
+        answer_en: "Grandpa's birthday is tomorrow. I bought a cake."
+        accept: ["Tomorrow is Grandpa's birthday. I bought a cake.", "Grandpa's birthday is tomorrow. I bought cake."]
+        extra_words: [today, gift, candle]
+        audio: bukas_ang_kaarawan_ni_lolo_bumili_ako_ng_keyk
+      - type: fill_blank
+        sentence: "Salamat ___ imbitasyon!"
+        translation: "Thanks for the invitation!"
+        answer: sa
+        options: [sa, ng, ang]
+        audio: salamat_sa_imbitasyon
+      - type: listen
+        audio: sana_masaya_ang_bagong_taon_ninyo
+        answer_tl: Sana masaya ang Bagong Taon ninyo
+        extra_words: [Pasko, namin]
+      - type: choice
+        prompt: "A child presses your hand to her forehead and says 'Mano po.' You answer:"
+        answer: Pagpalain ka ng Diyos.
+        distractors: [Walang anuman., Namamasko po., Kain tayo!]
+        audio: pagpalain_ka_ng_diyos
+        audio_text: Pagpalain ka ng Diyos.
+      - type: translate
+        prompt_en: Merry Christmas! This is for you.
+        answer_tl: Maligayang Pasko! Para sa iyo ito.
+        extra_words: [kaarawan, ako, regalo]
+        audio: maligayang_pasko_para_sa_iyo_ito
+      - type: translate
+        prompt_en: Come to our fiesta! There's roast pig.
+        answer_tl: Halika sa pista namin! May lechon.
+        accept: ["Halika sa pista namin! May lechon kami."]
+        extra_words: [handaan, wala, kami]
+        audio: halika_sa_pista_namin_may_lechon
+      - type: translate
+        prompt_en: Thank you for the cake and the gift!
+        answer_tl: Salamat sa keyk at sa regalo!
+        accept: ["Salamat sa keyk at regalo!"]
+        extra_words: [kandila, ng, para]
+        audio: salamat_sa_keyk_at_sa_regalo

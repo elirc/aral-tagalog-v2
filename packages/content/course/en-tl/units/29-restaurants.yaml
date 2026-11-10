@@ -236,3 +236,404 @@ lessons:
         accept: ["The dishes at the eatery are cheap and really delicious", "The food at the eatery is cheap and truly delicious", "The main dish at the eatery is cheap and really delicious"]
         extra_words: [expensive, restaurant, bill]
         audio: mura_ang_ulam_sa_karinderya_at_masarap_talaga
+  - id: resto-5
+    title: At the turo-turo
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: turo-turo, en: point-point eatery }
+          - { tl: pagkain, en: food }
+          - { tl: sabaw, en: broth }
+          - { tl: ulam, en: main dish }
+      - type: choice
+        prompt: "At a turo-turo, you order by..."
+        answer: Pointing at the food
+        distractors: [Reading a menu, Calling a waiter, Lining up at a cashier]
+        hint: '"Turo" means point — you literally point at the pots you want.'
+      - type: choice
+        prompt: "'Pagkain' means..."
+        answer: Food
+        distractors: [Drink, Dessert, Kitchen]
+        audio: pagkain
+        audio_text: Pagkain
+      - type: translate
+        prompt_tl: Ano po ang ulam ninyo ngayon?
+        answer_en: What is your dish today?
+        accept: ["What is your main dish today?", "What are your dishes today?", "What's your dish today?"]
+        extra_words: [soup, tomorrow, delicious]
+        audio: ano_po_ang_ulam_ninyo_ngayon
+      - type: fill_blank
+        sentence: "Masarap ang ___ ng sinigang."
+        translation: "The broth of the sinigang is delicious."
+        answer: sabaw
+        options: [sabaw, pagkain, baso]
+      - type: listen
+        audio: maraming_pagkain_sa_turo_turo
+        answer_tl: Maraming pagkain sa turo-turo
+        extra_words: [masarap, karinderya]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Ito po ang gusto ko.
+        answer_en: This is what I want.
+        accept: ["This is what I like", "This is the one I want"]
+        extra_words: [soup, that, cheap]
+        audio: ito_po_ang_gusto_ko
+      - type: translate
+        prompt_en: There is a lot of delicious food at the turo-turo.
+        answer_tl: Maraming masarap na pagkain sa turo-turo.
+        accept: ["Marami pong masarap na pagkain sa turo-turo"]
+        extra_words: [karinderya, sabaw, mahal]
+        audio: maraming_masarap_na_pagkain_sa_turo_turo
+        grading: { hyphens: true }
+  - id: resto-6
+    title: Drinks and dessert
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: inumin, en: drink }
+          - { tl: panghimagas, en: dessert }
+          - { tl: tubig, en: water }
+          - { tl: kape, en: coffee }
+      - type: choice
+        prompt: "'Inumin' means..."
+        answer: A drink
+        distractors: [A dessert, A dish, A drinking glass]
+        audio: inumin
+        audio_text: Inumin
+      - type: translate
+        prompt_en: What is your drink?
+        answer_tl: Ano ang inumin mo?
+        accept: ["Ano po ang inumin ninyo?"]
+        extra_words: [pagkain, saan, ko]
+        audio: ano_ang_inumin_mo
+      - type: translate
+        prompt_tl: Malamig na tubig po, salamat.
+        answer_en: Cold water, please. Thank you.
+        accept: ["Cold water please, thank you", "Cold water, thanks"]
+        extra_words: [hot, coffee, milk]
+        audio: malamig_na_tubig_po_salamat
+      - type: fill_blank
+        sentence: "Ano ang ___ ninyo? — Halo-halo po."
+        translation: "What is your dessert? — Halo-halo."
+        answer: panghimagas
+        options: [panghimagas, inumin, sabaw]
+      - type: listen
+        audio: gusto_ko_po_ng_isang_baso_ng_tubig
+        answer_tl: Gusto ko po ng isang baso ng tubig
+        extra_words: [kape, inumin]
+      - type: choice
+        prompt: "'Panghimagas' means..."
+        answer: Dessert
+        distractors: [Appetizer, Drink, Broth]
+        audio: panghimagas
+        audio_text: Panghimagas
+      - type: translate
+        prompt_en: Halo-halo is a delicious dessert.
+        answer_tl: Masarap na panghimagas ang halo-halo.
+        extra_words: [inumin, mura, sabaw]
+        audio: masarap_na_panghimagas_ang_halo_halo
+        grading: { hyphens: true }
+  - id: resto-7
+    title: How does it taste?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maanghang, en: spicy }
+          - { tl: maalat, en: salty }
+          - { tl: masarap, en: delicious }
+          - { tl: sobra, en: too much }
+      - type: choice
+        prompt: "'Maanghang' means..."
+        answer: Spicy
+        distractors: [Salty, Sweet, Sour]
+        audio: maanghang
+        audio_text: Maanghang
+      - type: translate
+        prompt_tl: Maanghang po ba ito?
+        answer_en: Is this spicy?
+        accept: ["Is it spicy?", "Is this spicy, please?"]
+        extra_words: [salty, delicious, that]
+        audio: maanghang_po_ba_ito
+      - type: fill_blank
+        sentence: "Sobrang ___ ang sabaw — gusto ko ng tubig!"
+        translation: "The broth is too salty — I want water!"
+        answer: maalat
+        options: [maalat, masarap, malamig]
+      - type: listen
+        audio: medyo_maalat_ang_adobo
+        answer_tl: Medyo maalat ang adobo
+        extra_words: [maanghang, sobra]
+      - type: choice
+        prompt: "Your food is too spicy. You say..."
+        answer: Sobrang maanghang ito!
+        distractors: [Sobrang maalat ito!, Masarap ito!, Malamig ito!]
+        audio: sobrang_maanghang_ito
+        audio_text: Sobrang maanghang ito!
+      - type: translate
+        prompt_en: The dish is spicy and the drink is cold.
+        answer_tl: Maanghang ang ulam at malamig ang inumin.
+        extra_words: [maalat, mainit, sabaw]
+        audio: maanghang_ang_ulam_at_malamig_ang_inumin
+      - type: translate
+        prompt_tl: Masarap talaga ang sabaw ng sinigang ni Lola.
+        answer_en: Grandma's sinigang broth is really delicious.
+        accept: ["The broth of Grandma's sinigang is really delicious", "Grandma's sinigang soup is really delicious"]
+        extra_words: [salty, spicy, cheap]
+        audio: masarap_talaga_ang_sabaw_ng_sinigang_ni_lola
+  - id: resto-8
+    title: Dito o pabalot?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pabalot po' means..."
+        answer: Wrapped to go, please
+        distractors: [For here please, The bill please, More rice please]
+        audio: pabalot_po
+        audio_text: Pabalot po
+      - type: match
+        pairs:
+          - { tl: pabalot, en: to go }
+          - { tl: dito, en: here }
+          - { tl: ulam, en: main dish }
+          - { tl: kanin, en: rice }
+      - type: choice
+        prompt: "The cashier asks 'Dito po o pabalot?' You want to eat at the eatery. You answer..."
+        answer: Dito po.
+        distractors: [Pabalot po., Chit po., Pabili po.]
+        audio: dito_po_o_pabalot
+        audio_text: Dito po o pabalot?
+      - type: translate
+        prompt_en: One adobo to go, please.
+        answer_tl: Pabalot po ng isang adobo.
+        accept: ["Pabalot ng isang adobo po"]
+        extra_words: [dito, dalawang, kanin]
+        audio: pabalot_po_ng_isang_adobo
+      - type: fill_blank
+        sentence: "___ po o pabalot?"
+        translation: "For here or to go?"
+        answer: Dito
+        options: [Dito, Doon, Saan]
+      - type: listen
+        audio: pabalot_po_ng_kanin_at_ulam
+        answer_tl: Pabalot po ng kanin at ulam
+        extra_words: [dito, sabaw]
+      - type: translate
+        prompt_tl: Kumain kami dito kahapon.
+        answer_en: We ate here yesterday.
+        accept: ["Yesterday we ate here"]
+        extra_words: [there, tomorrow, drank]
+        audio: kumain_kami_dito_kahapon
+      - type: translate
+        prompt_en: Rice and chicken to go, please.
+        answer_tl: Pabalot po ng kanin at manok.
+        accept: ["Pabalot po ng manok at kanin"]
+        extra_words: [dito, isda, sabaw]
+        audio: pabalot_po_ng_kanin_at_manok
+  - id: resto-9
+    title: Dietary needs
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Bawal' means..."
+        answer: Not allowed
+        distractors: [Allowed, Delicious, Expensive]
+        audio: bawal
+        audio_text: Bawal
+      - type: translate
+        prompt_tl: Bawal sa akin ang maanghang.
+        answer_en: Spicy food is not allowed for me.
+        accept: ["I can't eat spicy food", "I'm not allowed spicy food", "Spicy is not allowed for me"]
+        extra_words: [salty, allowed, delicious]
+        audio: bawal_sa_akin_ang_maanghang
+        hint: '"Bawal sa akin ang..." — ... is off-limits for me.'
+      - type: match
+        pairs:
+          - { tl: gulay, en: vegetables }
+          - { tl: baboy, en: pork }
+          - { tl: manok, en: chicken }
+          - { tl: isda, en: fish }
+        hint: '"gulay" — vegetables.'
+      - type: choice
+        prompt: "You don't eat pork. You say..."
+        answer: Hindi po ako kumakain ng baboy.
+        distractors: [Kumakain po ako ng baboy., Gusto ko ng baboy., Masarap ang baboy.]
+        audio: hindi_po_ako_kumakain_ng_baboy
+        audio_text: Hindi po ako kumakain ng baboy.
+      - type: fill_blank
+        sentence: "May ___ po ba kayo? Hindi ako kumakain ng baboy."
+        translation: "Do you have vegetables? I don't eat pork."
+        answer: gulay
+        options: [gulay, baboy, manok]
+      - type: listen
+        audio: bawal_sa_akin_ang_kape
+        answer_tl: Bawal sa akin ang kape
+        extra_words: [gatas, pwede]
+      - type: translate
+        prompt_en: Is there fish? Pork is not allowed for me.
+        answer_tl: May isda po ba? Bawal sa akin ang baboy.
+        accept: ["May isda ba? Bawal sa akin ang baboy"]
+        extra_words: [manok, gulay, gusto]
+        audio: may_isda_po_ba_bawal_sa_akin_ang_baboy
+      - type: translate
+        prompt_tl: Pwede po ba ang gulay lang?
+        answer_en: Can I have just vegetables?
+        accept: ["Can it be just vegetables?", "Can I have only vegetables?", "Is just vegetables possible?"]
+        extra_words: [pork, rice, more]
+        audio: pwede_po_ba_ang_gulay_lang
+        hint: '"pwede" — can / possible.'
+  - id: resto-10
+    title: Ordering a full meal
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: umorder, en: to order }
+          - { tl: menu, en: menu }
+          - { tl: inumin, en: drink }
+          - { tl: panghimagas, en: dessert }
+      - type: choice
+        prompt: "'Ano po ang order ninyo?' means..."
+        answer: What is your order?
+        distractors: [What is your name?, Where are you from?, How much is this?]
+        audio: ano_po_ang_order_ninyo
+        audio_text: Ano po ang order ninyo?
+      - type: translate
+        prompt_en: I would like to order sinigang and rice.
+        answer_tl: Gusto ko pong umorder ng sinigang at kanin.
+        accept: ["Gusto kong umorder ng sinigang at kanin"]
+        extra_words: [adobo, tubig, bumili]
+        audio: gusto_ko_pong_umorder_ng_sinigang_at_kanin
+      - type: fill_blank
+        sentence: "Isang kape at dalawang tubig po. — Ano pa po? — Wala na po, ___."
+        translation: "One coffee and two waters, please. — Anything else? — Nothing else, thank you."
+        answer: salamat
+        options: [salamat, paalam, oo]
+      - type: listen
+        audio: dalawang_kanin_po_at_isang_adobo
+        answer_tl: Dalawang kanin po at isang adobo
+        extra_words: [tatlong, sinigang]
+      - type: translate
+        prompt_tl: Umorder sila ng pansit, adobo, at dalawang kanin.
+        answer_en: They ordered pancit, adobo, and two rice.
+        accept: ["They ordered noodles, adobo, and two rice", "They ordered pancit, adobo and two rice", "They ordered pansit, adobo, and two rice"]
+        extra_words: [we, soup, three]
+        audio: umorder_sila_ng_pansit_adobo_at_dalawang_kanin
+      - type: choice
+        prompt: "'Ano pa po?' at a karinderya means..."
+        answer: Anything else?
+        distractors: [What is that?, Who is next?, Where else?]
+        audio: ano_pa_po
+        audio_text: Ano pa po?
+      - type: translate
+        prompt_en: What is delicious today?
+        answer_tl: Ano po ang masarap ngayon?
+        accept: ["Ano ang masarap ngayon?"]
+        extra_words: [saan, mura, kahapon]
+        audio: ano_po_ang_masarap_ngayon
+  - id: resto-11
+    title: Splitting the bill
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: hati, en: split }
+          - { tl: resibo, en: receipt }
+          - { tl: bayad, en: payment }
+          - { tl: sukli, en: change }
+      - type: choice
+        prompt: "'Hati tayo.' means..."
+        answer: Let's split it.
+        distractors: [I'll pay for everything., You pay for everything., Keep the change.]
+        audio: hati_tayo
+        audio_text: Hati tayo.
+      - type: translate
+        prompt_tl: Hati tayo sa bayad.
+        answer_en: Let's split the bill.
+        accept: ["Let's split the payment", "We split the bill"]
+        extra_words: [change, receipt, free]
+        audio: hati_tayo_sa_bayad
+      - type: choice
+        prompt: "You want the receipt. You say..."
+        answer: Resibo po, salamat.
+        distractors: ["Chit po, salamat.", "Sukli po, salamat.", "Menu po, salamat."]
+        audio: resibo_po_salamat
+        audio_text: Resibo po, salamat.
+      - type: fill_blank
+        sentence: "Ito po ang bayad. Nasaan po ang ___?"
+        translation: "Here is the payment. Where is the receipt?"
+        answer: resibo
+        options: [resibo, sukli, menu]
+      - type: listen
+        audio: kuya_chit_po
+        answer_tl: Kuya, chit po
+        extra_words: [ate, resibo]
+      - type: translate
+        prompt_en: The bill, please. Let's split the payment.
+        answer_tl: Chit po. Hati tayo sa bayad.
+        extra_words: [resibo, sukli, ako]
+        audio: chit_po_hati_tayo_sa_bayad
+      - type: translate
+        prompt_tl: Salamat po sa masarap na pagkain. Ito po ang bayad.
+        answer_en: Thank you for the delicious food. Here is the payment.
+        accept: ["Thank you for the delicious food. This is the payment"]
+        extra_words: [receipt, change, goodbye]
+        audio: salamat_po_sa_masarap_na_pagkain_ito_po_ang_bayad
+  - id: resto-12
+    title: Karinderya champion
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "You walk up to the karinderya counter to buy lunch. You call out..."
+        answer: Pabili po!
+        distractors: [Chit po!, Dito po!, Hati tayo!]
+        audio: pabili_po
+        audio_text: Pabili po!
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: busog, en: full }
+          - { tl: pabalot, en: to go }
+          - { tl: panghimagas, en: dessert }
+      - type: translate
+        prompt_en: I am hungry. What is the dish today?
+        answer_tl: Gutom ako. Ano po ang ulam ngayon?
+        accept: ["Gutom na ako. Ano po ang ulam ngayon?"]
+        extra_words: [busog, kahapon, saan]
+        audio: gutom_ako_ano_po_ang_ulam_ngayon
+      - type: fill_blank
+        sentence: "Busog na po ako. ___ talaga ang pagkain!"
+        translation: "I'm full now. The food was really delicious!"
+        answer: Masarap
+        options: [Masarap, Maalat, Gutom]
+      - type: listen
+        audio: ano_po_ang_inumin_ninyo
+        answer_tl: Ano po ang inumin ninyo
+        extra_words: [ulam, pagkain]
+      - type: translate
+        prompt_tl: Pabalot po ng dalawang ulam at kanin, salamat.
+        answer_en: Two dishes and rice to go, please. Thank you.
+        accept: ["Two mains and rice to go, please. Thank you", "Please wrap two dishes and rice, thank you"]
+        extra_words: [drinks, three, dessert]
+        audio: pabalot_po_ng_dalawang_ulam_at_kanin_salamat
+      - type: choice
+        prompt: "You finished eating and want to pay. You call the server and say..."
+        answer: Ate, chit po!
+        distractors: ["Ate, menu po!", "Ate, kain tayo!", "Ate, pabili po!"]
+        audio: ate_chit_po
+        audio_text: Ate, chit po!
+      - type: translate
+        prompt_en: The food at the turo-turo is cheap and really delicious.
+        answer_tl: Mura at masarap talaga ang pagkain sa turo-turo.
+        accept: ["Mura ang pagkain sa turo-turo at masarap talaga"]
+        extra_words: [mahal, karinderya, sabaw]
+        audio: mura_at_masarap_talaga_ang_pagkain_sa_turo_turo
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I don't eat pork. Can I have just vegetables and fish?
+        answer_tl: Hindi po ako kumakain ng baboy. Pwede po ba ang gulay at isda lang?
+        accept: ["Hindi ako kumakain ng baboy. Pwede ba ang gulay at isda lang?"]
+        extra_words: [manok, bawal, kanin]
+        audio: hindi_ako_kumakain_ng_baboy_gulay_at_isda_lang

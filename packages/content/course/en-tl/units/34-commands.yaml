@@ -229,3 +229,347 @@ lessons:
         accept: ["Can I buy medicine at the pharmacy", "May I please buy medicine at the pharmacy", "Can I please buy medicine at the pharmacy"]
         extra_words: [doctor, water, store]
         audio: pwede_po_bang_bumili_ng_gamot_sa_botika
+  - id: commands-5
+    title: Magluto ka! MAG commands
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magluto ka, en: cook }
+          - { tl: mag-aral ka, en: study }
+          - { tl: maglinis ka, en: clean up }
+          - { tl: magbasa ka, en: read }
+      - type: choice
+        prompt: "'Mag-aral ka' means..."
+        answer: Study
+        distractors: [Cook, Read, Clean up]
+        audio: mag_aral_ka
+        audio_text: Mag-aral ka.
+      - type: translate
+        prompt_en: Cook rice.
+        answer_tl: Magluto ka ng kanin.
+        extra_words: [kumain, mag-aral, tubig]
+        audio: magluto_ka_ng_kanin
+        hint: 'MAG verbs give commands with the plain mag- form: magluto ka, mag-aral ka.'
+      - type: translate
+        prompt_tl: Maglinis ka ng kwarto mo.
+        answer_en: Clean your room.
+        accept: ["Clean up your room", "Clean your bedroom"]
+        extra_words: [kitchen, wash, read]
+        audio: maglinis_ka_ng_kwarto_mo
+      - type: fill_blank
+        sentence: "___ ka; may pagsusulit ka bukas."
+        translation: "Study; you have a test tomorrow."
+        answer: Mag-aral
+        options: [Mag-aral, Magluto, Magwalis]
+      - type: listen
+        audio: magbasa_ka_ng_libro
+        answer_tl: Magbasa ka ng libro
+        extra_words: [magluto, bolpen]
+      - type: choice
+        prompt: "It's dinner time. Tell your brother to cook:"
+        answer: Magluto ka na.
+        distractors: [Kumain ka na., Matulog ka na., Magbasa ka na.]
+        audio: magluto_ka_na
+        audio_text: Magluto ka na.
+      - type: translate
+        prompt_en: Wash your hands and eat now.
+        answer_tl: Maghugas ka ng kamay at kumain ka na.
+        accept: ["Maghugas ka ng kamay at kumain na"]
+        extra_words: [maglinis, paa, uminom]
+        audio: maghugas_ka_ng_kamay_at_kumain_ka_na
+  - id: commands-6
+    title: Makinig ka! Tumigil ka!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: makinig ka, en: listen }
+          - { tl: tumigil ka, en: stop }
+          - { tl: maghintay ka, en: wait }
+          - { tl: halika, en: come here }
+      - type: choice
+        prompt: "'Tumigil ka' means..."
+        answer: Stop
+        distractors: [Listen, Wait, Sit down]
+        audio: tumigil_ka
+        audio_text: Tumigil ka!
+      - type: choice
+        prompt: "'Makinig' means..."
+        answer: Listen
+        distractors: [Speak, Stop, Wait]
+        audio: makinig
+        audio_text: Makinig
+      - type: translate
+        prompt_en: Listen to the teacher.
+        answer_tl: Makinig ka sa guro.
+        extra_words: [tumigil, nanay, kumanta]
+        audio: makinig_ka_sa_guro
+        hint: '"makinig sa" — listen TO someone or something.'
+      - type: fill_blank
+        sentence: "___ ka muna dito."
+        translation: "Wait here first."
+        answer: Maghintay
+        options: [Maghintay, Tumigil, Makinig]
+      - type: listen
+        audio: maghintay_po_kayo_sandali
+        answer_tl: Maghintay po kayo sandali
+        extra_words: [makinig, tumigil]
+      - type: translate
+        prompt_tl: Tumigil ka at makinig ka sa akin.
+        answer_en: Stop and listen to me.
+        extra_words: [wait, teacher, sing]
+        audio: tumigil_ka_at_makinig_ka_sa_akin
+      - type: translate
+        prompt_en: Please wait a moment.
+        answer_tl: Maghintay po kayo sandali.
+        accept: ["Maghintay ka sandali", "Sandali lang po"]
+        extra_words: [tumigil, makinig, bukas]
+        audio: maghintay_po_kayo_sandali
+  - id: commands-7
+    title: Tara! Sige!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tara, en: let's go }
+          - { tl: sige, en: okay then }
+          - { tl: matulog ka na, en: go to sleep }
+          - { tl: umuwi na tayo, en: let's go home }
+      - type: choice
+        prompt: "'Tara na!' means..."
+        answer: "Let's go!"
+        distractors: ["Stop!", "Wait!", "Sit down!"]
+        audio: tara_na
+        audio_text: Tara na!
+      - type: choice
+        prompt: "A friend asks 'Kain tayo?' — you agree. Say:"
+        answer: "Sige!"
+        distractors: ["Huwag!", "Tumigil ka!", "Hindi pa."]
+        audio: sige
+        audio_text: Sige
+      - type: translate
+        prompt_tl: Matulog ka na.
+        answer_en: Go to sleep now.
+        accept: ["Sleep now", "Go to sleep"]
+        extra_words: [eat, stand, tomorrow]
+        audio: matulog_ka_na
+      - type: fill_blank
+        sentence: "Gabi na; ___ na tayo."
+        translation: "It's night already; let's go home."
+        answer: umuwi
+        options: [umuwi, kumain, matulog]
+      - type: listen
+        audio: tara_kain_tayo
+        answer_tl: Tara, kain tayo
+        extra_words: [sige, umuwi]
+      - type: translate
+        prompt_en: Let's ride the jeepney.
+        answer_tl: Sumakay tayo sa jeepney.
+        accept: ["Sumakay tayo ng jeepney"]
+        extra_words: [bumaba, traysikel, tara, ng]
+        audio: sumakay_tayo_sa_jeepney
+        hint: 'The verb plus "tayo" = let''s...: Sumakay tayo, Kumain tayo.'
+      - type: translate
+        prompt_en: Come here, let's play outside.
+        answer_tl: Halika, maglaro tayo sa labas.
+        extra_words: [umuwi, bahay, sige]
+        audio: halika_maglaro_tayo_sa_labas
+        hint: '"sa labas" = outside.'
+  - id: commands-8
+    title: Nga — ask nicely
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Adding 'nga' to a request makes it..."
+        answer: Softer and more polite
+        distractors: [Louder and angrier, A question, A command to stop]
+      - type: match
+        pairs:
+          - { tl: nga, en: softener word }
+          - { tl: po, en: politeness word }
+          - { tl: pakiabot, en: please pass }
+          - { tl: pakibigay, en: please give }
+      - type: translate
+        prompt_tl: Pakiabot nga ang tubig.
+        answer_en: Please pass the water.
+        accept: ["Pass the water, please"]
+        extra_words: [give, coffee, buy]
+        audio: pakiabot_nga_ang_tubig
+        hint: '"nga" softens a request — like "please" or "would you".'
+      - type: fill_blank
+        sentence: "Kape ___ po."
+        translation: "Coffee, please. (ordering)"
+        answer: nga
+        options: [nga, ba, at]
+      - type: listen
+        audio: tubig_nga_po
+        answer_tl: Tubig nga po
+        extra_words: [kape, gatas]
+      - type: choice
+        prompt: "At a karinderya you want to order rice. Say:"
+        answer: Kanin nga po.
+        distractors: [Huwag po., Tumigil ka., Magluto ka ng kanin.]
+        audio: kanin_nga_po
+        audio_text: Kanin nga po.
+      - type: translate
+        prompt_en: Please pass the menu.
+        answer_tl: Pakiabot nga po ang menu.
+        accept: ["Pakiabot po ang menu", "Pakiabot nga ang menu"]
+        extra_words: [pakibigay, baso, kutsara]
+        audio: pakiabot_nga_po_ang_menu
+      - type: translate
+        prompt_en: Please give the change, thank you.
+        answer_tl: Pakibigay nga po ang sukli, salamat.
+        accept: ["Pakibigay po ang sukli, salamat"]
+        extra_words: [pakiabot, pera, menu]
+        audio: pakibigay_nga_po_ang_sukli_salamat
+  - id: commands-9
+    title: Paki- sa bahay
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pakibuksan, en: please open }
+          - { tl: pakisara, en: please close }
+          - { tl: pinto, en: door }
+          - { tl: bintana, en: window }
+      - type: choice
+        prompt: "'Pakibuksan' means..."
+        answer: Please open
+        distractors: [Please close, Please pass, Please wash]
+        audio: pakibuksan
+        audio_text: Pakibuksan
+      - type: translate
+        prompt_en: Please open the door.
+        answer_tl: Pakibuksan ang pinto.
+        accept: ["Pakibuksan po ang pinto", "Pakibuksan mo ang pinto"]
+        extra_words: [pakisara, bintana, ilaw]
+        audio: pakibuksan_ang_pinto
+      - type: fill_blank
+        sentence: "Mainit dito. ___ ang bintana."
+        translation: "It's hot here. Please open the window."
+        answer: Pakibuksan
+        options: [Pakibuksan, Pakisara, Pakiabot]
+      - type: listen
+        audio: pakisara_ang_pinto
+        answer_tl: Pakisara ang pinto
+        extra_words: [pakibuksan, bintana]
+      - type: choice
+        prompt: "It's cold and the window is open. Say:"
+        answer: Pakisara po ang bintana.
+        distractors: [Pakibuksan po ang bintana., Pakiabot po ang tubig., Umupo po kayo.]
+        audio: pakisara_po_ang_bintana
+        audio_text: Pakisara po ang bintana.
+      - type: translate
+        prompt_tl: Pakibuksan nga ang ilaw.
+        answer_en: Please turn on the light.
+        accept: ["Please switch on the light"]
+        extra_words: [close, door, window]
+        audio: pakibuksan_nga_ang_ilaw
+        hint: 'Tagalog "opens" the light: buksan ang ilaw = turn on the light.'
+      - type: translate
+        prompt_en: Please close the door and the window.
+        answer_tl: Pakisara ang pinto at ang bintana.
+        accept: ["Pakisara po ang pinto at ang bintana", "Pakisara ang pinto at bintana"]
+        extra_words: [pakibuksan, ilaw, kwarto]
+        audio: pakisara_ang_pinto_at_ang_bintana
+  - id: commands-10
+    title: Huwag po kayo
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Huwag po kayong magluto' means..."
+        answer: Please don't cook (polite)
+        distractors: [Please cook (polite), Don't eat, Cook now]
+        audio: huwag_po_kayong_magluto
+        audio_text: Huwag po kayong magluto.
+      - type: match
+        pairs:
+          - { tl: huwag kang, en: don't (to a friend) }
+          - { tl: huwag kayong, en: don't (polite or plural) }
+          - { tl: huwag dito, en: not here }
+          - { tl: huwag doon, en: not there }
+      - type: translate
+        prompt_en: Don't drink the coffee, it's hot.
+        answer_tl: Huwag kang uminom ng kape, mainit ito.
+        extra_words: [tubig, malamig, kumain]
+        audio: huwag_kang_uminom_ng_kape_mainit_ito
+      - type: fill_blank
+        sentence: "Huwag ___ maglaro sa daan, mga bata!"
+        translation: "Don't play in the road, kids!"
+        answer: kayong
+        options: [kayong, kang, kong]
+        hint: 'Talking to several people? "huwag kayong" + verb.'
+      - type: listen
+        audio: huwag_kang_matulog_sa_klase
+        answer_tl: Huwag kang matulog sa klase
+        extra_words: [kayong, umupo]
+      - type: choice
+        prompt: "Your lola starts to stand up to get water. Politely stop her:"
+        answer: Huwag po kayong tumayo.
+        distractors: [Tumayo po kayo., Huwag kang umupo., Umuwi na po kayo.]
+        audio: huwag_po_kayong_tumayo
+        audio_text: Huwag po kayong tumayo.
+      - type: translate
+        prompt_tl: Huwag kayong matulog; mag-aral muna kayo.
+        answer_en: Don't sleep; study first.
+        accept: ["Do not sleep; study first", "Don't sleep, study first"]
+        extra_words: [eat, later, sing]
+        audio: huwag_kayong_matulog_mag_aral_muna_kayo
+      - type: translate
+        prompt_en: Don't buy the expensive shoes.
+        answer_tl: Huwag kang bumili ng mahal na sapatos.
+        extra_words: [mura, damit, kayong]
+        audio: huwag_kang_bumili_ng_mahal_na_sapatos
+  - id: commands-11
+    title: Dahan-dahan! Mag-ingat ka!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Dahan-dahan' means..."
+        answer: Slowly / carefully
+        distractors: [Quickly, Loudly, Right now]
+        audio: dahan_dahan
+        audio_text: Dahan-dahan
+      - type: match
+        pairs:
+          - { tl: dahan-dahan, en: slowly }
+          - { tl: mag-ingat ka, en: take care }
+          - { tl: sige, en: okay then }
+          - { tl: tara, en: let's go }
+      - type: translate
+        prompt_tl: Mag-ingat ka sa daan.
+        answer_en: Take care on the road.
+        accept: ["Be careful on the road", "Take care on the way"]
+        extra_words: [slowly, house, stop]
+        audio: mag_ingat_ka_sa_daan
+        hint: '"Mag-ingat ka!" — take care. A warm Filipino goodbye.'
+      - type: fill_blank
+        sentence: "___ ka; maraming sasakyan sa daan."
+        translation: "Be careful; there are many vehicles on the road."
+        answer: Mag-ingat
+        options: [Mag-ingat, Dahan-dahan, Tumigil]
+      - type: listen
+        audio: maglakad_ka_nang_dahan_dahan
+        answer_tl: Maglakad ka nang dahan-dahan
+        extra_words: [tumigil, mabilis]
+        grading: { ng_nang: true, hyphens: true }
+        hint: '"nang" (not "ng") links a verb to how it is done: maglakad nang dahan-dahan.'
+      - type: choice
+        prompt: "A child is running with a glass of water. Say:"
+        answer: "Dahan-dahan!"
+        distractors: ["Tara na!", "Sige!", "Kain tayo!"]
+        audio: dahan_dahan
+        audio_text: Dahan-dahan
+      - type: translate
+        prompt_en: Wait first, then let's ride the tricycle.
+        answer_tl: Maghintay ka muna, tapos sumakay tayo sa traysikel.
+        accept: ["Maghintay ka muna, tapos sumakay tayo ng traysikel"]
+        extra_words: [tumigil, jeepney, sige, ng]
+        audio: maghintay_ka_muna_tapos_sumakay_tayo_sa_traysikel
+      - type: translate
+        prompt_en: Take care! Don't play in the kitchen.
+        answer_tl: Mag-ingat ka! Huwag kang maglaro sa kusina.
+        extra_words: [maglinis, sala, kayong]
+        audio: mag_ingat_ka_huwag_kang_maglaro_sa_kusina

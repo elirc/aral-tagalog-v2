@@ -140,9 +140,10 @@ lessons:
         audio: nawawala_ang_anak_ko
       - type: translate
         prompt_en: I am lost.
-        answer_tl: Nawawala ako.
-        extra_words: [siya, pulis, bahay]
-        audio: nawawala_ako
+        answer_tl: Naliligaw ako.
+        accept: ["Nawawala ako"]
+        extra_words: [siya, pulis, bahay, nawawala]
+        audio: naliligaw_ako
       - type: fill_blank
         sentence: "___ ang pera ko."
         translation: "My money was stolen."
@@ -230,3 +231,461 @@ lessons:
         accept: ["Take care, the storm is strong today", "Be careful, the typhoon is strong today"]
         extra_words: [safe, dangerous, market]
         audio: mag_ingat_kayo_malakas_ang_bagyo_ngayon
+  - id: emergency-5
+    title: Calling for help
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Tawagan mo ang pulis!' means..."
+        answer: Call the police!
+        distractors: [Help the police!, Where are the police?, The police called!]
+        audio: tawagan_mo_ang_pulis
+        audio_text: Tawagan mo ang pulis!
+        hint: 'Like "tulungan mo", "tawagan mo" is a command aimed at one person — call (someone).'
+      - type: match
+        pairs:
+          - { tl: tawagan, en: to call (someone) }
+          - { tl: numero, en: number }
+          - { tl: selpon, en: cellphone }
+          - { tl: emerhensiya, en: emergency }
+      - type: translate
+        prompt_tl: Ano ang numero ng pulis?
+        answer_en: What is the number of the police?
+        accept:
+          - What is the police number?
+          - What's the police number?
+          - What's the number of the police?
+        extra_words: [hospital, where, fire]
+        audio: ano_ang_numero_ng_pulis
+      - type: fill_blank
+        sentence: "___ mo ang ambulansya!"
+        translation: "Call the ambulance!"
+        answer: Tawagan
+        options: [Tawagan, Tulungan, Tumawag]
+      - type: listen
+        audio: tawagan_mo_ako_mamaya
+        answer_tl: Tawagan mo ako mamaya
+        extra_words: [tulungan, bukas]
+      - type: choice
+        prompt: "The emergency operator answers: 'Ano ang emerhensiya?' She is asking..."
+        answer: What is the emergency?
+        distractors: [Where are you?, What is your name?, Are you safe?]
+        audio: ano_ang_emerhensiya
+        audio_text: Ano ang emerhensiya?
+      - type: translate
+        prompt_tl: Wala akong load. Pakitawagan mo ang nanay ko.
+        answer_en: I have no load. Please call my mother.
+        accept:
+          - I don't have load. Please call my mother.
+          - I have no load. Please call my mom.
+          - I don't have any load. Please call my mom.
+          - I have no phone credit. Please call my mother.
+        extra_words: [father, later, hospital]
+        audio: wala_akong_load_pakitawagan_mo_ang_nanay_ko
+        hint: '"paki-" + "tawagan" = please call.'
+      - type: translate
+        prompt_en: Call the firefighters! There is a fire at our neighbor's house.
+        answer_tl: Tawagan mo ang bumbero! May sunog sa bahay ng kapitbahay namin.
+        accept:
+          - Tawagan mo ang mga bumbero! May sunog sa bahay ng kapitbahay namin
+          - Tumawag ka ng bumbero! May sunog sa bahay ng kapitbahay namin
+        extra_words: [pulis, ambulansya, ospital]
+        audio: tawagan_mo_ang_bumbero_may_sunog_sa_bahay_ng_kapitbahay_namin
+      - type: translate
+        prompt_en: What is your number? I will call you later.
+        answer_tl: Ano ang numero mo? Tatawagan kita mamaya.
+        accept: ["Ano ang numero mo? Mamaya, tatawagan kita"]
+        extra_words: [tumawag, ako, bukas]
+        audio: ano_ang_numero_mo_tatawagan_kita_mamaya
+        hint: '"kita" packs "I ... you" into one word, like "mahal kita". Future: tatawagan.'
+  - id: emergency-6
+    title: Typhoon and flood
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bagyo, en: typhoon }
+          - { tl: baha, en: flood }
+          - { tl: ulan, en: rain }
+          - { tl: hangin, en: wind }
+      - type: choice
+        prompt: "'Baha' means..."
+        answer: Flood
+        distractors: [Storm, Earthquake, Fire]
+        audio: baha
+        audio_text: Baha
+      - type: translate
+        prompt_tl: Malakas ang ulan at may baha sa daan.
+        answer_en: The rain is strong and there is a flood on the road.
+        accept:
+          - The rain is heavy and there is a flood on the road
+          - The rain is strong and there's a flood on the road
+          - The rain is heavy and there's a flood on the road
+        extra_words: [fire, house, weak]
+        audio: malakas_ang_ulan_at_may_baha_sa_daan
+      - type: choice
+        prompt: "'Walang kuryente' means..."
+        answer: There's no electricity
+        distractors: [There's no water, There's no signal, There's no food]
+        audio: walang_kuryente
+        audio_text: Walang kuryente.
+        hint: 'A "brownout" — what Filipinos call a power outage — means "walang kuryente".'
+      - type: fill_blank
+        sentence: "Mataas na ang tubig. ___ na tayo!"
+        translation: "The water is already high. Let's evacuate now!"
+        answer: Lumikas
+        options: [Lumikas, Umuwi, Lumangoy]
+        hint: '"lumikas" = to evacuate — to leave for somewhere safe.'
+      - type: listen
+        audio: may_bagyo_raw_bukas
+        answer_tl: May bagyo raw bukas
+        extra_words: [daw, ngayon]
+      - type: translate
+        prompt_tl: Lumikas ang mga pamilya sa paaralan kasi mataas ang baha.
+        answer_en: The families evacuated to the school because the flood is high.
+        accept: ["The families evacuated to the school because the flood was high"]
+        extra_words: [hospital, low, market]
+        audio: lumikas_ang_mga_pamilya_sa_paaralan_kasi_mataas_ang_baha
+      - type: translate
+        prompt_en: There is no electricity because of the typhoon.
+        answer_tl: Walang kuryente dahil sa bagyo.
+        accept: ["Walang kuryente kasi may bagyo", "Walang kuryente dahil may bagyo"]
+        extra_words: [baha, ulan, mainit]
+        audio: walang_kuryente_dahil_sa_bagyo
+        hint: '"dahil sa" + a thing = because of.'
+      - type: translate
+        prompt_en: Be careful, the typhoon is strong. Let's evacuate now.
+        answer_tl: Mag-ingat kayo, malakas ang bagyo. Lumikas na tayo.
+        accept:
+          - Mag-ingat ka, malakas ang bagyo. Lumikas na tayo
+          - Mag-ingat kayo, malakas ang bagyo. Lumikas tayo ngayon
+        extra_words: [lindol, umuwi, baha]
+        audio: mag_ingat_kayo_malakas_ang_bagyo_lumikas_na_tayo
+        grading: { hyphens: true }
+  - id: emergency-7
+    title: Earthquake!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Lumilindol!' means..."
+        answer: There's an earthquake!
+        distractors: [There's a fire!, There's a flood!, There's a typhoon!]
+        audio: lumilindol
+        audio_text: Lumilindol!
+        hint: '"lindol" is an earthquake; "lumilindol" means one is happening right now.'
+      - type: match
+        pairs:
+          - { tl: lindol, en: earthquake }
+          - { tl: magtago, en: to take cover }
+          - { tl: ilalim, en: underneath }
+          - { tl: ligtas, en: safe }
+      - type: fill_blank
+        sentence: "Magtago ka sa ___ ng mesa."
+        translation: "Take cover under the table."
+        answer: ilalim
+        options: [ilalim, loob, ibabaw]
+      - type: translate
+        prompt_tl: Lumindol kahapon pero ligtas kami.
+        answer_en: There was an earthquake yesterday but we are safe.
+        accept:
+          - There was an earthquake yesterday, but we are safe
+          - There was an earthquake yesterday but we're safe
+          - There was an earthquake yesterday, but we're safe
+        extra_words: [flood, today, dangerous]
+        audio: lumindol_kahapon_pero_ligtas_kami
+      - type: listen
+        audio: huwag_kang_tumakbo
+        answer_tl: Huwag kang tumakbo
+        extra_words: [magtago, ka]
+      - type: choice
+        prompt: "The ground starts shaking. What do you shout to your family?"
+        answer: Magtago tayo sa ilalim ng mesa!
+        distractors: [Umuwi tayo sa probinsya!, Kain tayo!, Sumakay tayo ng jeepney!]
+        audio: magtago_tayo_sa_ilalim_ng_mesa
+        audio_text: Magtago tayo sa ilalim ng mesa!
+      - type: translate
+        prompt_tl: Malakas ang lindol at delikado ang gusali.
+        answer_en: The earthquake is strong and the building is dangerous.
+        accept:
+          - The earthquake was strong and the building is dangerous
+          - The earthquake is strong and the building is unsafe
+        extra_words: [weak, safe, house]
+        audio: malakas_ang_lindol_at_delikado_ang_gusali
+      - type: translate
+        prompt_en: Take cover under the table and don't run.
+        answer_tl: Magtago ka sa ilalim ng mesa at huwag kang tumakbo.
+        accept:
+          - Magtago ka sa ilalim ng mesa, at huwag kang tumakbo
+          - Magtago kayo sa ilalim ng mesa at huwag kayong tumakbo
+        extra_words: [ibabaw, loob, tumayo]
+        audio: magtago_ka_sa_ilalim_ng_mesa_at_huwag_kang_tumakbo
+      - type: translate
+        prompt_en: There was an earthquake. Are you safe?
+        answer_tl: Lumindol. Ligtas ka ba?
+        accept: ["Lumindol! Ligtas ka ba?", "Lumindol. Ligtas ba kayo?", "Lumindol. Ligtas po ba kayo?"]
+        extra_words: [lindol, kami, delikado]
+        audio: lumindol_ligtas_ka_ba
+  - id: emergency-8
+    title: Reporting a theft
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A police officer asks you 'Ano ang nangyari?' He means..."
+        answer: What happened?
+        distractors: [Where are you going?, What is your name?, What did you buy?]
+        audio: ano_ang_nangyari
+        audio_text: Ano ang nangyari?
+      - type: match
+        pairs:
+          - { tl: nakita ko, en: I saw }
+          - { tl: nangyari, en: happened }
+          - { tl: ninakaw, en: was stolen }
+          - { tl: magnanakaw, en: thief }
+      - type: translate
+        prompt_tl: Ninakaw ang selpon ko sa jeepney.
+        answer_en: My cellphone was stolen on the jeepney.
+        accept:
+          - My phone was stolen on the jeepney
+          - My cellphone was stolen in the jeepney
+          - My phone was stolen in the jeepney
+        extra_words: [lost, bus, money]
+        audio: ninakaw_ang_selpon_ko_sa_jeepney
+      - type: fill_blank
+        sentence: "___ ko ang magnanakaw!"
+        translation: "I saw the thief!"
+        answer: Nakita
+        options: [Nakita, Nawawala, Ninakaw]
+        hint: '"nakita ko" = I saw — the one you saw takes "ang".'
+      - type: listen
+        audio: kailan_ito_nangyari
+        answer_tl: Kailan ito nangyari
+        extra_words: [saan, nakita]
+      - type: choice
+        prompt: "The officer asks what the thief looked like. You say:"
+        answer: Matangkad siya at nakasuot ng itim na kamiseta.
+        distractors: [Ninakaw niya ang pera ko., Nasa istasyon siya ng pulis., Tumawag ako sa nanay ko.]
+        audio: matangkad_siya_at_nakasuot_ng_itim_na_kamiseta
+        audio_text: Matangkad siya at nakasuot ng itim na kamiseta.
+      - type: translate
+        prompt_tl: Nakita ko siya kanina sa palengke. Mabilis siyang tumakbo.
+        answer_en: I saw him earlier at the market. He ran fast.
+        accept:
+          - I saw her earlier at the market. She ran fast.
+          - I saw him earlier at the market. He ran quickly.
+          - I saw her earlier at the market. She ran quickly.
+          - I saw him at the market earlier. He ran fast.
+          - I saw her at the market earlier. She ran fast.
+        extra_words: [yesterday, slowly, church]
+        audio: nakita_ko_siya_kanina_sa_palengke_mabilis_siyang_tumakbo
+      - type: translate
+        prompt_en: What happened? My money was stolen at the market.
+        answer_tl: Ano ang nangyari? Ninakaw ang pera ko sa palengke.
+        accept: ["Anong nangyari? Ninakaw ang pera ko sa palengke"]
+        extra_words: [nawawala, nakita, tindahan]
+        audio: ano_ang_nangyari_ninakaw_ang_pera_ko_sa_palengke
+      - type: translate
+        prompt_en: I saw the thief. He is thin and he has long hair.
+        answer_tl: Nakita ko ang magnanakaw. Payat siya at mahaba ang buhok niya.
+        accept: ["Nakita ko ang magnanakaw, payat siya at mahaba ang buhok niya"]
+        extra_words: [mataba, maikli, pulis]
+        audio: nakita_ko_ang_magnanakaw_payat_siya_at_mahaba_ang_buhok_niya
+  - id: emergency-9
+    title: Accidents and injuries
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: dugo, en: blood }
+          - { tl: sugat, en: wound }
+          - { tl: aksidente, en: accident }
+          - { tl: nahihilo, en: dizzy }
+      - type: choice
+        prompt: "'Nahihilo ako' means..."
+        answer: I feel dizzy
+        distractors: [I feel hungry, I feel sleepy, I am lost]
+        audio: nahihilo_ako
+        audio_text: Nahihilo ako.
+      - type: translate
+        prompt_tl: May aksidente sa daan. May dugo sa ulo niya.
+        answer_en: There is an accident on the road. There is blood on his head.
+        accept:
+          - There is an accident on the road. There is blood on her head.
+          - There's an accident on the road. There's blood on his head.
+          - There's an accident on the road. There's blood on her head.
+          - There was an accident on the road. There is blood on his head.
+          - There was an accident on the road. There is blood on her head.
+        extra_words: [hand, river, fire]
+        audio: may_aksidente_sa_daan_may_dugo_sa_ulo_niya
+      - type: fill_blank
+        sentence: "May ___ sa kamay mo!"
+        translation: "There is blood on your hand!"
+        answer: dugo
+        options: [dugo, tubig, gamot]
+      - type: listen
+        audio: nahihilo_ako_at_masakit_ang_ulo_ko
+        answer_tl: Nahihilo ako at masakit ang ulo ko
+        extra_words: [tiyan, pagod]
+      - type: choice
+        prompt: "Someone has fallen down on the street. You run over and ask:"
+        answer: Ayos ka lang ba?
+        distractors: [Magkano ito?, Saan ka pupunta?, Kumain ka na ba?]
+        audio: ayos_ka_lang_ba
+        audio_text: Ayos ka lang ba?
+      - type: translate
+        prompt_tl: Umupo ka muna at uminom ng tubig.
+        answer_en: Sit down first and drink some water.
+        accept:
+          - Sit down first and drink water
+          - Sit down first and have some water
+        extra_words: [stand, medicine, later]
+        audio: umupo_ka_muna_at_uminom_ng_tubig
+      - type: translate
+        prompt_en: There was an accident at the corner. Call an ambulance!
+        answer_tl: May aksidente sa kanto. Tumawag ka ng ambulansya!
+        accept: ["May aksidente sa kanto. Tawagan mo ang ambulansya!"]
+        extra_words: [pulis, bumbero, daan]
+        audio: may_aksidente_sa_kanto_tumawag_ka_ng_ambulansya
+      - type: translate
+        prompt_en: My friend is dizzy and there is blood on his hand. We need a doctor.
+        answer_tl: Nahihilo ang kaibigan ko at may dugo sa kamay niya. Kailangan namin ng doktor.
+        accept: ["Nahihilo ang kaibigan ko at may dugo sa kamay niya. Kailangan natin ng doktor"]
+        extra_words: [ulo, nars, ako]
+        audio: nahihilo_ang_kaibigan_ko_at_may_dugo_sa_kamay_niya_kailangan_namin_ng_doktor
+  - id: emergency-10
+    title: Staying calm
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Huminahon ka' means..."
+        answer: Calm down
+        distractors: [Hurry up, Go home, Wake up]
+        audio: huminahon_ka
+        audio_text: Huminahon ka.
+      - type: match
+        pairs:
+          - { tl: huminahon, en: to calm down }
+          - { tl: ligtas, en: safe }
+          - { tl: takot, en: afraid }
+          - { tl: tulong, en: help }
+      - type: translate
+        prompt_tl: Huwag kang matakot, ligtas ka na.
+        answer_en: Don't be afraid, you're safe now.
+        accept:
+          - Don't be afraid, you are safe now
+          - Don't be scared, you're safe now
+          - Don't be scared, you are safe now
+          - Do not be afraid, you are safe now
+        extra_words: [dangerous, lost, still]
+        audio: huwag_kang_matakot_ligtas_ka_na
+        hint: '"takot" = afraid, so "huwag kang matakot" = don''t be afraid.'
+      - type: fill_blank
+        sentence: "Huminahon ka ___. Tutulungan kita."
+        translation: "Just calm down. I will help you."
+        answer: lang
+        options: [lang, pa, ba]
+      - type: listen
+        audio: tutulungan_kita
+        answer_tl: Tutulungan kita
+        extra_words: [tulungan, mo]
+        hint: 'Future of "tulungan": double the first syllable → tutulungan. "kita" = I ... you.'
+      - type: translate
+        prompt_tl: Takot ang anak ko sa lindol.
+        answer_en: My child is afraid of earthquakes.
+        accept:
+          - My child is afraid of the earthquake
+          - My child is scared of earthquakes
+          - My child is scared of the earthquake
+        extra_words: [typhoons, happy, house]
+        audio: takot_ang_anak_ko_sa_lindol
+      - type: choice
+        prompt: "An elderly neighbor is panicking as the flood rises. You say:"
+        answer: Huminahon po kayo, tutulungan namin kayo.
+        distractors: [Umuwi na po kayo., Kumain na po ba kayo?, Nasaan po ang palengke?]
+        audio: huminahon_po_kayo_tutulungan_namin_kayo
+        audio_text: Huminahon po kayo, tutulungan namin kayo.
+      - type: translate
+        prompt_en: Calm down. I already called the police.
+        answer_tl: Huminahon ka. Tumawag na ako ng pulis.
+        accept:
+          - Huminahon ka. Tumawag na ako sa pulis
+          - Huminahon ka lang. Tumawag na ako ng pulis
+          - Huminahon po kayo. Tumawag na po ako ng pulis
+          - Huminahon po kayo. Tumawag na ako ng pulis
+        extra_words: [pa, tatawag, ambulansya]
+        audio: huminahon_ka_tumawag_na_ako_ng_pulis
+      - type: translate
+        prompt_en: Are you okay? Don't be afraid, we will help you.
+        answer_tl: Ayos ka lang ba? Huwag kang matakot, tutulungan ka namin.
+        extra_words: [kita, ako, tulong]
+        audio: ayos_ka_lang_ba_huwag_kang_matakot_tutulungan_ka_namin
+        hint: '"tutulungan ka namin" — the short "ka" comes before "namin".'
+  - id: emergency-11
+    title: When disaster strikes
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: baha, en: flood }
+          - { tl: lumikas, en: to evacuate }
+          - { tl: kuryente, en: electricity }
+          - { tl: huminahon, en: to calm down }
+      - type: choice
+        prompt: "On the radio you hear 'Malakas ang bagyo. Lumikas na kayo!' What should you do?"
+        answer: Evacuate now
+        distractors: [Stay at home, Go to the beach, Call your friends]
+        audio: malakas_ang_bagyo_lumikas_na_kayo
+        audio_text: Malakas ang bagyo. Lumikas na kayo!
+      - type: listen
+        audio: mataas_na_ang_baha_sa_bayan_namin
+        answer_tl: Mataas na ang baha sa bayan namin
+        extra_words: [pa, lungsod]
+      - type: fill_blank
+        sentence: "Kahapon ___ kami sa paaralan dahil sa baha."
+        translation: "Yesterday we evacuated to the school because of the flood."
+        answer: lumikas
+        options: [lumikas, lumilikas, lilikas]
+      - type: translate
+        prompt_tl: Walang kuryente at walang tubig, pero ligtas ang pamilya namin.
+        answer_en: There is no electricity and no water, but our family is safe.
+        accept:
+          - There's no electricity and no water, but our family is safe
+          - There is no power and no water, but our family is safe
+          - There's no power and no water, but our family is safe
+        extra_words: [food, dangerous, house]
+        audio: walang_kuryente_at_walang_tubig_pero_ligtas_ang_pamilya_namin
+      - type: translate
+        prompt_tl: Nawawala raw ang anak ng kapitbahay namin. Nakita mo ba siya?
+        answer_en: They say our neighbor's child is missing. Did you see him?
+        accept:
+          - They say our neighbor's child is missing. Did you see her?
+          - They say our neighbor's child is missing. Have you seen him?
+          - They say our neighbor's child is missing. Have you seen her?
+          - Apparently our neighbor's child is missing. Did you see him?
+          - Apparently our neighbor's child is missing. Did you see her?
+        extra_words: [found, police, saw]
+        audio: nawawala_raw_ang_anak_ng_kapitbahay_namin_nakita_mo_ba_siya
+      - type: translate
+        prompt_en: There was an earthquake and our house is dangerous now. We need help.
+        answer_tl: Lumindol at delikado na ang bahay namin. Kailangan namin ng tulong.
+        accept:
+          - Lumindol, at delikado na ang bahay namin. Kailangan namin ng tulong
+          - Lumindol at delikado ang bahay namin ngayon. Kailangan namin ng tulong
+        extra_words: [ligtas, natin, lindol]
+        audio: lumindol_at_delikado_na_ang_bahay_namin_kailangan_namin_ng_tulong
+      - type: translate
+        prompt_en: Call the police! I saw the thief. He ran to the market.
+        answer_tl: Tawagan mo ang pulis! Nakita ko ang magnanakaw. Tumakbo siya sa palengke.
+        accept:
+          - Tumawag ka ng pulis! Nakita ko ang magnanakaw. Tumakbo siya sa palengke
+          - Tawagan mo ang pulis! Nakita ko ang magnanakaw. Tumakbo siya papunta sa palengke
+        extra_words: [nangyari, ninakaw, simbahan]
+        audio: tawagan_mo_ang_pulis_nakita_ko_ang_magnanakaw_tumakbo_siya_sa_palengke
+      - type: translate
+        prompt_en: Calm down, the flood is high. Let's evacuate to the school, it's safe there.
+        answer_tl: Huminahon ka, mataas ang baha. Lumikas tayo sa paaralan, ligtas doon.
+        accept:
+          - Huminahon ka, mataas na ang baha. Lumikas tayo sa paaralan, ligtas doon
+          - Huminahon kayo, mataas ang baha. Lumikas tayo sa paaralan, ligtas doon
+          - Huminahon ka, mataas ang baha. Lumikas na tayo sa paaralan, ligtas doon
+        extra_words: [delikado, dito, ospital]
+        audio: huminahon_ka_mataas_ang_baha_lumikas_tayo_sa_paaralan_ligtas_doon

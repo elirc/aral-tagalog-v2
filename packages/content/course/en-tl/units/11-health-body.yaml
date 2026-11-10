@@ -185,6 +185,7 @@ lessons:
       - type: translate
         prompt_en: I am buying medicine at the pharmacy.
         answer_tl: Bumibili ako ng gamot sa botika.
+        accept: ["Bumibili ako sa botika ng gamot"]
         extra_words: [doktor, ospital, ito]
       - type: fill_blank
         sentence: "Uminom ka ng ___."
@@ -212,3 +213,392 @@ lessons:
         distractors: [Buy medicine tomorrow, Drink water every day, Go to the hospital]
         audio: uminom_ka_ng_gamot_araw_araw
         audio_text: Uminom ka ng gamot araw-araw.
+  - id: health-5
+    title: Arms and legs
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: braso, en: arm }
+          - { tl: binti, en: leg }
+          - { tl: leeg, en: neck }
+          - { tl: daliri, en: finger }
+      - type: choice
+        prompt: "'Binti' means..."
+        answer: Leg
+        distractors: [Arm, Neck, Finger]
+        audio: binti
+        audio_text: Binti
+      - type: translate
+        prompt_tl: May limang daliri ang kamay.
+        answer_en: A hand has five fingers.
+        accept: ["The hand has five fingers"]
+        extra_words: [two, foot, arm]
+        audio: may_limang_daliri_ang_kamay
+      - type: fill_blank
+        sentence: "Dalawa ang ___ ko: kanan at kaliwa."
+        translation: "I have two arms: right and left."
+        answer: braso
+        options: [braso, ulo, leeg]
+      - type: match
+        pairs:
+          - { tl: dibdib, en: chest }
+          - { tl: likod, en: back }
+          - { tl: tiyan, en: stomach }
+          - { tl: ulo, en: head }
+      - type: listen
+        audio: masakit_ang_binti_ko
+        answer_tl: Masakit ang binti ko
+        extra_words: [braso, leeg]
+      - type: choice
+        prompt: "A necklace goes around your..."
+        answer: leeg
+        distractors: [binti, braso, dibdib]
+      - type: translate
+        prompt_en: My arm hurts.
+        answer_tl: Masakit ang braso ko.
+        extra_words: [binti, leeg, mo]
+        audio: masakit_ang_braso_ko
+      - type: translate
+        prompt_en: Her fingers are small.
+        answer_tl: Maliit ang daliri niya.
+        accept: ["Maliit ang mga daliri niya."]
+        extra_words: [malaki, ko, braso]
+        audio: maliit_ang_daliri_niya
+        hint: 'Like "mata", "daliri" can mean one finger or several.'
+  - id: health-6
+    title: What hurts?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lalamunan, en: throat }
+          - { tl: leeg, en: neck }
+          - { tl: dibdib, en: chest }
+          - { tl: ngipin, en: tooth }
+      - type: choice
+        prompt: "The doctor asks 'Ano ang masakit sa iyo?' She wants to know..."
+        answer: What hurts
+        distractors: [Where you live, What you ate, How old you are]
+        audio: ano_ang_masakit_sa_iyo
+        audio_text: Ano ang masakit sa iyo?
+      - type: translate
+        prompt_tl: Masakit ang lalamunan ko.
+        answer_en: My throat hurts.
+        accept: ["My throat is sore", "I have a sore throat"]
+        extra_words: [neck, chest, head]
+        audio: masakit_ang_lalamunan_ko
+      - type: fill_blank
+        sentence: "May ubo ako at masakit ang ___ ko."
+        translation: "I have a cough and my throat hurts."
+        answer: lalamunan
+        options: [lalamunan, paa, braso]
+      - type: choice
+        prompt: "'Saan masakit?' asks..."
+        answer: Where does it hurt?
+        distractors: [Does it hurt?, What medicine do you need?, When did it start?]
+        audio: saan_masakit
+        audio_text: Saan masakit?
+      - type: listen
+        audio: masakit_ang_lalamunan_ko
+        answer_tl: Masakit ang lalamunan ko
+        extra_words: [leeg, dibdib]
+      - type: translate
+        prompt_tl: Masakit ang dibdib ng lolo ko.
+        answer_en: My grandfather's chest hurts.
+        accept: ["My grandpa's chest hurts"]
+        extra_words: [back, neck, mother's]
+        audio: masakit_ang_dibdib_ng_lolo_ko
+        hint: '"ng" shows whose: dibdib ng lolo = grandpa''s chest.'
+      - type: translate
+        prompt_en: My neck and back hurt.
+        answer_tl: Masakit ang leeg at likod ko.
+        extra_words: [dibdib, mo, braso]
+        audio: masakit_ang_leeg_at_likod_ko
+      - type: translate
+        prompt_en: What hurts?
+        answer_tl: Ano ang masakit?
+        accept: ["Ano ang masakit sa iyo?"]
+        extra_words: [saan, sino, ba]
+        audio: ano_ang_masakit
+  - id: health-7
+    title: Dizzy and queasy
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nahihilo, en: dizzy }
+          - { tl: nasusuka, en: nauseous }
+          - { tl: pagod, en: tired }
+          - { tl: lagnat, en: fever }
+      - type: choice
+        prompt: "'Nahihilo ako' means..."
+        answer: I feel dizzy
+        distractors: [I feel hungry, I feel happy, I have a cough]
+        audio: nahihilo_ako
+        audio_text: Nahihilo ako.
+      - type: translate
+        prompt_tl: Nasusuka ako, masakit ang tiyan ko.
+        answer_en: I feel nauseous, my stomach hurts.
+        accept: ["I'm nauseous, my stomach hurts", "I am nauseous, my stomach hurts", "I feel like throwing up, my stomach hurts", "I feel nauseous and my stomach hurts"]
+        extra_words: [dizzy, head, fever]
+        audio: nasusuka_ako_masakit_ang_tiyan_ko
+      - type: fill_blank
+        sentence: "___ ako, masakit ang ulo ko."
+        translation: "I'm dizzy, my head hurts."
+        answer: Nahihilo
+        options: [Nahihilo, Nasusuka, Masaya]
+      - type: choice
+        prompt: "Your friend is pale and holding her stomach after a bumpy boat ride. She probably says:"
+        answer: Nasusuka ako.
+        distractors: [Mabuti ako., Masarap ito., Malamig ang tubig.]
+      - type: listen
+        audio: nahihilo_ako
+        answer_tl: Nahihilo ako
+        extra_words: [nasusuka, siya]
+      - type: translate
+        prompt_tl: Nahihilo ba siya?
+        answer_en: Is she dizzy?
+        accept: ["Is he dizzy?", "Does she feel dizzy?", "Does he feel dizzy?"]
+        extra_words: [I, tired, sick]
+        audio: nahihilo_ba_siya
+      - type: translate
+        prompt_en: I'm dizzy and tired.
+        answer_tl: Nahihilo ako at pagod.
+        accept: ["Nahihilo at pagod ako."]
+        extra_words: [nasusuka, siya, may]
+        audio: nahihilo_ako_at_pagod
+      - type: translate
+        prompt_en: My child is nauseous.
+        answer_tl: Nasusuka ang anak ko.
+        extra_words: [nahihilo, lagnat, mo]
+        audio: nasusuka_ang_anak_ko
+  - id: health-8
+    title: At the pharmacy
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: botika, en: pharmacy }
+          - { tl: gamot, en: medicine }
+          - { tl: reseta, en: prescription }
+          - { tl: doktor, en: doctor }
+      - type: choice
+        prompt: "'Reseta' means..."
+        answer: Prescription
+        distractors: [Pharmacy, Medicine, Fever]
+        audio: reseta
+        audio_text: Reseta
+      - type: choice
+        prompt: "At the pharmacy counter, how do you start asking to buy something?"
+        answer: Pabili po...
+        distractors: [Para po..., Saan po..., Salamat po...]
+        hint: '"Pabili po" = I''d like to buy, please. Then name what you need.'
+      - type: translate
+        prompt_tl: Pabili po ng gamot sa ubo.
+        answer_en: I'd like to buy cough medicine, please.
+        accept: ["I would like to buy cough medicine, please", "I'd like cough medicine, please", "Cough medicine, please", "I'd like to buy some cough medicine, please"]
+        extra_words: [fever, water, headache]
+        audio: pabili_po_ng_gamot_sa_ubo
+        hint: '"gamot sa ubo" = medicine for a cough.'
+      - type: fill_blank
+        sentence: "May gamot po ba kayo ___ sa lagnat?"
+        translation: "Do you have medicine for fever?"
+        answer: para
+        options: [para, ng, ang]
+        hint: '"para sa" = for. (Not the "para" that stops a jeepney!)'
+      - type: listen
+        audio: pabili_po_ng_gamot_sa_ubo
+        answer_tl: Pabili po ng gamot sa ubo
+        extra_words: [lagnat, para]
+      - type: choice
+        prompt: "The pharmacist says 'Kailangan po ng reseta.' You need..."
+        answer: A prescription from a doctor
+        distractors: [More money, To come back tomorrow, A glass of water]
+        audio: kailangan_po_ng_reseta
+        audio_text: Kailangan po ng reseta.
+        hint: '"kailangan" = need / is needed'
+      - type: translate
+        prompt_en: I have a prescription.
+        answer_tl: May reseta ako.
+        accept: ["May reseta po ako."]
+        extra_words: [po, wala, gamot]
+        audio: may_reseta_ako
+      - type: translate
+        prompt_en: Do you have medicine for a headache?
+        answer_tl: May gamot ba kayo para sa sakit ng ulo?
+        accept: ["May gamot po ba kayo para sa sakit ng ulo?", "May gamot ba kayo sa sakit ng ulo?", "May gamot po ba kayo sa sakit ng ulo?"]
+        extra_words: [lagnat, ako, ang]
+        audio: may_gamot_ba_kayo_para_sa_sakit_ng_ulo
+        hint: '"sakit ng ulo" = headache (pain of the head).'
+  - id: health-9
+    title: How often?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isang beses, en: once }
+          - { tl: dalawang beses, en: twice }
+          - { tl: tatlong beses, en: three times }
+          - { tl: araw-araw, en: every day }
+      - type: choice
+        prompt: "'Tatlong beses sa isang araw' means..."
+        answer: Three times a day
+        distractors: [Three days, Every three days, Three tablets]
+        audio: tatlong_beses_sa_isang_araw
+        audio_text: Tatlong beses sa isang araw.
+        hint: '"beses" = times; "sa isang araw" = in one day.'
+      - type: translate
+        prompt_tl: Uminom ka ng gamot dalawang beses sa isang araw.
+        answer_en: Take the medicine twice a day.
+        accept: ["Take medicine twice a day", "Take your medicine twice a day", "Take the medicine two times a day", "Take medicine two times a day"]
+        extra_words: [three, night, water]
+        audio: uminom_ka_ng_gamot_dalawang_beses_sa_isang_araw
+      - type: fill_blank
+        sentence: "Isang ___ lang sa isang araw."
+        translation: "Only once a day."
+        answer: beses
+        options: [beses, araw, gamot]
+      - type: fill_blank
+        sentence: "Uminom ka ng gamot sa umaga at sa ___."
+        translation: "Take the medicine in the morning and at night."
+        answer: gabi
+        options: [gabi, hapon, bukas]
+      - type: listen
+        audio: tatlong_beses_sa_isang_araw
+        answer_tl: Tatlong beses sa isang araw
+        extra_words: [dalawang, gabi]
+      - type: choice
+        prompt: "The label says 'Dalawang beses sa isang araw.' You took one this morning. You should..."
+        answer: Take one more today
+        distractors: [Stop taking it, Take three more today, Wait until next week]
+        audio: dalawang_beses_sa_isang_araw
+        audio_text: Dalawang beses sa isang araw.
+      - type: translate
+        prompt_en: Take the medicine once a day.
+        answer_tl: Uminom ka ng gamot isang beses sa isang araw.
+        extra_words: [dalawang, gabi, tubig]
+        audio: uminom_ka_ng_gamot_isang_beses_sa_isang_araw
+      - type: translate
+        prompt_en: I take medicine in the morning.
+        answer_tl: Umiinom ako ng gamot sa umaga.
+        accept:
+          - "Sa umaga, umiinom ako ng gamot"
+          - "Umiinom ako sa umaga ng gamot"
+        extra_words: [kumakain, gabi, ka]
+        audio: umiinom_ako_ng_gamot_sa_umaga
+        hint: '"Umiinom" = drinks / takes, a habit — the repeated syllable again.'
+  - id: health-10
+    title: Get well soon
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gumaling, en: to get better }
+          - { tl: magpahinga, en: to rest }
+          - { tl: tubig, en: water }
+          - { tl: gamot, en: medicine }
+      - type: choice
+        prompt: "Your friend is sick in bed. You text her:"
+        answer: Pagaling ka!
+        distractors: [Para po!, Masarap ito!, Ang init!]
+        hint: '"Pagaling ka!" = get well soon (from galing, to heal).'
+      - type: translate
+        prompt_tl: Magaling na ako, wala na akong lagnat.
+        answer_en: I'm well now, I don't have a fever anymore.
+        accept: ["I am well now, I don't have a fever anymore", "I'm better now, I don't have a fever anymore", "I am better now, I don't have a fever anymore", "I'm well now, I have no fever anymore", "I'm better now, I have no fever anymore"]
+        extra_words: [still, cough, sick]
+        audio: magaling_na_ako_wala_na_akong_lagnat
+        hint: '"na" = already / now; "wala na" = not anymore.'
+      - type: fill_blank
+        sentence: "Wala ___ akong ubo."
+        translation: "I don't have a cough anymore."
+        answer: na
+        options: [na, pa, ba]
+      - type: choice
+        prompt: "'Gumaling na ang anak ko' means..."
+        answer: My child has gotten better
+        distractors: [My child is still sick, My child is at the doctor, My child is tired]
+        audio: gumaling_na_ang_anak_ko
+        audio_text: Gumaling na ang anak ko.
+      - type: listen
+        audio: pagaling_ka
+        answer_tl: Pagaling ka
+        accept: ["Pagaling ka!"]
+        extra_words: [na, ako]
+      - type: translate
+        prompt_tl: May sakit pa ba siya?
+        answer_en: Is she still sick?
+        accept: ["Is he still sick?"]
+        extra_words: [already, fever, not]
+        audio: may_sakit_pa_ba_siya
+        hint: '"pa" = still.'
+      - type: translate
+        prompt_en: Rest and get well soon!
+        answer_tl: Magpahinga ka at pagaling ka!
+        accept: ["Magpahinga ka, pagaling ka!"]
+        extra_words: [uminom, gamot, na]
+        audio: magpahinga_ka_at_pagaling_ka
+      - type: translate
+        prompt_en: I'm better now.
+        answer_tl: Magaling na ako.
+        accept: ["Mabuti na ako."]
+        extra_words: [pa, may, sakit]
+        audio: magaling_na_ako
+  - id: health-11
+    title: At the clinic
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "The doctor asks 'Ano ang masakit sa iyo?' You have a sore throat. You say:"
+        answer: Masakit po ang lalamunan ko.
+        distractors: [Masakit po ang braso ko., Nahihilo po ako., May reseta po ako.]
+        audio: ano_ang_masakit_sa_iyo
+        audio_text: Ano ang masakit sa iyo?
+      - type: translate
+        prompt_tl: Nahihilo ako at nasusuka, at may lagnat din ako.
+        answer_en: I'm dizzy and nauseous, and I also have a fever.
+        accept: ["I am dizzy and nauseous, and I also have a fever", "I feel dizzy and nauseous, and I also have a fever", "I'm dizzy and nauseous, and I have a fever too", "I am dizzy and nauseous, and I have a fever too"]
+        extra_words: [cough, tired, not]
+        audio: nahihilo_ako_at_nasusuka_at_may_lagnat_din_ako
+        hint: '"din" = also / too'
+      - type: fill_blank
+        sentence: "Uminom ka ng gamot tatlong ___ sa isang araw."
+        translation: "Take the medicine three times a day."
+        answer: beses
+        options: [beses, minuto, daliri]
+      - type: match
+        pairs:
+          - { tl: lalamunan, en: throat }
+          - { tl: nahihilo, en: dizzy }
+          - { tl: reseta, en: prescription }
+          - { tl: binti, en: leg }
+      - type: listen
+        audio: masakit_po_ang_lalamunan_ko
+        answer_tl: Masakit po ang lalamunan ko
+        extra_words: [leeg, dibdib]
+      - type: translate
+        prompt_en: Doctor, my chest and back hurt.
+        answer_tl: Doktor, masakit po ang dibdib at likod ko.
+        accept: ["Doktor, masakit ang dibdib at likod ko."]
+        extra_words: [leeg, mo, braso]
+        audio: doktor_masakit_po_ang_dibdib_at_likod_ko
+      - type: choice
+        prompt: "The doctor says 'Pumunta ka sa botika at bumili ng gamot.' You should..."
+        answer: Buy medicine at the pharmacy
+        distractors: [Go to the hospital, Buy food at the market, Rest at home]
+        audio: pumunta_ka_sa_botika_at_bumili_ng_gamot
+        audio_text: Pumunta ka sa botika at bumili ng gamot.
+      - type: translate
+        prompt_en: I'd like to buy medicine for a fever, please.
+        answer_tl: Pabili po ng gamot sa lagnat.
+        accept: ["Pabili po ng gamot para sa lagnat."]
+        extra_words: [ubo, ako, botika]
+        audio: pabili_po_ng_gamot_sa_lagnat
+      - type: translate
+        prompt_en: Get well soon, Grandma!
+        answer_tl: Pagaling po kayo, Lola!
+        accept: ["Pagaling ka, Lola!"]
+        extra_words: [ka, na, Lolo]
+        audio: pagaling_po_kayo_lola
+        hint: 'To an elder, swap "ka" for "po kayo".'

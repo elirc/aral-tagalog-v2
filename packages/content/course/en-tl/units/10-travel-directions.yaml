@@ -150,6 +150,7 @@ lessons:
       - type: translate
         prompt_en: Go straight, then turn right.
         answer_tl: Diretso ka, tapos lumiko ka sa kanan.
+        accept: ["Diretso ka, tapos lumiko sa kanan"]
         extra_words: [kaliwa, dito, malayo]
         hint: '"tapos" = then / after'
       - type: fill_blank
@@ -189,3 +190,376 @@ lessons:
         answer_tl: Saan ang palengke
         accept: ["Saan ang palengke?"]
         extra_words: [istasyon, jeepney]
+  - id: travel-5
+    title: Landmarks
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: harap, en: front }
+          - { tl: tabi, en: side / next to }
+          - { tl: likod, en: back / behind }
+          - { tl: tapat, en: across from }
+      - type: choice
+        prompt: "'Sa tabi ng simbahan' means..."
+        answer: Next to the church
+        distractors: [In front of the church, Behind the church, Across from the church]
+        audio: sa_tabi_ng_simbahan
+        audio_text: Sa tabi ng simbahan.
+        hint: '"sa ___ ng" = at the ___ of: sa tabi ng = next to.'
+      - type: translate
+        prompt_tl: Nasa harap ng paaralan ang istasyon.
+        answer_en: The station is in front of the school.
+        extra_words: [behind, church, near]
+        audio: nasa_harap_ng_paaralan_ang_istasyon
+      - type: fill_blank
+        sentence: "Nasa ___ ng bahay ang puno."
+        translation: "The tree is behind the house."
+        answer: likod
+        options: [likod, harap, tabi]
+        hint: 'Likod is your back — and "sa likod ng" is behind something.'
+      - type: choice
+        prompt: "The market is across the street from the church. It's 'sa ___ ng simbahan'."
+        answer: tapat
+        distractors: [tabi, likod, harap]
+      - type: listen
+        audio: nasa_tabi_ng_palengke_ang_simbahan
+        answer_tl: Nasa tabi ng palengke ang simbahan
+        extra_words: [harap, likod]
+      - type: translate
+        prompt_en: The school is across from the church.
+        answer_tl: Nasa tapat ng simbahan ang paaralan.
+        extra_words: [tabi, harap, doon]
+        audio: nasa_tapat_ng_simbahan_ang_paaralan
+      - type: translate
+        prompt_en: The house is next to the store.
+        answer_tl: Nasa tabi ng tindahan ang bahay.
+        extra_words: [likod, harap, simbahan]
+        audio: nasa_tabi_ng_tindahan_ang_bahay
+  - id: travel-6
+    title: How far?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gaano kalayo, en: how far }
+          - { tl: minuto, en: minute }
+          - { tl: malayo, en: far }
+          - { tl: malapit, en: near }
+      - type: choice
+        prompt: "'Gaano kalayo ang istasyon?' asks..."
+        answer: How far is the station?
+        distractors: [Where is the station?, Is the station big?, How many stations are there?]
+        audio: gaano_kalayo_ang_istasyon
+        audio_text: Gaano kalayo ang istasyon?
+        hint: '"Gaano ka-" + a root asks "how ...": gaano kalayo = how far.'
+      - type: translate
+        prompt_tl: Limang minuto lang.
+        answer_en: Just five minutes.
+        accept: ["Only five minutes", "It's just five minutes", "It's only five minutes", "It is just five minutes", "It is only five minutes"]
+        extra_words: [ten, hours, far]
+        audio: limang_minuto_lang
+        hint: 'Numbers link with -ng: lima → limang minuto.'
+      - type: fill_blank
+        sentence: "Mga sampung ___ lang ang palengke."
+        translation: "The market is only about ten minutes away."
+        answer: minuto
+        options: [minuto, kanto, daan]
+        hint: '"mga" before a number = about / around.'
+      - type: choice
+        prompt: "Someone says 'Malayo pa.' The place is..."
+        answer: Still far
+        distractors: [Very near, Right here, Closed]
+        audio: malayo_pa
+        audio_text: Malayo pa.
+        hint: '"pa" = still / yet.'
+      - type: listen
+        audio: gaano_kalayo_ang_istasyon
+        answer_tl: Gaano kalayo ang istasyon
+        accept: ["Gaano kalayo ang istasyon?"]
+        extra_words: [malapit, saan]
+      - type: translate
+        prompt_tl: Malapit lang, mga tatlong minuto.
+        answer_en: It's just near, about three minutes.
+        accept: ["It is just near, about three minutes", "It's close, about three minutes", "It's just nearby, about three minutes", "It's near, about three minutes"]
+        extra_words: [far, ten, hours]
+        audio: malapit_lang_mga_tatlong_minuto
+      - type: translate
+        prompt_en: How far is the market?
+        answer_tl: Gaano kalayo ang palengke?
+        extra_words: [saan, malapit, nasaan]
+        audio: gaano_kalayo_ang_palengke
+      - type: translate
+        prompt_en: It's about ten minutes.
+        answer_tl: Mga sampung minuto.
+        extra_words: [limang, malayo, kanto]
+        audio: mga_sampung_minuto
+  - id: travel-7
+    title: I'm lost
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naliligaw, en: lost (on the way) }
+          - { tl: mapa, en: map }
+          - { tl: paano, en: how }
+          - { tl: kanto, en: corner }
+      - type: choice
+        prompt: "'Naliligaw ako' means..."
+        answer: I'm lost
+        distractors: [I'm tired, I'm going home, I'm here]
+        audio: naliligaw_ako
+        audio_text: Naliligaw ako.
+      - type: translate
+        prompt_tl: Paano po pumunta sa istasyon?
+        answer_en: How do I get to the station?
+        accept: ["How do you get to the station?", "How do we get to the station?", "How can I get to the station?", "How do I go to the station?", "How do you go to the station?"]
+        extra_words: [where, market, far]
+        audio: paano_po_pumunta_sa_istasyon
+        hint: '"Paano pumunta sa...?" = How do I get to...? Add po when asking a stranger.'
+      - type: fill_blank
+        sentence: "___ po pumunta sa palengke?"
+        translation: "How do I get to the market?"
+        answer: Paano
+        options: [Paano, Saan, Ano]
+      - type: choice
+        prompt: "You're lost and want to show someone where you need to go. You take out your..."
+        answer: mapa
+        distractors: [payong, kanto, daan]
+      - type: listen
+        audio: naliligaw_ako
+        answer_tl: Naliligaw ako
+        extra_words: [doon, dito]
+      - type: translate
+        prompt_tl: May mapa ka ba?
+        answer_en: Do you have a map?
+        extra_words: [where, I, road]
+        audio: may_mapa_ka_ba
+      - type: translate
+        prompt_en: I'm lost. Where is the market?
+        answer_tl: Naliligaw ako. Nasaan ang palengke?
+        accept: ["Naliligaw ako. Saan ang palengke?"]
+        extra_words: [saan, doon, dito]
+        audio: naliligaw_ako_nasaan_ang_palengke
+      - type: translate
+        prompt_en: How do I get to the church?
+        answer_tl: Paano pumunta sa simbahan?
+        accept: ["Paano po pumunta sa simbahan?"]
+        extra_words: [po, saan, nasaan]
+        audio: paano_pumunta_sa_simbahan
+  - id: travel-8
+    title: Cross the bridge
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tumawid, en: cross }
+          - { tl: tulay, en: bridge }
+          - { tl: dulo, en: end }
+          - { tl: hanggang, en: until / up to }
+      - type: choice
+        prompt: "'Tumawid ka sa tulay' means..."
+        answer: Cross the bridge
+        distractors: [Turn at the bridge, Wait at the bridge, Go under the bridge]
+        audio: tumawid_ka_sa_tulay
+        audio_text: Tumawid ka sa tulay.
+        hint: '"Tumawid ka" = you cross — a command, like "Lumiko ka".'
+      - type: translate
+        prompt_tl: Diretso ka hanggang sa dulo ng daan.
+        answer_en: Go straight to the end of the road.
+        accept: ["Go straight until the end of the road", "Go straight up to the end of the road", "Go straight to the end of the street", "Go straight until the end of the street"]
+        extra_words: [left, bridge, corner]
+        audio: diretso_ka_hanggang_sa_dulo_ng_daan
+        hint: '"hanggang sa" = until / all the way to'
+      - type: fill_blank
+        sentence: "Nasa ___ ng daan ang simbahan."
+        translation: "The church is at the end of the road."
+        answer: dulo
+        options: [dulo, tulay, kanto]
+      - type: fill_blank
+        sentence: "___ ka sa daan, tapos lumiko ka sa kaliwa."
+        translation: "Cross the road, then turn left."
+        answer: Tumawid
+        options: [Tumawid, Sumakay, Pumunta]
+      - type: listen
+        audio: tumawid_ka_sa_tulay
+        answer_tl: Tumawid ka sa tulay
+        extra_words: [lumiko, kanto]
+      - type: choice
+        prompt: "Directions: 'Diretso hanggang sa tulay, tapos kaliwa.' Where do you turn left?"
+        answer: At the bridge
+        distractors: [At the end of the road, At the station, Right away]
+        audio: diretso_hanggang_sa_tulay_tapos_kaliwa
+        audio_text: Diretso hanggang sa tulay, tapos kaliwa.
+      - type: translate
+        prompt_en: Cross the bridge, then turn right.
+        answer_tl: Tumawid ka sa tulay, tapos lumiko ka sa kanan.
+        accept: ["Tumawid ka sa tulay, tapos lumiko sa kanan"]
+        extra_words: [kaliwa, dulo, diretso]
+        audio: tumawid_ka_sa_tulay_tapos_lumiko_ka_sa_kanan
+      - type: translate
+        prompt_en: The market is at the end of the road.
+        answer_tl: Nasa dulo ng daan ang palengke.
+        extra_words: [tulay, tabi, sa]
+        audio: nasa_dulo_ng_daan_ang_palengke
+  - id: travel-9
+    title: Para po!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "Para po!", en: "Stop, please!" }
+          - { tl: "Dito lang po.", en: "Just here, please." }
+          - { tl: sumakay, en: ride / board }
+          - { tl: kanto, en: corner }
+      - type: choice
+        prompt: "You're on a jeepney and want to get off. You call out:"
+        answer: Para po!
+        distractors: [Salamat po!, Saan po?, Diretso po!]
+        hint: 'A jeepney has no bell or button — "Para!" tells the driver to stop. Add "po" to be polite.'
+      - type: choice
+        prompt: "'Para po sa kanto' means..."
+        answer: Please stop at the corner
+        distractors: [Please turn at the corner, Is it near the corner?, Go straight to the corner]
+        audio: para_po_sa_kanto
+        audio_text: Para po sa kanto.
+      - type: translate
+        prompt_tl: Para po, dito lang po.
+        answer_en: Stop, please, just here.
+        accept: ["Stop please, just here", "Please stop, just here", "Please stop right here", "Stop please, right here", "Stop, please, right here"]
+        extra_words: [there, left, corner]
+        audio: para_po_dito_lang_po
+      - type: fill_blank
+        sentence: "Para po ___ simbahan."
+        translation: "Please stop at the church."
+        answer: sa
+        options: [sa, ng, ang]
+      - type: listen
+        audio: para_po_sa_kanto
+        answer_tl: Para po sa kanto
+        extra_words: [dito, kanan]
+      - type: choice
+        prompt: "A passenger calls out 'Kuya, para po!' Who is 'Kuya' here?"
+        answer: The driver
+        distractors: [Her older brother, A police officer, The passenger next to her]
+        audio: kuya_para_po
+        audio_text: Kuya, para po!
+        hint: 'Filipinos call a male driver or vendor "Kuya" (big brother) to be friendly and polite.'
+      - type: translate
+        prompt_en: Stop at the corner, please.
+        answer_tl: Para po sa kanto.
+        accept: ["Para sa kanto po"]
+        extra_words: [dito, kanan, ng]
+        audio: para_po_sa_kanto
+      - type: translate
+        prompt_en: Just here, please.
+        answer_tl: Dito lang po.
+        extra_words: [doon, para, sa]
+        audio: dito_lang_po
+  - id: travel-10
+    title: Talking to the driver
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Malapit na, en: Almost there }
+          - { tl: Malayo pa, en: Still far }
+          - { tl: Dito lang, en: Just here }
+          - { tl: Para po, en: "Stop, please" }
+      - type: choice
+        prompt: "'Malapit na ba tayo?' asks..."
+        answer: Are we almost there?
+        distractors: [Is it far?, Where are we going?, Should we turn?]
+        audio: malapit_na_ba_tayo
+        audio_text: Malapit na ba tayo?
+        hint: '"na" = already: malapit na = near already, almost there.'
+      - type: translate
+        prompt_tl: Kuya, sa istasyon po.
+        answer_en: To the station, please.
+        accept: ["The station, please", "Kuya, to the station, please"]
+        extra_words: [market, here, left]
+        audio: kuya_sa_istasyon_po
+        hint: 'Tell a driver where you are going with just "sa" + the place.'
+      - type: fill_blank
+        sentence: "Malapit ___ ba tayo?"
+        translation: "Are we almost there?"
+        answer: na
+        options: [na, pa, lang]
+      - type: translate
+        prompt_tl: Hindi pa, malayo pa.
+        answer_en: Not yet, it's still far.
+        accept: ["Not yet, still far", "Not yet, it is still far"]
+        extra_words: [near, here, almost]
+        audio: hindi_pa_malayo_pa
+        hint: '"Hindi pa" = not yet.'
+      - type: listen
+        audio: malapit_na_ba_tayo
+        answer_tl: Malapit na ba tayo
+        accept: ["Malapit na ba tayo?"]
+        extra_words: [pa, malayo]
+      - type: choice
+        prompt: "The jeepney is about to pass your stop! You say:"
+        answer: Kuya, para po! Dito lang po.
+        distractors: ["Kuya, diretso po.", Malayo pa po., Sumakay po kayo.]
+      - type: translate
+        prompt_en: Turn left at the corner, please.
+        answer_tl: Lumiko po kayo sa kaliwa sa kanto.
+        accept: ["Kaliwa po sa kanto."]
+        extra_words: [kanan, dito, diretso]
+        audio: lumiko_po_kayo_sa_kaliwa_sa_kanto
+        hint: '"po kayo" makes a command polite — use it with drivers and elders.'
+      - type: translate
+        prompt_en: We're almost there.
+        answer_tl: Malapit na tayo.
+        extra_words: [pa, ba, malayo]
+        audio: malapit_na_tayo
+  - id: travel-11
+    title: Finding the way
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A stranger asks you the way to the station. You say 'Go straight, then turn left at the bridge':"
+        answer: Diretso po kayo, tapos lumiko kayo sa kaliwa sa tulay.
+        distractors: ["Diretso po kayo, tapos lumiko kayo sa kanan sa tulay.", "Tumawid po kayo sa tulay, tapos diretso.", "Lumiko po kayo sa kaliwa, tapos tumawid sa tulay."]
+      - type: translate
+        prompt_tl: Nasa tapat ng simbahan ang istasyon, mga limang minuto lang.
+        answer_en: The station is across from the church, just about five minutes.
+        accept: ["The station is across from the church, only about five minutes", "The station is across from the church, about five minutes away", "The station is across from the church, just about five minutes away"]
+        extra_words: [next, behind, ten]
+        audio: nasa_tapat_ng_simbahan_ang_istasyon_limang_minuto
+      - type: fill_blank
+        sentence: "Diretso ka ___ sa dulo ng daan."
+        translation: "Go straight until the end of the road."
+        answer: hanggang
+        options: [hanggang, tapos, saan]
+      - type: match
+        pairs:
+          - { tl: tumawid, en: cross }
+          - { tl: naliligaw, en: lost }
+          - { tl: tapat, en: across from }
+          - { tl: gaano kalayo, en: how far }
+      - type: listen
+        audio: paano_po_pumunta_sa_istasyon
+        answer_tl: Paano po pumunta sa istasyon
+        accept: ["Paano po pumunta sa istasyon?"]
+        extra_words: [saan, malayo]
+      - type: translate
+        prompt_en: I'm lost. How far is the station?
+        answer_tl: Naliligaw ako. Gaano kalayo ang istasyon?
+        extra_words: [saan, malapit, ba]
+        audio: naliligaw_ako_gaano_kalayo_ang_istasyon
+      - type: translate
+        prompt_en: Cross the road, then go straight to the bridge.
+        answer_tl: Tumawid ka sa daan, tapos diretso ka hanggang sa tulay.
+        accept: ["Tumawid ka sa daan, tapos diretso hanggang sa tulay."]
+        extra_words: [kanan, dulo, lumiko]
+        audio: tumawid_ka_sa_daan_tapos_diretso_ka_hanggang_sa_tulay
+      - type: choice
+        prompt: "You're on a jeepney and your stop is the corner by the church. You say:"
+        answer: Para po sa kanto!
+        distractors: [Malayo pa po!, Sumakay po kayo sa kanto!, Saan po ang kanto?]
+      - type: translate
+        prompt_en: Is the station far?
+        answer_tl: Malayo ba ang istasyon?
+        extra_words: [malapit, saan, na]
+        audio: malayo_ba_ang_istasyon

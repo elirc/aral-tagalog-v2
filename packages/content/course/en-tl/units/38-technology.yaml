@@ -101,6 +101,9 @@ lessons:
       - type: translate
         prompt_en: I will call tomorrow.
         answer_tl: Tatawag ako bukas.
+        accept:
+          - "Bukas, tatawag ako"
+          - "Bukas ako tatawag"
         extra_words: [tumawag, kahapon, siya]
         audio: tatawag_ako_bukas
       - type: fill_blank
@@ -128,6 +131,9 @@ lessons:
       - type: translate
         prompt_en: I will call my mom in the evening.
         answer_tl: Tatawag ako sa nanay ko sa gabi.
+        accept:
+          - "Sa gabi, tatawag ako sa nanay ko"
+          - "Tatawag ako sa gabi sa nanay ko"
         extra_words: [tumawag, bukas, kaibigan]
         audio: tatawag_ako_sa_nanay_ko_sa_gabi
   - id: tech-3
@@ -252,3 +258,420 @@ lessons:
         accept: ["Tatawag ako bukas dahil wala akong load ngayon."]
         extra_words: [tumawag, kahapon, text]
         audio: tatawag_ako_bukas_kasi_wala_akong_load_ngayon
+  - id: tech-5
+    title: Nasira ang selpon ko
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nasira' means..."
+        answer: Broke / got broken
+        distractors: [Got lost, Got wet, Turned off]
+        audio: nasira
+        audio_text: Nasira
+      - type: match
+        pairs:
+          - { tl: nasira, en: broken }
+          - { tl: baterya, en: battery }
+          - { tl: charger, en: charger }
+          - { tl: mag-charge, en: to charge }
+      - type: translate
+        prompt_tl: Nasira ang selpon ko kahapon.
+        answer_en: My phone broke yesterday.
+        accept: ["My cellphone broke yesterday", "My phone got broken yesterday"]
+        extra_words: [computer, tomorrow, charger]
+        audio: nasira_ang_selpon_ko_kahapon
+      - type: fill_blank
+        sentence: "Nagcha-charge ang selpon ko sa ___."
+        translation: "My phone is charging in the room."
+        answer: kwarto
+        options: [kwarto, kusina, sala]
+        grading: { hyphens: true }
+      - type: listen
+        audio: nasira_ang_kompyuter_ko
+        answer_tl: Nasira ang kompyuter ko
+        extra_words: [selpon, charger]
+      - type: choice
+        prompt: "Your phone is about to die and you need to plug in. Ask:"
+        answer: Pwede ba akong mag-charge dito?
+        distractors: [Pwede ba akong kumain dito?, Magkano ang charger?, Nasaan ang banyo?]
+        audio: pwede_ba_akong_mag_charge_dito
+        audio_text: Pwede ba akong mag-charge dito?
+      - type: translate
+        prompt_en: I am charging my phone now.
+        answer_tl: Nagcha-charge ako ng selpon ngayon.
+        accept: ["Nagcha-charge ako ng selpon ko ngayon"]
+        extra_words: [kompyuter, kahapon, siya]
+        audio: nagcha_charge_ako_ng_selpon_ngayon
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Walang baterya ang selpon ko kasi nasira ang charger ko.
+        answer_en: My phone has no battery because my charger broke.
+        accept: ["My phone has no battery because my charger is broken", "My cellphone has no battery because my charger broke"]
+        extra_words: [computer, load, lost]
+        audio: walang_baterya_ang_selpon_ko_kasi_nasira_ang_charger_ko
+  - id: tech-6
+    title: May signal ba?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Walang signal' means..."
+        answer: There is no signal
+        distractors: [There is no load, The signal is weak, There is no wifi]
+        audio: walang_signal
+        audio_text: Walang signal.
+      - type: match
+        pairs:
+          - { tl: signal, en: signal }
+          - { tl: wifi, en: wifi }
+          - { tl: load, en: phone credit }
+          - { tl: internet, en: internet }
+      - type: fill_blank
+        sentence: "Walang ___ sa bundok."
+        translation: "There is no signal in the mountains."
+        answer: signal
+        options: [signal, load, wifi]
+      - type: translate
+        prompt_tl: May signal ba dito sa bundok?
+        answer_en: Is there a signal here in the mountains?
+        accept: ["Is there signal here in the mountains?", "Is there a signal here on the mountain?"]
+        extra_words: [wifi, store, water]
+        audio: may_signal_ba_dito_sa_bundok
+      - type: listen
+        audio: walang_signal_dito
+        answer_tl: Walang signal dito
+        extra_words: [wifi, doon]
+      - type: choice
+        prompt: "Your call keeps cutting out on the bus. You say:"
+        answer: Walang signal sa bus!
+        distractors: [Masarap ang pansit!, Malayo ang istasyon., May load ako.]
+        audio: walang_signal_sa_bus
+        audio_text: Walang signal sa bus!
+      - type: translate
+        prompt_en: I will text later. There is no signal now.
+        answer_tl: Magte-text ako mamaya. Walang signal ngayon.
+        accept:
+          - "Mamaya, magte-text ako. Walang signal ngayon"
+          - "Mamaya ako magte-text. Walang signal ngayon"
+        extra_words: [tatawag, kahapon, wifi]
+        audio: magte_text_ako_mamaya_walang_signal_ngayon
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nag-text lang ako kasi walang signal kanina.
+        answer_en: I just texted because there was no signal earlier.
+        accept: ["I only texted because there was no signal earlier", "I just sent a text because there was no signal earlier"]
+        extra_words: [called, wifi, tomorrow]
+        audio: nag_text_lang_ako_kasi_walang_signal_kanina
+        grading: { hyphens: true }
+  - id: tech-7
+    title: Mga mensahe
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Mensahe' means..."
+        answer: Message
+        distractors: [Call, Picture, News]
+        audio: mensahe
+        audio_text: Mensahe
+      - type: match
+        pairs:
+          - { tl: mensahe, en: message }
+          - { tl: password, en: password }
+          - { tl: numero, en: number }
+          - { tl: tawag, en: call }
+      - type: translate
+        prompt_tl: May mensahe ka sa selpon mo.
+        answer_en: You have a message on your phone.
+        accept: ["You have a message on your cellphone"]
+        extra_words: [call, my, computer]
+        audio: may_mensahe_ka_sa_selpon_mo
+      - type: fill_blank
+        sentence: "Nag-text ako ng ___ sa kaibigan ko."
+        translation: "I sent my friend a message."
+        answer: mensahe
+        options: [mensahe, numero, litrato]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "'Nakalimutan ko ang password ko' means..."
+        answer: I forgot my password
+        distractors: [I changed my password, I remember my password, I typed my password]
+        audio: nakalimutan_ko_ang_password_ko
+        audio_text: Nakalimutan ko ang password ko.
+        hint: '"Nakalimutan ko" = I forgot (it).'
+      - type: listen
+        audio: ano_ang_mensahe_niya
+        answer_tl: Ano ang mensahe niya
+        extra_words: [numero, mo]
+      - type: translate
+        prompt_en: I forgot the wifi password.
+        answer_tl: Nakalimutan ko ang password ng wifi.
+        extra_words: [mensahe, selpon, mo]
+        audio: nakalimutan_ko_ang_password_ng_wifi
+      - type: translate
+        prompt_tl: Marami akong mensahe kasi kaarawan ko ngayon.
+        answer_en: I have a lot of messages because it is my birthday today.
+        accept: ["I have many messages because it's my birthday today", "I have a lot of messages because today is my birthday"]
+        extra_words: [calls, gift, yesterday]
+        audio: marami_akong_mensahe_kasi_kaarawan_ko_ngayon
+  - id: tech-8
+    title: Social media
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nag-post, en: posted }
+          - { tl: selfie, en: selfie }
+          - { tl: litrato, en: photo }
+          - { tl: social media, en: social media }
+      - type: choice
+        prompt: "'Nag-post siya ng litrato' means..."
+        answer: She posted a photo
+        distractors: [She took a photo, She deleted a photo, She printed a photo]
+        audio: nag_post_siya_ng_litrato
+        audio_text: Nag-post siya ng litrato.
+      - type: translate
+        prompt_tl: Kumuha kami ng selfie sa pista.
+        answer_en: We took a selfie at the fiesta.
+        accept: ["We took a selfie at the festival"]
+        extra_words: [photo, market, video]
+        audio: kumuha_kami_ng_selfie_sa_pista
+      - type: fill_blank
+        sentence: "Nagpo-post ang ate ko ng ___ araw-araw."
+        translation: "My big sister posts photos every day."
+        answer: litrato
+        options: [litrato, gamot, kanin]
+        grading: { hyphens: true }
+      - type: listen
+        audio: nag_post_ako_ng_video
+        answer_tl: Nag-post ako ng video
+        extra_words: [litrato, selfie]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Your friend's selfie looks great. Comment:"
+        answer: Maganda ang selfie mo!
+        distractors: [Mabagal ang internet., Nasira ang selpon ko., Walang signal dito.]
+        audio: maganda_ang_selfie_mo
+        audio_text: Maganda ang selfie mo!
+      - type: translate
+        prompt_en: I posted our photo on social media.
+        answer_tl: Nag-post ako ng litrato natin sa social media.
+        accept: ["Nag-post ako sa social media ng litrato natin"]
+        extra_words: [selfie, kahapon, video]
+        audio: nag_post_ako_ng_litrato_natin_sa_social_media
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nagpo-post si Tita ng litrato ng ulam niya araw-araw.
+        answer_en: Auntie posts photos of her food every day.
+        accept: ["Auntie posts a photo of her food every day", "Aunt posts photos of her food every day"]
+        extra_words: [selfie, buys, yesterday]
+        audio: nagpo_post_si_tita_ng_litrato_ng_ulam_niya_araw_araw
+        grading: { hyphens: true }
+  - id: tech-9
+    title: Mga app
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nag-download ako ng app' means..."
+        answer: I downloaded an app
+        distractors: [I deleted an app, I opened an app, I bought a phone]
+        audio: nag_download_ako_ng_app
+        audio_text: Nag-download ako ng app.
+      - type: match
+        pairs:
+          - { tl: app, en: app }
+          - { tl: mag-download, en: to download }
+          - { tl: laro, en: game }
+          - { tl: kompyuter, en: computer }
+      - type: fill_blank
+        sentence: "Nag-download ako ng ___ sa selpon ko."
+        translation: "I downloaded a game on my phone."
+        answer: laro
+        options: [laro, mensahe, kanta]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Ano ang paborito mong app?
+        answer_en: What is your favorite app?
+        accept: ["What's your favorite app?"]
+        extra_words: [game, color, who]
+        audio: ano_ang_paborito_mong_app
+      - type: listen
+        audio: nagda_download_ako_ng_laro
+        answer_tl: Nagda-download ako ng laro
+        extra_words: [app, video]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "Which one means 'is downloading'?"
+        answer: nagda-download
+        distractors: [nag-download, mag-download, magda-download]
+        audio: nagda_download
+        audio_text: Nagda-download
+        hint: 'Same pattern as naglo-load and nagte-text: nag- + the first syllable doubled.'
+      - type: translate
+        prompt_en: I want to download the game, but the internet is slow.
+        answer_tl: Gusto kong mag-download ng laro, pero mabagal ang internet.
+        accept: ["Gusto kong mag-download ng laro pero mabagal ang internet"]
+        extra_words: [mabilis, selpon, kahapon]
+        audio: gusto_kong_mag_download_ng_laro_pero_mabagal_ang_internet
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Maraming app sa selpon ko, pero isa lang ang paborito ko.
+        answer_en: There are many apps on my phone, but only one is my favorite.
+        accept: ["There are a lot of apps on my phone, but only one is my favorite", "My phone has many apps, but only one is my favorite"]
+        extra_words: [games, two, computer]
+        audio: maraming_app_sa_selpon_ko_pero_isa_lang_ang_paborito_ko
+  - id: tech-10
+    title: Video call
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nag-video call kami kahapon' means..."
+        answer: We had a video call yesterday
+        distractors: [We watched a video yesterday, We will video call tomorrow, We texted yesterday]
+        audio: nag_video_call_kami_kahapon
+        audio_text: Nag-video call kami kahapon.
+      - type: match
+        pairs:
+          - { tl: video call, en: video call }
+          - { tl: tumawag, en: called }
+          - { tl: mensahe, en: message }
+          - { tl: selpon, en: cellphone }
+      - type: translate
+        prompt_tl: Nag-video call ako sa lola ko kahapon.
+        answer_en: I video called my grandma yesterday.
+        accept: ["I had a video call with my grandma yesterday", "I video called my grandmother yesterday"]
+        extra_words: [texted, mom, tomorrow]
+        audio: nag_video_call_ako_sa_lola_ko_kahapon
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "Gusto ni Lola ng ___ tuwing Linggo."
+        translation: "Grandma wants a video call every Sunday."
+        answer: video call
+        options: [video call, mensahe, litrato]
+      - type: listen
+        audio: mag_video_call_tayo_mamaya
+        answer_tl: Mag-video call tayo mamaya
+        extra_words: [bukas, tumawag]
+        grading: { hyphens: true }
+      - type: choice
+        prompt: "You want to see your family's faces, not just text them. Suggest:"
+        answer: Mag-video call tayo!
+        distractors: [Mag-text tayo!, Manood tayo ng pelikula!, Kumain tayo!]
+        audio: mag_video_call_tayo
+        audio_text: Mag-video call tayo!
+      - type: translate
+        prompt_en: Let's video call our grandma later!
+        answer_tl: Mag-video call tayo sa lola natin mamaya!
+        accept: ["Mag-video call tayo mamaya sa lola natin"]
+        extra_words: [bukas, tatay, selpon]
+        audio: mag_video_call_tayo_sa_lola_natin_mamaya
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Nag-video call ako sa pamilya ko kanina. Masaya sila.
+        answer_en: I video called my family earlier. They are happy.
+        accept: ["I had a video call with my family earlier. They are happy", "I video called my family earlier today. They are happy"]
+        extra_words: [sad, texted, tomorrow]
+        audio: nag_video_call_ako_sa_pamilya_ko_kanina_masaya_sila
+        grading: { hyphens: true }
+  - id: tech-11
+    title: Online
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Online' means..."
+        answer: On the internet
+        distractors: [On the phone, At the office, On television]
+        audio: online
+        audio_text: Online
+      - type: match
+        pairs:
+          - { tl: online, en: on the internet }
+          - { tl: mabilis, en: fast }
+          - { tl: mabagal, en: slow }
+          - { tl: libre, en: free }
+      - type: translate
+        prompt_tl: Nag-aaral online ang kapatid ko.
+        answer_en: My sibling studies online.
+        accept: ["My sibling is studying online", "My brother studies online", "My sister studies online", "My brother is studying online", "My sister is studying online"]
+        extra_words: [works, friend, school]
+        audio: nag_aaral_online_ang_kapatid_ko
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "Nagtatrabaho ___ ang tatay ko sa bahay."
+        translation: "My dad works online at home."
+        answer: online
+        options: [online, kanina, bukas]
+      - type: listen
+        audio: mabilis_ang_internet_sa_opisina
+        answer_tl: Mabilis ang internet sa opisina
+        extra_words: [mabagal, bahay]
+      - type: choice
+        prompt: "The café wifi is free. Tell your friend:"
+        answer: Libre ang wifi dito!
+        distractors: [Mahal ang wifi dito., Walang kape dito., Masarap ang kape dito.]
+        audio: libre_ang_wifi_dito
+        audio_text: Libre ang wifi dito!
+      - type: translate
+        prompt_en: I watch videos online every day.
+        answer_tl: Nanonood ako ng video online araw-araw.
+        accept: ["Araw-araw akong nanonood ng video online", "Nanonood ako online ng video araw-araw"]
+        extra_words: [litrato, kompyuter, gabi]
+        audio: nanonood_ako_ng_video_online_araw_araw
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Bumili ako ng sapatos online kasi mura.
+        answer_en: I bought shoes online because they are cheap.
+        accept: ["I bought shoes online because it's cheap", "I bought shoes online because they were cheap", "I bought shoes online because it was cheap"]
+        extra_words: [expensive, store, clothes]
+        audio: bumili_ako_ng_sapatos_online_kasi_mura
+  - id: tech-12
+    title: The digital day
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nag-post, en: posted }
+          - { tl: nag-download, en: downloaded }
+          - { tl: nag-text, en: texted }
+          - { tl: tumawag, en: called }
+      - type: choice
+        prompt: "You want to post your fiesta photos but the internet is slow. You say:"
+        answer: Gusto kong mag-post ng litrato, pero mabagal ang internet.
+        distractors: [Gusto kong matulog kasi pagod ako., Masarap ang pansit sa pista., Nasaan ang simbahan?]
+        audio: gusto_kong_mag_post_ng_litrato_pero_mabagal_ang_internet
+        audio_text: Gusto kong mag-post ng litrato, pero mabagal ang internet.
+      - type: fill_blank
+        sentence: "Hindi ako tumatawag kasi walang ___ ako."
+        translation: "I am not calling because I have no load."
+        answer: load
+        options: [load, signal, mensahe]
+      - type: translate
+        prompt_tl: Nag-download ako ng laro kanina. Masaya ang laro!
+        answer_en: I downloaded a game earlier. The game is fun!
+        accept: ["I downloaded a game earlier today. The game is fun!"]
+        extra_words: [app, slow, bought]
+        audio: nag_download_ako_ng_laro_kanina_masaya_ang_laro
+        grading: { hyphens: true }
+      - type: listen
+        audio: nag_post_si_kuya_ng_selfie_sa_social_media
+        answer_tl: Nag-post si Kuya ng selfie sa social media
+        extra_words: [litrato, mensahe]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Is there wifi here? I forgot my password.
+        answer_tl: May wifi ba dito? Nakalimutan ko ang password ko.
+        accept: ["May wifi po ba dito? Nakalimutan ko po ang password ko"]
+        extra_words: [signal, numero, mo]
+        audio: may_wifi_ba_dito_nakalimutan_ko_ang_password_ko
+      - type: translate
+        prompt_en: I am texting on my sibling's phone because my phone broke.
+        answer_tl: Nagte-text ako sa selpon ng kapatid ko kasi nasira ang selpon ko.
+        accept: ["Nagte-text ako sa selpon ng kapatid ko dahil nasira ang selpon ko"]
+        extra_words: [charger, bumili, mensahe]
+        audio: nagte_text_ako_sa_selpon_ng_kapatid_ko_kasi_nasira_ang_selpon_ko
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Kumuha kami ng selfie sa handaan, tapos nag-post ako sa social media, at maraming mensahe ako ngayon.
+        answer_en: We took a selfie at the party, then I posted on social media, and I have a lot of messages now.
+        accept: ["We took a selfie at the party, then I posted it on social media, and I have many messages now", "We took a selfie at the party then I posted on social media and I have a lot of messages now"]
+        extra_words: [photo, yesterday, calls]
+        audio: kumuha_kami_ng_selfie_sa_handaan_tapos_nag_post_ako_sa_social_media
+        grading: { hyphens: true }

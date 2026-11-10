@@ -1,0 +1,765 @@
+id: object-focus-i-an
+title: I- and -AN Verbs
+description: >-
+  Two more object-focus families: i- verbs for things you move or hand over,
+  and -an verbs for the person, place or surface you act on — plus commands
+  like "Buksan mo ang pinto."
+tip: >-
+  Not every object-focus verb takes -in. Verbs for moving or handing something
+  over take i-: ibigay (give), ilagay (put), itapon (throw away). Past adds
+  -in- after the i: ibinigay; ongoing doubles the next syllable: ibinibigay;
+  future drops the -in-: ibibigay. Verbs aimed at a person, place or surface
+  take -an: buksan (open), hugasan (wash), tulungan (help) — binuksan,
+  binubuksan, bubuksan. The doer is still ko/mo/niya or ng, and the thing in
+  focus still takes ang: "Ibinigay ko ang susi kay Tatay." Compare "Ibinigay ko
+  ang regalo kay Lola" (the gift is in focus) with "Binigyan ko si Lola ng
+  regalo" (Lola is in focus). For commands just use the base form with mo:
+  "Buksan mo ang pinto." "Huwag mong itapon!" Add paki- to ask nicely.
+lessons:
+  - id: ofian-1
+    title: Ibigay — hand it over
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ibigay' means..."
+        answer: To give (something)
+        distractors: [To take (something), To buy (something), To look for (something)]
+        audio: ibigay
+        audio_text: Ibigay
+      - type: match
+        pairs:
+          - { tl: ibigay, en: to give }
+          - { tl: ibinigay, en: gave }
+          - { tl: ibinibigay, en: is giving }
+          - { tl: ibibigay, en: will give }
+          - { tl: susi, en: key }
+      - type: translate
+        prompt_tl: Ibinigay ko ang susi kay Tatay.
+        answer_en: I gave the key to Dad.
+        accept: ["I gave Dad the key", "I gave the key to my dad", "I gave the key to Father"]
+        extra_words: [letter, will, Mom]
+        audio: ibinigay_ko_ang_susi_kay_tatay
+      - type: choice
+        prompt: "'Ibibigay ko ang sulat kay Lola bukas' means..."
+        answer: I will give the letter to Grandma tomorrow
+        distractors:
+          - I gave the letter to Grandma yesterday
+          - Grandma will give me the letter tomorrow
+          - I am giving the key to Grandma now
+        audio: ibibigay_ko_ang_sulat_kay_lola_bukas
+        audio_text: Ibibigay ko ang sulat kay Lola bukas.
+      - type: fill_blank
+        sentence: "___ ko ang pera sa tindera kanina."
+        translation: "I gave the money to the vendor earlier."
+        answer: Ibinigay
+        options: [Ibinigay, Ibibigay, Nagbigay]
+        hint: 'With "ko" and an ang-object you need the object-focus form; "kanina" makes it completed: ibinigay.'
+      - type: listen
+        audio: ibinigay_niya_ang_susi_sa_akin
+        answer_tl: Ibinigay niya ang susi sa akin
+        extra_words: [sulat, ibibigay]
+      - type: translate
+        prompt_tl: Ibinibigay ng guro ang mga libro sa mga bata.
+        answer_en: The teacher is giving the books to the children.
+        accept:
+          - "The teacher is giving the books to the kids"
+          - "The teacher gives the books to the children"
+          - "The teacher is giving the children the books"
+        extra_words: [gave, letters, doctor]
+        audio: ibinibigay_ng_guro_ang_mga_libro_sa_mga_bata
+      - type: translate
+        prompt_en: Give the letter to Mom.
+        answer_tl: Ibigay mo ang sulat kay Nanay.
+        accept: ["Ibigay mo kay Nanay ang sulat"]
+        extra_words: [susi, ibinigay, si]
+        audio: ibigay_mo_ang_sulat_kay_nanay
+        hint: 'Command = base form + mo. The thing given takes "ang"; the receiver takes "kay" (names) or "sa".'
+      - type: translate
+        prompt_en: I will give the key to you later.
+        answer_tl: Ibibigay ko ang susi sa iyo mamaya.
+        accept:
+          - "Ibibigay ko sa iyo ang susi mamaya"
+          - "Ibibigay ko sa iyo mamaya ang susi"
+          - "Ibibigay ko mamaya ang susi sa iyo"
+          - "Ibibigay ko ang susi sa'yo mamaya"
+          - "Ibibigay ko sa'yo ang susi mamaya"
+          - "Mamaya ko ibibigay ang susi sa iyo"
+          - "Mamaya ko ibibigay sa iyo ang susi"
+        extra_words: [ibinigay, sulat, kahapon]
+        audio: ibibigay_ko_ang_susi_sa_iyo_mamaya
+  - id: ofian-2
+    title: Put it, throw it
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ilagay, en: to put }
+          - { tl: itapon, en: to throw away }
+          - { tl: basurahan, en: trash can }
+          - { tl: kahon, en: box }
+          - { tl: basura, en: trash }
+      - type: choice
+        prompt: "'Itinapon ko ang basura' means..."
+        answer: I threw away the trash
+        distractors:
+          - I will throw away the trash
+          - I am throwing away the trash
+          - I put the trash in the box
+        audio: itinapon_ko_ang_basura
+        audio_text: Itinapon ko ang basura.
+      - type: translate
+        prompt_tl: Saan mo inilagay ang susi?
+        answer_en: Where did you put the key?
+        accept: ["Where did you place the key?"]
+        extra_words: [when, letter, throw]
+        audio: saan_mo_inilagay_ang_susi
+      - type: choice
+        prompt: "Which form means 'will put'?"
+        answer: ilalagay
+        distractors: [inilagay, inilalagay, ilagay]
+        audio: ilalagay
+        audio_text: Ilalagay
+      - type: translate
+        prompt_tl: Inilagay ko ang mga libro sa kahon.
+        answer_en: I put the books in the box.
+        accept: ["I put the books into the box", "I placed the books in the box"]
+        extra_words: [threw, table, letters]
+        audio: inilagay_ko_ang_mga_libro_sa_kahon
+      - type: listen
+        audio: itapon_mo_ito_sa_basurahan
+        answer_tl: Itapon mo ito sa basurahan
+        extra_words: [kahon, ilagay]
+      - type: fill_blank
+        sentence: "___ ko ang basura mamaya."
+        translation: "I will throw away the trash later."
+        answer: Itatapon
+        options: [Itatapon, Itinapon, Itinatapon]
+        hint: 'Future of an i- verb: keep i- and double the first syllable of the root — i + ta + tapon.'
+      - type: translate
+        prompt_en: Put the letter on the table.
+        answer_tl: Ilagay mo ang sulat sa mesa.
+        accept: ["Ilagay mo sa mesa ang sulat", "Ilagay ang sulat sa mesa"]
+        extra_words: [itapon, kahon, ng]
+        audio: ilagay_mo_ang_sulat_sa_mesa
+      - type: translate
+        prompt_en: I threw the box in the trash can.
+        answer_tl: Itinapon ko ang kahon sa basurahan.
+        accept: ["Itinapon ko sa basurahan ang kahon", "Tinapon ko ang kahon sa basurahan"]
+        extra_words: [inilagay, susi, mesa]
+        audio: itinapon_ko_ang_kahon_sa_basurahan
+        hint: 'Completed i- verbs put -in- right after the i: itapon → itinapon.'
+  - id: ofian-3
+    title: Write, close, show
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: isulat, en: to write down }
+          - { tl: isara, en: to close }
+          - { tl: ipakita, en: to show }
+          - { tl: papel, en: paper }
+          - { tl: pinto, en: door }
+      - type: choice
+        prompt: "'Isinara ko ang bintana kasi umuulan' means..."
+        answer: I closed the window because it was raining
+        distractors:
+          - I opened the window because it was hot
+          - I will close the window if it rains
+          - I am closing the door because it is raining
+        audio: isinara_ko_ang_bintana_kasi_umuulan
+        audio_text: Isinara ko ang bintana kasi umuulan.
+      - type: translate
+        prompt_tl: Isulat mo ang pangalan mo sa papel.
+        answer_en: Write your name on the paper.
+        accept: ["Write your name on paper", "Write down your name on the paper"]
+        extra_words: [number, show, door]
+        audio: isulat_mo_ang_pangalan_mo_sa_papel
+      - type: translate
+        prompt_tl: Ipinakita niya sa akin ang litrato ng anak niya.
+        answer_en: She showed me the picture of her child.
+        accept:
+          - "He showed me the picture of his child"
+          - "She showed me her child's picture"
+          - "He showed me his child's picture"
+          - "She showed me the photo of her child"
+          - "He showed me the photo of his child"
+          - "She showed me a picture of her child"
+          - "He showed me a picture of his child"
+        extra_words: [gave, letter, mother]
+        audio: ipinakita_niya_sa_akin_ang_litrato_ng_anak_niya
+      - type: fill_blank
+        sentence: "___ na nila ang tindahan."
+        translation: "They are closing the store now."
+        answer: Isinasara
+        options: [Isinasara, Isinara, Isasara]
+        hint: 'Ongoing i- verbs have both -in- and a doubled syllable: isinasara.'
+      - type: listen
+        audio: isinulat_ko_ang_numero_ko_sa_papel
+        answer_tl: Isinulat ko ang numero ko sa papel
+        extra_words: [pangalan, isusulat]
+      - type: choice
+        prompt: "Which form means 'will show'?"
+        answer: ipapakita
+        distractors: [ipinakita, ipinapakita, ipakita]
+        audio: ipapakita
+        audio_text: Ipapakita
+      - type: translate
+        prompt_en: Close the door.
+        answer_tl: Isara mo ang pinto.
+        accept: ["Isara ang pinto", "Isara mo ang pintuan"]
+        extra_words: [isulat, bintana, ka]
+        audio: isara_mo_ang_pinto
+      - type: translate
+        prompt_en: I will show you the paper tomorrow.
+        answer_tl: Ipapakita ko sa iyo ang papel bukas.
+        accept:
+          - "Ipapakita ko ang papel sa iyo bukas"
+          - "Ipapakita ko sa'yo ang papel bukas"
+          - "Ipapakita ko bukas sa iyo ang papel"
+          - "Ipapakita ko bukas ang papel sa iyo"
+          - "Ipakikita ko sa iyo ang papel bukas"
+          - "Bukas ko ipapakita sa iyo ang papel"
+          - "Bukas ko ipapakita ang papel sa iyo"
+        extra_words: [ipinakita, isusulat, kahapon]
+        audio: ipapakita_ko_sa_iyo_ang_papel_bukas
+        hint: 'The person you show it to takes "sa": sa iyo, sa akin, kay Lola.'
+  - id: ofian-4
+    title: Open and wash
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "The -an verb 'buksan' means..."
+        answer: To open (something)
+        distractors: [To close (something), To wash (something), To throw away (something)]
+        audio: buksan
+        audio_text: Buksan
+      - type: match
+        pairs:
+          - { tl: buksan, en: to open }
+          - { tl: binuksan, en: opened }
+          - { tl: binubuksan, en: is opening }
+          - { tl: bubuksan, en: will open }
+          - { tl: hugasan, en: to wash }
+      - type: translate
+        prompt_tl: Binuksan ko ang ref kasi gutom ako.
+        answer_en: I opened the fridge because I was hungry.
+        accept:
+          - "I opened the refrigerator because I was hungry"
+          - "I opened the fridge because I am hungry"
+          - "I opened the fridge because I'm hungry"
+          - "I opened the refrigerator because I am hungry"
+        extra_words: [closed, window, tired]
+        audio: binuksan_ko_ang_ref_kasi_gutom_ako
+      - type: choice
+        prompt: "'Hinuhugasan ni Ate ang mga plato' means..."
+        answer: My older sister is washing the plates
+        distractors:
+          - My older sister washed the plates
+          - My older sister will wash the plates
+          - My older sister is opening the box
+        audio: hinuhugasan_ni_ate_ang_mga_plato
+        audio_text: Hinuhugasan ni Ate ang mga plato.
+      - type: fill_blank
+        sentence: "___ mo muna ang kamay mo."
+        translation: "Wash your hands first."
+        answer: Hugasan
+        options: [Hugasan, Buksan, Isara]
+      - type: listen
+        audio: hinugasan_ko_ang_mga_plato
+        answer_tl: Hinugasan ko ang mga plato
+        extra_words: [baso, huhugasan]
+      - type: translate
+        prompt_tl: Bubuksan ko ang bintana kasi mainit.
+        answer_en: I will open the window because it's hot.
+        accept:
+          - "I'll open the window because it's hot"
+          - "I will open the window because it is hot"
+          - "I am going to open the window because it's hot"
+        extra_words: [door, opened, cold]
+        audio: bubuksan_ko_ang_bintana_kasi_mainit
+      - type: translate
+        prompt_en: I washed the plates earlier.
+        answer_tl: Hinugasan ko ang mga plato kanina.
+        accept: ["Hinugasan ko kanina ang mga plato", "Kanina ko hinugasan ang mga plato"]
+        extra_words: [huhugasan, baso, binuksan]
+        audio: hinugasan_ko_ang_mga_plato_kanina
+        hint: 'Completed -an verbs put -in- after the first consonant: hugasan → hinugasan.'
+      - type: translate
+        prompt_en: Mom is opening the box.
+        answer_tl: Binubuksan ni Nanay ang kahon.
+        extra_words: [binuksan, si, plato]
+        audio: binubuksan_ni_nanay_ang_kahon
+        hint: 'The doer of an object-focus verb is a ng-form — for a name, that is "ni".'
+  - id: ofian-5
+    title: Look and help
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Tingnan mo ito!' means..."
+        answer: Look at this!
+        distractors: [Wash this!, Open this!, Throw this away!]
+        audio: tingnan_mo_ito
+        audio_text: Tingnan mo ito!
+      - type: match
+        pairs:
+          - { tl: tingnan, en: to look at }
+          - { tl: tiningnan, en: looked at }
+          - { tl: tinitingnan, en: is looking at }
+          - { tl: tulungan, en: to help }
+          - { tl: tinulungan, en: helped }
+      - type: translate
+        prompt_tl: Tiningnan ng doktor ang kamay ko.
+        answer_en: The doctor looked at my hand.
+        accept: ["The doctor examined my hand", "The doctor checked my hand"]
+        extra_words: [washed, teacher, plates]
+        audio: tiningnan_ng_doktor_ang_kamay_ko
+      - type: translate
+        prompt_tl: Tinulungan ako ng kapitbahay namin.
+        answer_en: Our neighbor helped me.
+        accept: ["Our neighbour helped me", "I was helped by our neighbor"]
+        extra_words: [looked, friend, will]
+        audio: tinulungan_ako_ng_kapitbahay_namin
+      - type: choice
+        prompt: "'Tutulungan kita bukas' means..."
+        answer: I will help you tomorrow
+        distractors:
+          - You will help me tomorrow
+          - I helped you yesterday
+          - I will look at you tomorrow
+        audio: tutulungan_kita_bukas
+        audio_text: Tutulungan kita bukas.
+      - type: listen
+        audio: tinitingnan_niya_ang_mga_litrato
+        answer_tl: Tinitingnan niya ang mga litrato
+        extra_words: [sulat, tiningnan]
+      - type: fill_blank
+        sentence: "___ ko ang lola ko sa kusina kahapon."
+        translation: "I helped my grandmother in the kitchen yesterday."
+        answer: Tinulungan
+        options: [Tinulungan, Tutulungan, Tumulong]
+        hint: '"Tumulong" is actor focus and would need "ako"; with "ko" use the -an form: tinulungan.'
+      - type: translate
+        prompt_en: Look at the picture.
+        answer_tl: Tingnan mo ang litrato.
+        accept: ["Tingnan mo ang larawan", "Tingnan ang litrato"]
+        extra_words: [tulungan, sulat, ka]
+        audio: tingnan_mo_ang_litrato
+      - type: translate
+        prompt_en: She is helping her mother.
+        answer_tl: Tinutulungan niya ang nanay niya.
+        accept: ["Tinutulungan niya ang kanyang nanay", "Tinutulungan niya ang kaniyang nanay"]
+        extra_words: [tinulungan, siya, tinitingnan]
+        audio: tinutulungan_niya_ang_nanay_niya
+        hint: 'The person being helped is in focus (ang); the helper is the ng-form "niya".'
+  - id: ofian-6
+    title: Give to and pay
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bigyan, en: to give to (someone) }
+          - { tl: bayaran, en: to pay }
+          - { tl: upa, en: rent }
+          - { tl: kuryente, en: electricity }
+          - { tl: sukli, en: change }
+      - type: choice
+        prompt: "'Binigyan ako ni Lola ng pera' means..."
+        answer: Grandma gave me money
+        distractors:
+          - I gave Grandma money
+          - Grandma will give me money
+          - Grandma paid the rent
+        audio: binigyan_ako_ni_lola_ng_pera
+        audio_text: Binigyan ako ni Lola ng pera.
+      - type: translate
+        prompt_tl: Binayaran ko ang upa kahapon.
+        answer_en: I paid the rent yesterday.
+        extra_words: [will, electricity, tomorrow]
+        audio: binayaran_ko_ang_upa_kahapon
+      - type: translate
+        prompt_tl: Bigyan mo ako ng tubig.
+        answer_en: Give me water.
+        accept: ["Give me some water", "Give me a water"]
+        extra_words: [pay, coffee, him]
+        audio: bigyan_mo_ako_ng_tubig
+      - type: choice
+        prompt: "Which form means 'will pay'?"
+        answer: babayaran
+        distractors: [binayaran, binabayaran, bayaran]
+        audio: babayaran
+        audio_text: Babayaran
+      - type: listen
+        audio: binayaran_mo_na_ba_ang_kuryente
+        answer_tl: Binayaran mo na ba ang kuryente
+        extra_words: [upa, babayaran]
+      - type: fill_blank
+        sentence: "Binigyan ko ___ ng pagkain."
+        translation: "I gave the dog food."
+        answer: ang aso
+        options: [ang aso, sa aso, ng aso]
+        hint: 'With "bigyan" the receiver is in focus, so it takes "ang"; the thing given takes "ng".'
+      - type: translate
+        prompt_en: I will pay the rent tomorrow.
+        answer_tl: Babayaran ko ang upa bukas.
+        accept: ["Babayaran ko bukas ang upa", "Bukas ko babayaran ang upa"]
+        extra_words: [binayaran, kuryente, ako]
+        audio: babayaran_ko_ang_upa_bukas
+      - type: translate
+        prompt_en: I will give you money.
+        answer_tl: Bibigyan kita ng pera.
+        extra_words: [binigyan, ako, upa]
+        audio: bibigyan_kita_ng_pera
+        hint: '"kita" packs "ko" + "ka" into one word: I (do it to) you.'
+  - id: ofian-7
+    title: Puntahan — go to someone
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Puntahan' means..."
+        answer: To go to (a person or place)
+        distractors: [To come from (a place), To give to (a person), To pay (a person)]
+        audio: puntahan
+        audio_text: Puntahan
+      - type: match
+        pairs:
+          - { tl: puntahan, en: to go to }
+          - { tl: pinuntahan, en: went to }
+          - { tl: pinupuntahan, en: is going to }
+          - { tl: pupuntahan, en: will go to }
+          - { tl: babayaran, en: will pay }
+      - type: translate
+        prompt_tl: Pinuntahan namin si Lola sa ospital.
+        answer_en: We went to see Grandma at the hospital.
+        accept:
+          - "We went to Grandma at the hospital"
+          - "We visited Grandma at the hospital"
+          - "We went to see Grandma in the hospital"
+          - "We visited Grandma in the hospital"
+          - "We went to Grandma in the hospital"
+        extra_words: [helped, church, will]
+        audio: pinuntahan_namin_si_lola_sa_ospital
+      - type: choice
+        prompt: "'Pupuntahan kita mamaya' means..."
+        answer: I will come to you later
+        distractors:
+          - You will come to me later
+          - I went to you earlier
+          - I will pay you later
+        audio: pupuntahan_kita_mamaya
+        audio_text: Pupuntahan kita mamaya.
+      - type: translate
+        prompt_tl: Puntahan mo si Tatay sa kusina.
+        answer_en: Go to Dad in the kitchen.
+        accept: ["Go see Dad in the kitchen", "Go to see Dad in the kitchen", "Go to Father in the kitchen"]
+        extra_words: [help, Mom, store]
+        audio: puntahan_mo_si_tatay_sa_kusina
+      - type: listen
+        audio: pinuntahan_ko_ang_doktor_kahapon
+        answer_tl: Pinuntahan ko ang doktor kahapon
+        extra_words: [kanina, pupuntahan]
+      - type: fill_blank
+        sentence: "___ ko ang kaibigan ko bukas."
+        translation: "I will go see my friend tomorrow."
+        answer: Pupuntahan
+        options: [Pupuntahan, Pinuntahan, Pupunta]
+        hint: '"Pupunta" needs "ako" and "sa"; with "ko" and an ang-phrase use pupuntahan.'
+      - type: translate
+        prompt_en: I went to see my grandmother yesterday.
+        answer_tl: Pinuntahan ko ang lola ko kahapon.
+        accept:
+          - "Pinuntahan ko kahapon ang lola ko"
+          - "Kahapon ko pinuntahan ang lola ko"
+          - "Pinuntahan ko si Lola kahapon"
+          - "Pinuntahan ko ang aking lola kahapon"
+          - "Pumunta ako sa lola ko kahapon"
+        extra_words: [pupuntahan, sa, bukas]
+        audio: pinuntahan_ko_ang_lola_ko_kahapon
+        hint: 'The person you go to is in focus, so it takes "ang" (or "si" with a name).'
+      - type: translate
+        prompt_en: We will go to the doctor later.
+        answer_tl: Pupuntahan namin ang doktor mamaya.
+        accept:
+          - "Pupuntahan namin mamaya ang doktor"
+          - "Mamaya namin pupuntahan ang doktor"
+          - "Pupuntahan natin ang doktor mamaya"
+          - "Pupunta kami sa doktor mamaya"
+          - "Pupunta tayo sa doktor mamaya"
+        extra_words: [pinuntahan, guro, kanina]
+        audio: pupuntahan_namin_ang_doktor_mamaya
+  - id: ofian-8
+    title: Do it! Commands with mo
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Tell one person: 'Open the door.'"
+        answer: Buksan mo ang pinto.
+        distractors: [Buksan ka ang pinto., Binuksan mo ang pinto., Isara mo ang pinto.]
+        audio: buksan_mo_ang_pinto
+        audio_text: Buksan mo ang pinto.
+      - type: match
+        pairs:
+          - { tl: buksan mo, en: open it }
+          - { tl: isara mo, en: close it }
+          - { tl: hugasan mo, en: wash it }
+          - { tl: itapon mo, en: throw it away }
+          - { tl: tingnan mo, en: look at it }
+      - type: translate
+        prompt_tl: Huwag mong itapon ang resibo.
+        answer_en: Don't throw away the receipt.
+        accept: ["Do not throw away the receipt", "Don't throw the receipt away", "Do not throw the receipt away"]
+        extra_words: [open, letter, please]
+        audio: huwag_mong_itapon_ang_resibo
+      - type: choice
+        prompt: "'Huwag mong buksan ang kahon' means..."
+        answer: Don't open the box
+        distractors: [Open the box, Don't close the box, You didn't open the box]
+        audio: huwag_mong_buksan_ang_kahon
+        audio_text: Huwag mong buksan ang kahon.
+      - type: fill_blank
+        sentence: "Huwag ___ isara ang bintana; mainit."
+        translation: "Don't close the window; it's hot."
+        answer: mong
+        options: [mong, mo, kang]
+        hint: 'Object-focus commands use "mo"; after "huwag" it takes the linker: huwag mong + verb.'
+      - type: listen
+        audio: isulat_mo_ang_pangalan_mo
+        answer_tl: Isulat mo ang pangalan mo
+        extra_words: [numero, isara]
+      - type: translate
+        prompt_tl: Bayaran mo muna ang drayber.
+        answer_en: Pay the driver first.
+        accept: ["Pay the driver first, please", "First pay the driver"]
+        extra_words: [help, vendor, later]
+        audio: bayaran_mo_muna_ang_drayber
+      - type: translate
+        prompt_en: Wash the plates and throw away the trash.
+        answer_tl: Hugasan mo ang mga plato at itapon mo ang basura.
+        accept:
+          - "Hugasan mo ang mga plato at itapon ang basura"
+          - "Hugasan mo ang mga plato at itapon mo ang mga basura"
+        extra_words: [huwag, buksan, kahon]
+        audio: hugasan_mo_ang_mga_plato_at_itapon_mo_ang_basura
+      - type: translate
+        prompt_en: Don't put the key in the box.
+        answer_tl: Huwag mong ilagay ang susi sa kahon.
+        accept: ["Huwag mong ilagay sa kahon ang susi", "Huwag mo ilagay ang susi sa kahon"]
+        extra_words: [kang, itapon, mesa]
+        audio: huwag_mong_ilagay_ang_susi_sa_kahon
+        hint: '"Huwag kang..." goes with actor-focus verbs; with i-, -an and -in verbs say "Huwag mong...".'
+  - id: ofian-9
+    title: Paki- with ang
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pakitapon ang basura' means..."
+        answer: Please throw away the trash
+        distractors:
+          - Please put the trash here
+          - Don't throw away the trash
+          - Please open the trash can
+        audio: pakitapon_ang_basura
+        audio_text: Pakitapon ang basura.
+      - type: match
+        pairs:
+          - { tl: pakibigay, en: please give }
+          - { tl: pakilagay, en: please put }
+          - { tl: pakitapon, en: please throw away }
+          - { tl: pakibuksan, en: please open }
+          - { tl: pakisara, en: please close }
+      - type: translate
+        prompt_tl: Pakilagay po ang mga plato sa mesa.
+        answer_en: Please put the plates on the table.
+        accept: ["Please place the plates on the table", "Put the plates on the table, please"]
+        extra_words: [wash, box, glasses]
+        audio: pakilagay_po_ang_mga_plato_sa_mesa
+      - type: translate
+        prompt_tl: Pakibigay ang susi kay Kuya.
+        answer_en: Please give the key to my older brother.
+        accept:
+          - "Please give the key to Kuya"
+          - "Please give the key to older brother"
+          - "Please give the key to big brother"
+          - "Please give the key to my big brother"
+          - "Please give my older brother the key"
+        extra_words: [sister, letter, show]
+        audio: pakibigay_ang_susi_kay_kuya
+      - type: fill_blank
+        sentence: "___ po ang bintana; malamig ang hangin."
+        translation: "Please close the window; the wind is cold."
+        answer: Pakisara
+        options: [Pakisara, Pakibuksan, Pakitapon]
+        hint: 'paki- + the root "sara" (close) = please close.'
+      - type: listen
+        audio: pakibuksan_po_ang_pinto
+        answer_tl: Pakibuksan po ang pinto
+        extra_words: [bintana, pakisara]
+      - type: choice
+        prompt: "Politely ask someone to throw the paper in the trash can."
+        answer: Pakitapon po ang papel sa basurahan.
+        distractors:
+          - Pakilagay po ang papel sa mesa.
+          - Pakibigay po ang papel sa akin.
+          - Huwag mong itapon ang papel.
+        audio: pakitapon_po_ang_papel_sa_basurahan
+        audio_text: Pakitapon po ang papel sa basurahan.
+      - type: translate
+        prompt_en: Please put the letter in the box.
+        answer_tl: Pakilagay ang sulat sa kahon.
+        accept:
+          - "Pakilagay po ang sulat sa kahon"
+          - "Pakilagay sa kahon ang sulat"
+          - "Pakilagay nga ang sulat sa kahon"
+          - "Pakilagay nga po ang sulat sa kahon"
+          - "Pakilagay mo ang sulat sa kahon"
+        extra_words: [pakitapon, mesa, ng]
+        audio: pakilagay_ang_sulat_sa_kahon
+        hint: 'A paki- request is still object focus: the thing takes "ang", and the doer (mo) is usually dropped.'
+      - type: translate
+        prompt_en: Please give the paper to the teacher.
+        answer_tl: Pakibigay ang papel sa guro.
+        accept:
+          - "Pakibigay po ang papel sa guro"
+          - "Pakibigay sa guro ang papel"
+          - "Pakibigay nga ang papel sa guro"
+          - "Pakibigay nga po ang papel sa guro"
+          - "Pakibigay mo ang papel sa guro"
+        extra_words: [pakilagay, sulat, kay]
+        audio: pakibigay_ang_papel_sa_guro
+  - id: ofian-10
+    title: The thing or the person?
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "In 'Ibinigay ko ang regalo kay Lola', what is in focus (marked by ang)?"
+        answer: The thing given — the gift
+        distractors: [The receiver — Lola, The giver — me, The time it happened]
+        audio: ibinigay_ko_ang_regalo_kay_lola
+        audio_text: Ibinigay ko ang regalo kay Lola.
+      - type: translate
+        prompt_tl: Ibinigay ko ang regalo kay Lola.
+        answer_en: I gave the gift to Grandma.
+        accept: ["I gave the present to Grandma", "I gave Grandma the gift", "I gave Grandma the present"]
+        extra_words: [letter, will, Grandpa]
+        audio: ibinigay_ko_ang_regalo_kay_lola
+      - type: choice
+        prompt: "In 'Binigyan ko si Lola ng regalo', what is in focus (marked by si)?"
+        answer: The receiver — Lola
+        distractors: [The thing given — the gift, The giver — me, The time it happened]
+        audio: binigyan_ko_si_lola_ng_regalo
+        audio_text: Binigyan ko si Lola ng regalo.
+      - type: translate
+        prompt_tl: Binigyan ko si Lola ng regalo.
+        answer_en: I gave Grandma a gift.
+        accept: ["I gave Grandma a present", "I gave a gift to Grandma", "I gave a present to Grandma"]
+        extra_words: [letter, paid, Grandpa]
+        audio: binigyan_ko_si_lola_ng_regalo
+      - type: fill_blank
+        sentence: "Binigyan ko ___ ng sulat."
+        translation: "I gave the teacher a letter."
+        answer: ang guro
+        options: [ang guro, sa guro, ng guro]
+        hint: 'Binigyan puts the receiver in focus, so the receiver takes "ang".'
+      - type: fill_blank
+        sentence: "___ ko ang sulat sa guro."
+        translation: "I gave the letter to the teacher."
+        answer: Ibinigay
+        options: [Ibinigay, Binigyan, Nagbigay]
+        hint: 'Here "ang" marks the thing given and the receiver takes "sa" — that is the i- verb.'
+      - type: listen
+        audio: binigyan_niya_ako_ng_bulaklak
+        answer_tl: Binigyan niya ako ng bulaklak
+        extra_words: [regalo, ibinigay]
+      - type: translate
+        prompt_en: I gave the money to the driver.
+        answer_tl: Ibinigay ko ang pera sa drayber.
+        accept:
+          - "Ibinigay ko sa drayber ang pera"
+          - "Binigay ko ang pera sa drayber"
+          - "Binigay ko sa drayber ang pera"
+          - "Binigyan ko ang drayber ng pera"
+          - "Binigyan ko ng pera ang drayber"
+        extra_words: [binigyan, si, sukli]
+        audio: ibinigay_ko_ang_pera_sa_drayber
+        hint: '"The money" is a specific thing, so put it in focus with ang and use ibinigay.'
+      - type: translate
+        prompt_en: Mom gave me a key.
+        answer_tl: Binigyan ako ni Nanay ng susi.
+        accept: ["Binigyan ako ng susi ni Nanay"]
+        extra_words: [ibinigay, si, ko]
+        audio: binigyan_ako_ni_nanay_ng_susi
+        hint: '"A key" is not specific, so focus on the receiver: binigyan + ako, with "ng susi" for the thing.'
+  - id: ofian-11
+    title: Around the house
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: itinapon, en: threw away }
+          - { tl: hinugasan, en: washed }
+          - { tl: isinara, en: closed }
+          - { tl: binayaran, en: paid }
+          - { tl: tiningnan, en: looked at }
+      - type: choice
+        prompt: "'Hinugasan mo na ba ang mga plato?' means..."
+        answer: Have you washed the plates yet?
+        distractors:
+          - Will you wash the plates?
+          - Are you washing the plates?
+          - Did you throw away the plates?
+        audio: hinugasan_mo_na_ba_ang_mga_plato
+        audio_text: Hinugasan mo na ba ang mga plato?
+      - type: translate
+        prompt_tl: Isinara ko ang pinto, tapos inilagay ko ang susi sa mesa.
+        answer_en: I closed the door, then I put the key on the table.
+        accept:
+          - "I closed the door, then put the key on the table"
+          - "I closed the door and then I put the key on the table"
+          - "I closed the door, and then I put the key on the table"
+          - "I closed the door and then put the key on the table"
+        extra_words: [opened, box, window]
+        audio: isinara_ko_ang_pinto_tapos_inilagay_ko_ang_susi_sa_mesa
+      - type: translate
+        prompt_tl: Tinulungan ko si Nanay; hinugasan ko ang mga plato.
+        answer_en: I helped Mom; I washed the plates.
+        accept:
+          - "I helped Mom, I washed the plates"
+          - "I helped Mom and I washed the plates"
+          - "I helped Mom; I washed the dishes"
+          - "I helped Mother; I washed the plates"
+        extra_words: [Dad, paid, glasses]
+        audio: tinulungan_ko_si_nanay_hinugasan_ko_ang_mga_plato
+      - type: listen
+        audio: itinapon_ko_ang_basura_kanina
+        answer_tl: Itinapon ko ang basura kanina
+        extra_words: [kahon, itatapon]
+      - type: fill_blank
+        sentence: "Bubuksan ko ang ilaw, tapos ___ ko ang bintana."
+        translation: "I will turn on the light, then I will close the window."
+        answer: isasara
+        options: [isasara, isinara, isinasara]
+      - type: choice
+        prompt: "Your friend asks: 'Saan mo inilagay ang sulat?' Which reply makes sense?"
+        answer: Inilagay ko sa kahon.
+        distractors: [Binayaran ko ang upa., Bukas ng umaga., Tinulungan ako ni Kuya.]
+        audio: saan_mo_inilagay_ang_sulat
+        audio_text: Saan mo inilagay ang sulat?
+      - type: translate
+        prompt_en: Did you already pay the rent?
+        answer_tl: Binayaran mo na ba ang upa?
+        accept: ["Binayaran mo na ang upa", "Nabayaran mo na ba ang upa"]
+        extra_words: [babayaran, kuryente, ko]
+        audio: binayaran_mo_na_ba_ang_upa
+        hint: 'Little words line up after the verb in this order: mo, then na, then ba.'
+      - type: translate
+        prompt_en: I will show Grandma the letter tomorrow.
+        answer_tl: Ipapakita ko kay Lola ang sulat bukas.
+        accept:
+          - "Ipapakita ko ang sulat kay Lola bukas"
+          - "Ipapakita ko bukas kay Lola ang sulat"
+          - "Ipapakita ko bukas ang sulat kay Lola"
+          - "Ipakikita ko kay Lola ang sulat bukas"
+          - "Bukas ko ipapakita kay Lola ang sulat"
+          - "Bukas ko ipapakita ang sulat kay Lola"
+        extra_words: [ipinakita, si, papel]
+        audio: ipapakita_ko_kay_lola_ang_sulat_bukas
+        hint: 'The letter is in focus (ang); the person you show it to takes "kay" before a name.'

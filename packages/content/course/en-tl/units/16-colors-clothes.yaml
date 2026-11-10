@@ -198,6 +198,7 @@ lessons:
       - type: translate
         prompt_en: He is wearing black shoes.
         answer_tl: Nakasuot siya ng itim na sapatos.
+        accept: ["Nakasuot siya ng sapatos na itim"]
         extra_words: [pula, damit, medyas]
       - type: fill_blank
         sentence: "Nakasuot ang babae ng ___ na sombrero."
@@ -208,3 +209,365 @@ lessons:
         prompt_tl: Anong kulay ang bestida mo?
         answer_en: What color is your dress?
         extra_words: [where, shoes, who]
+  - id: colors-5
+    title: More colors
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: lila, en: purple }
+          - { tl: kayumanggi, en: brown }
+          - { tl: kulay-abo, en: gray }
+          - { tl: rosas, en: pink }
+      - type: choice
+        prompt: "'Kayumanggi' means..."
+        answer: Brown
+        distractors: [Purple, Gray, Orange]
+        audio: kayumanggi
+        audio_text: Kayumanggi
+        hint: Filipinos often call their own skin tone kayumanggi.
+      - type: translate
+        prompt_tl: Ano ang paborito mong kulay?
+        answer_en: What is your favorite color?
+        accept: ["What's your favorite color?"]
+        extra_words: [where, my, shoes]
+        audio: ano_ang_paborito_mong_kulay
+        hint: '"paborito" = favorite; "mo" + linker = "mong" before the next word.'
+      - type: fill_blank
+        sentence: "Lila ang paborito kong ___."
+        translation: "Purple is my favorite color."
+        answer: kulay
+        options: [kulay, damit, sapatos]
+        audio: lila_ang_paborito_kong_kulay
+      - type: listen
+        audio: kulay_abo_ang_langit
+        answer_tl: Kulay-abo ang langit
+        accept: ["Kulay abo ang langit"]
+        extra_words: [asul, puti]
+        hint: '"abo" = ash, so "kulay-abo" is ash-colored: gray.'
+      - type: choice
+        prompt: "'Kayumangging sapatos' means..."
+        answer: Brown shoes
+        distractors: [Purple shoes, Brown socks, Gray shoes]
+        audio: kayumangging_sapatos
+        audio_text: Kayumangging sapatos
+        hint: 'kayumanggi ends in a vowel, so it takes -ng: kayumangging sapatos.'
+      - type: translate
+        prompt_en: My favorite color is brown.
+        answer_tl: Kayumanggi ang paborito kong kulay.
+        accept: ["Ang paborito kong kulay ay kayumanggi."]
+        extra_words: [mo, asul, na]
+        audio: kayumanggi_ang_paborito_kong_kulay
+      - type: translate
+        prompt_en: I want a purple dress.
+        answer_tl: Gusto ko ng lilang bestida.
+        extra_words: [lila, na, damit]
+        audio: gusto_ko_ng_lilang_bestida
+        hint: 'lila ends in a vowel, so it takes -ng: lilang bestida.'
+  - id: colors-6
+    title: Slippers, jackets and more
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tsinelas, en: slippers }
+          - { tl: dyaket, en: jacket }
+          - { tl: relo, en: watch }
+          - { tl: payong, en: umbrella }
+      - type: choice
+        prompt: "'Tsinelas' means..."
+        answer: Slippers (flip-flops)
+        distractors: [Socks, Shoes, Hat]
+        audio: tsinelas
+        audio_text: Tsinelas
+        hint: Everyone wears tsinelas at home — and plenty of people wear them everywhere else too.
+      - type: translate
+        prompt_tl: Nasaan ang payong ko? Umuulan.
+        answer_en: Where is my umbrella? It's raining.
+        accept: ["Where's my umbrella? It's raining.", "Where is my umbrella? It is raining."]
+        extra_words: [jacket, cold, your]
+        audio: nasaan_ang_payong_ko_umuulan
+      - type: fill_blank
+        sentence: "Malamig. Suot ko ang ___ ko."
+        translation: "It's cold. I'm wearing my jacket."
+        answer: dyaket
+        options: [dyaket, tsinelas, relo]
+        audio: malamig_suot_ko_ang_dyaket_ko
+      - type: listen
+        audio: itim_na_relo
+        answer_tl: Itim na relo
+        extra_words: [puti, payong]
+      - type: choice
+        prompt: "You visit a Filipino home. You leave your shoes at the door and put on..."
+        answer: Tsinelas
+        distractors: [Payong, Dyaket, Sombrero]
+      - type: translate
+        prompt_en: I have a new watch.
+        answer_tl: May bagong relo ako.
+        extra_words: [maliit, payong, ka]
+        audio: may_bagong_relo_ako
+        hint: '"bago" = new; before a noun it takes -ng: bagong relo.'
+      - type: translate
+        prompt_en: The umbrella is yellow.
+        answer_tl: Dilaw ang payong.
+        extra_words: [pula, relo, na]
+        audio: dilaw_ang_payong
+  - id: colors-7
+    title: Who's wearing what?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nakasuot, en: wearing }
+          - { tl: sino, en: who }
+          - { tl: lalaki, en: man }
+          - { tl: babae, en: woman }
+      - type: choice
+        prompt: "'Sino ang nakasuot ng pulang dyaket?' means..."
+        answer: Who is wearing the red jacket?
+        distractors: [Where is the red jacket?, Is he wearing a red jacket?, Who bought the red jacket?]
+        audio: sino_ang_nakasuot_ng_pulang_dyaket
+        audio_text: Sino ang nakasuot ng pulang dyaket?
+      - type: translate
+        prompt_tl: Nakasuot si Ana ng puting kamiseta at asul na palda.
+        answer_en: Ana is wearing a white shirt and a blue skirt.
+        accept: ["Ana is wearing a white shirt and blue skirt"]
+        extra_words: [black, pants, red]
+        audio: nakasuot_si_ana_ng_puting_kamiseta_at_asul_na_palda
+      - type: fill_blank
+        sentence: "Nakasuot ang ___ ng berdeng bestida."
+        translation: "The woman is wearing a green dress."
+        answer: babae
+        options: [babae, lalaki, kaibigan]
+        audio: nakasuot_ang_babae_ng_berdeng_bestida
+      - type: listen
+        audio: nakasuot_siya_ng_tsinelas
+        answer_tl: Nakasuot siya ng tsinelas
+        extra_words: [sapatos, ako]
+      - type: choice
+        prompt: "Which one says 'He is wearing brown shoes'?"
+        answer: Nakasuot siya ng kayumangging sapatos.
+        distractors:
+          - Nakasuot siya ng kayumanggi sapatos.
+          - Nakasuot siya ng sapatos kayumanggi.
+          - Suot ko ang kayumangging sapatos.
+        hint: 'A color before the noun needs its linker.'
+      - type: translate
+        prompt_en: Who is wearing the black hat?
+        answer_tl: Sino ang nakasuot ng itim na sombrero?
+        extra_words: [ano, pula, si]
+        audio: sino_ang_nakasuot_ng_itim_na_sombrero
+      - type: translate
+        prompt_en: Ben is wearing a yellow shirt and black pants.
+        answer_tl: Nakasuot si Ben ng dilaw na kamiseta at itim na pantalon.
+        extra_words: [pulang, ang, sapatos]
+        audio: nakasuot_si_ben_ng_dilaw_na_kamiseta_at_itim_na_pantalon
+  - id: colors-8
+    title: Size and fit
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maluwag, en: loose }
+          - { tl: masikip, en: tight }
+          - { tl: kasya, en: fits }
+          - { tl: sukat, en: size }
+      - type: choice
+        prompt: "'Masikip ang sapatos ko' means..."
+        answer: My shoes are tight
+        distractors: [My shoes are loose, My shoes are new, My shoes are expensive]
+        audio: masikip_ang_sapatos_ko
+        audio_text: Masikip ang sapatos ko.
+      - type: translate
+        prompt_tl: Maluwag ang pantalon. Malaki ito.
+        answer_en: The pants are loose. They're big.
+        accept: ["The pants are loose. They are big.", "The pants are loose. It's big.", "The pants are loose. It is big."]
+        extra_words: [tight, small, shoes]
+        audio: maluwag_ang_pantalon_malaki_ito
+      - type: fill_blank
+        sentence: "Hindi ___ sa akin ang damit."
+        translation: "The clothes don't fit me."
+        answer: kasya
+        options: [kasya, sukat, suot]
+        audio: hindi_kasya_sa_akin_ang_damit
+        hint: '"kasya" = fits; "sa akin" = on me.'
+      - type: choice
+        prompt: "In a shop, you ask 'Pwede bang isukat?' You want to..."
+        answer: Try it on
+        distractors: [Pay for it, Get a discount, Return it]
+        audio: pwede_bang_isukat
+        audio_text: Pwede bang isukat?
+        hint: '"pwede ba" = may I / can I; "isukat" = to try on, from "sukat" (size).'
+      - type: listen
+        audio: masikip_ang_pantalon_ko
+        answer_tl: Masikip ang pantalon ko
+        extra_words: [maluwag, mo]
+      - type: translate
+        prompt_en: Does it fit you?
+        answer_tl: Kasya ba sa iyo?
+        extra_words: [akin, sukat, ka]
+        audio: kasya_ba_sa_iyo
+      - type: translate
+        prompt_en: The shirt is loose. Is there a smaller one?
+        answer_tl: Maluwag ang kamiseta. May mas maliit ba?
+        extra_words: [masikip, malaki, po]
+        audio: maluwag_ang_kamiseta_may_mas_maliit_ba
+        hint: '"mas" = more: mas maliit = smaller.'
+  - id: colors-9
+    title: Compliments
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bagay, en: suits (looks good on) }
+          - { tl: guwapo, en: handsome }
+          - { tl: bago, en: new }
+          - { tl: maganda, en: beautiful }
+      - type: choice
+        prompt: "'Bagay sa iyo ang kulay!' means..."
+        answer: The color suits you!
+        distractors: [The color is too bright!, What color is it?, "I don't like the color!"]
+        audio: bagay_sa_iyo_ang_kulay
+        audio_text: Bagay sa iyo ang kulay!
+      - type: fill_blank
+        sentence: "Ang ___ ng sapatos mo!"
+        translation: "Your shoes are so nice!"
+        answer: ganda
+        options: [ganda, maganda, bagay]
+        audio: ang_ganda_ng_sapatos_mo
+        hint: 'Exclaim with "ang" + root + "ng": maganda → Ang ganda ng ...!'
+      - type: translate
+        prompt_tl: Salamat! Bago ang damit ko.
+        answer_en: Thanks! My clothes are new.
+        accept: ["Thank you! My clothes are new.", "Thanks! My dress is new.", "Thank you! My dress is new."]
+        extra_words: [old, shoes, your]
+        audio: salamat_bago_ang_damit_ko
+      - type: listen
+        audio: ang_guwapo_mo
+        answer_tl: Ang guwapo mo
+        extra_words: [ganda, ko]
+      - type: choice
+        prompt: "Your friend says 'Ang ganda ng bestida mo!' You reply:"
+        answer: Salamat! Bago ito.
+        distractors: [Pasensya na., Walang anuman., Ano ang nangyari?]
+        audio: salamat_bago_ito
+        audio_text: Salamat! Bago ito.
+      - type: translate
+        prompt_en: Your dress suits you!
+        answer_tl: Bagay sa iyo ang bestida mo!
+        accept: ["Bagay ang bestida mo sa iyo"]
+        extra_words: [ko, kasya, ng]
+        audio: bagay_sa_iyo_ang_bestida_mo
+        hint: '"bagay sa iyo" = it suits you.'
+      - type: translate
+        prompt_en: Your jacket is so nice! Where did you buy it?
+        answer_tl: Ang ganda ng dyaket mo! Saan mo binili?
+        extra_words: [maganda, ko, bumili]
+        audio: ang_ganda_ng_dyaket_mo_saan_mo_binili
+        hint: '"binili" = bought, used when the thing bought is in focus.'
+  - id: colors-10
+    title: Getting dressed
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magsuot, en: to put on }
+          - { tl: magdala, en: to bring }
+          - { tl: payong, en: umbrella }
+          - { tl: malamig, en: cold }
+      - type: choice
+        prompt: "'Magsuot ka ng dyaket' means..."
+        answer: Put on a jacket
+        distractors: [Buy a jacket, Take off your jacket, Where is your jacket?]
+        audio: magsuot_ka_ng_dyaket
+        audio_text: Magsuot ka ng dyaket.
+        hint: 'A mag- verb + "ka" = a friendly command.'
+      - type: translate
+        prompt_tl: Magdala ka ng payong kasi umuulan.
+        answer_en: Bring an umbrella because it's raining.
+        accept:
+          - "Bring an umbrella because it is raining"
+          - "Bring the umbrella because it's raining"
+          - "Bring the umbrella because it is raining"
+        extra_words: [jacket, hot, wear]
+        audio: magdala_ka_ng_payong_kasi_umuulan
+      - type: fill_blank
+        sentence: "Mainit ngayon. Magsuot ka ng ___."
+        translation: "It's hot today. Wear a hat."
+        answer: sombrero
+        options: [sombrero, dyaket, medyas]
+        audio: mainit_ngayon_magsuot_ka_ng_sombrero
+      - type: listen
+        audio: magsuot_ka_ng_dyaket
+        answer_tl: Magsuot ka ng dyaket
+        extra_words: [magdala, payong]
+      - type: choice
+        prompt: "A storm is coming. Which advice fits best?"
+        answer: Magdala ka ng payong.
+        distractors: [Magsuot ka ng sombrero., Magdala ka ng relo., Magsuot ka ng tsinelas.]
+      - type: translate
+        prompt_en: It's cold. Put on a jacket.
+        answer_tl: Malamig. Magsuot ka ng dyaket.
+        extra_words: [mainit, magdala, payong]
+        audio: malamig_magsuot_ka_ng_dyaket
+      - type: translate
+        prompt_en: Bring a jacket. It's cold at night.
+        answer_tl: Magdala ka ng dyaket. Malamig sa gabi.
+        extra_words: [mainit, payong, ang]
+        audio: magdala_ka_ng_dyaket_malamig_sa_gabi
+  - id: colors-11
+    title: Fashion check
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: masikip, en: tight }
+          - { tl: lila, en: purple }
+          - { tl: tsinelas, en: slippers }
+          - { tl: kasya, en: fits }
+      - type: choice
+        prompt: "In the shop, your friend says 'Ang ganda ng kulay! Pero masikip.' What's the problem?"
+        answer: "It's too tight"
+        distractors: ["The color is ugly", "It's too expensive", "It's too loose"]
+        audio: ang_ganda_ng_kulay_pero_masikip
+        audio_text: Ang ganda ng kulay! Pero masikip.
+        hint: '"pero" = but.'
+      - type: translate
+        prompt_tl: Nakasuot si Lola ng lilang bestida at puting tsinelas.
+        answer_en: Grandma is wearing a purple dress and white slippers.
+        accept: ["Lola is wearing a purple dress and white slippers"]
+        extra_words: [brown, shoes, pink]
+        audio: nakasuot_si_lola_ng_lilang_bestida_at_puting_tsinelas
+      - type: fill_blank
+        sentence: "Maluwag ang pantalon. May mas ___ ba?"
+        translation: "The pants are loose. Is there a smaller one?"
+        answer: maliit
+        options: [maliit, malaki, maganda]
+        audio: maluwag_ang_pantalon_may_mas_maliit_ba
+      - type: listen
+        audio: bagay_sa_iyo_ang_kayumangging_dyaket
+        answer_tl: Bagay sa iyo ang kayumangging dyaket
+        extra_words: [lila, ko]
+      - type: choice
+        prompt: "A shop clerk asks 'Anong sukat po?' She wants to know your..."
+        answer: Size
+        distractors: [Favorite color, Name, Budget]
+        audio: anong_sukat_po
+        audio_text: Anong sukat po?
+      - type: translate
+        prompt_en: Can I try it on? It's beautiful.
+        answer_tl: Pwede bang isukat? Maganda ito.
+        extra_words: [kasya, bagay, ko]
+        audio: pwede_bang_isukat_maganda_ito
+      - type: translate
+        prompt_en: Your shoes are so nice! Are they new?
+        answer_tl: Ang ganda ng sapatos mo! Bago ba iyan?
+        accept: ["Ang ganda ng sapatos mo! Bago ba?"]
+        extra_words: [maganda, ko, kasya]
+        audio: ang_ganda_ng_sapatos_mo_bago_ba_iyan
+        hint: '"iyan" = that (near you).'
+      - type: translate
+        prompt_en: Who is wearing the pink skirt?
+        answer_tl: Sino ang nakasuot ng rosas na palda?
+        extra_words: [ano, pula, si]
+        audio: sino_ang_nakasuot_ng_rosas_na_palda

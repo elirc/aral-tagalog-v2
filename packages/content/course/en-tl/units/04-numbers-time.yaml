@@ -1,6 +1,6 @@
 id: numbers-time
 title: Numbers & Time
-description: Count to ten and talk about your day.
+description: Count to a hundred, give prices and ages, and talk about your day.
 tip: >-
   Filipinos mix systems daily: native numbers (isa, dalawa) for counting,
   Spanish ones (alas-dos) for telling time and often for prices.
@@ -139,3 +139,483 @@ lessons:
         # for a ref wins, so sharing it made the phrasebook speak this whole
         # sentence for the entry "araw-araw"
         audio: araw_araw_akong_umiinom_ng_kape
+  - id: numbers-3
+    title: Counting things
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Tatlong itlog' means..."
+        answer: Three eggs
+        distractors: [Two eggs, Four eggs, Ten eggs]
+        audio: tatlong_itlog
+        audio_text: Tatlong itlog
+        hint: 'A number ending in a vowel adds -ng: tatlo → tatlong itlog.'
+      - type: match
+        pairs:
+          - { tl: isang kape, en: one coffee }
+          - { tl: dalawang itlog, en: two eggs }
+          - { tl: apat na manok, en: four chickens }
+          - { tl: sampung isda, en: ten fish }
+      - type: fill_blank
+        sentence: "Apat ___ itlog."
+        translation: "Four eggs."
+        answer: na
+        options: [na, ng, si]
+        audio: apat_na_itlog
+        hint: '"apat" ends in a consonant, so it links with "na".'
+      - type: fill_blank
+        sentence: "Kumain ako ng ___ itlog."
+        translation: "I ate two eggs."
+        answer: dalawang
+        options: [dalawang, dalawa, dalawa na]
+        audio: kumain_ako_ng_dalawang_itlog
+      - type: listen
+        audio: limang_isda
+        answer_tl: Limang isda
+        extra_words: [apat, na]
+      - type: translate
+        prompt_tl: Siyam na manok.
+        answer_en: Nine chickens.
+        accept: ["9 chickens"]
+        extra_words: [eggs, five, fish]
+        audio: siyam_na_manok
+      - type: translate
+        prompt_en: Three coffees, please.
+        answer_tl: Tatlong kape po.
+        accept: ["Tatlong kape, po"]
+        extra_words: [tatlo, na, salamat]
+        audio: tatlong_kape_po
+      - type: translate
+        prompt_en: Four eggs.
+        answer_tl: Apat na itlog.
+        extra_words: [ng, limang, isda]
+        audio: apat_na_itlog
+  - id: numbers-4
+    title: Eleven to twenty
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Numbers 11–19 start with 'labing-' or 'labin-'. 'Labindalawa' is..."
+        answer: "12"
+        distractors: ["2", "20", "11"]
+        audio: labindalawa
+        audio_text: Labindalawa
+        hint: '"labin-" + dalawa (2) = 12.'
+      - type: match
+        pairs:
+          - { tl: labing-isa, en: eleven }
+          - { tl: labindalawa, en: twelve }
+          - { tl: labinlima, en: fifteen }
+          - { tl: dalawampu, en: twenty }
+      - type: listen
+        audio: labinlima
+        answer_tl: Labinlima
+        extra_words: [lima, labing-isa]
+      - type: fill_blank
+        sentence: "sampu, labing-isa, ___"
+        translation: "ten, eleven, twelve"
+        answer: labindalawa
+        options: [labindalawa, labintatlo, dalawampu]
+        audio: sampu_labing_isa_labindalawa
+      - type: choice
+        prompt: "'Dalawampu' means..."
+        answer: Twenty
+        distractors: [Twelve, Two, Ten]
+        audio: dalawampu
+        audio_text: Dalawampu
+        hint: '"dalawa" (2) + "-mpu" (tens) = 20.'
+      - type: translate
+        prompt_tl: Labindalawang itlog.
+        answer_en: Twelve eggs.
+        accept: ["12 eggs"]
+        extra_words: [two, ten, fish]
+        audio: labindalawang_itlog
+      - type: translate
+        prompt_en: Fifteen fish.
+        answer_tl: Labinlimang isda.
+        extra_words: [lima, na, sampung]
+        audio: labinlimang_isda
+  - id: numbers-5
+    title: How much is it?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Magkano?' asks..."
+        answer: How much?
+        distractors: [How many?, What time?, Where?]
+        audio: magkano
+        audio_text: Magkano?
+      - type: match
+        pairs:
+          - { tl: tatlumpu, en: thirty }
+          - { tl: limampu, en: fifty }
+          - { tl: sandaan, en: one hundred }
+          - { tl: piso, en: peso }
+      - type: fill_blank
+        sentence: "Dalawampung ___ ang tinapay."
+        translation: "The bread is twenty pesos."
+        answer: piso
+        options: [piso, itlog, kape]
+        audio: dalawampung_piso_ang_tinapay
+        hint: 'Prices are number + linker + piso: dalawampung piso.'
+      - type: listen
+        audio: limampung_piso
+        answer_tl: Limampung piso
+        extra_words: [lima, sandaan]
+      - type: choice
+        prompt: "The vendor says 'Sandaang piso.' How much is it?"
+        answer: 100 pesos
+        distractors: [10 pesos, 50 pesos, "1,000 pesos"]
+        audio: sandaang_piso
+        audio_text: Sandaang piso.
+        hint: 'You will also hear Spanish-based prices at the market, like "bente" for 20.'
+      - type: translate
+        prompt_tl: Tatlumpung piso ang isda.
+        answer_en: The fish is thirty pesos.
+        accept: ["The fish costs thirty pesos", "The fish is 30 pesos", "The fish costs 30 pesos"]
+        extra_words: [fifty, chicken, how]
+        audio: tatlumpung_piso_ang_isda
+      - type: translate
+        prompt_en: How much is this?
+        answer_tl: Magkano ito?
+        accept: ["Magkano po ito?"]
+        extra_words: [po, ang, kape]
+        audio: magkano_ito
+      - type: translate
+        prompt_en: The coffee is fifty pesos.
+        answer_tl: Limampung piso ang kape.
+        accept: ["Limampung piso po ang kape.", "Singkuwenta pesos ang kape."]
+        extra_words: [lima, na, tubig]
+        audio: limampung_piso_ang_kape
+  - id: numbers-6
+    title: How old are you?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ilang taon ka na?' asks..."
+        answer: How old are you?
+        distractors: [How are you?, What year is it?, How many siblings do you have?]
+        audio: ilang_taon_ka_na
+        audio_text: Ilang taon ka na?
+        hint: 'Literally "how many years are you already?"'
+      - type: match
+        pairs:
+          - { tl: taon, en: year }
+          - { tl: ilan, en: how many }
+          - { tl: dalawampu, en: twenty }
+          - { tl: sampu, en: ten }
+      - type: translate
+        prompt_tl: Dalawampung taon na ako.
+        answer_en: I am twenty years old.
+        accept: ["I'm twenty years old", "I am twenty", "I'm twenty", "I am 20 years old", "I'm 20 years old", "I am 20", "I'm 20"]
+        extra_words: [ten, you, how]
+        audio: dalawampung_taon_na_ako
+      - type: fill_blank
+        sentence: "Sampung ___ na siya."
+        translation: "She is ten years old."
+        answer: taon
+        options: [taon, piso, itlog]
+        audio: sampung_taon_na_siya
+      - type: listen
+        audio: ilang_taon_ka_na
+        answer_tl: Ilang taon ka na
+        extra_words: [po, kayo]
+      - type: choice
+        prompt: "Ask an older person their age politely:"
+        answer: Ilang taon na po kayo?
+        distractors: [Ilang taon ka na?, Kumusta po kayo?, Magkano po ito?]
+        audio: ilang_taon_na_po_kayo
+        audio_text: Ilang taon na po kayo?
+        hint: 'With "po kayo", "na" moves in front of them: Ilang taon na po kayo?'
+      - type: translate
+        prompt_tl: Labinlimang taon na ang kapatid ko.
+        answer_en: My sibling is fifteen years old.
+        accept: ["My sibling is fifteen", "My brother is fifteen years old", "My sister is fifteen years old", "My brother is fifteen", "My sister is fifteen", "My sibling is 15 years old", "My sibling is 15"]
+        extra_words: [twenty, mom, how]
+        audio: labinlimang_taon_na_ang_kapatid_ko
+      - type: translate
+        prompt_en: I am thirty years old.
+        answer_tl: Tatlumpung taon na ako.
+        accept: ["Tatlumpung taon ako.", "Tatlumpung taon na po ako.", "Tatlumpung taong gulang na ako.", "Trenta anyos na ako."]
+        extra_words: [ka, tatlo, piso]
+        audio: tatlumpung_taon_na_ako
+  - id: time-2
+    title: What time is it?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Anong oras na?' means..."
+        answer: What time is it?
+        distractors: [How old are you?, How much is it?, What day is it?]
+        audio: anong_oras_na
+        audio_text: Anong oras na?
+        hint: '"oras" = hour / time; "na" = already, now.'
+      - type: match
+        hint: 'Clock times use Spanish numbers after "alas-". One o''clock is "ala-una".'
+        pairs:
+          - { tl: ala-una, en: "1 o'clock" }
+          - { tl: alas-dos, en: "2 o'clock" }
+          - { tl: alas-tres, en: "3 o'clock" }
+          - { tl: alas-singko, en: "5 o'clock" }
+      - type: listen
+        audio: alas_dos_na
+        answer_tl: Alas-dos na
+        accept: ["Alas dos na"]
+        extra_words: [tres, oras]
+      - type: fill_blank
+        sentence: "Anong ___ na?"
+        translation: "What time is it?"
+        answer: oras
+        options: [oras, taon, piso]
+        audio: anong_oras_na
+      - type: choice
+        prompt: "It's 8:00. Say the time:"
+        answer: Alas-otso na.
+        distractors: [Alas-siyete na., Alas-nuwebe na., Alas-dose na.]
+        audio: alas_otso_na
+        audio_text: Alas-otso na.
+        hint: '7 siyete, 8 otso, 9 nuwebe, 10 diyes, 11 onse, 12 dose.'
+      - type: translate
+        prompt_tl: Alas-diyes na.
+        answer_en: "It's ten o'clock."
+        accept: ["It is ten o'clock", "It's 10 o'clock", "It is 10 o'clock", "It's ten", "It is ten", "Ten o'clock"]
+        extra_words: [two, what, time]
+        audio: alas_diyes_na
+      - type: choice
+        prompt: "'Alas-dose' is..."
+        answer: "12 o'clock"
+        distractors: ["2 o'clock", "10 o'clock", "11 o'clock"]
+        audio: alas_dose
+        audio_text: Alas-dose
+      - type: translate
+        prompt_en: "It's three o'clock."
+        answer_tl: Alas-tres na.
+        accept: ["Alas tres na."]
+        extra_words: [dos, oras, tatlo]
+        audio: alas_tres_na
+  - id: time-3
+    title: Morning or evening?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Alas-siyete ng umaga' is..."
+        answer: 7 AM
+        distractors: [7 PM, 11 AM, 8 AM]
+        audio: alas_siyete_ng_umaga
+        audio_text: Alas-siyete ng umaga
+        hint: 'Add "ng umaga", "ng hapon", or "ng gabi" to say which part of the day.'
+      - type: match
+        pairs:
+          - { tl: alas-sais ng umaga, en: 6 AM }
+          - { tl: alas-dose ng tanghali, en: 12 noon }
+          - { tl: alas-tres ng hapon, en: 3 PM }
+          - { tl: alas-nuwebe ng gabi, en: 9 PM }
+      - type: choice
+        prompt: "'Alas-kuwatro y medya' is..."
+        answer: "4:30"
+        distractors: ["4:00", "5:30", "4:15"]
+        audio: alas_kuwatro_y_medya
+        audio_text: Alas-kuwatro y medya
+        hint: '"y medya" = and a half — half past the hour.'
+      - type: fill_blank
+        sentence: "Alas-otso ng ___."
+        translation: "8 PM (eight in the evening)."
+        answer: gabi
+        options: [gabi, umaga, hapon]
+        audio: alas_otso_ng_gabi
+      - type: listen
+        audio: alas_tres_y_medya
+        answer_tl: Alas-tres y medya
+        accept: ["Alas tres y medya"]
+        extra_words: [dos, ng]
+      - type: translate
+        prompt_tl: Alas-otso ang klase ko.
+        answer_en: My class is at eight.
+        accept: ["My class is at 8", "My class is at eight o'clock", "My class is at 8 o'clock"]
+        extra_words: [ten, school, your]
+        audio: alas_otso_ang_klase_ko
+        hint: '"klase" = class; "ko" after a noun = my.'
+      - type: translate
+        prompt_tl: Alas-sais ng gabi ang hapunan.
+        answer_en: Dinner is at six in the evening.
+        accept: ["Dinner is at 6 in the evening", "Dinner is at six PM", "Dinner is at 6 PM", "Dinner is at six p.m."]
+        extra_words: [lunch, morning, seven]
+        audio: alas_sais_ng_gabi_ang_hapunan
+      - type: translate
+        prompt_en: Half past seven in the morning
+        answer_tl: Alas-siyete y medya ng umaga
+        accept: ["Alas siyete y medya ng umaga"]
+        extra_words: [gabi, na, otso]
+        audio: alas_siyete_y_medya_ng_umaga
+  - id: time-4
+    title: "Challenge: A day in numbers"
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "Your friend asks 'Anong oras na?' It's 2:30. Reply:"
+        answer: Alas-dos y medya na.
+        distractors: [Dalawampung taon na., Dalawampung piso., Alas-tres y medya na.]
+        audio: alas_dos_y_medya_na
+        audio_text: Alas-dos y medya na.
+      - type: match
+        pairs:
+          - { tl: anong oras na, en: what time is it }
+          - { tl: magkano, en: how much }
+          - { tl: ilang taon, en: how old }
+          - { tl: ngayon, en: today }
+      - type: translate
+        prompt_tl: Alas-sais ang almusal ko at alas-otso ang klase ko.
+        answer_en: My breakfast is at six and my class is at eight.
+        accept: ["My breakfast is at 6 and my class is at 8", "Breakfast is at six and my class is at eight"]
+        extra_words: [dinner, ten, your]
+        audio: alas_sais_ang_almusal_ko_at_alas_otso_ang_klase_ko
+      - type: fill_blank
+        sentence: "___ ang tinapay? — Sampung piso po."
+        translation: "How much is the bread? — Ten pesos."
+        answer: Magkano
+        options: [Magkano, Ilan, Anong]
+        audio: magkano_ang_tinapay_sampung_piso_po
+      - type: listen
+        audio: labindalawang_taon_na_ako
+        answer_tl: Labindalawang taon na ako
+        extra_words: [dalawampung, ka]
+      - type: translate
+        prompt_tl: Ilang taon na ang lola mo?
+        answer_en: How old is your grandmother?
+        accept: ["How old is your grandma?", "How old is your lola?"]
+        extra_words: [many, mom, time]
+        audio: ilang_taon_na_ang_lola_mo
+      - type: choice
+        prompt: "At the market: 'Magkano ang isda?' 'Limampung piso po.' The fish costs..."
+        answer: 50 pesos
+        distractors: [15 pesos, 5 pesos, 500 pesos]
+        audio: magkano_ang_isda_limampung_piso_po
+        audio_text: Magkano ang isda? Limampung piso po.
+      - type: translate
+        prompt_en: "What time is it? It's five o'clock."
+        answer_tl: Anong oras na? Alas-singko na.
+        accept: ["Anong oras na? Alas singko na."]
+        extra_words: [taon, lima, ilang]
+        audio: anong_oras_na_alas_singko_na
+      - type: translate
+        prompt_en: How much are two coffees?
+        answer_tl: Magkano ang dalawang kape?
+        accept: ["Magkano po ang dalawang kape?"]
+        extra_words: [dalawa, ilan, na]
+        audio: magkano_ang_dalawang_kape
+  - id: numbers-7
+    title: Thirty to sixty
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tatlumpu, en: thirty }
+          - { tl: apatnapu, en: forty }
+          - { tl: limampu, en: fifty }
+          - { tl: animnapu, en: sixty }
+      - type: choice
+        prompt: "'Apatnapu' is..."
+        answer: "40"
+        distractors: ["14", "4", "60"]
+        audio: apatnapu
+        audio_text: Apatnapu
+        hint: 'Tens end in "-mpu" after a vowel (lima → limampu) and "-napu" after a consonant (apat → apatnapu).'
+      - type: fill_blank
+        sentence: "dalawampu, tatlumpu, ___, limampu"
+        translation: "twenty, thirty, forty, fifty"
+        answer: apatnapu
+        options: [apatnapu, animnapu, labing-apat]
+        audio: dalawampu_tatlumpu_apatnapu_limampu
+      - type: translate
+        prompt_tl: Animnapung piso ang manok.
+        answer_en: The chicken is sixty pesos.
+        accept: ["The chicken costs sixty pesos", "The chicken is 60 pesos", "The chicken costs 60 pesos"]
+        extra_words: [forty, fish, sixteen]
+        audio: animnapung_piso_ang_manok
+      - type: listen
+        audio: apatnapung_piso
+        answer_tl: Apatnapung piso
+        extra_words: [apat, animnapung]
+      - type: fill_blank
+        sentence: "Animnapung ___ na ang lola ko."
+        translation: "My grandmother is sixty years old."
+        answer: taon
+        options: [taon, piso, oras]
+        audio: animnapung_taon_na_ang_lola_ko
+      - type: match
+        pairs:
+          - { tl: apatnapung piso, en: forty pesos }
+          - { tl: animnapung taon, en: sixty years }
+          - { tl: tatlumpung itlog, en: thirty eggs }
+          - { tl: limampung tao, en: fifty people }
+      - type: translate
+        prompt_en: My mom is forty years old.
+        answer_tl: Apatnapung taon na ang nanay ko.
+        accept: ["Apatnapung taon na si Nanay.", "Apatnapung taong gulang na ang nanay ko.", "Kuwarenta anyos na ang nanay ko.", "Apatnapung taon ang nanay ko."]
+        extra_words: [apat, piso, tatay]
+        audio: apatnapung_taon_na_ang_nanay_ko
+        hint: 'Ages are number + linker + taon + na: apatnapung taon na.'
+      - type: translate
+        prompt_en: The fish is forty pesos.
+        answer_tl: Apatnapung piso ang isda.
+        accept: ["Apatnapung piso po ang isda.", "Kuwarenta pesos ang isda."]
+        extra_words: [animnapung, taon, na]
+        audio: apatnapung_piso_ang_isda
+  - id: numbers-8
+    title: Seventy to a hundred
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pitumpu, en: seventy }
+          - { tl: walumpu, en: eighty }
+          - { tl: siyamnapu, en: ninety }
+          - { tl: sandaan, en: one hundred }
+      - type: fill_blank
+        sentence: "pitumpu, walumpu, ___, sandaan"
+        translation: "seventy, eighty, ninety, one hundred"
+        answer: siyamnapu
+        options: [siyamnapu, animnapu, labinsiyam]
+        audio: pitumpu_walumpu_siyamnapu_sandaan
+        hint: '"siyam" ends in a consonant, so it takes "-napu": siyamnapu.'
+      - type: choice
+        prompt: "The vendor says 'Pitumpung piso po ang manok.' You hand over 100 pesos. Your change is..."
+        answer: 30 pesos
+        distractors: [70 pesos, 20 pesos, 40 pesos]
+        audio: pitumpung_piso_po_ang_manok
+        audio_text: Pitumpung piso po ang manok.
+      - type: listen
+        audio: siyamnapung_piso_po
+        answer_tl: Siyamnapung piso po
+        extra_words: [siyam, pitumpung]
+      - type: translate
+        prompt_tl: Walumpung taon na ang lolo ko.
+        answer_en: My grandfather is eighty years old.
+        accept: ["My grandfather is eighty", "My grandpa is eighty years old", "My grandpa is eighty", "My grandfather is 80 years old", "My grandfather is 80", "My grandpa is 80 years old", "My grandpa is 80", "My lolo is eighty years old"]
+        extra_words: [ninety, grandmother, how]
+        audio: walumpung_taon_na_ang_lolo_ko
+      - type: match
+        pairs:
+          - { tl: pitumpung piso, en: 70 pesos }
+          - { tl: walumpung taon, en: 80 years }
+          - { tl: siyamnapung tao, en: 90 people }
+          - { tl: sandaang itlog, en: 100 eggs }
+      - type: fill_blank
+        sentence: "Magkano ang isda? — ___ piso po."
+        translation: "How much is the fish? — Eighty pesos."
+        answer: Walumpung
+        options: [Walumpung, Walumpu, Walong]
+        audio: magkano_ang_isda_walumpung_piso_po
+        hint: 'A number ending in a vowel adds -ng before the noun: walumpu → walumpung piso.'
+      - type: translate
+        prompt_en: My grandmother is seventy years old.
+        answer_tl: Pitumpung taon na ang lola ko.
+        accept: ["Pitumpung taon na si Lola.", "Pitumpung taong gulang na ang lola ko.", "Setenta anyos na ang lola ko.", "Pitumpung taon ang lola ko."]
+        extra_words: [pito, piso, lolo]
+        audio: pitumpung_taon_na_ang_lola_ko
+      - type: translate
+        prompt_en: The chicken is ninety pesos and the fish is a hundred pesos.
+        answer_tl: Siyamnapung piso ang manok at sandaang piso ang isda.
+        accept: ["Siyamnapung piso ang manok at isang daang piso ang isda.", "Siyamnapung piso ang manok at isandaang piso ang isda.", "Nobenta pesos ang manok at isandaang piso ang isda."]
+        extra_words: [siyam, taon, walumpung]
+        audio: siyamnapung_piso_ang_manok_at_sandaang_piso_ang_isda

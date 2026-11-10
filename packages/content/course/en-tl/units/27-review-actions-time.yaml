@@ -127,8 +127,12 @@ lessons:
       - type: translate
         prompt_en: Yesterday, she rode a jeepney.
         answer_tl: Kahapon, sumakay siya sa jeepney.
-        accept: ["Sumakay siya sa jeepney kahapon", "Kahapon sumakay siya sa jeepney"]
-        extra_words: [pumunta, bumili, bukas]
+        accept:
+          - "Sumakay siya sa jeepney kahapon"
+          - "Kahapon sumakay siya sa jeepney"
+          - "Kahapon, sumakay siya ng jeepney"
+          - "Sumakay siya ng jeepney kahapon"
+        extra_words: [pumunta, bumili, bukas, ng]
         audio: kahapon_sumakay_siya_sa_jeepney
   - id: revactions-3
     title: Right now
@@ -255,3 +259,374 @@ lessons:
           - "Maria's birthday is tomorrow. I bought a present yesterday."
         extra_words: [party, today, store]
         audio: bukas_ang_kaarawan_ni_maria_bumili_ako_ng_regalo_kahapon
+  - id: revactions-5
+    title: Kanina at mamaya
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kanina, en: earlier today }
+          - { tl: mamaya, en: later today }
+          - { tl: ngayon, en: now }
+          - { tl: bukas, en: tomorrow }
+      - type: choice
+        prompt: "'Uminom ako ng kape kanina' means..."
+        answer: I drank coffee earlier.
+        distractors: [I am drinking coffee now., I will drink coffee later., I drink coffee every day.]
+        audio: uminom_ako_ng_kape_kanina
+        audio_text: Uminom ako ng kape kanina.
+      - type: fill_blank
+        sentence: "Gutom ako ngayon ___ hindi ako kumain kanina."
+        translation: "I am hungry now because I did not eat earlier."
+        answer: kasi
+        options: [kasi, para, pa]
+      - type: translate
+        prompt_tl: Mamaya, pupunta ako sa palengke.
+        answer_en: Later, I will go to the market.
+        accept: ["Later today, I will go to the market", "I will go to the market later"]
+        extra_words: [earlier, went, church]
+        audio: mamaya_pupunta_ako_sa_palengke
+      - type: listen
+        audio: kumain_ako_kanina
+        answer_tl: Kumain ako kanina
+        extra_words: [mamaya, uminom]
+      - type: choice
+        prompt: "Which form goes with 'mamaya' (later today)?"
+        answer: Pupunta
+        distractors: [Pumunta, Pumupunta, Punta]
+        audio: pupunta
+        audio_text: Pupunta
+      - type: translate
+        prompt_tl: Nanonood sila ng pelikula ngayon.
+        answer_en: They are watching a movie now.
+        accept: ["They are watching a movie right now", "They watch a movie now"]
+        extra_words: [reading, later, basketball]
+        audio: nanonood_sila_ng_pelikula_ngayon
+      - type: translate
+        prompt_en: Now I am cleaning the house, and later I will go to church.
+        answer_tl: Naglilinis ako ng bahay ngayon, at pupunta ako sa simbahan mamaya.
+        accept: ["Ngayon, naglilinis ako ng bahay at pupunta ako sa simbahan mamaya"]
+        extra_words: [kanina, kusina, kumain]
+        audio: naglilinis_ngayon_pupunta_sa_simbahan_mamaya
+  - id: revactions-6
+    title: The three forms
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: eating }
+          - { tl: kakain, en: will eat }
+      - type: fill_blank
+        sentence: "Kahapon, ___ ako sa opisina."
+        translation: "Yesterday, I worked at the office."
+        answer: nagtrabaho
+        options: [nagtrabaho, nagtatrabaho, magtatrabaho]
+      - type: choice
+        prompt: "Pick the 'happening right now' form:"
+        answer: Bumibili
+        distractors: [Bumili, Bibili, Binili]
+        audio: bumibili
+        audio_text: Bumibili
+      - type: fill_blank
+        sentence: "Bukas, ___ kami ng isda sa palengke."
+        translation: "Tomorrow, we will buy fish at the market."
+        answer: bibili
+        options: [bibili, bumili, bumibili]
+      - type: listen
+        audio: kumakain_siya_ng_tinapay_ngayon
+        answer_tl: Kumakain siya ng tinapay ngayon
+        extra_words: [kumain, kahapon]
+      - type: translate
+        prompt_tl: Nagluto ako kahapon at nagluluto ako ngayon.
+        answer_en: I cooked yesterday and I am cooking now.
+        accept:
+          - "I cooked yesterday, and I am cooking now"
+          - "Yesterday I cooked and now I am cooking"
+        extra_words: [ate, will, tomorrow]
+        audio: nagluto_ako_kahapon_at_nagluluto_ako_ngayon
+      - type: choice
+        prompt: "Which sentence talks about tomorrow?"
+        answer: Kakain kami sa bahay ni Ana.
+        distractors: [Kumain kami sa bahay ni Ana., Kumakain kami sa bahay ni Ana., Kumain na kami.]
+        audio: kakain_kami_sa_bahay_ni_ana
+        audio_text: Kakain kami sa bahay ni Ana.
+      - type: translate
+        prompt_en: I will eat at the market tomorrow.
+        answer_tl: Kakain ako sa palengke bukas.
+        accept: ["Bukas, kakain ako sa palengke"]
+        extra_words: [kumain, kanina, simbahan]
+        audio: kakain_ako_sa_palengke_bukas
+  - id: revactions-7
+    title: Habits — araw-araw
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Sumasakay ako sa bus tuwing umaga' means..."
+        answer: I ride the bus every morning.
+        distractors: [I rode the bus this morning., I will ride the bus tomorrow., I ride the jeepney every morning.]
+        audio: sumasakay_ako_sa_bus_tuwing_umaga
+        audio_text: Sumasakay ako sa bus tuwing umaga.
+      - type: match
+        pairs:
+          - { tl: naghuhugas, en: washing }
+          - { tl: nagwawalis, en: sweeping }
+          - { tl: naglilinis, en: cleaning }
+          - { tl: nagluluto, en: cooking }
+      - type: fill_blank
+        sentence: "Tuwing hapon, ___ sila ng basketbol sa paaralan."
+        translation: "Every afternoon, they play basketball at school."
+        answer: naglalaro
+        options: [naglalaro, nanonood, nagbabasa]
+      - type: translate
+        prompt_tl: Tuwing Linggo, pumupunta kami sa simbahan at kumakain kami sa bahay ni Lola.
+        answer_en: Every Sunday, we go to church and we eat at Grandma's house.
+        accept:
+          - "Every Sunday, we go to church and eat at Grandma's house"
+          - "Every Sunday we go to church and we eat at Grandmother's house"
+        extra_words: [Saturday, school, cook]
+        audio: tuwing_linggo_pumupunta_kami_sa_simbahan
+      - type: listen
+        audio: nagbabasa_ako_ng_libro_tuwing_gabi
+        answer_tl: Nagbabasa ako ng libro tuwing gabi
+        extra_words: [nagluluto, umaga]
+      - type: translate
+        prompt_tl: Araw-araw, nagwawalis siya sa hardin at naglilinis ako ng bahay.
+        answer_en: Every day, he sweeps in the garden and I clean the house.
+        accept: ["Every day, she sweeps in the garden and I clean the house"]
+        extra_words: [cooks, kitchen, washes]
+        grading: { hyphens: true }
+        audio: araw_araw_nagwawalis_siya_sa_hardin
+      - type: choice
+        prompt: "A friend says, 'Nag-aaral ako tuwing gabi.' When do they study?"
+        answer: Every evening
+        distractors: [Every morning, Yesterday evening, Tomorrow evening]
+        audio: nag_aaral_ako_tuwing_gabi
+        audio_text: Nag-aaral ako tuwing gabi.
+      - type: translate
+        prompt_en: Every Saturday, I clean the house and read a book.
+        answer_tl: Tuwing Sabado, naglilinis ako ng bahay at nagbabasa ako ng libro.
+        accept: ["Tuwing Sabado, naglilinis ako ng bahay at nagbabasa ng libro"]
+        extra_words: [nagluluto, Linggo, kusina]
+        audio: tuwing_sabado_naglilinis_ako_ng_bahay
+  - id: revactions-8
+    title: Na at pa
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumain ka na ba?' You have NOT eaten yet. Say:"
+        answer: Hindi pa ako kumakain.
+        distractors: ["Oo, kumain na ako.", Kumakain pa ako., Uminom na ako.]
+        audio: hindi_pa_ako_kumakain
+        audio_text: Hindi pa ako kumakain.
+      - type: fill_blank
+        sentence: "Natutulog ___ ang anak ko."
+        translation: "My child is still sleeping."
+        answer: pa
+        options: [pa, na, ba]
+      - type: translate
+        prompt_tl: Nag-aral na ako para sa pagsusulit.
+        answer_en: I already studied for the test.
+        accept:
+          - "I have already studied for the test"
+          - "I studied for the test already"
+          - "I already studied for the exam"
+        extra_words: [yet, will, class]
+        audio: nag_aral_na_ako_para_sa_pagsusulit
+      - type: choice
+        prompt: "'Nagluto ka na ba?' means..."
+        answer: Have you cooked yet?
+        distractors: [Are you cooking right now?, Will you cook later?, Do you like to cook?]
+        audio: nagluto_ka_na_ba
+        audio_text: Nagluto ka na ba?
+      - type: listen
+        audio: bumili_ka_na_ba_ng_regalo
+        answer_tl: Bumili ka na ba ng regalo
+        extra_words: [bibili, pa]
+      - type: translate
+        prompt_tl: Hindi pa umiinom ng gamot si Lola.
+        answer_en: Grandma has not taken her medicine yet.
+        accept:
+          - "Grandma hasn't taken her medicine yet"
+          - "Lola has not taken her medicine yet"
+          - "Grandma has not yet taken her medicine"
+        extra_words: [already, food, water]
+        audio: hindi_pa_umiinom_ng_gamot_si_lola
+      - type: fill_blank
+        sentence: "Nagluto ___ si Nanay. Kumain na tayo!"
+        translation: "Mom has already cooked. Let's eat!"
+        answer: na
+        options: [na, pa, ba]
+      - type: translate
+        prompt_en: They have not eaten yet.
+        answer_tl: Hindi pa sila kumakain.
+        accept: ["Hindi pa po sila kumakain"]
+        extra_words: [na, kumain, bukas]
+        audio: hindi_pa_sila_kumakain
+  - id: revactions-9
+    title: Days and doings
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Lunes, en: Monday }
+          - { tl: Biyernes, en: Friday }
+          - { tl: Sabado, en: Saturday }
+          - { tl: Linggo, en: Sunday }
+      - type: fill_blank
+        sentence: "Tuwing ___, pumupunta kami sa simbahan."
+        translation: "Every Sunday, we go to church."
+        answer: Linggo
+        options: [Linggo, Lunes, Biyernes]
+      - type: translate
+        prompt_tl: Pupunta ako sa paaralan sa Lunes.
+        answer_en: I will go to school on Monday.
+        accept: ["On Monday, I will go to school", "I am going to school on Monday"]
+        extra_words: [went, Sunday, church]
+        audio: pupunta_ako_sa_paaralan_sa_lunes
+      - type: choice
+        prompt: "'Naglalaro sila ng basketbol tuwing Sabado.' When do they play?"
+        answer: Every Saturday
+        distractors: [Last Saturday, Next Saturday, Every Sunday]
+        audio: naglalaro_sila_ng_basketbol_tuwing_sabado
+        audio_text: Naglalaro sila ng basketbol tuwing Sabado.
+      - type: listen
+        audio: pupunta_ako_sa_palengke_sa_sabado
+        answer_tl: Pupunta ako sa palengke sa Sabado
+        extra_words: [simbahan, Lunes]
+      - type: translate
+        prompt_tl: Hindi ako nagtrabaho kahapon kasi Linggo.
+        answer_en: I did not work yesterday because it was Sunday.
+        accept: ["I didn't work yesterday because it was Sunday"]
+        extra_words: [today, Monday, church]
+        audio: hindi_ako_nagtrabaho_kahapon_kasi_linggo
+      - type: fill_blank
+        sentence: "May pagsusulit ako sa Biyernes. ___ ako ngayon."
+        translation: "I have a test on Friday. I am studying now."
+        answer: Nag-aaral
+        options: [Nag-aaral, Nag-aral, Mag-aaral]
+      - type: translate
+        prompt_en: Every Friday, we watch a movie at home.
+        answer_tl: Tuwing Biyernes, nanonood kami ng pelikula sa bahay.
+        accept: ["Nanonood kami ng pelikula sa bahay tuwing Biyernes"]
+        extra_words: [naglalaro, Sabado, paaralan]
+        audio: tuwing_biyernes_nanonood_kami_ng_pelikula
+  - id: revactions-10
+    title: The whole timeline
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kumain kami sa bahay ni Lola kahapon.' When did this happen?"
+        answer: Yesterday
+        distractors: [Today, Tomorrow, Every day]
+        audio: kumain_kami_sa_bahay_ni_lola_kahapon
+        audio_text: Kumain kami sa bahay ni Lola kahapon.
+      - type: translate
+        prompt_tl: Kanina, uminom ako ng kape sa kusina.
+        answer_en: Earlier, I drank coffee in the kitchen.
+        accept:
+          - "Earlier today, I drank coffee in the kitchen"
+          - "I drank coffee in the kitchen earlier"
+        extra_words: [later, milk, morning]
+        audio: kanina_uminom_ako_ng_kape_sa_kusina
+      - type: fill_blank
+        sentence: "Sa umaga, nagtatrabaho ako; sa gabi, ___ ako."
+        translation: "In the morning I work; at night I sleep."
+        answer: natutulog
+        options: [natutulog, matutulog, natulog]
+      - type: translate
+        prompt_tl: Bumili ako ng manok sa palengke, tapos nagluto ako sa bahay.
+        answer_en: I bought chicken at the market, then I cooked at home.
+        accept:
+          - "I bought chicken at the market then cooked at home"
+          - "I bought a chicken at the market, then I cooked at home"
+        extra_words: [fish, store, ate]
+        audio: bumili_ako_ng_manok_tapos_nagluto
+      - type: listen
+        audio: sumakay_kami_sa_bus
+        answer_tl: Sumakay kami sa bus
+        extra_words: [jeepney, bumaba]
+      - type: translate
+        prompt_tl: Naglilinis kami ng bahay kasi Sabado ngayon.
+        answer_en: We are cleaning the house because it is Saturday today.
+        accept:
+          - "We are cleaning the house because today is Saturday"
+          - "We clean the house because it is Saturday today"
+        extra_words: [cooking, Sunday, yesterday]
+        audio: naglilinis_kami_ng_bahay_kasi_sabado
+      - type: translate
+        prompt_en: Yesterday, I rode the bus and got off at the corner.
+        answer_tl: Kahapon, sumakay ako sa bus at bumaba ako sa kanto.
+        accept:
+          - "Kahapon, sumakay ako sa bus at bumaba sa kanto"
+          - "Kahapon, sumakay ako ng bus at bumaba ako sa kanto"
+          - "Kahapon, sumakay ako ng bus at bumaba sa kanto"
+        extra_words: [jeepney, pupunta, bukas, ng]
+        audio: kahapon_sumakay_ako_sa_bus_at_bumaba_ako_sa_kanto
+      - type: translate
+        prompt_en: Tomorrow, we will go to the market and we will buy fish.
+        answer_tl: Bukas, pupunta kami sa palengke at bibili kami ng isda.
+        accept: ["Bukas, pupunta kami sa palengke at bibili ng isda"]
+        extra_words: [bumili, kahapon, manok]
+        audio: bukas_pupunta_kami_sa_palengke_at_bibili_kami_ng_isda
+  - id: revactions-11
+    title: "Challenge: Ang araw ko"
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Tuwing umaga, umiinom ako ng kape, tapos pumupunta ako sa trabaho.
+        answer_en: Every morning, I drink coffee, then I go to work.
+        accept:
+          - "Every morning I drink coffee, then I go to work"
+          - "Every morning, I drink coffee and then I go to work"
+        extra_words: [evening, ate, school]
+        audio: umiinom_ng_kape_tapos_pumupunta_sa_trabaho
+      - type: choice
+        prompt: "Which sentence is right for yesterday?"
+        answer: Nagluto ako ng isda kahapon.
+        distractors: [Nagluluto ako ng isda kahapon., Magluluto ako ng isda kahapon., Nagluto ako ng isda bukas.]
+        audio: nagluto_ako_ng_isda_kahapon
+        audio_text: Nagluto ako ng isda kahapon.
+      - type: fill_blank
+        sentence: "Kahapon, ___ kami sa simbahan; bukas, pupunta kami sa palengke."
+        translation: "Yesterday we went to church; tomorrow we will go to the market."
+        answer: pumunta
+        options: [pumunta, pupunta, pumupunta]
+      - type: translate
+        prompt_tl: Gutom na ako kasi hindi pa ako kumakain.
+        answer_en: I am already hungry because I have not eaten yet.
+        accept:
+          - "I'm already hungry because I haven't eaten yet"
+          - "I'm hungry now because I haven't eaten yet"
+          - "I am hungry now because I have not eaten yet"
+        extra_words: [thirsty, ate, later]
+        audio: gutom_na_ako_kasi_hindi_pa_ako_kumakain
+      - type: listen
+        audio: nag_aral_ako_kanina_sa_bahay
+        answer_tl: Nag-aral ako kanina sa bahay
+        extra_words: [mamaya, paaralan]
+      - type: translate
+        prompt_en: Earlier, I bought fish; later, we will eat at home.
+        answer_tl: Kanina, bumili ako ng isda; mamaya, kakain kami sa bahay.
+        accept:
+          - "Bumili ako ng isda kanina; kakain kami sa bahay mamaya"
+          - "Kanina, bumili ako ng isda; kakain kami sa bahay mamaya"
+          - "Bumili ako ng isda kanina; mamaya, kakain kami sa bahay"
+        extra_words: [kumain, bukas, palengke]
+        audio: kanina_bumili_mamaya_kakain
+      - type: translate
+        prompt_tl: Sa Sabado, pupunta kami sa bahay ni Lola at kakain kami ng manok.
+        answer_en: On Saturday, we will go to Grandma's house and we will eat chicken.
+        accept:
+          - "On Saturday, we will go to Grandma's house and eat chicken"
+          - "On Saturday we will go to Lola's house and we will eat chicken"
+        extra_words: [yesterday, church, fish]
+        audio: sa_sabado_pupunta_kami_sa_bahay_ni_lola
+      - type: translate
+        prompt_en: I ate earlier, I am working now, and I will go to church tomorrow.
+        answer_tl: Kumain ako kanina, nagtatrabaho ako ngayon, at pupunta ako sa simbahan bukas.
+        accept:
+          - "Kanina, kumain ako, ngayon, nagtatrabaho ako, at bukas, pupunta ako sa simbahan"
+          - "Kumain ako kanina, nagtatrabaho ako ngayon, at bukas, pupunta ako sa simbahan"
+        extra_words: [kakain, kahapon, mamaya]
+        audio: kumain_kanina_nagtatrabaho_ngayon_pupunta_bukas

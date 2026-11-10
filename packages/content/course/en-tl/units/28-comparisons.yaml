@@ -105,11 +105,11 @@ lessons:
         answer_tl: Mas mura ang isda kaysa sa manok
         extra_words: [mahal, baboy]
       - type: choice
-        prompt: "'Mas mataas si Juan kaysa kay Ana' means..."
+        prompt: "'Mas matangkad si Juan kaysa kay Ana' means..."
         answer: Juan is taller than Ana
         distractors: [Ana is taller than Juan, Juan is as tall as Ana, Ana is the tallest]
-        audio: mas_mataas_si_juan_kaysa_kay_ana
-        audio_text: Mas mataas si Juan kaysa kay Ana.
+        audio: mas_matangkad_si_juan_kaysa_kay_ana
+        audio_text: Mas matangkad si Juan kaysa kay Ana.
       - type: translate
         prompt_tl: Mas masarap ang manok kaysa sa isda.
         answer_en: The chicken is more delicious than the fish.
@@ -153,8 +153,8 @@ lessons:
         answer: pinakamabilis
         options: [pinakamabilis, mas mabilis, mabilis]
       - type: listen
-        audio: siya_ang_pinakamataas_sa_pamilya
-        answer_tl: Siya ang pinakamataas sa pamilya
+        audio: siya_ang_pinakamatangkad_sa_pamilya
+        answer_tl: Siya ang pinakamatangkad sa pamilya
         extra_words: [pinakamaliit, klase]
       - type: translate
         prompt_en: This is the most beautiful flower.
@@ -246,3 +246,365 @@ lessons:
         extra_words: [mura, palda, kasingganda]
         audio: ito_ang_pinakamagandang_bestida_sa_tindahan
         hint: Mix it with your shopping words.
+  - id: compare-5
+    title: Alin? Choosing favorites
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Alin' means..."
+        answer: Which
+        distractors: [Who, What, Where]
+        audio: alin
+        audio_text: Alin
+        hint: '"Alin" picks from choices: Alin ang mas mura? — Which is cheaper?'
+      - type: translate
+        prompt_tl: Alin ang mas mura, ang isda o ang manok?
+        answer_en: Which is cheaper, the fish or the chicken?
+        accept:
+          - "Which one is cheaper, the fish or the chicken?"
+          - "Which is cheaper, fish or chicken?"
+        extra_words: [expensive, pork, biggest]
+        audio: alin_ang_mas_mura_ang_isda_o_ang_manok
+      - type: choice
+        prompt: "'Mas gusto ko' means..."
+        answer: I prefer
+        distractors: [I don't like, I used to like, I like the least]
+        audio: mas_gusto_ko
+        audio_text: Mas gusto ko
+        hint: 'Literally "I like (it) more" — the everyday way to say you prefer something.'
+      - type: translate
+        prompt_tl: Mas gusto ko ang kape kaysa sa tsaa.
+        answer_en: I prefer coffee to tea.
+        accept: ["I like coffee more than tea", "I prefer coffee over tea"]
+        extra_words: [milk, water, cheaper]
+        audio: mas_gusto_ko_ang_kape_kaysa_sa_tsaa
+        hint: '"tsaa" — tea.'
+      - type: fill_blank
+        sentence: "___ gusto ko ang dagat kaysa sa bundok."
+        translation: "I like the sea more than the mountains."
+        answer: Mas
+        options: [Mas, Pinaka, Kasing]
+      - type: listen
+        audio: mas_gusto_ko_ang_manok
+        answer_tl: Mas gusto ko ang manok
+        extra_words: [isda, kaysa]
+      - type: translate
+        prompt_en: I prefer the jeepney to the bus.
+        answer_tl: Mas gusto ko ang jeepney kaysa sa bus.
+        accept: ["Mas gusto ko ang jeepney kaysa bus"]
+        extra_words: [tren, mura, mahal]
+        audio: mas_gusto_ko_ang_jeepney_kaysa_sa_bus
+      - type: translate
+        prompt_tl: Alin ang mas masarap, ang kape o ang tsaa?
+        answer_en: Which is more delicious, the coffee or the tea?
+        accept:
+          - "Which one is more delicious, the coffee or the tea?"
+          - "Which is tastier, the coffee or the tea?"
+          - "Which is more delicious, coffee or tea?"
+        extra_words: [cheaper, milk, best]
+        audio: alin_ang_mas_masarap_ang_kape_o_ang_tsaa
+  - id: compare-6
+    title: Older and younger
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: matanda, en: old }
+          - { tl: bata, en: young }
+          - { tl: matangkad, en: tall }
+          - { tl: mabait, en: kind }
+      - type: choice
+        prompt: "'Mas matanda' means..."
+        answer: Older
+        distractors: [Younger, Oldest, Taller]
+        audio: mas_matanda
+        audio_text: Mas matanda
+      - type: translate
+        prompt_tl: Mas matanda ako kaysa sa kapatid ko.
+        answer_en: I am older than my sibling.
+        accept:
+          - "I'm older than my sibling"
+          - "I am older than my brother"
+          - "I am older than my sister"
+        extra_words: [younger, friend, taller]
+        audio: mas_matanda_ako_kaysa_sa_kapatid_ko
+      - type: fill_blank
+        sentence: "Mas ___ si Ana kaysa kay Juan."
+        translation: "Ana is younger than Juan."
+        answer: bata
+        options: [bata, matanda, matangkad]
+      - type: choice
+        prompt: "'Kaysa kay' comes before..."
+        answer: A person's name
+        distractors: [A place, A number, A day of the week]
+        audio: kaysa_kay
+        audio_text: Kaysa kay
+        hint: 'Things take "kaysa sa"; names take "kaysa kay": mas matangkad si Juan kaysa kay Ana.'
+      - type: listen
+        audio: mas_bata_ang_kapatid_ko
+        answer_tl: Mas bata ang kapatid ko
+        extra_words: [matanda, nanay]
+      - type: translate
+        prompt_tl: Si Lola ang pinakamatanda sa pamilya namin.
+        answer_en: Grandma is the oldest in our family.
+        accept: ["Grandmother is the oldest in our family", "Lola is the oldest in our family"]
+        extra_words: [youngest, tallest, kindest]
+        audio: si_lola_ang_pinakamatanda_sa_pamilya_namin
+      - type: translate
+        prompt_en: My father is older than my mother.
+        answer_tl: Mas matanda ang tatay ko kaysa sa nanay ko.
+        accept: ["Mas matanda kaysa sa nanay ko ang tatay ko"]
+        extra_words: [bata, kay, pinakamatanda]
+        audio: mas_matanda_ang_tatay_ko_kaysa_sa_nanay_ko
+  - id: compare-7
+    title: "Linkers: -ng and na"
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which is correct for 'the most beautiful flower'?"
+        answer: pinakamagandang bulaklak
+        distractors: [pinakamaganda bulaklak, pinakamaganda ng bulaklak, pinakamagandang na bulaklak]
+        audio: pinakamagandang_bulaklak
+        audio_text: pinakamagandang bulaklak
+        hint: 'After a vowel, glue -ng to the adjective: pinakamagandang bulaklak.'
+      - type: fill_blank
+        sentence: "Si Juan ang pinakamabait ___ bata sa klase."
+        translation: "Juan is the kindest kid in the class."
+        answer: na
+        options: [na, ng, ang]
+        hint: 'After a consonant (pinakamabaiT), the linker is a separate "na".'
+      - type: choice
+        prompt: "Pick the correct phrase for 'the biggest house':"
+        answer: pinakamalaking bahay
+        distractors: [pinakamalaki bahay, pinakamalaki ng bahay, pinakamalaking na bahay]
+        audio: pinakamalaking_bahay
+        audio_text: pinakamalaking bahay
+      - type: translate
+        prompt_tl: Bumili kami ng mas malaking bahay.
+        answer_en: We bought a bigger house.
+        accept: ["We bought a larger house"]
+        extra_words: [smaller, cheaper, store]
+        audio: bumili_kami_ng_mas_malaking_bahay
+      - type: fill_blank
+        sentence: "Gusto ko ng mas ___ damit."
+        translation: "I want a cheaper dress."
+        answer: murang
+        options: [murang, mura, mura na]
+      - type: listen
+        audio: ito_ang_pinakamasarap_na_handa
+        answer_tl: Ito ang pinakamasarap na handa
+        extra_words: [pinakamura, pista]
+      - type: translate
+        prompt_en: This is the fastest vehicle.
+        answer_tl: Ito ang pinakamabilis na sasakyan.
+        accept: ["Pinakamabilis na sasakyan ito"]
+        extra_words: [mabagal, mas, jeepney]
+        audio: ito_ang_pinakamabilis_na_sasakyan
+      - type: translate
+        prompt_en: I bought the cheapest fish at the market.
+        answer_tl: Bumili ako ng pinakamurang isda sa palengke.
+        accept: ["Bumili ako sa palengke ng pinakamurang isda"]
+        extra_words: [mahal, mas, tindahan]
+        audio: bumili_ako_ng_pinakamurang_isda_sa_palengke
+  - id: compare-8
+    title: Strong and weak
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malakas, en: strong }
+          - { tl: mahina, en: weak }
+          - { tl: mahaba, en: long }
+          - { tl: maikli, en: short }
+      - type: choice
+        prompt: "'Mahina' means..."
+        answer: Weak
+        distractors: [Strong, Slow, Small]
+        audio: mahina
+        audio_text: Mahina
+      - type: translate
+        prompt_tl: Mas malakas ang kalabaw kaysa sa kambing.
+        answer_en: The carabao is stronger than the goat.
+        accept: ["The water buffalo is stronger than the goat"]
+        extra_words: [weaker, horse, faster]
+        audio: mas_malakas_ang_kalabaw_kaysa_sa_kambing
+      - type: fill_blank
+        sentence: "Mas ___ ang kambing kaysa sa kalabaw."
+        translation: "The goat is weaker than the carabao."
+        answer: mahina
+        options: [mahina, malakas, masarap]
+      - type: translate
+        prompt_tl: Mas mahaba ang biyahe sa bus kaysa sa MRT.
+        answer_en: The trip by bus is longer than by MRT.
+        accept:
+          - "The bus trip is longer than the MRT trip"
+          - "The bus ride is longer than the MRT ride"
+          - "The trip on the bus is longer than on the MRT"
+        extra_words: [shorter, train, faster]
+        audio: mas_mahaba_ang_biyahe_sa_bus
+      - type: listen
+        audio: mas_maikli_ang_biyahe_ngayon
+        answer_tl: Mas maikli ang biyahe ngayon
+        extra_words: [mahaba, kahapon]
+      - type: choice
+        prompt: "Which sentence says 'Ana is as strong as Juan'?"
+        answer: Kasinglakas ni Juan si Ana.
+        distractors: [Mas malakas si Ana kaysa kay Juan., Pinakamalakas si Ana., Mahina si Ana.]
+        audio: kasinglakas_ni_juan_si_ana
+        audio_text: Kasinglakas ni Juan si Ana.
+      - type: translate
+        prompt_en: My house is as big as the school.
+        answer_tl: Kasinglaki ng paaralan ang bahay ko.
+        accept: ["Ang bahay ko ay kasinglaki ng paaralan"]
+        extra_words: [kasingliit, mas, simbahan]
+        audio: kasinglaki_ng_paaralan_ang_bahay_ko
+  - id: compare-9
+    title: The best of all
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pinakamura ito sa lahat' means..."
+        answer: This is the cheapest of all.
+        distractors: [This is cheaper than all the rest., This is quite cheap., This is the most expensive of all.]
+        audio: pinakamura_ito_sa_lahat
+        audio_text: Pinakamura ito sa lahat.
+      - type: match
+        pairs:
+          - { tl: pinakamataas, en: tallest }
+          - { tl: pinakamabait, en: kindest }
+          - { tl: pinakamatalino, en: smartest }
+          - { tl: pinakamasipag, en: most hardworking }
+      - type: fill_blank
+        sentence: "Si Lola ang ___ sa pamilya namin."
+        translation: "Grandma is the kindest in our family."
+        answer: pinakamabait
+        options: [pinakamabait, mabait, mas mabait]
+      - type: translate
+        prompt_tl: Ito ang pinakamataas na puno sa hardin.
+        answer_en: This is the tallest tree in the garden.
+        accept: ["This is the highest tree in the garden"]
+        extra_words: [smallest, flower, house]
+        audio: ito_ang_pinakamataas_na_puno_sa_hardin
+      - type: listen
+        audio: siya_ang_pinakamasipag_sa_opisina
+        answer_tl: Siya ang pinakamasipag sa opisina
+        extra_words: [pinakamatalino, klase]
+      - type: translate
+        prompt_tl: Sino ang pinakamatalino sa klase?
+        answer_en: Who is the smartest in the class?
+        accept: ["Who is the most intelligent in the class?", "Who is the smartest in class?"]
+        extra_words: [kindest, oldest, where]
+        audio: sino_ang_pinakamatalino_sa_klase
+      - type: translate
+        prompt_en: This is the cheapest store of all.
+        answer_tl: Ito ang pinakamurang tindahan sa lahat.
+        extra_words: [mahal, palengke, mas]
+        audio: ito_ang_pinakamurang_tindahan_sa_lahat
+      - type: translate
+        prompt_en: The jeepney is the cheapest of all.
+        answer_tl: Pinakamura ang jeepney sa lahat.
+        accept: ["Ang jeepney ang pinakamura sa lahat"]
+        extra_words: [mahal, bus, kasingmura]
+        audio: pinakamura_ang_jeepney_sa_lahat
+  - id: compare-10
+    title: Pareho — the same
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pareho' means..."
+        answer: The same
+        distractors: [Different, Cheaper, The best]
+        audio: pareho
+        audio_text: Pareho
+      - type: translate
+        prompt_tl: Pareho ang kulay ng damit namin.
+        answer_en: Our clothes are the same color.
+        accept:
+          - "Our clothes have the same color"
+          - "The color of our clothes is the same"
+        extra_words: [different, size, shoes]
+        audio: pareho_ang_kulay_ng_damit_namin
+      - type: fill_blank
+        sentence: "___ kami ng gusto: kape!"
+        translation: "We like the same thing: coffee!"
+        answer: Pareho
+        options: [Pareho, Mas, Kasing]
+      - type: match
+        pairs:
+          - { tl: pareho, en: the same }
+          - { tl: mas, en: more }
+          - { tl: pinaka-, en: the most }
+          - { tl: kasing-, en: as ... as }
+      - type: listen
+        audio: pareho_tayo
+        answer_tl: Pareho tayo
+        extra_words: [sila, mas]
+      - type: translate
+        prompt_tl: Pareho ang pamasahe sa jeepney at sa traysikel.
+        answer_en: The fare on the jeepney and the tricycle is the same.
+        accept:
+          - "The jeepney and tricycle fares are the same"
+          - "The fare for the jeepney and the tricycle is the same"
+        extra_words: [different, expensive, bus]
+        audio: pareho_ang_pamasahe_sa_jeepney_at_sa_traysikel
+      - type: choice
+        prompt: "Someone asks which dress you like — you like both the same. Say:"
+        answer: Pareho lang.
+        distractors: [Mas gusto ko ito., Pinakamaganda ito., Hindi ko gusto.]
+        audio: pareho_lang
+        audio_text: Pareho lang.
+      - type: translate
+        prompt_en: Our birthdays are in the same month.
+        answer_tl: Pareho ang buwan ng kaarawan namin.
+        extra_words: [taon, araw, mas]
+        audio: pareho_ang_buwan_ng_kaarawan_namin
+  - id: compare-11
+    title: "Challenge: Paghahambing"
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Mas mura ang jeepney kaysa sa taksi, at mas mabilis ang MRT kaysa sa bus.
+        answer_en: The jeepney is cheaper than the taxi, and the MRT is faster than the bus.
+        accept: ["The jeepney is cheaper than the taxi and the MRT is faster than the bus"]
+        extra_words: [slower, expensive, train]
+        audio: mas_mura_ang_jeepney_kaysa_sa_taksi
+      - type: choice
+        prompt: "Which sentence is correct?"
+        answer: Mas matangkad si Juan kaysa kay Ana.
+        distractors: [Mas matangkad si Juan kaysa sa Ana., Pinakamatangkad si Juan kaysa kay Ana., Matangkad si Juan kaysa kay Ana.]
+        audio: mas_matangkad_si_juan_kaysa_kay_ana
+        audio_text: Mas matangkad si Juan kaysa kay Ana.
+        hint: 'Names take "kaysa kay"; things take "kaysa sa".'
+      - type: fill_blank
+        sentence: "Ito ang ___ bulaklak sa hardin."
+        translation: "This is the most beautiful flower in the garden."
+        answer: pinakamagandang
+        options: [pinakamagandang, pinakamaganda, mas maganda]
+      - type: translate
+        prompt_en: The MRT is faster than the bus, and the bus is cheaper.
+        answer_tl: Mas mabilis ang MRT kaysa sa bus, at mas mura ang bus.
+        extra_words: [mahal, jeepney, mabagal]
+        audio: mas_mabilis_ang_mrt_kaysa_sa_bus
+      - type: listen
+        audio: pinakamasaya_ang_pista
+        answer_tl: Pinakamasaya ang pista
+        extra_words: [pinakamalaki, kaarawan]
+      - type: translate
+        prompt_tl: Kasingganda ng nanay ko ang lola ko.
+        answer_en: My grandma is as beautiful as my mom.
+        accept:
+          - "My grandmother is as beautiful as my mother"
+          - "My lola is as beautiful as my mom"
+        extra_words: [taller, aunt, than]
+        audio: kasingganda_ng_nanay_ko_ang_lola_ko
+      - type: translate
+        prompt_en: Who is the most hardworking in the office?
+        answer_tl: Sino ang pinakamasipag sa opisina?
+        extra_words: [matalino, klase, mas]
+        audio: sino_ang_pinakamasipag_sa_opisina
+      - type: translate
+        prompt_en: This is the most delicious food at my birthday party!
+        answer_tl: Ito ang pinakamasarap na handa sa kaarawan ko!
+        extra_words: [pinakamura, handaan, mas]
+        audio: ito_ang_pinakamasarap_na_handa_sa_kaarawan_ko
+        hint: '"handa" — the food laid out at a Filipino celebration.'

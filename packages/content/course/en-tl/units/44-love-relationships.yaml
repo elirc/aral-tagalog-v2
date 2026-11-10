@@ -266,3 +266,402 @@ lessons:
         extra_words: [bahay, nobya, kahapon]
         audio: pupunta_ako_sa_kasal_ng_kuya_ko_sa_simbahan
         hint: 'Order it as: verb, then who, then where — "Pupunta ako sa kasal ... sa simbahan."'
+  - id: love-5
+    title: Mahal, sinta
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "mahal ko", en: "my love" }
+          - { tl: "sinta", en: "beloved" }
+          - { tl: "puso", en: "heart" }
+          - { tl: "yakap", en: "hug" }
+      - type: choice
+        prompt: "Filipino couples often call each other 'Mahal'. Used this way, it means..."
+        answer: Dear / my love
+        distractors: [Expensive, Friend, Big brother]
+        audio: mahal
+        audio_text: Mahal
+        hint: 'Same word as "expensive" — something dear, in both senses.'
+      - type: choice
+        prompt: "'Sinta' is an old-fashioned, poetic word for..."
+        answer: A beloved
+        distractors: [A wedding, A best friend, A serenade]
+        audio: sinta
+        audio_text: Sinta
+        hint: 'You hear "sinta" in old love songs — the kind sung in a harana.'
+      - type: translate
+        prompt_tl: Ingat ka, mahal.
+        answer_en: Take care, dear.
+        accept: ["Take care, my love", "Take care, love"]
+        extra_words: [hurry, friend, see]
+        audio: ingat_ka_mahal
+      - type: fill_blank
+        sentence: "Mahal kita, ___ ko."
+        translation: "I love you, my beloved."
+        answer: sinta
+        options: [sinta, ate, guro]
+      - type: listen
+        audio: miss_na_kita_mahal
+        answer_tl: Miss na kita, mahal
+        extra_words: [sinta, ka]
+      - type: translate
+        prompt_en: Good morning, my love.
+        answer_tl: Magandang umaga, mahal ko.
+        accept: ["Magandang umaga, mahal"]
+        extra_words: [gabi, kita, sinta]
+        audio: magandang_umaga_mahal_ko
+      - type: translate
+        prompt_tl: Ikaw ang sinta ng puso ko.
+        answer_en: You are the beloved of my heart.
+        accept: ["You are my heart's beloved"]
+        extra_words: [friend, love, his]
+        audio: ikaw_ang_sinta_ng_puso_ko
+      - type: translate
+        prompt_en: Take care, my love. I love you.
+        answer_tl: Ingat ka, mahal ko. Mahal kita.
+        extra_words: [sinta, ikaw, ako]
+        hint: '"mahal ko" = my love (what you call someone); "mahal kita" = I love you.'
+        audio: ingat_ka_mahal_ko_mahal_kita
+  - id: love-6
+    title: Kilig!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "kilig", en: "giddy thrill" }
+          - { tl: "crush", en: "crush" }
+          - { tl: "malambing", en: "affectionate" }
+          - { tl: "torpe", en: "too shy to confess" }
+      - type: choice
+        prompt: "Your crush smiles at you and you get butterflies. That feeling is..."
+        answer: Kilig
+        distractors: [Torpe, Harana, Ligaw]
+        audio: kilig
+        audio_text: Kilig
+      - type: translate
+        prompt_tl: Kinikilig ako!
+        answer_en: I have butterflies!
+        accept: ["I'm giddy!", "I am giddy!", "I'm so giddy!"]
+        extra_words: [sad, angry, crush]
+        hint: '"kinikilig" = feeling kilig right now — that giddy, butterflies-in-your-stomach thrill.'
+        audio: kinikilig_ako
+      - type: fill_blank
+        sentence: "Kinikilig si Ana kasi tumawag ang ___ niya."
+        translation: "Ana is giddy because her crush called."
+        answer: crush
+        options: [crush, lola, guro]
+      - type: listen
+        audio: malambing_ang_nobyo_niya
+        answer_tl: Malambing ang nobyo niya
+        extra_words: [nobya, torpe]
+      - type: choice
+        prompt: "'Malambing' describes someone who is..."
+        answer: Sweet and affectionate
+        distractors: [Shy, Jealous, Angry]
+        audio: malambing
+        audio_text: Malambing
+      - type: translate
+        prompt_en: My girlfriend is affectionate.
+        answer_tl: Malambing ang nobya ko.
+        extra_words: [nobyo, torpe, kita]
+        audio: malambing_ang_nobya_ko
+      - type: translate
+        prompt_tl: Crush ni Ben si Ana, pero torpe siya.
+        answer_en: Ben has a crush on Ana, but he is too shy.
+        accept: ["Ana is Ben's crush, but he is too shy", "Ben has a crush on Ana but he is too shy"]
+        extra_words: [sweet, she, courting]
+        hint: '"crush ni Ben" = Ben''s crush.'
+        audio: crush_ni_ben_si_ana_pero_torpe_siya
+      - type: translate
+        prompt_en: I'm giddy because my crush called.
+        answer_tl: Kinikilig ako kasi tumawag ang crush ko.
+        accept: ["Kinikilig ako dahil tumawag ang crush ko"]
+        extra_words: [tatawag, nobya, siya]
+        audio: kinikilig_ako_kasi_tumawag_ang_crush_ko
+  - id: love-7
+    title: Sinagot na niya!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "sagot", en: "answer" }
+          - { tl: "magkasintahan", en: "a couple" }
+          - { tl: "manliligaw", en: "suitor" }
+          - { tl: "ligaw", en: "courtship" }
+      - type: choice
+        prompt: "After months of courtship, he shouts 'Sinagot na niya ako!' It means..."
+        answer: She said yes to me!
+        distractors: [She is still thinking., She said no to me., She sang for me.]
+        audio: sinagot_na_niya_ako
+        audio_text: Sinagot na niya ako!
+        hint: 'A courted woman "answers" (sagot) her suitor — "sinagot" means she said yes and they are now a couple.'
+      - type: translate
+        prompt_tl: Magkasintahan na sila.
+        answer_en: They are a couple now.
+        accept: ["They're a couple now", "They are already a couple", "They are sweethearts now"]
+        extra_words: [married, friends, still]
+        audio: magkasintahan_na_sila
+      - type: fill_blank
+        sentence: "___ si Ben kay Ana nang dalawang taon."
+        translation: "Ben courted Ana for two years."
+        answer: Nanligaw
+        options: [Nanligaw, Manligaw, Ligaw]
+        hint: 'Completed: manligaw → nanligaw. "nang dalawang taon" = for two years.'
+      - type: listen
+        audio: sinagot_na_ni_ana_si_ben
+        answer_tl: Sinagot na ni Ana si Ben
+        extra_words: [niya, nanligaw]
+      - type: translate
+        prompt_en: Ben is Ana's suitor.
+        answer_tl: Manliligaw ni Ana si Ben.
+        accept: ["Si Ben ang manliligaw ni Ana"]
+        extra_words: [nobyo, kay, ng]
+        audio: manliligaw_ni_ana_si_ben
+      - type: choice
+        prompt: "Ben courted Ana for months, and finally she said yes. Now they are..."
+        answer: Magkasintahan
+        distractors: [Manliligaw, Torpe, Ikakasal bukas]
+        audio: magkasintahan
+        audio_text: Magkasintahan
+      - type: translate
+        prompt_tl: Masaya ako kasi sinagot mo na ako.
+        answer_en: I'm happy because you said yes to me.
+        accept: ["I am happy because you said yes to me", "I'm happy because you already said yes to me"]
+        extra_words: [sad, she, courted]
+        audio: masaya_ako_kasi_sinagot_mo_na_ako
+      - type: translate
+        prompt_en: They have been a couple for one year.
+        answer_tl: Isang taon na silang magkasintahan.
+        extra_words: [dalawang, sila, kami]
+        hint: '"na" + "sila" + the -ng linker → "na silang".'
+        audio: isang_taon_na_silang_magkasintahan
+  - id: love-8
+    title: Tampo
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "tampo", en: "sulking" }
+          - { tl: "pasensya na", en: "sorry" }
+          - { tl: "yakap", en: "hug" }
+          - { tl: "galit", en: "angry" }
+      - type: choice
+        prompt: "'Nagtatampo siya' means..."
+        answer: She is sulking
+        distractors: [She is giddy, She is courting, She is singing]
+        audio: nagtatampo_siya
+        audio_text: Nagtatampo siya.
+        hint: '"Tampo" is quiet hurt feelings — waiting for the other person to notice and make it up to you.'
+      - type: translate
+        prompt_tl: Pasensya ka na, mahal.
+        answer_en: I'm sorry, dear.
+        accept: ["Sorry, dear", "I am sorry, dear", "I'm sorry, my love", "Sorry, my love"]
+        extra_words: [thanks, angry, friend]
+        hint: '"Pasensya ka na" — literally "be patient with me" — the everyday way to say sorry.'
+        audio: pasensya_ka_na_mahal
+      - type: fill_blank
+        sentence: "Huwag ka nang ___, mahal."
+        translation: "Don't sulk anymore, dear."
+        answer: magtampo
+        options: [magtampo, nagtampo, nagtatampo]
+        hint: '"Huwag ka nang ___" = don''t ___ anymore; it takes the plain verb form.'
+      - type: listen
+        audio: bakit_ka_nagtatampo
+        answer_tl: Bakit ka nagtatampo
+        extra_words: [galit, malungkot]
+      - type: translate
+        prompt_en: Why are you angry?
+        answer_tl: Bakit ka galit?
+        extra_words: [nagtatampo, ako, siya]
+        audio: bakit_ka_galit
+      - type: choice
+        prompt: "Your partner is sulking because you forgot your anniversary. Say:"
+        answer: Pasensya ka na, mahal.
+        distractors: ["Kinikilig ako, mahal.", "Huwag kang kumain, mahal.", "Binabati kita, mahal."]
+        audio: pasensya_ka_na_mahal
+        audio_text: Pasensya ka na, mahal.
+      - type: translate
+        prompt_tl: Nagtampo siya kahapon, pero masaya na sila ngayon.
+        answer_en: She sulked yesterday, but they are happy now.
+        accept: ["He sulked yesterday, but they are happy now", "She sulked yesterday, but they're happy now", "She sulked yesterday but they are happy now"]
+        extra_words: [sulking, angry, tomorrow]
+        audio: nagtampo_siya_kahapon_pero_masaya_na_sila_ngayon
+      - type: translate
+        prompt_en: I'm sorry, dear. Don't sulk anymore.
+        answer_tl: Pasensya ka na, mahal. Huwag ka nang magtampo.
+        extra_words: [nagtatampo, kita, galit]
+        audio: pasensya_ka_na_mahal_huwag_ka_nang_magtampo
+        grading: { ng_nang: true }
+  - id: love-9
+    title: Pangako
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pangako' means..."
+        answer: Promise
+        distractors: [Answer, Ring, Hug]
+        audio: pangako
+        audio_text: Pangako
+      - type: match
+        pairs:
+          - { tl: "pangako", en: "promise" }
+          - { tl: "sagot", en: "answer" }
+          - { tl: "puso", en: "heart" }
+          - { tl: "matalik na kaibigan", en: "best friend" }
+      - type: translate
+        prompt_tl: Pangako, uuwi ako bukas.
+        answer_en: I promise, I will go home tomorrow.
+        accept: ["I promise, I will come home tomorrow", "I promise I will go home tomorrow", "Promise, I will go home tomorrow"]
+        extra_words: [went, later, love]
+        audio: pangako_uuwi_ako_bukas
+      - type: fill_blank
+        sentence: "Pangako, ___ akong tatawag sa iyo."
+        translation: "I promise, I will always call you."
+        answer: palagi
+        options: [palagi, kahapon, kanina]
+      - type: listen
+        audio: may_pangako_ako_sa_iyo
+        answer_tl: May pangako ako sa iyo
+        extra_words: [puso, kita]
+      - type: choice
+        prompt: "Your friend promises to come to your birthday party. She says:"
+        answer: Pangako, pupunta ako.
+        distractors: [Pupunta ako kahapon., Hindi ako pupunta., Pumunta ako kanina.]
+        audio: pangako_pupunta_ako
+        audio_text: Pangako, pupunta ako.
+      - type: translate
+        prompt_en: I promise, I will go to your house tomorrow.
+        answer_tl: Pangako, pupunta ako sa bahay ninyo bukas.
+        accept: ["Pangako, pupunta ako sa bahay mo bukas"]
+        extra_words: [pumunta, natin, kahapon]
+        audio: pangako_pupunta_ako_sa_bahay_ninyo_bukas
+      - type: translate
+        prompt_tl: Palaging tumutulong sa akin ang matalik kong kaibigan.
+        answer_en: My best friend always helps me.
+        accept: ["My best friend is always helping me"]
+        extra_words: [never, sister, helped]
+        hint: '"palagi" + the -ng linker → "palaging tumutulong" = always helps.'
+        audio: palaging_tumutulong_sa_akin_ang_matalik_kong_kaibigan
+      - type: translate
+        prompt_en: My heart is yours.
+        answer_tl: Sa iyo ang puso ko.
+        accept: ["Iyo ang puso ko"]
+        extra_words: [akin, mo, kita]
+        hint: '"sa iyo" = yours / belongs to you.'
+        audio: sa_iyo_ang_puso_ko
+  - id: love-10
+    title: Singsing at pamamanhikan
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "singsing", en: "ring" }
+          - { tl: "pamamanhikan", en: "asking for her hand" }
+          - { tl: "kasal", en: "wedding" }
+          - { tl: "mag-asawa", en: "married couple" }
+      - type: choice
+        prompt: "In a 'pamamanhikan', the groom's family..."
+        answer: Visits the bride's family to ask for her hand
+        distractors: [Sings outside her window, Throws the wedding party, Picks the wedding ring]
+        audio: pamamanhikan
+        audio_text: Pamamanhikan
+      - type: translate
+        prompt_tl: May singsing na si Ana!
+        answer_en: Ana has a ring now!
+        accept: ["Ana already has a ring!", "Ana has a ring already!"]
+        extra_words: [wedding, Ben, flower]
+        audio: may_singsing_na_si_ana
+      - type: fill_blank
+        sentence: "Pupunta ang pamilya ni Ben sa bahay ni Ana para sa ___."
+        translation: "Ben's family will go to Ana's house for the pamamanhikan."
+        answer: pamamanhikan
+        options: [pamamanhikan, harana, anibersaryo]
+      - type: listen
+        audio: ikakasal_na_sila_sa_disyembre
+        answer_tl: Ikakasal na sila sa Disyembre
+        extra_words: [kasal, Hunyo]
+      - type: translate
+        prompt_en: They are married now.
+        answer_tl: Mag-asawa na sila.
+        accept: ["Kasal na sila"]
+        extra_words: [magkasintahan, kami, pa]
+        grading: { hyphens: true }
+        audio: mag_asawa_na_sila
+      - type: choice
+        prompt: "Which comes first in a traditional Filipino love story?"
+        answer: Ligaw
+        distractors: [Kasal, Anibersaryo, Pamamanhikan]
+        audio: ligaw
+        audio_text: Ligaw
+        hint: 'Ligaw (courtship) → sagot (her yes) → pamamanhikan → kasal.'
+      - type: translate
+        prompt_tl: Bumili si Ben ng singsing para kay Ana.
+        answer_en: Ben bought a ring for Ana.
+        extra_words: [will, flower, Ben's]
+        audio: bumili_si_ben_ng_singsing_para_kay_ana
+      - type: translate
+        prompt_en: Ben's family will go to Ana's house on Saturday.
+        answer_tl: Pupunta ang pamilya ni Ben sa bahay ni Ana sa Sabado.
+        accept: ["Sa Sabado, pupunta ang pamilya ni Ben sa bahay ni Ana"]
+        extra_words: [pumunta, kay, Linggo]
+        audio: pupunta_ang_pamilya_ni_ben_sa_bahay_ni_ana_sa_sabado
+  - id: love-11
+    title: "Challenge: Ang kuwento nila"
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: "nanligaw", en: "courted" }
+          - { tl: "sinagot", en: "said yes to" }
+          - { tl: "ikinasal", en: "got married" }
+          - { tl: "ikakasal", en: "will get married" }
+      - type: choice
+        prompt: "'Ikinasal sila noong Disyembre' means..."
+        answer: They got married in December
+        distractors: [They will get married in December, They were courting in December, Their anniversary is in June]
+        audio: ikinasal_sila_noong_disyembre
+        audio_text: Ikinasal sila noong Disyembre.
+        hint: 'ikakasal = will get married; ikinasal = got married.'
+      - type: translate
+        prompt_tl: Nanligaw si Lolo kay Lola nang tatlong taon.
+        answer_en: Grandpa courted Grandma for three years.
+        extra_words: [two, married, sang]
+        audio: nanligaw_si_lolo_kay_lola_nang_tatlong_taon
+      - type: fill_blank
+        sentence: "Kumanta si Lolo ng ___ sa labas ng bintana ni Lola."
+        translation: "Grandpa sang a serenade outside Grandma's window."
+        answer: harana
+        options: [harana, kasal, singsing]
+      - type: listen
+        audio: sampung_taon_na_silang_mag_asawa
+        answer_tl: Sampung taon na silang mag-asawa
+        extra_words: [magkasintahan, sila]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Grandpa courted, and Grandma said yes to him.
+        answer_tl: Nanligaw si Lolo, at sinagot siya ni Lola.
+        accept: ["Nanligaw si Lolo at sinagot siya ni Lola"]
+        extra_words: [kay, nanliligaw, niya]
+        audio: nanligaw_si_lolo_at_sinagot_siya_ni_lola
+      - type: translate
+        prompt_tl: Sa anibersaryo nila, nagbigay si Lolo ng bulaklak kay Lola.
+        answer_en: On their anniversary, Grandpa gave Grandma flowers.
+        accept:
+          - "On their anniversary, Grandpa gave flowers to Grandma"
+          - "On their anniversary, Grandpa gave Grandma a flower"
+          - "Grandpa gave Grandma flowers on their anniversary"
+        extra_words: [wedding, ring, will]
+        audio: sa_anibersaryo_nila_nagbigay_si_lolo_ng_bulaklak_kay_lola
+      - type: choice
+        prompt: "Which is the right order?"
+        answer: Ligaw, sagot, pamamanhikan, kasal
+        distractors: ["Kasal, ligaw, sagot, pamamanhikan", "Sagot, kasal, ligaw, pamamanhikan", "Pamamanhikan, ligaw, kasal, sagot"]
+      - type: translate
+        prompt_en: We have been married for ten years, and I still love you.
+        answer_tl: Sampung taon na tayong mag-asawa, at mahal pa rin kita.
+        accept: ["Sampung taon na tayong mag-asawa at mahal pa rin kita"]
+        extra_words: [kami, ikaw, magkasintahan]
+        grading: { hyphens: true }
+        hint: '"pa rin" = still; "na tayong mag-asawa" = we have been a married couple.'
+        audio: sampung_taon_na_tayong_mag_asawa_at_mahal_pa_rin_kita

@@ -237,3 +237,350 @@ lessons:
         accept: ["Bumili po ako ng limang itlog at dalawang isda sa palengke"]
         extra_words: [tatlong, manok, tindahan]
         audio: bumili_ako_ng_limang_itlog_at_dalawang_isda_sa_palengke
+  - id: revfood-5
+    title: Likes and dislikes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gusto, en: like / want }
+          - { tl: ayaw, en: don't like }
+          - { tl: masarap, en: delicious }
+          - { tl: gutom, en: hungry }
+      - type: choice
+        prompt: "'Ano ang gusto mo?' means..."
+        answer: What do you want?
+        distractors: [Which do you want?, Why do you like it?, Do you want this?]
+        audio: ano_ang_gusto_mo
+        audio_text: Ano ang gusto mo?
+      - type: translate
+        prompt_tl: Gusto ko ng isda pero ayaw ko ng manok.
+        answer_en: I like fish but I don't like chicken.
+        accept: ["I want fish but I don't want chicken"]
+        extra_words: [rice, also, eggs]
+        audio: gusto_ko_ng_isda_pero_ayaw_ko_ng_manok
+      - type: fill_blank
+        sentence: "___ ko ng gatas sa kape ko."
+        translation: "I like milk in my coffee."
+        answer: Gusto
+        options: [Gusto, Ayaw, Masarap]
+      - type: listen
+        audio: ayaw_ko_ng_gatas
+        answer_tl: Ayaw ko ng gatas
+        extra_words: [gusto, kape]
+      - type: choice
+        prompt: "The vendor offers you fish, but you don't want any. Say..."
+        answer: Ayaw ko po ng isda.
+        distractors: [Gusto ko po ng isda., Masarap ang isda., Magkano ang isda?]
+        audio: ayaw_ko_po_ng_isda
+        audio_text: Ayaw ko po ng isda.
+      - type: translate
+        prompt_en: Do you like eggs?
+        answer_tl: Gusto mo ba ng itlog?
+        accept: ["Gusto mo po ba ng itlog?", "Gusto po ba ninyo ng itlog?"]
+        extra_words: [ayaw, isda, kanin]
+        audio: gusto_mo_ba_ng_itlog
+      - type: translate
+        prompt_en: I want rice, chicken, and water.
+        answer_tl: Gusto ko ng kanin, manok, at tubig.
+        accept: ["Gusto ko po ng kanin, manok, at tubig"]
+        extra_words: [isda, ayaw, gatas]
+        audio: gusto_ko_ng_kanin_manok_at_tubig
+  - id: revfood-6
+    title: Sa tindahan
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tindahan, en: store }
+          - { tl: gatas, en: milk }
+          - { tl: tinapay, en: bread }
+          - { tl: piso, en: peso }
+      - type: choice
+        prompt: "'Sampung piso ito.' means..."
+        answer: This is ten pesos.
+        distractors: [This is five pesos., These are ten eggs., This is my change.]
+        audio: sampung_piso_ito
+        audio_text: Sampung piso ito.
+      - type: translate
+        prompt_tl: Bumili ako ng gatas at tinapay sa tindahan.
+        answer_en: I bought milk and bread at the store.
+        accept: ["I bought milk and bread in the store"]
+        extra_words: [market, eggs, sold]
+        audio: bumili_ako_ng_gatas_at_tinapay_sa_tindahan
+      - type: fill_blank
+        sentence: "Bumili ako ng itlog ___ tindahan."
+        translation: "I bought eggs at the store."
+        answer: sa
+        options: [sa, ng, si]
+      - type: listen
+        audio: nasaan_ang_sukli_ko
+        answer_tl: Nasaan ang sukli ko
+        extra_words: [pera, magkano]
+      - type: choice
+        prompt: "You pay ten pesos for an eight-peso bread. You wait for your..."
+        answer: sukli
+        distractors: [presyo, pera, piso]
+        audio: sukli
+        audio_text: Sukli
+      - type: translate
+        prompt_tl: Wala akong pera. May pera ang ate ko.
+        answer_en: I don't have money. My older sister has money.
+        accept: ["I have no money. My older sister has money."]
+        extra_words: [brother, store, change]
+        audio: wala_akong_pera_may_pera_ang_ate_ko
+      - type: translate
+        prompt_en: How much is the bread at the store?
+        answer_tl: Magkano ang tinapay sa tindahan?
+        accept: ["Magkano po ang tinapay sa tindahan?"]
+        extra_words: [palengke, itlog, mura]
+        audio: magkano_ang_tinapay_sa_tindahan
+  - id: revfood-7
+    title: Counting the goods
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Six eggs — which is correct?"
+        answer: anim na itlog
+        distractors: [anim itlog, animng itlog, anim ng itlog]
+        audio: anim_na_itlog
+        audio_text: Anim na itlog
+        hint: 'After a consonant, the number takes "na": anim NA itlog.'
+      - type: fill_blank
+        sentence: "Bumili ako ng ___ isda."
+        translation: "I bought four fish."
+        answer: apat na
+        options: [apat na, apat, apat ng]
+      - type: translate
+        prompt_tl: May pitong itlog at tatlong isda sa mesa.
+        answer_en: There are seven eggs and three fish on the table.
+        accept: ["There are 7 eggs and 3 fish on the table"]
+        extra_words: [chicken, four, chair]
+        audio: may_pitong_itlog_at_tatlong_isda_sa_mesa
+      - type: choice
+        prompt: "To ask the PRICE, use..."
+        answer: Magkano
+        distractors: [Ilan, Ano, Saan]
+        audio: magkano
+        audio_text: Magkano
+      - type: listen
+        audio: may_sampung_piso_ako
+        answer_tl: May sampung piso ako
+        extra_words: [lima, pera]
+      - type: translate
+        prompt_tl: Sampung piso ang isang isda.
+        answer_en: One fish is ten pesos.
+        accept: ["A fish is ten pesos", "Ten pesos for one fish"]
+        extra_words: [egg, five, cheap]
+        audio: sampung_piso_ang_isang_isda
+      - type: translate
+        prompt_en: How much are five eggs?
+        answer_tl: Magkano ang limang itlog?
+        accept: ["Magkano po ang limang itlog?"]
+        extra_words: [ilan, apat, isda]
+        audio: magkano_ang_limang_itlog
+      - type: translate
+        prompt_en: I bought eight eggs at the market yesterday.
+        answer_tl: Bumili ako ng walong itlog sa palengke kahapon.
+        accept: ["Kahapon, bumili ako ng walong itlog sa palengke"]
+        extra_words: [pito, tindahan, bukas]
+        audio: bumili_ako_ng_walong_itlog_sa_palengke_kahapon
+  - id: revfood-8
+    title: Kain tayo!
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kain tayo!' means..."
+        answer: Let's eat!
+        distractors: [Eat alone!, I already ate!, The food is ready!]
+        audio: kain_tayo
+        audio_text: Kain tayo!
+      - type: match
+        pairs:
+          - { tl: gutom, en: hungry }
+          - { tl: uhaw, en: thirsty }
+          - { tl: bisita, en: guest }
+          - { tl: handa, en: party food }
+      - type: translate
+        prompt_tl: Gutom ka ba? Kain tayo!
+        answer_en: Are you hungry? Let's eat!
+        extra_words: [thirsty, drink, later]
+        audio: gutom_ka_ba_kain_tayo
+      - type: fill_blank
+        sentence: "Uhaw ako. Gusto ko ng ___."
+        translation: "I'm thirsty. I want water."
+        answer: tubig
+        options: [tubig, kanin, itlog]
+      - type: listen
+        audio: halika_kain_tayo_sa_bahay
+        answer_tl: Halika, kain tayo sa bahay
+        extra_words: [bisita, masarap]
+      - type: choice
+        prompt: "Your host asks 'Kumain ka na ba?' They want to know..."
+        answer: if you have already eaten
+        distractors: [if you are cooking, if you like the food, if you want to leave]
+        audio: kumain_ka_na_ba
+        audio_text: Kumain ka na ba?
+      - type: translate
+        prompt_tl: Masarap ang handa! Salamat po!
+        answer_en: The food is delicious! Thank you!
+        accept: ["The spread is delicious! Thank you!"]
+        extra_words: [guests, party, welcome]
+        audio: masarap_ang_handa_salamat_po
+      - type: translate
+        prompt_en: The guest is eating in the kitchen.
+        answer_tl: Kumakain ang bisita sa kusina.
+        accept: ["Ang bisita ay kumakain sa kusina"]
+        extra_words: [umiinom, banyo, mesa]
+        audio: kumakain_ang_bisita_sa_kusina
+  - id: revfood-9
+    title: Tawad time
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'May tawad po ba?' politely asks for..."
+        answer: a discount
+        distractors: [your change, the price, a receipt]
+        audio: may_tawad_po_ba
+        audio_text: May tawad po ba
+      - type: translate
+        prompt_tl: Mahal po ang isda. May tawad po ba?
+        answer_en: The fish is expensive. Is there a discount?
+        accept: ["The fish is expensive. Can I get a discount?"]
+        extra_words: [cheap, chicken, change]
+        audio: mahal_po_ang_isda_may_tawad_po_ba
+      - type: fill_blank
+        sentence: "Suki po ako dito. May ___ po ba?"
+        translation: "I'm a regular here. Is there a discount?"
+        answer: tawad
+        options: [tawad, sukli, presyo]
+      - type: choice
+        prompt: "The vendor says 'Walang tawad.' That means..."
+        answer: No discount.
+        distractors: [No change., It's free., Wrong price.]
+        audio: walang_tawad
+        audio_text: Walang tawad.
+      - type: listen
+        audio: walang_sukli
+        answer_tl: Walang sukli
+        extra_words: [tawad, pera]
+      - type: translate
+        prompt_tl: Suki ako dito kasi mura ang presyo.
+        answer_en: I'm a regular here because the price is cheap.
+        accept:
+          - "I am a regular here because the price is cheap"
+          - "I'm a regular here because the prices are cheap"
+        extra_words: [expensive, store, new]
+        audio: suki_ako_dito_kasi_mura_ang_presyo
+      - type: translate
+        prompt_en: The fish is big and cheap.
+        answer_tl: Malaki at mura ang isda.
+        accept: ["Mura at malaki ang isda"]
+        extra_words: [maliit, mahal, manok]
+        audio: malaki_at_mura_ang_isda
+      - type: translate
+        prompt_en: How much is this? That's so expensive!
+        answer_tl: Magkano ito? Ang mahal naman!
+        accept: ["Magkano po ito? Ang mahal naman!"]
+        extra_words: [mura, sukli, ilan]
+        audio: magkano_ito_ang_mahal_naman
+  - id: revfood-10
+    title: Market day
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nagluto ang nanay ko ng isda.' means..."
+        answer: My mom cooked fish.
+        distractors: [My mom bought fish., My mom is cooking fish., My mom likes fish.]
+        audio: nagluto_ang_nanay_ko_ng_isda
+        audio_text: Nagluto ang nanay ko ng isda.
+      - type: translate
+        prompt_tl: Pumunta ako sa palengke at bumili ng isda.
+        answer_en: I went to the market and bought fish.
+        accept: ["I went to the market and bought a fish"]
+        extra_words: [store, chicken, cooked]
+        audio: pumunta_ako_sa_palengke_at_bumili_ng_isda
+      - type: fill_blank
+        sentence: "Pumunta kami sa palengke, ___ bumili kami ng manok."
+        translation: "We went to the market, then we bought chicken."
+        answer: tapos
+        options: [tapos, kasi, sino]
+      - type: listen
+        audio: kahapon_pumunta_ako_sa_palengke
+        answer_tl: Kahapon, pumunta ako sa palengke.
+        extra_words: [bukas, tindahan]
+      - type: translate
+        prompt_tl: Naglakad kami sa palengke at bumili ng isda.
+        answer_en: We walked to the market and bought fish.
+        accept: ["We walked at the market and bought fish"]
+        extra_words: [rode, store, eggs]
+        audio: naglakad_kami_sa_palengke_at_bumili_ng_isda
+      - type: fill_blank
+        sentence: "Bumibili ako ng tinapay ___ sa palengke."
+        translation: "I buy bread every day at the market."
+        answer: araw-araw
+        options: [araw-araw, kahapon, bukas]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Araw-araw, bumibili ang nanay ko ng isda sa palengke, tapos nagluluto siya sa bahay.
+        answer_en: Every day, my mom buys fish at the market, then she cooks at home.
+        accept:
+          - "Every day my mom buys fish at the market, then she cooks at home"
+          - "Every day, my mother buys fish at the market, then she cooks at home"
+        extra_words: [bread, store, eats]
+        audio: araw_araw_bumibili_ang_nanay_ko_ng_isda_sa_palengke_tapos_nagluluto_siya_sa_bahay
+      - type: translate
+        prompt_en: I went to the market in the morning and bought three fish.
+        answer_tl: Pumunta ako sa palengke sa umaga at bumili ng tatlong isda.
+        accept: ["Sa umaga, pumunta ako sa palengke at bumili ng tatlong isda"]
+        extra_words: [gabi, apat, manok]
+        audio: pumunta_ako_sa_palengke_sa_umaga_at_bumili_ng_tatlong_isda
+  - id: revfood-11
+    title: The suki challenge
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "The vendor says 'Walang tawad, mura na po ito.' Meaning..."
+        answer: No discount — it's already cheap.
+        distractors: [No change — it's expensive., There's a discount today., It's free for suki.]
+        audio: walang_tawad_mura_na_po_ito
+        audio_text: Walang tawad, mura na po ito.
+      - type: translate
+        prompt_tl: Magandang umaga po! Magkano po ang manok?
+        answer_en: Good morning! How much is the chicken?
+        accept: ["Good morning! How much is chicken?"]
+        extra_words: [evening, fish, cheap]
+        audio: magandang_umaga_po_magkano_po_ang_manok
+      - type: fill_blank
+        sentence: "Bumili ako ng isda. Nasaan ang ___ ko?"
+        translation: "I bought fish. Where is my change?"
+        answer: sukli
+        options: [sukli, tawad, presyo]
+      - type: listen
+        audio: magkano_ang_isda_sa_palengke
+        answer_tl: Magkano ang isda sa palengke
+        extra_words: [manok, tindahan]
+      - type: translate
+        prompt_tl: Sampung piso ang isang itlog? Ang mahal naman!
+        answer_en: Ten pesos for one egg? That's so expensive!
+        accept: ["One egg is ten pesos? That's so expensive!"]
+        extra_words: [cheap, fish, five]
+        audio: sampung_piso_ang_isang_itlog_ang_mahal_naman
+      - type: translate
+        prompt_en: I want one chicken and six eggs. (polite)
+        answer_tl: Gusto ko po ng isang manok at anim na itlog.
+        accept: ["Gusto ko ng isang manok at anim na itlog"]
+        extra_words: [dalawang, isda, tinapay]
+        audio: gusto_ko_po_ng_isang_manok_at_anim_na_itlog
+      - type: translate
+        prompt_en: I'm a regular at the market, and the vendor is my friend.
+        answer_tl: Suki ako sa palengke at kaibigan ko ang tindera.
+        accept: ["Suki ako sa palengke, at kaibigan ko ang tindera"]
+        extra_words: [tindahan, nanay, mahal]
+        audio: suki_ako_sa_palengke_at_kaibigan_ko_ang_tindera
+      - type: translate
+        prompt_en: I bought two fish and five eggs at the market in the morning.
+        answer_tl: Bumili ako ng dalawang isda at limang itlog sa palengke sa umaga.
+        accept: ["Sa umaga, bumili ako ng dalawang isda at limang itlog sa palengke"]
+        extra_words: [tatlong, manok, tindahan]
+        audio: bumili_ako_ng_dalawang_isda_at_limang_itlog_sa_palengke_sa_umaga

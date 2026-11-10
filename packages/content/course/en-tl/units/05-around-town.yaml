@@ -70,6 +70,7 @@ lessons:
       - type: translate
         prompt_en: Where is the school?
         answer_tl: Nasaan ang paaralan?
+        accept: ["Nasaan po ang paaralan?", "Nasaan ang eskuwelahan?"]
         extra_words: [bahay, sa, ako]
       - type: listen
         audio: nasaan_ang_palengke
@@ -135,3 +136,477 @@ lessons:
           - { tl: nasaan, en: where is }
           - { tl: sa, en: to/at }
           - { tl: mabilis, en: fast }
+  - id: town-4
+    title: More places
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: parke, en: park }
+          - { tl: bangko, en: bank }
+          - { tl: botika, en: pharmacy }
+          - { tl: ospital, en: hospital }
+      - type: choice
+        prompt: "'Botika' means..."
+        answer: Pharmacy
+        distractors: [Bank, Park, Market]
+        audio: botika
+        audio_text: Botika
+      - type: listen
+        audio: parke
+        answer_tl: Parke
+        extra_words: [bangko, botika]
+      - type: fill_blank
+        sentence: "Maganda ang ___ sa umaga."
+        translation: "The park is beautiful in the morning."
+        answer: parke
+        options: [parke, bangko, kape]
+        audio: maganda_ang_parke_sa_umaga
+      - type: translate
+        prompt_tl: Malaki ang bangko.
+        answer_en: The bank is big.
+        extra_words: [small, park, school]
+        audio: malaki_ang_bangko
+      - type: choice
+        prompt: "You need medicine. Where do you go?"
+        answer: Sa botika
+        distractors: [Sa bangko, Sa parke, Sa simbahan]
+        audio: sa_botika
+        audio_text: Sa botika
+      - type: translate
+        prompt_tl: Pumunta kami sa parke kahapon.
+        answer_en: We went to the park yesterday.
+        accept: ["Yesterday we went to the park"]
+        extra_words: [bank, today, they]
+        audio: pumunta_kami_sa_parke_kahapon
+      - type: translate
+        prompt_en: Where is the bank?
+        answer_tl: Nasaan ang bangko?
+        accept: ["Nasaan po ang bangko?"]
+        extra_words: [parke, sa, ako]
+        audio: nasaan_ang_bangko
+  - id: town-5
+    title: Asking politely
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You ask a stranger where the hospital is. Say:"
+        answer: Nasaan po ang ospital?
+        distractors: [Nasaan ka?, Nasa ospital ako., Pumunta ako sa ospital.]
+        audio: nasaan_po_ang_ospital
+        audio_text: Nasaan po ang ospital?
+        hint: '"po" makes a question polite.'
+      - type: translate
+        prompt_tl: Nasaan po ang botika?
+        answer_en: Where is the pharmacy?
+        extra_words: [bank, who, park]
+        audio: nasaan_po_ang_botika
+      - type: fill_blank
+        sentence: "Nasa palengke ___ si Lola."
+        translation: "Grandma is at the market. (polite)"
+        answer: po
+        options: [po, ka, ang]
+        audio: nasa_palengke_po_si_lola
+      - type: listen
+        audio: nasaan_po_ang_bangko
+        answer_tl: Nasaan po ang bangko
+        accept: ["Nasaan po ang bangko?"]
+        extra_words: [parke, nasa]
+      - type: match
+        pairs:
+          - { tl: nasaan, en: where is }
+          - { tl: nasa, en: is at }
+          - { tl: po, en: respect word }
+          - { tl: mga, en: plural marker }
+      - type: translate
+        prompt_tl: Nasa bahay po si Tatay.
+        answer_en: Dad is at home.
+        accept: ["Dad is at the house"]
+        extra_words: [school, mom, where]
+        audio: nasa_bahay_po_si_tatay
+      - type: choice
+        prompt: "Someone asks 'Nasaan si Ana?' Which reply fits?"
+        answer: Nasa paaralan siya.
+        distractors: [Si Ana ako., Pumunta ako., Maganda siya.]
+        audio: nasa_paaralan_siya
+        audio_text: Nasa paaralan siya.
+      - type: translate
+        prompt_en: Where is the park? (polite)
+        answer_tl: Nasaan po ang parke?
+        extra_words: [bangko, nasa, ka]
+        audio: nasaan_po_ang_parke
+  - id: town-6
+    title: Landmarks
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tabi, en: beside }
+          - { tl: harap, en: in front }
+          - { tl: kanto, en: corner }
+          - { tl: simbahan, en: church }
+      - type: choice
+        prompt: "'Nasa tabi ng bangko' means..."
+        answer: Beside the bank
+        distractors: [In front of the bank, Far from the bank, Inside the bank]
+        audio: nasa_tabi_ng_bangko
+        audio_text: Nasa tabi ng bangko.
+        hint: '"ng" links the position word to the landmark: tabi ng = beside.'
+      - type: translate
+        prompt_tl: Nasa harap ng simbahan ang parke.
+        answer_en: The park is in front of the church.
+        extra_words: [beside, bank, school]
+        audio: nasa_harap_ng_simbahan_ang_parke
+      - type: fill_blank
+        sentence: "Nasa ___ ng paaralan ang botika."
+        translation: "The pharmacy is beside the school."
+        answer: tabi
+        options: [tabi, harap, kanto]
+        audio: nasa_tabi_ng_paaralan_ang_botika
+      - type: listen
+        audio: nasa_kanto_ang_botika
+        answer_tl: Nasa kanto ang botika
+        extra_words: [tabi, bangko]
+      - type: choice
+        prompt: "Your friend says 'Nasa harap ng ospital ako.' Where is she?"
+        answer: In front of the hospital
+        distractors: [Beside the hospital, Inside the hospital, At the corner]
+        audio: nasa_harap_ng_ospital_ako
+        audio_text: Nasa harap ng ospital ako.
+      - type: translate
+        prompt_tl: Nasa kanto ang bahay ko.
+        answer_en: My house is on the corner.
+        accept: ["My house is at the corner"]
+        extra_words: [beside, church, your]
+        audio: nasa_kanto_ang_bahay_ko
+      - type: translate
+        prompt_en: The bank is beside the market.
+        answer_tl: Nasa tabi ng palengke ang bangko.
+        accept: ["Katabi ng palengke ang bangko."]
+        extra_words: [harap, sa, simbahan]
+        audio: nasa_tabi_ng_palengke_ang_bangko
+  - id: town-7
+    title: Near or far?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malapit, en: near }
+          - { tl: malayo, en: far }
+          - { tl: malaki, en: big }
+          - { tl: maliit, en: small }
+      - type: choice
+        prompt: "'Malayo' means..."
+        answer: Far
+        distractors: [Near, Fast, Big]
+        audio: malayo
+        audio_text: Malayo
+      - type: translate
+        prompt_tl: Malapit ang parke sa bahay ko.
+        answer_en: The park is near my house.
+        extra_words: [far, bank, your]
+        audio: malapit_ang_parke_sa_bahay_ko
+        hint: '"malapit sa" = near (to).'
+      - type: choice
+        prompt: "'Malapit ba ang simbahan?' means..."
+        answer: Is the church near?
+        distractors: [The church is near., Where is the church?, Is the church big?]
+        audio: malapit_ba_ang_simbahan
+        audio_text: Malapit ba ang simbahan?
+        hint: '"ba" turns a sentence into a yes/no question.'
+      - type: fill_blank
+        sentence: "Hindi malapit ang ospital. ___ ito."
+        translation: "The hospital isn't near. It's far."
+        answer: Malayo
+        options: [Malayo, Malapit, Maliit]
+        audio: hindi_malapit_ang_ospital_malayo_ito
+      - type: listen
+        audio: malayo_ang_ospital
+        answer_tl: Malayo ang ospital
+        extra_words: [malapit, palengke]
+      - type: translate
+        prompt_tl: Oo, malapit ang botika.
+        answer_en: Yes, the pharmacy is near.
+        extra_words: ["no", far, bank]
+        audio: oo_malapit_ang_botika
+      - type: translate
+        prompt_en: Is the school far?
+        answer_tl: Malayo ba ang paaralan?
+        extra_words: [malapit, nasaan, sa]
+        audio: malayo_ba_ang_paaralan
+  - id: town-8
+    title: Where are you going?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Saan ka pupunta?' means..."
+        answer: Where are you going?
+        distractors: [Where are you?, Where did you go?, Where is your house?]
+        audio: saan_ka_pupunta
+        audio_text: Saan ka pupunta?
+        hint: '"pupunta" = going / will go (not done yet).'
+      - type: match
+        pairs:
+          - { tl: pupunta, en: will go }
+          - { tl: pumunta, en: went }
+          - { tl: saan, en: where (to) }
+          - { tl: nasaan, en: where is }
+      - type: translate
+        prompt_tl: Pupunta ako sa bangko.
+        answer_en: I am going to the bank.
+        accept: ["I will go to the bank", "I'm going to the bank"]
+        extra_words: [went, park, she]
+        audio: pupunta_ako_sa_bangko
+      - type: fill_blank
+        sentence: "___ ka pupunta?"
+        translation: "Where are you going?"
+        answer: Saan
+        options: [Saan, Nasaan, Sino]
+        audio: saan_ka_pupunta
+        hint: 'Use "saan" with actions, "nasaan" for where something is.'
+      - type: listen
+        audio: pupunta_kami_sa_palengke
+        answer_tl: Pupunta kami sa palengke
+        extra_words: [pumunta, simbahan]
+      - type: choice
+        prompt: "You want to know where the church IS. Which word starts the question?"
+        answer: Nasaan
+        distractors: [Saan, Sino, Kumusta]
+      - type: translate
+        prompt_tl: Saan pupunta si Nanay?
+        answer_en: Where is Mom going?
+        extra_words: [went, dad, house]
+        audio: saan_pupunta_si_nanay
+      - type: translate
+        prompt_en: We are going to the park tomorrow.
+        answer_tl: Pupunta kami sa parke bukas.
+        accept: ["Bukas, pupunta kami sa parke", "Pupunta tayo sa parke bukas", "Bukas, pupunta tayo sa parke", "Pupunta kami bukas sa parke", "Pupunta tayo bukas sa parke"]
+        extra_words: [pumunta, kahapon, bangko]
+        audio: pupunta_kami_sa_parke_bukas
+  - id: town-9
+    title: Taking the jeepney
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sakayan, en: (ride) stop }
+          - { tl: para po, en: stop please }
+          - { tl: bayad po, en: here's my fare }
+          - { tl: sumakay, en: rode }
+      - type: choice
+        prompt: "You want the jeepney to stop. Say:"
+        answer: Para po!
+        distractors: [Bayad po!, Salamat po!, Saan po?]
+        audio: para_po
+        audio_text: Para po!
+      - type: translate
+        prompt_tl: Sumakay ako ng jeepney.
+        answer_en: I rode a jeepney.
+        accept: ["I took a jeepney", "I took the jeepney", "I rode the jeepney"]
+        extra_words: [went, market, she]
+        audio: sumakay_ako_ng_jeepney
+        hint: '"sumakay" = rode / got on.'
+      - type: fill_blank
+        sentence: "Nasaan ang ___ ng jeepney?"
+        translation: "Where is the jeepney stop?"
+        answer: sakayan
+        options: [sakayan, simbahan, bangko]
+        audio: nasaan_ang_sakayan_ng_jeepney
+      - type: listen
+        audio: bayad_po
+        answer_tl: Bayad po
+        accept: ["Bayad po."]
+        extra_words: [para, salamat]
+      - type: choice
+        prompt: "You pass your fare to the driver. Say:"
+        answer: Bayad po.
+        distractors: [Para po!, Paalam po., Nasaan po?]
+        audio: bayad_po
+        audio_text: Bayad po.
+        hint: Passengers pass the fare forward hand to hand.
+      - type: translate
+        prompt_tl: Nasa kanto ang sakayan ng jeepney.
+        answer_en: The jeepney stop is on the corner.
+        accept: ["The jeepney stop is at the corner"]
+        extra_words: [beside, bank, near]
+        audio: nasa_kanto_ang_sakayan_ng_jeepney
+      - type: translate
+        prompt_en: We rode a jeepney.
+        answer_tl: Sumakay kami ng jeepney.
+        accept: ["Sumakay kami sa jeepney.", "Sumakay tayo ng jeepney.", "Sumakay tayo sa jeepney."]
+        extra_words: [ako, sa, pumunta]
+        audio: sumakay_kami_ng_jeepney
+  - id: town-10
+    title: Finding your way
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Nasaan po ang botika? Malapit ba ito?
+        answer_en: Where is the pharmacy? Is it near?
+        extra_words: [far, bank, church]
+        audio: nasaan_po_ang_botika_malapit_ba_ito
+      - type: choice
+        prompt: "Someone asks 'Nasaan po ang bangko?' Which reply makes sense?"
+        answer: Nasa tabi po ng simbahan.
+        distractors: [Pupunta ako sa bangko., Malaki po ang bahay., Para po!]
+        audio: nasa_tabi_po_ng_simbahan
+        audio_text: Nasa tabi po ng simbahan.
+      - type: listen
+        audio: saan_ka_pupunta_ngayon
+        answer_tl: Saan ka pupunta ngayon
+        accept: ["Saan ka pupunta ngayon?"]
+        extra_words: [nasaan, bukas]
+      - type: fill_blank
+        sentence: "Pupunta ako ___ parke bukas."
+        translation: "I'm going to the park tomorrow."
+        answer: sa
+        options: [sa, ng, si]
+        audio: pupunta_ako_sa_parke_bukas
+      - type: translate
+        prompt_tl: Malayo ang paaralan. Sumakay kami ng jeepney.
+        answer_en: The school is far. We rode a jeepney.
+        accept: ["The school is far. We took a jeepney."]
+        extra_words: [near, walked, market]
+        audio: malayo_ang_paaralan_sumakay_kami_ng_jeepney
+      - type: match
+        pairs:
+          - { tl: harap, en: in front }
+          - { tl: tabi, en: beside }
+          - { tl: malayo, en: far }
+          - { tl: pupunta, en: will go }
+      - type: translate
+        prompt_en: The pharmacy is in front of the hospital.
+        answer_tl: Nasa harap ng ospital ang botika.
+        accept: ["Nasa harapan ng ospital ang botika."]
+        extra_words: [tabi, sa, bangko]
+        audio: nasa_harap_ng_ospital_ang_botika
+      - type: translate
+        prompt_en: Where are you going? (polite)
+        answer_tl: Saan po kayo pupunta?
+        extra_words: [nasaan, ka, ako]
+        audio: saan_po_kayo_pupunta
+        hint: '"kayo" is the polite you.'
+      - type: translate
+        prompt_en: Is the market near the church?
+        answer_tl: Malapit ba ang palengke sa simbahan?
+        accept: ["Malapit ba sa simbahan ang palengke?", "Malapit po ba ang palengke sa simbahan?"]
+        extra_words: [malayo, nasaan, ng]
+        audio: malapit_ba_ang_palengke_sa_simbahan
+  - id: town-11
+    title: Where is everyone?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nasa bahay, en: at home }
+          - { tl: nasa paaralan, en: at school }
+          - { tl: nasa palengke, en: at the market }
+          - { tl: nasa simbahan, en: at church }
+          - { tl: nasa ospital, en: at the hospital }
+      - type: choice
+        prompt: "'Nasa bangko si Tatay ngayon.' Where is Dad right now?"
+        answer: At the bank
+        distractors: [At the park, At the pharmacy, At home]
+        audio: nasa_bangko_si_tatay_ngayon
+        audio_text: Nasa bangko si Tatay ngayon.
+      - type: translate
+        prompt_tl: Nasa parke ang lolo at lola ko.
+        answer_en: My grandfather and grandmother are at the park.
+        accept: ["My grandpa and grandma are at the park", "My grandparents are at the park", "My grandfather and grandmother are in the park", "My grandpa and grandma are in the park", "My grandparents are in the park"]
+        extra_words: [market, went, school]
+        audio: nasa_parke_ang_lolo_at_lola_ko
+      - type: fill_blank
+        sentence: "___ ang mga bata? — Nasa parke sila."
+        translation: "Where are the children? — They are at the park."
+        answer: Nasaan
+        options: [Nasaan, Saan, Sino]
+        audio: nasaan_ang_mga_bata_nasa_parke_sila
+        hint: '"Nasaan" asks where someone or something is; "saan" goes with an action.'
+      - type: listen
+        audio: nasa_botika_ang_nanay_ko
+        answer_tl: Nasa botika ang nanay ko
+        extra_words: [bangko, tatay]
+      - type: fill_blank
+        sentence: "Pumunta ang kapatid ko ___ botika kahapon."
+        translation: "My sibling went to the pharmacy yesterday."
+        answer: sa
+        options: [sa, nasa, ng]
+        audio: pumunta_ang_kapatid_ko_sa_botika_kahapon
+        hint: 'After a going verb like pumunta use "sa"; "nasa" means "is at".'
+      - type: match
+        pairs:
+          - { tl: pumunta, en: went }
+          - { tl: pumupunta, en: goes }
+          - { tl: pupunta, en: will go }
+          - { tl: sumakay, en: rode }
+      - type: translate
+        prompt_en: The children are at church.
+        answer_tl: Nasa simbahan ang mga bata.
+        accept: ["Nasa simbahan po ang mga bata."]
+        extra_words: [paaralan, si, saan]
+        audio: nasa_simbahan_ang_mga_bata
+      - type: translate
+        prompt_en: Mom is going to the market tomorrow.
+        answer_tl: Pupunta si Nanay sa palengke bukas.
+        accept: ["Pupunta sa palengke si Nanay bukas.", "Pupunta si Nanay bukas sa palengke.", "Bukas, pupunta si Nanay sa palengke.", "Pupunta ang nanay ko sa palengke bukas."]
+        extra_words: [pumunta, nasa, kahapon]
+        audio: pupunta_si_nanay_sa_palengke_bukas
+        hint: '"pupunta" is for going that has not happened yet; "pumunta" is already done.'
+  - id: town-12
+    title: Getting there
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: nasa tabi ng bangko, en: beside the bank }
+          - { tl: nasa harap ng bangko, en: in front of the bank }
+          - { tl: malapit sa bangko, en: near the bank }
+          - { tl: malayo sa bangko, en: far from the bank }
+      - type: choice
+        prompt: "You ask 'Malayo po ba ang ospital?' and hear 'Opo. Sumakay po kayo ng jeepney.' What should you do?"
+        answer: Take a jeepney
+        distractors: [Walk to the corner, Go to the pharmacy, Wait in front of the hospital]
+        audio: opo_sumakay_po_kayo_ng_jeepney
+        audio_text: Opo. Sumakay po kayo ng jeepney.
+      - type: translate
+        prompt_tl: Malayo ang palengke sa paaralan.
+        answer_en: The market is far from the school.
+        accept: ["The market is far from school"]
+        extra_words: [near, beside, church]
+        audio: malayo_ang_palengke_sa_paaralan
+      - type: fill_blank
+        sentence: "Malapit ang botika ___ ospital."
+        translation: "The pharmacy is near the hospital."
+        answer: sa
+        options: [sa, ng, nasa]
+        audio: malapit_ang_botika_sa_ospital
+        hint: 'Malapit and malayo take "sa": malapit sa ospital.'
+      - type: fill_blank
+        sentence: "Nasa harap ___ palengke ang sakayan."
+        translation: "The stop is in front of the market."
+        answer: ng
+        options: [ng, sa, si]
+        audio: nasa_harap_ng_palengke_ang_sakayan
+        hint: 'Position words like tabi and harap take "ng": harap ng palengke.'
+      - type: listen
+        audio: sumakay_kami_ng_jeepney_sa_kanto
+        answer_tl: Sumakay kami ng jeepney sa kanto
+        extra_words: [sakayan, ako]
+      - type: match
+        pairs:
+          - { tl: Para po!, en: "Stop, please!" }
+          - { tl: Bayad po., en: "Here's my fare." }
+          - { tl: Saan po kayo pupunta?, en: Where are you going? }
+          - { tl: Nasaan po ang sakayan?, en: Where is the stop? }
+      - type: translate
+        prompt_en: The jeepney stop is near the church.
+        answer_tl: Malapit ang sakayan ng jeepney sa simbahan.
+        accept: ["Malapit sa simbahan ang sakayan ng jeepney.", "Malapit ang sakayan ng jeep sa simbahan.", "Malapit sa simbahan ang sakayan ng jeep."]
+        extra_words: [malayo, nasa, tabi]
+        audio: malapit_ang_sakayan_ng_jeepney_sa_simbahan
+      - type: translate
+        prompt_en: I'm going to the hospital. Is it far?
+        answer_tl: Pupunta ako sa ospital. Malayo ba ito?
+        accept: ["Pupunta ako sa ospital. Malayo ba?", "Pupunta po ako sa ospital. Malayo po ba ito?", "Pupunta po ako sa ospital. Malayo po ba?"]
+        extra_words: [pumunta, malapit, nasaan]
+        audio: pupunta_ako_sa_ospital_malayo_ba_ito

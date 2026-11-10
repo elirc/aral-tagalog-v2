@@ -230,3 +230,363 @@ lessons:
         extra_words: [money, party, tomorrow]
         hint: '"para sa" means "for".'
         audio: bumili_ako_ng_regalo_para_sa_kaarawan_ni_juan
+
+  - id: days-5
+    title: More months — Abril to Agosto
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Abril, en: April }
+          - { tl: Mayo, en: May }
+          - { tl: Hulyo, en: July }
+          - { tl: Agosto, en: August }
+      - type: choice
+        prompt: "'Hulyo' means..."
+        answer: July
+        distractors: [June, August, January]
+        audio: hulyo
+        audio_text: Hulyo
+        hint: 'Watch the middle letters: Hunyo is June, Hulyo is July.'
+      - type: choice
+        prompt: "'Agosto' means..."
+        answer: August
+        distractors: [April, October, May]
+        audio: agosto
+        audio_text: Agosto
+      - type: fill_blank
+        sentence: "Marso, Abril, ___, Hunyo"
+        translation: "March, April, May, June"
+        answer: Mayo
+        options: [Mayo, Hulyo, Agosto]
+      - type: listen
+        audio: mayo
+        answer_tl: Mayo
+        extra_words: [Marso, Hulyo]
+      - type: translate
+        prompt_tl: Mainit sa Abril at Mayo.
+        answer_en: It is hot in April and May.
+        accept: ["It's hot in April and May"]
+        extra_words: [cold, June, rainy]
+        audio: mainit_sa_abril_at_mayo
+      - type: translate
+        prompt_tl: May pista sa Mayo.
+        answer_en: There is a fiesta in May.
+        accept: ["There's a fiesta in May"]
+        extra_words: [birthday, March, rain]
+        audio: may_pista_sa_mayo
+      - type: translate
+        prompt_en: My birthday is in August.
+        answer_tl: Ang kaarawan ko ay sa Agosto.
+        accept: ["Sa Agosto ang kaarawan ko", "Kaarawan ko sa Agosto"]
+        extra_words: [Abril, buwan, bukas]
+        audio: ang_kaarawan_ko_ay_sa_agosto
+  - id: days-6
+    title: The ber months
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Setyembre, en: September }
+          - { tl: Oktubre, en: October }
+          - { tl: Nobyembre, en: November }
+          - { tl: Disyembre, en: December }
+      - type: choice
+        prompt: "'Setyembre' means..."
+        answer: September
+        distractors: [October, November, December]
+        audio: setyembre
+        audio_text: Setyembre
+      - type: choice
+        prompt: "In the Philippines, Christmas songs start playing in the 'ber months'. The first 'ber month' is..."
+        answer: Setyembre
+        distractors: [Oktubre, Nobyembre, Disyembre]
+        audio: setyembre
+        audio_text: Setyembre
+      - type: fill_blank
+        sentence: "Setyembre, Oktubre, ___, Disyembre"
+        translation: "September, October, November, December"
+        answer: Nobyembre
+        options: [Nobyembre, Enero, Mayo]
+      - type: listen
+        audio: oktubre
+        answer_tl: Oktubre
+        extra_words: [Nobyembre, Disyembre]
+      - type: translate
+        prompt_tl: Malakas ang ulan sa Setyembre.
+        answer_en: The rain is strong in September.
+        accept: ["The rain is heavy in September", "Rain is strong in September"]
+        extra_words: [wind, April, weak]
+        audio: malakas_ang_ulan_sa_setyembre
+      - type: translate
+        prompt_en: It is cold in November and December.
+        answer_tl: Malamig sa Nobyembre at Disyembre.
+        accept: ["Malamig po sa Nobyembre at Disyembre"]
+        extra_words: [mainit, Mayo, umaga]
+        audio: malamig_sa_nobyembre_at_disyembre
+      - type: translate
+        prompt_tl: Maraming pista sa buwan ng Mayo.
+        answer_en: There are many fiestas in the month of May.
+        accept: ["There are a lot of fiestas in the month of May", "There are many fiestas in May"]
+        extra_words: [few, year, December]
+        audio: maraming_pista_sa_buwan_ng_mayo
+  - id: days-7
+    title: Weeks — linggo
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "With a small 'l', 'linggo' means..."
+        answer: Week
+        distractors: [Sunday, Month, Day]
+        audio: linggo
+        audio_text: Linggo
+        hint: 'Capital Linggo is Sunday; lowercase linggo is a week.'
+      - type: match
+        pairs:
+          - { tl: linggo, en: week }
+          - { tl: buwan, en: month }
+          - { tl: taon, en: year }
+          - { tl: araw, en: day }
+      - type: choice
+        prompt: "'Sa susunod na linggo' means..."
+        answer: Next week
+        distractors: [Last week, This week, Next month]
+        audio: sa_susunod_na_linggo
+        audio_text: Sa susunod na linggo
+        hint: '"susunod" means next: sa susunod na linggo — next week.'
+      - type: fill_blank
+        sentence: "___ nakaraang linggo, pumunta kami sa palengke."
+        translation: "Last week, we went to the market."
+        answer: Noong
+        options: [Noong, Bukas, Tuwing]
+        hint: '"noong" looks back in time: noong nakaraang linggo — last week.'
+      - type: translate
+        prompt_tl: Pupunta kami sa dagat sa susunod na linggo.
+        answer_en: We will go to the sea next week.
+        accept:
+          - "We are going to the beach next week"
+          - "We will go to the beach next week"
+          - "Next week we will go to the sea"
+        extra_words: [went, yesterday, mountain]
+        audio: pupunta_kami_sa_dagat_sa_susunod_na_linggo
+      - type: listen
+        audio: sa_susunod_na_buwan
+        answer_tl: Sa susunod na buwan
+        extra_words: [linggo, nakaraan]
+      - type: translate
+        prompt_tl: Noong Lunes, nagtrabaho ako sa opisina.
+        answer_en: Last Monday, I worked at the office.
+        accept: ["I worked at the office last Monday", "On Monday, I worked at the office"]
+        extra_words: [school, Tuesday, will]
+        audio: noong_lunes_nagtrabaho_ako_sa_opisina
+        hint: '"noong Lunes" — last Monday (already past); "sa Lunes" — this coming Monday.'
+      - type: translate
+        prompt_en: We will go to the market next week.
+        answer_tl: Pupunta kami sa palengke sa susunod na linggo.
+        accept: ["Sa susunod na linggo, pupunta kami sa palengke"]
+        extra_words: [nakaraan, kahapon, buwan]
+        audio: pupunta_kami_sa_palengke_sa_susunod_na_linggo
+  - id: days-8
+    title: Kahapon, ngayon, bukas
+    xp: 10
+    exercises:
+      - type: fill_blank
+        sentence: "Kahapon, ___ ako sa palengke."
+        translation: "Yesterday, I went to the market."
+        answer: pumunta
+        options: [pumunta, pupunta, pumupunta]
+      - type: choice
+        prompt: "Which form of 'kain' goes with 'bukas'?"
+        answer: Kakain
+        distractors: [Kumain, Kumakain, Kinain]
+        audio: kakain
+        audio_text: Kakain
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: eating }
+          - { tl: kakain, en: will eat }
+      - type: translate
+        prompt_tl: Kakain ako ng isda bukas.
+        answer_en: I will eat fish tomorrow.
+        accept: ["Tomorrow I will eat fish", "I am going to eat fish tomorrow"]
+        extra_words: [ate, chicken, yesterday]
+        audio: kakain_ako_ng_isda_bukas
+      - type: fill_blank
+        sentence: "Bukas, ___ ako ng regalo para kay Ana."
+        translation: "Tomorrow, I will buy a gift for Ana."
+        answer: bibili
+        options: [bibili, bumili, bumibili]
+        hint: '"Bukas" needs the not-yet form: double the first syllable, no -um-: bibili.'
+      - type: listen
+        audio: pupunta_ako_sa_simbahan_bukas
+        answer_tl: Pupunta ako sa simbahan bukas
+        extra_words: [kahapon, palengke]
+      - type: translate
+        prompt_tl: Kumain ako kahapon, kumakain ako ngayon, at kakain ako bukas.
+        answer_en: I ate yesterday, I am eating today, and I will eat tomorrow.
+        accept: ["I ate yesterday, I am eating now, and I will eat tomorrow"]
+        extra_words: [drank, month, slept]
+        audio: kumain_kahapon_kumakain_ngayon_kakain_bukas
+      - type: translate
+        prompt_en: They will buy fish at the market tomorrow.
+        answer_tl: Bibili sila ng isda sa palengke bukas.
+        accept: ["Bukas, bibili sila ng isda sa palengke"]
+        extra_words: [bumili, kahapon, manok]
+        audio: bibili_sila_ng_isda_sa_palengke_bukas
+  - id: days-9
+    title: Making plans
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'May pasok ba bukas?' means..."
+        answer: Is there school tomorrow?
+        distractors: [Is there a party tomorrow?, Is the store open tomorrow?, Is it raining tomorrow?]
+        audio: may_pasok_ba_bukas
+        audio_text: May pasok ba bukas?
+        hint: '"pasok" covers both school and work days: may pasok — there are classes or work; walang pasok — none.'
+      - type: match
+        pairs:
+          - { tl: libre, en: free }
+          - { tl: may klase, en: have class }
+          - { tl: walang pasok, en: no school }
+          - { tl: kita tayo, en: see you }
+      - type: translate
+        prompt_tl: Libre ka ba sa Sabado?
+        answer_en: Are you free on Saturday?
+        accept: ["Are you free this Saturday?"]
+        extra_words: [busy, Sunday, when]
+        audio: libre_ka_ba_sa_sabado
+      - type: translate
+        prompt_tl: May klase ako sa Lunes at Miyerkules.
+        answer_en: I have class on Monday and Wednesday.
+        accept: ["I have classes on Monday and Wednesday", "I have a class on Monday and Wednesday"]
+        extra_words: [work, Tuesday, free]
+        audio: may_klase_ako_sa_lunes_at_miyerkules
+      - type: fill_blank
+        sentence: "___ tayo bukas sa palengke!"
+        translation: "See you tomorrow at the market!"
+        answer: Kita
+        options: [Kita, Libre, Pasok]
+      - type: listen
+        audio: kita_tayo_sa_sabado
+        answer_tl: Kita tayo sa Sabado
+        extra_words: [Linggo, bukas]
+      - type: choice
+        prompt: "A friend asks, 'Libre ka ba bukas?' You have work. Say:"
+        answer: May trabaho ako bukas.
+        distractors: [Libre ako bukas., Walang pasok bukas., Kita tayo bukas!]
+        audio: may_trabaho_ako_bukas
+        audio_text: May trabaho ako bukas.
+      - type: translate
+        prompt_en: When are you free? See you on Friday!
+        answer_tl: Kailan ka libre? Kita tayo sa Biyernes!
+        extra_words: [bukas, saan, pasok]
+        audio: kailan_ka_libre_kita_tayo_sa_biyernes
+  - id: days-10
+    title: Anong petsa ngayon?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Anong petsa ngayon?' means..."
+        answer: What is the date today?
+        distractors: [What day is it today?, What time is it?, When is your birthday?]
+        audio: anong_petsa_ngayon
+        audio_text: Anong petsa ngayon?
+      - type: match
+        pairs:
+          - { tl: petsa, en: date }
+          - { tl: kailan, en: when }
+          - { tl: kaarawan, en: birthday }
+          - { tl: taon, en: year }
+      - type: choice
+        prompt: "'Ikalima ng Mayo' means..."
+        answer: The fifth of May
+        distractors: [The fourth of May, The fifth of June, The tenth of May]
+        audio: ikalima_ng_mayo
+        audio_text: Ikalima ng Mayo
+        hint: '"ika-" + a number makes "the ...th": ikalima — the fifth.'
+      - type: fill_blank
+        sentence: "Ang kaarawan ko ay sa ___ ng Hunyo."
+        translation: "My birthday is on the tenth of June."
+        answer: ikasampu
+        options: [ikasampu, sampu, ikalima]
+      - type: translate
+        prompt_tl: Ikaapat ng Hulyo ngayon.
+        answer_en: Today is the fourth of July.
+        accept: ["It is the fourth of July today", "It's the fourth of July today"]
+        extra_words: [fifth, June, tomorrow]
+        audio: ikaapat_ng_hulyo_ngayon
+      - type: listen
+        audio: ikalima_ng_disyembre
+        answer_tl: Ikalima ng Disyembre
+        extra_words: [ikaanim, Enero]
+      - type: translate
+        prompt_tl: Ang pista ay sa ikawalo ng Mayo.
+        answer_en: The fiesta is on the eighth of May.
+        extra_words: [ninth, June, birthday]
+        audio: ang_pista_ay_sa_ikawalo_ng_mayo
+      - type: translate
+        prompt_en: My birthday is on the ninth of April.
+        answer_tl: Ang kaarawan ko ay sa ikasiyam ng Abril.
+        accept: ["Kaarawan ko sa ikasiyam ng Abril", "Sa ikasiyam ng Abril ang kaarawan ko"]
+        extra_words: [ikalima, Agosto, petsa]
+        audio: ang_kaarawan_ko_ay_sa_ikasiyam_ng_abril
+  - id: days-11
+    title: "Challenge: Ang buwan ko"
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Sa susunod na buwan, pupunta kami sa dagat.
+        answer_en: Next month, we will go to the sea.
+        accept:
+          - "Next month we will go to the beach"
+          - "We will go to the sea next month"
+          - "We will go to the beach next month"
+        extra_words: [last, week, went]
+        audio: sa_susunod_na_buwan_pupunta_kami_sa_dagat
+      - type: choice
+        prompt: "'Noong nakaraang taon' means..."
+        answer: Last year
+        distractors: [Next year, Last month, This year]
+        audio: noong_nakaraang_taon
+        audio_text: Noong nakaraang taon
+      - type: fill_blank
+        sentence: "Tuwing Hunyo, ___ nang malakas."
+        translation: "Every June, it rains hard."
+        answer: umuulan
+        options: [umuulan, umulan, uulan]
+        hint: '"Tuwing" (every) wants the ongoing form: umuulan.'
+      - type: translate
+        prompt_en: Last week, I bought a gift for Maria's birthday.
+        answer_tl: Noong nakaraang linggo, bumili ako ng regalo para sa kaarawan ni Maria.
+        accept: ["Bumili ako ng regalo para sa kaarawan ni Maria noong nakaraang linggo"]
+        extra_words: [bibili, susunod, Pasko]
+        audio: noong_nakaraang_linggo_bumili_ako_ng_regalo
+      - type: listen
+        audio: may_klase_ako_bukas
+        answer_tl: May klase ako bukas
+        extra_words: [trabaho, kahapon]
+      - type: translate
+        prompt_tl: Walang pasok bukas. Libre ako!
+        answer_en: There is no school tomorrow. I am free!
+        accept:
+          - "There's no school tomorrow. I'm free!"
+          - "There is no work tomorrow. I am free!"
+          - "There's no work tomorrow. I'm free!"
+        extra_words: [busy, yesterday, class]
+        audio: walang_pasok_bukas_libre_ako
+      - type: translate
+        prompt_tl: Ikalima ng Disyembre ang kaarawan ni Ana. Bibili ako ng regalo sa susunod na linggo.
+        answer_en: Ana's birthday is on the fifth of December. I will buy a gift next week.
+        accept:
+          - "Ana's birthday is the fifth of December. I will buy a gift next week."
+          - "Ana's birthday is on the fifth of December. I will buy a present next week."
+        extra_words: [bought, month, party]
+        audio: ikalima_ng_disyembre_ang_kaarawan_ni_ana
+      - type: translate
+        prompt_en: Every Saturday, we play basketball at school.
+        answer_tl: Tuwing Sabado, naglalaro kami ng basketbol sa paaralan.
+        accept: ["Naglalaro kami ng basketbol sa paaralan tuwing Sabado"]
+        extra_words: [simbahan, Linggo, nanonood]
+        audio: tuwing_sabado_naglalaro_kami_ng_basketbol

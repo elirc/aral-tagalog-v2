@@ -1,0 +1,750 @@
+id: need-can-must
+title: Need, Can, Must
+description: >-
+  Say what you need, should, can and may do with kailangan, dapat, kaya,
+  marunong, maka- verbs, pwede and bawal.
+tip: >-
+  Tagalog puts a small helper word in front of the verb, and the trick is
+  knowing which pronoun set it takes. Kailangan (need) and kaya (can manage)
+  take ko/mo/niya: "Kailangan kong umalis", "Kaya ko ito". Dapat (should),
+  marunong (know how to) and pwede (may / allowed — also spelled puwede) take
+  ako/ka/siya: "Dapat kang magpahinga", "Marunong akong lumangoy", "Pwede kang
+  umupo". Before a verb the pronoun carries the -ng linker (kong, kang). For
+  "able to", put maka- on the verb itself: "Hindi ako makatulog" (I can't
+  sleep); naka- is the past, "Nakatulog ako" (I managed to sleep), and makaka-
+  the future. On signs, "bawal" means forbidden: "Bawal pumarada."
+lessons:
+  - id: needcan-1
+    title: Kailangan ko ng… — I need
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kailangan ko ng tubig' means..."
+        answer: I need water.
+        distractors: [I want water., I have water., I am drinking water.]
+        audio: kailangan_ko_ng_tubig
+        audio_text: Kailangan ko ng tubig.
+      - type: match
+        pairs:
+          - { tl: kailangan ko, en: I need }
+          - { tl: kailangan mo, en: you need }
+          - { tl: kailangan niya, en: he / she needs }
+          - { tl: kailangan namin, en: we need }
+      - type: translate
+        prompt_tl: Kailangan ko ng pahinga.
+        answer_en: I need rest.
+        accept: ["I need a rest", "I need some rest", "I need a break"]
+        extra_words: [money, help, water]
+        audio: kailangan_ko_ng_pahinga
+        hint: '"pahinga" = rest — you already know the verb "magpahinga".'
+      - type: choice
+        prompt: "'Pasaporte' means..."
+        answer: Passport
+        distractors: [Umbrella, Medicine, Money]
+        audio: pasaporte
+        audio_text: Pasaporte
+      - type: translate
+        prompt_tl: Kailangan mo ba ng payong?
+        answer_en: Do you need an umbrella?
+        accept: ["Do you need an umbrella"]
+        extra_words: [want, passport, rest]
+        audio: kailangan_mo_ba_ng_payong
+      - type: listen
+        audio: kailangan_namin_ng_pahinga
+        answer_tl: Kailangan namin ng pahinga
+        extra_words: [pasaporte, niya]
+      - type: fill_blank
+        sentence: "Kailangan ___ ng gamot; may lagnat siya."
+        translation: "He needs medicine; he has a fever."
+        answer: niya
+        options: [niya, siya, kanya]
+        hint: 'Kailangan takes the ko/mo/niya set, just like "gusto".'
+      - type: translate
+        prompt_en: We need help.
+        answer_tl: Kailangan namin ng tulong.
+        accept: ["Kailangan natin ng tulong", "Kailangan po namin ng tulong"]
+        extra_words: [kami, pera, niya]
+        audio: kailangan_namin_ng_tulong
+      - type: translate
+        prompt_en: Do you need a passport?
+        answer_tl: Kailangan mo ba ng pasaporte?
+        accept: ["Kailangan ba ng pasaporte", "Kailangan po ba ninyo ng pasaporte", "Kailangan ba ninyo ng pasaporte", "Kailangan ba niyo ng pasaporte"]
+        extra_words: [ka, pahinga, ko]
+        audio: kailangan_mo_ba_ng_pasaporte
+  - id: needcan-2
+    title: Kailangan kong… — I need to
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which means 'I need to leave'?"
+        answer: Kailangan kong umalis.
+        distractors: [Gusto kong umalis., Ayaw kong umalis., Umalis na ako.]
+        audio: kailangan_kong_umalis
+        audio_text: Kailangan kong umalis.
+      - type: match
+        pairs:
+          - { tl: pumasok, en: to enter / go in }
+          - { tl: magbayad, en: to pay }
+          - { tl: umalis, en: to leave }
+          - { tl: maghintay, en: to wait }
+      - type: translate
+        prompt_tl: Kailangan kong pumasok sa opisina bukas.
+        answer_en: I need to go in to the office tomorrow.
+        accept:
+          - "I need to go to the office tomorrow"
+          - "I have to go in to the office tomorrow"
+          - "I have to go to the office tomorrow"
+          - "I need to go into the office tomorrow"
+        extra_words: [school, yesterday, want]
+        audio: kailangan_kong_pumasok_sa_opisina_bukas
+        hint: '"pumasok" = to enter — and also to go in to work or school.'
+      - type: choice
+        prompt: "'Kailangan mo bang magbayad?' means..."
+        answer: Do you need to pay?
+        distractors: [Do you want to pay?, Did you pay already?, Do you need money?]
+        audio: kailangan_mo_bang_magbayad
+        audio_text: Kailangan mo bang magbayad?
+      - type: listen
+        audio: kailangan_nating_maghintay_dito
+        answer_tl: Kailangan nating maghintay dito
+        extra_words: [kong, umalis]
+      - type: translate
+        prompt_tl: Hindi mo kailangang magbayad.
+        answer_en: You don't need to pay.
+        accept: ["You do not need to pay", "You don't have to pay", "You do not have to pay"]
+        extra_words: [wait, I, want]
+        audio: hindi_mo_kailangang_magbayad
+        hint: 'With "hindi" the pronoun jumps forward and the linker moves onto kailangan: hindi mo kailangang…'
+      - type: fill_blank
+        sentence: "Kailangan ___ uminom ng gamot."
+        translation: "She needs to take medicine."
+        answer: niyang
+        options: [niyang, niya, siyang]
+        hint: "Before a verb the pronoun takes the -ng linker: niya → niyang."
+      - type: translate
+        prompt_en: I need to sleep.
+        answer_tl: Kailangan kong matulog.
+        extra_words: [ko, akong, gusto]
+        audio: kailangan_kong_matulog
+        hint: "ko + -ng = kong before a verb, just like in \"gusto kong\"."
+      - type: translate
+        prompt_en: We need to leave early.
+        answer_tl: Kailangan nating umalis nang maaga.
+        accept: ["Kailangan naming umalis nang maaga"]
+        extra_words: [ng, pumasok, kong]
+        audio: kailangan_nating_umalis_nang_maaga
+  - id: needcan-3
+    title: Dapat — should
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Dapat' means..."
+        answer: Should / must
+        distractors: [Can / may, Want, Don't]
+        audio: dapat
+        audio_text: Dapat
+      - type: match
+        pairs:
+          - { tl: dapat, en: should }
+          - { tl: hindi dapat, en: should not }
+          - { tl: kailangan, en: need }
+          - { tl: huwag, en: don't }
+      - type: translate
+        prompt_tl: Dapat kang magpahinga.
+        answer_en: You should rest.
+        accept: ["You must rest", "You ought to rest", "You should take a rest"]
+        extra_words: [need, I, sleep]
+        audio: dapat_kang_magpahinga
+      - type: choice
+        prompt: "Which is correct for 'I should study'?"
+        answer: Dapat akong mag-aral.
+        distractors: [Dapat kong mag-aral., Dapat ko ng aral., Dapat sa akin mag-aral.]
+        audio: dapat_akong_mag_aral
+        audio_text: Dapat akong mag-aral.
+        hint: "Dapat takes ako/ka/siya — unlike kailangan, which takes ko/mo/niya."
+      - type: listen
+        audio: dapat_tayong_umalis_nang_maaga
+        answer_tl: Dapat tayong umalis nang maaga
+        extra_words: [kang, pumasok]
+      - type: translate
+        prompt_tl: Hindi ka dapat uminom ng kape sa gabi.
+        answer_en: You should not drink coffee at night.
+        accept:
+          - "You shouldn't drink coffee at night"
+          - "You should not drink coffee in the evening"
+          - "You shouldn't drink coffee in the evening"
+        extra_words: [need, morning, water]
+        audio: hindi_ka_dapat_uminom_ng_kape_sa_gabi
+      - type: fill_blank
+        sentence: "___ kang magdala ng payong; umuulan."
+        translation: "You should bring an umbrella; it's raining."
+        answer: Dapat
+        options: [Dapat, Bawal, Gusto]
+      - type: translate
+        prompt_en: I should study.
+        answer_tl: Dapat akong mag-aral.
+        accept: ["Dapat mag-aral ako"]
+        extra_words: [kong, ko, matulog]
+        audio: dapat_akong_mag_aral
+        hint: "Dapat + ako + linker → \"Dapat akong…\"."
+      - type: translate
+        prompt_en: You should not go in to work; you have a fever.
+        answer_tl: Hindi ka dapat pumasok; may lagnat ka.
+        accept:
+          - "Hindi ka dapat pumasok, may lagnat ka"
+          - "Hindi ka dapat pumasok. May lagnat ka"
+          - "Hindi ka dapat pumasok sa trabaho; may lagnat ka"
+        extra_words: [mo, kailangan, umalis]
+        audio: hindi_ka_dapat_pumasok_may_lagnat_ka
+  - id: needcan-4
+    title: Kaya ko! — I can manage
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kaya ko ito' means..."
+        answer: I can do this.
+        distractors: [I need this., I want this., I know this.]
+        audio: kaya_ko_ito
+        audio_text: Kaya ko ito.
+        hint: 'You met "kaya" as "so". Followed by ko/mo/niya it means having the strength or ability.'
+      - type: match
+        pairs:
+          - { tl: kaya ko, en: I can manage }
+          - { tl: kaya mo, en: you can manage }
+          - { tl: hindi ko kaya, en: I can't manage }
+          - { tl: mabigat, en: heavy }
+      - type: translate
+        prompt_tl: Mabigat ang bag. Kaya mo ba?
+        answer_en: The bag is heavy. Can you manage?
+        accept:
+          - "The bag is heavy. Can you manage it?"
+          - "The bag is heavy. Can you do it?"
+          - "The bag is heavy. Can you handle it?"
+          - "The bag is heavy. Can you carry it?"
+        extra_words: [need, small, I]
+        audio: mabigat_ang_bag_kaya_mo_ba
+      - type: choice
+        prompt: "Your friend is nervous before an exam. You say..."
+        answer: Kaya mo iyan!
+        distractors: [Bawal iyan!, Hindi mo kaya!, Mabigat iyan!]
+        audio: kaya_mo_iyan
+        audio_text: Kaya mo iyan!
+      - type: listen
+        audio: hindi_ko_na_kaya_kailangan_ko_ng_pahinga
+        answer_tl: Hindi ko na kaya, kailangan ko ng pahinga
+        extra_words: [mo, mabigat]
+      - type: translate
+        prompt_tl: Kaya niyang maglakad nang malayo.
+        answer_en: He can walk far.
+        accept:
+          - "She can walk far"
+          - "He is able to walk far"
+          - "She is able to walk far"
+          - "He can walk a long way"
+          - "She can walk a long way"
+        extra_words: [run, should, near]
+        audio: kaya_niyang_maglakad_nang_malayo
+      - type: fill_blank
+        sentence: "Hindi ___ kayang kumain ng maanghang."
+        translation: "I can't eat spicy food."
+        answer: ko
+        options: [ko, ako, akin]
+        hint: 'Kaya takes ko/mo/niya; after "hindi" the pronoun comes first and the linker moves onto kaya: hindi ko kayang…'
+      - type: translate
+        prompt_en: This is heavy, but I can manage.
+        answer_tl: Mabigat ito, pero kaya ko.
+        accept: ["Mabigat ito pero kaya ko", "Mabigat ito, pero kaya ko ito", "Mabigat ito pero kaya ko ito"]
+        extra_words: [ako, kailangan, mo]
+        audio: mabigat_ito_pero_kaya_ko
+      - type: translate
+        prompt_en: Are you able to walk?
+        answer_tl: Kaya mo bang maglakad?
+        accept: ["Kaya mo bang lumakad", "Kaya mo po bang maglakad", "Kaya ba ninyong maglakad", "Kaya po ba ninyong maglakad"]
+        extra_words: [ka, ba, tumakbo]
+        audio: kaya_mo_bang_maglakad
+        hint: 'mo + ba + linker → "Kaya mo bang…" — the linker rides on "ba".'
+  - id: needcan-5
+    title: Marunong — know how to
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Marunong akong lumangoy' means..."
+        answer: I know how to swim.
+        distractors: [I need to swim., I am allowed to swim., I want to swim.]
+        audio: marunong_akong_lumangoy
+        audio_text: Marunong akong lumangoy.
+      - type: match
+        pairs:
+          - { tl: marunong, en: knows how to }
+          - { tl: lumangoy, en: to swim }
+          - { tl: magmaneho, en: to drive }
+          - { tl: lisensya, en: license }
+          - { tl: magluto, en: to cook }
+      - type: translate
+        prompt_tl: Marunong ka bang magluto?
+        answer_en: Do you know how to cook?
+        accept: ["Can you cook?", "Do you know how to cook"]
+        extra_words: [drive, need, swim]
+        audio: marunong_ka_bang_magluto
+      - type: choice
+        prompt: "'Hindi ako marunong magmaneho' means..."
+        answer: I don't know how to drive.
+        distractors: [I am not allowed to drive., I don't want to drive., I don't need to drive.]
+        audio: hindi_ako_marunong_magmaneho
+        audio_text: Hindi ako marunong magmaneho.
+      - type: translate
+        prompt_tl: Marunong siyang tumugtog ng gitara.
+        answer_en: She knows how to play the guitar.
+        accept:
+          - "He knows how to play the guitar"
+          - "She knows how to play guitar"
+          - "He knows how to play guitar"
+          - "She can play the guitar"
+          - "He can play the guitar"
+        extra_words: [piano, wants, I]
+        audio: marunong_siyang_tumugtog_ng_gitara
+      - type: listen
+        audio: marunong_akong_magmaneho_pero_wala_akong_lisensya
+        answer_tl: Marunong akong magmaneho pero wala akong lisensya
+        extra_words: [siyang, kailangan]
+      - type: fill_blank
+        sentence: "Marunong ___ magsalita ng Tagalog."
+        translation: "I know how to speak Tagalog."
+        answer: akong
+        options: [akong, kong, ako]
+        hint: "Marunong takes ako/ka/siya plus the linker: akong, kang, siyang."
+      - type: translate
+        prompt_en: I don't know how to swim.
+        answer_tl: Hindi ako marunong lumangoy.
+        accept: ["Hindi ako marunong na lumangoy", "Hindi po ako marunong lumangoy"]
+        extra_words: [ko, kaya, magmaneho]
+        audio: hindi_ako_marunong_lumangoy
+        hint: 'After "hindi" the pronoun comes first: hindi ako marunong…'
+      - type: translate
+        prompt_en: Does he know how to drive?
+        answer_tl: Marunong ba siyang magmaneho?
+        extra_words: [niyang, ka, lumangoy]
+        audio: marunong_ba_siyang_magmaneho
+  - id: needcan-6
+    title: Hindi ako maka-… — I can't
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Hindi ako makatulog' means..."
+        answer: I can't sleep.
+        distractors: [I don't want to sleep., I shouldn't sleep., I don't need to sleep.]
+        audio: hindi_ako_makatulog
+        audio_text: Hindi ako makatulog.
+        hint: 'maka- + root = to be able to: tulog → makatulog.'
+      - type: match
+        pairs:
+          - { tl: makatulog, en: to be able to sleep }
+          - { tl: makakain, en: to be able to eat }
+          - { tl: makapunta, en: to be able to go }
+          - { tl: matulog, en: to sleep }
+      - type: translate
+        prompt_tl: Hindi ako makatulog kasi maingay.
+        answer_en: I can't sleep because it's noisy.
+        accept:
+          - "I cannot sleep because it's noisy"
+          - "I can't sleep because it is noisy"
+          - "I cannot sleep because it is noisy"
+          - "I am unable to sleep because it's noisy"
+        extra_words: [eat, quiet, need]
+        audio: hindi_ako_makatulog_kasi_maingay
+      - type: choice
+        prompt: "Add 'able to' to kain (eat). Which is right?"
+        answer: makakain
+        distractors: [kumakain, kakainin, magkain]
+        audio: makakain
+        audio_text: Makakain
+      - type: translate
+        prompt_tl: Hindi siya makakain; masakit ang tiyan niya.
+        answer_en: She can't eat; her stomach hurts.
+        accept:
+          - "He can't eat; his stomach hurts"
+          - "She cannot eat; her stomach hurts"
+          - "He cannot eat; his stomach hurts"
+          - "She can't eat; she has a stomachache"
+          - "He can't eat; he has a stomachache"
+        extra_words: [sleep, head, wants]
+        audio: hindi_siya_makakain_masakit_ang_tiyan_niya
+      - type: listen
+        audio: hindi_ako_makapunta_sa_opisina_ngayon
+        answer_tl: Hindi ako makapunta sa opisina ngayon
+        extra_words: [makatulog, bukas]
+      - type: fill_blank
+        sentence: "Maingay ang mga aso. Hindi kami ___."
+        translation: "The dogs are noisy. We can't sleep."
+        answer: makatulog
+        options: [makatulog, makakain, makapunta]
+      - type: translate
+        prompt_en: I can't sleep.
+        answer_tl: Hindi ako makatulog.
+        accept: ["Hindi po ako makatulog"]
+        extra_words: [ko, matulog, kaya]
+        audio: hindi_ako_makatulog
+      - type: translate
+        prompt_en: I can't go to school today because I'm sick.
+        answer_tl: Hindi ako makapunta sa paaralan ngayon kasi may sakit ako.
+        accept:
+          - "Hindi ako makapunta sa paaralan ngayon dahil may sakit ako"
+          - "Hindi ako makapunta ngayon sa paaralan kasi may sakit ako"
+          - "Hindi ako makapunta ngayon sa paaralan dahil may sakit ako"
+          - "Hindi ako makakapunta sa paaralan ngayon kasi may sakit ako"
+          - "Hindi ako makakapunta sa paaralan ngayon dahil may sakit ako"
+        extra_words: [makatulog, ko, bukas]
+        audio: hindi_ako_makapunta_sa_paaralan_ngayon_kasi_may_sakit_ako
+        hint: 'After "hindi", the plain maka- form says what you can''t do right now.'
+  - id: needcan-7
+    title: Naka- and makaka- — managed to, will be able to
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nakatulog ka ba?' means..."
+        answer: Were you able to sleep?
+        distractors: [Do you need to sleep?, Will you be able to sleep?, Do you want to sleep?]
+        audio: nakatulog_ka_ba
+        audio_text: Nakatulog ka ba?
+        hint: "naka- is the completed form of maka-: it happened, you managed it."
+      - type: match
+        pairs:
+          - { tl: nakatulog, en: was able to sleep }
+          - { tl: makakatulog, en: will be able to sleep }
+          - { tl: nakabili, en: was able to buy }
+          - { tl: makakapunta, en: will be able to go }
+      - type: translate
+        prompt_tl: Hindi ako nakatulog kagabi.
+        answer_en: I wasn't able to sleep last night.
+        accept:
+          - "I was not able to sleep last night"
+          - "I couldn't sleep last night"
+          - "I could not sleep last night"
+          - "I didn't get to sleep last night"
+        extra_words: [tomorrow, eat, will]
+        audio: hindi_ako_nakatulog_kagabi
+      - type: choice
+        prompt: "'Nakakain ka na ba?' means..."
+        answer: Have you eaten yet?
+        distractors: [Can you eat this?, Will you eat later?, Are you eating now?]
+        audio: nakakain_ka_na_ba
+        audio_text: Nakakain ka na ba?
+      - type: translate
+        prompt_tl: Nakabili ako ng gamot sa botika.
+        answer_en: I was able to buy medicine at the pharmacy.
+        accept:
+          - "I managed to buy medicine at the pharmacy"
+          - "I was able to buy medicine at the drugstore"
+          - "I managed to buy medicine at the drugstore"
+          - "I got to buy medicine at the pharmacy"
+        extra_words: [will, hospital, need]
+        audio: nakabili_ako_ng_gamot_sa_botika
+      - type: listen
+        audio: makakapunta_ka_ba_bukas
+        answer_tl: Makakapunta ka ba bukas
+        extra_words: [nakapunta, kagabi]
+      - type: fill_blank
+        sentence: "___ ka na ba sa Cebu?"
+        translation: "Have you ever been to Cebu?"
+        answer: Nakapunta
+        options: [Nakapunta, Makakapunta, Pupunta]
+        hint: 'naka- with "na" also means "have (ever) done": Nakapunta na ako sa Cebu = I have been to Cebu.'
+      - type: translate
+        prompt_en: I won't be able to go tomorrow.
+        answer_tl: Hindi ako makakapunta bukas.
+        accept: ["Hindi ako makapupunta bukas", "Hindi po ako makakapunta bukas"]
+        extra_words: [nakapunta, kahapon, ko]
+        audio: hindi_ako_makakapunta_bukas
+        hint: "For the future, repeat ka: makapunta → makakapunta."
+      - type: translate
+        prompt_en: Were you able to buy medicine?
+        answer_tl: Nakabili ka ba ng gamot?
+        accept: ["Nakabili ka na ba ng gamot", "Nakabili po ba kayo ng gamot", "Nakabili ba kayo ng gamot"]
+        extra_words: [makakabili, ako, pera]
+        audio: nakabili_ka_ba_ng_gamot
+  - id: needcan-8
+    title: Pwede — may and allowed
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pwede kang umupo dito' means..."
+        answer: You may sit here.
+        distractors: [You should sit here., Don't sit here., You sat here.]
+        audio: pwede_kang_umupo_dito
+        audio_text: Pwede kang umupo dito.
+      - type: match
+        pairs:
+          - { tl: pwede, en: can / may }
+          - { tl: hindi pwede, en: not allowed }
+          - { tl: Pwede ba?, en: May I? }
+          - { tl: pumasok, en: to enter }
+      - type: translate
+        prompt_tl: Pwede ba akong pumasok?
+        answer_en: May I come in?
+        accept: ["Can I come in?", "May I enter?", "Can I enter?", "May I go in?", "Can I go in?"]
+        extra_words: [sit, leave, need]
+        audio: pwede_ba_akong_pumasok
+      - type: choice
+        prompt: "A friend invites you out tomorrow, but you are busy. You say..."
+        answer: Hindi ako pwede bukas.
+        distractors: [Hindi ako marunong bukas., Hindi ko kaya kahapon., Bawal pumarada bukas.]
+        audio: hindi_ako_pwede_bukas
+        audio_text: Hindi ako pwede bukas.
+        hint: '"Hindi ako pwede" also means "I''m not free / I can''t make it".'
+      - type: listen
+        audio: pwede_na_tayong_umalis
+        answer_tl: Pwede na tayong umalis
+        extra_words: [kang, pumasok]
+      - type: translate
+        prompt_tl: Hindi ka pwedeng magmaneho; wala kang lisensya.
+        answer_en: You can't drive; you don't have a license.
+        accept:
+          - "You cannot drive; you don't have a license"
+          - "You are not allowed to drive; you don't have a license"
+          - "You may not drive; you don't have a license"
+          - "You can't drive; you have no license"
+        extra_words: [swim, should, passport]
+        audio: hindi_ka_pwedeng_magmaneho_wala_kang_lisensya
+      - type: fill_blank
+        sentence: "Hindi ka ___ pumasok dito."
+        translation: "You are not allowed to enter here."
+        answer: pwedeng
+        options: [pwedeng, pwede ng, pwede ba]
+        hint: "Pwede takes the -ng linker before a verb: pwedeng pumasok."
+      - type: translate
+        prompt_en: You may sit here.
+        answer_tl: Pwede kang umupo dito.
+        accept:
+          - "Pwede kayong umupo dito"
+          - "Pwede po kayong umupo dito"
+          - "Pwede kang umupo rito"
+          - "Puwede kang umupo dito"
+        extra_words: [mong, bawal, doon]
+        audio: pwede_kang_umupo_dito
+      - type: translate
+        prompt_en: May we pay tomorrow?
+        answer_tl: Pwede ba kaming magbayad bukas?
+        accept:
+          - "Pwede ba tayong magbayad bukas"
+          - "Pwede po ba kaming magbayad bukas"
+          - "Pwede bang magbayad kami bukas"
+          - "Puwede ba kaming magbayad bukas"
+        extra_words: [namin, pumasok, kahapon]
+        audio: pwede_ba_kaming_magbayad_bukas
+  - id: needcan-9
+    title: Bawal! — signs and rules
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A sign says 'Bawal manigarilyo.' It means..."
+        answer: No smoking
+        distractors: [Smoking area, No parking, No entry]
+        audio: bawal_manigarilyo
+        audio_text: Bawal manigarilyo.
+      - type: match
+        pairs:
+          - { tl: manigarilyo, en: to smoke }
+          - { tl: pumarada, en: to park }
+          - { tl: magtapon, en: to throw away }
+          - { tl: tumawid, en: to cross }
+          - { tl: pumasok, en: to enter }
+      - type: translate
+        prompt_tl: Bawal pumarada dito.
+        answer_en: Parking is not allowed here.
+        accept:
+          - "No parking here"
+          - "Parking is forbidden here"
+          - "Parking is prohibited here"
+          - "You can't park here"
+          - "It is forbidden to park here"
+          - "You are not allowed to park here"
+        extra_words: [smoking, there, should]
+        audio: bawal_pumarada_dito
+      - type: choice
+        prompt: "Which sign means 'No littering'?"
+        answer: Bawal magtapon ng basura dito.
+        distractors: [Bawal tumawid dito., Bawal pumarada dito., Bawal manigarilyo dito.]
+        audio: bawal_magtapon_ng_basura_dito
+        audio_text: Bawal magtapon ng basura dito.
+      - type: translate
+        prompt_tl: Hindi ka pwedeng pumarada dito; bawal.
+        answer_en: You can't park here; it's not allowed.
+        accept:
+          - "You cannot park here; it's not allowed"
+          - "You can't park here; it is not allowed"
+          - "You can't park here; it's forbidden"
+          - "You may not park here; it's not allowed"
+          - "You can't park here; it's prohibited"
+        extra_words: [smoke, should, there]
+        audio: hindi_ka_pwedeng_pumarada_dito_bawal
+      - type: listen
+        audio: bawal_ang_aso_sa_loob
+        answer_tl: Bawal ang aso sa loob
+        extra_words: [pusa, labas]
+      - type: fill_blank
+        sentence: "Bawal ___ ng basura sa ilog."
+        translation: "Throwing trash in the river is not allowed."
+        answer: magtapon
+        options: [magtapon, manigarilyo, pumarada]
+      - type: translate
+        prompt_en: Smoking is not allowed here.
+        answer_tl: Bawal manigarilyo dito.
+        accept:
+          - "Bawal pong manigarilyo dito"
+          - "Bawal ang manigarilyo dito"
+          - "Bawal manigarilyo rito"
+          - "Hindi pwedeng manigarilyo dito"
+        extra_words: [pumarada, dapat, doon]
+        audio: bawal_manigarilyo_dito
+        hint: "Bawal goes straight in front of the verb — no linker needed."
+      - type: translate
+        prompt_en: Crossing is not allowed here; it's dangerous.
+        answer_tl: Bawal tumawid dito; delikado.
+        accept:
+          - "Bawal tumawid dito, delikado"
+          - "Bawal tumawid dito. Delikado"
+          - "Bawal tumawid dito kasi delikado"
+          - "Bawal tumawid dito dahil delikado"
+          - "Bawal tumawid rito; delikado"
+        extra_words: [pumarada, pwede, doon]
+        audio: bawal_tumawid_dito_delikado
+  - id: needcan-10
+    title: Which helper? ko or ako
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kailangan ko, en: I need }
+          - { tl: dapat ako, en: I should }
+          - { tl: kaya ko, en: I can manage }
+          - { tl: marunong ako, en: I know how }
+          - { tl: pwede ako, en: I'm allowed }
+      - type: choice
+        prompt: "Which two helpers take ko/mo/niya instead of ako/ka/siya?"
+        answer: kailangan and kaya
+        distractors: [dapat and marunong, pwede and dapat, marunong and pwede]
+      - type: choice
+        prompt: "Your friend never learned to swim. Which sentence fits?"
+        answer: Hindi siya marunong lumangoy.
+        distractors: [Bawal siyang lumangoy., Hindi niya kailangang lumangoy., Hindi siya dapat lumangoy.]
+        audio: hindi_siya_marunong_lumangoy
+        audio_text: Hindi siya marunong lumangoy.
+        hint: "marunong = has the skill; kaya = has the strength; pwede = is allowed."
+      - type: translate
+        prompt_tl: Marunong akong lumangoy, pero hindi ko kayang lumangoy nang malayo.
+        answer_en: I know how to swim, but I can't swim far.
+        accept:
+          - "I know how to swim but I can't swim far"
+          - "I know how to swim, but I cannot swim far"
+          - "I can swim, but I can't swim far"
+          - "I know how to swim, but I'm not able to swim far"
+        extra_words: [drive, should, near]
+        audio: marunong_akong_lumangoy_pero_hindi_ko_kayang_lumangoy_nang_malayo
+      - type: listen
+        audio: kailangan_ko_ng_pahinga_kasi_hindi_ako_nakatulog_kagabi
+        answer_tl: Kailangan ko ng pahinga kasi hindi ako nakatulog kagabi
+        extra_words: [dapat, makakatulog]
+      - type: fill_blank
+        sentence: "Dapat ___ magbayad ngayon."
+        translation: "You should pay now."
+        answer: kang
+        options: [kang, mong, mo]
+        hint: "Dapat takes the ako/ka/siya set: ka + -ng = kang."
+      - type: fill_blank
+        sentence: "Kailangan ___ magdala ng pasaporte sa paliparan."
+        translation: "You need to bring a passport to the airport."
+        answer: mong
+        options: [mong, kang, ka]
+      - type: translate
+        prompt_en: You should rest, but I need to work.
+        answer_tl: Dapat kang magpahinga, pero kailangan kong magtrabaho.
+        accept:
+          - "Dapat kang magpahinga pero kailangan kong magtrabaho"
+          - "Dapat magpahinga ka, pero kailangan kong magtrabaho"
+          - "Dapat magpahinga ka pero kailangan kong magtrabaho"
+        extra_words: [mong, akong, kaya]
+        audio: dapat_kang_magpahinga_pero_kailangan_kong_magtrabaho
+        hint: "Dapat + kang, but kailangan + kong."
+      - type: translate
+        prompt_en: I know how to drive, but I'm not allowed to drive because I don't have a license.
+        answer_tl: Marunong akong magmaneho, pero hindi ako pwedeng magmaneho kasi wala akong lisensya.
+        accept:
+          - "Marunong akong magmaneho pero hindi ako pwedeng magmaneho kasi wala akong lisensya"
+          - "Marunong akong magmaneho, pero hindi ako pwedeng magmaneho dahil wala akong lisensya"
+          - "Marunong akong magmaneho pero hindi ako pwedeng magmaneho dahil wala akong lisensya"
+          - "Marunong akong magmaneho, pero bawal akong magmaneho kasi wala akong lisensya"
+          - "Marunong akong magmaneho, pero bawal akong magmaneho dahil wala akong lisensya"
+        extra_words: [kong, kaya, pasaporte]
+        audio: marunong_akong_magmaneho_pero_hindi_ako_pwedeng_magmaneho_kasi_wala_akong_lisensya
+  - id: needcan-11
+    title: Everyday scenes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Bawal magtapon ng basura, en: No littering }
+          - { tl: Kaya mo iyan!, en: You can do it! }
+          - { tl: Hindi ako makatulog, en: I can't sleep }
+          - { tl: Kailangan ko ng tulong, en: I need help }
+      - type: choice
+        prompt: "'Pwede ba akong manigarilyo dito?' — 'Hindi po, bawal.' The answer means..."
+        answer: "No, it's not allowed."
+        distractors: ["Yes, go ahead.", "No, I don't smoke.", "No, I don't know how."]
+        audio: hindi_po_bawal
+        audio_text: Hindi po, bawal.
+      - type: translate
+        prompt_tl: Hindi ako nakabili ng payong kasi wala akong pera.
+        answer_en: I wasn't able to buy an umbrella because I had no money.
+        accept:
+          - "I couldn't buy an umbrella because I had no money"
+          - "I wasn't able to buy an umbrella because I didn't have money"
+          - "I couldn't buy an umbrella because I didn't have money"
+          - "I wasn't able to buy an umbrella because I have no money"
+          - "I couldn't buy an umbrella because I have no money"
+          - "I couldn't buy an umbrella because I don't have money"
+        extra_words: [passport, will, time]
+        audio: hindi_ako_nakabili_ng_payong_kasi_wala_akong_pera
+      - type: choice
+        prompt: "At the airport the guard says 'Kailangan po ng pasaporte.' You should..."
+        answer: Show your passport
+        distractors: [Pay a fee, Park somewhere else, Stop smoking]
+        audio: kailangan_po_ng_pasaporte
+        audio_text: Kailangan po ng pasaporte.
+      - type: translate
+        prompt_tl: Mabigat ang bag mo. Kaya mo ba, o kailangan mo ng tulong?
+        answer_en: Your bag is heavy. Can you manage, or do you need help?
+        accept:
+          - "Your bag is heavy. Can you manage it, or do you need help?"
+          - "Your bag is heavy. Can you do it, or do you need help?"
+          - "Your bag is heavy. Can you handle it, or do you need help?"
+          - "Your bag is heavy. Can you carry it, or do you need help?"
+        extra_words: [rest, should, my]
+        audio: mabigat_ang_bag_mo_kaya_mo_ba_o_kailangan_mo_ng_tulong
+      - type: listen
+        audio: pwede_ba_akong_pumarada_dito
+        answer_tl: Pwede ba akong pumarada dito
+        extra_words: [bawal, kang]
+      - type: fill_blank
+        sentence: "Hindi ako ___ kagabi kasi maingay ang mga aso."
+        translation: "I wasn't able to sleep last night because the dogs were noisy."
+        answer: nakatulog
+        options: [nakatulog, makakatulog, marunong]
+        hint: '"kagabi" is past, so the completed naka- form fits.'
+      - type: translate
+        prompt_en: Do you know how to cook? I need help in the kitchen.
+        answer_tl: Marunong ka bang magluto? Kailangan ko ng tulong sa kusina.
+        accept:
+          - "Marunong ba kayong magluto? Kailangan ko ng tulong sa kusina"
+          - "Marunong po ba kayong magluto? Kailangan ko po ng tulong sa kusina"
+        extra_words: [mo, kaya, dapat]
+        audio: marunong_ka_bang_magluto_kailangan_ko_ng_tulong_sa_kusina
+      - type: translate
+        prompt_en: I need to pay, but I can't go to the bank today.
+        answer_tl: Kailangan kong magbayad, pero hindi ako makapunta sa bangko ngayon.
+        accept:
+          - "Kailangan kong magbayad pero hindi ako makapunta sa bangko ngayon"
+          - "Kailangan kong magbayad, pero hindi ako makakapunta sa bangko ngayon"
+          - "Kailangan kong magbayad pero hindi ako makakapunta sa bangko ngayon"
+          - "Kailangan kong magbayad, pero hindi ako makapunta ngayon sa bangko"
+        extra_words: [akong, dapat, bukas]
+        audio: kailangan_kong_magbayad_pero_hindi_ako_makapunta_sa_bangko_ngayon

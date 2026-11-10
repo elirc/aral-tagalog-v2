@@ -217,3 +217,385 @@ lessons:
         accept: ["We took the bus and went to the beach yesterday", "We rode a bus and went to the sea yesterday", "We got on the bus and went to the sea yesterday"]
         extra_words: [mountain, walked, today]
         audio: sumakay_kami_sa_bus_at_pumunta_sa_dagat_kahapon
+  - id: transport-5
+    title: Para po! On the jeepney
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Para po sa kanto!' means..."
+        answer: Stop at the corner, please!
+        distractors: ["Pay at the corner, please!", "Turn at the corner, please!", "Wait at the corner, please!"]
+        audio: para_po_sa_kanto
+        audio_text: Para po sa kanto!
+      - type: match
+        pairs:
+          - { tl: drayber, en: driver }
+          - { tl: kanto, en: corner }
+          - { tl: barya, en: coins }
+          - { tl: sukli, en: change }
+      - type: choice
+        prompt: "You hand your fare for two people. Say:"
+        answer: Bayad po, dalawa po.
+        distractors: ["Para po, dalawa po.", Salamat po., Magkano po?]
+        audio: bayad_po_dalawa_po
+        audio_text: Bayad po, dalawa po.
+      - type: fill_blank
+        sentence: "___ po ng bayad."
+        translation: "Please pass the fare forward."
+        answer: Pakiabot
+        options: [Pakiabot, Para, Bayad]
+        hint: 'On a jeepney, "paki-" + a verb root makes a polite request: pakiabot — please pass it on.'
+      - type: translate
+        prompt_tl: Pakiabot po ng bayad ko sa drayber.
+        answer_en: Please pass my fare to the driver.
+        accept: ["Please pass my payment to the driver", "Please hand my fare to the driver"]
+        extra_words: [change, corner, stop]
+        audio: pakiabot_po_ng_bayad_ko_sa_drayber
+      - type: listen
+        audio: magkano_po_ang_pamasahe
+        answer_tl: Magkano po ang pamasahe
+        extra_words: [sukli, saan]
+      - type: translate
+        prompt_tl: Puno na ang jeepney. Sumakay kami sa susunod.
+        answer_en: The jeepney is full. We got on the next one.
+        accept:
+          - "The jeepney is already full. We got on the next one."
+          - "The jeepney is full. We rode the next one."
+        extra_words: [empty, tricycle, corner]
+        audio: puno_na_ang_jeepney_sumakay_kami_sa_susunod
+        hint: '"puno" here means full — no more seats.'
+      - type: translate
+        prompt_en: Stop please! Just here, please.
+        answer_tl: Para po! Dito lang po.
+        accept: ["Para po, dito lang po"]
+        extra_words: [doon, bayad, kanto]
+        audio: para_po_dito_lang_po
+  - id: transport-6
+    title: Waiting and lining up
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Naghihintay' means..."
+        answer: Waiting
+        distractors: [Riding, Lining up, Walking]
+        audio: naghihintay
+        audio_text: Naghihintay
+      - type: match
+        pairs:
+          - { tl: naghihintay, en: waiting }
+          - { tl: pumila, en: lined up }
+          - { tl: sumakay, en: got on }
+          - { tl: bumaba, en: got off }
+      - type: translate
+        prompt_tl: Naghihintay kami ng bus sa kanto.
+        answer_en: We are waiting for a bus at the corner.
+        accept: ["We are waiting for the bus at the corner", "We wait for the bus at the corner"]
+        extra_words: [riding, jeepney, station]
+        audio: naghihintay_kami_ng_bus_sa_kanto
+      - type: fill_blank
+        sentence: "Pumila kami sa ___ ng bus."
+        translation: "We lined up at the bus station."
+        answer: istasyon
+        options: [istasyon, kanto, daan]
+      - type: choice
+        prompt: "'Pumila' means..."
+        answer: Lined up
+        distractors: [Got off, Waited, Paid]
+        audio: pumila
+        audio_text: Pumila
+        hint: '"pumila" — got in line; "pila" is the line itself.'
+      - type: listen
+        audio: naghihintay_ako_ng_jeepney
+        answer_tl: Naghihintay ako ng jeepney
+        extra_words: [bus, traysikel]
+      - type: translate
+        prompt_tl: Maraming tao. Puno na ang bus.
+        answer_en: There are many people. The bus is already full.
+        accept:
+          - "There are a lot of people. The bus is already full."
+          - "There are many people. The bus is full."
+        extra_words: [few, jeepney, empty]
+        audio: maraming_tao_puno_na_ang_bus
+      - type: translate
+        prompt_en: We waited for the tricycle at the corner.
+        answer_tl: Naghintay kami ng traysikel sa kanto.
+        accept: ["Naghintay po kami ng traysikel sa kanto"]
+        extra_words: [naghihintay, bumaba, istasyon]
+        audio: naghintay_kami_ng_traysikel_sa_kanto
+        hint: '"Naghintay" — waited (finished); "naghihintay" — still waiting.'
+  - id: transport-7
+    title: Riding the MRT
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Tren' means..."
+        answer: Train
+        distractors: [Bus, Plane, Boat]
+        audio: tren
+        audio_text: Tren
+      - type: choice
+        prompt: "In Manila, the elevated train many commuters ride is called the..."
+        answer: MRT
+        distractors: [Bus, Taksi, Traysikel]
+        audio: mrt
+        audio_text: MRT
+      - type: match
+        pairs:
+          - { tl: tren, en: train }
+          - { tl: istasyon, en: station }
+          - { tl: biyahe, en: trip }
+          - { tl: sasakyan, en: vehicle }
+      - type: translate
+        prompt_tl: Sumakay kami sa MRT papunta sa trabaho.
+        answer_en: We rode the MRT going to work.
+        accept: ["We took the MRT to work", "We rode the MRT to work"]
+        extra_words: [bus, school, home]
+        audio: sumakay_kami_sa_mrt_papunta_sa_trabaho
+      - type: fill_blank
+        sentence: "Bumaba kami sa susunod na ___."
+        translation: "We got off at the next station."
+        answer: istasyon
+        options: [istasyon, kanto, biyahe]
+      - type: listen
+        audio: mabilis_ang_tren
+        answer_tl: Mabilis ang tren
+        extra_words: [mabagal, bus]
+      - type: translate
+        prompt_tl: Maraming tao sa MRT tuwing umaga.
+        answer_en: There are many people on the MRT every morning.
+        accept: ["There are a lot of people on the MRT every morning"]
+        extra_words: [evening, train, few]
+        audio: maraming_tao_sa_mrt_tuwing_umaga
+      - type: translate
+        prompt_en: I ride the train every day.
+        answer_tl: Sumasakay ako sa tren araw-araw.
+        accept:
+          - "Araw-araw akong sumasakay sa tren"
+          - "Sumasakay ako ng tren araw-araw"
+          - "Araw-araw akong sumasakay ng tren"
+          - "Araw-araw, sumasakay ako sa tren"
+          - "Araw-araw, sumasakay ako ng tren"
+        extra_words: [bus, kahapon, bumaba, ng, akong]
+        grading: { hyphens: true }
+        audio: sumasakay_ako_sa_tren_araw_araw
+  - id: transport-8
+    title: By land, sea, and sky
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bisikleta, en: bicycle }
+          - { tl: motorsiklo, en: motorcycle }
+          - { tl: eroplano, en: airplane }
+          - { tl: bangka, en: boat }
+      - type: choice
+        prompt: "'Eroplano' means..."
+        answer: Airplane
+        distractors: [Boat, Train, Bicycle]
+        audio: eroplano
+        audio_text: Eroplano
+      - type: choice
+        prompt: "'Paliparan' means..."
+        answer: Airport
+        distractors: [Station, Market, Road]
+        audio: paliparan
+        audio_text: Paliparan
+        hint: '"lipad" means fly — the paliparan is where the planes are.'
+      - type: translate
+        prompt_tl: May bisikleta ang kapatid ko.
+        answer_en: My sibling has a bicycle.
+        accept: ["My brother has a bicycle", "My sister has a bicycle", "My sibling has a bike"]
+        extra_words: [motorcycle, bought, friend]
+        audio: may_bisikleta_ang_kapatid_ko
+      - type: fill_blank
+        sentence: "Pupunta kami sa ___ bukas. Sasakay kami sa eroplano."
+        translation: "We will go to the airport tomorrow. We will ride an airplane."
+        answer: paliparan
+        options: [paliparan, istasyon, palengke]
+        hint: '"Sasakay" — will ride: the first syllable doubles, like pupunta.'
+      - type: listen
+        audio: sumakay_ako_sa_motorsiklo
+        answer_tl: Sumakay ako sa motorsiklo
+        extra_words: [bisikleta, eroplano]
+      - type: translate
+        prompt_tl: Mabagal ang bangka. Mabilis ang eroplano.
+        answer_en: The boat is slow. The airplane is fast.
+        accept: ["The boat is slow. The plane is fast."]
+        extra_words: [trip, train, far]
+        audio: mabagal_ang_bangka_mabilis_ang_eroplano
+      - type: translate
+        prompt_en: They rode an airplane yesterday.
+        answer_tl: Sumakay sila sa eroplano kahapon.
+        accept:
+          - "Kahapon, sumakay sila sa eroplano"
+          - "Sumakay sila ng eroplano kahapon"
+          - "Kahapon, sumakay sila ng eroplano"
+        extra_words: [bangka, bukas, kami, ng]
+        audio: sumakay_sila_sa_eroplano_kahapon
+  - id: transport-9
+    title: Taking a taxi
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You get in a taxi. The driver asks, 'Saan po tayo?' This means..."
+        answer: Where are we going?
+        distractors: [Who are you?, How much is the fare?, When do we leave?]
+        audio: saan_po_tayo
+        audio_text: Saan po tayo?
+      - type: match
+        pairs:
+          - { tl: kanan, en: right }
+          - { tl: kaliwa, en: left }
+          - { tl: diretso, en: straight }
+          - { tl: kanto, en: corner }
+      - type: translate
+        prompt_tl: Diretso lang po, tapos kanan sa kanto.
+        answer_en: Just straight ahead please, then right at the corner.
+        accept:
+          - "Just go straight, then right at the corner"
+          - "Straight ahead please, then right at the corner"
+        extra_words: [left, slow, stop]
+        audio: diretso_lang_po_tapos_kanan_sa_kanto
+      - type: fill_blank
+        sentence: "Lumiko po kayo sa ___ sa kanto."
+        translation: "Please turn left at the corner."
+        answer: kaliwa
+        options: [kaliwa, kanan, diretso]
+      - type: translate
+        prompt_en: How much is the fare going to the airport?
+        answer_tl: Magkano po ang pamasahe papunta sa paliparan?
+        accept: ["Magkano ang pamasahe papunta sa paliparan"]
+        extra_words: [istasyon, sukli, malayo]
+        audio: magkano_po_ang_pamasahe_papunta_sa_paliparan
+      - type: listen
+        audio: dito_na_lang_po_salamat
+        answer_tl: Dito na lang po, salamat
+        extra_words: [doon, bayad]
+      - type: choice
+        prompt: "You want to get off right here. Tell the driver:"
+        answer: Dito na lang po.
+        distractors: [Doon pa po., Diretso pa po., Sa kanan po.]
+        audio: dito_na_lang_po
+        audio_text: Dito na lang po.
+      - type: translate
+        prompt_tl: Sumakay kami sa taksi kasi malayo ang paliparan.
+        answer_en: We took a taxi because the airport is far.
+        accept: ["We rode a taxi because the airport is far", "We took the taxi because the airport is far"]
+        extra_words: [near, bus, cheap]
+        audio: sumakay_kami_sa_taksi_kasi_malayo_ang_paliparan
+  - id: transport-10
+    title: Leaving early
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Maaga' means..."
+        answer: Early
+        distractors: [Late, Fast, Near]
+        audio: maaga
+        audio_text: Maaga
+      - type: translate
+        prompt_tl: Sumakay ako sa bus nang maaga.
+        answer_en: I got on the bus early.
+        accept: ["I rode the bus early", "I took the bus early"]
+        extra_words: [late, jeepney, yesterday]
+        audio: sumakay_ako_sa_bus_nang_maaga
+      - type: fill_blank
+        sentence: "Pumunta kami sa istasyon ___ maaga."
+        translation: "We went to the station early."
+        answer: nang
+        options: [nang, ng, na]
+        hint: '"nang" links the verb to how it happens: pumunta nang maaga — went early.'
+      - type: match
+        pairs:
+          - { tl: maaga, en: early }
+          - { tl: mabilis, en: fast }
+          - { tl: mabagal, en: slow }
+          - { tl: malayo, en: far }
+      - type: listen
+        audio: maaga_ang_biyahe_namin
+        answer_tl: Maaga ang biyahe namin
+        extra_words: [mabagal, bukas]
+      - type: translate
+        prompt_tl: Tuwing umaga, sumasakay ako sa jeepney papunta sa trabaho.
+        answer_en: Every morning, I ride a jeepney going to work.
+        accept:
+          - "Every morning, I ride the jeepney to work"
+          - "Every morning I take the jeepney to work"
+          - "I ride the jeepney to work every morning"
+        extra_words: [evening, bus, school]
+        audio: tuwing_umaga_sumasakay_ako_sa_jeepney
+      - type: choice
+        prompt: "'Pumunta ka nang maaga sa paliparan' means..."
+        answer: Go to the airport early
+        distractors: [Go to the airport late, Leave the airport early, Wait at the airport]
+        audio: pumunta_ka_nang_maaga_sa_paliparan
+        audio_text: Pumunta ka nang maaga sa paliparan
+      - type: translate
+        prompt_en: I went to the station early because of the traffic.
+        answer_tl: Pumunta ako sa istasyon nang maaga dahil sa trapik.
+        accept: ["Maaga akong pumunta sa istasyon dahil sa trapik"]
+        extra_words: [ng, mabagal, kahapon]
+        audio: pumunta_ako_sa_istasyon_nang_maaga
+  - id: transport-11
+    title: "Challenge: Ang biyahe ko"
+    xp: 15
+    exercises:
+      - type: translate
+        prompt_tl: Tuwing umaga, naghihintay ako ng jeepney sa kanto.
+        answer_en: Every morning, I wait for a jeepney at the corner.
+        accept:
+          - "Every morning I wait for the jeepney at the corner"
+          - "I wait for a jeepney at the corner every morning"
+        extra_words: [evening, bus, station]
+        audio: tuwing_umaga_naghihintay_ako_ng_jeepney
+      - type: choice
+        prompt: "'Puno na po. Sa susunod na biyahe na lang.' means..."
+        answer: It's already full. Just take the next trip.
+        distractors: [It's empty. Get on now., It's far. Take a taxi instead., It's cheap. Pay the driver now.]
+        audio: puno_na_po_sa_susunod_na_biyahe_na_lang
+        audio_text: Puno na po. Sa susunod na biyahe na lang.
+      - type: fill_blank
+        sentence: "Bumaba ako sa ___ na istasyon."
+        translation: "I got off at the next station."
+        answer: susunod
+        options: [susunod, nakaraan, malapit]
+      - type: listen
+        audio: sumakay_kami_sa_tren_papunta_sa_paliparan
+        answer_tl: Sumakay kami sa tren papunta sa paliparan
+        extra_words: [bus, istasyon]
+      - type: translate
+        prompt_tl: Mabagal ang biyahe dahil maraming sasakyan.
+        answer_en: The trip is slow because there are many vehicles.
+        accept:
+          - "The trip is slow because there are a lot of vehicles"
+          - "The ride is slow because there are many vehicles"
+        extra_words: [fast, people, road]
+        audio: mabagal_ang_biyahe_dahil_maraming_sasakyan
+      - type: translate
+        prompt_en: I lined up at the station and rode the train to work.
+        answer_tl: Pumila ako sa istasyon at sumakay ako sa tren papunta sa trabaho.
+        accept:
+          - "Pumila ako sa istasyon at sumakay sa tren papunta sa trabaho"
+          - "Pumila ako sa istasyon at sumakay ako ng tren papunta sa trabaho"
+          - "Pumila ako sa istasyon at sumakay ng tren papunta sa trabaho"
+        extra_words: [bumaba, bus, naghintay, ng]
+        audio: pumila_ako_sa_istasyon_at_sumakay_ako_sa_tren
+      - type: translate
+        prompt_tl: Para po! Bababa po ako sa kanto.
+        answer_en: Stop please! I will get off at the corner.
+        accept: ["Stop please! I'm getting off at the corner."]
+        extra_words: [fare, station, bayad]
+        audio: para_po_bababa_po_ako_sa_kanto
+        hint: '"bababa" — will get off: the first syllable doubled, like pupunta.'
+      - type: translate
+        prompt_en: Every day, I ride the jeepney, the MRT, and a tricycle.
+        answer_tl: Araw-araw, sumasakay ako sa jeepney, sa MRT, at sa traysikel.
+        accept:
+          - "Sumasakay ako sa jeepney, sa MRT, at sa traysikel araw-araw"
+          - "Araw-araw, sumasakay ako sa jeepney, MRT, at traysikel"
+          - "Sumasakay ako sa jeepney, MRT, at traysikel araw-araw"
+          - "Araw-araw, sumasakay ako ng jeepney, MRT, at traysikel"
+          - "Sumasakay ako ng jeepney, MRT, at traysikel araw-araw"
+        extra_words: [tren, bumaba, kahapon, ng]
+        grading: { hyphens: true }
+        audio: araw_araw_sumasakay_ako_sa_jeepney_sa_mrt_at_sa_traysikel

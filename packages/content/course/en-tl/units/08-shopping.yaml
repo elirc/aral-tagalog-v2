@@ -189,3 +189,368 @@ lessons:
         answer_en: Thank you, this is your change.
         hint: '"po" and "ninyo" keep the whole sentence polite.'
         extra_words: [money, expensive, cheap]
+  - id: shopping-5
+    title: Prices
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bente, en: twenty }
+          - { tl: singkwenta, en: fifty }
+          - { tl: isang daan, en: one hundred }
+          - { tl: sampu, en: ten }
+      - type: choice
+        prompt: "The vendor says 'Bente po.' How much is it?"
+        answer: 20 pesos
+        distractors: [2 pesos, 12 pesos, 50 pesos]
+        audio: bente_po
+        audio_text: Bente po.
+        hint: 'Prices often use Spanish-based numbers: bente (20), singkwenta (50).'
+      - type: translate
+        prompt_tl: Singkwenta ang isda.
+        answer_en: The fish is fifty pesos.
+        accept: ["The fish costs fifty pesos"]
+        extra_words: [twenty, chicken, hundred]
+        audio: singkwenta_ang_isda
+      - type: fill_blank
+        sentence: "Magkano ang manok? Isang ___ po."
+        translation: "How much is the chicken? One hundred."
+        answer: daan
+        options: [daan, piso, taon]
+        audio: magkano_ang_manok_isang_daan_po
+      - type: listen
+        audio: bente_ang_kape
+        answer_tl: Bente ang kape
+        extra_words: [singkwenta, tinapay]
+      - type: choice
+        prompt: "'Isang daang piso' is..."
+        answer: 100 pesos
+        distractors: [1 peso, 10 pesos, 1000 pesos]
+        audio: isang_daang_piso
+        audio_text: Isang daang piso
+        hint: '"daan" takes the "-ng" linker before "piso".'
+      - type: translate
+        prompt_tl: Bente ang tinapay at singkwenta ang manok.
+        answer_en: The bread is twenty and the chicken is fifty.
+        extra_words: [hundred, fish, cheap]
+        audio: bente_ang_tinapay_at_singkwenta_ang_manok
+      - type: translate
+        prompt_en: The coffee is fifty (pesos).
+        answer_tl: Singkwenta ang kape.
+        extra_words: [bente, tinapay, isang]
+        audio: singkwenta_ang_kape
+  - id: shopping-6
+    title: Sizes
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sukat, en: size }
+          - { tl: damit, en: clothes }
+          - { tl: malaki, en: big }
+          - { tl: maliit, en: small }
+      - type: choice
+        prompt: "'Masyadong maliit' means..."
+        answer: Too small
+        distractors: [Very big, Small enough, Not small]
+        audio: masyadong_maliit
+        audio_text: Masyadong maliit.
+        hint: '"masyado" + linker = too (much).'
+      - type: translate
+        prompt_tl: Masyadong malaki ang damit.
+        answer_en: The clothes are too big.
+        accept: ["The dress is too big", "The shirt is too big"]
+        extra_words: [small, cheap, expensive]
+        audio: masyadong_malaki_ang_damit
+      - type: fill_blank
+        sentence: "May ___ po ba kayo?"
+        translation: "Do you have a small one?"
+        answer: maliit
+        options: [maliit, mahal, sukli]
+        audio: may_maliit_po_ba_kayo
+      - type: listen
+        audio: ano_ang_sukat_mo
+        answer_tl: Ano ang sukat mo
+        accept: ["Ano ang sukat mo?"]
+        extra_words: [ito, maliit]
+      - type: choice
+        prompt: "The shirt is too small. Ask for a bigger one:"
+        answer: May malaki po ba kayo?
+        distractors: [May maliit po ba kayo?, Magkano po ito?, Malaki po ito.]
+        audio: may_malaki_po_ba_kayo
+        audio_text: May malaki po ba kayo?
+      - type: translate
+        prompt_tl: Wala na po kaming malaki.
+        answer_en: We have no more big ones.
+        accept: ["We have no big ones left"]
+        extra_words: [small, cheap, you]
+        audio: wala_na_po_kaming_malaki
+        hint: '"wala na" = none left / sold out.'
+      - type: translate
+        prompt_en: This is too small.
+        answer_tl: Masyadong maliit ito.
+        accept: ["Masyado itong maliit"]
+        extra_words: [malaki, mahal, ang]
+        audio: masyadong_maliit_ito
+  - id: shopping-7
+    title: I'll take it
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kukunin ko ito' means..."
+        answer: I'll take this
+        distractors: [I'll leave this, I bought this, How much is this?]
+        audio: kukunin_ko_ito
+        audio_text: Kukunin ko ito.
+        hint: '"kukunin" = will take (from "kunin").'
+      - type: match
+        pairs:
+          - { tl: kukunin, en: will take }
+          - { tl: ilan, en: how many }
+          - { tl: isa pa, en: one more }
+          - { tl: ito, en: this }
+      - type: translate
+        prompt_tl: Ilan po ang gusto ninyo?
+        answer_en: How many do you want?
+        accept: ["How many would you like?"]
+        extra_words: [much, this, where]
+        audio: ilan_po_ang_gusto_ninyo
+      - type: fill_blank
+        sentence: "___ ko ang dalawa."
+        translation: "I'll take the two."
+        answer: Kukunin
+        options: [Kukunin, Bumili, Magkano]
+        audio: kukunin_ko_ang_dalawa
+      - type: listen
+        audio: isa_pa_po
+        answer_tl: Isa pa po
+        extra_words: [dalawa, ito]
+      - type: choice
+        prompt: "You want one more bread. Say:"
+        answer: Isa pa po.
+        distractors: [Wala po., Mahal po., Ito po ang sukli.]
+        audio: isa_pa_po
+        audio_text: Isa pa po.
+      - type: translate
+        prompt_tl: Gusto ko ito. Kukunin ko na.
+        answer_en: I like this. I'll take it.
+        accept: ["I like it. I'll take it."]
+        extra_words: [bought, cheap, you]
+        audio: gusto_ko_ito_kukunin_ko_na
+        hint: '"na" here = now (decided).'
+      - type: translate
+        prompt_en: I'll take three eggs.
+        answer_tl: Kukunin ko ang tatlong itlog.
+        accept: ["Tatlong itlog ang kukunin ko"]
+        extra_words: [dalawang, bumili, ng]
+        audio: kukunin_ko_ang_tatlong_itlog
+  - id: shopping-8
+    title: Paying
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bayad, en: payment }
+          - { tl: lahat, en: everything }
+          - { tl: barya, en: coins }
+          - { tl: sukli, en: change }
+      - type: choice
+        prompt: "'Magkano lahat?' means..."
+        answer: How much for everything?
+        distractors: [How much is this one?, Where is everything?, How many are there?]
+        audio: magkano_lahat
+        audio_text: Magkano lahat?
+      - type: translate
+        prompt_tl: Heto po ang bayad ko.
+        answer_en: Here is my payment.
+        accept: ["Here's my payment"]
+        extra_words: [change, your, money]
+        audio: heto_po_ang_bayad_ko
+        hint: '"heto" = here it is (when handing something over).'
+      - type: fill_blank
+        sentence: "Wala po akong ___."
+        translation: "I don't have coins."
+        answer: barya
+        options: [barya, sukli, bayad]
+        audio: wala_po_akong_barya
+      - type: listen
+        audio: heto_po_ang_sukli
+        answer_tl: Heto po ang sukli
+        extra_words: [bayad, ito]
+      - type: choice
+        prompt: "You paid 50 for something that costs 30. What do you wait for?"
+        answer: Sukli
+        distractors: [Bayad, Presyo, Lahat]
+        audio: sukli
+        audio_text: Sukli
+      - type: translate
+        prompt_tl: Kulang po ang bayad ninyo.
+        answer_en: Your payment is not enough.
+        accept: ["Your payment is short"]
+        extra_words: [change, my, much]
+        audio: kulang_po_ang_bayad_ninyo
+        hint: '"kulang" = lacking / not enough.'
+      - type: translate
+        prompt_en: Here is the money.
+        answer_tl: Heto ang pera.
+        accept: ["Heto po ang pera"]
+        extra_words: [sukli, ito, bayad]
+        audio: heto_ang_pera
+  - id: shopping-9
+    title: Can I haggle?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tawad, en: discount }
+          - { tl: pwede, en: can / may }
+          - { tl: sige, en: okay }
+          - { tl: mahal, en: expensive }
+      - type: choice
+        prompt: "'Pwede po bang tumawad?' means..."
+        answer: Can I ask for a discount?
+        distractors: [How much is this?, Can I pay now?, Is this cheap?]
+        audio: pwede_po_bang_tumawad
+        audio_text: Pwede po bang tumawad?
+        hint: Haggling (tawad) is normal at markets. Ask with a smile.
+      - type: translate
+        prompt_tl: Mahal po. May tawad po ba?
+        answer_en: It's expensive. Is there a discount?
+        accept: ["It is expensive. Is there a discount?"]
+        extra_words: [cheap, change, how]
+        audio: mahal_po_may_tawad_po_ba
+      - type: fill_blank
+        sentence: "Pwede po bang ___?"
+        translation: "Can I haggle?"
+        answer: tumawad
+        options: [tumawad, bumili, sukli]
+        audio: pwede_po_bang_tumawad
+      - type: listen
+        audio: sige_po_kukunin_ko_na
+        answer_tl: Sige po, kukunin ko na
+        extra_words: [ito, tawad]
+      - type: choice
+        prompt: "The vendor drops the price from 50 to 40. You agree. Say:"
+        answer: Sige po, kukunin ko na.
+        distractors: [Ang mahal naman!, Wala po akong pera., Magkano po ito?]
+        audio: sige_po_kukunin_ko_na
+        audio_text: Sige po, kukunin ko na.
+      - type: translate
+        prompt_tl: Bente na lang po?
+        answer_en: How about just twenty?
+        accept: ["Just twenty?"]
+        extra_words: [fifty, expensive, much]
+        audio: bente_na_lang_po
+        hint: '"na lang" = just / instead. Handy for haggling.'
+      - type: translate
+        prompt_en: Can I haggle? (polite)
+        answer_tl: Pwede po bang tumawad?
+        accept: ["Pwede bang tumawad po"]
+        extra_words: [magkano, ito, bumili]
+        audio: pwede_po_bang_tumawad
+  - id: shopping-10
+    title: At the palengke
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kilo, en: kilogram }
+          - { tl: kalahati, en: half }
+          - { tl: suki, en: regular customer }
+          - { tl: isda, en: fish }
+      - type: choice
+        prompt: "'Isang kilo ng isda' means..."
+        answer: One kilo of fish
+        distractors: [One fish, Half a kilo of fish, Ten fish]
+        audio: isang_kilo_ng_isda
+        audio_text: Isang kilo ng isda
+      - type: translate
+        prompt_tl: Magkano ang isang kilo ng manok?
+        answer_en: How much is one kilo of chicken?
+        accept: ["How much is a kilo of chicken?", "How much for one kilo of chicken?"]
+        extra_words: [half, fish, many]
+        audio: magkano_ang_isang_kilo_ng_manok
+      - type: fill_blank
+        sentence: "Kalahating ___ ng isda po."
+        translation: "Half a kilo of fish, please."
+        answer: kilo
+        options: [kilo, piso, taon]
+        audio: kalahating_kilo_ng_isda_po
+        hint: '"kalahati" + "-ng" = half (a)...'
+      - type: listen
+        audio: suki_ko_si_ate_rosa
+        answer_tl: Suki ko si Ate Rosa
+        extra_words: [kilo, ang]
+      - type: choice
+        prompt: "A vendor calls you 'suki'. That means you are..."
+        answer: A regular customer
+        distractors: [A new customer, The vendor, A relative]
+        hint: Suki is a two-way bond. Vendor and buyer call each other suki.
+      - type: translate
+        prompt_tl: Kalahating kilo lang po.
+        answer_en: Just half a kilo, please.
+        accept: ["Only half a kilo, please", "Just half a kilo"]
+        extra_words: [one, fish, much]
+        audio: kalahating_kilo_lang_po
+      - type: translate
+        prompt_en: One kilo of fish, please.
+        answer_tl: Isang kilo ng isda po.
+        accept: ["Isang kilo po ng isda"]
+        extra_words: [kalahating, manok, ang]
+        audio: isang_kilo_ng_isda_po
+  - id: shopping-11
+    title: A trip to the market
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Magandang umaga po. Magkano po ang isang kilo ng isda?
+        answer_en: Good morning. How much is one kilo of fish?
+        accept: ["Good morning. How much is a kilo of fish?"]
+        extra_words: [afternoon, chicken, half]
+        audio: magandang_umaga_po_magkano_po_ang_isang_kilo_ng_isda
+      - type: choice
+        prompt: "The vendor says 'Isang daan po.' You think it's too much. Say:"
+        answer: Ang mahal naman! May tawad po ba?
+        distractors: ["Sige po, kukunin ko na.", Heto po ang sukli., Ang mura naman!]
+        audio: ang_mahal_naman_may_tawad_po_ba
+        audio_text: Ang mahal naman! May tawad po ba?
+      - type: fill_blank
+        sentence: "Sige, ___ na lang."
+        translation: "Okay, just fifty then."
+        answer: singkwenta
+        options: [singkwenta, sukli, kilo]
+        audio: sige_singkwenta_na_lang
+      - type: listen
+        audio: heto_po_ang_bayad
+        answer_tl: Heto po ang bayad
+        extra_words: [sukli, pera]
+      - type: match
+        pairs:
+          - { tl: tawad, en: discount }
+          - { tl: sukli, en: change }
+          - { tl: lahat, en: everything }
+          - { tl: kulang, en: not enough }
+      - type: translate
+        prompt_tl: Masyadong malaki ito. May maliit po ba kayo?
+        answer_en: This is too big. Do you have a small one?
+        extra_words: [cheap, change, expensive]
+        audio: masyadong_malaki_ito_may_maliit_po_ba_kayo
+      - type: translate
+        prompt_en: How much for everything? (polite)
+        answer_tl: Magkano po lahat?
+        accept:
+          - "Magkano po ang lahat"
+          - "Magkano lahat po"
+        extra_words: [ito, ang, presyo]
+        audio: magkano_po_lahat
+      - type: translate
+        prompt_en: Two kilos of chicken, please.
+        answer_tl: Dalawang kilo ng manok po.
+        accept: ["Dalawang kilo po ng manok"]
+        extra_words: [isang, isda, ang]
+        audio: dalawang_kilo_ng_manok_po
+      - type: translate
+        prompt_en: Here is your change. (polite)
+        answer_tl: Heto po ang sukli ninyo.
+        extra_words: [bayad, ko, pera]
+        audio: heto_po_ang_sukli_ninyo

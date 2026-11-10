@@ -245,3 +245,342 @@ lessons:
         accept: ["Lumilipad sa langit ang puting ibon"]
         extra_words: [itim, aso, dagat]
         audio: lumilipad_ang_puting_ibon_sa_langit
+  - id: revdesc-5
+    title: Head to toe
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kulot na buhok, en: curly hair }
+          - { tl: tuwid na buhok, en: straight hair }
+          - { tl: malaking mata, en: big eyes }
+          - { tl: maikling buhok, en: short hair }
+      - type: choice
+        prompt: "'Mahaba ang buhok niya at may salamin siya' means..."
+        answer: Her hair is long and she has glasses
+        distractors: [Her hair is short and she has glasses, Her hair is long and she has a hat, His eyes are big and he has a hat]
+        audio: mahaba_ang_buhok_niya_at_may_salamin_siya
+        audio_text: Mahaba ang buhok niya at may salamin siya.
+      - type: translate
+        prompt_tl: Payat ang kuya ko at mataba ang tito ko.
+        answer_en: My big brother is thin and my uncle is fat.
+        accept: ["My older brother is thin and my uncle is fat"]
+        extra_words: [tall, aunt, short]
+        audio: payat_ang_kuya_ko_at_mataba_ang_tito_ko
+      - type: fill_blank
+        sentence: "Kulot ang buhok ni Ana; ___ ang buhok ni Maria."
+        translation: "Ana's hair is curly; Maria's hair is straight."
+        answer: tuwid
+        options: [tuwid, mahaba, itim]
+      - type: listen
+        audio: matangkad_ang_lalaki_at_maikli_ang_buhok_niya
+        answer_tl: Matangkad ang lalaki at maikli ang buhok niya
+        extra_words: [pandak, mahaba]
+      - type: translate
+        prompt_en: The thin woman has long, black hair.
+        answer_tl: Mahaba at itim ang buhok ng payat na babae.
+        extra_words: [maikli, lalaki, puti]
+        audio: mahaba_at_itim_ang_buhok_ng_payat_na_babae
+      - type: translate
+        prompt_en: My friend is tall and handsome.
+        answer_tl: Matangkad at gwapo ang kaibigan ko.
+        accept: ["Gwapo at matangkad ang kaibigan ko"]
+        extra_words: [pandak, maganda, kapatid]
+        audio: matangkad_at_gwapo_ang_kaibigan_ko
+      - type: translate
+        prompt_en: Grandfather is old, his hair is white, and he has glasses.
+        answer_tl: Matanda ang lolo ko, puti ang buhok niya, at may salamin siya.
+        extra_words: [itim, bata, mata]
+        audio: matanda_ang_lolo_ko_puti_ang_buhok_niya_at_may_salamin_siya
+  - id: revdesc-6
+    title: Sino ang pinaka-?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pinakamagandang bestida' means..."
+        answer: The most beautiful dress
+        distractors: [A more beautiful dress, The most expensive dress, The prettiest skirt]
+        audio: pinakamagandang_bestida
+        audio_text: Pinakamagandang bestida
+      - type: match
+        pairs:
+          - { tl: mas matangkad, en: taller }
+          - { tl: pinakapandak, en: shortest }
+          - { tl: kasingtangkad, en: as tall as }
+          - { tl: pinakamatanda, en: oldest }
+      - type: translate
+        prompt_tl: Mas makulit ang aso ko kaysa sa pusa mo.
+        answer_en: My dog is naughtier than your cat.
+        accept: ["My dog is more naughty than your cat"]
+        extra_words: [kinder, bird, smaller]
+        audio: mas_makulit_ang_aso_ko_kaysa_sa_pusa_mo
+      - type: fill_blank
+        sentence: "Si Ben ang ___ sa pamilya; bunso siya."
+        translation: "Ben is the youngest in the family; he is the youngest child."
+        answer: pinakabata
+        options: [pinakabata, pinakamatanda, pinakamatangkad]
+      - type: listen
+        audio: si_maria_ang_pinakamasipag_sa_klase
+        answer_tl: Si Maria ang pinakamasipag sa klase
+        extra_words: [pinakamatalino, tamad]
+      - type: choice
+        prompt: "'Kasingganda ng bulaklak ang bestida' means..."
+        answer: The dress is as beautiful as a flower
+        distractors: [The dress is more beautiful than a flower, The flower is the most beautiful, The dress has flowers on it]
+        audio: kasingganda_ng_bulaklak_ang_bestida
+        audio_text: Kasingganda ng bulaklak ang bestida.
+      - type: translate
+        prompt_en: My cat is fatter than my dog.
+        answer_tl: Mas mataba ang pusa ko kaysa sa aso ko.
+        accept: ["Mas mataba kaysa sa aso ko ang pusa ko"]
+        extra_words: [payat, kabayo, pinakamataba]
+        audio: mas_mataba_ang_pusa_ko_kaysa_sa_aso_ko
+      - type: translate
+        prompt_en: Ana is the kindest and the most hardworking in the office.
+        answer_tl: Si Ana ang pinakamabait at pinakamasipag sa opisina.
+        extra_words: [pinakatamad, klase, mas]
+        audio: si_ana_ang_pinakamabait_at_pinakamasipag_sa_opisina
+  - id: revdesc-7
+    title: Feelings with reasons
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sabik, en: excited }
+          - { tl: takot, en: afraid }
+          - { tl: nakakainis, en: annoying }
+          - { tl: nakakatawa, en: funny }
+      - type: choice
+        prompt: "'Nakakainis ang makulit na aso' means..."
+        answer: The naughty dog is annoying
+        distractors: [The kind dog is funny, The naughty dog is funny, The naughty cat is annoying]
+        audio: nakakainis_ang_makulit_na_aso
+        audio_text: Nakakainis ang makulit na aso.
+      - type: translate
+        prompt_tl: Takot ang mga bata sa malaking aso.
+        answer_en: The children are afraid of the big dog.
+        accept: ["The kids are afraid of the big dog", "The children are scared of the big dog", "The kids are scared of the big dog"]
+        extra_words: [excited, small, cat]
+        audio: takot_ang_mga_bata_sa_malaking_aso
+      - type: fill_blank
+        sentence: "Sabik ako sa pista ___ masarap ang handa at maganda ang mga parol."
+        translation: "I'm excited for the fiesta because the food is delicious and the lanterns are beautiful."
+        answer: kasi
+        options: [kasi, tapos, ba]
+        accept: [dahil]
+      - type: listen
+        audio: galit_ang_guro_kasi_tamad_ang_mga_estudyante
+        answer_tl: Galit ang guro kasi tamad ang mga estudyante
+        extra_words: [masaya, masipag]
+      - type: translate
+        prompt_tl: Medyo pagod ako ngayon, masaya naman ako.
+        answer_en: I'm a bit tired today, but I'm happy.
+        accept: ["I am a bit tired today, but I am happy", "I'm a bit tired now, but I'm happy"]
+        extra_words: [angry, hungry, sad]
+        audio: medyo_pagod_ako_ngayon_masaya_naman_ako
+      - type: translate
+        prompt_en: The teacher is happy because the students are smart.
+        answer_tl: Masaya ang guro kasi matalino ang mga estudyante.
+        accept: ["Masaya ang guro dahil matalino ang mga estudyante"]
+        extra_words: [malungkot, tamad, mabait]
+        audio: masaya_ang_guro_kasi_matalino_ang_mga_estudyante
+      - type: translate
+        prompt_en: Grandma is angry because the black cat is greedy.
+        answer_tl: Galit si Lola kasi matakaw ang pusang itim.
+        accept: ["Galit si Lola dahil matakaw ang pusang itim", "Galit si Lola kasi matakaw ang itim na pusa"]
+        extra_words: [masaya, aso, puti]
+        audio: galit_si_lola_kasi_matakaw_ang_pusang_itim
+  - id: revdesc-8
+    title: Flip the linker
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which is another way to say 'malaking bahay'?"
+        answer: bahay na malaki
+        distractors: [bahay malaki, bahay ng malaki, malaki bahay]
+        audio: bahay_na_malaki
+        audio_text: Bahay na malaki
+      - type: match
+        pairs:
+          - { tl: pusang itim, en: black cat }
+          - { tl: aso kong puti, en: my white dog }
+          - { tl: bestidang pula, en: red dress }
+          - { tl: sapatos na itim, en: black shoes }
+      - type: fill_blank
+        sentence: "Maganda ang bulaklak ___ dilaw."
+        translation: "The yellow flower is beautiful."
+        answer: na
+        options: [na, ng, kong]
+      - type: translate
+        prompt_tl: Ang aso kong maliit ay matakaw.
+        answer_en: My small dog is greedy.
+        accept: ["My little dog is greedy", "My small dog is a big eater"]
+        extra_words: [cat, big, white]
+        audio: ang_aso_kong_maliit_ay_matakaw
+      - type: listen
+        audio: nakasuot_siya_ng_sapatos_na_puti
+        answer_tl: Nakasuot siya ng sapatos na puti
+        extra_words: [itim, bestidang]
+      - type: choice
+        prompt: "'Ang pusa kong itim ay natutulog sa kama ko' means..."
+        answer: My black cat is sleeping on my bed
+        distractors: [My black cat is eating on my bed, The black cat is sleeping on the chair, My white cat is sleeping on my bed]
+        audio: ang_pusa_kong_itim_ay_natutulog_sa_kama_ko
+        audio_text: Ang pusa kong itim ay natutulog sa kama ko.
+      - type: translate
+        prompt_en: I bought a green dress.
+        answer_tl: Bumili ako ng bestidang berde.
+        accept: ["Bumili ako ng berdeng bestida"]
+        extra_words: [palda, pula, nakasuot]
+        audio: bumili_ako_ng_bestidang_berde
+      - type: translate
+        prompt_en: My white dog and my black cat are playing in the garden.
+        answer_tl: Naglalaro sa hardin ang aso kong puti at ang pusa kong itim.
+        accept: ["Naglalaro ang aso kong puti at ang pusa kong itim sa hardin"]
+        extra_words: [berde, natutulog, sala]
+        audio: naglalaro_sa_hardin_ang_aso_kong_puti_at_ang_pusa_kong_itim
+  - id: revdesc-9
+    title: Sa handaan
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Nakasuot ang mga bisita ng magandang damit' means..."
+        answer: The guests are wearing beautiful clothes
+        distractors: [The guests are buying beautiful clothes, The visitors are wearing old clothes, The guest is washing beautiful clothes]
+        audio: nakasuot_ang_mga_bisita_ng_magandang_damit
+        audio_text: Nakasuot ang mga bisita ng magandang damit.
+      - type: match
+        pairs:
+          - { tl: handa, en: party food }
+          - { tl: bisita, en: guest }
+          - { tl: regalo, en: gift }
+          - { tl: pista, en: fiesta }
+      - type: translate
+        prompt_tl: Maraming bisita sa handaan at masarap ang handa.
+        answer_en: There are many guests at the party and the food is delicious.
+        accept: ["There are many visitors at the party and the food is delicious", "Many guests are at the party and the food is delicious"]
+        extra_words: [gifts, sad, expensive]
+        audio: maraming_bisita_sa_handaan_at_masarap_ang_handa
+      - type: fill_blank
+        sentence: "Nakasuot si Ana ng ___ bestida sa pista."
+        translation: "Ana is wearing a red dress at the fiesta."
+        answer: pulang
+        options: [pulang, pula, puti]
+      - type: listen
+        audio: sumasayaw_at_kumakanta_ang_mga_bisita
+        answer_tl: Sumasayaw at kumakanta ang mga bisita
+        extra_words: [kumakain, bata]
+      - type: choice
+        prompt: "Your aunt at the party says 'Kain tayo!' She means:"
+        answer: "Let's eat!"
+        distractors: ["Let's dance!", "Let's go home!", "Let's sing!"]
+        audio: kain_tayo
+        audio_text: Kain tayo!
+      - type: translate
+        prompt_en: The children are excited because there are many gifts.
+        answer_tl: Sabik ang mga bata kasi maraming regalo.
+        accept: ["Sabik ang mga bata dahil maraming regalo"]
+        extra_words: [malungkot, bisita, mahal]
+        audio: sabik_ang_mga_bata_kasi_maraming_regalo
+      - type: translate
+        prompt_en: The tall guest is singing and the children are dancing.
+        answer_tl: Kumakanta ang matangkad na bisita at sumasayaw ang mga bata.
+        extra_words: [pandak, kumakain, regalo]
+        audio: kumakanta_ang_matangkad_na_bisita_at_sumasayaw_ang_mga_bata
+  - id: revdesc-10
+    title: Who is it?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Payat ang lalaki, itim ang buhok niya, at nakasuot siya ng asul na kamiseta' describes..."
+        answer: A thin man with black hair in a blue shirt
+        distractors: [A fat man with black hair in a blue shirt, A thin man with white hair in a red shirt, A thin woman with black hair in a blue dress]
+        audio: payat_ang_lalaki_itim_ang_buhok_niya_at_nakasuot_siya_ng_asul_na_kamiseta
+        audio_text: Payat ang lalaki, itim ang buhok niya, at nakasuot siya ng asul na kamiseta.
+      - type: match
+        pairs:
+          - { tl: mukha, en: face }
+          - { tl: salamin, en: glasses }
+          - { tl: matapang, en: brave }
+          - { tl: mahiyain, en: shy }
+      - type: translate
+        prompt_tl: Matapang ang pulis at mabait siya sa mga bata.
+        answer_en: The police officer is brave and he is kind to the children.
+        accept: ["The policeman is brave and he is kind to the kids", "The police officer is brave and kind to the children"]
+        extra_words: [teacher, weak, angry]
+        audio: matapang_ang_pulis_at_mabait_siya_sa_mga_bata
+      - type: fill_blank
+        sentence: "May salamin si Ana at ___ ang buhok niya."
+        translation: "Ana has glasses and her hair is curly."
+        answer: kulot
+        options: [kulot, tuwid, maikli]
+      - type: listen
+        audio: mahiyain_ang_batang_lalaki
+        answer_tl: Mahiyain ang batang lalaki
+        extra_words: [makulit, babae]
+      - type: choice
+        prompt: "'Ang bunso ang pinakamakulit sa pamilya' means..."
+        answer: The youngest child is the naughtiest in the family
+        distractors: [The youngest child is the kindest in the family, The oldest child is the naughtiest in the family, The youngest child is the quietest at school]
+        audio: ang_bunso_ang_pinakamakulit_sa_pamilya
+        audio_text: Ang bunso ang pinakamakulit sa pamilya.
+      - type: translate
+        prompt_en: The shy student is the smartest in the class.
+        answer_tl: Ang mahiyaing estudyante ang pinakamatalino sa klase.
+        accept: ["Pinakamatalino sa klase ang mahiyaing estudyante"]
+        extra_words: [makulit, guro, mas]
+        audio: ang_mahiyaing_estudyante_ang_pinakamatalino_sa_klase
+      - type: translate
+        prompt_en: My cousin is tall, handsome, and friendly.
+        answer_tl: Matangkad, gwapo, at palakaibigan ang pinsan ko.
+        extra_words: [mahiyain, pandak, tito]
+        audio: matangkad_gwapo_at_palakaibigan_ang_pinsan_ko
+  - id: revdesc-11
+    title: Grand description challenge
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "'Kasingtangkad ng tatay ko ang kuya ko' means..."
+        answer: My big brother is as tall as my dad
+        distractors: [My big brother is taller than my dad, My dad is the tallest in the family, My big brother is as thin as my dad]
+        audio: kasingtangkad_ng_tatay_ko_ang_kuya_ko
+        audio_text: Kasingtangkad ng tatay ko ang kuya ko.
+      - type: translate
+        prompt_tl: Nakasuot ang matandang guro ng puting kamiseta at itim na pantalon.
+        answer_en: The old teacher is wearing a white shirt and black pants.
+        accept: ["The old teacher is wearing a white T-shirt and black trousers", "The old teacher wears a white shirt and black pants"]
+        extra_words: [young, red, skirt]
+        audio: nakasuot_ang_matandang_guro_ng_puting_kamiseta_at_itim_na_pantalon
+      - type: fill_blank
+        sentence: "Mas matanda ang ate ko ___ sa akin."
+        translation: "My big sister is older than me."
+        answer: kaysa
+        options: [kaysa, kasing, mas]
+      - type: listen
+        audio: ang_pusa_kong_puti_ay_matakaw_at_makulit
+        answer_tl: Ang pusa kong puti ay matakaw at makulit
+        extra_words: [aso, itim]
+      - type: translate
+        prompt_tl: Sabik ang mga bata sa pista kasi maraming masarap na handa.
+        answer_en: The children are excited for the fiesta because there is a lot of delicious food.
+        accept: ["The kids are excited for the fiesta because there is a lot of delicious food", "The children are excited about the fiesta because there is a lot of delicious food"]
+        extra_words: [sad, gifts, guests]
+        audio: sabik_ang_mga_bata_sa_pista_kasi_maraming_masarap_na_handa
+      - type: translate
+        prompt_en: The strong carabao is slower than the horse.
+        answer_tl: Mas mabagal ang malakas na kalabaw kaysa sa kabayo.
+        accept: ["Mas mabagal kaysa sa kabayo ang malakas na kalabaw"]
+        extra_words: [mabilis, mahina, aso]
+        audio: mas_mabagal_ang_malakas_na_kalabaw_kaysa_sa_kabayo
+      - type: translate
+        prompt_en: My kind grandmother is wearing a beautiful blue dress.
+        answer_tl: Nakasuot ang mabait kong lola ng magandang asul na bestida.
+        accept: ["Nakasuot ng magandang asul na bestida ang mabait kong lola"]
+        extra_words: [pulang, lolo, palda]
+        audio: nakasuot_ang_mabait_kong_lola_ng_magandang_asul_na_bestida
+      - type: translate
+        prompt_en: My shy friend is the kindest in the class.
+        answer_tl: Ang mahiyain kong kaibigan ang pinakamabait sa klase.
+        accept: ["Pinakamabait sa klase ang mahiyain kong kaibigan"]
+        extra_words: [palakaibigan, pinakamatalino, guro]
+        audio: ang_mahiyain_kong_kaibigan_ang_pinakamabait_sa_klase

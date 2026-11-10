@@ -131,7 +131,8 @@ lessons:
       - type: translate
         prompt_en: Ride a jeepney at the station.
         answer_tl: Sumakay ka ng jeepney sa istasyon.
-        extra_words: [lumiko, daan, palengke]
+        accept: ["Sumakay ka sa jeepney sa istasyon"]
+        extra_words: [lumiko, daan, palengke, sa]
         audio: sumakay_ka_ng_jeepney_sa_istasyon
       - type: fill_blank
         sentence: "Lumiko ka sa ___, tapos diretso lang."
@@ -213,3 +214,402 @@ lessons:
         accept: ["Juan bought medicine at the pharmacy, then went home"]
         extra_words: [market, bread, first]
         audio: bumili_si_juan_ng_gamot_sa_botika_tapos_umuwi_siya
+  - id: revhome-5
+    title: Inside the house
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: loob, en: inside }
+          - { tl: ibabaw, en: top }
+          - { tl: aparador, en: cabinet }
+          - { tl: silya, en: chair }
+      - type: choice
+        prompt: "'Nasa loob ng aparador ang damit' means..."
+        answer: The clothes are inside the cabinet
+        distractors: [The clothes are on top of the cabinet, The cabinet is inside the bedroom, The clothes are new]
+        audio: nasa_loob_ng_aparador_ang_damit
+        audio_text: Nasa loob ng aparador ang damit.
+      - type: translate
+        prompt_tl: Nasa ibabaw ng mesa ang pera ko.
+        answer_en: My money is on top of the table.
+        accept: ["My money is on the table"]
+        extra_words: [inside, chair, book]
+        audio: nasa_ibabaw_ng_mesa_ang_pera_ko
+      - type: translate
+        prompt_en: The cat is inside the bedroom.
+        answer_tl: Nasa loob ng kwarto ang pusa.
+        accept: ["Nasa kwarto ang pusa"]
+        extra_words: [ibabaw, aso, sala]
+        audio: nasa_loob_ng_kwarto_ang_pusa
+      - type: fill_blank
+        sentence: "Nasa ___ ng kama ang pusa — natutulog siya."
+        translation: "The cat is on top of the bed — it is sleeping."
+        answer: ibabaw
+        options: [ibabaw, loob, ilaw]
+      - type: listen
+        audio: nasa_loob_ng_bahay_si_lola
+        answer_tl: Nasa loob ng bahay si Lola
+        extra_words: [ibabaw, hardin]
+      - type: translate
+        prompt_en: Where is my book? It is not in the cabinet.
+        answer_tl: Nasaan ang libro ko? Wala sa aparador.
+        accept: ["Nasaan ang libro ko? Wala ito sa aparador."]
+        extra_words: [mesa, iyo, doon]
+        audio: nasaan_ang_libro_ko_wala_sa_aparador
+      - type: translate
+        prompt_tl: Malaki ang bintana sa sala at maganda ang hardin namin.
+        answer_en: The window in the living room is big and our garden is beautiful.
+        accept: ["The living room window is big and our garden is beautiful"]
+        extra_words: [small, kitchen, clean]
+        audio: malaki_ang_bintana_sa_sala_at_maganda_ang_hardin_namin
+  - id: revhome-6
+    title: Chore day remix
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: naglilinis, en: cleaning }
+          - { tl: naghuhugas, en: washing }
+          - { tl: nagwawalis, en: sweeping }
+          - { tl: basura, en: trash }
+      - type: choice
+        prompt: "'Naglilinis kami ng bahay tuwing Sabado' means..."
+        answer: We clean the house every Saturday
+        distractors: [We cleaned the house last Saturday, We are sweeping the garden on Saturday, We wash clothes every Sunday]
+        audio: naglilinis_kami_ng_bahay_tuwing_sabado
+        audio_text: Naglilinis kami ng bahay tuwing Sabado.
+      - type: translate
+        prompt_tl: Nagwawalis si Ate sa sala at naghuhugas si Kuya sa kusina.
+        answer_en: Big sister is sweeping in the living room and big brother is washing in the kitchen.
+        accept: ["Ate is sweeping in the living room and Kuya is washing in the kitchen"]
+        extra_words: [cleaning, garden, bathroom]
+        audio: nagwawalis_si_ate_sa_sala_at_naghuhugas_si_kuya_sa_kusina
+      - type: fill_blank
+        sentence: "Naglilinis ako ___ kwarto ko tuwing umaga."
+        translation: "I clean my room every morning."
+        answer: ng
+        options: [ng, nang, na]
+      - type: listen
+        audio: nagluluto_si_nanay_at_nagwawalis_si_tatay
+        answer_tl: Nagluluto si Nanay at nagwawalis si Tatay
+        extra_words: [naghuhugas, ate]
+      - type: translate
+        prompt_en: Who is cleaning the bathroom?
+        answer_tl: Sino ang naglilinis ng banyo?
+        accept: ["Sino po ang naglilinis ng banyo?"]
+        extra_words: [nagwawalis, kusina, ako]
+        audio: sino_ang_naglilinis_ng_banyo
+      - type: choice
+        prompt: "'Ilabas mo ang basura' means..."
+        answer: Take out the trash
+        distractors: [Clean the trash can, Buy a trash can, The trash is outside]
+        audio: ilabas_mo_ang_basura
+        audio_text: Ilabas mo ang basura.
+      - type: translate
+        prompt_en: I am sweeping in the garden because we have visitors.
+        answer_tl: Nagwawalis ako sa hardin kasi may bisita kami.
+        accept: ["Nagwawalis ako sa hardin dahil may bisita kami"]
+        extra_words: [naglilinis, kusina, wala]
+        audio: nagwawalis_ako_sa_hardin_kasi_may_bisita_kami
+  - id: revhome-7
+    title: Para po!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: traysikel, en: tricycle }
+          - { tl: pamasahe, en: fare }
+          - { tl: biyahe, en: trip }
+          - { tl: trapik, en: traffic }
+      - type: choice
+        prompt: "You're on a jeepney and your stop is next. You call out..."
+        answer: Para po!
+        distractors: [Pabili po!, Bayad po!, Tuloy po kayo!]
+        audio: para_po
+        audio_text: Para po!
+      - type: translate
+        prompt_tl: Bumaba kami sa kanto kasi sobrang trapik.
+        answer_en: We got off at the corner because the traffic was so bad.
+        accept: ["We got off at the corner because there was so much traffic", "We got off at the corner because traffic was heavy"]
+        extra_words: [rode, church, fare]
+        audio: bumaba_kami_sa_kanto_kasi_sobrang_trapik
+      - type: fill_blank
+        sentence: "Magkano po ang ___ sa traysikel? — Sampung piso po."
+        translation: "How much is the fare on the tricycle? — Ten pesos."
+        answer: pamasahe
+        options: [pamasahe, bayad, sukli]
+      - type: listen
+        audio: sumakay_ako_ng_traysikel_sa_istasyon
+        answer_tl: Sumakay ako ng traysikel sa istasyon
+        extra_words: [jeepney, bumaba]
+      - type: translate
+        prompt_en: The trip is slow today because of the traffic.
+        answer_tl: Mabagal ang biyahe ngayon dahil sa trapik.
+        accept: ["Mabagal po ang biyahe ngayon dahil sa trapik"]
+        extra_words: [mabilis, kahapon, malayo]
+        audio: mabagal_ang_biyahe_ngayon_dahil_sa_trapik
+      - type: choice
+        prompt: "'Bumaba ka sa kanto, tapos lumiko ka sa kanan' means..."
+        answer: Get off at the corner, then turn right
+        distractors: ["Get off at the corner, then turn left", "Ride at the corner, then go straight", "Stop at the church, then turn right"]
+        audio: bumaba_ka_sa_kanto_tapos_lumiko_ka_sa_kanan
+        audio_text: Bumaba ka sa kanto, tapos lumiko ka sa kanan.
+      - type: translate
+        prompt_en: We rode a jeepney and got off at the market.
+        answer_tl: Sumakay kami ng jeepney at bumaba kami sa palengke.
+        accept:
+          - "Sumakay kami ng jeepney at bumaba sa palengke"
+          - "Sumakay kami sa jeepney at bumaba kami sa palengke"
+          - "Sumakay kami sa jeepney at bumaba sa palengke"
+        extra_words: [traysikel, simbahan, lumiko, sa]
+        audio: sumakay_kami_ng_jeepney_at_bumaba_kami_sa_palengke
+  - id: revhome-8
+    title: Nasaan o saan?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which question asks where something IS?"
+        answer: Nasaan
+        distractors: [Saan, Sino, Kailan]
+        audio: nasaan
+        audio_text: Nasaan
+      - type: fill_blank
+        sentence: "___ ka bumili ng gamot?"
+        translation: "Where did you buy medicine?"
+        answer: Saan
+        options: [Saan, Nasaan, Sino]
+      - type: fill_blank
+        sentence: "___ ang sapatos ko?"
+        translation: "Where are my shoes?"
+        answer: Nasaan
+        options: [Nasaan, Saan, Ano]
+      - type: translate
+        prompt_tl: Saan ka sumakay at saan ka bumaba?
+        answer_en: Where did you ride and where did you get off?
+        accept: ["Where did you get on and where did you get off?"]
+        extra_words: [when, who, turn]
+        audio: saan_ka_sumakay_at_saan_ka_bumaba
+      - type: translate
+        prompt_en: Where is the pharmacy? Is it near the church?
+        answer_tl: Nasaan ang botika? Malapit ba ito sa simbahan?
+        accept: ["Nasaan ang botika? Malapit ba sa simbahan?"]
+        extra_words: [saan, malayo, ospital]
+        audio: nasaan_ang_botika_malapit_ba_ito_sa_simbahan
+      - type: listen
+        audio: saan_ka_pupunta_bukas
+        answer_tl: Saan ka pupunta bukas
+        extra_words: [nasaan, kahapon]
+      - type: choice
+        prompt: "Someone asks 'Nasaan si Nanay?' A good answer is..."
+        answer: Nasa palengke siya.
+        distractors: [Pupunta siya sa palengke., Maganda si Nanay., Kumain na siya.]
+        audio: nasa_palengke_siya
+        audio_text: Nasa palengke siya.
+      - type: translate
+        prompt_en: Where is the hospital? It is far from our house.
+        answer_tl: Nasaan ang ospital? Malayo ito sa bahay namin.
+        accept: ["Nasaan ang ospital? Malayo sa bahay namin."]
+        extra_words: [saan, malapit, simbahan]
+        audio: nasaan_ang_ospital_malayo_ito_sa_bahay_namin
+  - id: revhome-9
+    title: Errands remix
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bumili, en: bought }
+          - { tl: pumunta, en: went }
+          - { tl: umuwi, en: went home }
+          - { tl: gamot, en: medicine }
+      - type: translate
+        prompt_tl: Pumunta ako sa botika at bumili ako ng gamot ni Lola.
+        answer_en: I went to the pharmacy and bought Grandma's medicine.
+        accept: ["I went to the pharmacy and I bought Grandma's medicine", "I went to the pharmacy and bought grandmother's medicine"]
+        extra_words: [market, bread, sold]
+        audio: pumunta_ako_sa_botika_at_bumili_ako_ng_gamot_ni_lola
+      - type: choice
+        prompt: "'Mas malapit ang botika kaysa sa palengke' means..."
+        answer: The pharmacy is nearer than the market
+        distractors: [The market is nearer than the pharmacy, The pharmacy is far from the market, The pharmacy is cheaper than the market]
+        audio: mas_malapit_ang_botika_kaysa_sa_palengke
+        audio_text: Mas malapit ang botika kaysa sa palengke.
+      - type: fill_blank
+        sentence: "Bumili ako ng isda sa palengke kasi ___ doon."
+        translation: "I bought fish at the market because it is cheaper there."
+        answer: mas mura
+        options: [mas mura, mas mahal, mas malayo]
+      - type: listen
+        audio: pumunta_muna_ako_sa_tindahan
+        answer_tl: Pumunta muna ako sa tindahan
+        extra_words: [palengke, tapos]
+      - type: translate
+        prompt_en: I went to the market first, then I bought medicine at the pharmacy.
+        answer_tl: Pumunta muna ako sa palengke, tapos bumili ako ng gamot sa botika.
+        accept: ["Pumunta muna ako sa palengke tapos bumili ako ng gamot sa botika"]
+        extra_words: [simbahan, umuwi, kasi]
+        audio: pumunta_muna_sa_palengke_tapos_bumili_ng_gamot
+      - type: choice
+        prompt: "'Umuwi na tayo!' means..."
+        answer: Let's go home now!
+        distractors: [Let's eat now!, Let's ride now!, Let's buy now!]
+        audio: umuwi_na_tayo
+        audio_text: Umuwi na tayo!
+      - type: translate
+        prompt_tl: Bumili ako ng tinapay, pumunta ako sa simbahan, tapos umuwi ako nang mabilis.
+        answer_en: I bought bread, went to church, then went home quickly.
+        accept: ["I bought bread, I went to church, then I went home quickly", "I bought bread, went to the church, then quickly went home"]
+        extra_words: [slowly, market, first]
+        audio: bumili_ng_tinapay_pumunta_sa_simbahan_umuwi_nang_mabilis
+  - id: revhome-10
+    title: May bisita kami
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "A visitor knocks. You open the door and say..."
+        answer: Tuloy po kayo!
+        distractors: [Paalam po!, Para po!, Pabili po!]
+        audio: tuloy_po_kayo
+        audio_text: Tuloy po kayo!
+      - type: translate
+        prompt_tl: Tuloy po kayo — kain tayo!
+        answer_en: Come in — let's eat!
+        accept: ["Please come in — let's eat!", "Come in, let's eat!"]
+        extra_words: [goodbye, drink, go]
+        audio: tuloy_po_kayo_kain_tayo
+      - type: match
+        pairs:
+          - { tl: bisita, en: visitor }
+          - { tl: handaan, en: feast }
+          - { tl: sala, en: living room }
+          - { tl: silya, en: chair }
+      - type: fill_blank
+        sentence: "May ___ kami ngayon — nasa sala sila."
+        translation: "We have visitors today — they are in the living room."
+        answer: bisita
+        options: [bisita, basura, bintana]
+      - type: listen
+        audio: nasa_hardin_ang_mga_bisita
+        answer_tl: Nasa hardin ang mga bisita
+        extra_words: [sala, kusina]
+      - type: translate
+        prompt_en: The visitors are eating in the kitchen.
+        answer_tl: Kumakain ang mga bisita sa kusina.
+        accept: ["Kumakain sa kusina ang mga bisita"]
+        extra_words: [sala, umiinom, silya]
+        audio: kumakain_ang_mga_bisita_sa_kusina
+      - type: choice
+        prompt: "Your bisita is leaving. You say..."
+        answer: Paalam po!
+        distractors: [Tuloy po kayo!, Kain tayo!, Magandang umaga po!]
+        audio: paalam_po
+        audio_text: Paalam po!
+      - type: translate
+        prompt_tl: Maraming bisita sa handaan kasi kaarawan ni Lolo.
+        answer_en: There are many visitors at the feast because it is Grandpa's birthday.
+        accept: ["Many visitors are at the feast because it is Grandpa's birthday", "There are a lot of visitors at the party because it's Grandpa's birthday"]
+        extra_words: [few, church, Christmas]
+        audio: maraming_bisita_sa_handaan_kasi_kaarawan_ni_lolo
+  - id: revhome-11
+    title: A long day out
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kanina' means..."
+        answer: Earlier today
+        distractors: [Later today, Yesterday, Tomorrow]
+        audio: kanina
+        audio_text: Kanina
+      - type: translate
+        prompt_tl: Kanina, pumunta ako sa palengke; ngayon, nasa bahay na ako.
+        answer_en: Earlier, I went to the market; now, I am already home.
+        accept: ["Earlier I went to the market, now I am home", "Earlier today I went to the market; now I'm already at home"]
+        extra_words: [later, church, still]
+        audio: kanina_pumunta_ako_sa_palengke_ngayon_nasa_bahay_na
+      - type: fill_blank
+        sentence: "Sumasakay ako ng bus ___ umaga."
+        translation: "I ride the bus every morning."
+        answer: tuwing
+        options: [tuwing, kanina, mamaya]
+      - type: translate
+        prompt_en: I walked to the church because the jeepney is slow.
+        answer_tl: Naglakad ako sa simbahan kasi mabagal ang jeepney.
+        accept: ["Naglakad ako sa simbahan dahil mabagal ang jeepney"]
+        extra_words: [sumakay, mabilis, malayo]
+        audio: naglakad_ako_sa_simbahan_kasi_mabagal_ang_jeepney
+      - type: listen
+        audio: pagod_na_ako_umuwi_na_tayo
+        answer_tl: Pagod na ako, umuwi na tayo
+        extra_words: [gutom, doon]
+      - type: choice
+        prompt: "'Malayo pa ba ang istasyon?' means..."
+        answer: Is the station still far?
+        distractors: [Is the station near now?, Where is the station?, Was the station far?]
+        audio: malayo_pa_ba_ang_istasyon
+        audio_text: Malayo pa ba ang istasyon?
+      - type: translate
+        prompt_tl: Mas mabilis ang traysikel kaysa sa bus.
+        answer_en: The tricycle is faster than the bus.
+        accept: ["A tricycle is faster than a bus"]
+        extra_words: [slower, jeepney, cheap]
+        audio: mas_mabilis_ang_traysikel_kaysa_sa_bus
+      - type: translate
+        prompt_en: Earlier I bought fish; now I am cooking in the kitchen.
+        answer_tl: Kanina, bumili ako ng isda; ngayon, nagluluto ako sa kusina.
+        accept: ["Kanina bumili ako ng isda, ngayon nagluluto ako sa kusina"]
+        extra_words: [mamaya, palengke, kumakain]
+        audio: kanina_bumili_ng_isda_ngayon_nagluluto_sa_kusina
+  - id: revhome-12
+    title: Home and town master
+    xp: 15
+    exercises:
+      - type: fill_blank
+        sentence: "___ ang bahay ninyo? — Malapit sa simbahan, sa kanto."
+        translation: "Where is your house? — Near the church, at the corner."
+        answer: Nasaan
+        options: [Nasaan, Saan, Kailan]
+      - type: translate
+        prompt_tl: Lumiko ka sa kaliwa sa kanto, diretso ka sa daan, at nasa kanan ang bahay namin.
+        answer_en: Turn left at the corner, go straight on the road, and our house is on the right.
+        accept: ["Turn left at the corner, go straight along the road, and our house is on the right", "Turn left at the corner, go straight on the road and our house is to the right"]
+        extra_words: [market, far, near]
+        audio: lumiko_sa_kaliwa_diretso_sa_daan_nasa_kanan_ang_bahay
+      - type: choice
+        prompt: "'Nagwawalis si Tatay sa hardin tuwing umaga' means..."
+        answer: Dad sweeps in the garden every morning
+        distractors: [Dad is cleaning the garden this morning, Dad sweeps the living room every evening, Dad washed the garden yesterday]
+        audio: nagwawalis_si_tatay_sa_hardin_tuwing_umaga
+        audio_text: Nagwawalis si Tatay sa hardin tuwing umaga.
+      - type: translate
+        prompt_en: Ride a tricycle at the corner and get off at the pharmacy.
+        answer_tl: Sumakay ka ng traysikel sa kanto at bumaba ka sa botika.
+        accept: ["Sumakay ka ng traysikel sa kanto at bumaba sa botika"]
+        extra_words: [jeepney, lumiko, palengke]
+        audio: sumakay_ka_ng_traysikel_sa_kanto_at_bumaba_ka_sa_botika
+      - type: listen
+        audio: nasa_loob_ng_bahay_ang_mga_bisita
+        answer_tl: Nasa loob ng bahay ang mga bisita
+        extra_words: [hardin, ibabaw]
+      - type: fill_blank
+        sentence: "Umuwi ako ___ mabilis kasi umuulan."
+        translation: "I went home quickly because it is raining."
+        answer: nang
+        options: [nang, ng, na]
+      - type: translate
+        prompt_tl: May bisita kami mamaya, naglilinis ako ng sala, at nagwawalis si Kuya sa hardin.
+        answer_en: We have visitors later, I am cleaning the living room, and big brother is sweeping in the garden.
+        accept: ["We have visitors later, I'm cleaning the living room and Kuya is sweeping in the garden"]
+        extra_words: [yesterday, kitchen, washing]
+        audio: may_bisita_mamaya_naglilinis_ng_sala_nagwawalis_sa_hardin
+      - type: translate
+        prompt_en: The market is farther than the church. Ride a jeepney.
+        answer_tl: Mas malayo ang palengke kaysa sa simbahan. Sumakay ka ng jeepney.
+        accept: ["Mas malayo ang palengke kaysa sa simbahan. Sumakay ka sa jeepney"]
+        extra_words: [malapit, traysikel, bumaba, sa]
+        audio: mas_malayo_ang_palengke_sumakay_ka_ng_jeepney
+      - type: translate
+        prompt_en: Earlier I went to the market and the pharmacy; now I am cleaning the house.
+        answer_tl: Kanina, pumunta ako sa palengke at sa botika; ngayon, naglilinis ako ng bahay.
+        accept: ["Kanina pumunta ako sa palengke at botika, ngayon naglilinis ako ng bahay"]
+        extra_words: [mamaya, nagwawalis, kusina]
+        audio: kanina_pumunta_sa_palengke_at_botika_ngayon_naglilinis_ng_bahay

@@ -196,6 +196,7 @@ lessons:
       - type: translate
         prompt_en: Ana is smarter than Juan.
         answer_tl: Mas matalino si Ana kaysa kay Juan.
+        accept: ["Mas matalino kaysa kay Juan si Ana"]
         extra_words: [matangkad, mabait, ako]
         hint: '"mas" + adjective = more; "kaysa kay" + name = than.'
         audio: mas_matalino_si_ana_kaysa_kay_juan
@@ -227,3 +228,345 @@ lessons:
         accept: ["Masaya at mabait ang lola ko"]
         extra_words: [malungkot, tamad, lolo]
         audio: mabait_at_masaya_ang_lola_ko
+  - id: descpeople-5
+    title: Bata at matanda
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bata, en: young }
+          - { tl: matanda, en: old }
+          - { tl: gwapo, en: handsome }
+          - { tl: maganda, en: beautiful }
+      - type: choice
+        prompt: "'Gwapo' means..."
+        answer: Handsome
+        distractors: [Old, Young, Kind]
+        audio: gwapo
+        audio_text: Gwapo
+      - type: choice
+        prompt: "'Matanda' means..."
+        answer: Old
+        distractors: [Young, Tall, Weak]
+        audio: matanda
+        audio_text: Matanda
+      - type: translate
+        prompt_tl: Bata pa ang kapatid ko.
+        answer_en: My sibling is still young.
+        accept: ["My brother is still young", "My sister is still young"]
+        extra_words: [old, tall, friend]
+        audio: bata_pa_ang_kapatid_ko
+        hint: '"pa" adds "still": bata pa — still young.'
+      - type: fill_blank
+        sentence: "Hindi na bata ang lolo ko; ___ na siya."
+        translation: "My grandfather is not young anymore; he is old now."
+        answer: matanda
+        options: [matanda, gwapo, payat]
+      - type: listen
+        audio: gwapo_ang_kuya_ko
+        answer_tl: Gwapo ang kuya ko
+        extra_words: [matanda, pandak]
+      - type: translate
+        prompt_en: The handsome man is tall.
+        answer_tl: Matangkad ang gwapong lalaki.
+        accept: ["Matangkad ang lalaking gwapo"]
+        extra_words: [babae, pandak, matanda]
+        audio: matangkad_ang_gwapong_lalaki
+      - type: translate
+        prompt_en: My grandmother is old and strong.
+        answer_tl: Matanda at malakas ang lola ko.
+        accept: ["Malakas at matanda ang lola ko"]
+        extra_words: [bata, mabait, tatay]
+        audio: matanda_at_malakas_ang_lola_ko
+  - id: descpeople-6
+    title: Mukha at salamin
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mukha, en: face }
+          - { tl: salamin, en: glasses }
+          - { tl: tuwid, en: straight }
+          - { tl: kulot, en: curly }
+      - type: choice
+        prompt: "'Mukha' means..."
+        answer: Face
+        distractors: [Hair, Eyes, Hand]
+        audio: mukha
+        audio_text: Mukha
+      - type: choice
+        prompt: "'Tuwid na buhok' means..."
+        answer: Straight hair
+        distractors: [Curly hair, Long hair, Black hair]
+        audio: tuwid_na_buhok
+        audio_text: Tuwid na buhok
+      - type: translate
+        prompt_tl: May salamin ang tatay ko.
+        answer_en: My dad has glasses.
+        accept: ["My father has glasses", "My dad wears glasses"]
+        extra_words: [hat, eyes, mom]
+        audio: may_salamin_ang_tatay_ko
+      - type: fill_blank
+        sentence: "Hindi kulot ang buhok ko; ___ ito."
+        translation: "My hair is not curly; it is straight."
+        answer: tuwid
+        options: [tuwid, mahaba, itim]
+      - type: listen
+        audio: maganda_ang_mukha_niya
+        answer_tl: Maganda ang mukha niya
+        extra_words: [mata, buhok]
+      - type: translate
+        prompt_en: Her hair is straight and black.
+        answer_tl: Tuwid at itim ang buhok niya.
+        accept: ["Itim at tuwid ang buhok niya"]
+        extra_words: [kulot, mukha, mahaba]
+        audio: tuwid_at_itim_ang_buhok_niya
+      - type: translate
+        prompt_en: My teacher has glasses and short hair.
+        answer_tl: May salamin at maikling buhok ang guro ko.
+        accept: ["May salamin ang guro ko at maikli ang buhok niya"]
+        extra_words: [mahaba, mata, estudyante]
+        audio: may_salamin_at_maikling_buhok_ang_guro_ko
+  - id: descpeople-7
+    title: Malakas at matapang
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: malakas, en: strong }
+          - { tl: mahina, en: weak }
+          - { tl: matapang, en: brave }
+          - { tl: mabilis, en: fast }
+      - type: choice
+        prompt: "'Mahina' means..."
+        answer: Weak
+        distractors: [Strong, Brave, Slow]
+        audio: mahina
+        audio_text: Mahina
+      - type: choice
+        prompt: "'Matapang' means..."
+        answer: Brave
+        distractors: [Weak, Scared, Kind]
+        audio: matapang
+        audio_text: Matapang
+      - type: translate
+        prompt_tl: Malakas ang magsasaka.
+        answer_en: The farmer is strong.
+        extra_words: [weak, doctor, brave]
+        audio: malakas_ang_magsasaka
+      - type: fill_blank
+        sentence: "Hindi malakas ang matandang aso; ___ na ito."
+        translation: "The old dog is not strong; it is weak now."
+        answer: mahina
+        options: [mahina, matapang, mabilis]
+      - type: listen
+        audio: matapang_ang_pulis
+        answer_tl: Matapang ang pulis
+        extra_words: [mahina, doktor]
+      - type: translate
+        prompt_en: The carabao is strong and the horse is fast.
+        answer_tl: Malakas ang kalabaw at mabilis ang kabayo.
+        extra_words: [mahina, mabagal, aso]
+        audio: malakas_ang_kalabaw_at_mabilis_ang_kabayo
+      - type: translate
+        prompt_en: The police officer is brave and strong.
+        answer_tl: Matapang at malakas ang pulis.
+        accept: ["Malakas at matapang ang pulis"]
+        extra_words: [mahina, guro, mabagal]
+        audio: matapang_at_malakas_ang_pulis
+  - id: descpeople-8
+    title: What are they like?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mahiyain, en: shy }
+          - { tl: masayahin, en: cheerful }
+          - { tl: palakaibigan, en: friendly }
+          - { tl: matulungin, en: helpful }
+      - type: choice
+        prompt: "'Mahiyain' means..."
+        answer: Shy
+        distractors: [Cheerful, Friendly, Lazy]
+        audio: mahiyain
+        audio_text: Mahiyain
+      - type: translate
+        prompt_tl: Masayahin ang lola ko.
+        answer_en: My grandmother is cheerful.
+        accept: ["My grandma is cheerful"]
+        extra_words: [shy, sad, grandfather]
+        audio: masayahin_ang_lola_ko
+      - type: fill_blank
+        sentence: "Maraming kaibigan si Ben kasi ___ siya."
+        translation: "Ben has many friends because he is friendly."
+        answer: palakaibigan
+        options: [palakaibigan, mahiyain, tamad]
+      - type: listen
+        audio: matulungin_ang_estudyante
+        answer_tl: Matulungin ang estudyante
+        extra_words: [masipag, mahiyain]
+      - type: choice
+        prompt: "'Matulungin' means..."
+        answer: Helpful
+        distractors: [Hardworking, Naughty, Smart]
+        audio: matulungin
+        audio_text: Matulungin
+      - type: translate
+        prompt_tl: Mahiyain ako sa klase; masayahin ako sa bahay.
+        answer_en: I am shy in class; I am cheerful at home.
+        accept: ["I'm shy in class; I'm cheerful at home", "I am shy in class, I am cheerful at home"]
+        extra_words: [friendly, lazy, school]
+        audio: mahiyain_ako_sa_klase_masayahin_ako_sa_bahay
+      - type: translate
+        prompt_en: My friend is cheerful and friendly.
+        answer_tl: Masayahin at palakaibigan ang kaibigan ko.
+        accept: ["Palakaibigan at masayahin ang kaibigan ko"]
+        extra_words: [mahiyain, tamad, kapatid]
+        audio: masayahin_at_palakaibigan_ang_kaibigan_ko
+  - id: descpeople-9
+    title: Sino siya?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Sino ang matangkad na lalaki?' asks..."
+        answer: Who is the tall man?
+        distractors: [Where is the tall man?, Who is the short man?, How tall is the man?]
+        audio: sino_ang_matangkad_na_lalaki
+        audio_text: Sino ang matangkad na lalaki?
+      - type: match
+        pairs:
+          - { tl: gwapong lalaki, en: handsome man }
+          - { tl: magandang babae, en: beautiful woman }
+          - { tl: batang makulit, en: naughty child }
+          - { tl: matandang guro, en: old teacher }
+      - type: translate
+        prompt_tl: Sino ang batang makulit?
+        answer_en: Who is the naughty child?
+        accept: ["Who is the naughty kid?"]
+        extra_words: [old, teacher, where]
+        audio: sino_ang_batang_makulit
+      - type: fill_blank
+        sentence: "Si Juan ang ___ lalaki."
+        translation: "Juan is the handsome man."
+        answer: gwapong
+        options: [gwapong, gwapo, gwapo na]
+        hint: '"gwapo" ends in a vowel, so it takes -ng before the noun: gwapong lalaki.'
+      - type: listen
+        audio: si_maria_ang_matalinong_estudyante
+        answer_tl: Si Maria ang matalinong estudyante
+        extra_words: [mabait, guro]
+      - type: choice
+        prompt: "'Ang tatay ko ang malakas na lalaki' means..."
+        answer: My dad is the strong man
+        distractors: [My dad is a weak man, The strong man is my brother, My dad is the tall man]
+        audio: ang_tatay_ko_ang_malakas_na_lalaki
+        audio_text: Ang tatay ko ang malakas na lalaki.
+      - type: translate
+        prompt_en: Who is the cheerful teacher?
+        answer_tl: Sino ang masayahing guro?
+        extra_words: [mahiyain, estudyante, ano]
+        audio: sino_ang_masayahing_guro
+        hint: '"masayahin" ends in -n, so the linker is just -g: masayahing guro.'
+      - type: translate
+        prompt_en: Ana is the smart and hardworking student.
+        answer_tl: Si Ana ang matalino at masipag na estudyante.
+        extra_words: [tamad, guro, makulit]
+        audio: si_ana_ang_matalino_at_masipag_na_estudyante
+  - id: descpeople-10
+    title: Mas gwapo, pinakamatanda
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Pinakamatangkad' means..."
+        answer: The tallest
+        distractors: [Taller, Tall, As tall as]
+        audio: pinakamatangkad
+        audio_text: Pinakamatangkad
+      - type: match
+        pairs:
+          - { tl: mas matangkad, en: taller }
+          - { tl: pinakamatangkad, en: tallest }
+          - { tl: mas mabait, en: kinder }
+          - { tl: pinakamatalino, en: smartest }
+      - type: translate
+        prompt_tl: Si Ben ang pinakamatangkad sa klase.
+        answer_en: Ben is the tallest in the class.
+        accept: ["Ben is the tallest in class", "Ben is the tallest one in the class"]
+        extra_words: [smartest, shortest, school]
+        audio: si_ben_ang_pinakamatangkad_sa_klase
+      - type: fill_blank
+        sentence: "Mas ___ ang ate ko kaysa sa akin."
+        translation: "My big sister is thinner than me."
+        answer: payat
+        options: [payat, mataba, pandak]
+      - type: listen
+        audio: pinakamabait_ang_lola_ko_sa_pamilya
+        answer_tl: Pinakamabait ang lola ko sa pamilya
+        extra_words: [pinakamatalino, tatay]
+      - type: choice
+        prompt: "'Kasingtangkad ni Ana si Maria' means..."
+        answer: Maria is as tall as Ana
+        distractors: [Maria is taller than Ana, Ana is the tallest, Maria is kind to Ana]
+        audio: kasingtangkad_ni_ana_si_maria
+        audio_text: Kasingtangkad ni Ana si Maria.
+      - type: translate
+        prompt_en: My dog is smarter than your cat.
+        answer_tl: Mas matalino ang aso ko kaysa sa pusa mo.
+        accept: ["Mas matalino kaysa sa pusa mo ang aso ko"]
+        extra_words: [mabait, kabayo, pinakamatalino]
+        audio: mas_matalino_ang_aso_ko_kaysa_sa_pusa_mo
+      - type: translate
+        prompt_en: Grandfather is the oldest in the family.
+        answer_tl: Si Lolo ang pinakamatanda sa pamilya.
+        accept: ["Ang lolo ko ang pinakamatanda sa pamilya"]
+        extra_words: [bunso, matanda, nanay]
+        audio: si_lolo_ang_pinakamatanda_sa_pamilya
+  - id: descpeople-11
+    title: Portrait challenge
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: gwapo, en: handsome }
+          - { tl: mahina, en: weak }
+          - { tl: mahiyain, en: shy }
+          - { tl: tuwid, en: straight }
+      - type: choice
+        prompt: "Someone asks about your brother: 'Matangkad ba siya?' They want to know..."
+        answer: If he is tall
+        distractors: [If he is smart, If he is old, Where he is]
+        audio: matangkad_ba_siya
+        audio_text: Matangkad ba siya?
+      - type: translate
+        prompt_tl: Matangkad si Ben, tuwid ang buhok niya, at may salamin siya.
+        answer_en: Ben is tall, his hair is straight, and he has glasses.
+        accept: ["Ben is tall, his hair is straight and he has glasses"]
+        extra_words: [short, curly, hat]
+        audio: matangkad_si_ben_tuwid_ang_buhok_niya_at_may_salamin_siya
+      - type: fill_blank
+        sentence: "Masayahin si Ana; ___ naman ang kapatid niya."
+        translation: "Ana is cheerful; her sibling is shy, though."
+        answer: mahiyain
+        options: [mahiyain, palakaibigan, matapang]
+      - type: listen
+        audio: matanda_na_ang_tatay_ko_malakas_pa_siya
+        answer_tl: Matanda na ang tatay ko, malakas pa siya
+        extra_words: [mahina, bata]
+      - type: translate
+        prompt_en: The old teacher is kind and helpful.
+        answer_tl: Mabait at matulungin ang matandang guro.
+        accept: ["Matulungin at mabait ang matandang guro"]
+        extra_words: [tamad, estudyante, bata]
+        audio: mabait_at_matulungin_ang_matandang_guro
+      - type: translate
+        prompt_en: The shy student is brave.
+        answer_tl: Matapang ang mahiyaing estudyante.
+        extra_words: [masayahin, mahina, guro]
+        audio: matapang_ang_mahiyaing_estudyante
+        hint: '"mahiyain" ends in -n — add just -g: mahiyaing estudyante.'
+      - type: translate
+        prompt_en: The handsome man is the smartest in the office.
+        answer_tl: Ang gwapong lalaki ang pinakamatalino sa opisina.
+        accept: ["Pinakamatalino sa opisina ang gwapong lalaki"]
+        extra_words: [matandang, pinakamabait, palengke]
+        audio: ang_gwapong_lalaki_ang_pinakamatalino_sa_opisina

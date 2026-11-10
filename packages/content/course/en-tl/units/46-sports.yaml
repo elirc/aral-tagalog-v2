@@ -118,6 +118,7 @@ lessons:
         answer_tl: Gusto kong tumakbo nang mabilis.
         extra_words: [lumangoy, mabagal, siya]
         audio: gusto_kong_tumakbo_nang_mabilis
+        grading: { ng_nang: true }
         hint: 'Before an adverb of manner, use "nang": tumakbo nang mabilis.'
   - id: sports-3
     title: Manalo at matalo
@@ -144,6 +145,9 @@ lessons:
       - type: translate
         prompt_en: They lost yesterday.
         answer_tl: Natalo sila kahapon.
+        accept:
+          - "Kahapon, natalo sila"
+          - "Kahapon sila natalo"
         extra_words: [nanalo, bukas, kami]
         audio: natalo_sila_kahapon
       - type: fill_blank
@@ -232,6 +236,458 @@ lessons:
       - type: translate
         prompt_en: Our team is strong but we lost yesterday.
         answer_tl: Malakas ang koponan namin pero natalo kami kahapon.
+        accept: ["Malakas ang koponan namin pero kahapon, natalo kami"]
         extra_words: [nanalo, mabilis, bukas]
         audio: malakas_ang_koponan_namin_pero_natalo_kami_kahapon
         hint: '"pero" is the everyday word for "but".'
+  - id: sports-5
+    title: Basketbol sa barangay
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: basketbol, en: basketball }
+          - { tl: manlalaro, en: player }
+          - { tl: matangkad, en: tall }
+          - { tl: magaling, en: skilled }
+      - type: choice
+        prompt: "Walk through almost any barangay in the Philippines and you will find a court for..."
+        answer: Basketball
+        distractors: [Baseball, Ice hockey, Golf]
+      - type: translate
+        prompt_tl: Naglalaro ng basketbol ang mga lalaki sa barangay.
+        answer_en: The men play basketball in the barangay.
+        accept:
+          - "The boys play basketball in the barangay"
+          - "The men are playing basketball in the barangay"
+          - "The boys are playing basketball in the barangay"
+        extra_words: [watch, volleyball, school]
+        audio: naglalaro_ng_basketbol_ang_mga_lalaki_sa_barangay
+      - type: fill_blank
+        sentence: "Maliit siya pero ___ siyang maglaro."
+        translation: "He is small but he plays well."
+        answer: magaling
+        options: [magaling, matangkad, mabagal]
+        hint: '"magaling" + the -ng linker + a verb = good at doing it: "magaling siyang maglaro".'
+      - type: listen
+        audio: matangkad_ang_manlalaro
+        answer_tl: Matangkad ang manlalaro
+        extra_words: [pandak, koponan]
+      - type: choice
+        prompt: "'Magaling siyang maglaro ng basketbol' means..."
+        answer: He plays basketball well
+        distractors: [He likes basketball, He watches basketball, He is tall for basketball]
+        audio: magaling_siyang_maglaro_ng_basketbol
+        audio_text: Magaling siyang maglaro ng basketbol.
+      - type: translate
+        prompt_tl: Gabi-gabi silang naglalaro ng basketbol.
+        answer_en: They play basketball every night.
+        accept: ["Every night they play basketball", "They are playing basketball every night"]
+        extra_words: [morning, watch, volleyball]
+        audio: gabi_gabi_silang_naglalaro_ng_basketbol
+        grading: { hyphens: true }
+        hint: '"gabi-gabi" = every night, just like "araw-araw" = every day.'
+      - type: translate
+        prompt_en: My older brother is tall and he plays basketball well.
+        answer_tl: Matangkad ang kuya ko at magaling siyang maglaro ng basketbol.
+        extra_words: [pandak, bolibol, ako]
+        audio: matangkad_ang_kuya_ko_at_magaling_siyang_maglaro_ng_basketbol
+      - type: translate
+        prompt_en: They play basketball every day in the barangay.
+        answer_tl: Naglalaro sila ng basketbol araw-araw sa barangay.
+        accept: ["Naglalaro sila ng basketbol sa barangay araw-araw"]
+        extra_words: [bolibol, kami, gabi]
+        audio: naglalaro_sila_ng_basketbol_araw_araw_sa_barangay
+        grading: { hyphens: true }
+  - id: sports-6
+    title: Manood o maglaro?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: manood, en: to watch }
+          - { tl: maglaro, en: to play }
+          - { tl: tagahanga, en: fan }
+          - { tl: laban, en: match }
+      - type: choice
+        prompt: "'Tagahanga' means..."
+        answer: Fan
+        distractors: [Player, Coach, Champion]
+        audio: tagahanga
+        audio_text: Tagahanga
+      - type: translate
+        prompt_tl: Nanonood kami ng laban.
+        answer_en: We are watching the match.
+        accept: ["We are watching the game", "We watch the match", "We watch the game"]
+        extra_words: [play, ball, they]
+        audio: nanonood_kami_ng_laban
+      - type: fill_blank
+        sentence: "Mas gusto kong ___ kaysa maglaro."
+        translation: "I prefer watching to playing."
+        answer: manood
+        options: [manood, maglaro, matalo]
+        hint: '"mas gusto ko" = I prefer; "kaysa" = than.'
+      - type: listen
+        audio: tagahanga_ako_ng_koponan_nila
+        answer_tl: Tagahanga ako ng koponan nila
+        extra_words: [manlalaro, namin]
+      - type: choice
+        prompt: "Your friend asks 'Maglalaro ka ba o manonood?' He wants to know..."
+        answer: If you will play or watch
+        distractors: [If you won or lost, Where the game is, Who your favorite player is]
+        audio: maglalaro_ka_ba_o_manonood
+        audio_text: Maglalaro ka ba o manonood?
+      - type: translate
+        prompt_tl: Maraming tagahanga ang manlalaro.
+        answer_en: The player has many fans.
+        accept: ["The player has a lot of fans"]
+        extra_words: [team, few, coach]
+        audio: maraming_tagahanga_ang_manlalaro
+      - type: translate
+        prompt_en: I will watch the match later.
+        answer_tl: Manonood ako ng laban mamaya.
+        accept: ["Mamaya, manonood ako ng laban"]
+        extra_words: [maglalaro, bukas, siya]
+        audio: manonood_ako_ng_laban_mamaya
+      - type: translate
+        prompt_en: I am a fan of the team but I don't play.
+        answer_tl: Tagahanga ako ng koponan pero hindi ako naglalaro.
+        extra_words: [manonood, sila, kami]
+        audio: tagahanga_ako_ng_koponan_pero_hindi_ako_naglalaro
+  - id: sports-7
+    title: Tara, laro tayo!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tara, en: come on / let's go }
+          - { tl: sumali, en: to join }
+          - { tl: sumama, en: to come along }
+          - { tl: laro, en: game }
+      - type: choice
+        prompt: "'Tara, laro tayo!' means..."
+        answer: Come on, let's play!
+        distractors: ["We already played!", "Don't play here!", "Who is playing?"]
+        audio: tara_laro_tayo
+        audio_text: Tara, laro tayo!
+        hint: '"Tara" = come on / let''s go — the everyday way to invite someone.'
+      - type: translate
+        prompt_tl: Gusto mo bang sumali?
+        answer_en: Do you want to join?
+        extra_words: [play, watch, team]
+        audio: gusto_mo_bang_sumali
+        hint: '"gusto mo" + "ba" + the -ng linker → "gusto mo bang".'
+      - type: fill_blank
+        sentence: "Pwede ba akong ___ sa laro?"
+        translation: "Can I join the game?"
+        answer: sumali
+        options: [sumali, manalo, matalo]
+      - type: listen
+        audio: sasama_ka_ba
+        answer_tl: Sasama ka ba
+        extra_words: [tara, ako]
+        hint: '"sumama" = to come along; "sasama" = will come along.'
+      - type: choice
+        prompt: "Your friends are heading to the court and you want to tag along. Say:"
+        answer: Sasama ako!
+        distractors: [Natalo ako!, Ayaw ko!, Pagod na ako.]
+        audio: sasama_ako
+        audio_text: Sasama ako!
+      - type: translate
+        prompt_tl: Tara, maglaro tayo ng bolibol mamaya.
+        answer_en: Come on, let's play volleyball later.
+        accept: ["Let's play volleyball later"]
+        extra_words: [basketball, tomorrow, watch]
+        audio: tara_maglaro_tayo_ng_bolibol_mamaya
+      - type: translate
+        prompt_en: Can I join?
+        answer_tl: Pwede ba akong sumali?
+        extra_words: [sumama, ka, tayo]
+        audio: pwede_ba_akong_sumali
+      - type: translate
+        prompt_en: Come on, let's play basketball! Do you want to join?
+        answer_tl: Tara, maglaro tayo ng basketbol! Gusto mo bang sumali?
+        extra_words: [bolibol, sumama, kami]
+        audio: tara_maglaro_tayo_ng_basketbol_gusto_mo_bang_sumali
+  - id: sports-8
+    title: Nagsasanay kami
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magsanay, en: to practice }
+          - { tl: pawis, en: sweat }
+          - { tl: pagod, en: tired }
+          - { tl: magpahinga, en: to rest }
+      - type: choice
+        prompt: "'Nagsasanay kami araw-araw' means..."
+        answer: We practice every day
+        distractors: [We play every day, We win every day, We rest every day]
+        audio: nagsasanay_kami_araw_araw
+        audio_text: Nagsasanay kami araw-araw.
+        hint: '"magsanay" = to practice / train; "nagsasanay" = practices / is practicing.'
+      - type: translate
+        prompt_tl: Magsanay tayo bukas ng umaga.
+        answer_en: Let's practice tomorrow morning.
+        extra_words: [play, night, yesterday]
+        audio: magsanay_tayo_bukas_ng_umaga
+      - type: fill_blank
+        sentence: "Pawis na ___ ako pagkatapos ng laro."
+        translation: "I'm drenched in sweat after the game."
+        answer: pawis
+        options: [pawis, pagod, laro]
+        hint: 'Repeating a word with "na" intensifies it: "pawis na pawis" = dripping with sweat.'
+      - type: listen
+        audio: pagod_na_pagod_ako
+        answer_tl: Pagod na pagod ako
+        extra_words: [pawis, masaya]
+      - type: translate
+        prompt_tl: Nagsasanay ang koponan sa gabi kasi mainit sa hapon.
+        answer_en: The team practices at night because it is hot in the afternoon.
+        accept:
+          - "The team practices at night because it's hot in the afternoon"
+          - "The team practices in the evening because it is hot in the afternoon"
+          - "The team practices in the evening because it's hot in the afternoon"
+        extra_words: [morning, cold, plays]
+        audio: nagsasanay_ang_koponan_sa_gabi_kasi_mainit_sa_hapon
+      - type: choice
+        prompt: "After two hours of drills, the coach says 'Magpahinga muna kayo.' You should..."
+        answer: Take a rest for now
+        distractors: [Run faster, Go home, Practice more]
+        audio: magpahinga_muna_kayo
+        audio_text: Magpahinga muna kayo.
+      - type: translate
+        prompt_en: We practice every day because we want to win.
+        answer_tl: Nagsasanay kami araw-araw kasi gusto naming manalo.
+        accept: ["Nagsasanay kami araw-araw dahil gusto naming manalo"]
+        extra_words: [matalo, tayo, sila]
+        audio: nagsasanay_kami_araw_araw_kasi_gusto_naming_manalo
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: I'm dripping with sweat. Let's rest first.
+        answer_tl: Pawis na pawis ako. Magpahinga muna tayo.
+        extra_words: [pagod, kami, laro]
+        audio: pawis_na_pawis_ako_magpahinga_muna_tayo
+  - id: sports-9
+    title: Habang naglalaro
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ipasa, en: to pass }
+          - { tl: kalaban, en: opponent }
+          - { tl: bola, en: ball }
+          - { tl: puntos, en: points }
+      - type: choice
+        prompt: "Your teammate has the ball and you are wide open. Shout:"
+        answer: Ipasa mo ang bola!
+        distractors: [Natalo tayo!, Nasaan ang bola?, Pagod na ako!]
+        audio: ipasa_mo_ang_bola
+        audio_text: Ipasa mo ang bola!
+        hint: '"ipasa" = to pass (something); add "mo" to make it a command: "Ipasa mo ...".'
+      - type: translate
+        prompt_tl: Ipasa mo sa akin ang bola!
+        answer_en: Pass the ball to me!
+        accept: ["Pass me the ball!"]
+        extra_words: [throw, him, team]
+        audio: ipasa_mo_sa_akin_ang_bola
+      - type: fill_blank
+        sentence: "Malakas ang ___ namin ngayon."
+        translation: "Our opponent is strong today."
+        answer: kalaban
+        options: [kalaban, bola, puntos]
+      - type: listen
+        audio: matangkad_ang_mga_kalaban
+        answer_tl: Matangkad ang mga kalaban
+        extra_words: [pandak, manlalaro]
+      - type: choice
+        prompt: "'Tumakbo ka nang mabilis!' means..."
+        answer: Run fast!
+        distractors: [Run slowly!, Swim fast!, "Don't run!"]
+        audio: tumakbo_ka_nang_mabilis
+        audio_text: Tumakbo ka nang mabilis!
+      - type: translate
+        prompt_tl: Ilang puntos ang kalaban?
+        answer_en: How many points does the opponent have?
+        accept: ["How many points do the opponents have?"]
+        extra_words: [team, who, ball]
+        audio: ilang_puntos_ang_kalaban
+      - type: translate
+        prompt_en: Pass the ball to Juan!
+        answer_tl: Ipasa mo kay Juan ang bola!
+        accept: ["Ipasa mo ang bola kay Juan!"]
+        extra_words: [sa, akin, siya]
+        audio: ipasa_mo_kay_juan_ang_bola
+        hint: '"kay" marks a named person as the one receiving: kay Juan.'
+      - type: translate
+        prompt_en: The opponents are tall but we are fast.
+        answer_tl: Matangkad ang mga kalaban pero mabilis kami.
+        extra_words: [mabagal, sila, pandak]
+        audio: matangkad_ang_mga_kalaban_pero_mabilis_kami
+  - id: sports-10
+    title: Panalo, talo, o tabla?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tabla, en: tie }
+          - { tl: nanalo, en: won }
+          - { tl: natalo, en: lost }
+          - { tl: sayang, en: what a pity }
+      - type: choice
+        prompt: "'Tabla ang laban' means..."
+        answer: The match is a tie
+        distractors: [The match is over, We won the match, The match is tomorrow]
+        audio: tabla_ang_laban
+        audio_text: Tabla ang laban.
+      - type: translate
+        prompt_tl: Sayang! Natalo kami.
+        answer_en: What a pity! We lost.
+        extra_words: [won, played, they]
+        audio: sayang_natalo_kami
+        hint: '"Sayang!" is what you say when a chance slips away — what a pity, too bad.'
+      - type: fill_blank
+        sentence: "___ ang laro, walang nanalo."
+        translation: "The game was a tie, nobody won."
+        answer: Tabla
+        options: [Tabla, Sayang, Kampeon]
+      - type: listen
+        audio: ang_galing_mo
+        answer_tl: Ang galing mo
+        extra_words: [sayang, tabla]
+      - type: choice
+        prompt: "Your friend scores the winning shot. Say:"
+        answer: Ang galing mo!
+        distractors: [Sayang!, Natalo tayo!, Tabla ang laban.]
+        audio: ang_galing_mo
+        audio_text: Ang galing mo!
+        hint: '"Ang galing!" = Awesome! Add "mo" to praise the person: you''re so good!'
+      - type: translate
+        prompt_tl: Ang galing ng manlalaro nila!
+        answer_en: Their player is so good!
+        accept: ["Their player is so skilled!"]
+        extra_words: [team, bad, our]
+        audio: ang_galing_ng_manlalaro_nila
+      - type: translate
+        prompt_en: What a pity, we lost to their team.
+        answer_tl: Sayang, natalo kami sa koponan nila.
+        extra_words: [nanalo, namin, tabla]
+        audio: sayang_natalo_kami_sa_koponan_nila
+      - type: translate
+        prompt_en: The match was a tie but we are happy.
+        answer_tl: Tabla ang laban pero masaya kami.
+        extra_words: [nanalo, malungkot, sila]
+        audio: tabla_ang_laban_pero_masaya_kami
+  - id: sports-11
+    title: Iba pang isport
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: boksing, en: boxing }
+          - { tl: bolibol, en: volleyball }
+          - { tl: lumangoy, en: to swim }
+          - { tl: tumakbo, en: to run }
+      - type: choice
+        prompt: "Manny Pacquiao, a national hero in the Philippines, became world famous in..."
+        answer: Boxing
+        distractors: [Basketball, Volleyball, Swimming]
+      - type: translate
+        prompt_tl: Nanonood ng boksing ang lolo ko tuwing Linggo.
+        answer_en: My grandfather watches boxing every Sunday.
+        accept:
+          - "My grandpa watches boxing every Sunday"
+          - "My grandfather watches boxing on Sundays"
+          - "My grandpa watches boxing on Sundays"
+        extra_words: [plays, Saturday, basketball]
+        audio: nanonood_ng_boksing_ang_lolo_ko_tuwing_linggo
+      - type: fill_blank
+        sentence: "Naglalaro ng ___ ang mga babae sa paaralan."
+        translation: "The girls play volleyball at school."
+        answer: bolibol
+        options: [bolibol, boksing, lumangoy]
+      - type: listen
+        audio: tumatakbo_siya_tuwing_umaga
+        answer_tl: Tumatakbo siya tuwing umaga
+        extra_words: [lumalangoy, gabi]
+      - type: choice
+        prompt: "Which sentence means 'I run every morning'?"
+        answer: Tumatakbo ako tuwing umaga.
+        distractors:
+          - Lumalangoy ako tuwing umaga.
+          - Tumakbo ako kahapon ng umaga.
+          - Natutulog ako tuwing umaga.
+      - type: translate
+        prompt_tl: Mas gusto kong lumangoy kaysa tumakbo.
+        answer_en: I prefer swimming to running.
+        extra_words: [walking, boxing, dancing]
+        audio: mas_gusto_kong_lumangoy_kaysa_tumakbo
+      - type: translate
+        prompt_en: Ate plays volleyball and Kuya watches boxing.
+        answer_tl: Naglalaro ng bolibol si Ate at nanonood ng boksing si Kuya.
+        accept: ["Naglalaro si Ate ng bolibol at nanonood si Kuya ng boksing"]
+        extra_words: [basketbol, ang, kami]
+        audio: naglalaro_ng_bolibol_si_ate_at_nanonood_ng_boksing_si_kuya
+      - type: translate
+        prompt_en: We exercise every Saturday.
+        answer_tl: Nag-eehersisyo kami tuwing Sabado.
+        accept: ["Tuwing Sabado, nag-eehersisyo kami"]
+        extra_words: [Linggo, sila, tumatakbo]
+        audio: nag_eehersisyo_kami_tuwing_sabado
+  - id: sports-12
+    title: Ang malaking laban
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tagahanga, en: fan }
+          - { tl: kalaban, en: opponent }
+          - { tl: tabla, en: tie }
+          - { tl: kampeon, en: champion }
+      - type: choice
+        prompt: "Your friend says 'Tara, sumali ka sa koponan namin!' He is..."
+        answer: Inviting you to join his team
+        distractors:
+          - Asking you to watch his game
+          - Telling you his team lost
+          - Asking where the court is
+        audio: tara_sumali_ka_sa_koponan_namin
+        audio_text: Tara, sumali ka sa koponan namin!
+      - type: translate
+        prompt_tl: Nanalo ang koponan namin kasi nagsasanay kami araw-araw.
+        answer_en: Our team won because we practice every day.
+        accept: ["Our team won because we train every day"]
+        extra_words: [lost, their, sometimes]
+        audio: nanalo_ang_koponan_namin_kasi_nagsasanay_kami_araw_araw
+        grading: { hyphens: true }
+      - type: fill_blank
+        sentence: "Sayang, ___ kami ng isang puntos lang."
+        translation: "What a pity, we lost by just one point."
+        answer: natalo
+        options: [natalo, nanalo, tabla]
+      - type: listen
+        audio: maraming_tagahanga_sa_laban_mamaya
+        answer_tl: Maraming tagahanga sa laban mamaya
+        extra_words: [kalaban, kahapon]
+      - type: translate
+        prompt_tl: Pwede ba akong sumama? Gusto kong manood ng laban.
+        answer_en: Can I come along? I want to watch the match.
+        accept: ["Can I come? I want to watch the match"]
+        extra_words: [play, team, join]
+        audio: pwede_ba_akong_sumama_gusto_kong_manood_ng_laban
+      - type: choice
+        prompt: "The final score is 88–88. Your friend asks who won. Say:"
+        answer: Walang nanalo, tabla ang laban.
+        distractors: [Nanalo tayo!, "Sayang, natalo tayo.", Ang galing ng kalaban.]
+        audio: walang_nanalo_tabla_ang_laban
+        audio_text: Walang nanalo, tabla ang laban.
+      - type: translate
+        prompt_en: Come on, let's practice! The opponent is strong.
+        answer_tl: Tara, magsanay tayo! Malakas ang kalaban.
+        extra_words: [maglaro, kami, bukas]
+        audio: tara_magsanay_tayo_malakas_ang_kalaban
+      - type: translate
+        prompt_en: I am a fan of their team but my friend is a fan of the opponent.
+        answer_tl: Tagahanga ako ng koponan nila pero tagahanga ng kalaban ang kaibigan ko.
+        extra_words: [namin, manlalaro, siya]
+        audio: tagahanga_ako_ng_koponan_nila_pero_tagahanga_ng_kalaban_ang_kaibigan_ko

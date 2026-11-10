@@ -190,6 +190,9 @@ lessons:
       - type: translate
         prompt_en: I will sleep later.
         answer_tl: Matutulog ako mamaya.
+        accept:
+          - "Mamaya, matutulog ako"
+          - "Mamaya ako matutulog"
         extra_words: [manonood, bukas, siya]
         audio: matutulog_ako_mamaya
       - type: fill_blank
@@ -224,3 +227,404 @@ lessons:
         accept: ["Pupunta ako sa palengke bukas at bibili ako ng isda", "Bukas, pupunta ako sa palengke at bibili ng isda", "Pupunta ako sa palengke bukas at bibili ng isda"]
         extra_words: [mamaya, manok, kami]
         audio: bukas_pupunta_ako_sa_palengke_at_bibili_ako_ng_isda
+  - id: future-5
+    title: Riding and going home
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sasakay, en: will ride }
+          - { tl: uuwi, en: will go home }
+          - { tl: sumakay, en: rode }
+          - { tl: umuwi, en: went home }
+      - type: choice
+        prompt: "'Uuwi' means..."
+        answer: Will go home
+        distractors: [Went home, Going home, Will ride]
+        audio: uuwi
+        audio_text: Uuwi
+      - type: fill_blank
+        sentence: "___ ako mamaya kasi pagod na ako."
+        translation: "I will go home later because I am tired already."
+        answer: Uuwi
+        options: [Uuwi, Umuwi, Umuuwi]
+        hint: "-Um- futures drop -um- and double the first syllable: uwi → uuwi."
+      - type: translate
+        prompt_tl: Sasakay kami ng bus sa istasyon bukas.
+        answer_en: We will ride a bus at the station tomorrow.
+        accept: ["Tomorrow we will ride a bus at the station", "We will take a bus at the station tomorrow"]
+        extra_words: [rode, jeepney, yesterday]
+        audio: sasakay_kami_ng_bus_sa_istasyon_bukas
+      - type: listen
+        audio: uuwi_ako_mamaya
+        answer_tl: Uuwi ako mamaya
+        extra_words: [bukas, sasakay]
+      - type: choice
+        prompt: "'Sasakay' means..."
+        answer: Will ride
+        distractors: [Rode, Riding, Will walk]
+        audio: sasakay
+        audio_text: Sasakay
+      - type: translate
+        prompt_en: I will ride a tricycle, then I will go home.
+        answer_tl: Sasakay ako ng traysikel, tapos uuwi ako.
+        accept: ["Sasakay ako ng traysikel tapos uuwi ako"]
+        extra_words: [sumakay, bukas, kami]
+        audio: sasakay_ako_ng_traysikel_tapos_uuwi_ako
+      - type: fill_blank
+        sentence: "Sumakay ako ng jeepney kahapon at ___ ako ng bus bukas."
+        translation: "I rode a jeepney yesterday and I will ride a bus tomorrow."
+        answer: sasakay
+        options: [sasakay, sumakay, sumasakay]
+  - id: future-6
+    title: Singing and dancing tomorrow
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kakanta, en: will sing }
+          - { tl: sasayaw, en: will dance }
+          - { tl: magbabasa, en: will read }
+          - { tl: manonood, en: will watch }
+      - type: choice
+        prompt: "'Kakanta' means..."
+        answer: Will sing
+        distractors: [Sang, Will dance, Will read]
+        audio: kakanta
+        audio_text: Kakanta
+      - type: translate
+        prompt_tl: Kakanta ako sa videoke mamaya!
+        answer_en: I will sing videoke later!
+        accept: ["I will sing at the videoke later", "Later I will sing videoke"]
+        extra_words: [dance, tomorrow, watched]
+        audio: kakanta_ako_sa_videoke_mamaya
+      - type: fill_blank
+        sentence: "___ kami sa pista bukas."
+        translation: "We will dance at the fiesta tomorrow."
+        answer: Sasayaw
+        options: [Sasayaw, Sumayaw, Sumasayaw]
+      - type: listen
+        audio: magbabasa_ako_ng_libro_mamayang_gabi
+        answer_tl: Magbabasa ako ng libro mamayang gabi
+        extra_words: [kakanta, bukas]
+      - type: choice
+        prompt: "'Magbabasa' means..."
+        answer: Will read
+        distractors: [Read yesterday, Reading, Will write]
+        audio: magbabasa
+        audio_text: Magbabasa
+      - type: translate
+        prompt_en: She will sing and dance at the feast.
+        answer_tl: Kakanta at sasayaw siya sa handaan.
+        accept: ["Kakanta siya at sasayaw sa handaan"]
+        extra_words: [kami, pista, kumanta]
+        audio: kakanta_at_sasayaw_siya_sa_handaan
+      - type: translate
+        prompt_tl: Manonood kami ng pelikula sa Sabado at kakanta kami sa Linggo.
+        answer_en: We will watch a movie on Saturday and we will sing on Sunday.
+        accept: ["We will watch a movie on Saturday and sing on Sunday", "On Saturday we will watch a movie and on Sunday we will sing"]
+        extra_words: [danced, Friday, read]
+        audio: manonood_kami_sa_sabado_at_kakanta_sa_linggo
+  - id: future-7
+    title: Work and school ahead
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: magtatrabaho, en: will work }
+          - { tl: mag-aaral, en: will study }
+          - { tl: maglilinis, en: will clean }
+          - { tl: magluluto, en: will cook }
+      - type: choice
+        prompt: "'Mag-aaral' means..."
+        answer: Will study
+        distractors: [Studied, Studying, Will teach]
+        audio: mag_aaral
+        audio_text: Mag-aaral
+      - type: fill_blank
+        sentence: "___ si Kuya sa opisina bukas."
+        translation: "Big brother will work at the office tomorrow."
+        answer: Magtatrabaho
+        options: [Magtatrabaho, Nagtatrabaho, Nagtrabaho]
+        hint: "Mag- verbs keep mag- and double the root's first syllable: magtrabaho → magtatrabaho."
+      - type: translate
+        prompt_tl: Maglilinis ako ng kwarto ko bukas.
+        answer_en: I will clean my room tomorrow.
+        accept: ["Tomorrow I will clean my room"]
+        extra_words: [cooked, later, kitchen]
+        audio: maglilinis_ako_ng_kwarto_ko_bukas
+      - type: listen
+        audio: magtatrabaho_si_tatay_sa_lunes
+        answer_tl: Magtatrabaho si Tatay sa Lunes
+        extra_words: [nanay, martes]
+      - type: choice
+        prompt: "'Maglilinis' means..."
+        answer: Will clean
+        distractors: [Cleaning, Cleaned, Will wash]
+        audio: maglilinis
+        audio_text: Maglilinis
+      - type: translate
+        prompt_en: The students will study math tomorrow.
+        answer_tl: Mag-aaral ng matematika ang mga estudyante bukas.
+        accept: ["Mag-aaral ang mga estudyante ng matematika bukas", "Bukas, mag-aaral ng matematika ang mga estudyante"]
+        extra_words: [guro, kahapon, Ingles]
+        audio: mag_aaral_ng_matematika_ang_mga_estudyante_bukas
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Magluluto si Nanay mamaya at maglilinis si Tatay bukas.
+        answer_en: Mom will cook later and Dad will clean tomorrow.
+        accept: ["Mother will cook later and father will clean tomorrow"]
+        extra_words: [yesterday, washed, study]
+        audio: magluluto_si_nanay_mamaya_at_maglilinis_si_tatay_bukas
+  - id: future-8
+    title: Sa susunod — next time
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Sa susunod na linggo' means..."
+        answer: Next week
+        distractors: [Last week, This week, On Sunday]
+        audio: sa_susunod_na_linggo
+        audio_text: Sa susunod na linggo
+        hint: '"linggo" = week; "Linggo" = Sunday. "Sa susunod na linggo" — next week.'
+      - type: match
+        pairs:
+          - { tl: sa susunod na linggo, en: next week }
+          - { tl: sa susunod na buwan, en: next month }
+          - { tl: sa susunod na taon, en: next year }
+          - { tl: sa makalawa, en: the day after tomorrow }
+      - type: translate
+        prompt_tl: Pupunta kami sa Maynila sa susunod na buwan.
+        answer_en: We will go to Manila next month.
+        accept: ["Next month we will go to Manila"]
+        extra_words: [week, went, market]
+        audio: pupunta_kami_sa_maynila_sa_susunod_na_buwan
+      - type: fill_blank
+        sentence: "Bibili ako ng sapatos sa ___ na buwan."
+        translation: "I will buy shoes next month."
+        answer: susunod
+        options: [susunod, makalawa, Lunes]
+      - type: choice
+        prompt: "'Sa makalawa' means..."
+        answer: The day after tomorrow
+        distractors: [Yesterday, Tomorrow, Next year]
+        audio: sa_makalawa
+        audio_text: Sa makalawa
+      - type: listen
+        audio: magtatrabaho_ako_sa_makalawa
+        answer_tl: Magtatrabaho ako sa makalawa
+        extra_words: [bukas, mamaya]
+      - type: translate
+        prompt_en: She will buy a dress next week.
+        answer_tl: Bibili siya ng bestida sa susunod na linggo.
+        accept: ["Sa susunod na linggo, bibili siya ng bestida"]
+        extra_words: [sapatos, bukas, ako]
+        audio: bibili_siya_ng_bestida_sa_susunod_na_linggo
+      - type: translate
+        prompt_tl: Uuwi ako sa makalawa at magluluto ako ng adobo.
+        answer_en: I will go home the day after tomorrow and I will cook adobo.
+        accept: ["I will go home the day after tomorrow and cook adobo"]
+        extra_words: [tomorrow, ate, sinigang]
+        audio: uuwi_sa_makalawa_at_magluluto_ng_adobo
+  - id: future-9
+    title: Hindi ako kakain
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Hindi ako pupunta bukas' means..."
+        answer: I will not go tomorrow
+        distractors: [I did not go yesterday, I am not going now, I will go tomorrow]
+        audio: hindi_ako_pupunta_bukas
+        audio_text: Hindi ako pupunta bukas.
+      - type: translate
+        prompt_tl: Hindi kami kakain sa restawran mamaya.
+        answer_en: We will not eat at the restaurant later.
+        accept: ["We won't eat at the restaurant later"]
+        extra_words: [drink, tomorrow, market]
+        audio: hindi_kami_kakain_sa_restawran_mamaya
+      - type: fill_blank
+        sentence: "___ ako iinom ng kape mamayang gabi."
+        translation: "I will not drink coffee tonight."
+        answer: Hindi
+        options: [Hindi, Wala, Ayaw]
+      - type: translate
+        prompt_en: He will not work on Sunday.
+        answer_tl: Hindi siya magtatrabaho sa Linggo.
+        accept: ["Sa Linggo, hindi siya magtatrabaho"]
+        extra_words: [ako, Lunes, nagtatrabaho]
+        audio: hindi_siya_magtatrabaho_sa_linggo
+      - type: listen
+        audio: hindi_ako_sasayaw_sa_handaan
+        answer_tl: Hindi ako sasayaw sa handaan
+        extra_words: [kakanta, pista]
+      - type: choice
+        prompt: "Your friend asks 'Manonood ka ba ng pelikula mamaya?' You can't go. You answer..."
+        answer: Hindi, matutulog na ako.
+        distractors: ["Oo, manonood ako.", "Manonood din ako.", "Pupunta rin ako."]
+        audio: hindi_matutulog_na_ako
+        audio_text: Hindi, matutulog na ako.
+      - type: translate
+        prompt_tl: Hindi bibili si Nanay ng isda bukas kasi may isda pa kami.
+        answer_en: Mom will not buy fish tomorrow because we still have fish.
+        accept: ["Mother won't buy fish tomorrow because we still have fish"]
+        extra_words: [chicken, yesterday, cooked]
+        audio: hindi_bibili_si_nanay_ng_isda_bukas
+      - type: translate
+        prompt_en: I will not ride the bus; I will walk.
+        answer_tl: Hindi ako sasakay ng bus; maglalakad ako.
+        accept:
+          - "Hindi ako sasakay ng bus, maglalakad ako"
+          - "Hindi ako sasakay sa bus; maglalakad ako"
+        extra_words: [uuwi, jeepney, kami, sa]
+        audio: hindi_ako_sasakay_ng_bus_maglalakad_ako
+  - id: future-10
+    title: Kailan ka pupunta?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kailan ka pupunta sa Maynila?' means..."
+        answer: When will you go to Manila?
+        distractors: [Where will you go in Manila?, When did you go to Manila?, Who will go to Manila?]
+        audio: kailan_ka_pupunta_sa_maynila
+        audio_text: Kailan ka pupunta sa Maynila?
+      - type: translate
+        prompt_tl: Kailan ka uuwi?
+        answer_en: When will you go home?
+        accept: ["When are you going home?"]
+        extra_words: [where, who, eat]
+        audio: kailan_ka_uuwi
+      - type: fill_blank
+        sentence: "___ ka bibili ng regalo? — Bukas."
+        translation: "When will you buy the gift? — Tomorrow."
+        answer: Kailan
+        options: [Kailan, Saan, Sino]
+      - type: translate
+        prompt_en: When will Mom cook sinigang?
+        answer_tl: Kailan magluluto si Nanay ng sinigang?
+        accept: ["Kailan magluluto ng sinigang si Nanay?"]
+        extra_words: [saan, kakain, bukas]
+        audio: kailan_magluluto_si_nanay_ng_sinigang
+      - type: listen
+        audio: kailan_ka_manonood_ng_pelikula
+        answer_tl: Kailan ka manonood ng pelikula
+        extra_words: [saan, bukas]
+      - type: choice
+        prompt: "Someone asks 'Kailan ka mag-aaral?' A good answer is..."
+        answer: Mamayang gabi.
+        distractors: [Sa paaralan., Si Ana., Kahapon.]
+        audio: kailan_ka_mag_aaral
+        audio_text: Kailan ka mag-aaral?
+      - type: translate
+        prompt_tl: Kailan kakanta si Ate sa videoke?
+        answer_en: When will big sister sing at the videoke?
+        accept: ["When will Ate sing at the videoke?", "When will big sister sing videoke?"]
+        extra_words: [where, dance, yesterday]
+        audio: kailan_kakanta_si_ate_sa_videoke
+      - type: translate
+        prompt_en: When will you clean your room?
+        answer_tl: Kailan ka maglilinis ng kwarto mo?
+        extra_words: [saan, naglilinis, bahay]
+        audio: kailan_ka_maglilinis_ng_kwarto_mo
+  - id: future-11
+    title: Ang plano ko
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Plano' means..."
+        answer: Plan
+        distractors: [Plane, Place, Game]
+        audio: plano
+        audio_text: Plano
+      - type: translate
+        prompt_tl: Ano ang plano mo bukas?
+        answer_en: What is your plan tomorrow?
+        accept: ["What's your plan for tomorrow?", "What are your plans tomorrow?"]
+        extra_words: [when, today, trip]
+        audio: ano_ang_plano_mo_bukas
+      - type: translate
+        prompt_en: "This is my plan: I will go to the market first."
+        answer_tl: "Ito ang plano ko: pupunta muna ako sa palengke."
+        accept: ["Ito ang plano ko. Pupunta muna ako sa palengke."]
+        extra_words: [bukas, tapos, bibili]
+        audio: ito_ang_plano_ko_pupunta_muna_ako_sa_palengke
+      - type: fill_blank
+        sentence: "Pupunta ___ ako sa palengke, tapos magluluto ako."
+        translation: "First I will go to the market, then I will cook."
+        answer: muna
+        options: [muna, tapos, lang]
+      - type: listen
+        audio: ano_ang_plano_natin_sa_sabado
+        answer_tl: Ano ang plano natin sa Sabado
+        extra_words: [linggo, mo]
+      - type: translate
+        prompt_tl: Sa Sabado, maglilinis muna kami ng bahay, tapos manonood kami ng pelikula.
+        answer_en: On Saturday, we will clean the house first, then we will watch a movie.
+        accept: ["On Saturday we will first clean the house, then watch a movie", "On Saturday, we'll clean the house first, then we'll watch a movie"]
+        extra_words: [Sunday, cook, later]
+        audio: sa_sabado_maglilinis_muna_kami_tapos_manonood_ng_pelikula
+      - type: choice
+        prompt: "Which sentence is about a plan for the future?"
+        answer: Magluluto ako ng adobo bukas.
+        distractors: [Nagluto ako ng adobo kahapon., Nagluluto ako ng adobo ngayon., Masarap ang adobo ko.]
+        audio: magluluto_ako_ng_adobo_bukas
+        audio_text: Magluluto ako ng adobo bukas.
+      - type: translate
+        prompt_en: I will work on Monday and I will watch a movie on Sunday.
+        answer_tl: Magtatrabaho ako sa Lunes at manonood ako ng pelikula sa Linggo.
+        accept: ["Magtatrabaho ako sa Lunes at manonood ng pelikula sa Linggo"]
+        extra_words: [maglilinis, Sabado, plano]
+        audio: magtatrabaho_sa_lunes_manonood_sa_linggo
+  - id: future-12
+    title: Ang linggo ko
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: kumain, en: ate }
+          - { tl: kumakain, en: eating }
+          - { tl: kakain, en: will eat }
+      - type: fill_blank
+        sentence: "Nagluto si Nanay kahapon, nagluluto siya ngayon, at ___ siya bukas."
+        translation: "Mom cooked yesterday, she is cooking now, and she will cook tomorrow."
+        answer: magluluto
+        options: [magluluto, nagluluto, nagluto]
+      - type: choice
+        prompt: "'Bibili siya ng regalo sa makalawa' means..."
+        answer: She will buy a gift the day after tomorrow
+        distractors: [She bought a gift two days ago, She is buying a gift tomorrow, She will buy two gifts tomorrow]
+        audio: bibili_siya_ng_regalo_sa_makalawa
+        audio_text: Bibili siya ng regalo sa makalawa.
+      - type: translate
+        prompt_tl: Pupunta ako sa palengke bukas, bibili ako ng isda, at magluluto ako ng sinigang.
+        answer_en: I will go to the market tomorrow, I will buy fish, and I will cook sinigang.
+        accept: ["Tomorrow I will go to the market, buy fish, and cook sinigang", "I will go to the market tomorrow, buy fish and cook sinigang"]
+        extra_words: [bought, chicken, yesterday]
+        audio: pupunta_bukas_bibili_ng_isda_magluluto_ng_sinigang
+      - type: listen
+        audio: sasakay_kami_ng_bus_sa_susunod_na_linggo
+        answer_tl: Sasakay kami ng bus sa susunod na linggo
+        extra_words: [bukas, jeepney]
+      - type: fill_blank
+        sentence: "Hindi ako kakain ngayon; kakain ako ___."
+        translation: "I will not eat now; I will eat later."
+        answer: mamaya
+        options: [mamaya, kahapon, kanina]
+      - type: translate
+        prompt_en: I will not go to school tomorrow because I will work.
+        answer_tl: Hindi ako pupunta sa paaralan bukas kasi magtatrabaho ako.
+        accept: ["Hindi ako pupunta sa paaralan bukas dahil magtatrabaho ako"]
+        extra_words: [mag-aaral, mamaya, kami]
+        audio: hindi_pupunta_sa_paaralan_bukas_kasi_magtatrabaho
+      - type: translate
+        prompt_tl: Ano ang plano mo sa susunod na taon? Mag-aaral ka ba?
+        answer_en: What is your plan next year? Will you study?
+        accept: ["What's your plan next year? Will you study?", "What is your plan for next year? Will you study?"]
+        extra_words: [month, work, went]
+        audio: ano_ang_plano_mo_sa_susunod_na_taon_mag_aaral_ka_ba
+        grading: { hyphens: true }
+      - type: translate
+        prompt_en: Tomorrow I will clean the house, then I will sing at the videoke.
+        answer_tl: Bukas, maglilinis ako ng bahay, tapos kakanta ako sa videoke.
+        accept: ["Bukas maglilinis ako ng bahay tapos kakanta ako sa videoke"]
+        extra_words: [mamaya, sasayaw, kumanta]
+        audio: bukas_maglilinis_tapos_kakanta_sa_videoke

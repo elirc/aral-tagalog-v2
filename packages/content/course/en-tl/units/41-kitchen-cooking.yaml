@@ -58,6 +58,7 @@ lessons:
       - type: translate
         prompt_en: There is a big pot in the kitchen.
         answer_tl: May malaking kaldero sa kusina.
+        accept: ["Sa kusina, may malaking kaldero"]
         extra_words: [kawali, kutsilyo, mesa]
         hint: 'An adjective before a noun takes the -ng linker → "malaking kaldero".'
         audio: may_malaking_kaldero_sa_kusina
@@ -169,6 +170,7 @@ lessons:
       - type: translate
         prompt_en: There is oil in the pan.
         answer_tl: May mantika sa kawali.
+        accept: ["Sa kawali, may mantika"]
         extra_words: [asin, kaldero, tubig]
         audio: may_mantika_sa_kawali
       - type: choice
@@ -180,6 +182,7 @@ lessons:
       - type: translate
         prompt_en: I want to buy salt at the market.
         answer_tl: Gusto kong bumili ng asin sa palengke.
+        accept: ["Gusto kong bumili sa palengke ng asin"]
         extra_words: [asukal, tindahan, siya]
         audio: gusto_kong_bumili_ng_asin_sa_palengke
   - id: cooking-4
@@ -240,6 +243,7 @@ lessons:
       - type: translate
         prompt_en: We are frying fish in the pan.
         answer_tl: Nagpiprito kami ng isda sa kawali.
+        accept: ["Nagpiprito kami sa kawali ng isda"]
         extra_words: [kaldero, manok, sila]
         audio: nagpiprito_kami_ng_isda_sa_kawali
       - type: translate
@@ -249,3 +253,409 @@ lessons:
         extra_words: [nagpiprito, masarap, siya]
         hint: '"kasi" and "dahil" both mean "because" — "kasi" is the everyday one.'
         audio: nagluluto_ako_ng_adobo_kasi_gutom_ako
+  - id: cooking-5
+    title: Bigas at kanin
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: bigas, en: uncooked rice }
+          - { tl: kanin, en: cooked rice }
+          - { tl: magsaing, en: to cook rice }
+          - { tl: maghugas, en: to wash }
+      - type: choice
+        prompt: "At the store you buy a sack of rice to cook at home. What is it called?"
+        answer: Bigas
+        distractors: [Kanin, Asin, Asukal]
+        audio: bigas
+        audio_text: Bigas
+        hint: 'Raw grains are "bigas"; once cooked, they become "kanin".'
+      - type: translate
+        prompt_tl: Bumili ako ng bigas sa tindahan.
+        answer_en: I bought rice at the store.
+        accept: ["I bought some rice at the store", "I bought uncooked rice at the store"]
+        extra_words: [cooked, market, sugar]
+        audio: bumili_ako_ng_bigas_sa_tindahan
+      - type: fill_blank
+        sentence: "___ si Nanay ngayon."
+        translation: "Mom is cooking rice now."
+        answer: Nagsasaing
+        options: [Nagsasaing, Nagsaing, Magsasaing]
+        hint: 'Happening now → nag- plus the doubled first syllable: nagSAsaing.'
+      - type: choice
+        prompt: "'Magsaing' means..."
+        answer: To cook rice
+        distractors: [To boil water, To fry fish, To wash dishes]
+        audio: magsaing
+        audio_text: Magsaing
+      - type: listen
+        audio: magsaing_ka_na
+        answer_tl: Magsaing ka na
+        extra_words: [bigas, kanin]
+      - type: translate
+        prompt_en: Please wash the rice first.
+        answer_tl: Pakihugas muna ang bigas.
+        accept: ["Pakihugas po muna ang bigas"]
+        extra_words: [kanin, tapos, ka]
+        hint: '"paki-" + hugas (wash) = please wash; "muna" = first.'
+        audio: pakihugas_muna_ang_bigas
+      - type: translate
+        prompt_tl: Magsasaing ako mamaya, tapos magpiprito ako ng isda.
+        answer_en: I will cook rice later, then I will fry fish.
+        accept: ["I will cook rice later, then fry fish", "I'll cook rice later, then I'll fry fish"]
+        extra_words: [boiled, yesterday, chicken]
+        audio: magsasaing_ako_mamaya_tapos_magpiprito_ako_ng_isda
+      - type: translate
+        prompt_en: We cook rice every day.
+        answer_tl: Araw-araw kaming nagsasaing.
+        accept: ["Nagsasaing kami araw-araw"]
+        extra_words: [nagsaing, bigas, sila]
+        hint: 'After "araw-araw", "kami" takes the linker → "kaming".'
+        grading: { hyphens: true }
+        audio: araw_araw_kaming_nagsasaing
+  - id: cooking-6
+    title: Sinigang
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: sabaw, en: broth }
+          - { tl: sampalok, en: tamarind }
+          - { tl: kangkong, en: water spinach }
+          - { tl: baboy, en: pork }
+      - type: choice
+        prompt: "'Sabaw' means..."
+        answer: Soup / broth
+        distractors: [Rice, Frying pan, Vinegar]
+        audio: sabaw
+        audio_text: Sabaw
+      - type: choice
+        prompt: "Sinigang gets its sour taste from..."
+        answer: Sampalok
+        distractors: [Asukal, Toyo, Gatas]
+        audio: sampalok
+        audio_text: Sampalok
+        hint: 'Sampalok is tamarind — the classic souring agent for sinigang.'
+      - type: translate
+        prompt_tl: Maasim ang sabaw ng sinigang.
+        answer_en: The sinigang broth is sour.
+        accept: ["The broth of the sinigang is sour", "The sinigang soup is sour"]
+        extra_words: [sweet, salty, pork]
+        hint: '"Maasim" = sour.'
+        audio: maasim_ang_sabaw_ng_sinigang
+      - type: fill_blank
+        sentence: "May kamatis, sibuyas, at ___ ang sinigang."
+        translation: "The sinigang has tomato, onion, and water spinach."
+        answer: kangkong
+        options: [kangkong, asukal, kape]
+      - type: listen
+        audio: mainit_pa_ang_sabaw
+        answer_tl: Mainit pa ang sabaw
+        extra_words: [malamig, na]
+      - type: translate
+        prompt_en: I am cooking pork sinigang.
+        answer_tl: Nagluluto ako ng sinigang na baboy.
+        extra_words: [adobo, nagluto, manok]
+        hint: 'The dish comes first, then the linker "na" and the meat: sinigang na baboy.'
+        audio: nagluluto_ako_ng_sinigang_na_baboy
+      - type: translate
+        prompt_tl: Gusto ko ng mainit na sabaw kasi malamig ngayon.
+        answer_en: I want hot soup because it is cold now.
+        accept: ["I want hot soup because it's cold now", "I want hot broth because it is cold now", "I like hot soup because it is cold now"]
+        extra_words: [sour, rain, tomorrow]
+        audio: gusto_ko_ng_mainit_na_sabaw_kasi_malamig_ngayon
+      - type: translate
+        prompt_en: Mom's sinigang is sour and delicious.
+        answer_tl: Maasim at masarap ang sinigang ni Nanay.
+        accept: ["Masarap at maasim ang sinigang ni Nanay"]
+        extra_words: [matamis, adobo, ng]
+        hint: '"ni Nanay" = Mom''s — "ni" marks the owner when it is a name or title.'
+        audio: maasim_at_masarap_ang_sinigang_ni_nanay
+  - id: cooking-7
+    title: Paki- in the kitchen
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: pakihalo, en: please stir }
+          - { tl: pakihiwa, en: please slice }
+          - { tl: pakihugas, en: please wash }
+          - { tl: pakiabot, en: please pass }
+      - type: choice
+        prompt: "'Pakihalo ang sabaw' means..."
+        answer: Please stir the soup
+        distractors: [Please taste the soup, Please pass the soup, Please boil the soup]
+        audio: pakihalo_ang_sabaw
+        audio_text: Pakihalo ang sabaw.
+        hint: '"halo" means mix — the same root as halo-halo, "mix-mix".'
+      - type: translate
+        prompt_en: Slice some onion.
+        answer_tl: Maghiwa ka ng sibuyas.
+        extra_words: [bawang, naghihiwa, ang]
+        hint: 'A command uses the plain mag- form + "ka": maghiwa ka.'
+        audio: maghiwa_ka_ng_sibuyas
+      - type: fill_blank
+        sentence: "___ mo ang manok sa kaldero."
+        translation: "Put the chicken in the pot."
+        answer: Ilagay
+        options: [Ilagay, Maglagay, Kumain]
+        hint: '"Ilagay mo ___" = put ___ in. With "ka" you would say "Maglagay ka ng ___" instead.'
+      - type: listen
+        audio: pakihiwa_ang_bawang
+        answer_tl: Pakihiwa ang bawang
+        extra_words: [sibuyas, pakihalo]
+      - type: choice
+        prompt: "You need someone to wash the rice. Say:"
+        answer: Pakihugas ang bigas.
+        distractors: [Pakihalo ang bigas., Pakiabot ang bigas., Bumili ka ng bigas.]
+        audio: pakihugas_ang_bigas
+        audio_text: Pakihugas ang bigas.
+      - type: translate
+        prompt_tl: Huwag kang maglagay ng asukal sa adobo.
+        answer_en: Don't put sugar in the adobo.
+        accept: ["Do not put sugar in the adobo", "Don't add sugar to the adobo"]
+        extra_words: [salt, vinegar, pot]
+        hint: '"maglagay" = to put / add; "huwag kang" + verb = don''t.'
+        audio: huwag_kang_maglagay_ng_asukal_sa_adobo
+      - type: translate
+        prompt_en: Please stir the sinigang.
+        answer_tl: Pakihalo ang sinigang.
+        accept: ["Pakihalo po ang sinigang", "Pakihalo mo ang sinigang"]
+        extra_words: [pakihiwa, sabaw, ng]
+        audio: pakihalo_ang_sinigang
+      - type: translate
+        prompt_en: Slice some onion first, then fry the fish.
+        answer_tl: Maghiwa ka muna ng sibuyas, tapos magprito ka ng isda.
+        accept: ["Maghiwa ka muna ng sibuyas tapos magprito ka ng isda"]
+        extra_words: [nagprito, bago, bawang]
+        hint: '"muna" (first) comes right after "ka"; "tapos" = then.'
+        audio: maghiwa_ka_muna_ng_sibuyas_tapos_magprito_ka_ng_isda
+  - id: cooking-8
+    title: Tikman mo!
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: maalat, en: salty }
+          - { tl: maanghang, en: spicy }
+          - { tl: matamis, en: sweet }
+          - { tl: maasim, en: sour }
+      - type: choice
+        prompt: "'Maanghang' means..."
+        answer: Spicy
+        distractors: [Salty, Sour, Sweet]
+        audio: maanghang
+        audio_text: Maanghang
+      - type: choice
+        prompt: "You want someone to taste the soup. Say:"
+        answer: Tikman mo ang sabaw.
+        distractors: [Pakihiwa ang sabaw., Ayaw ko ng sabaw., Mainit ang sabaw.]
+        audio: tikman_mo_ang_sabaw
+        audio_text: Tikman mo ang sabaw.
+        hint: '"Tikman mo" = taste it — the "mo" form aims the action at the thing tasted.'
+      - type: translate
+        prompt_tl: Medyo maalat ang adobo.
+        answer_en: The adobo is a bit salty.
+        accept: ["The adobo is a little salty", "The adobo is somewhat salty"]
+        extra_words: [spicy, very, sweet]
+        audio: medyo_maalat_ang_adobo
+      - type: fill_blank
+        sentence: "Sobrang ___ ang sabaw. Maglagay ka ng tubig."
+        translation: "The soup is too salty. Add some water."
+        answer: maalat
+        options: [maalat, masarap, mura]
+        hint: '"sobra" + the -ng linker → "sobrang" = too / very.'
+      - type: listen
+        audio: maanghang_pero_masarap
+        answer_tl: Maanghang pero masarap
+        extra_words: [maalat, at]
+      - type: translate
+        prompt_en: Taste the adobo first.
+        answer_tl: Tikman mo muna ang adobo.
+        extra_words: [kumain, ng, ka]
+        hint: '"muna" slips in right after "mo".'
+        audio: tikman_mo_muna_ang_adobo
+      - type: translate
+        prompt_tl: Mas maalat ang adobo ko kaysa sa adobo mo.
+        answer_en: My adobo is saltier than your adobo.
+        accept: ["My adobo is saltier than yours"]
+        extra_words: [spicier, sweeter, his]
+        audio: mas_maalat_ang_adobo_ko_kaysa_sa_adobo_mo
+      - type: translate
+        prompt_en: I don't like spicy dishes.
+        answer_tl: Ayaw ko ng maanghang na ulam.
+        accept: ["Ayaw ko ng ulam na maanghang"]
+        extra_words: [gusto, maalat, ang]
+        hint: 'Adjective + linker + noun: "maanghang na ulam".'
+        audio: ayaw_ko_ng_maanghang_na_ulam
+  - id: cooking-9
+    title: Adobo, step by step
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: paminta, en: black pepper }
+          - { tl: bawang, en: garlic }
+          - { tl: toyo, en: soy sauce }
+          - { tl: suka, en: vinegar }
+      - type: choice
+        prompt: "'Kumukulo na ang tubig' means..."
+        answer: The water is already boiling
+        distractors: [The water is already cold, Please boil the water, The water is salty]
+        audio: kumukulo_na_ang_tubig
+        audio_text: Kumukulo na ang tubig.
+        hint: 'Same root as magpakulo: magpakulo = to boil something; kumulo = to come to a boil on its own.'
+      - type: fill_blank
+        sentence: "Maghiwa ka muna ng ___ at sibuyas."
+        translation: "First, slice some garlic and onion."
+        answer: bawang
+        options: [bawang, asukal, gatas]
+      - type: translate
+        prompt_tl: Ilagay mo ang manok sa kaldero.
+        answer_en: Put the chicken in the pot.
+        accept: ["Put the chicken into the pot"]
+        extra_words: [pan, fish, take]
+        audio: ilagay_mo_ang_manok_sa_kaldero
+      - type: listen
+        audio: ilagay_mo_ang_toyo_at_suka
+        answer_tl: Ilagay mo ang toyo at suka
+        extra_words: [asin, paminta]
+      - type: choice
+        prompt: "Which seasoning gives adobo its peppery bite?"
+        answer: Paminta
+        distractors: [Asukal, Gatas, Kape]
+        audio: paminta
+        audio_text: Paminta
+      - type: translate
+        prompt_en: The adobo is boiling now.
+        answer_tl: Kumukulo na ang adobo.
+        extra_words: [kumulo, sabaw, ng]
+        audio: kumukulo_na_ang_adobo
+      - type: translate
+        prompt_tl: Kumukulo na ang adobo. Maglagay ka ng paminta.
+        answer_en: The adobo is boiling now. Add black pepper.
+        accept: ["The adobo is boiling now. Add some black pepper.", "The adobo is boiling now. Add pepper.", "The adobo is already boiling. Add black pepper."]
+        extra_words: [salt, sugar, pot]
+        audio: kumukulo_na_ang_adobo_maglagay_ka_ng_paminta
+      - type: translate
+        prompt_en: I put soy sauce, vinegar, and garlic in the pot.
+        answer_tl: Naglagay ako ng toyo, suka, at bawang sa kaldero.
+        accept: ["Naglagay ako ng toyo, suka at bawang sa kaldero"]
+        extra_words: [maglagay, asin, kawali]
+        hint: 'Already done → naglagay (mag- becomes nag-).'
+        audio: naglagay_ako_ng_toyo_suka_at_bawang_sa_kaldero
+  - id: cooking-10
+    title: Sino ang nagluto?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Sino ang nagluto?' means..."
+        answer: Who cooked?
+        distractors: [What did you cook?, Who is eating?, Where is the cook?]
+        audio: sino_ang_nagluto
+        audio_text: Sino ang nagluto?
+      - type: match
+        pairs:
+          - { tl: magluto, en: to cook }
+          - { tl: nagluto, en: cooked }
+          - { tl: nagluluto, en: cooking }
+          - { tl: magluluto, en: will cook }
+      - type: translate
+        prompt_tl: Si Lola ang nagluto ng sinigang.
+        answer_en: Grandma cooked the sinigang.
+        accept: ["It was Grandma who cooked the sinigang", "Grandma was the one who cooked the sinigang"]
+        extra_words: [cooking, adobo, mom]
+        hint: '"Si Lola ang nagluto" puts the spotlight on who did it.'
+        audio: si_lola_ang_nagluto_ng_sinigang
+      - type: fill_blank
+        sentence: "Ano ang ___ natin mamaya?"
+        translation: "What is our dish later?"
+        answer: ulam
+        options: [ulam, kalan, kutsilyo]
+        hint: '"Ulam" is whatever dish you eat with your rice.'
+      - type: listen
+        audio: kain_na_tayo
+        answer_tl: Kain na tayo
+        extra_words: [mamaya, kayo]
+      - type: translate
+        prompt_en: Who will cook tomorrow?
+        answer_tl: Sino ang magluluto bukas?
+        accept: ["Bukas, sino ang magluluto"]
+        extra_words: [nagluto, ano, mamaya]
+        audio: sino_ang_magluluto_bukas
+      - type: choice
+        prompt: "Lola calls everyone to the table. She says:"
+        answer: Kain na tayo!
+        distractors: [Magsaing ka na., Sino ang nagluto?, Tikman mo ang sabaw.]
+        audio: kain_na_tayo
+        audio_text: Kain na tayo!
+      - type: translate
+        prompt_tl: Busog na ako. Masarap ang luto mo!
+        answer_en: I'm full already. Your cooking is delicious!
+        accept: ["I'm already full. Your cooking is delicious!", "I am full already. Your cooking is delicious!", "I am already full. Your cooking is delicious!"]
+        extra_words: [hungry, food, my]
+        hint: '"luto" on its own is "cooking" (the food someone made): masarap ang luto mo.'
+        audio: busog_na_ako_masarap_ang_luto_mo
+      - type: translate
+        prompt_en: Mom cooked adobo and I cooked the rice.
+        answer_tl: Nagluto si Nanay ng adobo at nagsaing ako.
+        accept: ["Nagluto ng adobo si Nanay at nagsaing ako"]
+        extra_words: [nagluluto, kanin, kami]
+        audio: nagluto_si_nanay_ng_adobo_at_nagsaing_ako
+  - id: cooking-11
+    title: "Challenge: Kusina ni Lola"
+    xp: 15
+    exercises:
+      - type: match
+        pairs:
+          - { tl: tikman, en: to taste }
+          - { tl: ilagay, en: to put in }
+          - { tl: magsaing, en: to cook rice }
+          - { tl: maghiwa, en: to slice }
+      - type: choice
+        prompt: "Your sinigang came out far too sour. What do you say?"
+        answer: Sobrang maasim ang sinigang.
+        distractors: [Sobrang matamis ang sinigang., Masarap ang timpla ng sinigang., Kumukulo na ang sinigang.]
+        audio: sobrang_maasim_ang_sinigang
+        audio_text: Sobrang maasim ang sinigang.
+      - type: translate
+        prompt_tl: Magsasaing ako, at ikaw ang magluluto ng ulam.
+        answer_en: I will cook the rice, and you will cook the dish.
+        accept: ["I will cook rice, and you will cook the dish", "I'll cook the rice, and you'll cook the dish", "I will cook the rice and you will cook the dish"]
+        extra_words: [cooked, fried, they]
+        audio: magsasaing_ako_at_ikaw_ang_magluluto_ng_ulam
+      - type: fill_blank
+        sentence: "Kumukulo ___ ang tubig. Ilagay mo ang baboy."
+        translation: "The water is boiling now. Put in the pork."
+        answer: na
+        options: [na, pa, ba]
+      - type: listen
+        audio: tikman_mo_ang_sabaw_bago_maglagay_ng_asin
+        answer_tl: Tikman mo ang sabaw bago maglagay ng asin
+        extra_words: [pagkatapos, paminta]
+      - type: translate
+        prompt_en: Don't put sugar in the sinigang!
+        answer_tl: Huwag kang maglagay ng asukal sa sinigang!
+        extra_words: [ka, asin, ilagay]
+        audio: huwag_kang_maglagay_ng_asukal_sa_sinigang
+      - type: translate
+        prompt_tl: Naghiwa ako ng bawang at sibuyas, tapos nagprito ako ng isda.
+        answer_en: I sliced garlic and onion, then I fried fish.
+        accept: ["I sliced garlic and onions, then I fried fish", "I sliced garlic and onion, then fried fish", "I sliced the garlic and onion, then I fried the fish"]
+        extra_words: [boiled, chicken, before]
+        audio: naghiwa_ako_ng_bawang_at_sibuyas_tapos_nagprito_ako_ng_isda
+      - type: translate
+        prompt_en: Please wash the rice first, then cook the rice.
+        answer_tl: Pakihugas muna ang bigas, tapos magsaing ka.
+        accept: ["Pakihugas muna ang bigas tapos magsaing ka", "Pakihugas po muna ang bigas, tapos magsaing ka"]
+        extra_words: [kanin, bago, nagsaing]
+        audio: pakihugas_muna_ang_bigas_tapos_magsaing_ka
+      - type: translate
+        prompt_en: I will cook sinigang tomorrow because my family likes sour soup.
+        answer_tl: Magluluto ako ng sinigang bukas kasi gusto ng pamilya ko ang maasim na sabaw.
+        accept:
+          - "Magluluto ako ng sinigang bukas dahil gusto ng pamilya ko ang maasim na sabaw"
+          - "Bukas, magluluto ako ng sinigang kasi gusto ng pamilya ko ang maasim na sabaw"
+        extra_words: [nagluto, matamis, niya]
+        hint: '"gusto ng pamilya ko" = my family likes; "maasim na sabaw" = sour soup.'
+        audio: magluluto_ako_ng_sinigang_bukas_kasi_gusto_ng_pamilya_ko_ang_maasim_na_sabaw

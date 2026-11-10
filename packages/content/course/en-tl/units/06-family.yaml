@@ -191,3 +191,363 @@ lessons:
         distractors: [Kumusta ka, Paalam, Magandang gabi]
         audio: magandang_umaga_po_lola
         audio_text: Magandang umaga po, Lola.
+  - id: family-5
+    title: How old are you?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Ilang taon ka na?' means..."
+        answer: How old are you?
+        distractors: [How many siblings do you have?, What is your name?, Where are you going?]
+        audio: ilang_taon_ka_na
+        audio_text: Ilang taon ka na?
+        hint: '"ilang taon" = how many years; "na" = already.'
+      - type: match
+        pairs:
+          - { tl: taon, en: year }
+          - { tl: ilan, en: how many }
+          - { tl: lima, en: five }
+          - { tl: sampu, en: ten }
+      - type: translate
+        prompt_tl: Limang taon na ang anak ko.
+        answer_en: My child is five years old.
+        accept: ["My child is already five years old"]
+        extra_words: [ten, sister, your]
+        audio: limang_taon_na_ang_anak_ko
+      - type: fill_blank
+        sentence: "Ilang ___ ka na?"
+        translation: "How old are you?"
+        answer: taon
+        options: [taon, araw, anak]
+        audio: ilang_taon_ka_na
+      - type: listen
+        audio: sampung_taon_na_ako
+        answer_tl: Sampung taon na ako
+        extra_words: [lima, siya]
+      - type: choice
+        prompt: "A girl says 'Pitong taon na ako.' How old is she?"
+        answer: "7"
+        distractors: ["6", "8", "9"]
+        audio: pitong_taon_na_ako
+        audio_text: Pitong taon na ako.
+      - type: translate
+        prompt_tl: Ilang taon na ang kuya mo?
+        answer_en: How old is your older brother?
+        accept: ["How old is your big brother?"]
+        extra_words: [sister, my, many]
+        audio: ilang_taon_na_ang_kuya_mo
+      - type: translate
+        prompt_en: Their child is three years old.
+        answer_tl: Tatlong taon na ang anak nila.
+        extra_words: [lima, ko, ako]
+        audio: tatlong_taon_na_ang_anak_nila
+  - id: family-6
+    title: Older and younger
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: panganay, en: eldest child }
+          - { tl: bunso, en: youngest child }
+          - { tl: matanda, en: old }
+          - { tl: bata, en: young }
+      - type: choice
+        prompt: "'Panganay' means..."
+        answer: Eldest child
+        distractors: [Youngest child, Cousin, Grandchild]
+        audio: panganay
+        audio_text: Panganay
+      - type: translate
+        prompt_tl: Si Ben ang panganay sa pamilya.
+        answer_en: Ben is the eldest in the family.
+        accept: ["Ben is the oldest in the family"]
+        extra_words: [youngest, child, house]
+        audio: si_ben_ang_panganay_sa_pamilya
+      - type: fill_blank
+        sentence: "___ na si Lolo."
+        translation: "Grandpa is old now."
+        answer: Matanda
+        options: [Matanda, Bata, Maliit]
+        audio: matanda_na_si_lolo
+      - type: listen
+        audio: bata_pa_ang_kapatid_ko
+        answer_tl: Bata pa ang kapatid ko
+        extra_words: [matanda, na]
+        hint: '"pa" = still; "na" = already.'
+      - type: choice
+        prompt: "'Bata pa siya' means..."
+        answer: She is still young
+        distractors: [She is already old, She is the eldest, She has a child]
+        audio: bata_pa_siya
+        audio_text: Bata pa siya.
+      - type: translate
+        prompt_tl: Ako ang panganay at si Ana ang bunso.
+        answer_en: I am the eldest and Ana is the youngest.
+        accept: ["I'm the eldest and Ana is the youngest", "I am the oldest and Ana is the youngest"]
+        extra_words: [old, cousin, my]
+        audio: ako_ang_panganay_at_si_ana_ang_bunso
+      - type: translate
+        prompt_en: My grandmother is old now.
+        answer_tl: Matanda na ang lola ko.
+        accept: ["Matanda na si Lola"]
+        extra_words: [bata, pa, ako]
+        audio: matanda_na_ang_lola_ko
+  - id: family-7
+    title: Describing family
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: mabait, en: kind }
+          - { tl: matangkad, en: tall }
+          - { tl: maganda, en: beautiful }
+          - { tl: maliit, en: small }
+      - type: choice
+        prompt: "'Mabait' means..."
+        answer: Kind
+        distractors: [Tall, Small, Old]
+        audio: mabait
+        audio_text: Mabait
+      - type: translate
+        prompt_tl: Mabait ang lola ko.
+        answer_en: My grandmother is kind.
+        accept: ["My grandma is kind"]
+        extra_words: [tall, grandfather, your]
+        audio: mabait_ang_lola_ko
+      - type: fill_blank
+        sentence: "___ ang kuya ko."
+        translation: "My older brother is tall."
+        answer: Matangkad
+        options: [Matangkad, Maliit, Mabait]
+        audio: matangkad_ang_kuya_ko
+      - type: listen
+        audio: matangkad_ang_tatay_ko
+        answer_tl: Matangkad ang tatay ko
+        extra_words: [mabait, nanay]
+      - type: choice
+        prompt: "Your aunt is very kind. Say:"
+        answer: Mabait si Tita.
+        distractors: [Matangkad si Tita., Maliit si Tita., Matanda si Tita.]
+        audio: mabait_si_tita
+        audio_text: Mabait si Tita.
+      - type: translate
+        prompt_tl: Maganda at mabait ang ate ko.
+        answer_en: My older sister is beautiful and kind.
+        accept: ["My big sister is beautiful and kind", "My older sister is kind and beautiful"]
+        extra_words: [tall, brother, small]
+        audio: maganda_at_mabait_ang_ate_ko
+      - type: translate
+        prompt_en: My father is tall and kind.
+        answer_tl: Matangkad at mabait ang tatay ko.
+        accept: ["Mabait at matangkad ang tatay ko"]
+        extra_words: [nanay, maliit, si]
+        audio: matangkad_at_mabait_ang_tatay_ko
+  - id: family-8
+    title: Words of respect
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You can politely call a young man you don't know..."
+        answer: Kuya
+        distractors: [Lolo, Anak, Bunso]
+        audio: kuya
+        audio_text: Kuya
+        hint: '"Kuya" and "Ate" are polite even with people who aren''t family.'
+      - type: match
+        pairs:
+          - { tl: manong, en: older man (polite) }
+          - { tl: manang, en: older woman (polite) }
+          - { tl: kuya, en: older brother }
+          - { tl: ate, en: older sister }
+      - type: translate
+        prompt_tl: Salamat po, Manang.
+        answer_en: Thank you, Manang.
+        extra_words: [hello, sir, brother]
+        audio: salamat_po_manang
+        hint: '"Manang" is a respectful way to address an older woman.'
+      - type: fill_blank
+        sentence: "Kumusta po kayo, ___ Rosa?"
+        translation: "How are you, Aunt Rosa?"
+        answer: Tita
+        options: [Tita, Tito, Kuya]
+        audio: kumusta_po_kayo_tita_rosa
+      - type: listen
+        audio: magandang_hapon_po_tito
+        answer_tl: Magandang hapon po, Tito
+        extra_words: [gabi, tita]
+      - type: choice
+        prompt: "You ask an older man selling fruit where the church is. Say:"
+        answer: Manong, nasaan po ang simbahan?
+        distractors: ["Anak, nasaan ang simbahan?", "Bunso, nasaan ka?", "Ikaw, nasaan ang simbahan?"]
+        audio: manong_nasaan_po_ang_simbahan
+        audio_text: Manong, nasaan po ang simbahan?
+      - type: translate
+        prompt_tl: Ate, nasaan ang palengke?
+        answer_en: Ate, where is the market?
+        accept: ["Older sister, where is the market?", "Miss, where is the market?"]
+        extra_words: [church, who, here]
+        audio: ate_nasaan_ang_palengke
+      - type: translate
+        prompt_en: Good morning, Grandpa! (polite)
+        answer_tl: Magandang umaga po, Lolo!
+        extra_words: [gabi, lola, ka]
+        audio: magandang_umaga_po_lolo
+  - id: family-9
+    title: Whose is it?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: niya, en: his/her }
+          - { tl: namin, en: our (not you) }
+          - { tl: nila, en: their }
+          - { tl: ko, en: my }
+      - type: choice
+        prompt: "'Ang nanay ni Ana' means..."
+        answer: Ana's mom
+        distractors: [Ana is a mom, Mom and Ana, Ana's child]
+        audio: ang_nanay_ni_ana
+        audio_text: Ang nanay ni Ana
+        hint: '"ni" = of, before a person''s name (the partner of "si").'
+      - type: translate
+        prompt_tl: Si Ben ang kapatid niya.
+        answer_en: Ben is her sibling.
+        accept: ["Ben is his sibling"]
+        extra_words: [my, their, cousin]
+        audio: si_ben_ang_kapatid_niya
+      - type: fill_blank
+        sentence: "Ito ang bahay ___ Lola."
+        translation: "This is Grandma's house."
+        answer: ni
+        options: [ni, si, ng]
+        audio: ito_ang_bahay_ni_lola
+      - type: listen
+        audio: malaki_ang_pamilya_namin
+        answer_tl: Malaki ang pamilya namin
+        extra_words: [nila, maliit]
+      - type: choice
+        prompt: "You tell a friend about YOUR family's house (not the friend's). 'Our house' is..."
+        answer: Ang bahay namin
+        distractors: [Ang bahay natin, Ang bahay nila, Ang bahay niya]
+        audio: ang_bahay_namin
+        audio_text: Ang bahay namin
+        hint: '"namin" leaves out the listener, just like "kami".'
+      - type: translate
+        prompt_tl: Ano ang pangalan ng lola mo?
+        answer_en: What is your grandmother's name?
+        accept: ["What is your grandma's name?"]
+        extra_words: [mom, my, who]
+        audio: ano_ang_pangalan_ng_lola_mo
+        hint: '"ng" works like "ni" before a common noun.'
+      - type: translate
+        prompt_en: Ana is Ben's cousin.
+        answer_tl: Pinsan ni Ben si Ana.
+        accept: ["Si Ana ang pinsan ni Ben"]
+        extra_words: [ang, kapatid, niya]
+        audio: pinsan_ni_ben_si_ana
+  - id: family-10
+    title: Spouses and children
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'May asawa ka na ba?' means..."
+        answer: Are you married?
+        distractors: [Who is your spouse?, Do you have children?, Where is your spouse?]
+        audio: may_asawa_ka_na_ba
+        audio_text: May asawa ka na ba?
+        hint: 'Literally "Do you have a spouse already?"'
+      - type: translate
+        prompt_tl: Wala pa akong asawa.
+        answer_en: I don't have a spouse yet.
+        accept: ["I am not married yet", "I'm not married yet"]
+        extra_words: [already, child, she]
+        audio: wala_pa_akong_asawa
+        hint: '"wala pa" = not yet.'
+      - type: fill_blank
+        sentence: "May dalawang ___ kami."
+        translation: "We have two children."
+        answer: anak
+        options: [anak, lola, asawa]
+        audio: may_dalawang_anak_kami
+      - type: listen
+        audio: may_tatlong_apo_si_lola
+        answer_tl: May tatlong apo si Lola
+        extra_words: [anak, dalawa]
+      - type: match
+        pairs:
+          - { tl: may, en: has }
+          - { tl: wala, en: has none }
+          - { tl: asawa, en: spouse }
+          - { tl: apo, en: grandchild }
+      - type: choice
+        prompt: "Someone asks 'Ilan po ang anak ninyo?' You have one child. Reply:"
+        answer: Isa po.
+        distractors: [Wala po., Tatlo po., Opo.]
+        audio: isa_po
+        audio_text: Isa po.
+        hint: '"ninyo" is the polite "your".'
+      - type: translate
+        prompt_tl: Ilan po ang apo ninyo, Lola?
+        answer_en: How many grandchildren do you have, Grandma?
+        extra_words: [children, siblings, where]
+        audio: ilan_po_ang_apo_ninyo_lola
+      - type: translate
+        prompt_en: We have three children.
+        answer_tl: May tatlong anak kami.
+        accept: ["Tatlo ang anak namin"]
+        extra_words: [wala, dalawang, sila]
+        audio: may_tatlong_anak_kami
+  - id: family-11
+    title: Meet my family
+    xp: 10
+    exercises:
+      - type: translate
+        prompt_tl: Ito ang pamilya ko. Lima kami.
+        answer_en: This is my family. There are five of us.
+        accept: ["This is my family. We are five."]
+        extra_words: [three, their, house]
+        audio: ito_ang_pamilya_ko_lima_kami
+      - type: choice
+        prompt: "Ana is the bunso and has two older brothers. What does she call them?"
+        answer: Kuya
+        distractors: [Ate, Lolo, Tito]
+        audio: kuya
+        audio_text: Kuya
+      - type: fill_blank
+        sentence: "Siya ang ___ ko. Matanda na siya."
+        translation: "He is my grandfather. He is old now."
+        answer: lolo
+        options: [lolo, apo, bunso]
+        audio: siya_ang_lolo_ko_matanda_na_siya
+      - type: listen
+        audio: mabait_at_matangkad_ang_kuya_ko
+        answer_tl: Mabait at matangkad ang kuya ko
+        extra_words: [ate, maliit]
+      - type: translate
+        prompt_tl: Walong taon na ang bunso namin.
+        answer_en: Our youngest is eight years old.
+        accept: ["Our youngest sibling is eight years old", "Our youngest child is eight years old"]
+        extra_words: [eldest, nine, their]
+        audio: walong_taon_na_ang_bunso_namin
+      - type: match
+        pairs:
+          - { tl: panganay, en: eldest }
+          - { tl: matanda, en: old }
+          - { tl: mabait, en: kind }
+          - { tl: taon, en: year }
+      - type: translate
+        prompt_en: My older sister is ten years old.
+        answer_tl: Sampung taon na ang ate ko.
+        extra_words: [kuya, siyam, ako]
+        audio: sampung_taon_na_ang_ate_ko
+      - type: translate
+        prompt_en: I have two siblings.
+        answer_tl: May dalawang kapatid ako.
+        accept: ["Dalawa ang kapatid ko"]
+        extra_words: [wala, anak, tatlong]
+        audio: may_dalawang_kapatid_ako
+      - type: translate
+        prompt_en: This is Ben's grandmother.
+        answer_tl: Ito ang lola ni Ben.
+        extra_words: [si, lolo, ng]
+        audio: ito_ang_lola_ni_ben

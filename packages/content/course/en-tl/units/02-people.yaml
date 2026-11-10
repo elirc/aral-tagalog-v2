@@ -1,6 +1,6 @@
 id: people
 title: People
-description: Pronouns and family.
+description: Talk about family and friends, and ask where someone is from.
 tip: >-
   Tagalog pronouns don't mark gender: siya means both "he" and "she".
   Context does the work English pronouns do.
@@ -138,3 +138,461 @@ lessons:
         answer_en: She is a good friend.
         accept: ["He is a good friend", "She's a good friend", "He's a good friend"]
         extra_words: [beautiful, mom, they]
+  - id: people-4
+    title: Who is that?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Sino siya?' means..."
+        answer: Who is he/she?
+        distractors: [Where is she?, How is she?, What is her name?]
+        audio: sino_siya
+        audio_text: Sino siya?
+        hint: '"Sino" asks "who?"'
+      - type: match
+        pairs:
+          - { tl: sino, en: who }
+          - { tl: ito, en: this }
+          - { tl: siya, en: he/she }
+          - { tl: kaibigan, en: friend }
+      - type: translate
+        prompt_tl: Ito si Ana.
+        answer_en: This is Ana.
+        extra_words: [she, my, friend]
+        audio: ito_si_ana
+        hint: 'Introduce someone with "Ito si" + name.'
+      - type: fill_blank
+        sentence: "___ si Ben. Kaibigan ko siya."
+        translation: "This is Ben. He is my friend."
+        answer: Ito
+        options: [Ito, Sino, Ako]
+        audio: ito_si_ben_kaibigan_ko_siya
+      - type: listen
+        audio: sino_siya
+        answer_tl: Sino siya
+        extra_words: [ito, si]
+      - type: choice
+        prompt: "You point at a photo of your mom. Say 'This is my mom.'"
+        answer: Ito ang nanay ko.
+        distractors: [Sino ang nanay ko?, Siya si nanay ko., Ako ang nanay ko.]
+        audio: ito_ang_nanay_ko
+        audio_text: Ito ang nanay ko.
+        hint: 'Use "si" before a name, "ang" before a word like nanay.'
+      - type: translate
+        prompt_en: This is Maria.
+        answer_tl: Ito si Maria.
+        accept: ["Si Maria ito.", "Ito po si Maria."]
+        extra_words: [siya, sino, ang]
+        audio: ito_si_maria
+  - id: people-5
+    title: My friends
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Mga' before a noun makes it..."
+        answer: Plural
+        distractors: [Polite, A question, Past tense]
+        hint: '"mga" (said "ma-NGA") makes a noun plural: mga kaibigan = friends.'
+      - type: match
+        pairs:
+          - { tl: kaibigan, en: friend }
+          - { tl: mga kaibigan, en: friends }
+          - { tl: anak, en: child }
+          - { tl: mga anak, en: children }
+      - type: translate
+        prompt_tl: Mga kaibigan ko sila.
+        answer_en: They are my friends.
+        accept: ["They're my friends"]
+        extra_words: [she, family, is]
+        audio: mga_kaibigan_ko_sila
+      - type: fill_blank
+        sentence: "Sila ang ___ kapatid ko."
+        translation: "They are my siblings."
+        answer: mga
+        options: [mga, si, ng]
+        audio: sila_ang_mga_kapatid_ko
+      - type: choice
+        prompt: "You and Ben are friends. Tell someone else: 'We (Ben and I) are friends.'"
+        answer: Magkaibigan kami.
+        distractors: [Magkaibigan tayo., Magkaibigan sila., Kaibigan ko siya.]
+        audio: magkaibigan_kami
+        audio_text: Magkaibigan kami.
+        hint: '"kami" = we, but not the person you are talking to.'
+      - type: listen
+        audio: magkaibigan_kami
+        answer_tl: Magkaibigan kami
+        extra_words: [tayo, sila]
+      - type: translate
+        prompt_en: They are my friends.
+        answer_tl: Mga kaibigan ko sila.
+        accept: ["Sila ang mga kaibigan ko.", "Kaibigan ko sila."]
+        extra_words: [siya, kami, si]
+        audio: mga_kaibigan_ko_sila
+  - id: people-6
+    title: Where are you from?
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Taga-saan ka?' means..."
+        answer: Where are you from?
+        distractors: [Where are you going?, Who are you?, How are you?]
+        audio: taga_saan_ka
+        audio_text: Taga-saan ka?
+        hint: '"taga-" + a place = from that place.'
+      - type: match
+        pairs:
+          - { tl: Maynila, en: Manila }
+          - { tl: Amerika, en: America }
+          - { tl: taga-saan, en: from where? }
+          - { tl: taga-Cebu, en: from Cebu }
+      - type: translate
+        prompt_tl: Taga-Maynila ako.
+        answer_en: I am from Manila.
+        accept: ["I'm from Manila"]
+        extra_words: [you, where, Cebu]
+        audio: taga_maynila_ako
+      - type: fill_blank
+        sentence: "Taga-___ ka?"
+        translation: "Where are you from?"
+        answer: saan
+        options: [saan, sino, ano]
+        audio: taga_saan_ka
+      - type: listen
+        audio: taga_cebu_siya
+        answer_tl: Taga-Cebu siya
+        accept: ["Taga Cebu siya"]
+        extra_words: [ako, Maynila]
+      - type: choice
+        prompt: "Ask an older person where they are from:"
+        answer: Taga-saan po kayo?
+        distractors: [Taga-saan ka?, Sino po kayo?, Kumusta po kayo?]
+        audio: taga_saan_po_kayo
+        audio_text: Taga-saan po kayo?
+      - type: translate
+        prompt_en: I am from Manila.
+        answer_tl: Taga-Maynila ako.
+        accept: ["Taga Maynila ako", "Taga-Maynila po ako", "Taga Maynila po ako"]
+        extra_words: [ka, saan, siya]
+        audio: taga_maynila_ako
+  - id: people-7
+    title: Filipino or American?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Pilipino, en: Filipino (man) }
+          - { tl: Pilipina, en: Filipina (woman) }
+          - { tl: Amerikano, en: American (man) }
+          - { tl: Amerikana, en: American (woman) }
+      - type: choice
+        prompt: "'Pilipina ako' — who is speaking?"
+        answer: A Filipino woman
+        distractors: [A Filipino man, An American man, An American woman]
+        audio: pilipina_ako
+        audio_text: Pilipina ako.
+        hint: 'Many nationality words end in -o for men and -a for women, as in Spanish.'
+      - type: choice
+        prompt: "'Amerikano ka ba?' means..."
+        answer: Are you American?
+        distractors: [You are American., Where is America?, I am American.]
+        audio: amerikano_ka_ba
+        audio_text: Amerikano ka ba?
+        hint: '"ba" turns a statement into a yes/no question.'
+      - type: fill_blank
+        sentence: "Pilipino ka ___?"
+        translation: "Are you Filipino?"
+        answer: ba
+        options: [ba, si, ang]
+        audio: pilipino_ka_ba
+      - type: listen
+        audio: amerikana_siya
+        answer_tl: Amerikana siya
+        extra_words: [ako, Pilipina]
+      - type: translate
+        prompt_tl: Oo, Pilipino ako. Taga-Maynila ako.
+        answer_en: Yes, I am Filipino. I am from Manila.
+        accept: ["Yes, I'm Filipino. I'm from Manila."]
+        extra_words: ["no", you, American]
+        audio: oo_pilipino_ako_taga_maynila_ako
+      - type: translate
+        prompt_en: Are you American?
+        answer_tl: Amerikano ka ba?
+        accept: ["Amerikana ka ba?", "Amerikano po ba kayo?", "Amerikana po ba kayo?"]
+        extra_words: [ako, siya, Pilipino]
+        audio: amerikano_ka_ba
+  - id: people-8
+    title: Do you speak English?
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: Ingles, en: English }
+          - { tl: nagsasalita, en: speaks }
+          - { tl: kaunti lang, en: just a little }
+          - { tl: nag-aaral, en: studying }
+      - type: choice
+        prompt: "'Nagsasalita ka ba ng Ingles?' means..."
+        answer: Do you speak English?
+        distractors: [Are you English?, Do you study English?, Where is England?]
+        audio: nagsasalita_ka_ba_ng_ingles
+        audio_text: Nagsasalita ka ba ng Ingles?
+        hint: '"ng" links the verb to the language: nagsasalita ng Tagalog.'
+      - type: translate
+        prompt_tl: Nag-aaral ako ng Tagalog.
+        answer_en: I am studying Tagalog.
+        accept: ["I'm studying Tagalog", "I am learning Tagalog", "I'm learning Tagalog", "I study Tagalog"]
+        extra_words: [English, speak, you]
+        audio: nag_aaral_ako_ng_tagalog
+      - type: fill_blank
+        sentence: "Nagsasalita ako ___ Ingles."
+        translation: "I speak English."
+        answer: ng
+        options: [ng, si, ba]
+        audio: nagsasalita_ako_ng_ingles
+      - type: choice
+        prompt: "Someone asks if you speak Tagalog. You know only a bit. Reply:"
+        answer: Kaunti lang.
+        distractors: [Walang anuman., Taga-Maynila ako., Pilipino ako.]
+        audio: kaunti_lang
+        audio_text: Kaunti lang.
+        hint: 'You will also hear "konti lang".'
+      - type: listen
+        audio: nagsasalita_ako_ng_ingles
+        answer_tl: Nagsasalita ako ng Ingles
+        extra_words: [ba, Tagalog]
+      - type: translate
+        prompt_en: Do you speak English?
+        answer_tl: Nagsasalita ka ba ng Ingles?
+        accept: ["Nagsasalita po ba kayo ng Ingles?"]
+        extra_words: [ako, Tagalog, si]
+        audio: nagsasalita_ka_ba_ng_ingles
+  - id: people-9
+    title: Please say it again
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "You didn't catch what someone said. Politely ask them to repeat:"
+        answer: Pakiulit po.
+        distractors: [Paalam po., Tuloy po kayo., Salamat po.]
+        audio: pakiulit_po
+        audio_text: Pakiulit po.
+        hint: '"paki-" makes a polite request: ulit (again) → pakiulit (please repeat).'
+      - type: match
+        pairs:
+          - { tl: pakiulit po, en: please repeat }
+          - { tl: dahan-dahan lang po, en: "slowly, please" }
+          - { tl: hindi ko naiintindihan, en: "I don't understand" }
+          - { tl: kaunti lang, en: just a little }
+      - type: translate
+        prompt_tl: Hindi ko naiintindihan.
+        answer_en: I don't understand.
+        accept: ["I do not understand"]
+        extra_words: [know, you, speak]
+        audio: hindi_ko_naiintindihan
+      - type: fill_blank
+        sentence: "Dahan-___ lang po."
+        translation: "Slowly, please."
+        answer: dahan
+        options: [dahan, kaunti, ulit]
+        audio: dahan_dahan_lang_po
+        hint: 'Doubling a word with a hyphen: dahan-dahan = slowly, gently.'
+      - type: listen
+        audio: dahan_dahan_lang_po
+        answer_tl: Dahan-dahan lang po
+        extra_words: [kaunti, ulit]
+        grading: { hyphens: true }
+      - type: translate
+        prompt_tl: Pasensya na, hindi ko naiintindihan.
+        answer_en: Sorry, I don't understand.
+        accept: ["I'm sorry, I don't understand", "Sorry, I do not understand", "I am sorry, I do not understand"]
+        extra_words: [know, please, again]
+        audio: pasensya_na_hindi_ko_naiintindihan
+      - type: translate
+        prompt_en: Slowly, please. (polite)
+        answer_tl: Dahan-dahan lang po.
+        accept: ["Dahan-dahan po."]
+        extra_words: [ulit, kaunti, ako]
+        grading: { hyphens: true }
+        audio: dahan_dahan_lang_po
+      - type: translate
+        prompt_en: I don't understand.
+        answer_tl: Hindi ko naiintindihan.
+        accept: ["Hindi ko po naiintindihan."]
+        extra_words: [ako, po, ka]
+        audio: hindi_ko_naiintindihan
+  - id: people-10
+    title: "Challenge: Meeting new people"
+    xp: 15
+    exercises:
+      - type: choice
+        prompt: "A new classmate says 'Taga-Cebu ako. Ikaw?' — she wants to know..."
+        answer: Where you are from
+        distractors: [Your name, How you are, If you speak English]
+        audio: taga_cebu_ako_ikaw
+        audio_text: Taga-Cebu ako. Ikaw?
+      - type: translate
+        prompt_tl: Ito si Ben. Amerikano siya.
+        answer_en: This is Ben. He is American.
+        accept: ["This is Ben. He's American."]
+        extra_words: [she, from, my]
+        audio: ito_si_ben_amerikano_siya
+      - type: match
+        pairs:
+          - { tl: sino, en: who }
+          - { tl: taga-saan, en: from where? }
+          - { tl: mga, en: (plural marker) }
+          - { tl: kaunti, en: a little }
+      - type: fill_blank
+        sentence: "___ ang pangalan mo? Taga-saan ka?"
+        translation: "What is your name? Where are you from?"
+        answer: Ano
+        options: [Ano, Sino, Ito]
+        audio: ano_ang_pangalan_mo_taga_saan_ka
+        hint: 'Tagalog asks "what" (ano) your name is, not "who".'
+      - type: listen
+        audio: magkaibigan_kami_taga_maynila_kami
+        answer_tl: Magkaibigan kami. Taga-Maynila kami.
+        accept: ["Magkaibigan kami. Taga Maynila kami."]
+        extra_words: [tayo, sila]
+      - type: translate
+        prompt_tl: Pilipina si Ana at nagsasalita siya ng Ingles.
+        answer_en: Ana is Filipina and she speaks English.
+        accept: ["Ana is a Filipina and she speaks English", "Ana is Filipino and she speaks English"]
+        extra_words: [American, studies, Tagalog]
+        audio: pilipina_si_ana_at_nagsasalita_siya_ng_ingles
+        hint: '"at" = and'
+      - type: choice
+        prompt: "Someone is speaking too fast for you. Say:"
+        answer: Dahan-dahan lang po.
+        distractors: [Tuloy po kayo., Maraming salamat po., Taga-saan po kayo?]
+        audio: dahan_dahan_lang_po
+        audio_text: Dahan-dahan lang po.
+      - type: translate
+        prompt_en: Who is she? Is she Filipino?
+        answer_tl: Sino siya? Pilipina ba siya?
+        accept: ["Sino siya? Pilipino ba siya?"]
+        extra_words: [ito, ka, ako]
+        audio: sino_siya_pilipina_ba_siya
+      - type: translate
+        prompt_en: I'm from Manila and I'm studying Tagalog.
+        answer_tl: Taga-Maynila ako at nag-aaral ako ng Tagalog.
+        accept: ["Taga Maynila ako at nag-aaral ako ng Tagalog.", "Taga-Maynila ako at nag-aaral ng Tagalog.", "Taga Maynila ako at nag-aaral ng Tagalog."]
+        extra_words: [ka, siya, Ingles]
+        audio: taga_maynila_ako_at_nag_aaral_ako_ng_tagalog
+  - id: people-11
+    title: This is my family
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: ang nanay ko, en: my mom }
+          - { tl: ang tatay mo, en: your dad }
+          - { tl: mga kapatid, en: siblings }
+          - { tl: lolo at lola, en: grandfather and grandmother }
+      - type: choice
+        prompt: "'Sino ang lalaki?' — 'Tatay ko siya.' Who is the man?"
+        answer: The speaker's dad
+        distractors: [The speaker's grandfather, The speaker's friend, The speaker's sibling]
+        audio: sino_ang_lalaki_tatay_ko_siya
+        audio_text: Sino ang lalaki? Tatay ko siya.
+      - type: translate
+        prompt_tl: Ito ang lolo at lola ko.
+        answer_en: This is my grandfather and grandmother.
+        accept: ["These are my grandfather and grandmother", "This is my grandpa and grandma", "These are my grandpa and grandma", "These are my grandparents", "This is my lolo and lola"]
+        extra_words: [mom, friend, your]
+        audio: ito_ang_lolo_at_lola_ko
+      - type: fill_blank
+        sentence: "Anak ko ___ Ben."
+        translation: "Ben is my child."
+        answer: si
+        options: [si, ang, mga]
+        audio: anak_ko_si_ben
+        hint: 'Use "si" before a name, "ang" before a word like anak.'
+      - type: listen
+        audio: maganda_ang_lola_ko
+        answer_tl: Maganda ang lola ko
+        extra_words: [lolo, mo]
+      - type: match
+        pairs:
+          - { tl: kaibigan, en: friend }
+          - { tl: magkaibigan, en: friends (with each other) }
+          - { tl: kapatid, en: sibling }
+          - { tl: magkapatid, en: siblings (of each other) }
+      - type: fill_blank
+        sentence: "Kapatid ko si Ana. Magkapatid ___."
+        translation: "Ana is my sibling. We are siblings."
+        answer: kami
+        options: [kami, sila, siya]
+        audio: kapatid_ko_si_ana_magkapatid_kami
+        hint: '"mag-" + kapatid = two people who are siblings of each other, just like magkaibigan.'
+      - type: translate
+        prompt_en: They are siblings.
+        answer_tl: Magkapatid sila.
+        extra_words: [kami, magkaibigan, si]
+        audio: magkapatid_sila
+      - type: translate
+        prompt_en: This is my family.
+        answer_tl: Ito ang pamilya ko.
+        accept: ["Ito po ang pamilya ko.", "Pamilya ko ito."]
+        extra_words: [si, sino, mo]
+        audio: ito_ang_pamilya_ko
+        hint: '"ang" comes before a word like pamilya; "ko" after it means "my".'
+  - id: people-12
+    title: Getting to know you
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: taga-Amerika, en: from America }
+          - { tl: Amerikano, en: American (man) }
+          - { tl: Pilipina, en: Filipina (woman) }
+          - { tl: taga-Maynila, en: from Manila }
+      - type: choice
+        prompt: "'Taga-Amerika ang kaibigan ko' means..."
+        answer: My friend is from America
+        distractors: [My friend is going to America, I am from America, My friend speaks English]
+        audio: taga_amerika_ang_kaibigan_ko
+        audio_text: Taga-Amerika ang kaibigan ko.
+      - type: translate
+        prompt_tl: Nag-aaral ng Ingles ang kapatid ko.
+        answer_en: My sibling is studying English.
+        accept: ["My sibling studies English", "My sibling is learning English", "My brother is studying English", "My sister is studying English", "My brother is learning English", "My sister is learning English"]
+        extra_words: [friend, speaks, Tagalog]
+        audio: nag_aaral_ng_ingles_ang_kapatid_ko
+      - type: fill_blank
+        sentence: "Taga-Cebu ___ lola ko."
+        translation: "My grandmother is from Cebu."
+        answer: ang
+        options: [ang, si, ng]
+        audio: taga_cebu_ang_lola_ko
+      - type: listen
+        audio: magkapatid_sila_taga_cebu_sila
+        answer_tl: Magkapatid sila. Taga-Cebu sila.
+        accept: ["Magkapatid sila. Taga Cebu sila."]
+        extra_words: [kami, Maynila]
+      - type: fill_blank
+        sentence: "Nagsasalita ___ sila ng Tagalog?"
+        translation: "Do they speak Tagalog?"
+        answer: ba
+        options: [ba, si, ang]
+        audio: nagsasalita_ba_sila_ng_tagalog
+        hint: '"ba" comes right after the first word, before "sila".'
+      - type: fill_blank
+        sentence: "Amerikano ang tatay ko at Pilipina ang ___ ko."
+        translation: "My dad is American and my mom is Filipina."
+        answer: nanay
+        options: [nanay, lolo, tatay]
+        audio: amerikano_ang_tatay_ko_at_pilipina_ang_nanay_ko
+      - type: translate
+        prompt_en: My friend is from Cebu.
+        answer_tl: Taga-Cebu ang kaibigan ko.
+        accept: ["Taga Cebu ang kaibigan ko."]
+        extra_words: [si, siya, Maynila]
+        audio: taga_cebu_ang_kaibigan_ko
+      - type: translate
+        prompt_en: My mom speaks Tagalog and English.
+        answer_tl: Nagsasalita ng Tagalog at Ingles ang nanay ko.
+        accept: ["Nagsasalita ang nanay ko ng Tagalog at Ingles.", "Nagsasalita ng Ingles at Tagalog ang nanay ko.", "Nagsasalita ang nanay ko ng Ingles at Tagalog."]
+        extra_words: [siya, ba, tatay]
+        audio: nagsasalita_ng_tagalog_at_ingles_ang_nanay_ko
+        hint: '"ng" comes before the languages, "ang" before the person who speaks them.'

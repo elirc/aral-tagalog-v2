@@ -218,6 +218,7 @@ lessons:
       - type: translate
         prompt_en: She is singing while cooking.
         answer_tl: Kumakanta siya habang nagluluto.
+        accept: ["Habang nagluluto, kumakanta siya"]
         extra_words: [kung, sumasayaw, kumakain]
         audio: kumakanta_siya_habang_nagluluto
       - type: fill_blank
@@ -245,5 +246,359 @@ lessons:
       - type: translate
         prompt_en: We are eating and drinking at the party while they are singing.
         answer_tl: Kumakain at umiinom kami sa handaan habang kumakanta sila.
+        accept: ["Habang kumakanta sila, kumakain at umiinom kami sa handaan"]
         extra_words: [kung, pero, sumasayaw]
         audio: kumakain_at_umiinom_kami_sa_handaan_habang_kumakanta_sila
+  - id: linkers-5
+    title: Ends in -n? Just add -g
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Which is correct for 'strong rain'?"
+        answer: ulang malakas
+        distractors: [ulan na malakas, ulanng malakas, malakas ulan]
+        audio: ulang_malakas
+        audio_text: Ulang malakas
+      - type: match
+        pairs:
+          - { tl: ulang malakas, en: strong rain }
+          - { tl: hanging malamig, en: cold wind }
+          - { tl: kaning mainit, en: hot rice }
+          - { tl: masarap na ulam, en: delicious dish }
+      - type: fill_blank
+        sentence: "Ayaw ko ng ___ malamig."
+        translation: "I don't like cold wind."
+        answer: hanging
+        options: [hanging, hangin, hangin na]
+        hint: '"hangin" ends in -n, so just add -g: hanging malamig.'
+      - type: translate
+        prompt_tl: Gusto ko ng kaning mainit.
+        answer_en: I want hot rice.
+        accept: ["I like hot rice", "I want some hot rice"]
+        extra_words: [cold, bread, soup]
+        audio: gusto_ko_ng_kaning_mainit
+      - type: listen
+        audio: malakas_ang_ulan_at_malamig_ang_hangin
+        answer_tl: Malakas ang ulan at malamig ang hangin
+        extra_words: [mainit, bagyo]
+      - type: choice
+        prompt: "'Hanging malamig' means..."
+        answer: Cold wind
+        distractors: [Strong wind, Cold rain, Hot air]
+        audio: hanging_malamig
+        audio_text: Hanging malamig
+      - type: translate
+        prompt_en: There was strong rain yesterday.
+        answer_tl: May ulang malakas kahapon.
+        accept: ["May malakas na ulan kahapon"]
+        extra_words: [hangin, mainit, na]
+        audio: may_ulang_malakas_kahapon
+      - type: translate
+        prompt_en: I ate hot rice and delicious fish.
+        answer_tl: Kumain ako ng kaning mainit at masarap na isda.
+        accept: ["Kumain ako ng mainit na kanin at masarap na isda"]
+        extra_words: [malamig, manok, hanging]
+        audio: kumain_ako_ng_kaning_mainit_at_masarap_na_isda
+  - id: linkers-6
+    title: Flip it around
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Malaking bahay' and 'bahay na malaki' are..."
+        answer: Both correct — the same meaning
+        distractors: [Different meanings, Only the first is correct, Only the second is correct]
+      - type: match
+        pairs:
+          - { tl: bahay na malaki, en: big house }
+          - { tl: asong maliit, en: small dog }
+          - { tl: pusang matakaw, en: greedy cat }
+          - { tl: bulaklak na maganda, en: beautiful flower }
+      - type: fill_blank
+        sentence: "Bumili kami ng bahay ___ malaki."
+        translation: "We bought a big house."
+        answer: na
+        options: [na, ng, at]
+      - type: translate
+        prompt_tl: Maganda ang bulaklak na dilaw.
+        answer_en: The yellow flower is beautiful.
+        extra_words: [red, house, small]
+        audio: maganda_ang_bulaklak_na_dilaw
+      - type: listen
+        audio: may_asong_maliit_sila
+        answer_tl: May asong maliit sila
+        extra_words: [pusang, malaki]
+      - type: choice
+        prompt: "Which says 'the greedy cat'?"
+        answer: ang pusang matakaw
+        distractors: [ang pusa matakaw, ang pusa ng matakaw, ang matakaw pusa]
+        audio: ang_pusang_matakaw
+        audio_text: Ang pusang matakaw
+      - type: translate
+        prompt_en: They have a small dog and a greedy cat.
+        answer_tl: May asong maliit at pusang matakaw sila.
+        accept: ["May maliit na aso at matakaw na pusa sila"]
+        extra_words: [malaki, kabayo, na]
+        audio: may_asong_maliit_at_pusang_matakaw_sila
+      - type: translate
+        prompt_en: The small dog is sleeping in the big house.
+        answer_tl: Natutulog ang asong maliit sa bahay na malaki.
+        accept: ["Natutulog ang maliit na aso sa malaking bahay"]
+        extra_words: [pusang, kama, malaking]
+        audio: natutulog_ang_asong_maliit_sa_bahay_na_malaki
+  - id: linkers-7
+    title: Linkers on little words
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "Why does 'ko' become 'kong' in 'Gusto kong kumanta'?"
+        answer: The linker -ng attaches to it before a verb
+        distractors: [It is plural, It marks past tense, It makes it a question]
+        audio: gusto_kong_kumanta
+        audio_text: Gusto kong kumanta.
+      - type: match
+        pairs:
+          - { tl: gusto kong, en: I want to }
+          - { tl: pwede bang, en: may I }
+          - { tl: huwag kang, en: don't you }
+          - { tl: sabik akong, en: I am excited to }
+      - type: fill_blank
+        sentence: "Gusto ___ matulog; pagod na ako."
+        translation: "I want to sleep; I'm tired now."
+        answer: kong
+        options: [kong, ko, akong]
+      - type: translate
+        prompt_tl: Sabik akong manood ng pelikula.
+        answer_en: I am excited to watch a movie.
+        accept: ["I'm excited to watch a movie", "I am excited to watch the movie", "I'm excited to watch the movie"]
+        extra_words: [tired, sing, book]
+        audio: sabik_akong_manood_ng_pelikula
+      - type: listen
+        audio: pwede_bang_maglaro_dito
+        answer_tl: Pwede bang maglaro dito
+        extra_words: [umupo, kang]
+      - type: fill_blank
+        sentence: "Pwede ba ___ sumayaw?"
+        translation: "Can we dance?"
+        answer: tayong
+        options: [tayong, tayo, kayong]
+      - type: translate
+        prompt_en: I want to buy a beautiful flower.
+        answer_tl: Gusto kong bumili ng magandang bulaklak.
+        extra_words: [kang, kumain, bahay]
+        audio: gusto_kong_bumili_ng_magandang_bulaklak
+      - type: translate
+        prompt_en: May we sing at the party?
+        answer_tl: Pwede ba kaming kumanta sa handaan?
+        accept: ["Pwede bang kumanta kami sa handaan", "Pwede ba tayong kumanta sa handaan"]
+        extra_words: [bang, sumayaw, bahay]
+        audio: pwede_ba_kaming_kumanta_sa_handaan
+        hint: '"ba" + "kami" + linker: "Pwede ba kaming..."'
+  - id: linkers-8
+    title: Kapag — whenever
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kapag' means..."
+        answer: When / whenever
+        distractors: [If only, Because, While]
+        audio: kapag
+        audio_text: Kapag
+      - type: match
+        pairs:
+          - { tl: kapag, en: whenever }
+          - { tl: kung, en: if }
+          - { tl: habang, en: while }
+          - { tl: kasi, en: because }
+      - type: translate
+        prompt_tl: Kapag umuulan, nagbabasa ako ng libro.
+        answer_en: When it rains, I read a book.
+        accept: ["Whenever it rains, I read a book", "When it is raining, I read a book"]
+        extra_words: [if, cooking, sing]
+        audio: kapag_umuulan_nagbabasa_ako_ng_libro
+        hint: '"kapag" = when/whenever something regularly happens; "kung" = if it might not.'
+      - type: fill_blank
+        sentence: "___ mainit, pumupunta kami sa dagat."
+        translation: "Whenever it's hot, we go to the sea."
+        answer: Kapag
+        options: [Kapag, Habang, Pero]
+      - type: listen
+        audio: kapag_malamig_umiinom_ako_ng_kape
+        answer_tl: Kapag malamig, umiinom ako ng kape
+        extra_words: [kung, mainit]
+      - type: choice
+        prompt: "'Kapag may pera ako, bumibili ako ng libro' means..."
+        answer: Whenever I have money, I buy a book
+        distractors:
+          - If I had money, I would buy a book
+          - I bought a book yesterday
+          - While I have money, I read a book
+        audio: kapag_may_pera_ako_bumibili_ako_ng_libro
+        audio_text: Kapag may pera ako, bumibili ako ng libro.
+      - type: translate
+        prompt_en: Whenever I am hungry, I eat rice.
+        answer_tl: Kapag gutom ako, kumakain ako ng kanin.
+        accept: ["Kumakain ako ng kanin kapag gutom ako"]
+        extra_words: [kung, uhaw, tubig]
+        audio: kapag_gutom_ako_kumakain_ako_ng_kanin
+      - type: translate
+        prompt_en: Whenever it rains, we don't go to the market.
+        answer_tl: Kapag umuulan, hindi kami pumupunta sa palengke.
+        accept: ["Hindi kami pumupunta sa palengke kapag umuulan"]
+        extra_words: [kung, mainit, tindahan]
+        audio: kapag_umuulan_hindi_kami_pumupunta_sa_palengke
+  - id: linkers-9
+    title: Kaya — so
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Kaya' (as a connector) means..."
+        answer: "So / that's why"
+        distractors: [Because, Maybe, While]
+        audio: kaya
+        audio_text: Kaya
+      - type: match
+        pairs:
+          - { tl: kaya, en: so }
+          - { tl: kasi, en: because }
+          - { tl: kapag, en: whenever }
+          - { tl: kung, en: if }
+      - type: translate
+        prompt_tl: Pagod ako, kaya matutulog na ako.
+        answer_en: I'm tired, so I'm going to sleep now.
+        accept: ["I am tired, so I will sleep now", "I'm tired, so I will sleep now", "I am tired, so I'm going to sleep now"]
+        extra_words: [because, hungry, eat]
+        audio: pagod_ako_kaya_matutulog_na_ako
+        hint: '"kasi" gives the reason; "kaya" gives the result.'
+      - type: fill_blank
+        sentence: "Mahal ang sapatos, ___ hindi ako bumili."
+        translation: "The shoes are expensive, so I didn't buy them."
+        answer: kaya
+        options: [kaya, kasi, o]
+      - type: listen
+        audio: umuulan_kaya_malungkot_ako
+        answer_tl: Umuulan, kaya malungkot ako
+        extra_words: [kasi, masaya]
+      - type: choice
+        prompt: "'Malakas ang ulan, kaya hindi kami pupunta sa simbahan' means..."
+        answer: "The rain is strong, so we won't go to church"
+        distractors:
+          - "The rain is strong because we won't go to church"
+          - "It might rain, and we will still go to church"
+          - "The rain stopped, so we went to church"
+        audio: malakas_ang_ulan_kaya_hindi_kami_pupunta_sa_simbahan
+        audio_text: Malakas ang ulan, kaya hindi kami pupunta sa simbahan.
+      - type: translate
+        prompt_en: The food is delicious, so the guests are happy.
+        answer_tl: Masarap ang handa, kaya masaya ang mga bisita.
+        accept: ["Masaya ang mga bisita kasi masarap ang handa"]
+        extra_words: [kasi, malungkot, regalo]
+        audio: masarap_ang_handa_kaya_masaya_ang_mga_bisita
+      - type: translate
+        prompt_en: I don't have money, so I am not buying the dress.
+        answer_tl: Wala akong pera, kaya hindi ako bibili ng bestida.
+        accept: ["Hindi ako bibili ng bestida kasi wala akong pera"]
+        extra_words: [may, kasi, sapatos]
+        audio: wala_akong_pera_kaya_hindi_ako_bibili_ng_bestida
+  - id: linkers-10
+    title: Tapos — little stories
+    xp: 10
+    exercises:
+      - type: choice
+        prompt: "'Tapos' (between two sentences) means..."
+        answer: Then / after that
+        distractors: [Before that, Because, Or]
+        audio: tapos
+        audio_text: Tapos
+      - type: match
+        pairs:
+          - { tl: tapos, en: then }
+          - { tl: habang, en: while }
+          - { tl: kapag, en: whenever }
+          - { tl: kaya, en: so }
+      - type: translate
+        prompt_tl: Kumain kami, tapos naglakad kami sa hardin.
+        answer_en: We ate, then we walked in the garden.
+        accept: ["We ate, and then we walked in the garden", "We ate then walked in the garden"]
+        extra_words: [while, cooked, house]
+        audio: kumain_kami_tapos_naglakad_kami_sa_hardin
+      - type: fill_blank
+        sentence: "Nagluto ako, ___ kumain kami."
+        translation: "I cooked, then we ate."
+        answer: tapos
+        options: [tapos, habang, kung]
+      - type: listen
+        audio: bumili_ako_ng_tinapay_tapos_umuwi_ako
+        answer_tl: Bumili ako ng tinapay, tapos umuwi ako
+        extra_words: [naglakad, kape]
+      - type: choice
+        prompt: "You cooked first, then you ate. Which is right?"
+        answer: "Nagluto ako, tapos kumain ako."
+        distractors:
+          - "Kumain ako, tapos nagluto ako."
+          - "Nagluto ako habang kumain ako."
+          - "Kumain ako, kaya nagluto ako."
+        audio: nagluto_ako_tapos_kumain_ako
+        audio_text: Nagluto ako, tapos kumain ako.
+      - type: translate
+        prompt_en: We sang while they were dancing.
+        answer_tl: Kumanta kami habang sumasayaw sila.
+        accept: ["Habang sumasayaw sila, kumanta kami"]
+        extra_words: [tapos, naglakad, kumain]
+        audio: kumanta_kami_habang_sumasayaw_sila
+      - type: translate
+        prompt_en: We walked to church, then we ate at the karinderya.
+        answer_tl: Naglakad kami papunta sa simbahan, tapos kumain kami sa karinderya.
+        accept: ["Naglakad kami papunta sa simbahan, tapos kumain sa karinderya"]
+        extra_words: [habang, palengke, umuwi]
+        audio: naglakad_kami_papunta_sa_simbahan_tapos_kumain_kami_sa_karinderya
+  - id: linkers-11
+    title: Connector challenge
+    xp: 10
+    exercises:
+      - type: match
+        pairs:
+          - { tl: o, en: or }
+          - { tl: kasi, en: because }
+          - { tl: habang, en: while }
+          - { tl: kung, en: if }
+      - type: choice
+        prompt: "'Gusto kong sumayaw pero mahiyain ako' means..."
+        answer: I want to dance but I am shy
+        distractors: [I want to sing because I am shy, I danced while I was shy, I want to dance so I am brave]
+        audio: gusto_kong_sumayaw_pero_mahiyain_ako
+        audio_text: Gusto kong sumayaw pero mahiyain ako.
+      - type: fill_blank
+        sentence: "Kumakanta siya ___ naglilinis ng bahay."
+        translation: "She sings while cleaning the house."
+        answer: habang
+        options: [habang, kaya, o]
+      - type: translate
+        prompt_tl: Kapag Linggo, pumupunta kami sa simbahan, tapos kumakain kami sa labas.
+        answer_en: On Sundays, we go to church, then we eat outside.
+        accept: ["Whenever it is Sunday, we go to church, then we eat outside", "On Sunday, we go to church, then we eat outside"]
+        extra_words: [while, market, cook]
+        audio: kapag_linggo_pumupunta_kami_sa_simbahan_tapos_kumakain_kami_sa_labas
+      - type: listen
+        audio: kung_may_pera_ako_bibili_ako_ng_gitara
+        answer_tl: Kung may pera ako, bibili ako ng gitara
+        extra_words: [kapag, kaya]
+      - type: fill_blank
+        sentence: "Pagod ako ___ masaya ako kasi maganda ang handaan."
+        translation: "I'm tired but I'm happy because the party is beautiful."
+        answer: pero
+        options: [pero, kaya, kung]
+      - type: translate
+        prompt_en: If you are hungry, eat rice and drink water.
+        answer_tl: Kung gutom ka, kumain ka ng kanin at uminom ka ng tubig.
+        accept:
+          - "Kung gutom ka, kumain ka ng kanin at uminom ng tubig"
+          - "Kumain ka ng kanin at uminom ka ng tubig kung gutom ka"
+          - "Kumain ka ng kanin at uminom ng tubig kung gutom ka"
+        extra_words: [kapag, uhaw, gatas]
+        audio: kung_gutom_ka_kumain_ka_ng_kanin_at_uminom_ka_ng_tubig
+      - type: translate
+        prompt_en: Whenever it rains, I read while drinking coffee.
+        answer_tl: Kapag umuulan, nagbabasa ako habang umiinom ng kape.
+        accept: ["Nagbabasa ako habang umiinom ng kape kapag umuulan"]
+        extra_words: [kung, tapos, gatas]
+        audio: kapag_umuulan_nagbabasa_ako_habang_umiinom_ng_kape
