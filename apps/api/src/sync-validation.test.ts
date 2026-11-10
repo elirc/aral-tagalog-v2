@@ -162,3 +162,53 @@ describe("eventSchema: field bounds", () => {
     expect(eventSchema.safeParse(goal(200)).success).toBe(true);
   });
 });
+
+describe("eventSchema: hearts_lost.exerciseId", () => {
+  const lost = (over: Record<string, unknown> = {}) => ({
+    id: uuid(7),
+    type: "hearts_lost",
+    occurredAt: NOW - 500,
+    count: 1,
+    ...over,
+  });
+
+  it("carries exerciseId through sanitizeEvents to the stored event", () => {
+    // zod strips unknown keys: if the field were missing from the schema the
+    // event would still be accepted, and the miss silently dropped
+    const { events, rejected } = sanitizeEvents([lost({ exerciseId: "u1-l1-e3" })], catalog, NOW);
+    expect(rejected).toEqual([]);
+    expect(events[0]).toEqual({ ...lost(), exerciseId: "u1-l1-e3" });
+  });
+
+  it("still accepts an old client's event without it, adding nothing", () => {
+    const { events, rejected } = sanitizeEvents([lost()], catalog, NOW);
+    expect(rejected).toEqual([]);
+    expect(events[0]).toEqual(lost());
+    expect("exerciseId" in events[0]!).toBe(false);
+  });
+
+  it("bounds exerciseId like the other exercise ids", () => {
+    expect(eventSchema.safeParse(lost({ exerciseId: "x".repeat(100) })).success).toBe(true);
+    expect(eventSchema.safeParse(lost({ exerciseId: "x".repeat(101) })).success).toBe(false);
+    expect(eventSchema.safeParse(lost({ exerciseId: "" })).success).toBe(false);
+    expect(eventSchema.safeParse(lost({ exerciseId: 42 })).success).toBe(false);
+    expect(eventSchema.safeParse(lost({ exerciseId: null })).success).toBe(false);
+  });
+
+  it("allows count 0 only when it names an exercise (a miss that cost no hearts)", () => {
+    expect(eventSchema.safeParse(lost({ count: 0, exerciseId: "e1" })).success).toBe(true);
+    expect(eventSchema.safeParse(lost({ count: 0 })).success).toBe(false);
+    expect(eventSchema.safeParse(lost({ count: -1, exerciseId: "e1" })).success).toBe(false);
+    expect(eventSchema.safeParse(lost({ count: 21, exerciseId: "e1" })).success).toBe(false);
+  });
+
+  it("rejects a malformed one by id without wedging its siblings", () => {
+    const { events, rejected } = sanitizeEvents(
+      [lost({ exerciseId: "x".repeat(101) }), completed()],
+      catalog,
+      NOW,
+    );
+    expect(rejected).toEqual([uuid(7)]);
+    expect(events.map((e) => e.id)).toEqual([uuid(1)]);
+  });
+});

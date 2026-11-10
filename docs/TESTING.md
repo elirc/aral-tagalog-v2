@@ -45,12 +45,32 @@ once.
 | Test | What / why |
 | --- | --- |
 | completes when all answered | The basic state-machine invariant (`done`, progress fraction). |
-| re-queues wrong answers, counts mistakes | Duolingo-style retry loop: a wrong answer moves the exercise to the back of the queue; each wrong answer is one mistake (hearts cost derives from this). |
+| re-queues wrong answers, counts mistakes | Retry loop: a wrong answer re-queues the exercise (in this two-exercise fixture, behind the only other one); each wrong answer is one mistake (hearts cost derives from this). |
 | match_pairs always advances | Match exercises complete unconditionally but still report mistakes — a design quirk worth pinning. |
 | records each missed exercise once | **Review feature.** An exercise answered wrong 3× in one session is *one* weak exercise, not three — otherwise the review queue would fill with duplicates. |
 | match_pairs missed only with wrong pairings | A clean match must not enter the review queue. |
 | splits finished session into missed/mastered | `sessionReviewOutcome` is the single source for what a completion event reports; missed and mastered must partition the *solved* exercises. |
 | abandoned session masters nothing | **Edge case found in design review:** "mastered" is computed as solved-and-not-missed. If it were all-not-missed, quitting a lesson after one exercise would incorrectly clear the rest from the review queue. |
+| **retry placement: after three others, last when fewer remain, never back-to-back, immediate only when alone, second miss re-spaced** | A miss used to go to the very end of the queue, so in a long lesson the retry arrived minutes after the correction and tested nothing. `RETRY_GAP` (3) brings it back soon; "never back-to-back while another exercise is left" is the floor that stops it becoming a copy from short-term memory. |
+| **`attempts`: counts every submit, differs between a miss and its retry, frozen once done, tolerates a legacy session object** | `SessionState.attempts` is the salt clients hand to `presentationOrder`. If it did not change between a missed attempt and the retry, the retry would be laid out identically — the position-memory bug below. |
+
+### `presentation.test.ts`
+
+Both clients used to shuffle options with a constant per-exercise seed (four
+private copies of the same LCG), so an exercise looked identical on every
+attempt and a retry could be answered from *where* the right option sat.
+`presentationOrder(exercise, salt)` replaces those copies.
+
+| Test | What / why |
+| --- | --- |
+| same seed → same order; permutation; input untouched; empty/single/junk lengths | The helper's basic contract. It must be pure: views call it during render. |
+| pinned exact output (inline snapshot) | Web and mobile must lay one attempt out identically; a changed snapshot means the algorithm changed and should be a decision. |
+| stable for one attempt | Options must not jump between re-renders of the same attempt. |
+| **answer moves between attempts; every slot reachable** | **The regression guard for the position-memory bug.** Fails if the salt stops feeding the seed. |
+| answer not always first at salt 0 | The first presentation must be shuffled too, not authored order. |
+| word bank returns *indices*, valid with duplicate words | The tap views track picked tiles by bank index (a bank can hold `araw` twice); returning words would make duplicates indistinguishable. |
+| match columns complete and independently shuffled | Sharing one random stream lines the columns up pair-for-pair, which answers the exercise. |
+| fill_blank shuffles options, free-text has none, authored array not mutated | Covers the fourth caller; the exercise object is shared bundle data. |
 
 ### `events.test.ts`
 
@@ -69,13 +89,21 @@ stream.
 | idempotency on duplicate id | The event id is the sync idempotency key (OFF-03); a client retry after a dropped response must count once. |
 | equal-timestamp determinism | Ties break by id so the fold is deterministic for a *set* regardless of arrival order. |
 | hostile `hearts_lost` clamp, junk `goal_set` rejection | The reducer runs on the server against client-supplied payloads; garbage must not corrupt state. |
+| **`hearts_lost.exerciseId`: schedules the miss with no completion; old events are a no-op; junk ids ignored; `count: 0`; agrees with the completion report; resets an earned interval** | **Regression for a real hole:** missed ids only travelled on `lesson_completed`, so a learner who ran out of hearts mid-lesson — the person who most needs review — got no review items. The "old event" test is the compatibility guard for rows already in `progress_events`. |
 | xpByDay across timezones, longestStreak survives reset | Day bucketing is tz-sensitive (GAM-02); the longest-streak high-water mark must not reset with the current streak. |
 | `goal_set` last-write-wins | Goal changes are settings, not accumulations. |
-| **weak-exercise queue: build, clear, count** | **Review feature.** Missed ids enter the queue oldest-first; mastered ids leave it and increment `mistakesCleared` (feeds the `Ayos!` achievement). |
-| mastering a never-weak exercise counts nothing | Otherwise every ordinary perfect lesson would inflate `mistakesCleared`. |
-| id in both missed and mastered stays weak | Hostile/buggy events must resolve to the *safe* reading (still needs review). |
-| re-missing a cleared exercise re-queues it | The queue is a live signal, not a one-shot log. |
-| weak queue survives baseline overlay | Cross-device: mistakes made on the phone must be reviewable on the web. |
+| **weak-exercise queue: build, clear, count** | **Review feature.** Missed ids enter the queue oldest-first (box 0, due at once); a mastered id leaves the *due* queue and increments `mistakesCleared` (feeds the `Ayos!` achievement). Restated for spaced review: "cleared" now means scheduled to return (box 1, +1 day), and the test asserts it does come back. |
+| mastering a never-weak exercise counts nothing | Otherwise every ordinary perfect lesson would inflate `mistakesCleared` — and would enrol every exercise ever answered in the schedule. |
+| id in both missed and mastered stays weak | Hostile/buggy events must resolve to the *safe* reading (still needs review). Restated: also when the id was already weak, where mastered-then-missed would have banked a `mistakesCleared` point on the way through. |
+| re-missing a cleared exercise re-queues it | The queue is a live signal, not a one-shot log. Restated: the miss returns it to box 0 and forfeits the earned interval. |
+| weak queue survives baseline overlay | Cross-device: mistakes made on the phone must be reviewable on the web. Restated to pin the carried `reviewItems`, which is what a baseline actually transports now. |
+| **Leitner ladder: 1/3/7/21 days, then graduates; due exactly on time** | **Replaces a real learning bug:** one correct answer used to clear a weak exercise forever. Asserts each box's due time to the millisecond, and that five masteries of one mistake are *one* `mistakesCleared`. |
+| a mastery before the item is due does not advance it | Otherwise replaying the source lesson a few times in a minute graduates everything with none of the spacing the boxes exist for. |
+| a clear counts again after a re-miss | `mistakesCleared` counts first clears per miss (box 0 → 1), so the achievement still tracks "mistakes fixed", not repetitions. |
+| due queue ordered by due time, id on ties; a still-weak re-miss keeps its original due time | Review serves the longest-standing mistake first; the id tie-break makes the order a function of the schedule alone. |
+| `weakExerciseIds` ≡ `dueReviewIds(progress, now)` | Clients may hold a progress object for hours; the selector must agree with a fresh fold. |
+| **fold determinism: any arrival order; server full fold = baseline + outbox at every split point (through a JSON round trip); schedule independent of fold time; duplicate delivery** | **The sync invariant, re-proved for the new state.** `reviewItems` is deliberately `now`-independent (only the due slice moves with the clock), which is what makes yesterday's baseline valid today. |
+| pre-Leitner stream folds unchanged; legacy baseline (only `weakExerciseIds`) seeds box 0 in queue order; `reviewItems` wins when both exist; corrupt entries dropped, impossible box clamped | No migration: stored events and cached snapshots predate the field. Preferring `reviewItems` matters because `weakExerciseIds` is now only the due slice — seeding from it would drop everything waiting out an interval. |
 | **perfect practice doesn't count toward `perfectLessons`** | **Regression for a real farming hole:** replaying an easy lesson perfectly used to increment the perfect-lesson counters feeding achievements. |
 | **a replay is clamped to practice XP even when the event denies it** | **Regression for an exploit:** the server clamps XP *per event* but nothing capped repetition, so re-sending completions of one lesson with fresh UUIDs and `practice` omitted farmed unlimited XP. Deriving "already completed ⇒ replay" in the reducer closes it for clients and server at once. The companion test uses a *baseline* completion, because the overlay path must see prior completions too. |
 
@@ -124,9 +152,12 @@ The review feature's course-side logic (closes SPEC open question OQ-02).
 | Test | What / why |
 | --- | --- |
 | null when nothing to review | The course map hides the review banner off this. |
-| builds in queue order with `PRACTICE_XP` | Oldest mistakes first — queue order, deliberately *not* course order. |
+| builds in queue order with `PRACTICE_XP` | Oldest mistakes first — queue order, deliberately *not* course order. (`buildReviewLesson` is unchanged by spaced review: it is handed the due ids.) |
 | **skips stale ids, null when all stale** | **Content-update safety:** a bundle update can delete exercises; stale weak ids must never wedge review or crash the player. |
 | caps session size | A 200-mistake backlog must still produce a short, winnable session. |
+| published 1/3/7/21-day ladder | `REVIEW_INTERVALS_MS` is read by the reducer and by UI copy; changing it reschedules every learner on the next fold. |
+| `dueReviewIds`: only due, longest-overdue first, id tie-break regardless of stored key order, legacy fallback | The one definition of "due" — the reducer's `weakExerciseIds` is this function. Key-order independence is what lets a JSON-round-tripped baseline sort identically. |
+| `nextReviewAt`: soonest future due time or null | Drives "next review in N days" when the due queue is empty. |
 | `isLessonUnlocked`: first lesson, gap blocking, cross-unit, unknown id | This function was duplicated (and could drift) in both clients; it moved to core precisely so one test suite covers both apps. Unknown ids return `false` — fail closed. |
 
 ### `achievements.test.ts`
@@ -161,6 +192,7 @@ exist — it is the anti-cheat boundary between clients and the progress store.
 | xp clamping | Client-asserted XP is clamped to the *authored* value (perfect and non-perfect caps differ); unknown lesson ids clamp to the catalog max instead of rejecting (bundle version skew must not lose a newer client's progress); **practice completions clamp to `PRACTICE_XP` even with no catalog** — the practice cap is policy, not content. |
 | timestamps | Future `occurredAt` clamps to now (OFF-05); past timestamps untouched. |
 | field bounds | missed/mastered arrays capped at 50 ids; `hearts_lost` count 1–20; `goal_set` 10–200 — every numeric bound tested at both edges because these are the DoS/garbage limits. |
+| **`hearts_lost.exerciseId`** | Passes through to the stored event (zod strips unknown keys, so a schema that forgot the field would accept the event and silently drop the miss); an old client's event without it is unchanged; bounded 1–100 chars like other exercise ids; `count: 0` is accepted **only** with an `exerciseId` (a practice-run miss that cost no hearts) and still rejected alone; a malformed one is rejected by id without wedging its siblings. |
 | **timestamp poison-pill** | `occurredAt` was a bare `z.number()`, which accepts `1.5` and `1e30` — values the `bigint` column rejects on INSERT. Since `/sync` inserts the batch in one statement, one bad event 500'd the whole request, and clients only clear their outbox on a 200, so it retried forever. The test sweeps fractional/negative/oversized/`Infinity`/`NaN` and asserts a healthy sibling event still lands. |
 
 ### `app.test.ts`

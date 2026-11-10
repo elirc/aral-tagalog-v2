@@ -1,5 +1,6 @@
 import { addHearts, fullHearts, loseHeart, MAX_HEARTS, regenerate, type HeartsState } from "./hearts";
 import { applyCompletionDay, emptyStreak, localDayKey, type StreakState } from "./streak";
+import { dueReviewIds, REVIEW_INTERVALS_MS, REVIEW_MAX_BOX, type ReviewItem } from "./review";
 import { PRACTICE_XP } from "./xp";
 
 /**
@@ -26,7 +27,20 @@ export type ProgressEvent =
       /** exercises solved without a miss — clears them from the review queue */
       masteredExerciseIds?: string[];
     }
-  | { id: string; type: "hearts_lost"; occurredAt: number; count: number }
+  | {
+      id: string;
+      type: "hearts_lost";
+      occurredAt: number;
+      /** hearts to deduct; 0 for a miss that cost none (practice / review runs) */
+      count: number;
+      /**
+       * The exercise whose miss cost these hearts. Schedules it for review
+       * the moment it happens, so a session that never reaches
+       * lesson_completed (out of hearts, app closed) still leaves its
+       * mistakes behind. Absent on events from older clients.
+       */
+      exerciseId?: string;
+    }
   | {
       id: string;
       type: "hearts_refilled";
@@ -64,12 +78,47 @@ export interface UserProgress {
   /** current daily XP goal (DEFAULT_DAILY_GOAL_XP until a goal_set event) */
   dailyGoalXp: number;
   /**
-   * Exercises whose most recent attempt included a miss, oldest first — the
-   * review queue (REV-01). An exercise leaves when a later session masters it.
+   * Exercises due for review as of the `now` this progress was folded at,
+   * longest-overdue first — the review queue (REV-01). Derived from
+   * `reviewItems`; a mastered exercise leaves until its next interval elapses.
    */
   weakExerciseIds: string[];
-  /** how many weak exercises the user has cleared by mastering them later */
+  /**
+   * How many missed exercises the user has cleared by mastering them later.
+   * Counts the first clear after each miss (box 0 → 1), not the later
+   * spaced repetitions of the same exercise.
+   */
   mistakesCleared: number;
+  /**
+   * Spaced-review schedule: every exercise missed and not yet graduated,
+   * due or not (see REVIEW_INTERVALS_MS). Independent of `now`, so it is
+   * what a baseline carries forward; `weakExerciseIds` is its due slice.
+   */
+  reviewItems: Record<string, ReviewItem>;
+}
+
+/** Read a baseline's schedule defensively: it may be legacy, or hand-edited. */
+function seedReview(initial: UserProgress | undefined): Map<string, ReviewItem> {
+  const review = new Map<string, ReviewItem>();
+  const stored = initial?.reviewItems;
+  if (stored && typeof stored === "object") {
+    for (const [id, it] of Object.entries(stored)) {
+      if (!it || !Number.isFinite(it.box) || !Number.isFinite(it.dueAt)) continue;
+      const box = Math.min(Math.max(Math.floor(it.box), 0), REVIEW_MAX_BOX);
+      review.set(id, { box, dueAt: it.dueAt });
+    }
+    return review;
+  }
+  // Legacy baseline (older server / cached snapshot): only the flat queue.
+  // Everything in it was awaiting a first clear — box 0. dueAt = position
+  // keeps the old queue order and sorts ahead of any real timestamp.
+  const legacy = initial?.weakExerciseIds;
+  if (Array.isArray(legacy)) {
+    legacy.forEach((id, i) => {
+      if (typeof id === "string" && !review.has(id)) review.set(id, { box: 0, dueAt: i });
+    });
+  }
+  return review;
 }
 
 /**
@@ -103,10 +152,26 @@ export function reduceEvents(
   const xpByDay: Record<string, number> = { ...(initial?.xpByDay ?? {}) };
   let longestStreak = initial?.longestStreak ?? initial?.streak?.count ?? streak.count;
   let dailyGoalXp = initial?.dailyGoalXp ?? DEFAULT_DAILY_GOAL_XP;
-  // insertion-ordered: oldest weak exercise first, deterministic given the
-  // sorted fold (review sessions serve the longest-standing mistakes first)
-  const weak = new Set<string>(initial?.weakExerciseIds ?? []);
+  const review = seedReview(initial);
   let mistakesCleared = initial?.mistakesCleared ?? 0;
+
+  const miss = (exId: string, t: number) => {
+    // already awaiting a first clear: keep its original due time, so the
+    // longest-standing mistake stays at the front of the queue
+    if (review.get(exId)?.box === 0) return;
+    review.set(exId, { box: 0, dueAt: t });
+  };
+  const master = (exId: string, t: number) => {
+    const cur = review.get(exId);
+    // Only a review that was *due* advances the schedule. Otherwise replaying
+    // a lesson five times in a minute would graduate its exercises without
+    // any of the spacing the boxes exist to enforce.
+    if (!cur || cur.dueAt > t) return;
+    if (cur.box === 0) mistakesCleared++;
+    const box = cur.box + 1;
+    if (box > REVIEW_MAX_BOX) review.delete(exId);
+    else review.set(exId, { box, dueAt: t + REVIEW_INTERVALS_MS[box - 1]! });
+  };
 
   // `id` is the idempotency key (OFF-03): the same event may reach a stream
   // twice (client retry after a dropped response) and must count once.
@@ -141,18 +206,22 @@ export function reduceEvents(
           practiceCount++;
           hearts = addHearts(hearts, 1, t);
         }
-        // mastered first, then missed: if a hostile event lists an id in both,
-        // "still weak" is the safe reading
+        // if a hostile event lists an id as both missed and mastered,
+        // "still weak" is the safe reading: the miss wins and nothing clears
+        const missed = new Set(ev.missedExerciseIds ?? []);
         for (const exId of ev.masteredExerciseIds ?? []) {
-          if (weak.delete(exId)) mistakesCleared++;
+          if (!missed.has(exId)) master(exId, t);
         }
-        for (const exId of ev.missedExerciseIds ?? []) weak.add(exId);
+        for (const exId of missed) miss(exId, t);
         break;
       }
       case "hearts_lost": {
         // losing more than MAX_HEARTS changes nothing; clamp hostile counts
         const n = Math.min(ev.count, MAX_HEARTS);
         for (let i = 0; i < n; i++) hearts = loseHeart(hearts, t);
+        // the miss is recorded when it happens, not at lesson_completed —
+        // which a learner who runs out of hearts never reaches
+        if (typeof ev.exerciseId === "string" && ev.exerciseId) miss(ev.exerciseId, t);
         break;
       }
       case "hearts_refilled":
@@ -166,6 +235,10 @@ export function reduceEvents(
     }
   }
 
+  // keyed in id order so the same schedule always serializes the same way
+  const reviewItems: Record<string, ReviewItem> = {};
+  for (const id of [...review.keys()].sort()) reviewItems[id] = review.get(id)!;
+
   return {
     xpTotal,
     completedLessonIds: [...completed],
@@ -177,7 +250,8 @@ export function reduceEvents(
     xpByDay,
     longestStreak,
     dailyGoalXp,
-    weakExerciseIds: [...weak],
+    weakExerciseIds: dueReviewIds({ reviewItems }, now),
     mistakesCleared,
+    reviewItems,
   };
 }

@@ -3,9 +3,19 @@ import type { Exercise, Lesson } from "./types";
 
 /**
  * Lesson session state machine, pure and immutable so both clients can drive
- * it from a reducer. Wrong answers re-queue the exercise at the end (Duolingo
- * style) until answered correctly; each wrong answer counts one mistake.
+ * it from a reducer. A wrong answer re-queues the exercise a few places
+ * further on (see RETRY_GAP) until it is answered correctly; each wrong answer
+ * counts one mistake.
  */
+
+/**
+ * How many other exercises come between a miss and its retry. Soon enough
+ * that the correction is still fresh, far enough that it isn't a copy from
+ * short-term memory. With fewer exercises left the retry simply goes last —
+ * never back-to-back unless it is the only exercise remaining.
+ */
+export const RETRY_GAP = 3;
+
 export interface SessionState {
   lesson: Lesson;
   /** indices into lesson.exercises still to be answered; head is current */
@@ -15,6 +25,12 @@ export interface SessionState {
   mistakes: number;
   /** ids of exercises answered wrong at least once this session (review feed) */
   missedExerciseIds: string[];
+  /**
+   * Answers submitted so far, right or wrong. Changes every time an exercise
+   * comes round again, so clients pass it to presentationOrder as the salt —
+   * a retry is then laid out differently from the attempt that was missed.
+   */
+  attempts: number;
   done: boolean;
 }
 
@@ -31,6 +47,7 @@ export function startSession(lesson: Lesson): SessionState {
     solved: 0,
     mistakes: 0,
     missedExerciseIds: [],
+    attempts: 0,
     done: lesson.exercises.length === 0,
   };
 }
@@ -59,6 +76,9 @@ export function submitAnswer(
   const ex = currentExercise(s);
   if (!ex || s.done) return { state: s, correct: false, correctAnswer: "" };
 
+  // `?? 0`: tolerate a session object created before the field existed
+  const attempts = (s.attempts ?? 0) + 1;
+
   if (ex.type === "match_pairs") {
     const rest = s.queue.slice(1);
     return {
@@ -68,6 +88,7 @@ export function submitAnswer(
         solved: s.solved + 1,
         mistakes: s.mistakes + matchMistakes,
         missedExerciseIds: matchMistakes > 0 ? withMiss(s, ex.id) : s.missedExerciseIds,
+        attempts,
         done: rest.length === 0,
       },
       correct: matchMistakes === 0,
@@ -79,17 +100,19 @@ export function submitAnswer(
   if (result.correct) {
     const rest = s.queue.slice(1);
     return {
-      state: { ...s, queue: rest, solved: s.solved + 1, done: rest.length === 0 },
+      state: { ...s, queue: rest, solved: s.solved + 1, attempts, done: rest.length === 0 },
       correct: true,
       correctAnswer: result.correctAnswer,
     };
   }
-  // wrong: move to the back of the queue to retry later
+  // wrong: retry after RETRY_GAP other exercises (or last, if fewer remain)
   const [head, ...rest] = s.queue;
+  const at = Math.min(RETRY_GAP, rest.length);
   return {
     state: {
       ...s,
-      queue: [...rest, head!],
+      queue: [...rest.slice(0, at), head!, ...rest.slice(at)],
+      attempts,
       mistakes: s.mistakes + 1,
       missedExerciseIds: withMiss(s, ex.id),
     },

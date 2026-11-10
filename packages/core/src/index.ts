@@ -1,6 +1,7 @@
 export * from "./types";
 export * from "./grading";
 export * from "./session";
+export * from "./presentation";
 export * from "./hearts";
 export * from "./streak";
 export * from "./xp";

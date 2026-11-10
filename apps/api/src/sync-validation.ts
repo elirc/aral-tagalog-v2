@@ -16,7 +16,8 @@ import { lessonXp, PRACTICE_XP, type Lesson, type ProgressEvent } from "@aral/co
  */
 const timestampSchema = z.number().int().min(0).max(Number.MAX_SAFE_INTEGER);
 
-export const eventSchema = z.discriminatedUnion("type", [
+export const eventSchema = z
+  .discriminatedUnion("type", [
   z.object({
     id: z.string().uuid(),
     type: z.literal("lesson_completed"),
@@ -32,7 +33,11 @@ export const eventSchema = z.discriminatedUnion("type", [
     id: z.string().uuid(),
     type: z.literal("hearts_lost"),
     occurredAt: timestampSchema,
-    count: z.number().int().min(1).max(20),
+    // 0 is only meaningful alongside exerciseId (see the refinement below)
+    count: z.number().int().min(0).max(20),
+    // the exercise whose miss cost the hearts; feeds the review schedule at
+    // the moment of the mistake. Optional: older clients don't send it.
+    exerciseId: z.string().min(1).max(100).optional(),
   }),
   z.object({
     id: z.string().uuid(),
@@ -47,7 +52,20 @@ export const eventSchema = z.discriminatedUnion("type", [
     occurredAt: timestampSchema,
     goalXp: z.number().int().min(10).max(200),
   }),
-]);
+  ])
+  // A practice/review run costs no hearts, but its misses still belong in the
+  // review schedule: `count: 0` + `exerciseId` records one. Without an
+  // exerciseId a zero-heart loss says nothing at all — reject it rather than
+  // store an event that does nothing.
+  .superRefine((ev, ctx) => {
+    if (ev.type === "hearts_lost" && ev.count === 0 && ev.exerciseId === undefined) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["count"],
+        message: "count must be at least 1 unless exerciseId is given",
+      });
+    }
+  });
 
 /** Authored lesson catalog; null when the content bundle isn't available. */
 export interface LessonCatalog {

@@ -17,6 +17,7 @@ function progress(overrides: Partial<UserProgress> = {}): UserProgress {
     dailyGoalXp: DEFAULT_DAILY_GOAL_XP,
     weakExerciseIds: [],
     mistakesCleared: 0,
+    reviewItems: {},
     ...overrides,
   };
 }
